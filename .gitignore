@@ -12,9 +12,3 @@ coverage/
 
 # Ignore dependencies
 node_modules/
-
-# Ignore lock files
-pnpm-lock.yaml
-
-
-

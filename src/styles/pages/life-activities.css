@@ -1,0 +1,277 @@
+/* Life Activities Page Styles */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sport-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.sport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sport-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sport-header h3 {
+  color: var(--primary-blue);
+  margin-bottom: 0;
+}
+
+.level-badge {
+  background: var(--primary-blue);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sport-description {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.sport-features {
+  margin-bottom: 1.5rem;
+}
+
+.sport-features h4 {
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sport-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sport-features li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sport-features li:last-child {
+  border-bottom: none;
+}
+
+.sport-features li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+}
+
+.sport-schedule {
+  background: var(--background-light);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.fitness-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.fitness-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.fitness-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.fitness-highlights {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.fitness-highlights h4 {
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.fitness-highlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fitness-highlights li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.fitness-highlights li::before {
+  content: "💪";
+  position: absolute;
+  left: 0;
+}
+
+.recreation-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.recreation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.recreation-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.activity-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.activity-item:hover {
+  background: var(--secondary-blue);
+}
+
+.activity-icon {
+  font-size: 1.2rem;
+}
+
+.wellness-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.wellness-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.wellness-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.wellness-components {
+  margin-top: 1.5rem;
+}
+
+.wellness-components h4 {
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.wellness-components ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wellness-components li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.wellness-components li::before {
+  content: "🌟";
+  position: absolute;
+  left: 0;
+}
+
+.schedule-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.schedule-day {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+.schedule-day h4 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.day-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.time-slot {
+  background: var(--background-light);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .sport-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+} 

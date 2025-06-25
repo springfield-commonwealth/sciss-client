@@ -1,0 +1,140 @@
+/* Home Page Styles */
+.lead {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 1.1rem auto;
+}
+
+.welcome-text,
+.welcome-features {
+  padding: 1rem;
+}
+
+.session-info {
+  margin: 2rem 0;
+}
+
+.session {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-light);
+}
+
+.session h4 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-highlight {
+  background: var(--primary-blue);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.pricing-highlight h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.regular-price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.early-bird {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.program-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+}
+
+.program-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-card .card-image {
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.highlight-card .card-image img {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.testimonial-card {
+  text-align: center;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.testimonial-author strong {
+  color: var(--text-dark);
+}
+
+.testimonial-author span {
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+  .price {
+    align-items: center;
+  }
+} 

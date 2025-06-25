@@ -1,0 +1,22 @@
+/* Main Styles Index - Import all component and page styles */
+
+/* Component Styles */
+@import './components/navigation.css';
+@import './components/footer-cta.css';
+@import './components/carousel.css';
+@import './components/carousel-card.css';
+@import './components/gallery-card.css';
+@import './components/hero-section.css';
+@import './components/weekly-schedule.css';
+@import './components/footer.css';
+
+/* Page Styles */
+@import './pages/index.css';
+@import './pages/about-us.css';
+@import './pages/academics.css';
+@import './pages/program-overview.css';
+@import './pages/life-activities.css';
+@import './pages/day-trips.css';
+@import './pages/a-day-at-sciss.css';
+@import './pages/parent-information.css';
+@import './pages/tuitions-and-fees.css'; 

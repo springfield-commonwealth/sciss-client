@@ -1,0 +1,275 @@
+/* Academics Page Styles */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.program-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.program-header {
+  margin-bottom: 1rem;
+}
+
+.program-header h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+}
+
+.program-meta {
+  display: flex;
+  gap: 1rem;
+}
+
+.duration,
+.level {
+  background: var(--background-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.level {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.program-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.program-highlights {
+  margin-bottom: 2rem;
+}
+
+.program-highlights h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.program-highlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.program-highlights li {
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.program-highlights li::before {
+  content: "•";
+  color: var(--primary-blue);
+  position: absolute;
+  left: 0;
+}
+
+.programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.program-detail-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.program-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.program-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--secondary-blue) 100%
+  );
+  color: white;
+  padding: 2rem;
+}
+
+.program-title-section h3 {
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.program-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.level-badge,
+.duration-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.program-content {
+  padding: 2rem;
+}
+
+.program-description {
+  margin-bottom: 2rem;
+}
+
+.prerequisites {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.program-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.curriculum-section,
+.outcomes-section {
+  background: var(--background-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.curriculum-section h4,
+.outcomes-section h4 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.curriculum-list,
+.outcomes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.curriculum-list li,
+.outcomes-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.curriculum-list li:last-child,
+.outcomes-list li:last-child {
+  border-bottom: none;
+}
+
+.curriculum-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+}
+
+.outcomes-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+}
+
+.faculty-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.faculty-info h4 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.faculty-role {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.faculty-background {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.faculty-expertise {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.support-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.support-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.support-card h4 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .program-badges {
+    justify-content: center;
+  }
+} 

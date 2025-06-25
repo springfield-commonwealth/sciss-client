@@ -1,0 +1,293 @@
+/* A Day at SCISS Page Styles */
+.overview-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.overview-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overview-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.schedule-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.schedule-timeline::before {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue));
+  border-radius: 2px;
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.schedule-time {
+  min-width: 120px;
+  padding-right: 2rem;
+  text-align: right;
+  position: relative;
+}
+
+.time-text {
+  font-weight: 600;
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+}
+
+.time-indicator {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--border-light);
+}
+
+.schedule-content {
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.schedule-content:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+}
+
+.activity-header h4 {
+  color: var(--text-dark);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.activity-description {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.activity-type {
+  display: inline-block;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.day-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.day-header h4 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.day-highlight {
+  background: var(--primary-blue);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.day-special {
+  margin-top: 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.accommodation-card,
+.dining-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.accommodation-card:hover,
+.dining-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.accommodation-card h3,
+.dining-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.accommodation-card ul,
+.dining-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accommodation-card li,
+.dining-card li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accommodation-card li:last-child,
+.dining-card li:last-child {
+  border-bottom: none;
+}
+
+.accommodation-card li::before,
+.dining-card li::before {
+  content: "✓";
+  color: var(--primary-blue);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.safety-feature {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.safety-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.safety-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.safety-feature h4 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.safety-feature p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .schedule-timeline::before {
+    left: 60px;
+  }
+
+  .schedule-time {
+    min-width: 100px;
+    padding-right: 1rem;
+  }
+
+  .time-indicator {
+    right: -6px;
+  }
+
+  .weekly-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .schedule-item {
+    flex-direction: column;
+  }
+
+  .schedule-time {
+    min-width: auto;
+    padding-right: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .schedule-content {
+    margin-left: 0;
+  }
+
+  .schedule-timeline::before {
+    display: none;
+  }
+
+  .time-indicator {
+    display: none;
+  }
+} 

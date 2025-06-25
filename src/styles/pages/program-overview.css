@@ -1,0 +1,128 @@
+/* Program Overview Page Styles */
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.mission-content,
+.vision-content {
+  padding: 2rem;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+}
+
+.values-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.values-list li:last-child {
+  border-bottom: none;
+}
+
+.unique-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+.feature h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.schedule-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease;
+}
+
+.schedule-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: var(--primary-blue);
+  min-width: 100px;
+  margin-right: 2rem;
+}
+
+.schedule-activity {
+  flex: 1;
+  color: var(--text-dark);
+}
+
+.schedule-note {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .schedule-time {
+    margin-right: 0;
+    min-width: auto;
+  }
+
+
+} 

@@ -11,7 +11,7 @@ html {
 :root {
   /* Primary Academic Colors */
   --primary-blue: #1f56a4;
-  --secondary-blue: #2E5C7E;
+  --secondary-blue: #356f9c;
   --accent-blue: #0038c7;
   --light-blue: #6BA6C0;
   --accent-yellow: #e6c43b; 
@@ -29,6 +29,7 @@ html {
   --text-medium: #5A6C7D;
   --text-light: #7F8C8D;
   --text-white: #FFFFFF;
+  --text-accent-blue: var(--secondary-blue);
   
   /* Background Colors */
   --background-primary: #FFFFFF;

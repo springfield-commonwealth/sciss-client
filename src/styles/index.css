@@ -10,6 +10,7 @@
 @import './components/imageslider.css';
 @import './components/weekly-schedule.css';
 @import './components/footer.css';
+@import './components/faculty-card.css';
 
 /* Page Styles */
 @import './pages/index.css';
@@ -24,4 +25,5 @@
 
 /* Section Styles */
 @import './sections/hero-section.css';
-@import './sections/content-slider.css'
+@import './sections/content-slider.css';
+@import './sections/faculty-section.css';

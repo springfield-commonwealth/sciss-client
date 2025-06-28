@@ -1,28 +1,11 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import Carousel from "@/components/ui/Carousel";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import { ProgramOverviewHero } from "@/constants/images";
+import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 
 const ProgramOverview = () => {
-  const coreCourses = [
-    {
-      image: "/images/featured/core.png",
-      title: "Courses",
-      link: "/academics",
-    },
-    {
-      image: "/images/carousel/dance.png",
-      title: "Activities",
-      link: "/life-activities",
-    },
-    {
-      image: "/images/slider/home/harvard-trip.JPG",
-      title: "Trips",
-      link: "/day-trips",
-    },
-  ];
-
   return (
     <Layout
       title="Program Overview - SCISS"
@@ -114,7 +97,7 @@ const ProgramOverview = () => {
       {/* program carousel */}
       <section className="section bg-light" id="program-carousel">
         <div className="container">
-          <Carousel items={coreCourses} />
+          <Carousel items={ProgramOverviewCoreCourses} />
         </div>
       </section>
 

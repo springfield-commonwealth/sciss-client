@@ -41,7 +41,7 @@ const AboutUsHero = {
 
 const TuitionHero = {
   src: "/images/featured/school-building-0.JPG",
-  alt: "springfield campus view"
+  alt: "springfield campus view",
 };
 
 const HomeSliderImages = [
@@ -72,18 +72,18 @@ const HomeSliderImages = [
 ];
 
 export {
+  AboutUsHero,
+  AcademicsHero,
+  DayTripsHero,
   HomeFeature,
   HomeHero,
   HomeSliderImages,
+  LifeActivitiesHero,
   LogoBlack,
   LogoBlue,
   LogoWhite,
   LogoWhiteLong,
   LogoYellow,
   ProgramOverviewHero,
-  LifeActivitiesHero,
-  AcademicsHero,
-  DayTripsHero,
-  AboutUsHero,
-  TuitionHero
+  TuitionHero,
 };

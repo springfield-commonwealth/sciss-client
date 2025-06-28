@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import CampSchedule from "@/components/sections/CampSchedule";
 import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
@@ -210,6 +211,13 @@ const Academics = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Camp Schedule Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <CampSchedule />
         </div>
       </section>
 

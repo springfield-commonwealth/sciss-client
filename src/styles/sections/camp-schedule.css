@@ -1,0 +1,51 @@
+.camp-schedule-section {
+  margin: var(--section-margin, 2rem 0);
+}
+.session-tabs button,
+.week-tabs button {
+  margin-right: 8px;
+  padding: 6px 16px;
+  border: none;
+  background: var(--background-tertiary, #e0e7ef);
+  color: var(--text-dark, #222);
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.session-tabs button.active,
+.week-tabs button.active {
+  background: var(--primary-blue, #2a5ca4);
+  color: var(--text-white, #fff);
+}
+.schedule-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.schedule-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 900px;
+  background: var(--background-primary, #fff);
+}
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid var(--border-light, #c3c3c3);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+}
+.schedule-table th {
+  background: var(--background-secondary, #f5f7fa);
+  font-weight: 600;
+}
+.schedule-table td {
+  background: var(--background-tertiary, #fafdff);
+}
+@media (max-width: 900px) {
+  .schedule-table {
+    min-width: 600px;
+    font-size: 12px;
+  }
+} 

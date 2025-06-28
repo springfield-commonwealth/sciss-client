@@ -29,7 +29,7 @@ html {
   --text-medium: #5A6C7D;
   --text-light: #7F8C8D;
   --text-white: #FFFFFF;
-  --text-accent-blue: var(--secondary-blue);
+  --text-accent-blue: var(--primary-blue);
   
   /* Background Colors */
   --background-primary: #FFFFFF;
@@ -128,7 +128,6 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-blue);
   transform: translateY(-3px);
   box-shadow: var(--shadow-medium);
 }

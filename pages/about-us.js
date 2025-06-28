@@ -1,7 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import { AboutUsHero } from "@/constants/images";
-import FeatureSection from "../src/components/sections/FeatureSection";
 
 const AboutUs = () => {
   const founders = [
@@ -335,7 +334,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
     </Layout>
   );
 };

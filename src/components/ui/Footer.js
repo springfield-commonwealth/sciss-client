@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SocialLink from "./SocialLink";
 
 const Footer = () => {
@@ -61,16 +62,16 @@ const Footer = () => {
         <div className="footerSection">
           <h4>Quick Links</h4>
           <p>
-            <a href="/program-overview">Overview</a>
+            <Link href="/program-overview">Overview</Link>
           </p>
           <p>
-            <a href="/academics">Academic Programs</a>
+            <Link href="/academics">Academic Programs</Link>
           </p>
           <p>
-            <a href="/life-activities">Life & Activities</a>
+            <Link href="/life-activities">Life & Activities</Link>
           </p>
           <p>
-            <a href="/day-trips">Trips</a>
+            <Link href="/day-trips">Trips</Link>
           </p>
           <p>
             <a href="#apply">Apply Now</a>

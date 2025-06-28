@@ -47,6 +47,10 @@
   -ms-overflow-style: none;
 }
 
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
 .carousel-dots {
   display: flex;
   justify-content: center;

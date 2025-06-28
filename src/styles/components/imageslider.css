@@ -1,0 +1,29 @@
+.image-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image-slider__img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px;
+}
+
+/* Swiper pagination dots */
+.swiper-pagination-bullet {
+  background: #bbb;
+  opacity: 1;
+  margin: 0 4px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #222;
+}

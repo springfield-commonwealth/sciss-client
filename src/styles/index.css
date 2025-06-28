@@ -6,7 +6,8 @@
 @import './components/carousel.css';
 @import './components/carousel-card.css';
 @import './components/gallery-card.css';
-@import './components/hero-section.css';
+@import './components/featurevideo.css';
+@import './components/imageslider.css';
 @import './components/weekly-schedule.css';
 @import './components/footer.css';
 
@@ -20,3 +21,7 @@
 @import './pages/a-day-at-sciss.css';
 @import './pages/parent-information.css';
 @import './pages/tuitions-and-fees.css'; 
+
+/* Section Styles */
+@import './sections/hero-section.css';
+@import './sections/content-slider.css'

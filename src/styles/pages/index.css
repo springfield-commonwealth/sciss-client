@@ -1,9 +1,15 @@
 /* Home Page Styles */
 .lead {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--text-dark);
   max-width: 800px;
   margin: 1.1rem auto;
+}
+
+.featured-image__picture {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .welcome-text,
@@ -85,7 +91,7 @@
 }
 
 .highlight-card .card-image {
-  height: 200px;
+  height: 400px;
   margin-bottom: 1rem;
 }
 

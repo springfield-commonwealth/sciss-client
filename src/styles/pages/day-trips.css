@@ -180,7 +180,7 @@
 }
 
 .activity-item:hover {
-  background: rgba(204, 29, 47, 0.1);
+  background: var(--background-blue);
 }
 
 .activity-icon {

@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import { TuitionHero } from "@/constants/images";
 
 const TuitionsAndFees = () => {
   const sessions = [
@@ -27,12 +28,6 @@ const TuitionsAndFees = () => {
     },
   ];
 
-  const pricingStructure = {
-    regularPrice: 7500,
-    earlyBirdPrice: 6950,
-    earlyBirdDeadline: "April 1st, 2025",
-    savings: 550,
-  };
 
   const includedServices = [
     {
@@ -156,7 +151,7 @@ const TuitionsAndFees = () => {
         title="Tuitions & Fees"
         subtitle="Invest in Your Future"
         description="Discover our competitive pricing, flexible payment options, and scholarship opportunities for an exceptional summer learning experience."
-        backgroundImage="/images/academics-hero.jpg"
+        backgroundImage={TuitionHero}
         ctaText="Apply Now"
         ctaLink="#apply"
         // secondaryCtaText="View Payment Plans"
@@ -166,53 +161,8 @@ const TuitionsAndFees = () => {
       {/* Program Pricing */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>2025 Program Investment</h2>
-            <p>Comprehensive summer experience with everything included</p>
-          </div>
-
-          <div className="pricing-showcase">
-            <div className="pricing-card main-pricing">
-              <div className="pricing-header">
-                <div className="price-main">
-                  <span className="currency">$</span>
-                  <span className="amount">
-                    {pricingStructure.regularPrice.toLocaleString()}
-                  </span>
-                </div>
-                <div className="price-period">per student / 3 weeks</div>
-              </div>
-
-              <div className="early-bird-offer">
-                <div className="early-bird-badge">Early Bird Special</div>
-                <div className="early-bird-price">
-                  <div className="early-bird-main">
-                    <span className="currency">$</span>
-                    <span className="amount">
-                      {pricingStructure.earlyBirdPrice.toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="early-bird-deadline">
-                    Register by {pricingStructure.earlyBirdDeadline}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pricing-features">
-                <h4>Everything Included:</h4>
-                <ul>
-                  <li>✅ Complete academic program</li>
-                  <li>✅ All meals and accommodation</li>
-                  <li>✅ Field Trips</li>
-                  <li>✅ Cultural excursions and activities</li>
-                  <li>✅ 24/7 supervision and support</li>
-                  <li>✅ Academic certification</li>
-                </ul>
-              </div>
-            </div>
-
             {/* Session Selection */}
-            <div className="sessions-selection">
+            <div className="sessions-selection grid grid-2">
               <h3>Choose Your Session</h3>
               {sessions.map((session, index) => (
                 <div key={index} className="session-card">
@@ -230,9 +180,8 @@ const TuitionsAndFees = () => {
                   </div>
                 </div>
               ))}
-            </div>
+              </div>
           </div>
-        </div>
       </section>
 
       {/* What's Included */}

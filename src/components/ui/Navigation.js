@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { LogoBlack } from '@/constants/images';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +42,7 @@ const Navigation = () => {
         <nav className="nav">
           <Link href="/" className="logo">
             <img
-              src="/sciss-logo-black.jpg"
+              src={LogoBlack}
               alt="SC International Summer School"
             />
           </Link>

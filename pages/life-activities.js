@@ -1,46 +1,10 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
+import { LifeActivitiesHero } from "@/constants/images";
 
 const LifeActivities = () => {
-  const activitiesCarouselItems = [
-    {
-      title: "Basketball",
-      description:
-        "Competitive basketball training and games as part of our elective sports program",
-      image: "https://placehold.co/500",
-    },
-    {
-      title: "Rowing",
-      description:
-        "Learn rowing techniques and water sports in our comprehensive athletics program",
-      image: "https://placehold.co/500",
-    },
-    {
-      title: "Fitness Training",
-      description:
-        "Professional fitness and conditioning programs for all skill levels",
-      image: "https://placehold.co/500",
-    },
-    {
-      title: "Golf",
-      description:
-        "Golf instruction and practice sessions for students interested in the sport",
-      image: "https://placehold.co/500",
-    },
-    {
-      title: "Fencing",
-      description:
-        "Learn the art of fencing with professional instruction and equipment",
-      image: "https://placehold.co/500",
-    },
-    {
-      title: "Soccer & Archery",
-      description:
-        "Soccer training and archery instruction as part of diverse elective sports options",
-      image: "https://placehold.co/500",
-    },
-  ];
+  
 
   const sportsPrograms = [
     {
@@ -220,27 +184,9 @@ const LifeActivities = () => {
         title="Life & Activities"
         subtitle="Beyond the Classroom"
         description="Discover a world of sports, fitness, arts, and recreational activities designed to enrich your summer experience and build lasting friendships."
-        backgroundImage="/images/activities-hero.jpg"
-        // ctaText="Explore Activities"
-        // ctaLink="#activities"
-        // secondaryCtaText="View Sports"
-        // secondaryCtaLink="#sports"
+        backgroundImage={LifeActivitiesHero}
       />
 
-      {/* Activities Carousel */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Activity Highlights</h2>
-            <p>
-              Experience the best in sports, fitness, and recreational
-              activities
-            </p>
-          </div>
-
-          <Carousel items={activitiesCarouselItems} />
-        </div>
-      </section>
 
       {/* Sports Programs */}
       <section id="sports" className="section">

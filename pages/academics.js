@@ -2,6 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
 import GalleryCard from "@/components/ui/GalleryCard";
+import { AcademicsHero } from "@/constants/images";
 
 const Academics = () => {
   const coreCourses = [
@@ -17,7 +18,7 @@ const Academics = () => {
         "Economic trend analysis",
         "Guest speakers from major financial firms",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/investment.png",
     },
     {
       title: "Youth Innovation & Entrepreneurship",
@@ -31,7 +32,7 @@ const Academics = () => {
         "Market research techniques",
         "Startup funding strategies",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/entrepreneur.png",
     },
     {
       title: "Artificial Intelligence",
@@ -45,7 +46,7 @@ const Academics = () => {
         "Neural network design",
         "AI ethics and applications",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/ai.png",
     },
     {
       title: "Public Speaking & Debate",
@@ -59,7 +60,7 @@ const Academics = () => {
         "Body language and presence",
         "Media interview techniques",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/public-speaking.png",
     },
     {
       title: "Language Programs",
@@ -73,7 +74,7 @@ const Academics = () => {
         "Language exchange partnerships",
         "Professional communication skills",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/language.png",
     },
     {
       title: "Visual Arts",
@@ -87,7 +88,7 @@ const Academics = () => {
         "Photography techniques",
         "Art history and critique",
       ],
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/art.png",
     },
   ];
 
@@ -96,37 +97,37 @@ const Academics = () => {
       title: "Path to Wall Street & Impact Investment",
       description:
         "Intensive program covering investment strategies, stock markets, finance, economics, and sustainable investment",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/investment.png",
     },
     {
       title: "Artificial Intelligence",
       description:
         "Comprehensive AI program with machine learning fundamentals and practical applications",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/ai.png",
     },
     {
       title: "Youth Innovation & Entrepreneurship",
       description:
         "CEO-led program fostering design thinking, innovation, and startup business plan development",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/entrepreneur.png",
     },
     {
       title: "Public Speaking & Debate",
       description:
         "Build communication skills and confidence through structured debate and presentation training",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/public-speaking.png",
     },
     {
       title: "Language Programs",
       description:
         "English and Creative Writing programs from beginner to intensive levels",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/language.png",
     },
     {
       title: "Visual Arts",
       description:
         "Creative arts program designed for students of all ages to explore artistic expression",
-      image: "/images/academics-hero.jpg",
+      image: "/images/carousel/art.png",
     },
   ];
 
@@ -303,37 +304,37 @@ const Academics = () => {
       title: "Basketball",
       description:
         "Competitive basketball training and games as part of our elective sports program",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/basketball.png",
     },
     {
       title: "Rowing",
       description:
         "Learn rowing techniques and water sports in our comprehensive athletics program",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/rowing.png",
     },
     {
       title: "Fitness Training",
       description:
         "Professional fitness and conditioning programs for all skill levels",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/fitness.png",
     },
     {
       title: "Golf",
       description:
         "Golf instruction and practice sessions for students interested in the sport",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/golf.png",
     },
     {
       title: "Fencing",
       description:
         "Learn the art of fencing with professional instruction and equipment",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/fencing.png",
     },
     {
       title: "Soccer & Archery",
       description:
         "Soccer training and archery instruction as part of diverse elective sports options",
-      image: "https://placehold.co/500",
+      image: "/images/carousel/archery.png",
     },
   ];
 
@@ -408,12 +409,78 @@ const Academics = () => {
         title="Academic Excellence"
         subtitle="Six Transformative Programs"
         description="Choose from our carefully designed academic programs that combine theoretical knowledge with practical, real-world applications."
-        backgroundImage="/images/academics-hero.jpg"
+        backgroundImage={AcademicsHero}
         ctaText="View All Programs"
         ctaLink="#programs"
         secondaryCtaText="Apply Now"
         secondaryCtaLink="/tuitions-and-fees"
       />
+
+      {/* Academic Support */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2>Academic Support & Resources</h2>
+            <p>Comprehensive support to ensure your academic success</p>
+          </div>
+
+          <div className="grid grid-3">
+            <div className="support-card">
+              <div className="support-icon icon-tech"></div>
+              <h4>Academic Resources</h4>
+              <p>
+                All course materials, academic tuition up to 30 hours, and
+                specialized learning resources for your chosen program.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-innovation"></div>
+              <h4>Collaborative Learning</h4>
+              <p>
+                Team-based projects, group activities, and peer collaboration in
+                a dynamic learning environment.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-business"></div>
+              <h4>Expert Instruction</h4>
+              <p>
+                Passionate instructors who are experts in their fields providing
+                hands-on guidance and mentoring.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-tech"></div>
+              <h4>Competition Resources</h4>
+              <p>
+                Access to competition preparation and opportunities to
+                participate in prestigious academic competitions.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-language"></div>
+              <h4>Progress Assessment</h4>
+              <p>
+                Course completion certificates and recognition for academic
+                achievements and participation.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-arts"></div>
+              <h4>Additional Opportunities</h4>
+              <p>
+                Access to enrichment programs, advanced learning opportunities,
+                and specialized workshops.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Academic Programs Carousel */}
       <section className="section bg-light">
@@ -426,13 +493,13 @@ const Academics = () => {
           <div className="grid grid-2">
             <GalleryCard
               key="1"
-              image="https://placehold.co/700"
+              image="/images/featured/core.png"
               title="Core Courses"
               link="#core-courses-carousel"
             />
             <GalleryCard
               key="2"
-              image="https://placehold.co/700"
+              image="/images/featured/elective.png"
               title="Electives"
               link="#electives-carousel"
             />
@@ -552,72 +619,6 @@ const Academics = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Academic Support */}
-      <section className="section">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Academic Support & Resources</h2>
-            <p>Comprehensive support to ensure your academic success</p>
-          </div>
-
-          <div className="grid grid-3">
-            <div className="support-card">
-              <div className="support-icon icon-tech"></div>
-              <h4>Academic Resources</h4>
-              <p>
-                All course materials, academic tuition up to 30 hours, and
-                specialized learning resources for your chosen program.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-innovation"></div>
-              <h4>Collaborative Learning</h4>
-              <p>
-                Team-based projects, group activities, and peer collaboration in
-                a dynamic learning environment.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-business"></div>
-              <h4>Expert Instruction</h4>
-              <p>
-                Passionate instructors who are experts in their fields providing
-                hands-on guidance and mentoring.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-tech"></div>
-              <h4>Competition Resources</h4>
-              <p>
-                Access to competition preparation and opportunities to
-                participate in prestigious academic competitions.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-language"></div>
-              <h4>Progress Assessment</h4>
-              <p>
-                Course completion certificates and recognition for academic
-                achievements and participation.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-arts"></div>
-              <h4>Additional Opportunities</h4>
-              <p>
-                Access to enrichment programs, advanced learning opportunities,
-                and specialized workshops.
-              </p>
-            </div>
           </div>
         </div>
       </section>

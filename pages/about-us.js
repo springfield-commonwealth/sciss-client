@@ -1,5 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import { AboutUsHero } from "@/constants/images";
+import FeatureSection from "../src/components/sections/FeatureSection";
 
 const AboutUs = () => {
   const founders = [
@@ -21,37 +23,37 @@ const AboutUs = () => {
       title: "Excellence in Education",
       description:
         "We maintain the highest academic standards and provide cutting-edge curriculum that prepares students for future success.",
-      icon: "🎓",
+      icon: "",
     },
     {
       title: "Global Perspective",
       description:
         "We celebrate diversity and foster international understanding through our multicultural community.",
-      icon: "🌍",
+      icon: "",
     },
     {
       title: "Innovation & Creativity",
       description:
         "We encourage creative thinking and innovative approaches to learning and problem-solving.",
-      icon: "💡",
+      icon: "",
     },
     {
       title: "Personal Growth",
       description:
         "We nurture individual development, building confidence and life skills that last a lifetime.",
-      icon: "🌱",
+      icon: "",
     },
     {
       title: "Integrity & Character",
       description:
         "We instill strong moral values and ethical principles in all our programs and interactions.",
-      icon: "⭐",
+      icon: "",
     },
     {
       title: "Community & Collaboration",
       description:
         "We build lasting friendships and teach the value of teamwork and mutual support.",
-      icon: "🤝",
+      icon: "",
     },
   ];
 
@@ -154,10 +156,10 @@ const AboutUs = () => {
   ];
 
   const stats = [
-    { number: "2000+", label: "Alumni Worldwide", icon: "🎓" },
-    { number: "35+", label: "Countries Represented", icon: "🌍" },
-    { number: "98%", label: "Student Satisfaction", icon: "⭐" },
-    { number: "10", label: "Years of Excellence", icon: "🏆" },
+    { number: "2000+", label: "Alumni Worldwide", icon: "" },
+    { number: "35+", label: "Countries Represented", icon: "" },
+    { number: "98%", label: "Student Satisfaction", icon: "" },
+    { number: "10", label: "Years of Excellence", icon: "" },
   ];
 
   const alumniSuccess = [
@@ -194,7 +196,7 @@ const AboutUs = () => {
         title="About SCISS"
         subtitle="Our Story & Mission"
         description="Discover the vision, values, and passionate educators who make SCISS a transformative experience for students from around the world."
-        backgroundImage="/images/academics-hero.jpg"
+        backgroundImage={AboutUsHero}
         ctaText="Meet Our Team"
         ctaLink="#team"
         secondaryCtaText="Our Programs"
@@ -219,7 +221,7 @@ const AboutUs = () => {
 
               <div className="mission-highlights">
                 <div className="highlight-item">
-                  <span className="highlight-icon">🎯</span>
+                  <span className="highlight-icon"></span>
                   <div>
                     <h4>Academic Excellence</h4>
                     <p>
@@ -230,7 +232,7 @@ const AboutUs = () => {
                 </div>
 
                 <div className="highlight-item">
-                  <span className="highlight-icon">🌟</span>
+                  <span className="highlight-icon"></span>
                   <div>
                     <h4>Personal Development</h4>
                     <p>
@@ -241,7 +243,7 @@ const AboutUs = () => {
                 </div>
 
                 <div className="highlight-item">
-                  <span className="highlight-icon">🤝</span>
+                  <span className="highlight-icon"></span>
                   <div>
                     <h4>Global Community</h4>
                     <p>
@@ -334,31 +336,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Alumni Success */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Alumni Success Stories</h2>
-            <p>
-              Our graduates go on to achieve amazing things around the world
-            </p>
-          </div>
-
-          <div className="grid grid-3">
-            {alumniSuccess.map((alumni, index) => (
-              <div key={index} className="alumni-card">
-                <div className="quote-icon">💬</div>
-                <blockquote>"{alumni.quote}"</blockquote>
-                <div className="alumni-info">
-                  <strong>{alumni.name}</strong>
-                  <span>{alumni.class}</span>
-                  <div className="alumni-achievement">{alumni.achievement}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

@@ -5,19 +5,17 @@ const HeroSection = ({
   subtitle, 
   description, 
   backgroundImage, 
-  ctaText = "Learn More", 
-  ctaLink = "/program-overview",
+  ctaText, 
+  ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
-  height = "90vh",
-  textAlign = "center" 
 }) => {
   return (
-    <section className="hero" style={{ height, textAlign }}>
+    <section className="hero">
       {backgroundImage && (
         <img 
-          src={backgroundImage} 
-          alt="" 
+          src={backgroundImage.src} 
+          alt={backgroundImage.alt}
           className="hero-background"
         />
       )}

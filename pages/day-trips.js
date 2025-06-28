@@ -1,6 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
+import { DayTripsHero } from "@/constants/images";
 
 const DayTrips = () => {
   const tripsCarouselItems = [
@@ -8,34 +9,34 @@ const DayTrips = () => {
       title: "Harvard University",
       description:
         "Explore the prestigious campus and learn about admissions and academic programs",
-      image: "/images/harvard-mit-trip.jpg",
+      image: "/images/slider/home/harvard-trip.JPG",
     },
     {
       title: "MIT Campus Tour",
       description:
         "Discover cutting-edge research facilities and innovation labs",
-      image: "/images/harvard-mit-trip.jpg",
+      image: "/images/highlights/mit-visit.png",
     },
     {
       title: "Yale University",
       description: "Tour the historic campus and attend guest lectures",
-      image: "/images/harvard-mit-trip.jpg",
+      image: "/images/carousel/yale.png",
     },
     {
       title: "Basketball Hall of Fame",
       description: "Experience the history and legacy of basketball",
-      image: "/images/sports-basketball.png",
+      image: "/images/carousel/hall-of-fame.jpg",
     },
     {
       title: "Museum Visits",
       description:
         "Educational visits to world-class museums and cultural centers",
-      image: "/images/activities-hero.jpg",
+      image: "/images/carousel/museum.jpg",
     },
     {
       title: "Six Flags Adventure",
       description: "Thrilling amusement park experience with friends",
-      image: "/images/activities-hero.jpg",
+      image: "/images/carousel/six-flags.webp",
     },
   ];
 
@@ -246,7 +247,7 @@ const DayTrips = () => {
         title="Unforgettable Day Trips"
         subtitle="Explore & Discover"
         description="Journey beyond the classroom with exciting trips to world-renowned universities, cultural landmarks, and fun destinations throughout New England."
-        backgroundImage="/images/harvard-mit-trip.jpg"
+        backgroundImage={DayTripsHero}
         ctaText="View University Trips"
         ctaLink="#universities"
         secondaryCtaText="See All Trips"

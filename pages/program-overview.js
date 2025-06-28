@@ -1,17 +1,26 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import WeeklySchedule from "@/components/sections/WeeklySchedule";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import Carousel from "@/components/ui/Carousel";
+import { ProgramOverviewHero } from "@/constants/images";
 
 const ProgramOverview = () => {
   const coreCourses = [
-    { image: "https://placehold.co/500", title: "Courses", link: "/academics" },
     {
-      image: "https://placehold.co/500",
+      image: "/images/featured/core.png",
+      title: "Courses",
+      link: "/academics",
+    },
+    {
+      image: "/images/carousel/dance.png",
       title: "Activities",
       link: "/life-activities",
     },
-    { image: "https://placehold.co/500", title: "Trips", link: "/day-trips" },
+    {
+      image: "/images/slider/home/harvard-trip.JPG",
+      title: "Trips",
+      link: "/day-trips",
+    },
   ];
 
   return (
@@ -24,7 +33,7 @@ const ProgramOverview = () => {
         title="Program Overview"
         subtitle="Excellence in Education"
         description="A comprehensive overview of our academic programs, daily structure, and what makes SCISS a transformative summer experience."
-        backgroundImage="/images/academics-hero.jpg"
+        backgroundImage={ProgramOverviewHero}
         // ctaText="View Academic Programs"
         ctaLink="#program-carousel"
         // secondaryCtaText="Apply Today"

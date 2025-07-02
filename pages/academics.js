@@ -222,11 +222,13 @@ const Academics = () => {
       </section>
 
       {/* instructors Section */}
-      <FacultySection
-        title="Meet Our Instructors"
-        desc="Learn from industry professionals and academic experts"
-        faculty={AcademicsInstructorsHighlights}
-      />
+      <section id="faculty">
+        <FacultySection
+          title="Meet Our Instructors"
+          desc="Learn from industry professionals and academic experts"
+          faculty={AcademicsInstructorsHighlights}
+        />
+      </section>
     </Layout>
   );
 };

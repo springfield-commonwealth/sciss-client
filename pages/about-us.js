@@ -26,7 +26,7 @@ const AboutUs = () => {
       />
 
       {/* Mission & Vision */}
-      <section className="section">
+      <section className="section" id="mission">
         <div className="container">
           <div className="grid grid-2">
             <div className="mission-section">
@@ -101,7 +101,7 @@ const AboutUs = () => {
       </section>
 
       {/* Values */}
-      <section className="section bg-light">
+      <section className="section bg-light" id="values">
         <div className="container">
           <div className="text-center mb-5">
             <h2>Our Core Values</h2>
@@ -121,7 +121,7 @@ const AboutUs = () => {
       </section>
 
       {/* Leadership Team */}
-      <section id="team" className="section">
+      <section id="team" className="section" id="team">
         <div className="container">
           <div className="text-center mb-5">
             <h2>Leadership Team</h2>

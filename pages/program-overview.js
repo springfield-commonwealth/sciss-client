@@ -97,13 +97,6 @@ const ProgramOverview = () => {
       {/* program carousel */}
       <section className="section bg-light" id="program-carousel">
         <div className="container">
-          <Carousel items={ProgramOverviewCoreCourses} />
-        </div>
-      </section>
-
-      {/* electives carousel */}
-      <section className="section bg-light">
-        <div className="container">
           <div className="text-center mb-5">
             <h2>Activity Highlights</h2>
             <p>
@@ -113,6 +106,7 @@ const ProgramOverview = () => {
           </div>
 
           {/* <Carousel items={activitiesCarouselItems} /> */}
+          <Carousel items={ProgramOverviewCoreCourses} />
         </div>
       </section>
 

@@ -1,10 +1,7 @@
 /* Carousel Card Component Styles */
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
 
 .carousel-card {
-  flex: 0 0 500px;
+  flex: 0 0 600px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;

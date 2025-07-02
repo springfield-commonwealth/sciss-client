@@ -1,14 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  trailingSlash: true,
   images: {
     domains: [],
-    unoptimized: true
+    unoptimized: true,
   },
-  output: 'export',
-  distDir: 'dist',
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
-}
+  output: "export",
+  distDir: "dist",
+  basePath: "",
+  assetPrefix: "",
+  // Ensure no server-side features are used
+  experimental: {
+    esmExternals: false,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -48,6 +48,9 @@ importers:
       eslint-config-next:
         specifier: 15.3.4
         version: 15.3.4(eslint@9.29.0)(typescript@5.8.3)
+      prop-types:
+        specifier: ^15.8.1
+        version: 15.8.1
       typescript:
         specifier: ^5
         version: 5.8.3

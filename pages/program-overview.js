@@ -1,19 +1,11 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import WeeklySchedule from "@/components/sections/WeeklySchedule";
 import Carousel from "@/components/ui/Carousel";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
+import { ProgramOverviewHero } from "@/constants/images";
+import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 
 const ProgramOverview = () => {
-  const coreCourses = [
-    { image: "https://placehold.co/500", title: "Courses", link: "/academics" },
-    {
-      image: "https://placehold.co/500",
-      title: "Activities",
-      link: "/life-activities",
-    },
-    { image: "https://placehold.co/500", title: "Trips", link: "/day-trips" },
-  ];
-
   return (
     <Layout
       title="Program Overview - SCISS"
@@ -24,7 +16,7 @@ const ProgramOverview = () => {
         title="Program Overview"
         subtitle="Excellence in Education"
         description="A comprehensive overview of our academic programs, daily structure, and what makes SCISS a transformative summer experience."
-        backgroundImage="/images/academics-hero.jpg"
+        backgroundImage={ProgramOverviewHero}
         // ctaText="View Academic Programs"
         ctaLink="#program-carousel"
         // secondaryCtaText="Apply Today"
@@ -105,7 +97,7 @@ const ProgramOverview = () => {
       {/* program carousel */}
       <section className="section bg-light" id="program-carousel">
         <div className="container">
-          <Carousel items={coreCourses} />
+          <Carousel items={ProgramOverviewCoreCourses} />
         </div>
       </section>
 

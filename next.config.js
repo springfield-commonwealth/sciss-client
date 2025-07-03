@@ -12,7 +12,7 @@ const nextConfig = {
   assetPrefix: "",
   // Ensure no server-side features are used
   experimental: {
-    esmExternals: false,
+    // esmExternals: false,
   },
 };
 

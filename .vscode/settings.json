@@ -1,11 +1,11 @@
 {
   // TypeScript/JavaScript Configuration (built-in, no extensions needed)
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.includePackageJsonAutoImports": "on",
   "typescript.suggest.paths": true,
-  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
 
@@ -29,7 +29,7 @@
   // ESLint Configuration
   "eslint.validate": [
     "javascript",
-    "javascriptreact", 
+    "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
@@ -57,7 +57,7 @@
     "README.*": "AUTHORS, BACKERS.md, CHANGELOG*, CONTRIBUTING.md, CONTRIBUTORS, LICENSE*, SECURITY.md"
   },
 
-  // Git Integration  
+  // Git Integration
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,

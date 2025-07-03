@@ -1,9 +1,9 @@
+import DesktopNav from "@/components/ui/DesktopNav";
+import MobileNav from "@/components/ui/MobileNav";
 import { LogoBlack } from "@/constants/images";
+import useNavigationState from "@/hooks/useNavigationState";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import DesktopNav from "./DesktopNav";
-import MobileNav from "./MobileNav";
-import useNavigationState from "./useNavigationState";
 
 const navLinks = [
   { href: "/program-overview", label: "Program" },

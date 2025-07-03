@@ -1,12 +1,8 @@
 import Layout from "@/components/layouts/Layout";
+import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
-import {
-  AboutUsFounders,
-  AboutUsStats,
-  AboutUsValues,
-} from "@/constants/aboutUsContent";
+import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
-import FacultySection from "../src/components/sections/FacultySection";
 
 const LeadershipTeam = [
   {
@@ -19,9 +15,7 @@ const LeadershipTeam = [
     name: "Beth Moriarty",
     role: "Camp Director",
     photo: "/images/faculties/beth.JPG",
-    background: [
-      "President of SCA"
-    ],
+    background: ["President of SCA"],
     expertise: "President of SCA",
   },
   {
@@ -146,15 +140,14 @@ const AboutUs = () => {
         </div>
       </section>
 
-
-     <section className="section bg-light" id="team">
-      <FacultySection
-        title="Leadership Team"
-        desc="Meet the visionary educators who lead SCISS with passion and dedication"
-        faculty={LeadershipTeam}
-        gridsize="3"
-      />
-     </section>
+      <section className="section bg-light" id="team">
+        <FacultySection
+          title="Leadership Team"
+          desc="Meet the visionary educators who lead SCISS with passion and dedication"
+          faculty={LeadershipTeam}
+          gridsize="3"
+        />
+      </section>
     </Layout>
   );
 };

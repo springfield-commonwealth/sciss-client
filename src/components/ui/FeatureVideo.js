@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useAutoplayOnView from "./useAutoplayOnView";
+import useAutoplayOnView from "@/hooks/useAutoplayOnView";
 
 const FeatureVideo = ({
   VideoObject,

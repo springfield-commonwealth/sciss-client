@@ -1,5 +1,5 @@
+import ChevronDown from "@/components/ui/ChevronDown";
 import Link from "next/link";
-import ChevronDown from "./ChevronDown";
 
 const MobileNav = ({
   navLinks,

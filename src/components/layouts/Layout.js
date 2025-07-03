@@ -1,8 +1,8 @@
+import Footer from "@/components/ui/Footer";
+import FooterCTA from "@/components/ui/FooterCTA";
+import Navigation from "@/components/ui/Navigation";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import Footer from "../ui/Footer";
-import FooterCTA from "../ui/FooterCTA";
-import Navigation from "../ui/Navigation";
 
 const inter = Inter({
   subsets: ["latin"],

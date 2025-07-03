@@ -1,6 +1,5 @@
+import { campSchedules } from "@/constants/CampScheduleData";
 import { useState } from "react";
-import { campSchedules } from "../../constants/CampScheduleData";
-
 
 const CampSchedule = () => {
   const [selectedSession, setSelectedSession] = useState("session1");

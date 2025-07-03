@@ -1,6 +1,6 @@
+import ChevronDown from "@/components/ui/ChevronDown";
 import Link from "next/link";
 import { useRef } from "react";
-import ChevronDown from "./ChevronDown";
 
 const DesktopNav = ({
   navLinks,

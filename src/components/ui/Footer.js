@@ -1,5 +1,5 @@
+import SocialLink from "@/components/ui/SocialLink";
 import Link from "next/link";
-import SocialLink from "./SocialLink";
 
 const Footer = () => {
   const socialLinks = [
@@ -116,8 +116,8 @@ const Footer = () => {
       <div className="footerBottom">
         <p>
           &copy; 2025 Springfield Commonwealth International Summer School (A
-          Product of Viswise Academy, 501(c)(3) non-profit (EIN: 85-2331341)). All rights
-          reserved.
+          Product of Viswise Academy, 501(c)(3) non-profit (EIN: 85-2331341)).
+          All rights reserved.
         </p>
       </div>
     </footer>

@@ -4,8 +4,13 @@ const LogoBlue = "/logos/sciss-logo-blue.png";
 const LogoYellow = "/logos/sciss-logo-yellow.png";
 const LogoWhiteLong = "/logos/sciss-logo-white-long.png";
 
-const HomeFeature = {
+const HomeFeaturePresidents = {
   src: "/images/featured/presidents.png",
+  alt: "Beth and Angelene",
+};
+
+const HomeFeature = {
+  src: "/images/featured/school-hero.jpg",
   alt: "Welcome to SCISS",
 };
 
@@ -77,6 +82,7 @@ export {
   DayTripsHero,
   HomeFeature,
   HomeHero,
+  HomeFeaturePresidents,
   HomeSliderImages,
   LifeActivitiesHero,
   LogoBlack,

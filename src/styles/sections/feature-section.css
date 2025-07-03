@@ -1,0 +1,13 @@
+/* FeatureSection Component Styles */
+
+.feature-section-image__img {
+  object-fit: cover;
+  height: auto;
+  border-radius: 0.5rem;
+} 
+
+.feature-section-image__picture {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}

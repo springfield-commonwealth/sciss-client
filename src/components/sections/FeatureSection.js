@@ -1,7 +1,7 @@
-const FeatureSection = ({ heading, image, paragraphs }) => (
+const FeatureSection = ({ heading, image, paragraphs, imageWidth }) => (
   <section className="section bg-light feature-section">
     <div className="container">
-      <h2 className="text-center mb-5">{heading}</h2>
+      <h1 className="text-center mb-5">{heading}</h1>
       <div className="grid grid-2">
         {image && (
           <div className="feature-section-image">
@@ -21,10 +21,7 @@ const FeatureSection = ({ heading, image, paragraphs }) => (
                   alt={image.alt}
                   className="feature-section-image__img"
                   style={{
-                    objectFit: "cover",
-                    width: "80%",
-                    height: "auto",
-                    borderRadius: "0.5rem",
+                    "width": `${imageWidth}`
                   }}
                 />
               </picture>

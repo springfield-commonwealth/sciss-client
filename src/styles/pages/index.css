@@ -6,12 +6,6 @@
   margin: 1.1rem auto;
 }
 
-.featured-image__picture {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-}
-
 .welcome-text,
 .welcome-features {
   padding: 1rem;

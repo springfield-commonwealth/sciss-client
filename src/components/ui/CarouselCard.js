@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 
 const CarouselCard = (item, index) => {
-
   const router = useRouter();
 
   const handleClick = () => {
@@ -9,9 +8,18 @@ const CarouselCard = (item, index) => {
       router.push(item.link);
     }
   };
-    
+
   return (
-    <div key={index} className="carousel-card" onClick={handleClick}>
+    <div
+      key={index}
+      className="carousel-card"
+      role="button"
+      tabIndex={0}
+      onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") handleClick();
+      }}
+    >
       <div className="card-image">
         <img src={item.image} alt={item.title} loading="lazy" />
         <div className="carousel-overlay">

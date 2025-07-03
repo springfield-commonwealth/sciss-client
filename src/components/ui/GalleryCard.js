@@ -1,6 +1,4 @@
 const GalleryCard = (item, index) => {
-
-
   const handleClick = () => {
     if (item.link) {
       const target = document.querySelector(item.link);
@@ -11,7 +9,16 @@ const GalleryCard = (item, index) => {
   };
 
   return (
-    <div key={index} className="gallery-card" onClick={handleClick}>
+    <div
+      key={index}
+      className="gallery-card"
+      role="button"
+      tabIndex={0}
+      onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") handleClick();
+      }}
+    >
       <div className="card-image">
         <img src={item.image} alt={item.title} loading="lazy" />
         <div className="gallery-overlay">

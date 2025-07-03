@@ -6,6 +6,32 @@ import {
   AboutUsValues,
 } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
+import FacultySection from "../src/components/sections/FacultySection";
+
+const LeadershipTeam = [
+  {
+    name: "Si Qin",
+    role: "Camp President",
+    photo: "/images/faculties/si.JPG",
+    background: ["CEO of SCISS"],
+  },
+  {
+    name: "Beth Moriarty",
+    role: "Camp Director",
+    photo: "/images/faculties/beth.JPG",
+    background: [
+      "President of SCA"
+    ],
+    expertise: "President of SCA",
+  },
+  {
+    name: "Erik",
+    role: "Camp Director",
+    photo: "/images/instructors/erik.jpg",
+    background: [],
+    expertise: "",
+  },
+];
 
 const AboutUs = () => {
   return (
@@ -120,43 +146,15 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section id="team" className="section" id="team">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Leadership Team</h2>
-            <p>
-              Meet the visionary educators who lead SCISS with passion and
-              dedication
-            </p>
-          </div>
 
-          <div className="founders-grid">
-            {AboutUsFounders.map((founder, index) => (
-              <div key={index} className="founder-card">
-                <div className="founder-header">
-                  <h3>{founder.name}</h3>
-                  <div className="founder-title">{founder.title}</div>
-                  <div className="founder-background">{founder.background}</div>
-                </div>
-
-                <p className="founder-bio">{founder.bio}</p>
-
-                <div className="founder-expertise">
-                  <h4>Areas of Expertise:</h4>
-                  <div className="expertise-tags">
-                    {founder.expertise.map((area, idx) => (
-                      <span key={idx} className="expertise-tag">
-                        {area}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="section bg-light" id="team">
+      <FacultySection
+        title="Leadership Team"
+        desc="Meet the visionary educators who lead SCISS with passion and dedication"
+        faculty={LeadershipTeam}
+        gridsize="3"
+      />
+     </section>
     </Layout>
   );
 };

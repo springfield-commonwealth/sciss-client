@@ -11,7 +11,7 @@ import {
   HomeTestimonials,
   HomeWelcomeParagraphs,
 } from "@/constants/homeContent";
-import { HomeFeature, HomeHero, HomeSliderImages } from "@/constants/images";
+import { HomeFeature, HomeFeaturePresidents, HomeHero, HomeSliderImages } from "@/constants/images";
 import { WelcomeVideo } from "@/constants/videos";
 
 const HomePage = () => {
@@ -30,13 +30,15 @@ const HomePage = () => {
 
       {/* Welcome Section */}
       <FeatureSection
-        heading="Welcome to SC International Summer School"
+        heading="Welcome to Springfield Commonwealth International Summer School"
         paragraphs={HomeWelcomeParagraphs}
+        image={HomeFeature}
+        imageWidth={"90%"}
       />
 
       <FeatureVideo
         VideoObject={WelcomeVideo}
-        autoPlay={true}
+        autoPlay={false}
         muted={true}
         loop={true}
         playsInline={true}
@@ -53,8 +55,9 @@ const HomePage = () => {
 
       <FeatureSection
         heading="Letter From the President"
-        image={HomeFeature}
+        image={HomeFeaturePresidents}
         paragraphs={HomePresidentLetter}
+        imageWidth={"70%"}
       />
 
       {/* Testimonials Section */}

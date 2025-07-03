@@ -215,7 +215,7 @@ const Academics = () => {
       </section>
 
       {/* Camp Schedule Section */}
-      <section className="section bg-light">
+      <section className="section bg-light" id="schedule">
         <div className="container">
           <CampSchedule />
         </div>
@@ -227,6 +227,7 @@ const Academics = () => {
           title="Meet Our Instructors"
           desc="Learn from industry professionals and academic experts"
           faculty={AcademicsInstructorsHighlights}
+          gridsize="3"
         />
       </section>
     </Layout>

@@ -42,7 +42,7 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  object-fit: cover center;
+  object-fit: cover;
   box-shadow: var(--shadow-elevated);
   background: #f8f9fa;
 }

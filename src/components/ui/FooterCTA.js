@@ -9,7 +9,7 @@ const FooterCTA = ({linkTitle, link}) => {
           Join students from around the world for an unforgettable experience
         </p>
         <div className="cta-actions">
-          <Link href="/tuitions-and-fees" className="btn btn-primary btn-large">
+          <Link href="/apply" className="btn btn-primary btn-large">
             Apply Now
           </Link>
           <Link href={link} className="btn btn-secondary btn-large">

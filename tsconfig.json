@@ -71,7 +71,8 @@
       "@/hooks/*": ["./src/hooks/*"] /* Custom hooks */,
       "@/types/*": ["./types/*"] /* Type definitions */,
       "@/data/*": ["./src/data/*"],
-      "@/constants/*": ["./src/constants/*"]
+      "@/constants/*": ["./src/constants/*"],
+      "@/api/*": ["./src/api/*"],
     },
 
     /* Next.js Specific */

@@ -55,6 +55,7 @@ html {
   --success-color: #27AE60;
   --warning-color: #F39C12;
   --info-color: #3498DB;
+  --error-color: #cc1d2f;
 }
 
 body {

@@ -185,11 +185,6 @@
   color: var(--text-dark);
 }
 
-.included-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
 
 .service-category {
   background: white;
@@ -512,9 +507,9 @@
     font-size: 3rem;
   }
 
-  .included-services {
+  /* .included-services {
     grid-template-columns: 1fr;
-  }
+  } */
 
   .scholarship-header {
     flex-direction: column;

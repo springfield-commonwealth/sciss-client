@@ -7,6 +7,7 @@ import {
   TuitionsIncludedServices,
   TuitionsSessions,
 } from "@/constants/tuitionsAndFeesContent";
+import Link from "next/link";
 
 const TuitionsAndFees = () => {
   return (
@@ -20,7 +21,7 @@ const TuitionsAndFees = () => {
         subtitle="Invest in Your Future"
         description="Discover our competitive pricing, flexible payment options, and scholarship opportunities for an exceptional summer learning experience."
         backgroundImage={TuitionHero}
-        ctaText="Apply Now"
+        ctaText="Application Process"
         ctaLink="#apply"
         // secondaryCtaText="View Payment Plans"
         // secondaryCtaLink="#payment"
@@ -60,7 +61,7 @@ const TuitionsAndFees = () => {
             <p>Comprehensive program with no hidden fees</p>
           </div>
 
-          <div className="included-services">
+          <div className="grid grid-2">
             {TuitionsIncludedServices.map((service, index) => (
               <div key={index} className="service-category">
                 <h3>{service.category}</h3>
@@ -130,6 +131,9 @@ const TuitionsAndFees = () => {
                 </div>
               </div>
             ))}
+            <Link href="/apply" className="btn btn-primary">
+              Apply Now
+            </Link>
           </div>
         </div>
       </section>

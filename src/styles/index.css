@@ -11,6 +11,7 @@
 @import './components/weekly-schedule.css';
 @import './components/footer.css';
 @import './components/faculty-card.css';
+@import './components/application-form.css';
 
 /* Page Styles */
 @import './pages/index.css';
@@ -21,7 +22,8 @@
 @import './pages/day-trips.css';
 @import './pages/a-day-at-sciss.css';
 @import './pages/parent-information.css';
-@import './pages/tuitions-and-fees.css'; 
+@import './pages/tuitions-and-fees.css';
+@import './pages/apply.css';
 
 /* Section Styles */
 @import './sections/hero-section.css';

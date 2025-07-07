@@ -6,7 +6,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const navLinks = [
-  { href: "/program-overview", label: "Program" },
+  {
+    label: "Program",
+    href: "/program-overview",
+    children: [
+      { href: "/program-overview", label: "Overview" },
+      { href: "/tuitions-and-fees", label: "Tuitions & Fees" },
+    ],
+  },
   {
     label: "Academics",
     href: "/academics",
@@ -71,7 +78,7 @@ const Navigation = () => {
                 setOpenDropdown={setOpenDropdown}
               />
               <div className="nav-cta">
-                <Link href="/tuitions-and-fees" className="btn btn-primary">
+                <Link href="/apply" className="btn btn-primary">
                   Apply Now
                 </Link>
               </div>

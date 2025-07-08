@@ -17,3 +17,5 @@ node_modules/
 
 *.mp4
 dist.zip
+
+.env.production

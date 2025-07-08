@@ -64,7 +64,14 @@ export const applicationFormSchema = z.object({
     last: z.string().min(1, "Parent last name is required"),
   }),
   parentEmail: z.string().email("Please enter a valid parent email address"),
-  parentPhone: z.string().min(1, "Parent phone is required"),
+  parentPhone: z
+    .string()
+    .min(10, "Parent phone must be at least 10 digits")
+    .max(15, "Parent phone must be at most 15 digits")
+    .regex(
+      /^[+()\\d\\s-]+$/,
+      "Parent phone must contain only numbers and valid symbols"
+    ),
   transcript: z
     .any()
     .refine(

@@ -1,15 +1,19 @@
-import { mockSubmit } from "@/api/mockSubmit";
+import {
+  submitApplication,
+  validateEmail,
+  validateTranscriptFile,
+} from "@/api/applicationApi.js";
 import { applicationFormSchema } from "@/lib/schemas/applicationFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 
-// useApplicationForm: Handles all business logic for the ApplicationForm
 export const useApplicationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(null);
-
+  const [emailValidation, setEmailValidation] = useState(null);
+  const [isValidatingEmail, setIsValidatingEmail] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +22,8 @@ export const useApplicationForm = () => {
     formState: { errors, isValid },
     reset,
     trigger,
+    setError,
+    clearErrors,
   } = useForm({
     resolver: zodResolver(applicationFormSchema),
     mode: "onChange",
@@ -37,14 +43,11 @@ export const useApplicationForm = () => {
       transcript: null,
     },
   });
-
   const formValues = watch();
-
   // Handle form field changes
   const onChange = useCallback(
     (e) => {
       const { name, value, type, checked } = e.target;
-
       if (name.includes(".")) {
         // Handle nested objects like studentName.first
         const [parent, key] = name.split(".");
@@ -63,50 +66,136 @@ export const useApplicationForm = () => {
       } else {
         setValue(name, value);
       }
-
+      // Clear any existing errors for this field
+      clearErrors(name);
       // Trigger validation for the changed field
       trigger(name);
+      // Clear email validation when student email changes
+      if (name === "studentEmail") {
+        setEmailValidation(null);
+      }
     },
-    [setValue, formValues, trigger]
+    [setValue, formValues, trigger, clearErrors]
   );
-
-  // Handle file upload
+  // Handle file upload with validation
   const onFileChange = useCallback(
     (e) => {
       const file = e.target.files[0];
+
+      if (file) {
+        // Validate file before setting
+        const validation = validateTranscriptFile(file);
+        if (!validation.valid) {
+          setError("transcript", {
+            type: "manual",
+            message: validation.message,
+          });
+          return;
+        }
+        clearErrors("transcript");
+      }
+
       setValue("transcript", file);
     },
-    [setValue]
+    [setValue, setError, clearErrors]
   );
+  // Validate email address against database
+  const validateStudentEmail = useCallback(
+    async (email) => {
+      if (!email || !email.includes("@")) return;
+      setIsValidatingEmail(true);
+      try {
+        const result = await validateEmail(email);
+        setEmailValidation(result);
 
+        if (!result.available) {
+          setError("studentEmail", {
+            type: "manual",
+            message: "This email address is already registered",
+          });
+        } else {
+          clearErrors("studentEmail");
+        }
+      } catch (error) {
+        console.error("Email validation error:", error);
+        setEmailValidation({
+          available: true,
+          message: "Unable to validate email",
+        });
+      } finally {
+        setIsValidatingEmail(false);
+      }
+    },
+    [setError, clearErrors]
+  );
+  // Debounced email validation
+  const onEmailBlur = useCallback(
+    (e) => {
+      const email = e.target.value;
+      if (email) {
+        validateStudentEmail(email);
+      }
+    },
+    [validateStudentEmail]
+  );
   // Handle form submission
   const onSubmit = useCallback(
     async (data) => {
       setIsSubmitting(true);
       setSubmitError(null);
-
       try {
-        const result = await mockSubmit(data);
+        // Final file validation
+        if (data.transcript) {
+          const fileValidation = validateTranscriptFile(data.transcript);
+          if (!fileValidation.valid) {
+            throw new Error(fileValidation.message);
+          }
+        }
+        // Submit to PHP backend
+        const result = await submitApplication(data);
+
+        console.log("Application submitted successfully:", result);
+
+        // Show success state
         setSubmitSuccess(true);
-        reset(); // Clear form after successful submission
-        console.log("Form submitted successfully:", result);
+
+        // Reset form after successful submission
+        reset();
+        setEmailValidation(null);
+
+        // Log success for analytics/debugging
+        if (window.gtag) {
+          window.gtag("event", "application_submit", {
+            event_category: "form",
+            event_label: "success",
+            application_id: result.applicationId,
+          });
+        }
       } catch (error) {
-        setSubmitError(error.message);
         console.error("Form submission failed:", error);
+        setSubmitError(error.message);
+
+        // Log error for analytics/debugging
+        if (window.gtag) {
+          window.gtag("event", "application_submit", {
+            event_category: "form",
+            event_label: "error",
+            error_message: error.message,
+          });
+        }
       } finally {
         setIsSubmitting(false);
       }
     },
     [reset]
   );
-
   // Reset form state
   const resetForm = useCallback(() => {
     reset();
     setSubmitSuccess(false);
     setSubmitError(null);
+    setEmailValidation(null);
   }, [reset]);
-
   // Get error message for a specific field
   const getFieldError = useCallback(
     (fieldName) => {
@@ -118,7 +207,17 @@ export const useApplicationForm = () => {
     },
     [errors]
   );
-
+  // Check if email is being validated
+  const isEmailValidating = useCallback(
+    (fieldName) => {
+      return fieldName === "studentEmail" && isValidatingEmail;
+    },
+    [isValidatingEmail]
+  );
+  // Get email validation status
+  const getEmailValidationStatus = useCallback(() => {
+    return emailValidation;
+  }, [emailValidation]);
   return {
     // Form state
     formValues,
@@ -127,15 +226,19 @@ export const useApplicationForm = () => {
     isSubmitting,
     submitSuccess,
     submitError,
-
+    emailValidation,
+    isValidatingEmail,
     // Form handlers
     onChange,
     onFileChange,
     onSubmit: handleSubmit(onSubmit),
+    onEmailBlur,
     resetForm,
-
     // Utilities
     getFieldError,
+    isEmailValidating,
+    getEmailValidationStatus,
     register,
+    validateStudentEmail,
   };
 };

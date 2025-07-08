@@ -1,5 +1,6 @@
 import formOptions from "@/data/formOptions.json";
 import { useApplicationForm } from "@/hooks/useApplicationForm";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const ApplicationForm = () => {
@@ -14,8 +15,12 @@ const ApplicationForm = () => {
     onSubmit,
     resetForm,
     getFieldError,
+    onEmailBlur,
+    emailValidation,
+    isEmailValidating,
   } = useApplicationForm();
 
+  const router = useRouter();
   const [dragActive, setDragActive] = useState(false);
 
   const handleDrag = (e) => {
@@ -70,18 +75,20 @@ const ApplicationForm = () => {
       <div className="application-form">
         <div style={{ textAlign: "center", padding: "2rem" }}>
           <h2 style={{ color: "var(--success-color)", marginBottom: "1rem" }}>
-            ✅ Application Submitted Successfully!
+            Application Submitted!
           </h2>
           <p style={{ marginBottom: "2rem", color: "var(--text-light)" }}>
             Thank you for your application. We'll contact you soon with further
             details.
           </p>
           <button
-            onClick={resetForm}
-            className="submit-btn"
-            style={{ background: "var(--primary-blue)" }}
+            onClick={() => {
+              resetForm();
+              router.push("/");
+            }}
+            className="btn btn-primary"
           >
-            Submit Another Application
+            Go to Home Page
           </button>
         </div>
       </div>
@@ -140,14 +147,21 @@ const ApplicationForm = () => {
         </div>
         <label className="form-label">
           Email *
-          {getFieldError("studentEmail") && (
+          {getFieldError("studentEmail") ? (
             <span className="error">{getFieldError("studentEmail")}</span>
-          )}
+          ) : isEmailValidating("studentEmail") ? (
+            <span className="info">Checking email availability...</span>
+          ) : emailValidation &&
+            emailValidation.message &&
+            !emailValidation.available ? (
+            <span className="error">{emailValidation.message}</span>
+          ) : null}
           <input
             type="email"
             name="studentEmail"
             value={formValues.studentEmail}
             onChange={onChange}
+            onBlur={onEmailBlur}
             autoComplete="email"
           />
         </label>

@@ -1,3 +1,4 @@
+import { isValidPhoneNumber } from "react-phone-number-input";
 import { z } from "zod";
 
 export const applicationFormSchema = z.object({
@@ -6,7 +7,13 @@ export const applicationFormSchema = z.object({
     last: z.string().min(1, "Last name is required"),
   }),
   studentEmail: z.string().email("Please enter a valid email address"),
-  studentCell: z.string().min(1, "Cell phone is required"),
+  studentCell: z
+    .string()
+    .min(1, "Cell phone is required")
+    .refine(
+      (value) => isValidPhoneNumber(value),
+      "Please enter a valid phone number"
+    ),
   birthDate: z.string().min(1, "Birth date is required"),
   gender: z.enum(["Male", "Female"], {
     required_error: "Please select your gender",
@@ -66,11 +73,10 @@ export const applicationFormSchema = z.object({
   parentEmail: z.string().email("Please enter a valid parent email address"),
   parentPhone: z
     .string()
-    .min(10, "Parent phone must be at least 10 digits")
-    .max(15, "Parent phone must be at most 15 digits")
-    .regex(
-      /^[+()\\d\\s-]+$/,
-      "Parent phone must contain only numbers and valid symbols"
+    .min(1, "Parent phone is required")
+    .refine(
+      (value) => isValidPhoneNumber(value),
+      "Please enter a valid phone number"
     ),
   transcript: z
     .any()

@@ -2,6 +2,8 @@ import formOptions from "@/data/formOptions.json";
 import { useApplicationForm } from "@/hooks/useApplicationForm";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const ApplicationForm = () => {
   const {
@@ -22,6 +24,8 @@ const ApplicationForm = () => {
 
   const router = useRouter();
   const [dragActive, setDragActive] = useState(false);
+  const [studentCellCountry, setStudentCellCountry] = useState("US");
+  const [parentPhoneCountry, setParentPhoneCountry] = useState("US");
 
   const handleDrag = (e) => {
     e.preventDefault();
@@ -117,7 +121,9 @@ const ApplicationForm = () => {
         <legend>Student Information</legend>
         <div className="form-row">
           <label className="form-label">
-            First Name *
+            <span className="label-text">
+              First Name <span className="asterisk">*</span>
+            </span>
             {getFieldError("studentName.first") && (
               <span className="error">
                 {getFieldError("studentName.first")}
@@ -132,7 +138,9 @@ const ApplicationForm = () => {
             />
           </label>
           <label className="form-label">
-            Last Name *
+            <span className="label-text">
+              Last Name <span className="asterisk">*</span>
+            </span>
             {getFieldError("studentName.last") && (
               <span className="error">{getFieldError("studentName.last")}</span>
             )}
@@ -146,7 +154,9 @@ const ApplicationForm = () => {
           </label>
         </div>
         <label className="form-label">
-          Email *
+          <span className="label-text">
+            Email <span className="asterisk">*</span>
+          </span>
           {getFieldError("studentEmail") ? (
             <span className="error">{getFieldError("studentEmail")}</span>
           ) : isEmailValidating("studentEmail") ? (
@@ -165,21 +175,32 @@ const ApplicationForm = () => {
             autoComplete="email"
           />
         </label>
-        <label className="form-label">
-          Cell Phone *
+        <label className="form-label" htmlFor="studentCell">
+          <span className="label-text">
+            Cell Phone <span className="asterisk">*</span>
+          </span>
           {getFieldError("studentCell") && (
             <span className="error">{getFieldError("studentCell")}</span>
           )}
-          <input
-            type="tel"
+          <PhoneInput
             name="studentCell"
+            id="studentCell"
+            international
+            defaultCountry="US"
             value={formValues.studentCell}
-            onChange={onChange}
-            autoComplete="tel"
+            onChange={(value, data) => {
+              onChange({ target: { name: "studentCell", value: value || "" } });
+              if (data && data.country) setStudentCellCountry(data.country);
+            }}
+            onCountryChange={setStudentCellCountry}
+            placeholder="Enter phone number"
+            className="phone-input"
           />
         </label>
         <label className="form-label">
-          Birth Date *
+          <span className="label-text">
+            Birth Date <span className="asterisk">*</span>
+          </span>
           {getFieldError("birthDate") && (
             <span className="error">{getFieldError("birthDate")}</span>
           )}
@@ -191,7 +212,9 @@ const ApplicationForm = () => {
           />
         </label>
         <label className="form-label">
-          Gender *
+          <span className="label-text">
+            Gender <span className="asterisk">*</span>
+          </span>
           {getFieldError("gender") && (
             <span className="error">{getFieldError("gender")}</span>
           )}
@@ -215,7 +238,9 @@ const ApplicationForm = () => {
           </select>
         </label>
         <label className="form-label">
-          Rising Grade *
+          <span className="label-text">
+            Rising Grade <span className="asterisk">*</span>
+          </span>
           {getFieldError("risingGrade") && (
             <span className="error">{getFieldError("risingGrade")}</span>
           )}
@@ -239,7 +264,9 @@ const ApplicationForm = () => {
           </select>
         </label>
         <label className="form-label">
-          T-Shirt Size *
+          <span className="label-text">
+            T-Shirt Size <span className="asterisk">*</span>
+          </span>
           {getFieldError("tshirtSize") && (
             <span className="error">{getFieldError("tshirtSize")}</span>
           )}
@@ -323,7 +350,9 @@ const ApplicationForm = () => {
         <legend>Parent/Guardian Information</legend>
         <div className="form-row">
           <label className="form-label">
-            First Name *
+            <span className="label-text">
+              First Name <span className="asterisk">*</span>
+            </span>
             {getFieldError("parentName.first") && (
               <span className="error">{getFieldError("parentName.first")}</span>
             )}
@@ -336,7 +365,9 @@ const ApplicationForm = () => {
             />
           </label>
           <label className="form-label">
-            Last Name *
+            <span className="label-text">
+              Last Name <span className="asterisk">*</span>
+            </span>
             {getFieldError("parentName.last") && (
               <span className="error">{getFieldError("parentName.last")}</span>
             )}
@@ -350,7 +381,9 @@ const ApplicationForm = () => {
           </label>
         </div>
         <label className="form-label">
-          Email *
+          <span className="label-text">
+            Email <span className="asterisk">*</span>
+          </span>
           {getFieldError("parentEmail") && (
             <span className="error">{getFieldError("parentEmail")}</span>
           )}
@@ -362,17 +395,26 @@ const ApplicationForm = () => {
             autoComplete="email"
           />
         </label>
-        <label className="form-label">
-          Phone *
+        <label className="form-label" htmlFor="parentPhone">
+          <span className="label-text">
+            Phone <span className="asterisk">*</span>
+          </span>
           {getFieldError("parentPhone") && (
             <span className="error">{getFieldError("parentPhone")}</span>
           )}
-          <input
-            type="tel"
+          <PhoneInput
             name="parentPhone"
+            id="parentPhone"
+            international
+            defaultCountry="US"
             value={formValues.parentPhone}
-            onChange={onChange}
-            autoComplete="tel"
+            onChange={(value, data) => {
+              onChange({ target: { name: "parentPhone", value: value || "" } });
+              if (data && data.country) setParentPhoneCountry(data.country);
+            }}
+            onCountryChange={setParentPhoneCountry}
+            placeholder="Enter phone number"
+            className="phone-input"
           />
         </label>
       </fieldset>
@@ -381,7 +423,7 @@ const ApplicationForm = () => {
       <fieldset>
         <legend>Scholarship Application (Optional)</legend>
         <label className="form-label">
-          Upload Transcript
+          <span className="label-text">Upload Transcript</span>
           {getFieldError("transcript") && (
             <span className="error">{getFieldError("transcript")}</span>
           )}

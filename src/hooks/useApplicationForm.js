@@ -14,6 +14,29 @@ export const useApplicationForm = () => {
   const [submitError, setSubmitError] = useState(null);
   const [emailValidation, setEmailValidation] = useState(null);
   const [isValidatingEmail, setIsValidatingEmail] = useState(false);
+  const defaultValues = {
+    studentName: { first: "", last: "", preferredName: "" },
+    studentEmail: "",
+    studentCell: "",
+    birthDate: "",
+    gender: undefined,
+    risingGrade: undefined,
+    tshirtSize: undefined,
+    course: undefined,
+    sports: [],
+    address: {
+      address1: "",
+      address2: "",
+      city: "",
+      state: "",
+      zip: "",
+      country: "",
+    },
+    parentName: { first: "", last: "" },
+    parentEmail: "",
+    parentPhone: "",
+    transcript: null,
+  };
   const {
     register,
     handleSubmit,
@@ -27,21 +50,7 @@ export const useApplicationForm = () => {
   } = useForm({
     resolver: zodResolver(applicationFormSchema),
     mode: "onChange",
-    defaultValues: {
-      studentName: { first: "", last: "" },
-      studentEmail: "",
-      studentCell: "",
-      birthDate: "",
-      gender: undefined,
-      risingGrade: undefined,
-      tshirtSize: undefined,
-      course: undefined,
-      sports: [],
-      parentName: { first: "", last: "" },
-      parentEmail: "",
-      parentPhone: "",
-      transcript: null,
-    },
+    defaultValues,
   });
   const formValues = watch();
   // Handle form field changes
@@ -80,7 +89,8 @@ export const useApplicationForm = () => {
   // Handle file upload with validation
   const onFileChange = useCallback(
     (e) => {
-      const file = e.target.files[0];
+      const file =
+        e.target.files && e.target.files[0] ? e.target.files[0] : null;
 
       if (file) {
         // Validate file before setting
@@ -96,8 +106,9 @@ export const useApplicationForm = () => {
       }
 
       setValue("transcript", file);
+      trigger("transcript"); // Always trigger validation after file change
     },
-    [setValue, setError, clearErrors]
+    [setValue, setError, clearErrors, trigger]
   );
   // Validate email address against database
   const validateStudentEmail = useCallback(
@@ -160,7 +171,7 @@ export const useApplicationForm = () => {
         setSubmitSuccess(true);
 
         // Reset form after successful submission
-        reset();
+        reset(defaultValues);
         setEmailValidation(null);
 
         // Log success for analytics/debugging
@@ -191,7 +202,7 @@ export const useApplicationForm = () => {
   );
   // Reset form state
   const resetForm = useCallback(() => {
-    reset();
+    reset(defaultValues);
     setSubmitSuccess(false);
     setSubmitError(null);
     setEmailValidation(null);

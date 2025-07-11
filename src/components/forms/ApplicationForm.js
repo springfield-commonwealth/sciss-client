@@ -1,7 +1,8 @@
+import addressOptions from "@/data/addressOptions.json";
 import formOptions from "@/data/formOptions.json";
 import { useApplicationForm } from "@/hooks/useApplicationForm";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -26,6 +27,18 @@ const ApplicationForm = () => {
   const [dragActive, setDragActive] = useState(false);
   const [studentCellCountry, setStudentCellCountry] = useState("US");
   const [parentPhoneCountry, setParentPhoneCountry] = useState("US");
+  // Track selected country for address
+  const [selectedCountry, setSelectedCountry] = useState(
+    formValues.address.country || "United States"
+  );
+
+  // Memoize available states for selected country
+  const availableStates = useMemo(() => {
+    const countryObj = addressOptions.countries.find(
+      (c) => c.value === selectedCountry
+    );
+    return countryObj ? countryObj.states : [];
+  }, [selectedCountry]);
 
   const handleDrag = (e) => {
     e.preventDefault();
@@ -135,6 +148,21 @@ const ApplicationForm = () => {
               value={formValues.studentName.first}
               onChange={onChange}
               autoComplete="given-name"
+            />
+          </label>
+          <label className="form-label">
+            <span className="label-text">Preferred Name</span>
+            {getFieldError("studentName.preferredName") && (
+              <span className="error">
+                {getFieldError("studentName.preferredName")}
+              </span>
+            )}
+            <input
+              type="text"
+              name="studentName.preferredName"
+              value={formValues.studentName.preferredName}
+              onChange={onChange}
+              autoComplete="nickname"
             />
           </label>
           <label className="form-label">
@@ -263,6 +291,42 @@ const ApplicationForm = () => {
             ))}
           </select>
         </label>
+        {/* Current School Name (moved here) */}
+        <label className="form-label">
+          <span className="label-text">
+            Current School Name <span className="asterisk">*</span>
+          </span>
+          {getFieldError("currentSchoolName") && (
+            <span className="error">{getFieldError("currentSchoolName")}</span>
+          )}
+          <input
+            type="text"
+            name="currentSchoolName"
+            value={formValues.currentSchoolName || ""}
+            onChange={onChange}
+            autoComplete="organization"
+          />
+        </label>
+        {/* Year Applying For */}
+        <label className="form-label">
+          <span className="label-text">
+            Year Applying For <span className="asterisk">*</span>
+          </span>
+          {getFieldError("yearApplyingFor") && (
+            <span className="error">{getFieldError("yearApplyingFor")}</span>
+          )}
+          <select
+            name="yearApplyingFor"
+            value={formValues.yearApplyingFor || ""}
+            onChange={onChange}
+          >
+            <option value="">Select</option>
+            {/* You can replace these with formOptions.yearApplyingForOptions if available */}
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+        </label>
         <label className="form-label">
           <span className="label-text">
             T-Shirt Size <span className="asterisk">*</span>
@@ -288,6 +352,114 @@ const ApplicationForm = () => {
               </option>
             ))}
           </select>
+        </label>
+      </fieldset>
+
+      {/* Address */}
+      <fieldset>
+        <legend>Primary Residence</legend>
+        <label className="form-label">
+          <span className="label-text">
+            Address Line 1 <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.address1") && (
+            <span className="error">{getFieldError("address.address1")}</span>
+          )}
+          <input
+            type="text"
+            name="address.address1"
+            value={formValues.address.address1}
+            onChange={onChange}
+            autoComplete="address-line1"
+          />
+        </label>
+        <label className="form-label">
+          <span className="label-text">Address Line 2</span>
+          {getFieldError("address.address2") && (
+            <span className="error">{getFieldError("address.address2")}</span>
+          )}
+          <input
+            type="text"
+            name="address.address2"
+            value={formValues.address.address2}
+            onChange={onChange}
+            autoComplete="address-line2"
+          />
+        </label>
+        <label className="form-label">
+          <span className="label-text">
+            City <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.city") && (
+            <span className="error">{getFieldError("address.city")}</span>
+          )}
+          <input
+            type="text"
+            name="address.city"
+            value={formValues.address.city}
+            onChange={onChange}
+            autoComplete="address-level2"
+          />
+        </label>
+        <label className="form-label">
+          <span className="label-text">
+            Country <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.country") && (
+            <span className="error">{getFieldError("address.country")}</span>
+          )}
+          <select
+            name="address.country"
+            value={formValues.address.country}
+            onChange={(e) => {
+              onChange(e);
+              setSelectedCountry(e.target.value);
+            }}
+            autoComplete="country"
+          >
+            <option value="">Select</option>
+            {addressOptions.countries.map((country) => (
+              <option key={country.value} value={country.value}>
+                {country.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="form-label">
+          <span className="label-text">
+            State/Province <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.state") && (
+            <span className="error">{getFieldError("address.state")}</span>
+          )}
+          <select
+            name="address.state"
+            value={formValues.address.state}
+            onChange={onChange}
+            autoComplete="address-level1"
+          >
+            <option value="">Select</option>
+            {availableStates.map((state) => (
+              <option key={state.value} value={state.value}>
+                {state.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="form-label">
+          <span className="label-text">
+            Zip/Postal Code <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.zip") && (
+            <span className="error">{getFieldError("address.zip")}</span>
+          )}
+          <input
+            type="text"
+            name="address.zip"
+            value={formValues.address.zip}
+            onChange={onChange}
+            autoComplete="postal-code"
+          />
         </label>
       </fieldset>
 
@@ -419,11 +591,65 @@ const ApplicationForm = () => {
         </label>
       </fieldset>
 
-      {/* Transcript Upload */}
+      {/* Financial Aid Interest (moved above transcript upload) */}
+      <label className="form-label">
+        <span className="label-text">
+          Are you interested in financial aid?{" "}
+          <span className="asterisk">*</span>
+        </span>
+        {getFieldError("financialAidInterest") && (
+          <span className="error">{getFieldError("financialAidInterest")}</span>
+        )}
+        <div
+          className="radio-group"
+          role="group"
+          aria-labelledby="label_financial_aid"
+        >
+          <span className="form-radio-item">
+            <input
+              type="radio"
+              name="financialAidInterest"
+              value="Yes"
+              checked={formValues.financialAidInterest === "Yes"}
+              onChange={onChange}
+              className="form-radio"
+              id="financialAidYes"
+              aria-describedby="label_financial_aid"
+              required
+            />
+            <label htmlFor="financialAidYes" className="form-radio-label">
+              Yes
+            </label>
+          </span>
+          <span className="form-radio-item">
+            <input
+              type="radio"
+              name="financialAidInterest"
+              value="No"
+              checked={formValues.financialAidInterest === "No"}
+              onChange={onChange}
+              className="form-radio"
+              id="financialAidNo"
+              aria-describedby="label_financial_aid"
+              required
+            />
+            <label htmlFor="financialAidNo" className="form-radio-label">
+              No
+            </label>
+          </span>
+        </div>
+      </label>
+
+      {/* Transcript Upload (required if financial aid interest is Yes) */}
       <fieldset>
         <legend>Scholarship Application (Optional)</legend>
         <label className="form-label">
-          <span className="label-text">Upload Transcript</span>
+          <span className="label-text">
+            Upload Transcript
+            {formValues.financialAidInterest === "Yes" && (
+              <span className="asterisk">*</span>
+            )}
+          </span>
           {getFieldError("transcript") && (
             <span className="error">{getFieldError("transcript")}</span>
           )}
@@ -443,9 +669,21 @@ const ApplicationForm = () => {
                 <input
                   type="file"
                   name="transcript"
+                  ref={(input) => {
+                    // Register with react-hook-form if available
+                    if (input) {
+                      if (typeof input.form !== "undefined" && input.form) {
+                        // react-hook-form registration
+                        if (typeof input.form.register === "function") {
+                          input.form.register(input);
+                        }
+                      }
+                    }
+                  }}
                   onChange={onFileChange}
                   accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
                   className="file-input"
+                  required={formValues.financialAidInterest === "Yes"}
                 />
                 <div className="upload-placeholder">
                   <div className="upload-icon">📄</div>

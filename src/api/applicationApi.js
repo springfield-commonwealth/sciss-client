@@ -23,6 +23,7 @@ export const submitApplication = async (formData) => {
       studentName: {
         first: formData.studentName.first,
         last: formData.studentName.last,
+        preferredName: formData.studentName.preferredName,
       },
       studentEmail: formData.studentEmail,
       studentCell: formData.studentCell,
@@ -32,6 +33,17 @@ export const submitApplication = async (formData) => {
       tshirtSize: formData.tshirtSize,
       course: formData.course,
       sports: formData.sports,
+      address: {
+        address1: formData.address.address1,
+        address2: formData.address.address2,
+        city: formData.address.city,
+        state: formData.address.state,
+        zip: formData.address.zip,
+        country: formData.address.country,
+      },
+      currentSchoolName: formData.currentSchoolName,
+      yearApplyingFor: formData.yearApplyingFor,
+      financialAidInterest: formData.financialAidInterest,
       parentName: {
         first: formData.parentName.first,
         last: formData.parentName.last,
@@ -127,43 +139,6 @@ export const validateEmail = async (email) => {
   } catch (error) {
     console.error("Email validation error:", error);
     throw new Error("Email validation failed. Please try again.");
-  }
-};
-/**
- * Alternative submission method using JSON (without file upload)
- * Use this if you want to handle file uploads separately
- */
-export const submitApplicationJSON = async (formData) => {
-  try {
-    const response = await fetch(ENDPOINTS.SUBMIT_APPLICATION, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(
-        result.error || `HTTP ${response.status}: ${response.statusText}`
-      );
-    }
-
-    if (!result.success) {
-      throw new Error(result.error || "Application submission failed");
-    }
-
-    return {
-      success: true,
-      message: result.message,
-      applicationId: result.application_id,
-      data: formData,
-    };
-  } catch (error) {
-    console.error("Application submission error:", error);
-    throw new Error(error.message || "Submission failed. Please try again.");
   }
 };
 /**

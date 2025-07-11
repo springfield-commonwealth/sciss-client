@@ -1,7 +1,7 @@
+import { applicationFormSchema } from "@/lib/schemas/applicationFormSchema";
 import {
   formatFileSize,
   submitApplication,
-  submitApplicationJSON,
   validateEmail,
   validateTranscriptFile,
 } from "./applicationApi";
@@ -14,6 +14,33 @@ beforeEach(() => {
 afterEach(() => {
   jest.resetAllMocks();
 });
+
+const validBase = {
+  studentName: { first: "John", last: "Doe", preferredName: "" },
+  studentEmail: "john.doe@example.com",
+  studentCell: "+14155552671",
+  birthDate: "2005-01-01",
+  gender: "Male",
+  risingGrade: "G10",
+  tshirtSize: "Male M",
+  course: "Artificial Intelligence",
+  sports: ["Basketball"],
+  address: {
+    address1: "123 Main St",
+    address2: "",
+    city: "Boston",
+    state: "MA",
+    zip: "02134",
+    country: "United States",
+  },
+  parentName: { first: "Jane", last: "Doe" },
+  parentEmail: "jane.doe@example.com",
+  parentPhone: "+8613812345678",
+  currentSchoolName: "Test School",
+  yearApplyingFor: "2024",
+  financialAidInterest: "No",
+  transcript: undefined,
+};
 
 describe("applicationApi", () => {
   describe("submitApplication", () => {
@@ -30,7 +57,7 @@ describe("applicationApi", () => {
       globalAny.fetch.mockResolvedValue(mockResponse);
 
       const formData = {
-        studentName: { first: "John", last: "Doe" },
+        studentName: { first: "John", last: "Doe", preferredName: "" },
         studentEmail: "john.doe@example.com",
         studentCell: "+14155552671",
         birthDate: "2005-01-01",
@@ -39,9 +66,20 @@ describe("applicationApi", () => {
         tshirtSize: "Male M",
         course: "Artificial Intelligence",
         sports: ["Basketball"],
+        address: {
+          address1: "123 Main St",
+          address2: "",
+          city: "Boston",
+          state: "MA",
+          zip: "02134",
+          country: "United States",
+        },
         parentName: { first: "Jane", last: "Doe" },
         parentEmail: "jane.doe@example.com",
         parentPhone: "+8613812345678",
+        currentSchoolName: "Test School",
+        yearApplyingFor: "2024",
+        financialAidInterest: "No",
         transcript: undefined,
       };
       const result = await submitApplication(formData);
@@ -73,21 +111,7 @@ describe("applicationApi", () => {
       const fakeFile = new File(["test"], "test.pdf", {
         type: "application/pdf",
       });
-      const formData = {
-        studentName: { first: "A", last: "B" },
-        studentEmail: "a@b.com",
-        studentCell: "+1234567890",
-        birthDate: "2000-01-01",
-        gender: "Male",
-        risingGrade: "G10",
-        tshirtSize: "Male M",
-        course: "Artificial Intelligence",
-        sports: ["Basketball"],
-        parentName: { first: "C", last: "D" },
-        parentEmail: "c@d.com",
-        parentPhone: "+1987654321",
-        transcript: fakeFile,
-      };
+      const formData = { ...validBase, transcript: fakeFile };
       await submitApplication(formData);
       const formDataArg = globalAny.fetch.mock.calls[0][1].body;
       expect(formDataArg.get("transcript")).toBe(fakeFile);
@@ -102,18 +126,7 @@ describe("applicationApi", () => {
       });
       await expect(
         submitApplication({
-          studentName: { first: "A", last: "B" },
-          studentEmail: "a@b.com",
-          studentCell: "+1234567890",
-          birthDate: "2000-01-01",
-          gender: "Male",
-          risingGrade: "G10",
-          tshirtSize: "Male M",
-          course: "Artificial Intelligence",
-          sports: ["Basketball"],
-          parentName: { first: "C", last: "D" },
-          parentEmail: "c@d.com",
-          parentPhone: "+1987654321",
+          ...validBase,
         })
       ).rejects.toThrow("Bad request");
     });
@@ -122,18 +135,7 @@ describe("applicationApi", () => {
       globalAny.fetch.mockRejectedValue(new Error("network error"));
       await expect(
         submitApplication({
-          studentName: { first: "A", last: "B" },
-          studentEmail: "a@b.com",
-          studentCell: "+1234567890",
-          birthDate: "2000-01-01",
-          gender: "Male",
-          risingGrade: "G10",
-          tshirtSize: "Male M",
-          course: "Artificial Intelligence",
-          sports: ["Basketball"],
-          parentName: { first: "C", last: "D" },
-          parentEmail: "c@d.com",
-          parentPhone: "+1987654321",
+          ...validBase,
         })
       ).rejects.toThrow(/Network error/i);
     });
@@ -156,7 +158,7 @@ describe("applicationApi", () => {
         statusText: "Bad Request",
       });
       await expect(validateEmail("bad@bad.com")).rejects.toThrow(
-        "Invalid email"
+        "Email validation failed. Please try again."
       );
     });
     it("handles network error", async () => {
@@ -197,43 +199,73 @@ describe("applicationApi", () => {
       expect(formatFileSize(1536)).toBe("1.5 KB");
     });
   });
+});
 
-  describe("submitApplicationJSON", () => {
-    it("submits JSON and handles success", async () => {
-      globalAny.fetch.mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          success: true,
-          message: "ok",
-          application_id: "id",
-        }),
-      });
-      const data = { foo: "bar" };
-      const result = await submitApplicationJSON(data);
-      expect(result.success).toBe(true);
-      expect(globalAny.fetch).toHaveBeenCalledWith(
-        expect.any(String),
-        expect.objectContaining({
-          method: "POST",
-          headers: expect.objectContaining({
-            "Content-Type": "application/json",
-          }),
-          body: JSON.stringify(data),
-        })
-      );
-    });
-    it("handles backend error", async () => {
-      globalAny.fetch.mockResolvedValue({
-        ok: false,
-        json: async () => ({ error: "fail" }),
-        status: 400,
-        statusText: "Bad Request",
-      });
-      await expect(submitApplicationJSON({})).rejects.toThrow("fail");
-    });
-    it("handles network error", async () => {
-      globalAny.fetch.mockRejectedValue(new Error("network error"));
-      await expect(submitApplicationJSON({})).rejects.toThrow(/network error/i);
-    });
+describe("applicationFormSchema", () => {
+  it("requires all address fields except address2", () => {
+    const base = {
+      ...validBase,
+      address: {
+        address1: "",
+        address2: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+      },
+    };
+    const result = applicationFormSchema.safeParse(base);
+    expect(result.success).toBe(false);
+    const errorPaths = result.error.issues.map((issue) => issue.path.join("."));
+    expect(errorPaths).toEqual(
+      expect.arrayContaining([
+        "address.address1",
+        "address.city",
+        "address.state",
+        "address.zip",
+        "address.country",
+      ])
+    );
+  });
+
+  it("requires currentSchoolName, yearApplyingFor, and financialAidInterest", () => {
+    const base = {
+      ...validBase,
+      currentSchoolName: "",
+      yearApplyingFor: "",
+      financialAidInterest: "",
+    };
+    const result = applicationFormSchema.safeParse(base);
+    expect(result.success).toBe(false);
+    const errorPaths = result.error.issues.map((issue) => issue.path.join("."));
+    expect(errorPaths).toEqual(
+      expect.arrayContaining([
+        "currentSchoolName",
+        "yearApplyingFor",
+        "financialAidInterest",
+      ])
+    );
+  });
+
+  it("requires transcript if financialAidInterest is Yes", () => {
+    const base = {
+      ...validBase,
+      financialAidInterest: "Yes",
+      transcript: null,
+    };
+    const result = applicationFormSchema.safeParse(base);
+    expect(result.success).toBe(false);
+    const errorPaths = result.error.issues.map((issue) => issue.path.join("."));
+    expect(errorPaths).toEqual(expect.arrayContaining(["transcript"]));
+  });
+
+  it("does not require transcript if financialAidInterest is No", () => {
+    const base = {
+      ...validBase,
+      financialAidInterest: "No",
+      transcript: undefined,
+    };
+    const result = applicationFormSchema.safeParse(base);
+    expect(result.success).toBe(true);
   });
 });

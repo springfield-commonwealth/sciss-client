@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -27,7 +28,7 @@ export default function Custom404() {
         <h1>404 - Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
         <p>
-          Redirecting you to the <a href="/">home page</a>...
+          Redirecting you to the <Link href="/">home page</Link>...
         </p>
       </div>
     </Layout>

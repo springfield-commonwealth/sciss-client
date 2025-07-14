@@ -1,4 +1,4 @@
-const FacultyCard = ({ name, role, background, expertise, photo }) => (
+const FacultyCard = ({ name, role, background, photo }) => (
   <div className="faculty-card">
     <div className="faculty-info">
       {photo && (

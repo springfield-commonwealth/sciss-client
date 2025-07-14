@@ -5,7 +5,7 @@ import {
 } from "@/api/applicationApi.js";
 import { applicationFormSchema } from "@/lib/schemas/applicationFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const useApplicationForm = () => {
@@ -14,29 +14,35 @@ export const useApplicationForm = () => {
   const [submitError, setSubmitError] = useState(null);
   const [emailValidation, setEmailValidation] = useState(null);
   const [isValidatingEmail, setIsValidatingEmail] = useState(false);
-  const defaultValues = {
-    studentName: { first: "", last: "", preferredName: "" },
-    studentEmail: "",
-    studentCell: "",
-    birthDate: "",
-    gender: undefined,
-    risingGrade: undefined,
-    tshirtSize: undefined,
-    course: undefined,
-    sports: [],
-    address: {
-      address1: "",
-      address2: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: "",
-    },
-    parentName: { first: "", last: "" },
-    parentEmail: "",
-    parentPhone: "",
-    transcript: null,
-  };
+  const defaultValues = useMemo(
+    () => ({
+      studentName: { first: "", last: "", preferredName: "" },
+      studentEmail: "",
+      studentCell: "",
+      birthDate: "",
+      gender: undefined,
+      risingGrade: undefined,
+      tshirtSize: undefined,
+      course: undefined,
+      sports: [],
+      address: {
+        address1: "",
+        address2: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+      },
+      parentName: { first: "", last: "" },
+      parentEmail: "",
+      parentPhone: "",
+      currentSchoolName: "",
+      yearApplyingFor: "",
+      financialAidInterest: undefined,
+      transcript: null,
+    }),
+    []
+  );
   const {
     register,
     handleSubmit,
@@ -56,7 +62,7 @@ export const useApplicationForm = () => {
   // Handle form field changes
   const onChange = useCallback(
     (e) => {
-      const { name, value, type, checked } = e.target;
+      const { name, value, checked } = e.target;
       if (name.includes(".")) {
         // Handle nested objects like studentName.first
         const [parent, key] = name.split(".");
@@ -165,8 +171,6 @@ export const useApplicationForm = () => {
         // Submit to PHP backend
         const result = await submitApplication(data);
 
-        console.log("Application submitted successfully:", result);
-
         // Show success state
         setSubmitSuccess(true);
 
@@ -183,9 +187,6 @@ export const useApplicationForm = () => {
           });
         }
       } catch (error) {
-        console.error("Form submission failed:", error);
-        setSubmitError(error.message);
-
         // Log error for analytics/debugging
         if (window.gtag) {
           window.gtag("event", "application_submit", {
@@ -194,11 +195,12 @@ export const useApplicationForm = () => {
             error_message: error.message,
           });
         }
+        setSubmitError(error.message);
       } finally {
         setIsSubmitting(false);
       }
     },
-    [reset]
+    [reset, defaultValues]
   );
   // Reset form state
   const resetForm = useCallback(() => {
@@ -206,7 +208,7 @@ export const useApplicationForm = () => {
     setSubmitSuccess(false);
     setSubmitError(null);
     setEmailValidation(null);
-  }, [reset]);
+  }, [reset, defaultValues]);
   // Get error message for a specific field
   const getFieldError = useCallback(
     (fieldName) => {

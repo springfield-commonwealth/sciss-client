@@ -9,7 +9,6 @@ import "react-phone-number-input/style.css";
 const ApplicationForm = () => {
   const {
     formValues,
-    errors,
     isSubmitting,
     submitSuccess,
     submitError,
@@ -25,8 +24,6 @@ const ApplicationForm = () => {
 
   const router = useRouter();
   const [dragActive, setDragActive] = useState(false);
-  const [studentCellCountry, setStudentCellCountry] = useState("US");
-  const [parentPhoneCountry, setParentPhoneCountry] = useState("US");
   // Track selected country for address
   const [selectedCountry, setSelectedCountry] = useState(
     formValues.address.country || "United States"
@@ -216,11 +213,9 @@ const ApplicationForm = () => {
             international
             defaultCountry="US"
             value={formValues.studentCell}
-            onChange={(value, data) => {
+            onChange={(value) => {
               onChange({ target: { name: "studentCell", value: value || "" } });
-              if (data && data.country) setStudentCellCountry(data.country);
             }}
-            onCountryChange={setStudentCellCountry}
             placeholder="Enter phone number"
             className="phone-input"
           />
@@ -580,11 +575,9 @@ const ApplicationForm = () => {
             international
             defaultCountry="US"
             value={formValues.parentPhone}
-            onChange={(value, data) => {
+            onChange={(value) => {
               onChange({ target: { name: "parentPhone", value: value || "" } });
-              if (data && data.country) setParentPhoneCountry(data.country);
             }}
-            onCountryChange={setParentPhoneCountry}
             placeholder="Enter phone number"
             className="phone-input"
           />

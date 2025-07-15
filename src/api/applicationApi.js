@@ -2,8 +2,8 @@
  * API Service for SCISS Application System
  * Replaces mockSubmit.js with real backend integration
  */
-// Use environment variable for API base URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+// Use environment variable for API base URL with fallback
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://sciss.org/api";
 
 const ENDPOINTS = {
   SUBMIT_APPLICATION: `${API_BASE_URL}/submit-application.php`,

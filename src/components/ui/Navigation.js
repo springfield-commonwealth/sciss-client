@@ -21,7 +21,7 @@ const navLinks = [
       { href: "/academics#core-courses-carousel", label: "Core Courses" },
       { href: "/academics#electives-carousel", label: "Electives" },
       { href: "/academics#programs", label: "Program Details" },
-      { href: "/academics#schdule", label: "Session Schedules" },
+      { href: "/academics#schedule", label: "Session Schedules" },
       { href: "/academics#faculty", label: "Our Instructors" },
     ],
   },

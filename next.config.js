@@ -16,4 +16,6 @@ const nextConfig = {
   },
 };
 
+console.log("NEXT_PUBLIC_API_URL at build:", process.env.NEXT_PUBLIC_API_URL);
+
 module.exports = nextConfig;

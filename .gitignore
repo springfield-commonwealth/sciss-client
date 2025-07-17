@@ -19,3 +19,4 @@ node_modules/
 dist.zip
 
 .env.production
+.env

@@ -3,7 +3,7 @@
  * Replaces mockSubmit.js with real backend integration
  */
 // Use environment variable for API base URL with fallback
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://sciss.org/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const ENDPOINTS = {
   SUBMIT_APPLICATION: `${API_BASE_URL}/submit-application.php`,
@@ -115,6 +115,7 @@ export const submitApplication = async (formData) => {
  * Validate email address
  */
 export const validateEmail = async (email) => {
+  console.log("api url: ", API_BASE_URL)
   try {
     const response = await fetch(ENDPOINTS.VALIDATE_EMAIL, {
       method: "POST",

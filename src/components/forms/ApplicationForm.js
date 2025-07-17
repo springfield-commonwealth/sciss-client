@@ -355,6 +355,30 @@ const ApplicationForm = () => {
         <legend>Primary Residence</legend>
         <label className="form-label">
           <span className="label-text">
+            Country <span className="asterisk">*</span>
+          </span>
+          {getFieldError("address.country") && (
+            <span className="error">{getFieldError("address.country")}</span>
+          )}
+          <select
+            name="address.country"
+            value={formValues.address.country}
+            onChange={(e) => {
+              onChange(e);
+              setSelectedCountry(e.target.value);
+            }}
+            autoComplete="country"
+          >
+            <option value="">Select</option>
+            {addressOptions.countries.map((country) => (
+              <option key={country.value} value={country.value}>
+                {country.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="form-label">
+          <span className="label-text">
             Address Line 1 <span className="asterisk">*</span>
           </span>
           {getFieldError("address.address1") && (
@@ -395,30 +419,6 @@ const ApplicationForm = () => {
             onChange={onChange}
             autoComplete="address-level2"
           />
-        </label>
-        <label className="form-label">
-          <span className="label-text">
-            Country <span className="asterisk">*</span>
-          </span>
-          {getFieldError("address.country") && (
-            <span className="error">{getFieldError("address.country")}</span>
-          )}
-          <select
-            name="address.country"
-            value={formValues.address.country}
-            onChange={(e) => {
-              onChange(e);
-              setSelectedCountry(e.target.value);
-            }}
-            autoComplete="country"
-          >
-            <option value="">Select</option>
-            {addressOptions.countries.map((country) => (
-              <option key={country.value} value={country.value}>
-                {country.label}
-              </option>
-            ))}
-          </select>
         </label>
         <label className="form-label">
           <span className="label-text">

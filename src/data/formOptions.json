@@ -37,36 +37,36 @@
   ],
   "tshirtSizeOptions": [
     {
-      "value": "Male XS",
-      "label": "Male XS"
-    },
-    {
-      "value": "Female XS",
-      "label": "Female XS"
-    },
-    {
-      "value": "Male S",
-      "label": "Male S"
-    },
-    {
-      "value": "Female S",
-      "label": "Female S"
-    },
-    {
-      "value": "Male M",
-      "label": "Male M"
+      "value": "Female L",
+      "label": "Female L"
     },
     {
       "value": "Female M",
       "label": "Female M"
     },
     {
+      "value": "Female S",
+      "label": "Female S"
+    },
+    {
+      "value": "Female XS",
+      "label": "Female XS"
+    },
+    {
       "value": "Male L",
       "label": "Male L"
     },
     {
-      "value": "Female L",
-      "label": "Female L"
+      "value": "Male M",
+      "label": "Male M"
+    },
+    {
+      "value": "Male S",
+      "label": "Male S"
+    },
+    {
+      "value": "Male XS",
+      "label": "Male XS"
     }
   ],
   "courseOptions": [

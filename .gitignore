@@ -19,4 +19,8 @@ node_modules/
 dist.zip
 
 .env.production
-.env
+
+
+.mdc/
+README-MDC.md
+.cursor/

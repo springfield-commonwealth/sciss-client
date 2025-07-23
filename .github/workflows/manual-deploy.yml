@@ -1,0 +1,103 @@
+name: Manual Deploy to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "production"
+        type: choice
+        options:
+          - production
+          - staging
+
+env:
+  NODE_VERSION: "20"
+  PNPM_VERSION: "8"
+
+jobs:
+  manual-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linting
+        run: pnpm run lint
+
+      - name: Run type checking
+        run: pnpm run type-check
+
+      - name: Run tests
+        run: pnpm run test:ci
+
+      - name: Build application
+        run: pnpm run deploy:prod
+        env:
+          NODE_ENV: production
+          NEXT_PUBLIC_API_URL: https://sciss.org/api
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.HOSTINGER_SSH_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 217.21.66.232 >> ~/.ssh/known_hosts
+
+      - name: Deploy to Hostinger
+        run: |
+          echo "Deploying to ${{ github.event.inputs.environment }}..."
+
+          # Create deployment script
+          cat > deploy_manual.sh << 'EOF'
+          #!/bin/bash
+          REMOTE_USER="u356222743"
+          REMOTE_HOST="217.21.66.232"
+          REMOTE_PATH="domains/sciss.org/public_html"
+          SSH_PORT=65002
+
+          echo "Manual deployment to Hostinger..."
+
+          # Sync everything except videos
+          rsync -avz --progress --itemize-changes \
+            -e "ssh -p $SSH_PORT" \
+            --exclude='.DS_Store' \
+            --exclude='videos/' \
+            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+            
+          echo "Manual deployment complete!"
+          EOF
+
+          chmod +x deploy_manual.sh
+          ./deploy_manual.sh

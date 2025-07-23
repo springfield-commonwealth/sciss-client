@@ -130,16 +130,15 @@ const ApplicationForm = () => {
       <fieldset>
         <legend>Student Information</legend>
         <div className="form-row">
-          <label className="form-label">
+          <label className="form-label" htmlFor="studentFirstName">
             <span className="label-text">
-              First Name <span className="asterisk">*</span>
+              Student First Name <span className="asterisk">*</span>
             </span>
             {getFieldError("studentName.first") && (
-              <span className="error">
-                {getFieldError("studentName.first")}
-              </span>
+              <span className="error">Student First Name is required</span>
             )}
             <input
+              id="studentFirstName"
               type="text"
               name="studentName.first"
               value={formValues.studentName.first}
@@ -147,14 +146,15 @@ const ApplicationForm = () => {
               autoComplete="given-name"
             />
           </label>
-          <label className="form-label">
-            <span className="label-text">Preferred Name</span>
+          <label className="form-label" htmlFor="studentPreferredName">
+            <span className="label-text">Student Preferred Name</span>
             {getFieldError("studentName.preferredName") && (
               <span className="error">
                 {getFieldError("studentName.preferredName")}
               </span>
             )}
             <input
+              id="studentPreferredName"
               type="text"
               name="studentName.preferredName"
               value={formValues.studentName.preferredName}
@@ -162,14 +162,15 @@ const ApplicationForm = () => {
               autoComplete="nickname"
             />
           </label>
-          <label className="form-label">
+          <label className="form-label" htmlFor="studentLastName">
             <span className="label-text">
-              Last Name <span className="asterisk">*</span>
+              Student Last Name <span className="asterisk">*</span>
             </span>
             {getFieldError("studentName.last") && (
-              <span className="error">{getFieldError("studentName.last")}</span>
+              <span className="error">Student Last Name is required</span>
             )}
             <input
+              id="studentLastName"
               type="text"
               name="studentName.last"
               value={formValues.studentName.last}
@@ -178,9 +179,9 @@ const ApplicationForm = () => {
             />
           </label>
         </div>
-        <label className="form-label">
+        <label className="form-label" htmlFor="studentEmail">
           <span className="label-text">
-            Email <span className="asterisk">*</span>
+            Student Email <span className="asterisk">*</span>
           </span>
           {getFieldError("studentEmail") ? (
             <span className="error">{getFieldError("studentEmail")}</span>
@@ -192,6 +193,7 @@ const ApplicationForm = () => {
             <span className="error">{emailValidation.message}</span>
           ) : null}
           <input
+            id="studentEmail"
             type="email"
             name="studentEmail"
             value={formValues.studentEmail}
@@ -516,14 +518,15 @@ const ApplicationForm = () => {
       <fieldset>
         <legend>Parent/Guardian Information</legend>
         <div className="form-row">
-          <label className="form-label">
+          <label className="form-label" htmlFor="parentFirstName">
             <span className="label-text">
-              First Name <span className="asterisk">*</span>
+              Parent First Name <span className="asterisk">*</span>
             </span>
             {getFieldError("parentName.first") && (
-              <span className="error">{getFieldError("parentName.first")}</span>
+              <span className="error">Parent First Name is required</span>
             )}
             <input
+              id="parentFirstName"
               type="text"
               name="parentName.first"
               value={formValues.parentName.first}
@@ -531,14 +534,15 @@ const ApplicationForm = () => {
               autoComplete="given-name"
             />
           </label>
-          <label className="form-label">
+          <label className="form-label" htmlFor="parentLastName">
             <span className="label-text">
-              Last Name <span className="asterisk">*</span>
+              Parent Last Name <span className="asterisk">*</span>
             </span>
             {getFieldError("parentName.last") && (
-              <span className="error">{getFieldError("parentName.last")}</span>
+              <span className="error">Parent Last Name is required</span>
             )}
             <input
+              id="parentLastName"
               type="text"
               name="parentName.last"
               value={formValues.parentName.last}
@@ -547,14 +551,15 @@ const ApplicationForm = () => {
             />
           </label>
         </div>
-        <label className="form-label">
+        <label className="form-label" htmlFor="parentEmail">
           <span className="label-text">
-            Email <span className="asterisk">*</span>
+            Parent Email <span className="asterisk">*</span>
           </span>
           {getFieldError("parentEmail") && (
             <span className="error">{getFieldError("parentEmail")}</span>
           )}
           <input
+            id="parentEmail"
             type="email"
             name="parentEmail"
             value={formValues.parentEmail}
@@ -636,7 +641,7 @@ const ApplicationForm = () => {
       {/* Transcript Upload (required if financial aid interest is Yes) */}
       <fieldset>
         <legend>Scholarship Application (Optional)</legend>
-        <label className="form-label">
+        <label className="form-label" htmlFor="transcript">
           <span className="label-text">
             Upload Transcript
             {formValues.financialAidInterest === "Yes" && (
@@ -660,6 +665,7 @@ const ApplicationForm = () => {
             {!formValues.transcript ? (
               <>
                 <input
+                  id="transcript"
                   type="file"
                   name="transcript"
                   ref={(input) => {

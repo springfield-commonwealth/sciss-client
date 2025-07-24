@@ -2,9 +2,12 @@ import addressOptions from "@/data/addressOptions.json";
 import formOptions from "@/data/formOptions.json";
 import { useApplicationForm } from "@/hooks/useApplicationForm";
 import { useRouter } from "next/router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+
+const ERROR_PULSE_DURATION = 400;
+const SUCCESS_GLOW_DURATION = 600;
 
 const ApplicationForm = () => {
   const {
@@ -28,6 +31,114 @@ const ApplicationForm = () => {
   const [selectedCountry, setSelectedCountry] = useState(
     formValues.address.country || "United States"
   );
+  const [errorPulse, setErrorPulse] = useState({});
+  const errorPulseTimeouts = useRef({});
+  const [successGlow, setSuccessGlow] = useState({});
+  const successGlowTimeouts = useRef({});
+  const [fileUploadState, setFileUploadState] = useState("idle"); // idle, hover, dragover, success, error
+  const [formProgress, setFormProgress] = useState(0);
+
+  // Helper to trigger error pulse for a field
+  const triggerErrorPulse = (field) => {
+    setErrorPulse((prev) => ({ ...prev, [field]: true }));
+    if (errorPulseTimeouts.current[field]) {
+      clearTimeout(errorPulseTimeouts.current[field]);
+    }
+    errorPulseTimeouts.current[field] = setTimeout(() => {
+      setErrorPulse((prev) => ({ ...prev, [field]: false }));
+    }, ERROR_PULSE_DURATION);
+  };
+
+  // Helper to trigger success glow for a field
+  const triggerSuccessGlow = (field) => {
+    setSuccessGlow((prev) => ({ ...prev, [field]: true }));
+    if (successGlowTimeouts.current[field]) {
+      clearTimeout(successGlowTimeouts.current[field]);
+    }
+    successGlowTimeouts.current[field] = setTimeout(() => {
+      setSuccessGlow((prev) => ({ ...prev, [field]: false }));
+    }, SUCCESS_GLOW_DURATION);
+  };
+
+  // Calculate form completion progress
+  const calculateProgress = () => {
+    const requiredFields = [
+      "studentName.first",
+      "studentName.last",
+      "studentEmail",
+      "studentCell",
+      "birthDate",
+      "gender",
+      "risingGrade",
+      "currentSchoolName",
+      "yearApplyingFor",
+      "tshirtSize",
+      "address.country",
+      "address.address1",
+      "address.city",
+      "address.state",
+      "address.zip",
+      "course",
+      "sports",
+      "parentName.first",
+      "parentName.last",
+      "parentEmail",
+      "parentPhone",
+      "financialAidInterest",
+    ];
+
+    const completedFields = requiredFields.filter((field) => {
+      if (field.includes(".")) {
+        const [parent, child] = field.split(".");
+        return (
+          formValues[parent] &&
+          formValues[parent][child] &&
+          !getFieldError(field)
+        );
+      }
+      return formValues[field] && !getFieldError(field);
+    }).length;
+
+    return Math.round((completedFields / requiredFields.length) * 100);
+  };
+
+  // Update progress when form values change
+  useEffect(() => {
+    const progress = calculateProgress();
+    setFormProgress(progress);
+  }, [formValues]);
+
+  // On blur, pulse if error
+  const handleBlur = (e) => {
+    const field = e.target.name;
+    if (getFieldError(field)) {
+      triggerErrorPulse(field);
+    } else if (e.target.value && e.target.value.trim() !== "") {
+      // Field has value and no error - show success
+      triggerSuccessGlow(field);
+    }
+    if (typeof onBlur === "function") onBlur(e);
+  };
+
+  // Enhanced email blur handler
+  const handleEmailBlur = (e) => {
+    const field = e.target.name;
+    onEmailBlur(e);
+    if (getFieldError(field)) {
+      triggerErrorPulse(field);
+    }
+  };
+
+  // On submit, pulse all fields with errors
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    Object.keys(formValues).forEach((field) => {
+      if (getFieldError(field)) {
+        triggerErrorPulse(field);
+      }
+    });
+    onSubmit(e);
+  };
 
   // Memoize available states for selected country
   const availableStates = useMemo(() => {
@@ -37,13 +148,16 @@ const ApplicationForm = () => {
     return countryObj ? countryObj.states : [];
   }, [selectedCountry]);
 
+  // Enhanced drag handlers with animation states
   const handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.type === "dragenter" || e.type === "dragover") {
       setDragActive(true);
+      setFileUploadState("dragover");
     } else if (e.type === "dragleave") {
       setDragActive(false);
+      setFileUploadState("idle");
     }
   };
 
@@ -51,12 +165,55 @@ const ApplicationForm = () => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
+    setFileUploadState("idle");
 
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       const event = { target: { files: [file] } };
       onFileChange(event);
+      // Show success animation
+      setFileUploadState("success");
+      setTimeout(() => setFileUploadState("idle"), 600);
     }
+  };
+
+  // Enhanced file change handler
+  const handleFileChange = (e) => {
+    onFileChange(e);
+    if (e.target.files && e.target.files[0]) {
+      setFileUploadState("success");
+      setTimeout(() => setFileUploadState("idle"), 600);
+    } else if (getFieldError("transcript")) {
+      setFileUploadState("error");
+      setTimeout(() => setFileUploadState("idle"), 400);
+    }
+  };
+
+  // Get email validation class
+  const getEmailValidationClass = (field) => {
+    if (isEmailValidating(field)) return "email-validation-loading";
+    if (emailValidation && emailValidation.available)
+      return "email-validation-success";
+    if (emailValidation && !emailValidation.available)
+      return "email-validation-error";
+    return "";
+  };
+
+  // Get file upload area classes
+  const getFileUploadClasses = () => {
+    const baseClass = "file-upload-area";
+    const classes = [baseClass];
+
+    if (dragActive || fileUploadState === "dragover")
+      classes.push("file-upload-dragover");
+    else if (fileUploadState === "hover") classes.push("file-upload-hover");
+    else if (fileUploadState === "success") classes.push("file-upload-success");
+    else if (fileUploadState === "error") classes.push("file-upload-error");
+
+    if (formValues.transcript) classes.push("has-file");
+    if (errorPulse["transcript"]) classes.push("input-error-pulse");
+
+    return classes.join(" ");
   };
 
   const formatFileSize = (bytes) => {
@@ -110,7 +267,18 @@ const ApplicationForm = () => {
   }
 
   return (
-    <form className="application-form" onSubmit={onSubmit} noValidate>
+    <form className="application-form" onSubmit={handleSubmit} noValidate>
+      {/* Form Progress Bar */}
+      <div className="form-progress-bar">
+        <div
+          className="form-progress-fill"
+          style={{
+            "--progress-width": `${formProgress}%`,
+            width: `${formProgress}%`,
+          }}
+        />
+      </div>
+
       {submitError && (
         <div
           style={{
@@ -143,7 +311,13 @@ const ApplicationForm = () => {
               name="studentName.first"
               value={formValues.studentName.first}
               onChange={onChange}
+              onBlur={handleBlur}
               autoComplete="given-name"
+              className={`form-input ${
+                errorPulse["studentName.first"] ? "input-error-pulse" : ""
+              } ${
+                successGlow["studentName.first"] ? "input-success-glow" : ""
+              }`}
             />
           </label>
           <label className="form-label" htmlFor="studentPreferredName">
@@ -159,7 +333,13 @@ const ApplicationForm = () => {
               name="studentName.preferredName"
               value={formValues.studentName.preferredName}
               onChange={onChange}
+              onBlur={handleBlur}
               autoComplete="nickname"
+              className={`form-input ${
+                errorPulse["studentName.preferredName"]
+                  ? "input-error-pulse"
+                  : ""
+              }`}
             />
           </label>
           <label className="form-label" htmlFor="studentLastName">
@@ -175,7 +355,11 @@ const ApplicationForm = () => {
               name="studentName.last"
               value={formValues.studentName.last}
               onChange={onChange}
+              onBlur={handleBlur}
               autoComplete="family-name"
+              className={`form-input ${
+                errorPulse["studentName.last"] ? "input-error-pulse" : ""
+              }`}
             />
           </label>
         </div>
@@ -198,8 +382,13 @@ const ApplicationForm = () => {
             name="studentEmail"
             value={formValues.studentEmail}
             onChange={onChange}
-            onBlur={onEmailBlur}
+            onBlur={handleEmailBlur}
             autoComplete="email"
+            className={`form-input ${
+              errorPulse["studentEmail"] ? "input-error-pulse" : ""
+            } ${
+              successGlow["studentEmail"] ? "input-success-glow" : ""
+            } ${getEmailValidationClass("studentEmail")}`}
           />
         </label>
         <label className="form-label" htmlFor="studentCell">
@@ -218,8 +407,12 @@ const ApplicationForm = () => {
             onChange={(value) => {
               onChange({ target: { name: "studentCell", value: value || "" } });
             }}
+            onBlur={handleBlur}
             placeholder="Enter phone number"
             className="phone-input"
+            className={`form-input ${
+              errorPulse["studentCell"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label">
@@ -234,6 +427,10 @@ const ApplicationForm = () => {
             name="birthDate"
             value={formValues.birthDate}
             onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${
+              errorPulse["birthDate"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label">
@@ -246,13 +443,11 @@ const ApplicationForm = () => {
           <select
             name="gender"
             value={formValues.gender}
-            onChange={(e) => {
-              if (e.target.value === "") {
-                onChange({ target: { name: "gender", value: undefined } });
-              } else {
-                onChange(e);
-              }
-            }}
+            onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${
+              errorPulse["gender"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {formOptions.genderOptions.map((option) => (
@@ -272,13 +467,11 @@ const ApplicationForm = () => {
           <select
             name="risingGrade"
             value={formValues.risingGrade}
-            onChange={(e) => {
-              if (e.target.value === "") {
-                onChange({ target: { name: "risingGrade", value: undefined } });
-              } else {
-                onChange(e);
-              }
-            }}
+            onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${
+              errorPulse["risingGrade"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {formOptions.risingGradeOptions.map((option) => (
@@ -301,7 +494,11 @@ const ApplicationForm = () => {
             name="currentSchoolName"
             value={formValues.currentSchoolName || ""}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="organization"
+            className={`form-input ${
+              errorPulse["currentSchoolName"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         {/* Year Applying For */}
@@ -316,6 +513,10 @@ const ApplicationForm = () => {
             name="yearApplyingFor"
             value={formValues.yearApplyingFor || ""}
             onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${
+              errorPulse["yearApplyingFor"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {/* You can replace these with formOptions.yearApplyingForOptions if available */}
@@ -334,13 +535,11 @@ const ApplicationForm = () => {
           <select
             name="tshirtSize"
             value={formValues.tshirtSize}
-            onChange={(e) => {
-              if (e.target.value === "") {
-                onChange({ target: { name: "tshirtSize", value: undefined } });
-              } else {
-                onChange(e);
-              }
-            }}
+            onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${
+              errorPulse["tshirtSize"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {formOptions.tshirtSizeOptions.map((option) => (
@@ -365,11 +564,12 @@ const ApplicationForm = () => {
           <select
             name="address.country"
             value={formValues.address.country}
-            onChange={(e) => {
-              onChange(e);
-              setSelectedCountry(e.target.value);
-            }}
+            onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="country"
+            className={`form-input ${
+              errorPulse["address.country"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {addressOptions.countries.map((country) => (
@@ -391,7 +591,11 @@ const ApplicationForm = () => {
             name="address.address1"
             value={formValues.address.address1}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="address-line1"
+            className={`form-input ${
+              errorPulse["address.address1"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label">
@@ -404,7 +608,11 @@ const ApplicationForm = () => {
             name="address.address2"
             value={formValues.address.address2}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="address-line2"
+            className={`form-input ${
+              errorPulse["address.address2"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label">
@@ -419,7 +627,11 @@ const ApplicationForm = () => {
             name="address.city"
             value={formValues.address.city}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="address-level2"
+            className={`form-input ${
+              errorPulse["address.city"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label">
@@ -433,7 +645,11 @@ const ApplicationForm = () => {
             name="address.state"
             value={formValues.address.state}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="address-level1"
+            className={`form-input ${
+              errorPulse["address.state"] ? "input-error-pulse" : ""
+            }`}
           >
             <option value="">Select</option>
             {availableStates.map((state) => (
@@ -455,7 +671,11 @@ const ApplicationForm = () => {
             name="address.zip"
             value={formValues.address.zip}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="postal-code"
+            className={`form-input ${
+              errorPulse["address.zip"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
       </fieldset>
@@ -477,9 +697,13 @@ const ApplicationForm = () => {
                 value={option.value}
                 checked={formValues.course === option.value}
                 onChange={onChange}
+                onBlur={handleBlur}
                 aria-describedby="label_course"
                 className="form-radio"
                 required
+                className={`form-radio ${
+                  errorPulse["course"] ? "input-error-pulse" : ""
+                }`}
               />
               <label htmlFor={`course_${idx}`} className="form-radio-label">
                 {option.label}
@@ -504,6 +728,10 @@ const ApplicationForm = () => {
                 value={option.value}
                 checked={formValues.sports.includes(option.value)}
                 onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-checkbox ${
+                  errorPulse["sports"] ? "input-error-pulse" : ""
+                }`}
               />
               {option.label}
             </label>
@@ -531,7 +759,11 @@ const ApplicationForm = () => {
               name="parentName.first"
               value={formValues.parentName.first}
               onChange={onChange}
+              onBlur={handleBlur}
               autoComplete="given-name"
+              className={`form-input ${
+                errorPulse["parentName.first"] ? "input-error-pulse" : ""
+              }`}
             />
           </label>
           <label className="form-label" htmlFor="parentLastName">
@@ -547,7 +779,11 @@ const ApplicationForm = () => {
               name="parentName.last"
               value={formValues.parentName.last}
               onChange={onChange}
+              onBlur={handleBlur}
               autoComplete="family-name"
+              className={`form-input ${
+                errorPulse["parentName.last"] ? "input-error-pulse" : ""
+              }`}
             />
           </label>
         </div>
@@ -564,7 +800,11 @@ const ApplicationForm = () => {
             name="parentEmail"
             value={formValues.parentEmail}
             onChange={onChange}
+            onBlur={handleBlur}
             autoComplete="email"
+            className={`form-input ${
+              errorPulse["parentEmail"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
         <label className="form-label" htmlFor="parentPhone">
@@ -583,8 +823,12 @@ const ApplicationForm = () => {
             onChange={(value) => {
               onChange({ target: { name: "parentPhone", value: value || "" } });
             }}
+            onBlur={handleBlur}
             placeholder="Enter phone number"
             className="phone-input"
+            className={`form-input ${
+              errorPulse["parentPhone"] ? "input-error-pulse" : ""
+            }`}
           />
         </label>
       </fieldset>
@@ -592,7 +836,7 @@ const ApplicationForm = () => {
       {/* Financial Aid Interest (moved above transcript upload) */}
       <label className="form-label">
         <span className="label-text">
-          Are you interested in financial aid?{" "}
+          Are you interested in scholarship?{" "}
           <span className="asterisk">*</span>
         </span>
         {getFieldError("financialAidInterest") && (
@@ -610,10 +854,14 @@ const ApplicationForm = () => {
               value="Yes"
               checked={formValues.financialAidInterest === "Yes"}
               onChange={onChange}
+              onBlur={handleBlur}
               className="form-radio"
               id="financialAidYes"
               aria-describedby="label_financial_aid"
               required
+              className={`form-radio ${
+                errorPulse["financialAidInterest"] ? "input-error-pulse" : ""
+              }`}
             />
             <label htmlFor="financialAidYes" className="form-radio-label">
               Yes
@@ -626,10 +874,14 @@ const ApplicationForm = () => {
               value="No"
               checked={formValues.financialAidInterest === "No"}
               onChange={onChange}
+              onBlur={handleBlur}
               className="form-radio"
               id="financialAidNo"
               aria-describedby="label_financial_aid"
               required
+              className={`form-radio ${
+                errorPulse["financialAidInterest"] ? "input-error-pulse" : ""
+              }`}
             />
             <label htmlFor="financialAidNo" className="form-radio-label">
               No
@@ -654,9 +906,7 @@ const ApplicationForm = () => {
         </label>
         <div className="file-upload-container">
           <div
-            className={`file-upload-area ${dragActive ? "drag-active" : ""} ${
-              formValues.transcript ? "has-file" : ""
-            }`}
+            className={getFileUploadClasses()}
             onDragEnter={handleDrag}
             onDragLeave={handleDrag}
             onDragOver={handleDrag}
@@ -679,7 +929,8 @@ const ApplicationForm = () => {
                       }
                     }
                   }}
-                  onChange={onFileChange}
+                  onChange={handleFileChange}
+                  onBlur={handleBlur}
                   accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
                   className="file-input"
                   required={formValues.financialAidInterest === "Yes"}
@@ -725,7 +976,11 @@ const ApplicationForm = () => {
       </fieldset>
 
       {/* Submit */}
-      <button type="submit" disabled={isSubmitting} className="submit-btn">
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className={`submit-btn ${isSubmitting ? "submit-btn-loading" : ""}`}
+      >
         {isSubmitting ? "Submitting..." : "Submit Application"}
       </button>
     </form>

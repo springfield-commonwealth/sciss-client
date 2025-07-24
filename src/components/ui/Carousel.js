@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import CarouselCard from './CarouselCard';
 
 const Carousel = ({ items, className = '' }) => {
@@ -38,7 +39,7 @@ const Carousel = ({ items, className = '' }) => {
         onClick={() => scroll('left')}
         aria-label="Previous items"
       >
-        ❮
+        <ChevronLeftIcon />
       </button>
       
       <button 
@@ -46,7 +47,7 @@ const Carousel = ({ items, className = '' }) => {
         onClick={() => scroll('right')}
         aria-label="Next items"
       >
-        ❯
+        <ChevronRightIcon />
       </button>
 
       {/* Carousel Track */}

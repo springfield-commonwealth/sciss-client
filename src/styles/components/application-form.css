@@ -547,3 +547,280 @@
   cursor: not-allowed;
 }
 
+/* === Validation Animations (Story 1.2) === */
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@keyframes successPulse {
+  0% { box-shadow: 0 0 0 0 var(--success-color, #27AE60); }
+  70% { box-shadow: 0 0 0 6px rgba(39, 174, 96, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+}
+
+/* Error shake for invalid fields */
+.input-error-animate {
+  animation: shake 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--error-color) !important;
+  background: rgba(204, 29, 47, 0.05);
+}
+
+/* Success pulse for valid fields */
+.input-success-animate {
+  animation: successPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--success-color) !important;
+  background: rgba(39, 174, 96, 0.05);
+}
+
+/* Error message transitions */
+.form-error-animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-error-hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* File upload area animation states */
+.file-upload-area.upload-error {
+  animation: shake 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--error-color) !important;
+  background: rgba(204, 29, 47, 0.07);
+}
+.file-upload-area.upload-success {
+  animation: successPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--success-color) !important;
+  background: rgba(39, 174, 96, 0.07);
+}
+
+@keyframes errorPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--error-color, #CC1D2F);
+    border-color: var(--error-color, #CC1D2F);
+  }
+  60% {
+    box-shadow: 0 0 0 4px rgba(204, 29, 47, 0.25);
+    border-color: var(--error-color, #CC1D2F);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 29, 47, 0);
+    border-color: var(--error-color, #CC1D2F);
+  }
+}
+
+.input-error-pulse {
+  animation: errorPulse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--error-color, #CC1D2F) !important;
+}
+
+/* Success state animation for valid fields */
+@keyframes successGlow {
+  0% {
+    box-shadow: 0 0 0 0 var(--success-color, #27AE60);
+    border-color: var(--success-color, #27AE60);
+  }
+  50% {
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
+    border-color: var(--success-color, #27AE60);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+    border-color: var(--success-color, #27AE60);
+  }
+}
+
+.input-success-glow {
+  animation: successGlow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--success-color, #27AE60) !important;
+}
+
+/* Enhanced error message transitions */
+.form-error {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 2rem;
+  overflow: hidden;
+}
+
+.form-error-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+}
+
+.form-error-exit {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+}
+
+/* Email validation states */
+.email-validation-loading {
+  position: relative;
+}
+
+.email-validation-loading::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.email-validation-success {
+  border-color: var(--success-color, #27AE60) !important;
+  background: rgba(39, 174, 96, 0.05);
+}
+
+.email-validation-error {
+  border-color: var(--error-color, #CC1D2F) !important;
+  background: rgba(204, 29, 47, 0.05);
+}
+
+/* File upload animation states */
+.file-upload-area {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.file-upload-hover {
+  transform: scale(1.02);
+  border-color: var(--primary-blue);
+  background: rgba(31, 86, 164, 0.05);
+}
+
+.file-upload-dragover {
+  transform: scale(1.05);
+  border-color: var(--primary-blue);
+  background: rgba(31, 86, 164, 0.1);
+  border-style: dashed;
+}
+
+.file-upload-success {
+  animation: successGlow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--success-color, #27AE60);
+  background: rgba(39, 174, 96, 0.05);
+}
+
+.file-upload-error {
+  animation: errorPulse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--error-color, #CC1D2F);
+  background: rgba(204, 29, 47, 0.05);
+}
+
+/* Progress indicator for form completion */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width, 0%);
+  }
+}
+
+.form-progress-bar {
+  height: 4px;
+  background: var(--gray-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.form-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-yellow));
+  border-radius: 2px;
+  animation: progressFill 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Submit button loading state enhancement */
+.submit-btn-loading {
+  position: relative;
+  color: transparent;
+}
+
+.submit-btn-loading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  opacity: 0.7;
+}
+
+/* Enhanced focus states */
+.form-input:focus-visible,
+.form-radio:focus-visible,
+.form-checkbox:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
+  animation: focusGlow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes focusGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 196, 59, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
+  }
+}
+
+/* Reduced motion support (enhanced) */
+@media (prefers-reduced-motion: reduce) {
+  .input-error-pulse,
+  .input-success-glow,
+  .file-upload-hover,
+  .file-upload-dragover,
+  .file-upload-success,
+  .file-upload-error,
+  .form-progress-fill,
+  .submit-btn-loading::after,
+  .email-validation-loading::after {
+    animation: none;
+    transition: none;
+  }
+  
+  .file-upload-area,
+  .form-error {
+    transition: none;
+  }
+  
+  .form-input:focus-visible,
+  .form-radio:focus-visible,
+  .form-checkbox:focus-visible {
+    animation: none;
+  }
+}
+

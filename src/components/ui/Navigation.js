@@ -2,6 +2,7 @@ import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
 import { LogoBlack } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
+import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -66,7 +67,7 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle mobile menu"
               >
-                ☰
+                <HamburgerMenuIcon />
               </button>
             </>
           ) : (
@@ -98,7 +99,7 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close mobile menu"
               >
-                ✕
+                <Cross1Icon />
               </button>
             </div>
             <MobileNav

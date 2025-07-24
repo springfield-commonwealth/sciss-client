@@ -93,7 +93,7 @@
     "**/*.mts",
     "**/*.cts",
     ".next/types/**/*.ts"
-  ],
+, "babel.config.js.bak"  ],
 
   /* File Exclusion */
   "exclude": [

@@ -24,3 +24,6 @@ dist.zip
 .mdc/
 README-MDC.md
 .cursor/
+.claude/
+.bmad-*/
+web-bundles/

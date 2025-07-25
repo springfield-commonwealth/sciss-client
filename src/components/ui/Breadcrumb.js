@@ -10,19 +10,16 @@ const breadcrumbConfig = {
     label: "Tuitions & Fees",
     parent: "/program-overview",
   },
-  // Updated content architecture routes
-  "/courses": { label: "Academic Courses", parent: "/" },
-  "/activities": { label: "Life & Activities", parent: "/" },
-  "/trips": { label: "Day Trips", parent: "/" },
-  "/staff": { label: "Our Instructors", parent: "/" },
-  // Legacy route redirects for backwards compatibility
-  "/academics": { label: "Academics", parent: "/", redirect: "/courses" },
-  "/life-activities": {
-    label: "Life & Activities",
-    parent: "/",
-    redirect: "/activities",
-  },
-  "/day-trips": { label: "Day Trips", parent: "/", redirect: "/trips" },
+  // Academic routes
+  "/academics": { label: "Academics", parent: "/" },
+  "/courses": { label: "Academic Courses", parent: "/academics" },
+  "/staff": { label: "Our Instructors", parent: "/academics" },
+  // Life & Activities routes
+  "/life-activities": { label: "Life & Activities", parent: "/" },
+  "/activities": { label: "Activities", parent: "/life-activities" },
+  // Day Trips routes
+  "/day-trips": { label: "Day Trips", parent: "/" },
+  "/trips": { label: "Trips", parent: "/day-trips" },
   // Other pages
   "/about-us": { label: "About Us", parent: "/" },
   "/apply": { label: "Apply Now", parent: "/" },

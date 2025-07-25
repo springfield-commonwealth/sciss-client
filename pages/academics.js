@@ -4,10 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
 import FooterCTA from "@/components/ui/FooterCTA";
 import GalleryCard from "@/components/ui/GalleryCard";
-import {
-  AcademicsCarouselItems,
-  AcademicsElectiveCarouselItems,
-} from "@/constants/academicsContent";
+import { AcademicsCarouselItems } from "@/constants/academicsContent";
 import { AcademicsHero } from "@/constants/images";
 import {
   getAllCourses,
@@ -16,7 +13,7 @@ import {
 } from "@/lib/content/courses";
 import Link from "next/link";
 
-const Academics = ({ courses = [], categories = [], stats = {} }) => {
+const Academics = ({ courses = [], _categories = [], _stats = {} }) => {
   // Handle case where courses data might not be available
   const coursesList = Array.isArray(courses) ? courses : [];
   const hasValidCourses = coursesList.length > 0;
@@ -90,18 +87,12 @@ const Academics = ({ courses = [], categories = [], stats = {} }) => {
             <p>Discover the academic tracks that will shape your future</p>
           </div>
 
-          <div className="grid grid-2">
+          <div className="grid grid-1">
             <GalleryCard
               key="1"
               image="/images/featured/core.png"
               title="Core Courses"
               link="#core-courses-carousel"
-            />
-            <GalleryCard
-              key="2"
-              image="/images/featured/elective.png"
-              title="Electives"
-              link="#electives-carousel"
             />
           </div>
         </div>
@@ -120,18 +111,6 @@ const Academics = ({ courses = [], categories = [], stats = {} }) => {
           </div>
 
           <Carousel items={AcademicsCarouselItems} />
-        </div>
-      </section>
-
-      {/* Electives Overview */}
-      <section className="section" id="electives-carousel">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Academic Electives</h2>
-            <p>Enhance your learning with specialized elective programs</p>
-          </div>
-
-          <Carousel items={AcademicsElectiveCarouselItems} />
         </div>
       </section>
 

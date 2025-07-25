@@ -17,22 +17,41 @@ const navLinks = [
   },
   {
     label: "Academics",
-    href: "/academics", // Back to academics overview page
+    href: "/academics", // Overview page
     children: [
       { href: "/academics", label: "Overview" },
       { href: "/courses", label: "Browse All Courses" },
       { href: "/courses?category=core", label: "Core Courses" },
-      { href: "/courses?category=electives", label: "Electives" },
       { href: "/staff", label: "Our Instructors" },
     ],
   },
   {
-    href: "/activities", // Changed from /life-activities to /activities directory
     label: "Life & Activities",
+    href: "/life-activities", // Overview page
+    children: [
+      { href: "/life-activities", label: "Overview" },
+      { href: "/activities", label: "Browse All Activities" },
+      { href: "/activities?category=Sports", label: "Sports Programs" },
+      { href: "/activities?category=Fitness", label: "Fitness Programs" },
+      {
+        href: "/activities?category=Arts & Recreation",
+        label: "Arts & Recreation",
+      },
+    ],
   },
   {
-    href: "/trips", // Changed from /day-trips to /trips directory
     label: "Day Trips",
+    href: "/day-trips", // Overview page
+    children: [
+      { href: "/day-trips", label: "Overview" },
+      { href: "/trips", label: "Browse All Trips" },
+      { href: "/trips?category=University Visits", label: "University Visits" },
+      {
+        href: "/trips?category=Cultural Experiences",
+        label: "Cultural Experiences",
+      },
+      { href: "/trips?category=Educational Tours", label: "Educational Tours" },
+    ],
   },
   {
     label: "About Us",

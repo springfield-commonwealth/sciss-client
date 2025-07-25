@@ -409,8 +409,7 @@ const ApplicationForm = () => {
             }}
             onBlur={handleBlur}
             placeholder="Enter phone number"
-            className="phone-input"
-            className={`form-input ${
+            className={`form-input phone-input ${
               errorPulse["studentCell"] ? "input-error-pulse" : ""
             }`}
           />
@@ -699,11 +698,10 @@ const ApplicationForm = () => {
                 onChange={onChange}
                 onBlur={handleBlur}
                 aria-describedby="label_course"
-                className="form-radio"
-                required
                 className={`form-radio ${
                   errorPulse["course"] ? "input-error-pulse" : ""
                 }`}
+                required
               />
               <label htmlFor={`course_${idx}`} className="form-radio-label">
                 {option.label}
@@ -825,8 +823,7 @@ const ApplicationForm = () => {
             }}
             onBlur={handleBlur}
             placeholder="Enter phone number"
-            className="phone-input"
-            className={`form-input ${
+            className={`form-input phone-input ${
               errorPulse["parentPhone"] ? "input-error-pulse" : ""
             }`}
           />
@@ -854,13 +851,12 @@ const ApplicationForm = () => {
               checked={formValues.financialAidInterest === "Yes"}
               onChange={onChange}
               onBlur={handleBlur}
-              className="form-radio"
-              id="financialAidYes"
-              aria-describedby="label_financial_aid"
-              required
               className={`form-radio ${
                 errorPulse["financialAidInterest"] ? "input-error-pulse" : ""
               }`}
+              id="financialAidYes"
+              aria-describedby="label_financial_aid"
+              required
             />
             <label htmlFor="financialAidYes" className="form-radio-label">
               Yes
@@ -874,13 +870,12 @@ const ApplicationForm = () => {
               checked={formValues.financialAidInterest === "No"}
               onChange={onChange}
               onBlur={handleBlur}
-              className="form-radio"
-              id="financialAidNo"
-              aria-describedby="label_financial_aid"
-              required
               className={`form-radio ${
                 errorPulse["financialAidInterest"] ? "input-error-pulse" : ""
               }`}
+              id="financialAidNo"
+              aria-describedby="label_financial_aid"
+              required
             />
             <label htmlFor="financialAidNo" className="form-radio-label">
               No

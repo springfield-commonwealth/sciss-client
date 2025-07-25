@@ -183,9 +183,7 @@ export function getCourseStats() {
     ),
     coreCoursesCount: publishedCourses.filter((c) => c.category === "core")
       .length,
-    electivesCount: publishedCourses.filter(
-      (c) => c.category === "language" || c.category === "arts"
-    ).length,
+
     categoryCounts: {
       core: publishedCourses.filter((c) => c.category === "core").length,
       language: publishedCourses.filter((c) => c.category === "language")

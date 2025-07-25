@@ -98,8 +98,8 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
               <span className="stat-label">Core Courses</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">{stats.electivesCount}</span>
-              <span className="stat-label">Electives</span>
+              <span className="stat-number">{stats.categoryCounts.language + stats.categoryCounts.arts}</span>
+              <span className="stat-label">Specialized Programs</span>
             </div>
           </div>
         </div>
@@ -264,7 +264,7 @@ export async function getStaticProps() {
       props: {
         courses: [],
         categories: [],
-        stats: { totalCourses: 0, coreCoursesCount: 0, electivesCount: 0 },
+        stats: { totalCourses: 0, coreCoursesCount: 0, categoryCounts: { language: 0, arts: 0 } },
         breadcrumbs: [],
       },
     };

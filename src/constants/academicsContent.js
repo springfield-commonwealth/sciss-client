@@ -327,109 +327,13 @@ const AcademicsInstructorsHighlights = [
   },
 ];
 
-const AcademicsElectiveCarouselItems = [
-  {
-    title: "Basketball",
-    description:
-      "Competitive basketball training and games as part of our elective sports program",
-    image: "/images/carousel/basketball.png",
-  },
-  {
-    title: "Rowing",
-    description:
-      "Learn rowing techniques and water sports in our comprehensive athletics program",
-    image: "/images/carousel/rowing.png",
-  },
-  {
-    title: "Fitness Training",
-    description:
-      "Professional fitness and conditioning programs for all skill levels",
-    image: "/images/carousel/fitness.png",
-  },
-  {
-    title: "Golf",
-    description:
-      "Golf instruction and practice sessions for students interested in the sport",
-    image: "/images/carousel/golf.png",
-  },
-  {
-    title: "Fencing",
-    description:
-      "Learn the art of fencing with professional instruction and equipment",
-    image: "/images/carousel/fencing.png",
-  },
-  {
-    title: "Soccer & Archery",
-    description:
-      "Soccer training and archery instruction as part of diverse elective sports options",
-    image: "/images/carousel/archery.png",
-  },
-];
 
-const AcademicsSportsPrograms = [
-  {
-    title: "Basketball",
-    level: "All Levels",
-    description:
-      "Basketball training and competitive games as part of our afternoon elective sports program.",
-    features: [
-      "Professional instruction and coaching",
-      "Skill development for all levels",
-      "Team coordination and strategy",
-      "Competitive game experience",
-      "Basketball fundamentals training",
-    ],
-    schedule: "Afternoon elective sports sessions",
-  },
-  {
-    title: "Rowing",
-    level: "All Levels",
-    description:
-      "Rowing instruction and water sports training in our comprehensive elective sports program.",
-    features: [
-      "Professional rowing instruction",
-      "Water safety and technique training",
-      "Teamwork and coordination development",
-      "Physical fitness and endurance building",
-      "Scenic waterway experience",
-    ],
-    schedule: "Afternoon elective sports sessions",
-  },
-  {
-    title: "Golf",
-    level: "All Levels",
-    description:
-      "Golf instruction and practice as part of our diverse elective sports offerings.",
-    features: [
-      "Golf fundamentals and technique",
-      "Professional instruction",
-      "Course strategy and rules",
-      "Equipment and safety training",
-      "Individual skill development",
-    ],
-    schedule: "Afternoon elective sports sessions",
-  },
-  {
-    title: "Fencing",
-    level: "All Levels",
-    description:
-      "Learn the art and discipline of fencing with professional instruction and equipment.",
-    features: [
-      "Traditional fencing techniques",
-      "Safety protocols and equipment use",
-      "Strategic thinking and reflexes",
-      "Individual skill development",
-      "Historical and cultural context",
-    ],
-    schedule: "Afternoon elective sports sessions",
-  },
-];
+
+
 
 export {
   AcademicsCarouselItems,
   AcademicsCoreCourses,
-  AcademicsElectiveCarouselItems,
   AcademicsInstructorsHighlights,
   AcademicsPrograms,
-  AcademicsSportsPrograms,
 };

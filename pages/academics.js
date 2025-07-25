@@ -126,7 +126,7 @@ const Academics = ({ courses = [], _categories = [], _stats = {} }) => {
           </div>
 
           {hasValidCourses ? (
-            <div className="course-directory">
+            <div className="course-directory grid">
               {coursesList.map((course) => (
                 <div key={course.id} className="course-preview-card">
                   <div className="course-preview-header">

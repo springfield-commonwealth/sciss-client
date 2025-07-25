@@ -1,6 +1,7 @@
 import { ChevronRightIcon, HomeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 // Breadcrumb configuration for SCISS site structure
 const breadcrumbConfig = {
@@ -121,6 +122,16 @@ const BreadcrumbItem = ({ href, label, isLast, showIcon }) => {
 const Breadcrumb = ({ customRoutes = {}, className = "" }) => {
   const router = useRouter();
   const breadcrumbs = useBreadcrumbs(router.pathname, customRoutes);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll state like navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Don't show breadcrumbs on home page or if only one item
   if (breadcrumbs.length <= 1) {
@@ -152,7 +163,7 @@ const Breadcrumb = ({ customRoutes = {}, className = "" }) => {
       {/* Breadcrumb navigation */}
       <nav
         aria-label="Breadcrumb"
-        className={`breadcrumb ${className}`}
+        className={`breadcrumb ${isScrolled ? "scrolled" : ""} ${className}`}
         role="navigation"
       >
         <ol className="breadcrumb-list">

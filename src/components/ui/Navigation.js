@@ -64,7 +64,7 @@ const navLinks = [
   },
 ];
 
-const Navigation = () => {
+const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
   const router = useRouter();
   const {
     isScrolled,
@@ -76,6 +76,7 @@ const Navigation = () => {
     setMobileDropdownOpen,
     isMobile,
     isActiveLink,
+    navHeight,
   } = useNavigationState(router);
 
   return (
@@ -111,7 +112,31 @@ const Navigation = () => {
             </>
           )}
         </nav>
+
+        {/* Optional integrated breadcrumb */}
+        {showBreadcrumb && breadcrumbs.length > 0 && (
+          <div className="nav-breadcrumb">
+            <nav aria-label="Breadcrumb">
+              <ol className="nav-breadcrumb-list">
+                {breadcrumbs.map((crumb, index) => (
+                  <li key={crumb.href} className="nav-breadcrumb-item">
+                    {index < breadcrumbs.length - 1 ? (
+                      <Link href={crumb.href} className="nav-breadcrumb-link">
+                        {crumb.label}
+                      </Link>
+                    ) : (
+                      <span className="nav-breadcrumb-current">
+                        {crumb.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          </div>
+        )}
       </header>
+
       {isMobileMenuOpen && isMobile && (
         <div className="mobile-menu-overlay">
           <div className="mobile-menu">

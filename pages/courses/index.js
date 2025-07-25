@@ -61,22 +61,6 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
       </Head>
 
       <div className="courses-directory">
-        {/* Breadcrumbs */}
-        <div className="breadcrumbs-container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumbs">
-              {breadcrumbs.map((crumb, index) => (
-                <li key={crumb.href} className="breadcrumb-item">
-                  {index < breadcrumbs.length - 1 ? (
-                    <Link href={crumb.href}>{crumb.label}</Link>
-                  ) : (
-                    <span aria-current="page">{crumb.label}</span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </div>
 
         {/* Header Section */}
         <div className="courses-header">

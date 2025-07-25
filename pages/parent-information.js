@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   ParentInfoCampusServices,
   ParentInfoCommunicationSchedule,
@@ -378,6 +379,8 @@ const ParentInformation = () => {
           </div>
         </div>
       </section>
+
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

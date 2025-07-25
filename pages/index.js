@@ -5,6 +5,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import Highlights from "@/components/sections/Highlights";
 import Testimonials from "@/components/sections/Testimonials";
 import FeatureVideo from "@/components/ui/FeatureVideo";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   HomeHighlights,
   HomePresidentLetter,
@@ -66,6 +67,7 @@ const HomePage = () => {
         desc="Don't just head from us. Hear from our amazing SCISS alumni"
         testimonials={HomeTestimonials}
       />
+      <FooterCTA linkTitle="Life & Activities" link="/activities" />
     </Layout>
   );
 };

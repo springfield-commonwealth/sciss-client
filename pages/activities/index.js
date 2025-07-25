@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getActivityCategories,
   getActivityStats,
@@ -138,66 +139,66 @@ const ActivitiesDirectory = ({
             {filteredActivities.length > 0 ? (
               <div className="activities-grid">
                 {filteredActivities.map((activity) => (
-                  <Link key={activity.id} href={`/activities/${activity.slug}`} className="activity-card">
-                      <div className="activity-card-image">
-                        {activity.image && (
-                          <img
-                            src={activity.image}
-                            alt={activity.title}
-                            className="activity-photo"
-                          />
-                        )}
-                        <div className="activity-card-badges">
-                          <span className="category-badge">
-                            {activity.category}
-                          </span>
-                          <span className="level-badge">{activity.level}</span>
-                        </div>
-                      </div>
-
-                      <div className="activity-card-content">
-                        <h3 className="activity-card-title">
-                          {activity.title}
-                        </h3>
-                        <p className="activity-card-description">
-                          {activity.description.substring(0, 120)}
-                          {activity.description.length > 120 && "..."}
-                        </p>
-
-                        <div className="activity-card-features">
-                          {activity.features
-                            .slice(0, 3)
-                            .map((feature, index) => (
-                              <span key={index} className="feature-tag">
-                                {feature}
-                              </span>
-                            ))}
-                          {activity.features.length > 3 && (
-                            <span className="feature-more">
-                              +{activity.features.length - 3} more
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="activity-card-info">
-                          <div className="info-item">
-                            <strong>Duration:</strong> {activity.duration}
-                          </div>
-                          <div className="info-item">
-                            <strong>Max Participants:</strong>{" "}
-                            {activity.maxParticipants}
-                          </div>
-                          <div className="info-item">
-                            <strong>Difficulty:</strong> {activity.difficulty}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="activity-card-footer">
-                        <span className="view-details-text">
-                          View Full Details →
+                  <Link
+                    key={activity.id}
+                    href={`/activities/${activity.slug}`}
+                    className="activity-card"
+                  >
+                    <div className="activity-card-image">
+                      {activity.image && (
+                        <img
+                          src={activity.image}
+                          alt={activity.title}
+                          className="activity-photo"
+                        />
+                      )}
+                      <div className="activity-card-badges">
+                        <span className="category-badge">
+                          {activity.category}
                         </span>
+                        <span className="level-badge">{activity.level}</span>
                       </div>
+                    </div>
+
+                    <div className="activity-card-content">
+                      <h3 className="activity-card-title">{activity.title}</h3>
+                      <p className="activity-card-description">
+                        {activity.description.substring(0, 120)}
+                        {activity.description.length > 120 && "..."}
+                      </p>
+
+                      <div className="activity-card-features">
+                        {activity.features.slice(0, 3).map((feature, index) => (
+                          <span key={index} className="feature-tag">
+                            {feature}
+                          </span>
+                        ))}
+                        {activity.features.length > 3 && (
+                          <span className="feature-more">
+                            +{activity.features.length - 3} more
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="activity-card-info">
+                        <div className="info-item">
+                          <strong>Duration:</strong> {activity.duration}
+                        </div>
+                        <div className="info-item">
+                          <strong>Max Participants:</strong>{" "}
+                          {activity.maxParticipants}
+                        </div>
+                        <div className="info-item">
+                          <strong>Difficulty:</strong> {activity.difficulty}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="activity-card-footer">
+                      <span className="view-details-text">
+                        View Full Details →
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -274,6 +275,7 @@ const ActivitiesDirectory = ({
           </div>
         </section>
       </main>
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

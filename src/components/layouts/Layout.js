@@ -31,7 +31,6 @@ const Layout = ({
         <Navigation />
         <Breadcrumb />
         <main className="main-content">{children}</main>
-        <FooterCTA linkTitle={FooterCTALinkTitle} link={FooterCTALink} />
         <Footer />
       </div>
     </>

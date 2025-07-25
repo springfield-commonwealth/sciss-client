@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getAllCourses,
   getCourseCategories,
@@ -233,6 +234,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
           </div>
         </div>
       </div>
+      <FooterCTA linkTitle="Apply Now" link="/apply" />
     </Layout>
   );
 };
@@ -245,7 +247,7 @@ export async function getStaticProps() {
     const stats = getCourseStats();
     const breadcrumbs = generateBreadcrumbs([
       { label: "Home", href: "/" },
-      { label: "Academic Courses", href: "/courses", active: true }
+      { label: "Academic Courses", href: "/courses", active: true },
     ]);
 
     return {

@@ -1,6 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import { TuitionHero } from "@/constants/images";
+import FooterCTA from "@/components/ui/FooterCTA";
+import { TuitionsAndFeesHero } from "@/constants/images";
 import {
   TuitionsAdditionalCosts,
   TuitionsApplicationProcess,
@@ -20,7 +21,7 @@ const TuitionsAndFees = () => {
         title="Tuitions & Fees"
         subtitle="Invest in Your Future"
         description="Discover our competitive pricing, flexible payment options, and scholarship opportunities for an exceptional summer learning experience."
-        backgroundImage={TuitionHero}
+        backgroundImage={TuitionsAndFeesHero}
         ctaText="Application Process"
         ctaLink="#apply"
         // secondaryCtaText="View Payment Plans"
@@ -137,6 +138,8 @@ const TuitionsAndFees = () => {
           </div>
         </div>
       </section>
+
+      <FooterCTA linkTitle="Apply Now" link="/apply" />
     </Layout>
   );
 };

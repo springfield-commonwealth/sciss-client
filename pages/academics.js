@@ -2,6 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
+import FooterCTA from "@/components/ui/FooterCTA";
 import GalleryCard from "@/components/ui/GalleryCard";
 import {
   AcademicsCarouselItems,
@@ -50,7 +51,7 @@ const Academics = ({ courses = [], categories = [], stats = {} }) => {
             </p>
           </div>
 
-          <div className="support-grid">
+          <div className="grid grid-3 support-grid">
             <div className="support-card">
               <div className="support-icon icon-mentorship"></div>
               <h4>Faculty Mentorship</h4>
@@ -318,6 +319,8 @@ const Academics = ({ courses = [], categories = [], stats = {} }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTA linkTitle="Life & Activities" link="/activities" />
     </Layout>
   );
 };

@@ -12,7 +12,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
   if (router.isFallback) {
     return (
       <Layout>
-        <div className="course-loading">
+        <div className="course-page-loading">
           <h1>Loading course information...</h1>
         </div>
       </Layout>
@@ -23,7 +23,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
   if (!course) {
     return (
       <Layout>
-        <div className="course-not-found">
+        <div className="course-page-not-found">
           <h1>Course Not Found</h1>
           <p>The course you're looking for could not be found.</p>
         </div>
@@ -88,12 +88,12 @@ const CoursePage = ({ course, breadcrumbs }) => {
               provider: {
                 "@type": "EducationalOrganization",
                 name: "Springfield Commonwealth International Summer School",
-                url: "https://sciss.edu",
+                url: "https://sciss.org",
               },
               educationalLevel: level,
               timeRequired: duration,
               image: seo.ogImage,
-              url: `https://sciss.edu/courses/${course.slug}`,
+              url: `https://sciss.org/courses/${course.slug}`,
               coursePrerequisites: prerequisites,
               learningResourceType: "Course",
               inLanguage: "en-US",
@@ -102,38 +102,38 @@ const CoursePage = ({ course, breadcrumbs }) => {
         />
       </Head>
 
-      <main className="course-page">
+      <main className="course-page-page">
         {/* Hero Section */}
-        <section className="course-hero">
-          <div className="course-hero-content">
-            <div className="course-hero-text">
-              <h1 className="course-title">{title}</h1>
-              <p className="course-description">{description}</p>
+        <section className="course-page-hero">
+          <div className="course-page-hero-content">
+            <div className="course-page-hero-text">
+              <h1 className="course-page-title">{title}</h1>
+              <p className="course-page-description">{description}</p>
 
-              <div className="course-meta">
-                <div className="course-meta-item">
+              <div className="course-page-meta">
+                <div className="course-page-meta-item">
                   <span className="meta-label">Level:</span>
                   <span className="meta-value">{level}</span>
                 </div>
-                <div className="course-meta-item">
+                <div className="course-page-meta-item">
                   <span className="meta-label">Duration:</span>
                   <span className="meta-value">{duration}</span>
                 </div>
-                <div className="course-meta-item">
+                <div className="course-page-meta-item">
                   <span className="meta-label">Session:</span>
                   <span className="meta-value">{session}</span>
                 </div>
-                <div className="course-meta-item">
+                {/* <div className="course-page-meta-item">
                   <span className="meta-label">Capacity:</span>
                   <span className="meta-value">{capacity} students</span>
                 </div>
-                <div className="course-meta-item">
+                <div className="course-page-meta-item">
                   <span className="meta-label">Age Range:</span>
                   <span className="meta-value">{ageRange}</span>
-                </div>
+                </div> */}
               </div>
 
-              <div className="course-actions">
+              <div className="course-page-actions">
                 <button
                   className="btn btn-primary"
                   onClick={() => router.push("/apply")}
@@ -150,7 +150,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
 
             {image && (
-              <div className="course-hero-image">
+              <div className="course-page-hero-image">
                 <img src={image} alt={title} />
               </div>
             )}
@@ -158,16 +158,16 @@ const CoursePage = ({ course, breadcrumbs }) => {
         </section>
 
         {/* Course Details */}
-        <section className="course-details">
-          <div className="course-content">
+        <section className="course-page-details">
+          <div className="course-page-content">
             {/* Prerequisites */}
-            <div className="course-section">
+            <div className="course-page-section">
               <h2>Prerequisites</h2>
               <p>{prerequisites}</p>
             </div>
 
             {/* Highlights */}
-            <div className="course-section">
+            <div className="course-page-section">
               <h2>Program Highlights</h2>
               <ul className="highlights-list">
                 {highlights.map((highlight, index) => (
@@ -177,7 +177,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
 
             {/* Curriculum */}
-            <div className="course-section">
+            <div className="course-page-section">
               <h2>Curriculum</h2>
               <ul className="curriculum-list">
                 {curriculum.map((item, index) => (
@@ -187,7 +187,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
 
             {/* Learning Outcomes */}
-            <div className="course-section">
+            <div className="course-page-section">
               <h2>Learning Outcomes</h2>
               <ul className="outcomes-list">
                 {outcomes.map((outcome, index) => (
@@ -197,7 +197,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
 
             {/* Call to Action */}
-            <div className="course-cta">
+            <div className="course-page-cta">
               <h2>Ready to Join This Program?</h2>
               <p>
                 Secure your spot in this exclusive program and start your

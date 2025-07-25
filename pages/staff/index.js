@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getAllStaff,
   getStaffDepartments,
@@ -228,6 +229,8 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
           </div>
         </section>
       </main>
+
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

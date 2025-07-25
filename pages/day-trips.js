@@ -1,6 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   DayTripsCarouselItems,
   DayTripsCulturalTrips,
@@ -8,7 +9,7 @@ import {
   DayTripsUniversityTrips,
 } from "@/constants/dayTripsContent";
 import { DayTripsHero } from "@/constants/images";
-import { getPopularTrips, getTripCategories, getUniversityTrips } from "@/lib/content/trips";
+import { getPopularTrips, getUniversityTrips } from "@/lib/content/trips";
 import Link from "next/link";
 
 const DayTrips = ({ popularTrips, universityTrips }) => {
@@ -34,27 +35,28 @@ const DayTrips = ({ popularTrips, universityTrips }) => {
         <div className="container">
           <div className="text-center mb-5">
             <h2>University Visits</h2>
-            <p>Experience prestigious institutions and explore your academic future</p>
+            <p>
+              Experience prestigious institutions and explore your academic
+              future
+            </p>
           </div>
 
           <div className="trips-preview-grid">
             {universityTrips.slice(0, 3).map((trip) => (
               <div key={trip.id} className="trip-preview-card">
                 <div className="trip-preview-image">
-                  {trip.image && (
-                    <img src={trip.image} alt={trip.title} />
-                  )}
+                  {trip.image && <img src={trip.image} alt={trip.title} />}
                   <div className="trip-badges">
                     <span className="category-badge">{trip.category}</span>
                     <span className="duration-badge">{trip.duration}</span>
                   </div>
                 </div>
-                
+
                 <div className="trip-preview-content">
                   <h3>{trip.title}</h3>
                   <div className="trip-location">📍 {trip.location}</div>
                   <p>{trip.description.substring(0, 120)}...</p>
-                  
+
                   <div className="trip-highlights-preview">
                     {trip.highlights.slice(0, 2).map((highlight, index) => (
                       <span key={index} className="highlight-tag">
@@ -62,8 +64,11 @@ const DayTrips = ({ popularTrips, universityTrips }) => {
                       </span>
                     ))}
                   </div>
-                  
-                  <Link href={`/trips/${trip.slug}`} className="btn btn-primary btn-sm">
+
+                  <Link
+                    href={`/trips/${trip.slug}`}
+                    className="btn btn-primary btn-sm"
+                  >
                     View Details
                   </Link>
                 </div>
@@ -224,6 +229,8 @@ const DayTrips = ({ popularTrips, universityTrips }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getAllTrips,
   getTripCategories,
@@ -133,68 +134,66 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
             {filteredTrips.length > 0 ? (
               <div className="trips-grid">
                 {filteredTrips.map((trip) => (
-                  <Link key={trip.id} href={`/trips/${trip.slug}`} className="trip-card">
-                      <div className="trip-card-image">
-                        {trip.image && (
-                          <img
-                            src={trip.image}
-                            alt={trip.title}
-                            className="trip-photo"
-                          />
+                  <Link
+                    key={trip.id}
+                    href={`/trips/${trip.slug}`}
+                    className="trip-card"
+                  >
+                    <div className="trip-card-image">
+                      {trip.image && (
+                        <img
+                          src={trip.image}
+                          alt={trip.title}
+                          className="trip-photo"
+                        />
+                      )}
+                      <div className="trip-card-badges">
+                        <span className="category-badge">{trip.category}</span>
+                        <span className="duration-badge">{trip.duration}</span>
+                      </div>
+                    </div>
+
+                    <div className="trip-card-content">
+                      <h3 className="trip-card-title">{trip.title}</h3>
+                      <div className="trip-card-location">
+                        📍 {trip.location}
+                      </div>
+                      <p className="trip-card-description">
+                        {trip.description.substring(0, 120)}
+                        {trip.description.length > 120 && "..."}
+                      </p>
+
+                      <div className="trip-card-highlights">
+                        {trip.highlights.slice(0, 3).map((highlight, index) => (
+                          <span key={index} className="highlight-tag">
+                            {highlight}
+                          </span>
+                        ))}
+                        {trip.highlights.length > 3 && (
+                          <span className="highlight-more">
+                            +{trip.highlights.length - 3} more
+                          </span>
                         )}
-                        <div className="trip-card-badges">
-                          <span className="category-badge">
-                            {trip.category}
-                          </span>
-                          <span className="duration-badge">
-                            {trip.duration}
-                          </span>
-                        </div>
                       </div>
 
-                      <div className="trip-card-content">
-                        <h3 className="trip-card-title">{trip.title}</h3>
-                        <div className="trip-card-location">
-                          📍 {trip.location}
+                      <div className="trip-card-info">
+                        <div className="info-item">
+                          <strong>Duration:</strong> {trip.duration}
                         </div>
-                        <p className="trip-card-description">
-                          {trip.description.substring(0, 120)}
-                          {trip.description.length > 120 && "..."}
-                        </p>
-
-                        <div className="trip-card-highlights">
-                          {trip.highlights
-                            .slice(0, 3)
-                            .map((highlight, index) => (
-                              <span key={index} className="highlight-tag">
-                                {highlight}
-                              </span>
-                            ))}
-                          {trip.highlights.length > 3 && (
-                            <span className="highlight-more">
-                              +{trip.highlights.length - 3} more
-                            </span>
-                          )}
+                        <div className="info-item">
+                          <strong>Group Size:</strong> {trip.groupSize}
                         </div>
-
-                        <div className="trip-card-info">
-                          <div className="info-item">
-                            <strong>Duration:</strong> {trip.duration}
-                          </div>
-                          <div className="info-item">
-                            <strong>Group Size:</strong> {trip.groupSize}
-                          </div>
-                          <div className="info-item">
-                            <strong>Transport:</strong> {trip.transportMode}
-                          </div>
+                        <div className="info-item">
+                          <strong>Transport:</strong> {trip.transportMode}
                         </div>
                       </div>
+                    </div>
 
-                      <div className="trip-card-footer">
-                        <span className="view-details-text">
-                          View Full Itinerary →
-                        </span>
-                      </div>
+                    <div className="trip-card-footer">
+                      <span className="view-details-text">
+                        View Full Itinerary →
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -271,6 +270,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
           </div>
         </section>
       </main>
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

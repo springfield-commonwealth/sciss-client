@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
 import { LifeActivitiesHero } from "@/constants/images";
 import {
   LifeActivitiesFitnessPrograms,
@@ -176,6 +177,8 @@ const LifeActivities = ({ popularActivities, activityCategories }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

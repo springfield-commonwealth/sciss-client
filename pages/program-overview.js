@@ -2,6 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
+import FooterCTA from "@/components/ui/FooterCTA";
 import { ProgramOverviewHero } from "@/constants/images";
 import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 
@@ -111,6 +112,7 @@ const ProgramOverview = () => {
       </section>
 
       <WeeklySchedule />
+      <FooterCTA linkTitle="Apply Now" link="/apply" />
     </Layout>
   );
 };

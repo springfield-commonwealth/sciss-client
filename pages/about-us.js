@@ -1,6 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
 import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 
@@ -148,6 +149,8 @@ const AboutUs = () => {
           gridsize="3"
         />
       </section>
+
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

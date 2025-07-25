@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import {
   ADayAtScissAccommodationInfo,
@@ -152,6 +153,7 @@ const ADayAtSciss = () => {
       </section>
 
       <WeeklySchedule />
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

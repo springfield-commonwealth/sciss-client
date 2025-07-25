@@ -1,5 +1,6 @@
 import ApplicationForm from "@/components/forms/ApplicationForm";
 import Footer from "@/components/ui/Footer";
+import FooterCTA from "@/components/ui/FooterCTA";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -34,6 +35,7 @@ export default function ApplyPage() {
           <ApplicationForm />
         </div>
       </section>
+      <FooterCTA linkTitle="Academic Programs" link="/academics" />
       <Footer />
     </>
   );

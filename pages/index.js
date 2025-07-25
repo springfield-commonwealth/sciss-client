@@ -22,7 +22,7 @@ const HomePage = () => {
     >
       {/* Hero Section */}
       <HeroSection
-        title="Inspire Global Leaders of Tomorrow"
+        title="Inspire Global Leaders for Tomorrow"
         subtitle="Summer 2025"
         description="An enriching summer experience combining cutting-edge academics, sports, field trips, and inclusive cultural activities."
         backgroundImage={HomeHero}

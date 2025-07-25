@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import Footer from "@/components/ui/Footer";
 import FooterCTA from "@/components/ui/FooterCTA";
 import Navigation from "@/components/ui/Navigation";
@@ -28,6 +29,7 @@ const Layout = ({
 
       <div className={`site-wrapper ${inter.className}`}>
         <Navigation />
+        <Breadcrumb />
         <main className="main-content">{children}</main>
         <FooterCTA linkTitle={FooterCTALinkTitle} link={FooterCTALink} />
         <Footer />

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document maps the dependencies and integration points between **Epic 1 (Design & UX Enhancement)** and **Epic 2 (Component Architecture Refactoring with Radix UI)** to ensure optimal implementation sequencing and technical coordination.
+This document maps the dependencies and integration points between all five epics in the SCISS platform modernization initiative to ensure optimal implementation sequencing and technical coordination.
 
 ## Epic Summary
 
@@ -24,18 +24,48 @@ This document maps the dependencies and integration points between **Epic 1 (Des
 - **2.3** Modal and Dialog System with Radix UI
 - **2.4** Design System Token Integration
 
+### Epic 3: New Feature Development (Educational Platform Enhancement)
+
+**Goal:** Develop comprehensive educational features for post-enrollment student experience
+
+- **3.1** Student Portal & Dashboard System
+
+### Epic 4: CI/CD & DevOps Enhancement (Automation)
+
+**Goal:** Enhance CI/CD pipeline with quality gates, automatic deployment, and monitoring
+
+- **4.1** Quality Gates & Epic Integration Testing
+- **4.2** Automatic Production Deployment Pipeline
+- **4.3** Enhanced Environment Management & Preview Deploys
+- **4.4** Post-Deployment Monitoring & Health Checks
+
+### Epic 5: Content Architecture Modernization (Blog Post System)
+
+**Goal:** Transform content structure to individual pages with JSON-based architecture for better SEO
+
+- **5.1** Content Infrastructure Foundation
+- **5.2** Course Content Migration and Dynamic Pages
+- **5.3** Activity Content Migration and Dynamic Pages
+- **5.4** Trip Content Migration and Dynamic Pages
+- **5.5** Staff and Lecturer Profile System
+- **5.6** Content Listing and Navigation Enhancement
+- **5.7** SEO Optimization and Content Discovery
+
 ---
 
 ## 🔗 CRITICAL DEPENDENCIES MATRIX
 
-### **Story-Level Dependencies**
+### **Cross-Epic Dependencies Matrix**
 
-| Epic 2 Story                      | Depends On Epic 1                           | Dependency Type | Integration Points                                        |
+| Epic/Story                        | Depends On                                  | Dependency Type | Integration Points                                        |
 | --------------------------------- | ------------------------------------------- | --------------- | --------------------------------------------------------- |
 | **2.1 Radix Form Controls**       | **1.1 Button States + 1.2 Form Animations** | **CRITICAL**    | Animation timing, interaction states, validation feedback |
 | **2.2 Radix Navigation**          | **1.1 Button States + 1.4 Breadcrumbs**     | **HIGH**        | Navigation interaction patterns, focus states             |
 | **2.3 Radix Modal System**        | **1.1 Button States + 1.2 Form Animations** | **MEDIUM**      | Modal button interactions, form integration               |
 | **2.4 Design System Integration** | **ALL Epic 1 Stories**                      | **FOUNDATION**  | CSS tokens, animation standards, interaction patterns     |
+| **3.1 Student Portal**            | **Epic 1 + Epic 2**                         | **HIGH**        | Enhanced interactions, Radix components for portal UI     |
+| **4.1 Quality Gates**             | **Epic 1 + Epic 2**                         | **CRITICAL**    | Component testing, validation automation                  |
+| **5.1-5.7 Content System**        | **Epic 1 + Epic 2**                         | **MEDIUM**      | Enhanced navigation, breadcrumbs, design consistency      |
 
 ### **Technical Integration Points**
 
@@ -115,74 +145,63 @@ const RadixNavigation = {
 
 ---
 
-## 📅 OPTIMAL IMPLEMENTATION SEQUENCE
+## 📅 COMPREHENSIVE IMPLEMENTATION ROADMAP
 
-### **Phase 1: Foundation (Weeks 1-2)**
+### **Phase 1: Foundation (Weeks 1-2) - Epic 1**
 
-**PRIORITY: Epic 1 Stories - Establish Standards**
+**PRIORITY: Establish Design System Standards**
 
 ```mermaid
 graph TD
     A[1.1 Enhanced Button States] --> B[1.2 Form Validation Animations]
     B --> C[Design System Standards Established]
-    C --> D[Ready for Epic 2 Integration]
+    C --> D[Ready for Multi-Epic Integration]
 ```
 
 **Week 1:** Story 1.1 Enhanced Button Interaction States
-
-- Establishes animation timing: `cubic-bezier(0.4, 0, 0.2, 1)`
-- Creates focus indicator standards: `--accent-yellow` outline
-- Sets interaction feedback patterns: hover, active, disabled states
-
 **Week 2:** Story 1.2 Form Validation Micro-Animations
 
-- Builds on 1.1 animation standards
-- Creates validation feedback system: shake animations, success states
-- Establishes form interaction patterns for Epic 2.1 integration
+### **Phase 2: Component Modernization (Weeks 3-6) - Epic 1 & 2**
 
-### **Phase 2: Progressive Enhancement (Weeks 3-4)**
-
-**PRIORITY: Epic 1 Advanced + Epic 2 Foundation**
+**PRIORITY: Complete UI Foundation**
 
 ```mermaid
 graph TD
-    A[1.3 Progressive Form Improvements] --> B[2.4 Design System Integration]
-    C[1.4 Breadcrumb Navigation] --> D[2.1 Radix Form Controls - START]
-    B --> D
-    D --> E[Foundation Ready for Advanced Epic 2]
+    A[1.3 Progressive Forms + 2.4 Design Tokens] --> B[1.4 Breadcrumbs + 2.1 Radix Forms]
+    B --> C[2.2 Radix Navigation + 2.3 Radix Modals]
+    C --> D[Epic 1 & 2 Complete - Ready for Features]
 ```
 
-**Week 3:** Stories 1.3 + 2.4 (Parallel Development)
+**Week 3:** Stories 1.3 + 2.4 (Parallel)
+**Week 4:** Stories 1.4 + 2.1 (Coordinated)
+**Week 5:** Story 2.2 Radix Navigation
+**Week 6:** Story 2.3 Radix Modal System
 
-- **1.3** Progressive Form Improvements: Auto-save, progress indication
-- **2.4** Design System Token Integration: Radix CSS architecture setup
+### **Phase 3: Parallel Development (Weeks 7-10) - Epic 3, 4, 5**
 
-**Week 4:** Stories 1.4 + 2.1 (Coordinated Development)
-
-- **1.4** Breadcrumb Navigation: Site navigation enhancement
-- **2.1** Radix Form Controls: **DEPENDS ON** 1.1, 1.2, 2.4 completion
-
-### **Phase 3: Radix Integration (Weeks 5-6)**
-
-**PRIORITY: Epic 2 Advanced Implementation**
+**PRIORITY: Feature Development + Infrastructure + Content**
 
 ```mermaid
 graph TD
-    A[2.1 Radix Form Controls] --> B[2.2 Radix Navigation]
-    A --> C[2.3 Radix Modal System]
-    B --> D[All Components Integrated]
-    C --> D
+    A[Epic 1 & 2 Complete] --> B[Epic 4: Quality Gates 4.1]
+    A --> C[Epic 5: Content Foundation 5.1]
+    A --> D[Epic 3: Student Portal 3.1]
+    B --> E[Epic 4: Auto Deploy 4.2-4.4]
+    C --> F[Epic 5: Content Migration 5.2-5.7]
+    D --> G[Epic 3: Additional Features 3.2-3.4]
 ```
 
-**Week 5:** Story 2.2 Radix Navigation Components
+**Week 7:** Epic 4.1 Quality Gates + Epic 5.1 Content Foundation + Epic 3.1 Student Portal
+**Week 8:** Epic 4.2 Auto Deploy + Epic 5.2-5.3 Course/Activity Pages + Epic 3.2 Course Materials
+**Week 9:** Epic 4.3 Environments + Epic 5.4-5.5 Trip/Staff Pages + Epic 3.3 Progress Tracking
+**Week 10:** Epic 4.4 Monitoring + Epic 5.6-5.7 Navigation/SEO + Epic 3.4 Communication Platform
 
-- **DEPENDS ON:** 1.1 (button states), 1.4 (breadcrumbs), 2.4 (design tokens)
-- Integrates Epic 1 interaction patterns with Radix NavigationMenu
+### **Phase 4: Integration & Polish (Weeks 11-12)**
 
-**Week 6:** Story 2.3 Radix Modal Dialog System
+**PRIORITY: Cross-Epic Integration and Final Testing**
 
-- **DEPENDS ON:** 1.1 (button states), 1.2 (form animations), 2.4 (design tokens)
-- Completes comprehensive component modernization
+**Week 11:** Cross-epic integration testing and optimization
+**Week 12:** Final polish, documentation, and deployment preparation
 
 ---
 
@@ -238,6 +257,35 @@ const useEnhancedForm = () => {
   // Epic 1.2 validation animations
   // Epic 1.3 auto-save functionality
   // Epic 2.1 Radix component integration
+};
+```
+
+#### **Content Architecture Integration (Epic 1, 2 → Epic 5)**
+
+```javascript
+// Epic 5 leverages Epic 1 & 2 enhancements
+const ContentPage = ({ content }) => {
+  // Epic 1.4 breadcrumb navigation
+  // Epic 1.1 enhanced button interactions for "Learn More"
+  // Epic 2.2 Radix navigation for content categories
+  // Epic 2.4 design system consistency across all content pages
+};
+```
+
+#### **Cross-Epic Feature Integration (Epic 1, 2 → Epic 3, 4, 5)**
+
+```javascript
+// Epic 3 Student Portal uses Epic 1 & 2 foundation
+const StudentPortal = () => {
+  // Epic 1 enhanced interactions for dashboard navigation
+  // Epic 2 Radix components for accessible portal interface
+};
+
+// Epic 4 Quality Gates validate Epic 1, 2, 5 components
+const QualityGates = {
+  epic1: "Button states, form validation, animations",
+  epic2: "Radix accessibility, design system integration",
+  epic5: "Content pages SEO, navigation consistency",
 };
 ```
 
@@ -314,32 +362,63 @@ describe("Epic Integration Tests", () => {
 
 ---
 
-## 🎉 INTEGRATION COMPLETION CHECKLIST
+## 🎉 COMPREHENSIVE INTEGRATION COMPLETION CHECKLIST
 
-### **Epic 1 → Epic 2 Handoff Requirements**
+### **Foundation Epic Completion (Epic 1 & 2)**
 
 - [ ] All Epic 1 animation standards documented in design system
-- [ ] Form validation patterns tested and ready for Radix integration
+- [ ] Form validation patterns tested and ready for cross-epic integration
 - [ ] Navigation patterns established and coordination points identified
-- [ ] CSS custom properties validated for Radix component usage
-
-### **Epic 2 Integration Validation**
-
+- [ ] CSS custom properties validated for all component usage
 - [ ] Radix form controls implement Epic 1.1 + 1.2 patterns correctly
 - [ ] Radix navigation coordinates with Epic 1.4 breadcrumb system
 - [ ] Modal system integrates Epic 1 button and form enhancements
 - [ ] Design system maintains consistency across all components
 
-### **Final Integration Testing**
+### **Feature Epic Integration (Epic 3, 4, 5)**
 
-- [ ] Cross-epic user journeys tested (navigation → forms → modals)
-- [ ] Performance benchmarks validated for complete system
+- [ ] **Epic 3**: Student portal uses Epic 1 & 2 enhanced interactions and Radix components
+- [ ] **Epic 4**: Quality gates validate Epic 1, 2, and 5 component functionality
+- [ ] **Epic 5**: Content pages implement Epic 1 navigation patterns and Epic 2 design system
+- [ ] **Epic 5**: Individual content pages use Epic 1.4 breadcrumb navigation
+- [ ] **Epic 5**: Content discovery features use Epic 2 accessible form controls
+
+### **Cross-Epic Integration Validation**
+
+- [ ] Content architecture (Epic 5) integrates seamlessly with enhanced navigation (Epic 1 & 2)
+- [ ] Student portal (Epic 3) leverages content pages (Epic 5) for course information
+- [ ] Quality gates (Epic 4) validate all epic integrations in staging environments
+- [ ] Design system consistency maintained across all epic implementations
+
+### **Final System Integration Testing**
+
+- [ ] Complete user journeys tested (marketing → application → content → portal)
+- [ ] Performance benchmarks validated for all five epic implementations
 - [ ] Accessibility compliance verified across all integrated features
-- [ ] Mobile experience optimized for all Epic 1 + Epic 2 features
+- [ ] Mobile experience optimized for all epic features
+- [ ] SEO optimization (Epic 5) coordinated with existing marketing pages
+- [ ] Deployment automation (Epic 4) supports all epic feature deployments
 
 ---
 
-**Document Version:** 1.0  
+## 📊 **Epic Completion Summary**
+
+| Epic       | Status | Target Weeks | Dependencies | Key Deliverables                                |
+| ---------- | ------ | ------------ | ------------ | ----------------------------------------------- |
+| **Epic 1** | Ready  | Weeks 1-2    | None         | Design system foundation, interaction standards |
+| **Epic 2** | Ready  | Weeks 3-6    | Epic 1       | Radix UI components, accessibility enhancement  |
+| **Epic 3** | Ready  | Weeks 7-10   | Epic 1 & 2   | Student portal, educational features            |
+| **Epic 4** | Ready  | Weeks 7-10   | Epic 1 & 2   | CI/CD automation, quality gates                 |
+| **Epic 5** | Ready  | Weeks 7-10   | Epic 1 & 2   | Content architecture, SEO optimization          |
+
+**Total Implementation Timeline:** 12 weeks  
+**Parallel Development:** Weeks 7-10 (Epic 3, 4, 5)  
+**Integration Phase:** Weeks 11-12
+
+---
+
+**Document Version:** 2.0  
 **Created:** 2024-12-19  
+**Updated:** 2024-12-19  
 **Author:** Scrum Master Bob  
-**Status:** Complete - Ready for Development Handoff
+**Status:** Complete - Ready for Full Platform Modernization\*\*

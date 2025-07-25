@@ -1,6 +1,7 @@
 import ApplicationForm from "@/components/forms/ApplicationForm";
 import Footer from "@/components/ui/Footer";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function ApplyPage() {
   return (
@@ -14,11 +15,13 @@ export default function ApplyPage() {
       <section className="section bg-light">
         <div className="container">
           <div className="apply-logo-container">
-            <img
-              src="/logos/sciss-logo-black.png"
-              alt="SCISS Logo"
-              className="apply-logo"
-            />
+            <Link href="/">
+              <img
+                src="/logos/sciss-logo-black.png"
+                alt="SCISS Logo"
+                className="apply-logo"
+              />
+            </Link>
           </div>
           <div className="apply-header">
             <h2 className="apply-title">

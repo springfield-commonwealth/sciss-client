@@ -117,7 +117,7 @@ const ApplicationForm = () => {
       // Field has value and no error - show success
       triggerSuccessGlow(field);
     }
-    if (typeof onBlur === "function") onBlur(e);
+    // onBlur handler was removed during Story 2.1 revert
   };
 
   // Enhanced email blur handler
@@ -836,8 +836,7 @@ const ApplicationForm = () => {
       {/* Financial Aid Interest (moved above transcript upload) */}
       <label className="form-label">
         <span className="label-text">
-          Are you interested in scholarship?{" "}
-          <span className="asterisk">*</span>
+          Are you interested in scholarship? <span className="asterisk">*</span>
         </span>
         {getFieldError("financialAidInterest") && (
           <span className="error">{getFieldError("financialAidInterest")}</span>

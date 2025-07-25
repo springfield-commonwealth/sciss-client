@@ -69,7 +69,7 @@
       "@/public/*": ["./public/*"] /* Public asset imports */,
       "@/utils/*": ["./src/utils/*"] /* Utility imports */,
       "@/hooks/*": ["./src/hooks/*"] /* Custom hooks */,
-      "@/types/*": ["./types/*"] /* Type definitions */,
+      "@/types/*": ["./src/types/*"] /* Type definitions */,
       "@/data/*": ["./src/data/*"],
       "@/constants/*": ["./src/constants/*"],
       "@/api/*": ["./src/api/*"],

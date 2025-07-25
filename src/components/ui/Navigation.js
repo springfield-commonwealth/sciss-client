@@ -2,7 +2,7 @@ import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
 import { LogoBlack } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
-import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -17,17 +17,23 @@ const navLinks = [
   },
   {
     label: "Academics",
-    href: "/academics",
+    href: "/academics", // Back to academics overview page
     children: [
-      { href: "/academics#core-courses-carousel", label: "Core Courses" },
-      { href: "/academics#electives-carousel", label: "Electives" },
-      { href: "/academics#programs", label: "Program Details" },
-      { href: "/academics#schedule", label: "Session Schedules" },
-      { href: "/academics#faculty", label: "Our Instructors" },
+      { href: "/academics", label: "Overview" },
+      { href: "/courses", label: "Browse All Courses" },
+      { href: "/courses?category=core", label: "Core Courses" },
+      { href: "/courses?category=electives", label: "Electives" },
+      { href: "/staff", label: "Our Instructors" },
     ],
   },
-  { href: "/life-activities", label: "Life & Activities" },
-  { href: "/day-trips", label: "Day Trips" },
+  {
+    href: "/activities", // Changed from /life-activities to /activities directory
+    label: "Life & Activities",
+  },
+  {
+    href: "/trips", // Changed from /day-trips to /trips directory
+    label: "Day Trips",
+  },
   {
     label: "About Us",
     href: "/about-us",

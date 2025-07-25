@@ -6,8 +6,13 @@ import {
   LifeActivitiesRecreationalActivities,
   LifeActivitiesSportsPrograms,
 } from "@/constants/lifeActivitiesContent";
+import {
+  getActivityCategories,
+  getPopularActivities,
+} from "@/lib/content/activities";
+import Link from "next/link";
 
-const LifeActivities = () => {
+const LifeActivities = ({ popularActivities, activityCategories }) => {
   return (
     <Layout
       title="Life & Activities - SCISS"
@@ -19,7 +24,63 @@ const LifeActivities = () => {
         subtitle="Beyond the Classroom"
         description="Discover a world of sports, fitness, arts, and recreational activities designed to enrich your summer experience and build lasting friendships."
         backgroundImage={LifeActivitiesHero}
+        ctaText="Explore All Activities"
+        ctaLink="/activities"
+        secondaryCtaText="Apply Now"
+        secondaryCtaLink="/apply"
       />
+
+      {/* Popular Activities Preview */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2>Popular Activities</h2>
+            <p>Discover our most engaging and sought-after activities</p>
+          </div>
+
+          <div className="activities-preview-grid">
+            {popularActivities.map((activity) => (
+              <div key={activity.id} className="activity-preview-card">
+                <div className="activity-preview-image">
+                  {activity.image && (
+                    <img src={activity.image} alt={activity.title} />
+                  )}
+                  <div className="activity-badges">
+                    <span className="category-badge">{activity.category}</span>
+                    <span className="level-badge">{activity.level}</span>
+                  </div>
+                </div>
+
+                <div className="activity-preview-content">
+                  <h3>{activity.title}</h3>
+                  <p>{activity.description.substring(0, 120)}...</p>
+
+                  <div className="activity-features-preview">
+                    {activity.features.slice(0, 2).map((feature, index) => (
+                      <span key={index} className="feature-tag">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={`/activities/${activity.slug}`}
+                    className="btn btn-primary btn-sm"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-4">
+            <Link href="/activities" className="btn btn-secondary btn-large">
+              View All Activities
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Sports Programs */}
       <section id="sports" className="section">
@@ -118,5 +179,18 @@ const LifeActivities = () => {
     </Layout>
   );
 };
+
+// Static Site Generation
+export async function getStaticProps() {
+  const popularActivities = getPopularActivities(6);
+  const activityCategories = getActivityCategories();
+
+  return {
+    props: {
+      popularActivities,
+      activityCategories,
+    },
+  };
+}
 
 export default LifeActivities;

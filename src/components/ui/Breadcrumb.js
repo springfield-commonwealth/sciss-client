@@ -10,9 +10,20 @@ const breadcrumbConfig = {
     label: "Tuitions & Fees",
     parent: "/program-overview",
   },
-  "/academics": { label: "Academics", parent: "/" },
-  "/life-activities": { label: "Life & Activities", parent: "/" },
-  "/day-trips": { label: "Day Trips", parent: "/" },
+  // Updated content architecture routes
+  "/courses": { label: "Academic Courses", parent: "/" },
+  "/activities": { label: "Life & Activities", parent: "/" },
+  "/trips": { label: "Day Trips", parent: "/" },
+  "/staff": { label: "Our Instructors", parent: "/" },
+  // Legacy route redirects for backwards compatibility
+  "/academics": { label: "Academics", parent: "/", redirect: "/courses" },
+  "/life-activities": {
+    label: "Life & Activities",
+    parent: "/",
+    redirect: "/activities",
+  },
+  "/day-trips": { label: "Day Trips", parent: "/", redirect: "/trips" },
+  // Other pages
   "/about-us": { label: "About Us", parent: "/" },
   "/apply": { label: "Apply Now", parent: "/" },
   "/parent-information": { label: "Parent Information", parent: "/" },
@@ -31,7 +42,45 @@ const useBreadcrumbs = (pathname, customRoutes = {}) => {
     currentPath = currentPath.split("#")[0];
   }
 
-  // Build breadcrumb trail by following parent hierarchy
+  // Handle dynamic content routes with [slug] pattern
+  if (
+    currentPath.includes("/courses/") ||
+    currentPath.includes("/activities/") ||
+    currentPath.includes("/trips/") ||
+    currentPath.includes("/staff/")
+  ) {
+    const pathParts = currentPath.split("/");
+    const contentType = pathParts[1]; // courses, activities, trips, or staff
+    const slug = pathParts[2];
+
+    // Get the directory page first
+    const directoryPath = `/${contentType}`;
+    if (config[directoryPath]) {
+      breadcrumbs.push({
+        href: "/",
+        label: config["/"].label,
+        showIcon: config["/"].showIcon || false,
+      });
+      breadcrumbs.push({
+        href: directoryPath,
+        label: config[directoryPath].label,
+        showIcon: false,
+      });
+
+      // Add the individual content page (will be filled by page component)
+      if (slug && customRoutes[currentPath]) {
+        breadcrumbs.push({
+          href: currentPath,
+          label: customRoutes[currentPath].label,
+          showIcon: false,
+        });
+      }
+    }
+
+    return breadcrumbs;
+  }
+
+  // Build breadcrumb trail by following parent hierarchy (original logic)
   while (currentPath && config[currentPath]) {
     const current = config[currentPath];
     breadcrumbs.unshift({

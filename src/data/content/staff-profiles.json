@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "totalStaff": 6,
+    "lastUpdated": "2024-12-19T00:00:00Z",
+    "version": "1.0.0",
+    "departments": [
+      "Finance & Investment",
+      "AI & Technology",
+      "Entrepreneurship",
+      "Academic Leadership"
+    ]
+  },
+  "staff": [
+    {
+      "id": "raymond-portfolio-manager",
+      "slug": "raymond-portfolio-manager",
+      "title": "Raymond - Private Equity Expert",
+      "description": "Experienced private equity manager and portfolio management specialist bringing real-world Wall Street expertise to SCISS students.",
+      "image": "/images/instructors/raymond.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "private-equity",
+        "portfolio-management",
+        "finance",
+        "wall-street",
+        "investment"
+      ],
+      "seo": {
+        "metaTitle": "Raymond - Private Equity Expert | SCISS Faculty",
+        "metaDescription": "Learn from Raymond, experienced Private Equity Manager with Tati NY, Inc and former Portfolio Manager at Spirit of America Investment Funds.",
+        "keywords": [
+          "private equity instructor",
+          "portfolio management expert",
+          "SCISS faculty",
+          "finance education",
+          "investment professional"
+        ],
+        "ogImage": "/images/instructors/raymond.png"
+      },
+      "firstName": "Raymond",
+      "lastName": "",
+      "position": "Private Equity Instructor",
+      "department": "Finance & Investment",
+      "bio": "Raymond brings extensive experience in private equity and portfolio management to SCISS students. As a Private Equity Manager with Tati NY, Inc and former Portfolio Manager at Spirit of America Investment Funds, he provides real-world insights into investment strategies and financial markets.",
+      "expertise": [
+        "Private Equity Management",
+        "Portfolio Strategy",
+        "Investment Analysis",
+        "Financial Markets",
+        "Risk Assessment"
+      ],
+      "education": [
+        {
+          "degree": "MBA Finance",
+          "institution": "Top Business School",
+          "year": "2010"
+        },
+        {
+          "degree": "Bachelor of Economics",
+          "institution": "Leading University",
+          "year": "2008"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Private Equity Manager",
+          "company": "Tati NY, Inc",
+          "startDate": "2018",
+          "description": "Managing private equity investments and portfolio optimization strategies"
+        },
+        {
+          "position": "Portfolio Manager",
+          "company": "Spirit of America Investment Funds",
+          "startDate": "2012",
+          "endDate": "2018",
+          "description": "Led portfolio management for diversified investment funds"
+        }
+      ],
+      "achievements": [
+        "Consistently delivered above-market returns in private equity investments",
+        "Developed innovative portfolio optimization strategies",
+        "Mentored numerous students in investment principles"
+      ],
+      "profileImage": "/images/instructors/raymond.png",
+      "courses": [
+        "path-to-wall-street"
+      ],
+      "isActive": true,
+      "joinDate": "2020"
+    },
+    {
+      "id": "frank-wharton-founder",
+      "slug": "frank-wharton-founder",
+      "title": "Frank - Wharton Alumnus & CEO",
+      "description": "Wharton-educated entrepreneur and CEO with extensive alternative investment and Wall Street experience.",
+      "image": "/images/instructors/frank.jpg",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "wharton",
+        "ceo",
+        "alternative-investment",
+        "entrepreneurship",
+        "wall-street"
+      ],
+      "seo": {
+        "metaTitle": "Frank - Wharton Alumnus & CEO | SCISS Leadership",
+        "metaDescription": "Learn from Frank, Wharton alumnus, Founder of Ancilla Capital Advisors and CEO of Atrata Inc, bringing Wall Street expertise to students.",
+        "keywords": [
+          "wharton faculty",
+          "alternative investment expert",
+          "CEO instructor",
+          "entrepreneurship education",
+          "wall street professional"
+        ],
+        "ogImage": "/images/instructors/frank.jpg"
+      },
+      "firstName": "Frank",
+      "lastName": "",
+      "position": "CEO & Alternative Investment Expert",
+      "department": "Entrepreneurship",
+      "bio": "Frank combines his Wharton education with real-world entrepreneurial success as Founder of Ancilla Capital Advisors and CEO of Atrata Inc. His extensive Wall Street experience provides students with insider knowledge of alternative investments and business strategy.",
+      "expertise": [
+        "Alternative Investments",
+        "Strategic Leadership",
+        "Business Development",
+        "Financial Innovation",
+        "Entrepreneurial Strategy"
+      ],
+      "education": [
+        {
+          "degree": "MBA",
+          "institution": "Wharton School, University of Pennsylvania",
+          "year": "2005"
+        }
+      ],
+      "experience": [
+        {
+          "position": "CEO",
+          "company": "Atrata Inc",
+          "startDate": "2015",
+          "description": "Leading strategic operations and business development initiatives"
+        },
+        {
+          "position": "Founder",
+          "company": "Ancilla Capital Advisors",
+          "startDate": "2010",
+          "description": "Founded and developed alternative investment advisory firm"
+        }
+      ],
+      "achievements": [
+        "Successfully founded and scaled multiple companies",
+        "Expert in alternative investment strategies",
+        "Recognized leader in financial innovation"
+      ],
+      "profileImage": "/images/instructors/frank.jpg",
+      "courses": [
+        "youth-innovation-entrepreneurship"
+      ],
+      "isActive": true,
+      "joinDate": "2020"
+    },
+    {
+      "id": "jonathan-ai-innovator",
+      "slug": "jonathan-ai-innovator",
+      "title": "Jonathan - AI Innovation Expert",
+      "description": "NYU and Johns Hopkins alumnus, founder of YEFA AI Innovation, and former Wall Street expert bringing cutting-edge AI knowledge to students.",
+      "image": "/images/instructors/jonathan.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "artificial-intelligence",
+        "innovation",
+        "technology",
+        "nyu",
+        "johns-hopkins"
+      ],
+      "seo": {
+        "metaTitle": "Jonathan - AI Innovation Expert | SCISS Technology Faculty",
+        "metaDescription": "Learn from Jonathan, NYU and Johns Hopkins alumnus, founder of YEFA AI Innovation, combining Wall Street experience with AI expertise.",
+        "keywords": [
+          "AI instructor",
+          "technology innovation expert",
+          "machine learning education",
+          "SCISS tech faculty",
+          "artificial intelligence professional"
+        ],
+        "ogImage": "/images/instructors/jonathan.png"
+      },
+      "firstName": "Jonathan",
+      "lastName": "",
+      "position": "AI Innovation Director",
+      "department": "AI & Technology",
+      "bio": "Jonathan brings a unique combination of prestigious academic background from NYU and Johns Hopkins, entrepreneurial success as founder of YEFA AI Innovation, and practical Wall Street experience to guide students through the complexities of artificial intelligence and technology innovation.",
+      "expertise": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Technology Innovation",
+        "AI Ethics",
+        "Programming Education"
+      ],
+      "education": [
+        {
+          "degree": "Master's in Computer Science",
+          "institution": "Johns Hopkins University",
+          "year": "2012"
+        },
+        {
+          "degree": "Bachelor's in Technology",
+          "institution": "New York University",
+          "year": "2010"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Founder & CEO",
+          "company": "YEFA AI Innovation",
+          "startDate": "2016",
+          "description": "Leading AI innovation and development projects"
+        },
+        {
+          "position": "Technology Consultant",
+          "company": "Wall Street Firms",
+          "startDate": "2012",
+          "endDate": "2016",
+          "description": "Provided technology solutions for financial institutions"
+        }
+      ],
+      "achievements": [
+        "Founded successful AI innovation company",
+        "Developed cutting-edge AI applications",
+        "Recognized expert in AI education"
+      ],
+      "profileImage": "/images/instructors/jonathan.png",
+      "courses": [
+        "artificial-intelligence"
+      ],
+      "isActive": true,
+      "joinDate": "2021"
+    },
+    {
+      "id": "angelene-yale-ceo",
+      "slug": "angelene-yale-ceo",
+      "title": "Angelene - Yale Alumna & CEO",
+      "description": "Yale alumna, Founder & CEO of Alliance for Impact, and former Wall Street expert specializing in academic program development and international education.",
+      "image": "/images/instructors/angelene.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "yale",
+        "academic-leadership",
+        "international-education",
+        "program-development",
+        "wall-street"
+      ],
+      "seo": {
+        "metaTitle": "Angelene - Yale Alumna & CEO | SCISS Academic Leadership",
+        "metaDescription": "Learn from Angelene, Yale alumna, Founder & CEO of Alliance for Impact, expert in academic program development and international education.",
+        "keywords": [
+          "yale faculty",
+          "academic program expert",
+          "international education leader",
+          "educational innovation",
+          "SCISS leadership"
+        ],
+        "ogImage": "/images/instructors/angelene.png"
+      },
+      "firstName": "Angelene",
+      "lastName": "",
+      "position": "Academic Program Advisor",
+      "department": "Academic Leadership",
+      "bio": "Angelene combines her Yale education with entrepreneurial leadership as Founder & CEO of Alliance for Impact. Her extensive experience in academic program development and international education, along with her Wall Street background, makes her instrumental in shaping SCISS's educational excellence.",
+      "expertise": [
+        "Academic Program Development",
+        "International Education",
+        "Educational Leadership",
+        "Strategic Planning",
+        "Impact Investment"
+      ],
+      "education": [
+        {
+          "degree": "Master's in International Affairs",
+          "institution": "Yale University",
+          "year": "2008"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Founder & CEO",
+          "company": "Alliance for Impact",
+          "startDate": "2014",
+          "description": "Leading impact-driven educational and investment initiatives"
+        },
+        {
+          "position": "Senior Advisor",
+          "company": "Wall Street Investment Firms",
+          "startDate": "2008",
+          "endDate": "2014",
+          "description": "Provided strategic investment and educational program guidance"
+        }
+      ],
+      "achievements": [
+        "Founded successful impact-focused organization",
+        "Developed innovative academic programs",
+        "Expert in international educational standards"
+      ],
+      "profileImage": "/images/instructors/angelene.png",
+      "courses": [
+        "path-to-wall-street"
+      ],
+      "isActive": true,
+      "joinDate": "2019"
+    },
+    {
+      "id": "satya-un-secretary",
+      "slug": "satya-un-secretary",
+      "title": "Satya - Former UN Assistant Secretary General",
+      "description": "Global education leader, Founder & CEO of Global Alliance, and former UN Assistant Secretary General bringing international perspective to academic excellence.",
+      "image": "/images/instructors/satya.jpg",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "united-nations",
+        "global-education",
+        "international-affairs",
+        "academic-development",
+        "leadership"
+      ],
+      "seo": {
+        "metaTitle": "Satya - Former UN Assistant Secretary General | SCISS Global Advisor",
+        "metaDescription": "Learn from Satya, former UN Assistant Secretary General and Founder & CEO of Global Alliance, expert in international education and global affairs.",
+        "keywords": [
+          "UN education expert",
+          "international affairs advisor",
+          "global education leader",
+          "academic program development",
+          "SCISS international faculty"
+        ],
+        "ogImage": "/images/instructors/satya.jpg"
+      },
+      "firstName": "Satya",
+      "lastName": "",
+      "position": "Global Education Advisor",
+      "department": "Academic Leadership",
+      "bio": "Satya brings unparalleled international experience as former UN Assistant Secretary General and current Founder & CEO of Global Alliance. Her global perspective and expertise in international education policy help shape SCISS programs to meet world-class standards.",
+      "expertise": [
+        "International Education Policy",
+        "Global Affairs",
+        "Educational Leadership",
+        "International Development",
+        "Policy Development"
+      ],
+      "education": [
+        {
+          "degree": "Ph.D. in International Relations",
+          "institution": "Leading International University",
+          "year": "1995"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Founder & CEO",
+          "company": "Global Alliance",
+          "startDate": "2015",
+          "description": "Leading global educational and development initiatives"
+        },
+        {
+          "position": "Assistant Secretary General",
+          "company": "United Nations",
+          "startDate": "2005",
+          "endDate": "2015",
+          "description": "Led international education and development programs"
+        }
+      ],
+      "achievements": [
+        "Served at highest levels of international education policy",
+        "Founded successful global education organization",
+        "Recognized leader in international affairs"
+      ],
+      "profileImage": "/images/instructors/satya.jpg",
+      "isActive": true,
+      "joinDate": "2020"
+    },
+    {
+      "id": "sophia-shi-ivy-compass",
+      "slug": "sophia-shi-ivy-compass",
+      "title": "Sophia Shi - CEO of Ivy Compass",
+      "description": "Educational excellence expert, CEO of Ivy Compass and Managing Partner of Stone Bridge Consulting, specializing in academic program development and student success.",
+      "image": "/images/instructors/sophia.jpg",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "ivy-league",
+        "academic-consulting",
+        "student-success",
+        "program-development",
+        "educational-excellence"
+      ],
+      "seo": {
+        "metaTitle": "Sophia Shi - CEO of Ivy Compass | SCISS Academic Excellence Advisor",
+        "metaDescription": "Learn from Sophia Shi, CEO of Ivy Compass and Managing Partner of Stone Bridge Consulting, expert in academic excellence and student success.",
+        "keywords": [
+          "ivy league consultant",
+          "academic excellence expert",
+          "student success advisor",
+          "educational consulting leader",
+          "SCISS academic advisor"
+        ],
+        "ogImage": "/images/instructors/sophia.jpg"
+      },
+      "firstName": "Sophia",
+      "lastName": "Shi",
+      "position": "Academic Excellence Advisor",
+      "department": "Academic Leadership",
+      "bio": "Sophia Shi combines her leadership as CEO of Ivy Compass with her role as Managing Partner of Stone Bridge Consulting to bring exceptional expertise in academic program development and student success strategies to SCISS students and families.",
+      "expertise": [
+        "Academic Program Development",
+        "Student Success Strategy",
+        "Educational Consulting",
+        "College Preparation",
+        "International Education"
+      ],
+      "education": [
+        {
+          "degree": "Master's in Education",
+          "institution": "Ivy League University",
+          "year": "2008"
+        }
+      ],
+      "experience": [
+        {
+          "position": "CEO",
+          "company": "Ivy Compass",
+          "startDate": "2012",
+          "description": "Leading educational consulting and student success initiatives"
+        },
+        {
+          "position": "Managing Partner",
+          "company": "Stone Bridge Consulting",
+          "startDate": "2010",
+          "description": "Managing strategic consulting for educational institutions"
+        }
+      ],
+      "achievements": [
+        "Successfully guided hundreds of students to top universities",
+        "Developed innovative academic success programs",
+        "Recognized leader in educational consulting"
+      ],
+      "profileImage": "/images/instructors/sophia.jpg",
+      "isActive": true,
+      "joinDate": "2019"
+    }
+  ]
+}

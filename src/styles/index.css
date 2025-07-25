@@ -1,34 +1,47 @@
-/* Main Styles Index - Import all component and page styles */
+/* Import all styles in the correct order */
 
-/* Component Styles */
+/* Global styles */
+@import './globals.css';
+
+/* Base component styles */
 @import './components/navigation.css';
-@import './components/breadcrumb.css';
+@import './components/footer.css';
 @import './components/footer-cta.css';
 @import './components/carousel.css';
 @import './components/carousel-card.css';
+@import './components/weekly-schedule.css';
+@import './components/faculty-card.css';
 @import './components/gallery-card.css';
 @import './components/featurevideo.css';
 @import './components/imageslider.css';
-@import './components/weekly-schedule.css';
-@import './components/footer.css';
-@import './components/faculty-card.css';
 @import './components/application-form.css';
+@import './components/breadcrumb.css';
 
-/* Page Styles */
+/* Section styles */
+@import './sections/hero-section.css';
+@import './sections/faculty-section.css';
+@import './sections/feature-section.css';
+@import './sections/content-slider.css';
+@import './sections/camp-schedule.css';
+
+/* Page styles */
 @import './pages/index.css';
 @import './pages/about-us.css';
 @import './pages/academics.css';
-@import './pages/program-overview.css';
 @import './pages/life-activities.css';
 @import './pages/day-trips.css';
 @import './pages/a-day-at-sciss.css';
 @import './pages/parent-information.css';
+@import './pages/program-overview.css';
 @import './pages/tuitions-and-fees.css';
 @import './pages/apply.css';
+@import './pages/course-page.css';
+@import './pages/staff-profile.css';
+@import './pages/staff-directory.css';
 
-/* Section Styles */
-@import './sections/hero-section.css';
-@import './sections/content-slider.css';
-@import './sections/faculty-section.css';
-@import './sections/feature-section.css';
-@import './sections/camp-schedule.css';
+/* NEW: Epic 5 Content Architecture Styles */
+@import './pages/activity-page.css';
+@import './pages/activities-directory.css';
+@import './pages/trip-page.css';
+@import './pages/trips-directory.css';
+@import './pages/courses-directory.css';

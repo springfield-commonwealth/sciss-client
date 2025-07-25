@@ -1,18 +1,25 @@
 import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
-import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
 import GalleryCard from "@/components/ui/GalleryCard";
 import {
   AcademicsCarouselItems,
   AcademicsElectiveCarouselItems,
-  AcademicsInstructorsHighlights,
-  AcademicsPrograms,
 } from "@/constants/academicsContent";
 import { AcademicsHero } from "@/constants/images";
+import {
+  getAllCourses,
+  getCourseCategories,
+  getCourseStats,
+} from "@/lib/content/courses";
+import Link from "next/link";
 
-const Academics = () => {
+const Academics = ({ courses = [], categories = [], stats = {} }) => {
+  // Handle case where courses data might not be available
+  const coursesList = Array.isArray(courses) ? courses : [];
+  const hasValidCourses = coursesList.length > 0;
+
   return (
     <Layout
       title="Academic Programs - SCISS"
@@ -36,53 +43,29 @@ const Academics = () => {
       <section className="section bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <h2>Academic Support & Resources</h2>
-            <p>Comprehensive support to ensure your academic success</p>
+            <h2>Comprehensive Academic Support</h2>
+            <p>
+              Beyond world-class instruction, we provide comprehensive support
+              to ensure every student succeeds
+            </p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="support-grid">
             <div className="support-card">
-              <div className="support-icon icon-tech"></div>
+              <div className="support-icon icon-mentorship"></div>
+              <h4>Faculty Mentorship</h4>
+              <p>
+                One-on-one guidance from experienced educators and industry
+                professionals throughout your academic journey.
+              </p>
+            </div>
+
+            <div className="support-card">
+              <div className="support-icon icon-resources"></div>
               <h4>Academic Resources</h4>
               <p>
-                All course materials, academic tuition up to 30 hours, and
-                specialized learning resources for your chosen program.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-innovation"></div>
-              <h4>Collaborative Learning</h4>
-              <p>
-                Team-based projects, group activities, and peer collaboration in
-                a dynamic learning environment.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-business"></div>
-              <h4>Expert Instruction</h4>
-              <p>
-                Passionate instructors who are experts in their fields providing
-                hands-on guidance and mentoring.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-tech"></div>
-              <h4>Competition Resources</h4>
-              <p>
-                Access to competition preparation and opportunities to
-                participate in prestigious academic competitions.
-              </p>
-            </div>
-
-            <div className="support-card">
-              <div className="support-icon icon-language"></div>
-              <h4>Progress Assessment</h4>
-              <p>
-                Course completion certificates and recognition for academic
-                achievements and participation.
+                Access to cutting-edge learning materials, research databases,
+                and technology platforms.
               </p>
             </div>
 
@@ -143,95 +126,227 @@ const Academics = () => {
       <section className="section" id="electives-carousel">
         <div className="container">
           <div className="text-center mb-5">
-            <h2>Electives</h2>
-            <p>
-              Combine academic excellence with physical well-being for holistic
-              student growth.
-            </p>
+            <h2>Academic Electives</h2>
+            <p>Enhance your learning with specialized elective programs</p>
           </div>
 
           <Carousel items={AcademicsElectiveCarouselItems} />
         </div>
       </section>
 
-      {/* Program Details */}
-      <section id="programs" className="section">
+      {/* Individual Course Directory */}
+      <section className="section bg-light" id="programs">
         <div className="container">
           <div className="text-center mb-5">
-            <h2>Program Details</h2>
+            <h2>Explore Our Academic Programs</h2>
             <p>
-              Comprehensive curriculum designed by industry experts and academic
-              leaders
+              Click on any program to view detailed curriculum, learning
+              outcomes, and application information
             </p>
           </div>
 
-          <div className="programs-list">
-            {AcademicsPrograms.map((program, index) => (
-              <div key={index} className="program-detail-card">
-                <div className="program-header">
-                  <div className="program-title-section">
-                    <h3>{program.title}</h3>
-                    <div className="program-badges">
-                      <span className="level-badge">{program.level}</span>
-                      <span className="duration-badge">{program.duration}</span>
+          {hasValidCourses ? (
+            <div className="course-directory">
+              {coursesList.map((course) => (
+                <div key={course.id} className="course-preview-card">
+                  <div className="course-preview-header">
+                    <div className="course-preview-image">
+                      {course.image && (
+                        <img src={course.image} alt={course.title} />
+                      )}
                     </div>
-                  </div>
-                </div>
-
-                <div className="program-content">
-                  <div className="program-description">
-                    <p>{program.description}</p>
-                    {program.prerequisites && (
-                      <div className="prerequisites">
-                        <strong>Prerequisites:</strong> {program.prerequisites}
+                    <div className="course-preview-info">
+                      <h3>{course.title}</h3>
+                      <div className="course-preview-meta">
+                        <span className="level-badge">{course.level}</span>
+                        <span className="duration-badge">
+                          {course.duration}
+                        </span>
+                        <span className="session-badge">{course.session}</span>
                       </div>
-                    )}
+                    </div>
                   </div>
 
-                  <div className="program-details-grid">
-                    <div className="curriculum-section">
-                      <h4>Curriculum</h4>
-                      <ul className="curriculum-list">
-                        {program.curriculum.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
+                  <div className="course-preview-content">
+                    <p className="course-preview-description">
+                      {course.description}
+                    </p>
+
+                    <div className="course-preview-highlights">
+                      <h4>Program Highlights</h4>
+                      <ul>
+                        {course.highlights &&
+                          course.highlights
+                            .slice(0, 3)
+                            .map((highlight, idx) => (
+                              <li key={idx}>{highlight}</li>
+                            ))}
+                        {course.highlights && course.highlights.length > 3 && (
+                          <li>...and {course.highlights.length - 3} more</li>
+                        )}
                       </ul>
                     </div>
 
-                    <div className="outcomes-section">
-                      <h4>Learning Outcomes</h4>
-                      <ul className="outcomes-list">
-                        {program.outcomes.map((outcome, idx) => (
-                          <li key={idx}>{outcome}</li>
-                        ))}
-                      </ul>
+                    <div className="course-preview-actions">
+                      <Link
+                        href={`/courses/${course.slug}`}
+                        className="btn btn-primary"
+                      >
+                        View Full Details
+                      </Link>
+                      <Link href="/apply" className="btn btn-outline">
+                        Apply Now
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          ) : (
+            <div className="course-directory-loading">
+              <p>Loading course information...</p>
+              <p>
+                If this persists, please visit our{" "}
+                <Link href="/apply">
+                  <a>application page</a>
+                </Link>{" "}
+                to learn more.
+              </p>
+            </div>
+          )}
+
+          <div className="text-center mt-5">
+            <p className="course-directory-note">
+              Each program includes comprehensive curriculum, expert
+              instruction, and hands-on learning experiences. Click "View Full
+              Details" to explore prerequisites, learning outcomes, and
+              application requirements.
+            </p>
+            <div className="courses-directory-cta">
+              <Link href="/courses" className="btn btn-primary btn-large">
+                View Complete Course Directory
+              </Link>
+              <p className="cta-note">
+                Browse all courses with advanced search, filtering, and detailed
+                information
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Camp Schedule Section */}
-      <section className="section bg-light" id="schedule">
-        <div className="container">
-          <CampSchedule />
-        </div>
-      </section>
+      <CampSchedule />
 
-      {/* instructors Section */}
+      {/* Faculty Section */}
       <section id="faculty">
-        <FacultySection
-          title="Meet Our Instructors"
-          desc="Learn from industry professionals and academic experts"
-          faculty={AcademicsInstructorsHighlights}
-          gridsize="3"
-        />
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2>Meet Our Instructors</h2>
+            <p>
+              Learn from industry professionals and academic experts who bring
+              real-world experience to SCISS
+            </p>
+          </div>
+
+          <div className="faculty-preview-grid">
+            <div className="faculty-preview-card">
+              <div className="faculty-preview-image">
+                <img src="/images/instructors/raymond.png" alt="Raymond" />
+              </div>
+              <div className="faculty-preview-info">
+                <h4>Raymond</h4>
+                <p className="faculty-preview-title">Private Equity Expert</p>
+                <p className="faculty-preview-description">
+                  Private Equity Manager with Tati NY, Inc and former Portfolio
+                  Manager bringing Wall Street expertise.
+                </p>
+                <Link
+                  href="/staff/raymond-portfolio-manager"
+                  className="faculty-preview-link"
+                >
+                  View Full Profile →
+                </Link>
+              </div>
+            </div>
+
+            <div className="faculty-preview-card">
+              <div className="faculty-preview-image">
+                <img src="/images/instructors/frank.jpg" alt="Frank" />
+              </div>
+              <div className="faculty-preview-info">
+                <h4>Frank</h4>
+                <p className="faculty-preview-title">Wharton Alumnus & CEO</p>
+                <p className="faculty-preview-description">
+                  Wharton-educated CEO with extensive alternative investment and
+                  Wall Street experience.
+                </p>
+                <Link
+                  href="/staff/frank-wharton-founder"
+                  className="faculty-preview-link"
+                >
+                  View Full Profile →
+                </Link>
+              </div>
+            </div>
+
+            <div className="faculty-preview-card">
+              <div className="faculty-preview-image">
+                <img src="/images/instructors/jonathan.png" alt="Jonathan" />
+              </div>
+              <div className="faculty-preview-info">
+                <h4>Jonathan</h4>
+                <p className="faculty-preview-title">AI Innovation Expert</p>
+                <p className="faculty-preview-description">
+                  NYU and Johns Hopkins alumnus, founder of YEFA AI Innovation
+                  bringing cutting-edge AI knowledge.
+                </p>
+                <Link
+                  href="/staff/jonathan-ai-innovator"
+                  className="faculty-preview-link"
+                >
+                  View Full Profile →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="faculty-section-cta">
+            <Link href="/staff" className="btn btn-primary">
+              View All Faculty & Staff
+            </Link>
+          </div>
+        </div>
       </section>
     </Layout>
   );
 };
+
+// Static Site Generation - Using Epic 5 Content Architecture
+export async function getStaticProps() {
+  try {
+    // Use Epic 5 content system like activities, trips, and staff
+    const courses = getAllCourses();
+    const categories = getCourseCategories();
+    const stats = getCourseStats();
+
+    return {
+      props: {
+        courses,
+        categories,
+        stats,
+      },
+    };
+  } catch (error) {
+    console.error("Error loading courses data:", error);
+    return {
+      props: {
+        courses: [],
+        categories: [],
+        stats: { totalCourses: 0, coreCoursesCount: 0, electivesCount: 0 },
+      },
+    };
+  }
+}
 
 export default Academics;

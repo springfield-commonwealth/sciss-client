@@ -1,0 +1,473 @@
+/* Staff Profile Styles - Epic 5: Story 5.5 Staff and Lecturer Profile System */
+
+.staff-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Staff Hero Section */
+.staff-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 2rem;
+  margin-bottom: 0;
+}
+
+.staff-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.staff-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.staff-portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.staff-hero-info {
+  max-width: 600px;
+}
+
+.staff-name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.staff-position {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin: 0 0 0.5rem 0;
+}
+
+.staff-department {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin: 0 0 2rem 0;
+}
+
+.staff-contact {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-email {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.contact-email:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Content Sections */
+.staff-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.staff-bio,
+.staff-expertise,
+.staff-education,
+.staff-experience,
+.staff-achievements,
+.staff-courses,
+.related-staff,
+.staff-cta {
+  padding: 3rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.staff-cta {
+  border-bottom: none;
+  text-align: center;
+}
+
+.staff-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.5rem 0;
+}
+
+.bio-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Expertise Tags */
+.expertise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.expertise-tag {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Education Section */
+.education-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.education-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+}
+
+.education-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+}
+
+.institution {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3b82f6;
+  margin: 0 0 0.25rem 0;
+}
+
+.year {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.field {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+/* Experience Section */
+.experience-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.experience-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.experience-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #059669;
+  margin: 0 0 0.5rem 0;
+}
+
+.duration {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+}
+
+/* Achievements */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li {
+  background: #f0f9ff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  border-left: 4px solid #0ea5e9;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.achievements-list li:before {
+  content: "✓";
+  color: #0ea5e9;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+/* Courses Section */
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.course-link {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+
+.course-link:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Related Staff */
+.related-staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.related-staff-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: block;
+}
+
+.related-staff-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.related-staff-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.related-staff-info h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.related-staff-info p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Call to Action */
+.staff-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.staff-cta p {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .staff-hero {
+    padding: 2rem 1rem;
+  }
+
+  .staff-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .staff-portrait {
+    width: 200px;
+    height: 200px;
+  }
+
+  .staff-name {
+    font-size: 2.5rem;
+  }
+
+  .staff-position {
+    font-size: 1.25rem;
+  }
+
+  .staff-content {
+    padding: 0 1rem;
+  }
+
+  .staff-bio,
+  .staff-expertise,
+  .staff-education,
+  .staff-experience,
+  .staff-achievements,
+  .staff-courses,
+  .related-staff,
+  .staff-cta {
+    padding: 2rem 0;
+  }
+
+  .staff-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .staff-contact {
+    justify-content: center;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .staff-portrait {
+    width: 150px;
+    height: 150px;
+  }
+
+  .staff-name {
+    font-size: 2rem;
+  }
+
+  .expertise-list {
+    justify-content: center;
+  }
+
+  .related-staff-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading and Error States */
+.staff-loading,
+.staff-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.staff-loading h1,
+.staff-not-found h1 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.staff-not-found p {
+  color: #64748b;
+  margin-bottom: 2rem;
+} 

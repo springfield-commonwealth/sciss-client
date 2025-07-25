@@ -8,8 +8,10 @@ import {
   DayTripsUniversityTrips,
 } from "@/constants/dayTripsContent";
 import { DayTripsHero } from "@/constants/images";
+import { getPopularTrips, getTripCategories, getUniversityTrips } from "@/lib/content/trips";
+import Link from "next/link";
 
-const DayTrips = () => {
+const DayTrips = ({ popularTrips, universityTrips }) => {
   return (
     <Layout
       title="Day Trips - SCISS"
@@ -21,11 +23,61 @@ const DayTrips = () => {
         subtitle="Explore & Discover"
         description="Journey beyond the classroom with exciting trips to world-renowned universities, cultural landmarks, and fun destinations throughout New England."
         backgroundImage={DayTripsHero}
-        ctaText="View University Trips"
-        ctaLink="#universities"
-        secondaryCtaText="See All Trips"
-        secondaryCtaLink="#all-trips"
+        ctaText="Explore All Trips"
+        ctaLink="/trips"
+        secondaryCtaText="Apply Now"
+        secondaryCtaLink="/apply"
       />
+
+      {/* Featured University Trips */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2>University Visits</h2>
+            <p>Experience prestigious institutions and explore your academic future</p>
+          </div>
+
+          <div className="trips-preview-grid">
+            {universityTrips.slice(0, 3).map((trip) => (
+              <div key={trip.id} className="trip-preview-card">
+                <div className="trip-preview-image">
+                  {trip.image && (
+                    <img src={trip.image} alt={trip.title} />
+                  )}
+                  <div className="trip-badges">
+                    <span className="category-badge">{trip.category}</span>
+                    <span className="duration-badge">{trip.duration}</span>
+                  </div>
+                </div>
+                
+                <div className="trip-preview-content">
+                  <h3>{trip.title}</h3>
+                  <div className="trip-location">📍 {trip.location}</div>
+                  <p>{trip.description.substring(0, 120)}...</p>
+                  
+                  <div className="trip-highlights-preview">
+                    {trip.highlights.slice(0, 2).map((highlight, index) => (
+                      <span key={index} className="highlight-tag">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link href={`/trips/${trip.slug}`} className="btn btn-primary btn-sm">
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-4">
+            <Link href="/trips" className="btn btn-secondary btn-large">
+              View All Trips
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Day Trips Carousel */}
       <section className="section bg-light">
@@ -175,5 +227,18 @@ const DayTrips = () => {
     </Layout>
   );
 };
+
+// Static Site Generation
+export async function getStaticProps() {
+  const popularTrips = getPopularTrips(6);
+  const universityTrips = getUniversityTrips();
+
+  return {
+    props: {
+      popularTrips,
+      universityTrips,
+    },
+  };
+}
 
 export default DayTrips;

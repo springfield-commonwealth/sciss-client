@@ -185,7 +185,6 @@
   color: var(--text-dark);
 }
 
-
 .service-category {
   background: white;
   padding: 2rem;
@@ -476,9 +475,6 @@
   left: 0;
 }
 
-
-
-
 .cta-countdown {
   background: rgba(255, 255, 255, 0.2);
   padding: 1rem 2rem;
@@ -491,7 +487,6 @@
   font-size: 1.1rem;
   font-weight: 600;
 }
-
 
 @media (max-width: 768px) {
   .pricing-showcase {
@@ -506,10 +501,6 @@
   .amount {
     font-size: 3rem;
   }
-
-  /* .included-services {
-    grid-template-columns: 1fr;
-  } */
 
   .scholarship-header {
     flex-direction: column;
@@ -527,6 +518,4 @@
     flex-direction: column;
     gap: 1rem;
   }
-
-
 } 

@@ -242,10 +242,6 @@
   line-height: 1.5;
 }
 
-
-
-
-
 @media (max-width: 768px) {
   .schedule-timeline::before {
     left: 60px;
@@ -263,8 +259,6 @@
   .weekly-grid {
     grid-template-columns: 1fr;
   }
-
-
 }
 
 @media (max-width: 480px) {

@@ -1,25 +1,3 @@
-.program-card {
-  background: var(--text-white);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.3s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-}
-
-.program-header {
-  margin-bottom: 1rem;
-}
-
-.program-header h3 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-blue);
-}
-
 .program-meta {
   display: flex;
   gap: 1rem;
@@ -38,11 +16,6 @@
 .level {
   background: var(--primary-blue);
   color: var(--text-white);
-}
-
-.program-description {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
 }
 
 .program-highlights {
@@ -226,10 +199,6 @@
 }
 
 @media (max-width: 768px) {
-  .programs-grid {
-    grid-template-columns: 1fr;
-  }
-
   .program-details-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

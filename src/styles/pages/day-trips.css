@@ -1,4 +1,125 @@
 /* Day Trips Page Styles */
+
+/* Trips Preview Grid */
+.trips-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.trip-preview-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.trip-preview-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--background-secondary);
+}
+
+.trip-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Fallback for missing images */
+.trip-preview-image:not(:has(img)) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--background-tertiary) 0%, var(--background-secondary) 100%);
+}
+
+.trip-preview-image:not(:has(img))::before {
+  content: "🗺️";
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.trip-preview-card:hover .trip-preview-image img {
+  transform: scale(1.05);
+}
+
+.trip-badges {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-badge,
+.duration-badge {
+  background: rgba(31, 86, 164, 0.9);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.duration-badge {
+  background: rgba(230, 196, 59, 0.9);
+  color: var(--text-dark);
+}
+
+.trip-preview-content {
+  padding: 1.5rem;
+}
+
+.trip-preview-content h3 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.trip-location {
+  color: var(--text-medium);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.trip-preview-content p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.trip-highlights-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-tag {
+  background: var(--background-tertiary);
+  color: var(--primary-blue);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 .university-trips {
   display: flex;
   flex-direction: column;
@@ -151,11 +272,6 @@
   color: white;
 }
 
-.trip-location {
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
-
 .trip-description {
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -302,41 +418,100 @@
   font-weight: bold;
 }
 
-@media (max-width: 1024px) {
-  .university-card {
-    max-width: 85vw;
-  }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .university-details {
+  .trips-preview-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .university-meta {
-    flex-direction: column;
+  .trip-preview-image {
+    height: 180px;
+  }
+
+  .trip-preview-content {
+    padding: 1rem;
+  }
+
+  .trip-preview-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .trip-highlights-preview {
+    gap: 0.25rem;
+  }
+
+  .highlight-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .university-details {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
+  .university-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .university-card {
-      max-width: none;
+    max-width: 95vw;
   }
 
   .trip-details {
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.5rem;
   }
 
   .trip-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    padding: 0.75rem;
   }
 
   .trip-day {
-    margin-right: 0;
-    min-width: auto;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trips-preview-grid {
+    gap: 1rem;
+  }
+
+  .trip-preview-image {
+    height: 160px;
+  }
+
+  .trip-badges {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .category-badge,
+  .duration-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .trip-preview-content {
+    padding: 0.75rem;
+  }
+
+  .trip-preview-content h3 {
+    font-size: 1rem;
+  }
+
+  .university-card {
+    max-width: 100vw;
+    margin: 0 0.5rem;
+  }
+
+  .university-header {
+    padding: 1.5rem;
+  }
+
+  .university-content {
+    padding: 1.5rem;
   }
 } 

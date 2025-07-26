@@ -118,30 +118,6 @@
   padding: 3rem 0;
 }
 
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.staff-card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  display: block;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.staff-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  border-color: #3b82f6;
-}
-
 .staff-card-image {
   background: #f8fafc;
   padding: 2rem;
@@ -377,11 +353,6 @@
   .search-box,
   .department-filter {
     min-width: auto;
-  }
-
-  .staff-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .staff-directory-filters {

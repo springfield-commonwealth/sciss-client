@@ -16,7 +16,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:ci": "jest --ci --coverage --watchAll=false"
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "analyze:css": "node scripts/analyze-css.js",
+    "analyze:css:watch": "node scripts/analyze-css.js --watch",
+    "optimize:css": "node scripts/css-optimizer.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
@@ -55,6 +58,7 @@
     "babel-jest": "^30.0.4",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "glob": "^10.3.10",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.4",
     "jest-axe": "^10.0.0",

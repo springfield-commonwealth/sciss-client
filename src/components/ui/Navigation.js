@@ -87,26 +87,6 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
   return (
     <>
       <header className={`header${isScrolled ? " scrolled" : ""}`}>
-        {/* Debug element - remove in production */}
-        {process.env.NODE_ENV === "development" && (
-          <div
-            style={{
-              position: "fixed",
-              top: "10px",
-              right: "10px",
-              background: "rgba(0,0,0,0.8)",
-              color: "white",
-              padding: "5px 10px",
-              borderRadius: "4px",
-              fontSize: "12px",
-              zIndex: 9999,
-              fontFamily: "monospace",
-            }}
-          >
-            Nav: {navHeight}px
-          </div>
-        )}
-
         <nav className="nav">
           <Link href="/" className="logo">
             <img src={LogoBlack} alt="SC International Summer School" />

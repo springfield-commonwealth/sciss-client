@@ -12,7 +12,7 @@ const CarouselCard = (item, index) => {
   return (
     <div
       key={index}
-      className="card-base"
+      className="carousel-card"
       role="button"
       tabIndex={0}
       onClick={handleClick}
@@ -20,7 +20,7 @@ const CarouselCard = (item, index) => {
         if (e.key === "Enter" || e.key === " ") handleClick();
       }}
     >
-      <div className="card-image">
+      <div className="carousel-card-image">
         <img src={item.image} alt={item.title} loading="lazy" />
         <div className="carousel-overlay">
           <h3>{item.title}</h3>

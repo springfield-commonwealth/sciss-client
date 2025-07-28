@@ -71,16 +71,12 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
           description:
             "Join our exciting trips and excursions designed to expand your horizons, build cultural awareness, and create unforgettable memories at SCISS.",
           primaryAction: {
-            text: "Register for Trips",
+            text: "Apply Now",
             href: "/apply",
           },
           secondaryAction: {
             text: "Learn More",
             href: "/day-trips",
-          },
-          footerCTA: {
-            title: "Academic Programs",
-            link: "/academics",
           },
         }}
         seoConfig={{
@@ -92,7 +88,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
           ogTitle: "Trips Directory | SCISS Day Trips & Excursions",
           ogDescription:
             "Explore our exciting day trips and educational excursions including university visits, cultural experiences, and recreational adventures.",
-          canonicalUrl: "https://sciss.edu/trips",
+          canonicalUrl: "https://sciss.org/trips",
         }}
       />
     </Layout>

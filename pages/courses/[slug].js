@@ -61,7 +61,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
         <meta property="og:image" content={seo.ogImage} />
         <meta
           property="og:url"
-          content={`https://sciss.edu/courses/${course.slug}`}
+          content={`https://sciss.org/courses/${course.slug}`}
         />
 
         {/* Twitter */}
@@ -73,7 +73,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href={`https://sciss.edu/courses/${course.slug}`}
+          href={`https://sciss.org/courses/${course.slug}`}
         />
 
         {/* Structured Data */}

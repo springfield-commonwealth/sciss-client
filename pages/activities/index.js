@@ -86,10 +86,6 @@ const ActivitiesDirectory = ({
             text: "Learn About SCISS",
             href: "/about-us",
           },
-          footerCTA: {
-            title: "Academic Programs",
-            link: "/courses",
-          },
         }}
         seoConfig={{
           title: "Life Activities Directory | SCISS",
@@ -100,7 +96,7 @@ const ActivitiesDirectory = ({
           ogTitle: "Life Activities Directory | SCISS",
           ogDescription:
             "Explore our diverse range of life activities designed to enhance your SCISS experience and develop essential life skills.",
-          canonicalUrl: "https://sciss.edu/activities",
+          canonicalUrl: "https://sciss.org/activities",
         }}
       />
     </Layout>

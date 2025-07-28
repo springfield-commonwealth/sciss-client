@@ -17,6 +17,7 @@ html {
   --accent-blue: #0038c7;
   --light-blue: #6BA6C0;
   --accent-yellow: #e6c43b; 
+  --primary-orange: #f59e0b;
   
   /* Subject Colors */
   --business-color: #2E5C7E;
@@ -37,6 +38,7 @@ html {
   --background-primary: #FFFFFF;
   --background-secondary: #F8F9FA;
   --background-tertiary: #E8F0FE;
+  --background-light: #f8fafc;
   --background-dark: #111a26;
   --background-accent: #ebb127;
   --background-blue: #0038c742;
@@ -361,6 +363,15 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* Auto-fit utilities for flexible layouts */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 /* Ensure proper column limits on larger screens */
 @media (min-width: 1200px) {
   .grid-2 {
@@ -414,7 +425,9 @@ a {
   
   .grid-2,
   .grid-3,
-  .grid-4 {
+  .grid-4,
+  .grid-auto-fit,
+  .grid-auto-fill {
     grid-template-columns: 1fr;
   }
   

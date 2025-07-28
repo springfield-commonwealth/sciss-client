@@ -53,14 +53,14 @@ const LifeActivities = ({
                 className="activity-preview-card card-base"
               >
                 <div className="activity-preview-image">
-                  <img src={activity.image} alt={activity.name} />
+                  <img src={activity.image} alt={activity.title} />
                   <div className="activity-badges">
                     <span className="category-badge">{activity.category}</span>
                     <span className="level-badge">{activity.level}</span>
                   </div>
                 </div>
                 <div className="activity-preview-content">
-                  <h3>{activity.name}</h3>
+                  <h3>{activity.title}</h3>
                   <p>{activity.description}</p>
                   <div className="activity-features-preview">
                     {activity.features.slice(0, 3).map((feature, idx) => (
@@ -136,7 +136,7 @@ const LifeActivities = ({
             </p>
           </div>
 
-          <div className="grid-base grid-programs">
+          <div className="grid grid-3">
             {LifeActivitiesFitnessPrograms.map((program, index) => (
               <div key={index} className="fitness-card card-base">
                 <h3>{program.title}</h3>
@@ -163,7 +163,7 @@ const LifeActivities = ({
             <p>Fun and engaging activities for relaxation and entertainment</p>
           </div>
 
-          <div className="grid-base grid-programs">
+          <div className="grid grid-2">
             {LifeActivitiesRecreationalActivities.map((activity, index) => (
               <div key={index} className="recreation-card card-base">
                 <h3>{activity.category}</h3>

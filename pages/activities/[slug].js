@@ -70,7 +70,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
         <meta property="og:image" content={seo.ogImage} />
         <meta
           property="og:url"
-          content={`https://sciss.edu/activities/${activity.slug}`}
+          content={`https://sciss.org/activities/${activity.slug}`}
         />
 
         {/* Twitter */}
@@ -82,7 +82,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href={`https://sciss.edu/activities/${activity.slug}`}
+          href={`https://sciss.org/activities/${activity.slug}`}
         />
 
         {/* Structured Data - Course Schema */}
@@ -97,14 +97,14 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
               provider: {
                 "@type": "EducationalOrganization",
                 name: "Springfield Commonwealth International Summer School",
-                url: "https://sciss.edu",
+                url: "https://sciss.org",
               },
               courseMode: "in-person",
               timeRequired: duration,
               educationalLevel: level,
               about: category,
               image: seo.ogImage,
-              url: `https://sciss.edu/activities/${activity.slug}`,
+              url: `https://sciss.org/activities/${activity.slug}`,
               offers: {
                 "@type": "Offer",
                 category: "educational",

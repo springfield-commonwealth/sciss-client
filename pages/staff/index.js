@@ -102,15 +102,11 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
             "Interested in joining our exceptional faculty? We're always looking for passionate educators and industry experts.",
           primaryAction: {
             text: "Apply to Join Faculty",
-            href: "/apply",
+            href: "mailto:info@springfield.org",
           },
           secondaryAction: {
             text: "Learn About SCISS",
             href: "/about-us",
-          },
-          footerCTA: {
-            title: "Academic Programs",
-            link: "/academics",
           },
         }}
         seoConfig={{
@@ -122,7 +118,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
           ogTitle: "Faculty & Staff Directory | SCISS",
           ogDescription:
             "Meet our exceptional team of educators, industry experts, and professionals who bring real-world expertise to the SCISS learning experience.",
-          canonicalUrl: "https://sciss.edu/staff",
+          canonicalUrl: "https://sciss.org/staff",
         }}
       />
     </Layout>

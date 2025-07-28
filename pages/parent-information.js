@@ -147,7 +147,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
                 <strong>Emergency Hotline:</strong> +1 (555) 123-HELP (4357)
               </div>
               <div className="contact-item">
-                <strong>Email:</strong> emergency@sciss.edu
+                <strong>Email:</strong> emergency@sciss.org
               </div>
               <div className="contact-item">
                 <strong>WhatsApp:</strong> +1 (555) 123-4567

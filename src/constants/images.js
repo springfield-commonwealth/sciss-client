@@ -49,6 +49,17 @@ const TuitionHero = {
   alt: "springfield campus view",
 };
 
+// Add missing hero images
+const TuitionsAndFeesHero = {
+  src: "/images/featured/school-building-0.JPG",
+  alt: "springfield campus view",
+};
+
+const ADayAtScissHero = {
+  src: "/images/hero/a-day-at-sciss-hero.png",
+  alt: "A day at SCISS",
+};
+
 const HomeSliderImages = [
   {
     src: "/images/slider/home/flute performance 2.JPG",
@@ -79,10 +90,11 @@ const HomeSliderImages = [
 export {
   AboutUsHero,
   AcademicsHero,
+  ADayAtScissHero,
   DayTripsHero,
   HomeFeature,
-  HomeHero,
   HomeFeaturePresidents,
+  HomeHero,
   HomeSliderImages,
   LifeActivitiesHero,
   LogoBlack,
@@ -92,4 +104,5 @@ export {
   LogoYellow,
   ProgramOverviewHero,
   TuitionHero,
+  TuitionsAndFeesHero,
 };

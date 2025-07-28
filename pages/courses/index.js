@@ -86,10 +86,6 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
             text: "Learn About SCISS",
             href: "/about-us",
           },
-          footerCTA: {
-            title: "Day Trips",
-            link: "/trips",
-          },
         }}
         seoConfig={{
           title: "Academic Programs Directory | SCISS",
@@ -100,7 +96,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
           ogTitle: "Academic Programs Directory | SCISS",
           ogDescription:
             "Explore our comprehensive academic programs designed to provide cutting-edge knowledge and practical skills for your future success.",
-          canonicalUrl: "https://sciss.edu/courses",
+          canonicalUrl: "https://sciss.org/courses",
         }}
       />
     </Layout>

@@ -72,7 +72,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         <meta property="og:image" content={seo.ogImage} />
         <meta
           property="og:url"
-          content={`https://sciss.edu/trips/${trip.slug}`}
+          content={`https://sciss.org/trips/${trip.slug}`}
         />
 
         {/* Twitter */}
@@ -82,7 +82,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         <meta property="twitter:image" content={seo.ogImage} />
 
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://sciss.edu/trips/${trip.slug}`} />
+        <link rel="canonical" href={`https://sciss.org/trips/${trip.slug}`} />
 
         {/* Structured Data - Event Schema */}
         <script
@@ -96,7 +96,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               organizer: {
                 "@type": "EducationalOrganization",
                 name: "Springfield Commonwealth International Summer School",
-                url: "https://sciss.edu",
+                url: "https://sciss.org",
               },
               location: {
                 "@type": "Place",
@@ -108,7 +108,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
                 availability: "InStock",
               },
               image: seo.ogImage,
-              url: `https://sciss.edu/trips/${trip.slug}`,
+              url: `https://sciss.org/trips/${trip.slug}`,
             }),
           }}
         />

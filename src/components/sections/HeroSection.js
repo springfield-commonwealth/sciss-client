@@ -11,35 +11,48 @@ const HeroSection = ({
   secondaryCtaLink,
 }) => {
   return (
-    <section className="hero-base hero-primary">
+    <section className="hero">
       {backgroundImage && (
-        <img
-          src={backgroundImage.src}
-          alt={backgroundImage.alt}
-          className="hero-background"
-        />
+        <div className="hero-background">
+          <img
+            src={backgroundImage.src}
+            alt={backgroundImage.alt}
+            className="hero-image"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -2,
+            }}
+          />
+        </div>
       )}
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
-        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
-        <h1 className="hero-title">{title}</h1>
-        {description && <p className="hero-description">{description}</p>}
+        <div className="container">
+          {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+          <h1 className="hero-title">{title}</h1>
+          {description && <p className="hero-description">{description}</p>}
 
-        <div className="hero-actions">
-          {ctaText && ctaLink && (
-            <Link href={ctaLink} className="btn btn-primary btn-large">
-              {ctaText}
-            </Link>
-          )}
-          {secondaryCtaText && secondaryCtaLink && (
-            <Link
-              href={secondaryCtaLink}
-              className="btn btn-secondary btn-large"
-            >
-              {secondaryCtaText}
-            </Link>
-          )}
+          <div className="hero-actions">
+            {ctaText && ctaLink && (
+              <Link href={ctaLink} className="btn btn-primary btn-large">
+                {ctaText}
+              </Link>
+            )}
+            {secondaryCtaText && secondaryCtaLink && (
+              <Link
+                href={secondaryCtaLink}
+                className="btn btn-secondary btn-large"
+              >
+                {secondaryCtaText}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </section>

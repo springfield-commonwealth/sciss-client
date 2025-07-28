@@ -270,31 +270,11 @@ const DirectoryCard = ({
             className="card-photo"
           />
         )}
-
-        {/* Card Badges */}
-        <div className="card-badges">
-          {renderBadges ? renderBadges(data) : defaultBadgeRenderer(data)}
-        </div>
       </div>
 
       {/* Card Content Section */}
       <div className="card-content">
         <h3 className="card-title">{getItemTitle(data)}</h3>
-
-        {type === "staff" && (
-          <>
-            <p className="card-position">{data.position || "Faculty Member"}</p>
-            <p className="card-department">
-              {data.department || "General Faculty"}
-            </p>
-          </>
-        )}
-
-        {type === "courses" && <p className="card-category">{data.category}</p>}
-
-        {type === "activities" && (
-          <p className="card-category">{data.category}</p>
-        )}
 
         {/* Custom or default content renderer */}
         {renderCardContent

@@ -11,7 +11,7 @@ const FeatureCard = ({
   onClick,
   hoverable = true,
 }) => {
-  const baseClasses = "card-base";
+  const baseClasses = "card-base card-feature";
   const variantClasses = {
     default: "",
     primary: "feature-card-primary",
@@ -50,7 +50,7 @@ const FeatureGrid = ({
   hoverable = true,
   onFeatureClick,
 }) => {
-  const gridClasses = `grid-base grid-features ${className}`.trim();
+  const gridClasses = `grid grid-${columns} ${className}`.trim();
 
   return (
     <div className={gridClasses}>
@@ -66,6 +66,18 @@ const FeatureGrid = ({
             onFeatureClick ? () => onFeatureClick(feature, index) : undefined
           }
         />
+      ))}
+    </div>
+  );
+};
+
+const FeatureCardGrid = ({ features, className = "" }) => {
+  const gridClasses = `grid grid-auto-fit ${className}`.trim();
+
+  return (
+    <div className={gridClasses}>
+      {features.map((feature, index) => (
+        <FeatureCard key={index} {...feature} />
       ))}
     </div>
   );

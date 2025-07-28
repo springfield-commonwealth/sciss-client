@@ -3,6 +3,9 @@
 /* Global styles */
 @import './globals.css';
 
+/* Shared styles - Universal CSS classes and design tokens */
+@import './shared.css';
+
 /* Base component styles */
 @import './components/navigation.css';
 @import './components/footer.css';

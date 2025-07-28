@@ -179,37 +179,32 @@ const DirectoryPage = ({
         <section className={`${type}-directory-grid directory-grid`}>
           <div className="container">
             {filteredItems.length > 0 ? (
-              <div className="grid-base grid-preview">
-                {filteredItems.map((item) => (
+              <div className="grid grid-2">
+                {filteredItems.map((item, index) => (
                   <DirectoryCard
-                    key={item.id || item.slug}
-                    type={type}
+                    key={item.id || item.slug || index}
                     data={item}
-                    renderCardContent={renderCardContent}
-                    renderBadges={renderBadges}
+                    type={type}
+                    className={`${type}-card`}
                   />
                 ))}
               </div>
             ) : (
               <div className="no-results">
-                <h3>No {type} found</h3>
-                <p>Try adjusting your search criteria or category filter.</p>
-                <button onClick={clearFilters} className="reset-filters-btn">
-                  Reset Filters
-                </button>
+                <p>No {type} found matching your criteria.</p>
               </div>
             )}
           </div>
         </section>
 
-        {/* Categories Overview */}
+        {/* Categories Overview
         {Object.keys(groupedItems).length > 0 && (
           <DirectoryCategories
             groupedItems={groupedItems}
             type={type}
             onCategorySelect={setSelectedCategory}
           />
-        )}
+        )} */}
 
         {/* Call to Action */}
         {ctaConfig.showCTA && (

@@ -71,7 +71,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
         <meta property="og:image" content={seo.ogImage} />
         <meta
           property="og:url"
-          content={`https://sciss.edu/staff/${staff.slug}`}
+          content={`https://sciss.org/staff/${staff.slug}`}
         />
 
         {/* Twitter */}
@@ -81,7 +81,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
         <meta property="twitter:image" content={seo.ogImage} />
 
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://sciss.edu/staff/${staff.slug}`} />
+        <link rel="canonical" href={`https://sciss.org/staff/${staff.slug}`} />
 
         {/* Structured Data - Person Schema */}
         <script
@@ -95,11 +95,11 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               worksFor: {
                 "@type": "EducationalOrganization",
                 name: "Springfield Commonwealth International Summer School",
-                url: "https://sciss.edu",
+                url: "https://sciss.org",
               },
               description: bio,
               image: seo.ogImage,
-              url: `https://sciss.edu/staff/${staff.slug}`,
+              url: `https://sciss.org/staff/${staff.slug}`,
               knowsAbout: expertise,
               alumniOf: education.map((edu) => ({
                 "@type": "EducationalOrganization",

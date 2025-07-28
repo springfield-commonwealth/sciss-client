@@ -1,7 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import HeroSection from "@/components/sections/HeroSection";
-import { Badge, BadgeGroup, FeatureGrid, SectionHeader } from "@/components/ui";
+import { Badge, BadgeGroup, FeatureGrid, FooterCTA, SectionHeader } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
 import GalleryCard from "@/components/ui/GalleryCard";
 import { AcademicsCarouselItems } from "@/constants/academicsContent";
@@ -131,11 +131,11 @@ const Academics = ({
           />
 
           {hasValidCourses ? (
-            <div className="course-directory grid-base grid-courses">
+            <div className="course-directory grid grid-2">
               {coursesList.map((course) => (
                 <div
                   key={course.id || course.slug}
-                  className="card-base course-preview-card"
+                  className="course-preview-card"
                 >
                   <div className="course-preview-header">
                     <div className="course-preview-image">
@@ -230,6 +230,7 @@ const Academics = ({
       </section>
 
       <CampSchedule />
+      <FooterCTA link="/courses" linkTitle="All Courses" />
     </Layout>
   );
 };

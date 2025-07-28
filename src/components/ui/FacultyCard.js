@@ -1,5 +1,5 @@
 const FacultyCard = ({ name, role, background, photo }) => (
-  <div className="faculty-card">
+  <div className="card-base">
     <div className="faculty-info">
       {photo && (
         <div className="faculty-photo-wrapper">

@@ -7,7 +7,7 @@ const FacultySection = ({ title, desc, faculty, gridsize }) => (
         <h2>{title}</h2>
         <p>{desc}</p>
       </div>
-      <div className={`grid grid-${gridsize}`}>
+      <div className={`grid-base grid-faculty grid-${gridsize}`}>
         {faculty.map((f, idx) => (
           <FacultyCard key={idx} {...f} />
         ))}

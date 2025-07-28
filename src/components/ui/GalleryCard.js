@@ -11,7 +11,7 @@ const GalleryCard = (item, index) => {
   return (
     <div
       key={index}
-      className="gallery-card"
+      className="card-base"
       role="button"
       tabIndex={0}
       onClick={handleClick}

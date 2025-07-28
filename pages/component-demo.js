@@ -203,7 +203,7 @@ const ComponentDemo = () => {
             showDivider
           />
 
-          <div className="grid grid-3">
+          <div className="grid-base grid-3">
             <div>
               <h3>Single StatsCard</h3>
               <StatsCard

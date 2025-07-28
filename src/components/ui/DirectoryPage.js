@@ -179,7 +179,7 @@ const DirectoryPage = ({
         <section className={`${type}-directory-grid directory-grid`}>
           <div className="container">
             {filteredItems.length > 0 ? (
-              <div className={`${type}-grid directory-items-grid`}>
+              <div className="grid-base grid-preview">
                 {filteredItems.map((item) => (
                   <DirectoryCard
                     key={item.id || item.slug}

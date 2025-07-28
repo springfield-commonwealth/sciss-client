@@ -136,7 +136,7 @@ const LifeActivities = ({
             </p>
           </div>
 
-          <div className="programs-grid">
+          <div className="grid-base grid-programs">
             {LifeActivitiesFitnessPrograms.map((program, index) => (
               <div key={index} className="fitness-card card-base">
                 <h3>{program.title}</h3>
@@ -163,7 +163,7 @@ const LifeActivities = ({
             <p>Fun and engaging activities for relaxation and entertainment</p>
           </div>
 
-          <div className="programs-grid">
+          <div className="grid-base grid-programs">
             {LifeActivitiesRecreationalActivities.map((activity, index) => (
               <div key={index} className="recreation-card card-base">
                 <h3>{activity.category}</h3>

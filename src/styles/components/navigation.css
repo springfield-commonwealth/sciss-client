@@ -15,7 +15,7 @@
   );
 
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: var(--z-fixed);
   box-shadow: var(--shadow-light);
   transition: all 1s ease;
 }

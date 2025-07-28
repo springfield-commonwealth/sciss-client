@@ -5,9 +5,9 @@ const Highlights = ({ highlights }) => (
         <h2>Experience Highlights</h2>
         <p>Unforgettable moments that will shape your future</p>
       </div>
-      <div className="grid grid-3 highlights-grid">
+      <div className="grid-base grid-highlights grid-3">
         {highlights.map((highlight, index) => (
-          <div key={index} className="card highlight-card">
+          <div key={index} className="card-base highlight-card">
             <div className="card-image">
               <img src={highlight.image} alt={highlight.title} />
             </div>

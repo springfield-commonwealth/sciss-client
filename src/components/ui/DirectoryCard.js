@@ -259,7 +259,7 @@ const DirectoryCard = ({
   return (
     <Link
       href={getItemUrl(data)}
-      className={`directory-card directory-card--${type} ${className}`}
+      className={`card-base card-preview directory-card directory-card--${type} ${className}`}
     >
       {/* Card Image Section */}
       <div className="card-image">

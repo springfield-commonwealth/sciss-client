@@ -12,7 +12,7 @@ const SectionHeader = ({
   showDivider = false,
   children,
 }) => {
-  const baseClasses = "section-header";
+  const baseClasses = "section-header-base";
   const variantClasses = {
     default: "section-header-default",
     primary: "section-header-primary",

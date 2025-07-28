@@ -2,7 +2,7 @@ const FeatureSection = ({ heading, image, paragraphs, imageWidth }) => (
   <section className="section bg-light feature-section">
     <div className="container">
       <h1 className="text-center mb-5">{heading}</h1>
-      <div className="grid grid-2">
+      <div className="grid-base grid-feature grid-2">
         {image && (
           <div className="feature-section-image">
             <figure className="feature-section-image__figure">
@@ -21,7 +21,7 @@ const FeatureSection = ({ heading, image, paragraphs, imageWidth }) => (
                   alt={image.alt}
                   className="feature-section-image__img"
                   style={{
-                    "width": `${imageWidth}`
+                    width: `${imageWidth}`,
                   }}
                 />
               </picture>

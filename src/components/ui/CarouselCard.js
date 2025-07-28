@@ -12,7 +12,7 @@ const CarouselCard = (item, index) => {
   return (
     <div
       key={index}
-      className="carousel-card"
+      className="card-base"
       role="button"
       tabIndex={0}
       onClick={handleClick}

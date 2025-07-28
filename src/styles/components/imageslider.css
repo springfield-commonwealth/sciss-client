@@ -22,8 +22,28 @@
 .swiper-pagination-bullet {
   background: #bbb;
   opacity: 1;
-  margin: 0 4px !important;
+  margin: 0 4px;
 }
 .swiper-pagination-bullet-active {
   background: #222;
+}
+
+/* Image Slider Component Styles */
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 0 4px;
 }

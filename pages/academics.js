@@ -131,11 +131,11 @@ const Academics = ({
           />
 
           {hasValidCourses ? (
-            <div className="course-directory grid grid-3">
+            <div className="course-directory grid-base grid-courses">
               {coursesList.map((course) => (
                 <div
                   key={course.id || course.slug}
-                  className="course-preview-card"
+                  className="card-base course-preview-card"
                 >
                   <div className="course-preview-header">
                     <div className="course-preview-image">

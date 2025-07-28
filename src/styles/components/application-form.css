@@ -161,12 +161,12 @@
 .application-form .PhoneInputInput {
   flex: 1;
   padding: 0.7rem 1rem;
-  border: none !important;
+  border: none;
   background: transparent;
   font-size: 1rem;
   color: var(--text-dark);
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
 .application-form .PhoneInputInput::placeholder {
@@ -175,9 +175,9 @@
 }
 
 .application-form .PhoneInputInput:focus {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .application-form .form-row {
@@ -822,5 +822,55 @@
   .form-checkbox:focus-visible {
     animation: none;
   }
+}
+
+/* Application Form Styles - Enhanced specificity without !important */
+
+/* Form field base styles */
+.application-form .form-field {
+  border: 2px solid var(--border-light);
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.application-form .form-field:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Form validation states with enhanced specificity */
+.application-form .form-field.error {
+  border-color: var(--error-color);
+}
+
+.application-form .form-field.success {
+  border-color: var(--success-color);
+}
+
+/* Form layout with enhanced specificity */
+.application-form .form-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+/* Validation states with enhanced specificity */
+.application-form .form-field.error:focus {
+  border-color: var(--error-color, #CC1D2F);
+}
+
+.application-form .form-field.success:focus {
+  border-color: var(--success-color, #27AE60);
+}
+
+.application-form .form-field.success {
+  border-color: var(--success-color, #27AE60);
+}
+
+.application-form .form-field.error {
+  border-color: var(--error-color, #CC1D2F);
 }
 

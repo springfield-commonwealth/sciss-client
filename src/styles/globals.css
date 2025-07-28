@@ -337,7 +337,13 @@ a {
   padding: 100px 0;
 }
 
-/* Grid */
+/* Grid Base */
+.grid-base {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Legacy Grid Classes (for backward compatibility) */
 .grid {
   display: grid;
   gap: 2rem;

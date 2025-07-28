@@ -1,7 +1,18 @@
 /* Weekly Schedule Component Styles */
-.weekly-schedule-section {
-  padding: 4rem 0;
-  background: #ffffff;
+
+.weekly-schedule {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.schedule-header {
+  background: #2e5c7e;
+  color: #ffffff;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .schedule-intro {
@@ -89,8 +100,8 @@
 }
 
 .schedule-table__time-col {
-  background: #2e5c7e !important;
-  color: #ffffff !important;
+  background: #2e5c7e;
+  color: #ffffff;
   font-weight: 600;
   text-align: center;
   padding: 0.75rem 1rem;

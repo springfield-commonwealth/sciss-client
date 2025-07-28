@@ -11,7 +11,7 @@ const FeatureCard = ({
   onClick,
   hoverable = true,
 }) => {
-  const baseClasses = "feature-card card-base";
+  const baseClasses = "card-base";
   const variantClasses = {
     default: "",
     primary: "feature-card-primary",
@@ -50,8 +50,7 @@ const FeatureGrid = ({
   hoverable = true,
   onFeatureClick,
 }) => {
-  const gridClasses =
-    `feature-grid feature-grid-${columns} ${className}`.trim();
+  const gridClasses = `grid-base grid-features ${className}`.trim();
 
   return (
     <div className={gridClasses}>

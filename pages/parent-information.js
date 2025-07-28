@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   ParentInfoCampusServices,
@@ -11,12 +12,56 @@ import {
   ParentInfoSafetyMeasures,
   ParentInfoTravelTips,
 } from "@/constants/parentInformationContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
-const ParentInformation = () => {
+const ParentInformation = ({ breadcrumbs = [] }) => {
+  // Prepare parent features data for FeatureGrid component
+  const parentFeaturesData = [
+    {
+      icon: "📞",
+      title: "Regular Updates",
+      description: "Weekly progress reports and communication from our staff",
+    },
+    {
+      icon: "📱",
+      title: "24/7 Access",
+      description: "Emergency contact information and real-time updates",
+    },
+    {
+      icon: "📧",
+      title: "Digital Portal",
+      description: "Online platform for photos, updates, and communication",
+    },
+  ];
+
+  // Prepare packing tips data for FeatureGrid component
+  const packingTipsData = [
+    {
+      icon: "📦",
+      title: "Label Everything",
+      description:
+        "Include name and contact information on all luggage and valuable items.",
+    },
+    {
+      icon: "✈️",
+      title: "Check Airline Restrictions",
+      description:
+        "Verify weight limits and prohibited items with your airline.",
+    },
+    {
+      icon: "🧳",
+      title: "Pack Smart",
+      description:
+        "Bring versatile clothing and leave space for souvenirs on return trip.",
+    },
+  ];
+
   return (
     <Layout
       title="Parent Information - SCISS"
-      description="Essential information for parents about safety, communication, health requirements, and preparing your teen for SCISS."
+      description="Essential information for parents about SCISS Summer School programs, safety, and student support."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -33,60 +78,35 @@ const ParentInformation = () => {
       {/* Overview for Parents */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Your Teen's Safety is Our Priority</h2>
-            <p>
-              We understand that sending your teenager abroad is a big decision.
-              Here's everything you need to know about our comprehensive safety
-              and support systems.
-            </p>
-          </div>
+          <SectionHeader
+            title="Your Teen's Safety is Our Priority"
+            description="We understand that sending your teenager abroad is a big decision. Here's everything you need to know about our comprehensive safety and support systems."
+            showDivider
+          />
 
-          <div className="grid grid-3">
-            <div className="parent-feature">
-              <div className="feature-icon">🛡️</div>
-              <h3>24/7 Supervision</h3>
-              <p>
-                Professional staff provide round-the-clock supervision and
-                support for all students.
-              </p>
-            </div>
-
-            <div className="parent-feature">
-              <div className="feature-icon">📞</div>
-              <h3>Regular Communication</h3>
-              <p>
-                Stay connected with weekly updates, daily photos, and 24/7
-                emergency contact access.
-              </p>
-            </div>
-
-            <div className="parent-feature">
-              <div className="feature-icon">🏥</div>
-              <h3>Medical Care</h3>
-              <p>
-                On-site medical staff and partnerships with local healthcare
-                facilities ensure prompt care.
-              </p>
-            </div>
-          </div>
+          <FeatureGrid
+            features={parentFeaturesData}
+            columns={3}
+            hoverable
+            onFeatureClick={(feature, index) => {
+              console.log("Clicked feature:", feature, index);
+            }}
+          />
         </div>
       </section>
 
-      {/* Safety Measures */}
-      <section id="safety" className="section bg-light">
+      {/* Safety & Security */}
+      <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Comprehensive Safety Measures</h2>
-            <p>
-              Multiple layers of security and supervision keep students safe
-              24/7
-            </p>
-          </div>
+          <SectionHeader
+            title="Safety & Security"
+            description="Your child's safety is our top priority"
+            showDivider
+          />
 
           <div className="grid grid-2">
             {ParentInfoSafetyMeasures.map((category, index) => (
-              <div key={index} className="safety-category">
+              <div key={index} className="safety-category card-base">
                 <h3>{category.category}</h3>
                 <ul className="safety-list">
                   {category.measures.map((measure, idx) => (
@@ -99,20 +119,18 @@ const ParentInformation = () => {
         </div>
       </section>
 
-      {/* Communication Schedule */}
+      {/* Communication Timeline */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Staying Connected</h2>
-            <p>
-              Regular communication keeps you informed about your teen's
-              progress and experiences
-            </p>
-          </div>
+          <SectionHeader
+            title="Communication Timeline"
+            description="Stay informed throughout your child's journey"
+            showDivider
+          />
 
           <div className="communication-timeline">
             {ParentInfoCommunicationSchedule.map((comm, index) => (
-              <div key={index} className="comm-item">
+              <div key={index} className="comm-item card-base">
                 <div className="comm-type">
                   <h4>{comm.type}</h4>
                   <span className="comm-timing">{comm.timing}</span>
@@ -140,22 +158,20 @@ const ParentInformation = () => {
       </section>
 
       {/* Health Requirements */}
-      <section id="health" className="section bg-light">
+      <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Health & Medical Requirements</h2>
-            <p>
-              Ensure your teen meets all health requirements for a safe and
-              healthy experience
-            </p>
-          </div>
+          <SectionHeader
+            title="Health Requirements"
+            description="Important health information and deadlines"
+            showDivider
+          />
 
           <div className="health-requirements">
             {ParentInfoHealthRequirements.map((req, index) => (
-              <div key={index} className="health-req-item">
+              <div key={index} className="health-req-item card-base">
                 <div className="req-header">
                   <h4>{req.requirement}</h4>
-                  <span className="req-deadline">{req.deadline}</span>
+                  <span className="req-deadline">Due: {req.deadline}</span>
                 </div>
                 <p>{req.description}</p>
               </div>
@@ -164,21 +180,19 @@ const ParentInformation = () => {
         </div>
       </section>
 
-      {/* Packing Guide */}
+      {/* Packing Guidelines */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Packing Guide</h2>
-            <p>
-              Help your teen pack everything they need for a successful summer
-              experience
-            </p>
-          </div>
+          <SectionHeader
+            title="Packing Guidelines"
+            description="What to bring and what to leave at home"
+            showDivider
+          />
 
           <div className="packing-categories">
             {Object.entries(ParentInfoPackingList).map(
               ([category, items], index) => (
-                <div key={index} className="packing-category">
+                <div key={index} className="packing-category card-base">
                   <h3>
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </h3>
@@ -194,29 +208,14 @@ const ParentInformation = () => {
 
           <div className="packing-tips">
             <h3>Packing Tips</h3>
-            <div className="tips-grid">
-              <div className="tip-item">
-                <span className="tip-icon">📦</span>
-                <p>
-                  <strong>Label Everything:</strong> Include name and contact
-                  information on all luggage and valuable items.
-                </p>
-              </div>
-              <div className="tip-item">
-                <span className="tip-icon">✈️</span>
-                <p>
-                  <strong>Check Airline Restrictions:</strong> Verify weight
-                  limits and prohibited items with your airline.
-                </p>
-              </div>
-              <div className="tip-item">
-                <span className="tip-icon">🧳</span>
-                <p>
-                  <strong>Pack Smart:</strong> Bring versatile clothing and
-                  leave space for souvenirs on return trip.
-                </p>
-              </div>
-            </div>
+            <FeatureGrid
+              features={packingTipsData}
+              columns={3}
+              hoverable
+              onFeatureClick={(tip, index) => {
+                console.log("Clicked tip:", tip, index);
+              }}
+            />
           </div>
         </div>
       </section>
@@ -224,15 +223,16 @@ const ParentInformation = () => {
       {/* Campus Services */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Campus Services</h2>
-            <p>Convenient services to support your teen's daily needs</p>
-          </div>
+          <SectionHeader
+            title="Campus Services"
+            description="Comprehensive support services available to your teen"
+            showDivider
+          />
 
           <div className="services-grid">
             {ParentInfoCampusServices.map((service, index) => (
-              <div key={index} className="service-card">
-                <h4>{service.service}</h4>
+              <div key={index} className="service-card card-base">
+                <h3>{service.service}</h3>
                 <p>{service.description}</p>
                 <div className="service-cost">{service.cost}</div>
               </div>
@@ -241,20 +241,48 @@ const ParentInformation = () => {
         </div>
       </section>
 
-      {/* Emergency Protocols */}
+      {/* Travel Tips */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Emergency Protocols</h2>
-            <p>Comprehensive response plans for various emergency scenarios</p>
-          </div>
+          <SectionHeader
+            title="Travel Tips"
+            description="Helpful advice for smooth travel to and from SCISS"
+            showDivider
+          />
 
-          <div className="emergency-protocols">
+          <div className="travel-tips">
+            {ParentInfoTravelTips.map((tip, index) => (
+              <div key={index} className="travel-tip-card card-base">
+                <div className="tip-header">
+                  <h4>{tip.tip}</h4>
+                </div>
+                <ul className="tip-list">
+                  {tip.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Protocols */}
+      <section className="section bg-light">
+        <div className="container">
+          <SectionHeader
+            title="Emergency Protocols"
+            description="Our comprehensive emergency response procedures"
+            showDivider
+          />
+
+          <div className="protocols-grid">
             {ParentInfoEmergencyProtocols.map((protocol, index) => (
-              <div key={index} className="protocol-card">
+              <div key={index} className="protocol-card card-base">
                 <h3>{protocol.scenario}</h3>
+                <p>{protocol.description}</p>
                 <div className="protocol-steps">
-                  <h4>Response Protocol:</h4>
+                  <h4>Response Steps:</h4>
                   <ol>
                     {protocol.response.map((step, idx) => (
                       <li key={idx}>{step}</li>
@@ -267,40 +295,18 @@ const ParentInformation = () => {
         </div>
       </section>
 
-      {/* Travel Tips */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Travel Tips</h2>
-            <p>Practical advice for international travel preparation</p>
-          </div>
-
-          <div className="grid grid-3">
-            {ParentInfoTravelTips.map((tip, index) => (
-              <div key={index} className="travel-tip-card">
-                <h3>{tip.tip}</h3>
-                <ul>
-                  {tip.details.map((detail, idx) => (
-                    <li key={idx}>{detail}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Parent Testimonials */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>What Parents Say</h2>
-            <p>Hear from other parents about their SCISS experience</p>
-          </div>
+          <SectionHeader
+            title="What Parents Say"
+            description="Hear from parents who have experienced SCISS with their teens"
+            showDivider
+          />
 
-          <div className="grid grid-3">
+          <div className="testimonials-grid">
             {ParentInfoParentTestimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
+              <div key={index} className="testimonial-card card-base">
                 <div className="quote-icon">💬</div>
                 <blockquote>"{testimonial.quote}"</blockquote>
                 <div className="testimonial-author">
@@ -314,75 +320,23 @@ const ParentInformation = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2>Frequently Asked Questions</h2>
-            <p>Quick answers to common parent concerns</p>
-          </div>
-
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h4>How often will I hear from my teen?</h4>
-              <p>
-                Students have daily free time to contact home, plus you'll
-                receive weekly updates from our staff and daily photo uploads to
-                our secure parent portal.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>What happens if my teen gets homesick?</h4>
-              <p>
-                Our experienced residential staff are trained to help students
-                through homesickness. We provide counseling support and maintain
-                close communication with parents.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>Can I visit during the program?</h4>
-              <p>
-                While we encourage independence, family visits can be arranged
-                for special circumstances. Please coordinate with our staff in
-                advance.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>What if there's a family emergency at home?</h4>
-              <p>
-                We have 24/7 emergency contact protocols and can facilitate
-                immediate communication or arrange for early departure if
-                necessary.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>How do you handle dietary restrictions?</h4>
-              <p>
-                Our dining services accommodate all dietary needs including
-                allergies, religious restrictions, and personal preferences.
-                Detailed information is collected during registration.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h4>What's included in the medical care?</h4>
-              <p>
-                Basic medical care is included. For serious conditions requiring
-                specialist care, we coordinate with local hospitals and work
-                with your insurance provider.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };
 
 export default ParentInformation;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for parent information page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Parent Information", href: "/parent-information", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

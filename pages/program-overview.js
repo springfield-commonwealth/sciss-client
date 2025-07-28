@@ -1,16 +1,39 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
-import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import FooterCTA from "@/components/ui/FooterCTA";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import { ProgramOverviewHero } from "@/constants/images";
 import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
-const ProgramOverview = () => {
+const ProgramOverview = ({ breadcrumbs = [] }) => {
+  // Prepare unique features data for FeatureGrid component
+  const uniqueFeaturesData = [
+    {
+      icon: "👥",
+      title: "Small Class Sizes",
+      description: "Maximum 15 students per class for personalized attention",
+    },
+    {
+      icon: "👨‍🏫",
+      title: "Expert Instructors",
+      description: "Industry professionals and experienced educators",
+    },
+    {
+      icon: "🔬",
+      title: "Hands-on Learning",
+      description: "Practical projects and real-world applications",
+    },
+  ];
+
   return (
     <Layout
       title="Program Overview - SCISS"
       description="Discover the comprehensive academic programs, daily structure, and unique opportunities at SCISS Summer School."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -29,14 +52,12 @@ const ProgramOverview = () => {
         <div className="container">
           <div className="grid grid-2">
             <div className="mission-content">
-              <h2>Our Mission</h2>
-              <p>
-                At SCISS, our mission is to foster a dynamic learning
-                environment where curiosity thrives, friendships flourish, and
-                personal growth is nurtured. We believe in providing students
-                with transformative experiences that prepare them for future
-                academic and professional success.
-              </p>
+              <SectionHeader
+                title="Our Mission"
+                description="At SCISS, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success."
+                align="left"
+                showDivider
+              />
 
               <h3>Core Values</h3>
               <ul className="values-list">
@@ -64,32 +85,20 @@ const ProgramOverview = () => {
             </div>
 
             <div className="vision-content">
-              <h2>What Sets Us Apart</h2>
-              <div className="unique-features">
-                <div className="feature">
-                  <h4>Expert Faculty</h4>
-                  <p>
-                    Learn from industry professionals, university professors,
-                    and accomplished practitioners
-                  </p>
-                </div>
+              <SectionHeader
+                title="What Sets Us Apart"
+                align="left"
+                showDivider
+              />
 
-                <div className="feature">
-                  <h4>Global Community</h4>
-                  <p>
-                    Connect with like-minded students from around the world in a
-                    supportive environment
-                  </p>
-                </div>
-
-                <div className="feature">
-                  <h4>Real-World Application</h4>
-                  <p>
-                    Hands-on projects and practical experiences that translate
-                    to real career benefits
-                  </p>
-                </div>
-              </div>
+              <FeatureGrid
+                features={uniqueFeaturesData}
+                columns={1}
+                hoverable
+                onFeatureClick={(feature, index) => {
+                  console.log("Clicked feature:", feature, index);
+                }}
+              />
             </div>
           </div>
         </div>
@@ -98,13 +107,11 @@ const ProgramOverview = () => {
       {/* program carousel */}
       <section className="section bg-light" id="program-carousel">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Activity Highlights</h2>
-            <p>
-              Experience the best in sports, fitness, and recreational
-              activities
-            </p>
-          </div>
+          <SectionHeader
+            title="Activity Highlights"
+            description="Experience the best in sports, fitness, and recreational activities"
+            showDivider
+          />
 
           {/* <Carousel items={activitiesCarouselItems} /> */}
           <Carousel items={ProgramOverviewCoreCourses} />
@@ -118,3 +125,17 @@ const ProgramOverview = () => {
 };
 
 export default ProgramOverview;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for program overview page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Program Overview", href: "/program-overview", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

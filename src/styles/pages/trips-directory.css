@@ -171,11 +171,33 @@
 
 .trips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Ensure max 2 cards per row on larger screens */
+@media (min-width: 1200px) {
+  .trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .trips-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .trips-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
 }
 
 .trip-card {
@@ -391,18 +413,9 @@
 }
 
 .category-overview-card {
-  background: white;
   padding: 2.5rem;
-  border-radius: 25px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
   border: 2px solid transparent;
-}
-
-.category-overview-card:hover {
-  transform: translateY(-5px);
-  border-color: #0ea5e9;
 }
 
 .category-overview-card h3 {
@@ -615,10 +628,6 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
-  .trips-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
 }
 
 @media (max-width: 768px) {
@@ -645,12 +654,6 @@
   
   .stat-number {
     font-size: 2rem;
-  }
-  
-  .trips-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
   }
   
   .trip-card-info {

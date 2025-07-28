@@ -12,7 +12,7 @@ const FooterCTA = ({linkTitle, link}) => {
           <Link href="/apply" className="btn btn-primary btn-large">
             Apply Now
           </Link>
-          <Link href={link} className="btn btn-secondary btn-large">
+          <Link href={link} className="btn btn-secondary btn-medium">
             Explore {linkTitle}
           </Link>
         </div>

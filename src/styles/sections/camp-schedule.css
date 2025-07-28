@@ -1,6 +1,7 @@
 .camp-schedule-section {
-  margin: var(--section-margin, 2rem 0);
+  padding: 2rem 0;
 }
+
 .session-tabs button,
 .week-tabs button {
   margin-right: 8px;

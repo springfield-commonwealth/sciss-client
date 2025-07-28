@@ -48,7 +48,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
   } = course;
 
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout breadcrumbs={breadcrumbs} showBreadcrumb={true}>
       <Head>
         <title>{seo.metaTitle}</title>
         <meta name="description" content={seo.metaDescription} />

@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 // Courses Directory Page Component
-const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
+const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -40,7 +40,12 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
   };
 
   return (
-    <Layout>
+    <Layout
+      title="Academic Courses - SCISS"
+      description="Comprehensive academic courses designed for international summer school students."
+      breadcrumbs={breadcrumbs}
+      showBreadcrumb={true}
+    >
       <Head>
         <title>Academic Courses - SC International Summer School</title>
         <meta
@@ -61,7 +66,6 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
       </Head>
 
       <div className="courses-directory">
-
         {/* Header Section */}
         <div className="courses-header">
           <h1>Academic Courses</h1>
@@ -82,7 +86,9 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
               <span className="stat-label">Core Courses</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">{stats.categoryCounts.language + stats.categoryCounts.arts}</span>
+              <span className="stat-number">
+                {stats.categoryCounts.language + stats.categoryCounts.arts}
+              </span>
               <span className="stat-label">Specialized Programs</span>
             </div>
           </div>
@@ -140,7 +146,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
         </div>
 
         {/* Courses Grid */}
-        <div className="courses-grid">
+        <section className="courses-grid">
           {filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <div key={course.slug} className="course-card">
@@ -197,7 +203,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs }) => {
               </button>
             </div>
           )}
-        </div>
+        </section>
 
         {/* Quick Links */}
         <div className="courses-quick-links">
@@ -248,7 +254,11 @@ export async function getStaticProps() {
       props: {
         courses: [],
         categories: [],
-        stats: { totalCourses: 0, coreCoursesCount: 0, categoryCounts: { language: 0, arts: 0 } },
+        stats: {
+          totalCourses: 0,
+          coreCoursesCount: 0,
+          categoryCounts: { language: 0, arts: 0 },
+        },
         breadcrumbs: [],
       },
     };

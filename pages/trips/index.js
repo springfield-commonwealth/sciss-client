@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import { Badge, BadgeGroup, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getAllTrips,
@@ -11,7 +12,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 // Trips Directory Page Component
-const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
+const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -33,8 +34,44 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
     });
   }, [trips, searchTerm, selectedCategory]);
 
+  // Group trips by category for the overview cards
+  const tripCategories = useMemo(() => {
+    const grouped = {};
+    trips.forEach((trip) => {
+      if (!grouped[trip.category]) {
+        grouped[trip.category] = [];
+      }
+      grouped[trip.category].push(trip);
+    });
+    return grouped;
+  }, [trips]);
+
+  // Prepare stats data for StatsGrid component
+  const statsData = [
+    {
+      number: stats.totalTrips,
+      label: "Trips Available",
+      icon: "🗺️",
+    },
+    {
+      number: categories.length,
+      label: "Trip Categories",
+      icon: "📚",
+    },
+    {
+      number: stats.averageGroupSize,
+      label: "Avg. Group Size",
+      icon: "👥",
+    },
+  ];
+
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout
+      title="Day Trips - SCISS"
+      description="Explore exciting day trips and educational excursions at SCISS."
+      breadcrumbs={breadcrumbs}
+      showBreadcrumb={true}
+    >
       <Head>
         <title>Trips Directory | SCISS Day Trips & Excursions</title>
         <meta
@@ -66,29 +103,21 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
         {/* Header Section */}
         <section className="trips-directory-header">
           <div className="container">
-            <h1>Day Trips & Excursions Directory</h1>
-            <p className="directory-subtitle">
-              Discover our exciting day trips and educational excursions
-              designed to expand your horizons. From prestigious university
-              visits to cultural adventures, explore the best of New England
-              with SCISS.
-            </p>
+            <SectionHeader
+              title="Day Trips & Excursions Directory"
+              description="Discover our exciting day trips and educational excursions designed to expand your horizons. From prestigious university visits to cultural adventures, explore the best of New England with SCISS."
+              showDivider
+            />
 
-            {/* Statistics */}
-            <div className="trips-stats">
-              <div className="stat-item">
-                <span className="stat-number">{stats.totalTrips}</span>
-                <span className="stat-label">Trips Available</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{categories.length}</span>
-                <span className="stat-label">Trip Categories</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{stats.averageGroupSize}</span>
-                <span className="stat-label">Avg. Group Size</span>
-              </div>
-            </div>
+            {/* Statistics using reusable StatsGrid component */}
+            <StatsGrid
+              stats={statsData}
+              columns={3}
+              hoverable
+              onStatClick={(stat, index) => {
+                console.log("Clicked stat:", stat, index);
+              }}
+            />
           </div>
         </section>
 
@@ -148,50 +177,56 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
                         />
                       )}
                       <div className="trip-card-badges">
-                        <span className="category-badge">{trip.category}</span>
-                        <span className="duration-badge">{trip.duration}</span>
+                        <Badge variant="primary" size="small">
+                          {trip.category}
+                        </Badge>
+                        <Badge variant="secondary" size="small">
+                          {trip.duration}
+                        </Badge>
                       </div>
                     </div>
 
                     <div className="trip-card-content">
                       <h3 className="trip-card-title">{trip.title}</h3>
-                      <div className="trip-card-location">
-                        📍 {trip.location}
-                      </div>
                       <p className="trip-card-description">
                         {trip.description.substring(0, 120)}
                         {trip.description.length > 120 && "..."}
                       </p>
 
                       <div className="trip-card-highlights">
-                        {trip.highlights.slice(0, 3).map((highlight, index) => (
-                          <span key={index} className="highlight-tag">
-                            {highlight}
-                          </span>
-                        ))}
-                        {trip.highlights.length > 3 && (
-                          <span className="highlight-more">
-                            +{trip.highlights.length - 3} more
-                          </span>
-                        )}
+                        <BadgeGroup>
+                          {trip.highlights
+                            .slice(0, 3)
+                            .map((highlight, index) => (
+                              <Badge key={index} variant="info" size="small">
+                                {highlight}
+                              </Badge>
+                            ))}
+                          {trip.highlights.length > 3 && (
+                            <Badge variant="default" size="small">
+                              +{trip.highlights.length - 3} more
+                            </Badge>
+                          )}
+                        </BadgeGroup>
                       </div>
 
                       <div className="trip-card-info">
                         <div className="info-item">
                           <strong>Duration:</strong> {trip.duration}
                         </div>
-                        <div className="info-item">
-                          <strong>Group Size:</strong> {trip.groupSize}
-                        </div>
-                        <div className="info-item">
-                          <strong>Transport:</strong> {trip.transportMode}
-                        </div>
+                        {/* <div className="info-item">
+                          <strong>Max Participants:</strong>{" "}
+                          {trip.maxParticipants}
+                        </div> */}
+                        {/* <div className="info-item">
+                          <strong>Difficulty:</strong> {trip.difficulty}
+                        </div> */}
                       </div>
                     </div>
 
                     <div className="trip-card-footer">
                       <span className="view-details-text">
-                        View Full Itinerary →
+                        View Full Details →
                       </span>
                     </div>
                   </Link>
@@ -218,34 +253,41 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
         {/* Categories Overview */}
         <section className="categories-overview">
           <div className="container">
-            <h2>Trip Categories</h2>
+            <SectionHeader
+              title="Trip Categories"
+              description="Explore our diverse range of trip categories designed to provide educational, cultural, and recreational experiences."
+              showDivider
+            />
             <div className="categories-grid">
-              {categories.map((category) => {
-                const categoryTrips = trips.filter(
-                  (t) => t.category === category
-                );
-                return (
-                  <div key={category} className="category-overview-card">
-                    <h3>{category}</h3>
-                    <p className="category-count">
-                      {categoryTrips.length} Trips
-                    </p>
-                    <div className="category-examples">
-                      {categoryTrips.slice(0, 3).map((trip, index) => (
-                        <span key={index} className="example-trip">
-                          {trip.title}
-                        </span>
-                      ))}
-                    </div>
-                    <button
-                      onClick={() => setSelectedCategory(category)}
-                      className="category-filter-btn"
-                    >
-                      View {category} Trips
-                    </button>
+              {Object.entries(tripCategories).map(([category, trips]) => (
+                <div
+                  key={category}
+                  className="category-overview-card card-base"
+                >
+                  <h3>{category}</h3>
+                  <div className="category-count">
+                    {trips.length} {trips.length === 1 ? "Trip" : "Trips"}
                   </div>
-                );
-              })}
+                  <div className="category-examples">
+                    {trips.slice(0, 3).map((trip, idx) => (
+                      <div key={idx} className="example-trip">
+                        {trip.name}
+                      </div>
+                    ))}
+                    {trips.length > 3 && (
+                      <div className="example-trip">
+                        +{trips.length - 3} more
+                      </div>
+                    )}
+                  </div>
+                  <button
+                    className="category-filter-btn"
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    View {category} Trips
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -253,12 +295,11 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
         {/* Call to Action */}
         <section className="trips-directory-cta">
           <div className="container">
-            <h2>Ready for Adventure?</h2>
-            <p>
-              Join our carefully curated day trips and educational excursions.
-              Create unforgettable memories while exploring the best of New
-              England!
-            </p>
+            <SectionHeader
+              title="Ready to Explore?"
+              description="Join our exciting trips and excursions designed to expand your horizons, build cultural awareness, and create unforgettable memories at SCISS."
+              showDivider
+            />
             <div className="cta-actions">
               <Link href="/apply" className="btn btn-primary btn-large">
                 Register for Trips
@@ -275,7 +316,8 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs }) => {
   );
 };
 
-// Static Site Generation
+export default TripsDirectory;
+
 export async function getStaticProps() {
   const trips = getAllTrips();
   const categories = getTripCategories();
@@ -297,5 +339,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export default TripsDirectory;

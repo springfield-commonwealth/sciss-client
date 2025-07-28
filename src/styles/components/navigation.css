@@ -251,18 +251,8 @@
 
 /* Integrated Breadcrumb Styles */
 .nav-breadcrumb {
-  /* Match navigation background style */
-  background: linear-gradient(
-    180deg, 
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.2)
-  );
-  border-bottom: 1px solid var(--border-light);
   padding: 0.5rem 0;
   /* Match navigation blur and shadow */
-  backdrop-filter: blur(10px);
   box-shadow: var(--shadow-light);
   transition: box-shadow 1s ease;
 }
@@ -303,11 +293,21 @@
   font-weight: 400;
   line-height: 1.4;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 32px;
+  min-width: 32px;
+  justify-content: center;
 }
 
 .nav-breadcrumb-link:hover {
   color: var(--primary-blue);
   background-color: var(--background-tertiary);
+  transform: translateY(-1px);
+}
+
+.nav-breadcrumb-link:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
 }
 
 .nav-breadcrumb-current {
@@ -319,6 +319,31 @@
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.4;
+  min-height: 32px;
+  min-width: 32px;
+  justify-content: center;
+}
+
+.nav-breadcrumb-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.nav-breadcrumb-separator {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--text-light);
+  flex-shrink: 0;
+  margin: 0 0.125rem;
+}
+
+.nav-breadcrumb-home-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  color: currentColor;
 }
 
 /* Responsive integrated breadcrumb */
@@ -336,6 +361,32 @@
   .nav-breadcrumb-current {
     font-size: 0.75rem;
     padding: 0.125rem 0.375rem;
+  }
+
+  .nav-breadcrumb-text {
+    max-width: 120px;
+  }
+
+  .nav-breadcrumb-separator {
+    margin: 0 0.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-breadcrumb-text {
+    max-width: 100px;
+  }
+
+  /* Hide middle breadcrumb items on very small screens */
+  .nav-breadcrumb-item:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  /* Show ellipsis for hidden items */
+  .nav-breadcrumb-item:first-child + .nav-breadcrumb-item::before {
+    content: '...';
+    color: var(--text-light);
+    margin: 0 0.25rem;
   }
 }
 

@@ -1,14 +1,6 @@
 /* Program Overview Page Styles */
 .stat-card {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
 }
 
 .stat-icon {
@@ -54,10 +46,7 @@
 }
 
 .feature {
-  background: white;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-light);
 }
 
 .feature h4 {
@@ -79,16 +68,7 @@
 .schedule-item {
   display: flex;
   align-items: center;
-  background: white;
   padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.2s ease;
-}
-
-.schedule-item:hover {
-  transform: translateX(4px);
-  box-shadow: var(--shadow-medium);
 }
 
 .schedule-time {
@@ -96,31 +76,4 @@
   color: var(--primary-blue);
   min-width: 100px;
   margin-right: 2rem;
-}
-
-.schedule-activity {
-  flex: 1;
-  color: var(--text-dark);
-}
-
-.schedule-note {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: var(--background-light);
-  border-radius: 8px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .schedule-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .schedule-time {
-    margin-right: 0;
-    min-width: auto;
-  }
 } 

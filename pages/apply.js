@@ -1,18 +1,16 @@
 import ApplicationForm from "@/components/forms/ApplicationForm";
-import Footer from "@/components/ui/Footer";
-import FooterCTA from "@/components/ui/FooterCTA";
-import Head from "next/head";
+import Layout from "@/components/layouts/Layout";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
-export default function ApplyPage() {
+const Apply = ({ breadcrumbs = [] }) => {
   return (
-    <>
-      <Head>
-        <title>Apply to SCISS</title>
-        <meta name="description" content="Apply to SCISS" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+    <Layout
+      title="Apply Now - SCISS"
+      description="Apply to SCISS Summer School for an unforgettable educational experience."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
+    >
       <section className="section bg-light">
         <div className="container">
           <div className="apply-logo-container">
@@ -35,8 +33,22 @@ export default function ApplyPage() {
           <ApplicationForm />
         </div>
       </section>
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
-      <Footer />
-    </>
+    </Layout>
   );
+};
+
+export default Apply;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for apply page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Apply Now", href: "/apply", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
 }

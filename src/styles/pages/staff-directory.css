@@ -118,6 +118,37 @@
   padding: 3rem 0;
 }
 
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Ensure max 3 cards per row on larger screens */
+@media (min-width: 1200px) {
+  .staff-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .staff-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
 .staff-card-image {
   background: #f8fafc;
   padding: 2rem;

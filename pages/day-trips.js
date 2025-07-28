@@ -10,13 +10,16 @@ import {
 } from "@/constants/dayTripsContent";
 import { DayTripsHero } from "@/constants/images";
 import { getPopularTrips, getUniversityTrips } from "@/lib/content/trips";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
-const DayTrips = ({ popularTrips, universityTrips }) => {
+const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
   return (
     <Layout
       title="Day Trips - SCISS"
-      description="Explore Harvard, MIT, Yale, and exciting cultural destinations with SCISS day trips and field excursions."
+      description="Explore exciting day trips and educational excursions at SCISS Summer School."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -240,10 +243,17 @@ export async function getStaticProps() {
   const popularTrips = getPopularTrips(6);
   const universityTrips = getUniversityTrips();
 
+  // Generate breadcrumbs for day trips page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Day Trips", href: "/day-trips", active: true },
+  ]);
+
   return {
     props: {
       popularTrips,
       universityTrips,
+      breadcrumbs,
     },
   };
 }

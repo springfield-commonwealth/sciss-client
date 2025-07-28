@@ -58,7 +58,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
   const fullName = `${firstName} ${lastName}`.trim();
 
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout breadcrumbs={breadcrumbs} showBreadcrumb={true}>
       <Head>
         <title>{seo.metaTitle}</title>
         <meta name="description" content={seo.metaDescription} />
@@ -227,7 +227,11 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               <h2>Courses at SCISS</h2>
               <div className="courses-list">
                 {courses.map((courseSlug, index) => (
-                  <Link key={index} href={`/courses/${courseSlug}`} className="course-link">
+                  <Link
+                    key={index}
+                    href={`/courses/${courseSlug}`}
+                    className="course-link"
+                  >
                     View {courseSlug.replace(/-/g, " ")} Course
                   </Link>
                 ))}

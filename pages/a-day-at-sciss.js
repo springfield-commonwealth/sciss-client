@@ -9,12 +9,15 @@ import {
   ADayAtScissWeeklyVariations,
 } from "@/constants/aDayAtScissContent";
 import { ADayAtScissHero } from "@/constants/images";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
-const ADayAtSciss = () => {
+const ADayAtSciss = ({ breadcrumbs = [] }) => {
   return (
     <Layout
       title="A Day at SCISS - SCISS"
-      description="Experience a typical day at SCISS with our comprehensive daily schedule, activities, and campus life overview."
+      description="Experience a typical day at SCISS Summer School with our comprehensive schedule and activities."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -71,7 +74,7 @@ const ADayAtSciss = () => {
 
           <div className="weekly-grid">
             {ADayAtScissWeeklyVariations.map((day, index) => (
-              <div key={index} className="day-card">
+              <div key={index} className="day-card card-base">
                 <div className="day-header">
                   <h3>{day.day}</h3>
                   <span className="day-highlight">{day.highlight}</span>
@@ -159,3 +162,17 @@ const ADayAtSciss = () => {
 };
 
 export default ADayAtSciss;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for a day at sciss page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "A Day at SCISS", href: "/a-day-at-sciss", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

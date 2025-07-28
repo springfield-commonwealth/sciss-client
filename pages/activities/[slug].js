@@ -57,7 +57,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
   } = activity;
 
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout breadcrumbs={breadcrumbs} showBreadcrumb={true}>
       <Head>
         <title>{seo.metaTitle}</title>
         <meta name="description" content={seo.metaDescription} />

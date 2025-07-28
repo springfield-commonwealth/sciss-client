@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import { Badge, BadgeGroup, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   getAllStaff,
@@ -11,7 +12,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 // Staff Directory Page Component
-const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
+const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("");
 
@@ -20,12 +21,13 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
     return staff.filter((member) => {
       const matchesSearch =
         searchTerm === "" ||
-        member.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        member.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        member.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        member.expertise.some((skill) =>
-          skill.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        member.firstName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        member.lastName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        member.position?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (member.expertise &&
+          member.expertise.some((skill) =>
+            skill.toLowerCase().includes(searchTerm.toLowerCase())
+          ));
 
       const matchesDepartment =
         selectedDepartment === "" || member.department === selectedDepartment;
@@ -34,8 +36,32 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
     });
   }, [staff, searchTerm, selectedDepartment]);
 
+  // Prepare stats data for StatsGrid component
+  const statsData = [
+    {
+      number: stats.totalStaff,
+      label: "Faculty Members",
+      icon: "👨‍🏫",
+    },
+    {
+      number: departments.length,
+      label: "Departments",
+      icon: "🏢",
+    },
+    {
+      number: stats.activeStaff,
+      label: "Active This Year",
+      icon: "✅",
+    },
+  ];
+
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout
+      title="Our Instructors - SCISS"
+      description="Meet our experienced faculty and staff at SCISS."
+      breadcrumbs={breadcrumbs}
+      showBreadcrumb={true}
+    >
       <Head>
         <title>Faculty & Staff Directory | SCISS</title>
         <meta
@@ -64,28 +90,21 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
         {/* Header Section */}
         <section className="staff-directory-header">
           <div className="container">
-            <h1>Faculty & Staff Directory</h1>
-            <p className="directory-subtitle">
-              Meet our exceptional team of educators, industry experts, and
-              professionals who bring real-world expertise to the SCISS learning
-              experience.
-            </p>
+            <SectionHeader
+              title="Faculty & Staff Directory"
+              description="Meet our exceptional team of educators, industry experts, and professionals who bring real-world expertise to the SCISS learning experience."
+              showDivider
+            />
 
-            {/* Statistics */}
-            <div className="staff-stats">
-              <div className="stat-item">
-                <span className="stat-number">{stats.totalStaff}</span>
-                <span className="stat-label">Faculty Members</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{departments.length}</span>
-                <span className="stat-label">Departments</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{stats.activeStaff}</span>
-                <span className="stat-label">Active This Year</span>
-              </div>
-            </div>
+            {/* Statistics using reusable StatsGrid component */}
+            <StatsGrid
+              stats={statsData}
+              columns={3}
+              hoverable
+              onStatClick={(stat, index) => {
+                console.log("Clicked stat:", stat, index);
+              }}
+            />
           </div>
         </section>
 
@@ -140,7 +159,13 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
                       {member.profileImage && (
                         <img
                           src={member.profileImage}
-                          alt={`${member.firstName} ${member.lastName}`.trim()}
+                          alt={
+                            `${member.firstName || ""} ${
+                              member.lastName || ""
+                            }`.trim() ||
+                            member.position ||
+                            "Faculty Member"
+                          }
                           className="staff-photo"
                         />
                       )}
@@ -148,29 +173,54 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
 
                     <div className="staff-card-content">
                       <h3 className="staff-card-name">
-                        {`${member.firstName} ${member.lastName}`.trim()}
+                        {`${member.firstName || ""} ${
+                          member.lastName || ""
+                        }`.trim() ||
+                          member.position ||
+                          "Faculty Member"}
                       </h3>
-                      <p className="staff-card-position">{member.position}</p>
+                      <p className="staff-card-position">
+                        {member.position || "Faculty Member"}
+                      </p>
                       <p className="staff-card-department">
-                        {member.department}
+                        {member.department || "General Faculty"}
                       </p>
 
                       <div className="staff-card-expertise">
-                        {member.expertise.slice(0, 3).map((skill, index) => (
-                          <span key={index} className="expertise-badge">
-                            {skill}
-                          </span>
-                        ))}
-                        {member.expertise.length > 3 && (
-                          <span className="expertise-more">
-                            +{member.expertise.length - 3} more
-                          </span>
-                        )}
+                        <BadgeGroup>
+                          {member.expertise && member.expertise.length > 0 ? (
+                            <>
+                              {member.expertise
+                                .slice(0, 3)
+                                .map((skill, index) => (
+                                  <Badge
+                                    key={index}
+                                    variant="info"
+                                    size="small"
+                                  >
+                                    {skill}
+                                  </Badge>
+                                ))}
+                              {member.expertise.length > 3 && (
+                                <Badge variant="default" size="small">
+                                  +{member.expertise.length - 3} more
+                                </Badge>
+                              )}
+                            </>
+                          ) : (
+                            <Badge variant="secondary" size="small">
+                              Expert
+                            </Badge>
+                          )}
+                        </BadgeGroup>
                       </div>
 
                       <p className="staff-card-bio">
-                        {member.bio.substring(0, 120)}
-                        {member.bio.length > 120 && "..."}
+                        {member.bio
+                          ? member.bio.length > 120
+                            ? `${member.bio.substring(0, 120)}...`
+                            : member.bio
+                          : "Experienced professional with expertise in their field."}
                       </p>
 
                       <div className="staff-card-courses">
@@ -209,33 +259,80 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs }) => {
           </div>
         </section>
 
+        {/* Departments Overview */}
+        <section className="departments-overview">
+          <div className="container">
+            <SectionHeader
+              title="Academic Departments"
+              description="Explore our diverse academic departments and meet the experts who lead each area of study."
+              showDivider
+            />
+            <div className="departments-grid">
+              {departments.map((department) => {
+                const departmentStaff = staff.filter(
+                  (member) => member.department === department
+                );
+                return (
+                  <div
+                    key={department}
+                    className="department-overview-card card-base"
+                  >
+                    <h3>{department}</h3>
+                    <div className="department-count">
+                      {departmentStaff.length} Faculty Member
+                      {departmentStaff.length !== 1 ? "s" : ""}
+                    </div>
+                    <div className="department-examples">
+                      {departmentStaff.slice(0, 3).map((member, idx) => (
+                        <div key={idx} className="example-member">
+                          {`${member.firstName} ${member.lastName}`.trim()}
+                        </div>
+                      ))}
+                      {departmentStaff.length > 3 && (
+                        <div className="example-member">
+                          +{departmentStaff.length - 3} more
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      className="department-filter-btn"
+                      onClick={() => setSelectedDepartment(department)}
+                    >
+                      View {department} Faculty
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="staff-directory-cta">
           <div className="container">
-            <h2>Learn from Industry Experts</h2>
-            <p>
-              Our faculty brings decades of real-world experience from Wall
-              Street, leading universities, and innovative companies to provide
-              you with unparalleled educational opportunities.
-            </p>
+            <SectionHeader
+              title="Ready to Learn from the Best?"
+              description="Our exceptional faculty brings real-world expertise and industry connections to every SCISS program."
+              showDivider
+            />
             <div className="cta-actions">
               <Link href="/apply" className="btn btn-primary btn-large">
                 Apply Now
               </Link>
               <Link href="/academics" className="btn btn-secondary">
-                View Academic Programs
+                Explore Programs
               </Link>
             </div>
           </div>
         </section>
       </main>
-
       <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };
 
-// Static Site Generation
+export default StaffDirectory;
+
 export async function getStaticProps() {
   const staff = getAllStaff();
   const departments = getStaffDepartments();
@@ -244,7 +341,8 @@ export async function getStaticProps() {
   // Generate breadcrumbs
   const breadcrumbs = generateBreadcrumbs([
     { label: "Home", href: "/" },
-    { label: "Faculty & Staff", href: "/staff", active: true },
+    { label: "Academics", href: "/academics" },
+    { label: "Our Instructors", href: "/staff", active: true },
   ]);
 
   return {
@@ -256,5 +354,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export default StaffDirectory;

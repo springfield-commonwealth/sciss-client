@@ -38,8 +38,25 @@ const ActivitiesDirectory = ({
     });
   }, [activities, searchTerm, selectedCategory]);
 
+  // Group activities by category for the overview cards
+  const activityCategories = useMemo(() => {
+    const grouped = {};
+    activities.forEach((activity) => {
+      if (!grouped[activity.category]) {
+        grouped[activity.category] = [];
+      }
+      grouped[activity.category].push(activity);
+    });
+    return grouped;
+  }, [activities]);
+
   return (
-    <Layout breadcrumbs={breadcrumbs}>
+    <Layout
+      title="Life & Activities - SCISS"
+      description="Explore exciting activities, sports, and recreational programs at SCISS."
+      breadcrumbs={breadcrumbs}
+      showBreadcrumb={true}
+    >
       <Head>
         <title>Activities Directory | SCISS Life & Activities</title>
         <meta
@@ -137,7 +154,7 @@ const ActivitiesDirectory = ({
         <section className="activities-directory-grid">
           <div className="container">
             {filteredActivities.length > 0 ? (
-              <div className="activities-grid">
+              <div className="activities-grid-container">
                 {filteredActivities.map((activity) => (
                   <Link
                     key={activity.id}
@@ -225,32 +242,38 @@ const ActivitiesDirectory = ({
           <div className="container">
             <h2>Activity Categories</h2>
             <div className="categories-grid">
-              {categories.map((category) => {
-                const categoryActivities = activities.filter(
-                  (a) => a.category === category
-                );
-                return (
-                  <div key={category} className="category-overview-card">
+              {Object.entries(activityCategories).map(
+                ([category, activities]) => (
+                  <div
+                    key={category}
+                    className="category-overview-card card-base"
+                  >
                     <h3>{category}</h3>
-                    <p className="category-count">
-                      {categoryActivities.length} Activities
-                    </p>
+                    <div className="category-count">
+                      {activities.length}{" "}
+                      {activities.length === 1 ? "Activity" : "Activities"}
+                    </div>
                     <div className="category-examples">
-                      {categoryActivities.slice(0, 3).map((activity, index) => (
-                        <span key={index} className="example-activity">
-                          {activity.title}
-                        </span>
+                      {activities.slice(0, 3).map((activity, idx) => (
+                        <div key={idx} className="example-activity">
+                          {activity.name}
+                        </div>
                       ))}
+                      {activities.length > 3 && (
+                        <div className="example-activity">
+                          +{activities.length - 3} more
+                        </div>
+                      )}
                     </div>
                     <button
-                      onClick={() => setSelectedCategory(category)}
                       className="category-filter-btn"
+                      onClick={() => setSelectedCategory(category)}
                     >
                       View {category} Activities
                     </button>
                   </div>
-                );
-              })}
+                )
+              )}
             </div>
           </div>
         </section>

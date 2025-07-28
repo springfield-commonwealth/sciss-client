@@ -2,7 +2,12 @@ import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
 import { LogoBlack } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
-import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+  ChevronRightIcon,
+  Cross1Icon,
+  HamburgerMenuIcon,
+  HomeIcon,
+} from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -113,21 +118,46 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
           )}
         </nav>
 
-        {/* Optional integrated breadcrumb */}
+        {/* Enhanced integrated breadcrumb */}
         {showBreadcrumb && breadcrumbs.length > 0 && (
           <div className="nav-breadcrumb">
-            <nav aria-label="Breadcrumb">
+            <nav aria-label="Breadcrumb" role="navigation">
               <ol className="nav-breadcrumb-list">
                 {breadcrumbs.map((crumb, index) => (
                   <li key={crumb.href} className="nav-breadcrumb-item">
                     {index < breadcrumbs.length - 1 ? (
                       <Link href={crumb.href} className="nav-breadcrumb-link">
-                        {crumb.label}
+                        {index === 0 && (
+                          <HomeIcon
+                            className="nav-breadcrumb-home-icon"
+                            aria-hidden="true"
+                          />
+                        )}
+                        <span className="nav-breadcrumb-text">
+                          {crumb.label}
+                        </span>
                       </Link>
                     ) : (
-                      <span className="nav-breadcrumb-current">
-                        {crumb.label}
+                      <span
+                        className="nav-breadcrumb-current"
+                        aria-current="page"
+                      >
+                        {index === 0 && (
+                          <HomeIcon
+                            className="nav-breadcrumb-home-icon"
+                            aria-hidden="true"
+                          />
+                        )}
+                        <span className="nav-breadcrumb-text">
+                          {crumb.label}
+                        </span>
                       </span>
+                    )}
+                    {index < breadcrumbs.length - 1 && (
+                      <ChevronRightIcon
+                        className="nav-breadcrumb-separator"
+                        aria-hidden="true"
+                      />
                     )}
                   </li>
                 ))}

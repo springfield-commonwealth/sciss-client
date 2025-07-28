@@ -1,16 +1,7 @@
 /* Parent Information Page Styles */
 .parent-feature {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.parent-feature:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
 }
 
 .feature-icon {
@@ -24,10 +15,7 @@
 }
 
 .safety-category {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
 }
 
 .safety-category h3 {
@@ -67,17 +55,8 @@
 }
 
 .comm-item {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
   margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.comm-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
 }
 
 .comm-type {
@@ -98,7 +77,6 @@
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-dark);
 }
 
 .comm-description {
@@ -141,10 +119,7 @@
 }
 
 .health-req-item {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
 }
 
 .req-header {
@@ -176,10 +151,7 @@
 }
 
 .packing-category {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
 }
 
 .packing-category h3 {
@@ -255,16 +227,7 @@
 }
 
 .service-card {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
 }
 
 .service-card h4 {
@@ -293,10 +256,7 @@
 }
 
 .protocol-card {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
 }
 
 .protocol-card h3 {
@@ -322,16 +282,7 @@
 }
 
 .travel-tip-card {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease;
-}
-
-.travel-tip-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
 }
 
 .travel-tip-card h3 {
@@ -365,12 +316,8 @@
 }
 
 .testimonial-card {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -418,10 +365,7 @@
 }
 
 .faq-item {
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
 }
 
 .faq-item h4 {

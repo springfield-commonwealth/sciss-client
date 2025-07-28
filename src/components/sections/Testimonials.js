@@ -7,7 +7,7 @@ const Testimonials = ({ title, desc, testimonials }) => (
       </div>
       <div className="grid grid-3 testimonials-grid">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="card testimonial-card">
+          <div key={index} className="testimonial-card card-base">
             <div className="quote-icon">"</div>
             <blockquote>"{testimonial.quote}"</blockquote>
             <div className="testimonial-author">

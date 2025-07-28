@@ -12,14 +12,23 @@ import {
   HomeTestimonials,
   HomeWelcomeParagraphs,
 } from "@/constants/homeContent";
-import { HomeFeature, HomeFeaturePresidents, HomeHero, HomeSliderImages } from "@/constants/images";
+import {
+  HomeFeature,
+  HomeFeaturePresidents,
+  HomeHero,
+  HomeSliderImages,
+} from "@/constants/images";
 import { WelcomeVideo } from "@/constants/videos";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
-const HomePage = () => {
+const HomePage = ({ breadcrumbs = [] }) => {
   return (
     <Layout
       title="SCISS - Springfield Commonwealth International Summer School"
       description="Join SCISS for an unforgettable summer experience with cutting-edge academics, exciting activities, and trips to Harvard, MIT, and Yale."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
+      className="home-page"
     >
       {/* Hero Section */}
       <HeroSection
@@ -73,3 +82,16 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for home page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

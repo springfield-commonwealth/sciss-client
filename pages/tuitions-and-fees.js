@@ -8,13 +8,16 @@ import {
   TuitionsIncludedServices,
   TuitionsSessions,
 } from "@/constants/tuitionsAndFeesContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
-const TuitionsAndFees = () => {
+const TuitionsAndFees = ({ breadcrumbs = [] }) => {
   return (
     <Layout
       title="Tuitions & Fees - SCISS"
-      description="Learn about SCISS program costs, payment plans, scholarships, and the application process for summer 2025."
+      description="Comprehensive information about SCISS Summer School tuition, fees, and payment options."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -64,7 +67,7 @@ const TuitionsAndFees = () => {
 
           <div className="grid grid-2">
             {TuitionsIncludedServices.map((service, index) => (
-              <div key={index} className="service-category">
+              <div key={index} className="service-category card-base">
                 <h3>{service.category}</h3>
                 <div className="service-items">
                   {service.items.map((item, idx) => (
@@ -121,7 +124,7 @@ const TuitionsAndFees = () => {
 
           <div className="application-timeline">
             {TuitionsApplicationProcess.map((step, index) => (
-              <div key={index} className="application-step">
+              <div key={index} className="application-step card-base">
                 <div className="step-number">{step.step}</div>
                 <div className="step-content">
                   <h4>{step.title}</h4>
@@ -145,3 +148,18 @@ const TuitionsAndFees = () => {
 };
 
 export default TuitionsAndFees;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for tuitions and fees page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Program Overview", href: "/program-overview" },
+    { label: "Tuitions & Fees", href: "/tuitions-and-fees", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

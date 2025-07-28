@@ -1,9 +1,11 @@
 import Layout from "@/components/layouts/Layout";
 import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 const LeadershipTeam = [
   {
@@ -28,11 +30,27 @@ const LeadershipTeam = [
   },
 ];
 
-const AboutUs = () => {
+const AboutUs = ({ breadcrumbs = [] }) => {
+  // Prepare stats data for StatsGrid component
+  const statsData = AboutUsStats.map((stat) => ({
+    number: stat.number,
+    label: stat.label,
+    icon: stat.icon,
+  }));
+
+  // Prepare values data for FeatureGrid component
+  const valuesData = AboutUsValues.map((value) => ({
+    icon: value.icon,
+    title: value.title,
+    description: value.description,
+  }));
+
   return (
     <Layout
       title="About Us - SCISS"
-      description="Learn about SCISS's mission, values, and the dedicated team that creates exceptional summer learning experiences for international students."
+      description="Learn about SCISS Summer School's mission, values, and commitment to excellence in international education."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -51,71 +69,57 @@ const AboutUs = () => {
         <div className="container">
           <div className="grid grid-2">
             <div className="mission-section">
-              <h2>Our Mission</h2>
-              <p className="mission-text">
-                At Springfield Commonwealth International Summer School, our
-                mission is to foster a dynamic learning environment where
-                curiosity thrives, friendships flourish, and personal growth is
-                nurtured. We believe in providing students with transformative
-                experiences that prepare them for future academic and
-                professional success while building global perspectives and
-                lifelong connections.
-              </p>
+              <SectionHeader
+                title="Our Mission"
+                description="At Springfield Commonwealth International Summer School, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success while building global perspectives and lifelong connections."
+                align="left"
+                showDivider
+              />
 
               <div className="mission-highlights">
-                <div className="highlight-item">
-                  <span className="highlight-icon"></span>
-                  <div>
-                    <h4>Academic Excellence</h4>
-                    <p>
-                      Providing world-class education with cutting-edge
-                      curriculum and expert instruction
-                    </p>
-                  </div>
-                </div>
-
-                <div className="highlight-item">
-                  <span className="highlight-icon"></span>
-                  <div>
-                    <h4>Personal Development</h4>
-                    <p>
-                      Nurturing individual growth, confidence, and leadership
-                      skills in every student
-                    </p>
-                  </div>
-                </div>
-
-                <div className="highlight-item">
-                  <span className="highlight-icon"></span>
-                  <div>
-                    <h4>Global Community</h4>
-                    <p>
-                      Building bridges between cultures and creating lasting
-                      international friendships
-                    </p>
-                  </div>
-                </div>
+                <FeatureGrid
+                  features={[
+                    {
+                      icon: "🎓",
+                      title: "Academic Excellence",
+                      description:
+                        "Providing world-class education with cutting-edge curriculum and expert instruction",
+                    },
+                    {
+                      icon: "🌟",
+                      title: "Personal Development",
+                      description:
+                        "Nurturing individual growth, confidence, and leadership skills in every student",
+                    },
+                    {
+                      icon: "🌍",
+                      title: "Global Community",
+                      description:
+                        "Building bridges between cultures and creating lasting international friendships",
+                    },
+                  ]}
+                  columns={1}
+                  hoverable
+                />
               </div>
             </div>
 
             <div className="vision-section">
-              <h2>Our Vision</h2>
-              <p className="vision-text">
-                To be the world's leading international summer school, known for
-                academic innovation, cultural exchange, and transformative
-                student experiences that shape future global leaders and
-                change-makers.
-              </p>
+              <SectionHeader
+                title="Our Vision"
+                description="To be the world's leading international summer school, known for academic innovation, cultural exchange, and transformative student experiences that shape future global leaders and change-makers."
+                align="left"
+                showDivider
+              />
 
-              <div className="stats-grid">
-                {AboutUsStats.map((stat, index) => (
-                  <div key={index} className="stat-item">
-                    <span className="stat-icon">{stat.icon}</span>
-                    <div className="stat-number">{stat.number}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              <StatsGrid
+                stats={statsData}
+                columns={2}
+                hoverable
+                onStatClick={(stat, index) => {
+                  console.log("Clicked stat:", stat, index);
+                }}
+              />
             </div>
           </div>
         </div>
@@ -124,20 +128,20 @@ const AboutUs = () => {
       {/* Values */}
       <section className="section bg-light" id="values">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2>Our Core Values</h2>
-            <p>The principles that guide everything we do at SCISS</p>
-          </div>
+          <SectionHeader
+            title="Our Core Values"
+            description="The principles that guide everything we do at SCISS"
+            showDivider
+          />
 
-          <div className="grid grid-3">
-            {AboutUsValues.map((value, index) => (
-              <div key={index} className="value-card">
-                <div className="value-icon">{value.icon}</div>
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </div>
-            ))}
-          </div>
+          <FeatureGrid
+            features={valuesData}
+            columns={3}
+            hoverable
+            onFeatureClick={(feature, index) => {
+              console.log("Clicked value:", feature, index);
+            }}
+          />
         </div>
       </section>
 
@@ -156,3 +160,17 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+export async function getStaticProps() {
+  // Generate breadcrumbs for about us page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about-us", active: true },
+  ]);
+
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
+}

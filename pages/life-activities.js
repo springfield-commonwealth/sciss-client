@@ -11,13 +11,20 @@ import {
   getActivityCategories,
   getPopularActivities,
 } from "@/lib/content/activities";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
-const LifeActivities = ({ popularActivities, activityCategories }) => {
+const LifeActivities = ({
+  popularActivities,
+  activityCategories,
+  breadcrumbs = [],
+}) => {
   return (
     <Layout
       title="Life & Activities - SCISS"
-      description="Explore the exciting sports, fitness, recreational activities, and wellness programs at SCISS Summer School."
+      description="Discover exciting activities, sports, and recreational programs at SCISS Summer School."
+      showBreadcrumb={true}
+      breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
       <HeroSection
@@ -41,35 +48,32 @@ const LifeActivities = ({ popularActivities, activityCategories }) => {
 
           <div className="activities-preview-grid">
             {popularActivities.map((activity) => (
-              <div key={activity.id} className="activity-preview-card">
+              <div
+                key={activity.id}
+                className="activity-preview-card card-base"
+              >
                 <div className="activity-preview-image">
-                  {activity.image && (
-                    <img src={activity.image} alt={activity.title} />
-                  )}
+                  <img src={activity.image} alt={activity.name} />
                   <div className="activity-badges">
                     <span className="category-badge">{activity.category}</span>
                     <span className="level-badge">{activity.level}</span>
                   </div>
                 </div>
-
                 <div className="activity-preview-content">
-                  <h3>{activity.title}</h3>
-                  <p>{activity.description.substring(0, 120)}...</p>
-
+                  <h3>{activity.name}</h3>
+                  <p>{activity.description}</p>
                   <div className="activity-features-preview">
-                    {activity.features.slice(0, 2).map((feature, index) => (
-                      <span key={index} className="feature-tag">
+                    {activity.features.slice(0, 3).map((feature, idx) => (
+                      <span key={idx} className="feature-tag">
                         {feature}
                       </span>
                     ))}
+                    {activity.features.length > 3 && (
+                      <span className="feature-tag">
+                        +{activity.features.length - 3} more
+                      </span>
+                    )}
                   </div>
-
-                  <Link
-                    href={`/activities/${activity.slug}`}
-                    className="btn btn-primary btn-sm"
-                  >
-                    Learn More
-                  </Link>
                 </div>
               </div>
             ))}
@@ -96,7 +100,7 @@ const LifeActivities = ({ popularActivities, activityCategories }) => {
 
           <div className="programs-grid">
             {LifeActivitiesSportsPrograms.map((sport, index) => (
-              <div key={index} className="sport-card">
+              <div key={index} className="sport-card card-base">
                 <div className="sport-header">
                   <h3>{sport.title}</h3>
                   <span className="level-badge">{sport.level}</span>
@@ -126,20 +130,19 @@ const LifeActivities = ({ popularActivities, activityCategories }) => {
       <section className="section bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <h2>Fitness & Dance Programs</h2>
+            <h2>Fitness & Wellness</h2>
             <p>
-              Stay active and healthy with our comprehensive fitness offerings
+              Stay active and healthy with our comprehensive fitness programs
             </p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="programs-grid">
             {LifeActivitiesFitnessPrograms.map((program, index) => (
-              <div key={index} className="fitness-card">
+              <div key={index} className="fitness-card card-base">
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
-
                 <div className="fitness-highlights">
-                  <h4>Highlights:</h4>
+                  <h4>Program Highlights</h4>
                   <ul>
                     {program.highlights.map((highlight, idx) => (
                       <li key={idx}>{highlight}</li>
@@ -152,23 +155,23 @@ const LifeActivities = ({ popularActivities, activityCategories }) => {
         </div>
       </section>
 
-      {/* Recreational Activities */}
-      <section id="activities" className="section">
+      {/* Recreation Activities */}
+      <section className="section">
         <div className="container">
           <div className="text-center mb-5">
-            <h2>Recreational Activities</h2>
-            <p>Explore your interests and discover new passions</p>
+            <h2>Recreation & Leisure</h2>
+            <p>Fun and engaging activities for relaxation and entertainment</p>
           </div>
 
-          <div className="grid grid-2">
-            {LifeActivitiesRecreationalActivities.map((category, index) => (
-              <div key={index} className="recreation-card">
-                <h3>{category.category}</h3>
+          <div className="programs-grid">
+            {LifeActivitiesRecreationalActivities.map((activity, index) => (
+              <div key={index} className="recreation-card card-base">
+                <h3>{activity.category}</h3>
                 <div className="activity-grid">
-                  {category.activities.map((activity, idx) => (
+                  {activity.activities.map((item, idx) => (
                     <div key={idx} className="activity-item">
-                      <span className="activity-icon">🎯</span>
-                      <span>{activity}</span>
+                      <div className="activity-icon">🎯</div>
+                      <div>{item}</div>
                     </div>
                   ))}
                 </div>
@@ -188,10 +191,17 @@ export async function getStaticProps() {
   const popularActivities = getPopularActivities(6);
   const activityCategories = getActivityCategories();
 
+  // Generate breadcrumbs for life activities page
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Life & Activities", href: "/life-activities", active: true },
+  ]);
+
   return {
     props: {
       popularActivities,
       activityCategories,
+      breadcrumbs,
     },
   };
 }

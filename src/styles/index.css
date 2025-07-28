@@ -27,8 +27,6 @@
 @import './pages/index.css';
 @import './pages/about-us.css';
 @import './pages/academics.css';
-@import './pages/life-activities.css';
-@import './pages/day-trips.css';
 @import './pages/a-day-at-sciss.css';
 @import './pages/parent-information.css';
 @import './pages/program-overview.css';
@@ -36,11 +34,10 @@
 @import './pages/apply.css';
 @import './pages/course-page.css';
 @import './pages/staff-profile.css';
-@import './pages/staff-directory.css';
 
 /* NEW: Epic 5 Content Architecture Styles */
-@import './pages/activity-page.css';
-@import './pages/activities-directory.css';
-@import './pages/trip-page.css';
-@import './pages/trips-directory.css';
-@import './pages/courses-directory.css';
+@import './pages/activities.css';
+@import './pages/trips.css';
+
+/* Universal Directory System - DRY & SOLID Implementation */
+@import './components/directory-system.css';

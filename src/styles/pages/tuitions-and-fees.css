@@ -52,13 +52,9 @@
 }
 
 .early-bird-badge {
+  @extend .badge-style-base;
   background: var(--accent-green);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: inline-block;
   margin-bottom: 1rem;
 }
 
@@ -139,6 +135,7 @@
 }
 
 .session-header {
+  @extend .section-header-base;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -186,7 +183,7 @@
 }
 
 .service-category {
-  padding: 2rem;
+  @extend .card-layout-base;
 }
 
 .service-category h3 {
@@ -215,7 +212,7 @@
 }
 
 .payment-plan-card {
-  padding: 2rem;
+  @extend .card-layout-base;
 }
 
 .payment-plan-card h3 {
@@ -273,13 +270,12 @@
 }
 
 .cost-item {
-  background: white;
+  @extend .card-layout-base;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-light);
 }
 
 .cost-header {
+  @extend .section-header-base;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -292,10 +288,8 @@
 }
 
 .cost-required {
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
+  @extend .badge-style-base;
   font-size: 0.8rem;
-  font-weight: 500;
 }
 
 .cost-required.required {
@@ -321,10 +315,11 @@
 }
 
 .scholarship-card {
-  padding: 2rem;
+  @extend .card-layout-base;
 }
 
 .scholarship-header {
+  @extend .section-header-base;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -337,11 +332,9 @@
 }
 
 .scholarship-amount {
+  @extend .badge-style-base;
   background: var(--accent-green);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
 }
 
 .scholarship-criteria,

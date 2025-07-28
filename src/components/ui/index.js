@@ -22,3 +22,9 @@ export { default as Badge, BadgeGroup } from "./Badge";
 export { default as FeatureCard, FeatureGrid } from "./FeatureCard";
 export { PageHeader, default as SectionHeader } from "./SectionHeader";
 export { default as StatsCard, StatsGrid } from "./StatsCard";
+
+// Universal Directory System Components
+export { default as DirectoryCard } from "./DirectoryCard";
+export { default as DirectoryCategories } from "./DirectoryCategories";
+export { default as DirectoryFilters } from "./DirectoryFilters";
+export { default as DirectoryPage } from "./DirectoryPage";

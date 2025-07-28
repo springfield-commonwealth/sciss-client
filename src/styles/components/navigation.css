@@ -253,13 +253,9 @@
 .nav-breadcrumb {
   padding: 0.5rem 0;
   /* Match navigation blur and shadow */
-  box-shadow: var(--shadow-light);
   transition: box-shadow 1s ease;
 }
 
-.nav-breadcrumb.scrolled {
-  box-shadow: var(--shadow-medium);
-}
 
 .nav-breadcrumb-list {
   display: flex;

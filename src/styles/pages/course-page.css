@@ -11,6 +11,14 @@
   color: var(--text-white);
   padding: 4rem 2rem;
   margin-bottom: 3rem;
+  /* Apply universal header spacing to prevent nav overlap */
+  margin-top: var(--nav-height);
+}
+
+@media (max-width: 768px) {
+  .course-page-hero {
+    margin-top: var(--nav-height-mobile);
+  }
 }
 
 .course-page-hero-content {

@@ -1,0 +1,605 @@
+/* Directory System - Universal CSS for Trips, Staff, Courses, Activities */
+/* Applies DRY principles with type-specific variants */
+
+/* ==========================================================================
+   UNIVERSAL DIRECTORY PAGE LAYOUT
+   ========================================================================== */
+
+.directory-page {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   UNIVERSAL HEADER SPACING (Fixes navigation overlap)
+   ========================================================================== */
+
+.directory-header {
+  /* Apply universal header spacing to prevent nav overlap */
+  margin-top: var(--nav-height) !important;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .directory-header {
+    margin-top: var(--nav-height-mobile) !important;
+    padding: 3rem 0;
+  }
+}
+
+/* Type-specific header backgrounds */
+.trips-directory-header {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+}
+
+.staff-directory-header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+}
+
+.courses-directory-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+}
+
+.activities-directory-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Header overlay for all types */
+.directory-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.directory-header .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================================================================
+   UNIVERSAL FILTERS SECTION
+   ========================================================================== */
+
+.directory-filters {
+  background: white;
+  padding: 2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filter-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.category-select {
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.clear-filters-btn {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-filters-btn:hover {
+  background: #2563eb;
+}
+
+.results-count {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 0 2rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   UNIVERSAL DIRECTORY GRID
+   ========================================================================== */
+
+.directory-grid {
+  padding: 3rem 0;
+}
+
+.directory-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Ensure max 2 cards per row on larger screens */
+@media (min-width: 1200px) {
+  .directory-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .directory-items-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .directory-items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .filter-controls {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   UNIVERSAL DIRECTORY CARD
+   ========================================================================== */
+
+.directory-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border: 2px solid transparent;
+}
+
+.directory-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Card Image Section */
+.card-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.directory-card:hover .card-photo {
+  transform: scale(1.05);
+}
+
+/* Card Badges */
+.card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+/* Card Content Section */
+.card-content {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.card-position,
+.card-department,
+.card-category {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-blue);
+  margin: 0 0 0.25rem 0;
+}
+
+.card-department {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+}
+
+/* Card Content Elements */
+.card-highlights,
+.card-expertise,
+.card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-description,
+.card-bio {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-info,
+.card-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 15px;
+}
+
+.info-item,
+.detail-item {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.info-item strong,
+.detail-item strong {
+  color: var(--primary-blue);
+  font-weight: 600;
+  display: block;
+}
+
+.card-outcomes {
+  margin-bottom: 1.5rem;
+}
+
+.card-outcomes strong {
+  color: var(--primary-blue);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.card-outcomes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-outcomes li {
+  padding: 0.25rem 0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.card-courses {
+  margin-bottom: 1rem;
+}
+
+.teaches-label {
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 0 2rem 2rem;
+}
+
+.view-details-text {
+  color: var(--primary-blue);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.directory-card:hover .view-details-text {
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   TYPE-SPECIFIC CARD VARIANTS
+   ========================================================================== */
+
+/* Staff Card Specific Styles */
+.directory-card--staff .card-image {
+  height: 120px;
+  background: #f8fafc;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.directory-card--staff .card-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.directory-card--staff .card-badges {
+  position: static;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Courses Card Specific Styles */
+.directory-card--courses .card-image {
+  height: 200px;
+}
+
+/* ==========================================================================
+   UNIVERSAL CATEGORIES SECTION
+   ========================================================================== */
+
+.directory-categories {
+  padding: 3rem 0;
+  background: #f8fafc;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.category-overview-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.category-overview-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-overview-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+}
+
+.category-count {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.category-examples {
+  margin-bottom: 1.5rem;
+}
+
+.example-item {
+  color: #64748b;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+.category-filter-btn {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.category-filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ==========================================================================
+   UNIVERSAL CTA SECTION
+   ========================================================================== */
+
+.directory-cta {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.directory-cta .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   NO RESULTS SECTION
+   ========================================================================== */
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.no-results p {
+  margin-bottom: 2rem;
+}
+
+.reset-filters-btn {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-filters-btn:hover {
+  background: #2563eb;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .directory-header {
+    padding: 2rem 0;
+  }
+  
+  .directory-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .directory-filters {
+    padding: 1.5rem 0;
+  }
+  
+  .directory-grid {
+    padding: 2rem 0;
+  }
+  
+  .directory-categories {
+    padding: 2rem 0;
+  }
+  
+  .directory-cta {
+    padding: 3rem 0;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .directory-header {
+    padding: 1.5rem 0;
+  }
+  
+  .directory-header h1 {
+    font-size: 2rem;
+  }
+  
+  .directory-items-grid {
+    gap: 1rem;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-footer {
+    padding: 0 1.5rem 1.5rem;
+  }
+} 

@@ -34,7 +34,7 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       {/* Daily Schedule */}
       <section id="schedule" className="section">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Daily Schedule</h2>
             <p>
               A structured yet flexible day designed to maximize learning,
@@ -65,7 +65,7 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       {/* Weekly Variations */}
       <section id="weekly" className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Weekly Variations</h2>
             <p>
               Each day brings something special - here's how the week unfolds
@@ -74,7 +74,7 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
 
           <div className="weekly-grid">
             {ADayAtScissWeeklyVariations.map((day, index) => (
-              <div key={index} className="day-card card-base">
+              <div key={index} className="day-card card">
                 <div className="day-header">
                   <h3>{day.day}</h3>
                   <span className="day-highlight">{day.highlight}</span>
@@ -89,12 +89,12 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       {/* Accommodation */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Accommodation & Facilities</h2>
             <p>Comfortable living spaces designed for student success</p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="grid grid--3">
             <div className="accommodation-category">
               <h3>Housing</h3>
               <ul>
@@ -128,12 +128,12 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       {/* Dining */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Dining Experience</h2>
             <p>Nutritious meals and cultural dining experiences</p>
           </div>
 
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             <div className="dining-category">
               <h3>Meal Services</h3>
               <ul>

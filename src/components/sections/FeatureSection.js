@@ -12,7 +12,7 @@ const FeatureSection = ({
     return (
       <section className="feature-section">
         <div className="container">
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}
@@ -26,12 +26,12 @@ const FeatureSection = ({
   return (
     <section className="section bg-light feature-section">
       <div className="container">
-        <h1 className="text-center mb-5">{heading}</h1>
-        <div className="grid grid-2">
+        <h1 className="text--center mb--lg">{heading}</h1>
+        <div className="grid grid--2">
           {image && (
-            <div className="feature-section-image">
-              <figure className="feature-section-image__figure">
-                <picture className="feature-section-image__picture">
+            <div className="feature-section__image">
+              <figure className="feature-section__figure">
+                <picture className="feature-section__picture">
                   {image.sources &&
                     image.sources.map((source, idx) => (
                       <source
@@ -44,7 +44,7 @@ const FeatureSection = ({
                     loading="lazy"
                     src={image.src}
                     alt={image.alt}
-                    className="feature-section-image__img"
+                    className="feature-section__img"
                     style={{
                       width: `${imageWidth}`,
                     }}
@@ -53,7 +53,7 @@ const FeatureSection = ({
               </figure>
             </div>
           )}
-          <article className="feature-section-text text-left mb-5">
+          <article className="feature-section__text text--left mb--lg">
             {paragraphs &&
               paragraphs.map((text, idx) => (
                 <p className="lead" key={idx}>

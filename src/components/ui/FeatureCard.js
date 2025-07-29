@@ -11,16 +11,16 @@ const FeatureCard = ({
   onClick,
   hoverable = true,
 }) => {
-  const baseClasses = "card-base card-feature";
+  const baseClasses = "card card--feature";
   const variantClasses = {
     default: "",
-    primary: "feature-card-primary",
-    secondary: "feature-card-secondary",
-    accent: "feature-card-accent",
+    primary: "card--primary",
+    secondary: "card--secondary",
+    accent: "card--accent",
   };
 
-  const hoverClasses = hoverable ? "feature-card-hoverable" : "";
-  const clickClasses = onClick ? "feature-card-clickable" : "";
+  const hoverClasses = hoverable ? "card--hoverable" : "";
+  const clickClasses = onClick ? "card--clickable" : "";
 
   const cardClasses =
     `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${clickClasses} ${className}`.trim();
@@ -50,7 +50,7 @@ const FeatureGrid = ({
   hoverable = true,
   onFeatureClick,
 }) => {
-  const gridClasses = `grid grid-${columns} ${className}`.trim();
+  const gridClasses = `grid grid--${columns} ${className}`.trim();
 
   return (
     <div className={gridClasses}>
@@ -72,7 +72,7 @@ const FeatureGrid = ({
 };
 
 const FeatureCardGrid = ({ features, className = "" }) => {
-  const gridClasses = `grid grid-auto-fit ${className}`.trim();
+  const gridClasses = `grid grid--auto-fit ${className}`.trim();
 
   return (
     <div className={gridClasses}>

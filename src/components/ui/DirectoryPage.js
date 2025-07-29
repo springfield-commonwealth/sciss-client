@@ -148,7 +148,8 @@ const DirectoryPage = ({
             <SectionHeader
               title={title}
               description={description}
-              showDivider
+              showDivider={true}
+              variant="directory"
             />
 
             {/* Statistics using reusable StatsGrid component */}
@@ -180,13 +181,15 @@ const DirectoryPage = ({
         <section className={`${type}-directory-grid directory-grid`}>
           <div className="container">
             {filteredItems.length > 0 ? (
-              <div className={`grid grid-${gridColumns}`}>
+              <div className={`grid grid--${gridColumns}`}>
                 {filteredItems.map((item, index) => (
                   <DirectoryCard
                     key={item.id || item.slug || index}
                     data={item}
                     type={type}
                     className={`${type}-card`}
+                    renderCardContent={renderCardContent}
+                    renderBadges={renderBadges}
                   />
                 ))}
               </div>
@@ -223,7 +226,7 @@ const DirectoryPage = ({
                 {ctaConfig.primaryAction && (
                   <a
                     href={ctaConfig.primaryAction.href}
-                    className="btn btn-primary btn-large"
+                    className="btn btn--primary btn--lg"
                   >
                     {ctaConfig.primaryAction.text}
                   </a>
@@ -231,7 +234,7 @@ const DirectoryPage = ({
                 {ctaConfig.secondaryAction && (
                   <a
                     href={ctaConfig.secondaryAction.href}
-                    className="btn btn-secondary"
+                    className="btn btn--secondary"
                   >
                     {ctaConfig.secondaryAction.text}
                   </a>

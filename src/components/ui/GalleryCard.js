@@ -19,7 +19,7 @@ const GalleryCard = (item, index) => {
         if (e.key === "Enter" || e.key === " ") handleClick();
       }}
     >
-      <div className="card-image">
+      <div className="card__image">
         <img src={item.image} alt={item.title} loading="lazy" />
         <div className="gallery-overlay">
           <h3>{item.title}</h3>

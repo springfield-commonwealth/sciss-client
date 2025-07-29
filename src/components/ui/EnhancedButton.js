@@ -14,15 +14,15 @@ const EnhancedButton = ({
 }) => {
   const baseClasses = "btn";
   const variantClasses = {
-    primary: "btn-primary",
-    secondary: "btn-secondary",
-    blurred: "btn-blurred",
+    primary: "btn--primary",
+    secondary: "btn--secondary",
+    blurred: "btn--blurred",
   };
 
   const sizeClasses = {
-    small: "btn-small",
+    small: "btn--sm",
     medium: "",
-    large: "btn-large",
+    large: "btn--lg",
   };
 
   const buttonClasses = [
@@ -50,7 +50,7 @@ const EnhancedButton = ({
       aria-label={ariaLabel}
       {...props}
     >
-      <span className="btn-content">{children}</span>
+      <span className="btn__content">{children}</span>
       {loading && (
         <LoadingSpinner
           size="small"

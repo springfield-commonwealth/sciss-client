@@ -1,41 +1,25 @@
-/* Shared CSS Foundation - SCISS Website */
-/* Generated: $(date) */
-
-/* ==========================================================================
-   DESIGN TOKENS (Essential only - colors defined in globals.css)
-   ========================================================================== */
-
 :root {
-  /* Shadows */
-  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
   --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
   
-  /* Spacing */
-  --spacing-xs: 0.5rem;
+    --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
   
-  /* Border Radius */
-  --radius-sm: 8px;
+    --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 25px;
   
-  /* Transitions */
-  --transition-fast: 0.2s ease;
+    --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
   
-  /* Navigation - Dynamic values set by JavaScript */
-  --nav-height: 120px; /* Default fallback */
-  --nav-height-mobile: 80px; /* Default fallback */
-  
-  /* Z-Index Scale - Standardized system */
-  --z-dropdown: 1000;
+    --nav-height: 120px;   --nav-height-mobile: 80px;     --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-fixed: 1030;
   --z-modal-backdrop: 1040;
@@ -46,175 +30,21 @@
   --z-tooltip-highest: 1090;
 }
 
-/* ==========================================================================
-   DYNAMIC HEADER SPACING
-   ========================================================================== */
-
-/* Universal solution for header overlap - uses dynamic nav height */
-.page-header-spacing {
-  padding-top: var(--nav-height);
-  margin-top: 0;
-}
-
-/* For mobile devices - uses dynamic mobile nav height */
 @media (max-width: 768px) {
-  .page-header-spacing {
-    padding-top: var(--nav-height-mobile);
   }
-}
-
-/* Alternative: Use margin instead of padding for better control */
-.page-header-margin {
-  margin-top: var(--nav-height);
-}
 
 @media (max-width: 768px) {
-  .page-header-margin {
-    margin-top: var(--nav-height-mobile);
   }
-}
 
-/* ==========================================================================
-   COMPATIBLE HEADER SPACING (for browsers without @extend support)
-   ========================================================================== */
-
-/* Note: Directory header spacing is now handled by directory-system.css */
-
-/* ==========================================================================
-   LAYOUT UTILITIES
-   ========================================================================== */
-
-/* Card Layout Base - Replaces 35+ redundant card classes */
-.card-layout-base {
-  background: white;
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-light);
-  transition: transform var(--transition-normal);
-}
-
-.card-layout-base:hover {
+.card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
 }
 
-/* Section Header Base - Replaces 9 redundant header classes */
-.section-header-base {
-  padding: var(--spacing-lg) 0;
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-/* Container Base - Replaces multiple container patterns */
-.container-base {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* ==========================================================================
-   COMPONENT UTILITIES
-   ========================================================================== */
-
-/* Badge Style Base - Replaces redundant badge classes */
-.badge-style-base {
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-xl);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-block;
-}
-
-.badge-primary {
-  background: var(--primary-blue);
-  color: white;
-}
-
-.badge-secondary {
-  background: var(--primary-orange);
-  color: var(--text-dark);
-}
-
-.badge-outline {
-  background: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
-}
-
-/* Button Base - Consolidates button patterns */
-.btn-base {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-xl);
-  font-weight: 600;
-  text-decoration: none;
-  transition: all var(--transition-normal);
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background: var(--primary-blue);
-  color: white;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
-}
-
-.btn-large {
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: 1.1rem;
-}
-
-/* ==========================================================================
-   STATS CARD FIXES
-   ========================================================================== */
-
-/* Universal stats card styling */
-.stats-card-base {
-  background: rgba(255, 255, 255, 0.1);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform var(--transition-normal);
-  text-align: center;
-}
-
-.stats-card-base:hover {
+.stats-card:hover {
   transform: translateY(-5px);
 }
 
-.stats-number-base {
-  display: block;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #fbbf24;
-  line-height: 1;
-  margin-bottom: var(--spacing-xs);
-}
-
-.stats-label-base {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 0.9;
-  color: inherit;
-}
-
-/* ==========================================================================
-   COMPATIBLE STATS CARDS (for browsers without @extend support)
-   ========================================================================== */
-
-/* Direct application for stats cards */
 .stat-item {
   background: rgba(255, 255, 255, 0.1);
   padding: var(--spacing-lg);
@@ -246,54 +76,31 @@
   color: inherit;
 }
 
-/* ==========================================================================
-   STATS GRID COMPONENT
-   ========================================================================== */
-
-/* StatsGrid container */
-.stats-grid {
-  display: grid;
-  gap: var(--spacing-md);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Responsive grid columns */
 .stats-grid-1 {
   grid-template-columns: 1fr;
 }
 
-.stats-grid-2 {
+.stats-grid--2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.stats-grid-3 {
+.stats-grid--3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.stats-grid-4 {
+.stats-grid--4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Auto-fit grid for flexible layouts */
-.stats-grid-auto {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Responsive behavior */
 @media (max-width: 768px) {
-  .stats-grid-2,
-  .stats-grid-3,
-  .stats-grid-4 {
+  .stats-grid--2,
+  .stats-grid--3,
+  .stats-grid--4 {
     grid-template-columns: 1fr;
   }
   
-  .stats-grid-auto {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-}
 
-/* Hover effects for interactive stats */
 .stat-item-hoverable {
   cursor: pointer;
   transition: all var(--transition-normal);
@@ -314,14 +121,12 @@
   outline-offset: 2px;
 }
 
-/* Stat icon styling */
 .stat-icon {
   font-size: 2rem;
   margin-bottom: var(--spacing-xs);
   display: block;
 }
 
-/* Variant styles for different contexts */
 .stat-item-primary {
   background: rgba(59, 130, 246, 0.1);
   border-color: rgba(59, 130, 246, 0.2);
@@ -337,148 +142,96 @@
   border-color: rgba(245, 158, 11, 0.2);
 }
 
-/* ==========================================================================
-   GRID UTILITIES
-   ========================================================================== */
-
-/* Grid Base - Replaces redundant grid patterns */
-.grid-base {
-  display: grid;
-  gap: var(--spacing-md);
-}
-
-.grid-2 {
+.grid--2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.grid-3 {
+.grid--3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-4 {
+.grid--4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.grid-auto-fit {
+.grid--auto-fit {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.grid-auto-fill {
+.grid--auto-fill {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-/* Responsive Grid Utilities */
 @media (max-width: 768px) {
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
     grid-template-columns: 1fr;
   }
   
-  .grid-auto-fit,
-  .grid-auto-fill {
+  .grid--auto-fit,
+  .grid--auto-fill {
     grid-template-columns: 1fr;
   }
 }
 
-/* ==========================================================================
-   TYPOGRAPHY UTILITIES
-   ========================================================================== */
-
-/* Text Size Utilities */
-.text-xs { font-size: 0.75rem; }
-.text-sm { font-size: 0.875rem; }
-.text-base { font-size: 1rem; }
-.text-lg { font-size: 1.125rem; }
-.text-xl { font-size: 1.25rem; }
-.text-2xl { font-size: 1.5rem; }
 .text-3xl { font-size: 2rem; }
 .text-4xl { font-size: 2.5rem; }
 
-/* Text Weight Utilities */
 .font-normal { font-weight: 400; }
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
 .font-extrabold { font-weight: 800; }
 
-/* Text Color Utilities */
-.text-primary { color: var(--primary-blue); }
-.text-secondary { color: var(--text-light); }
-.text-dark { color: var(--text-dark); }
-.text-white { color: white; }
+.text--left { text-align: left; }
+.text--center { text-align: center; }
+.text--right { text-align: right; }
 
-/* Text Alignment Utilities */
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-
-/* ==========================================================================
-   SPACING UTILITIES
-   ========================================================================== */
-
-/* Margin Utilities */
-.m-0 { margin: 0; }
 .m-xs { margin: var(--spacing-xs); }
 .m-sm { margin: var(--spacing-sm); }
 .m-md { margin: var(--spacing-md); }
 .m-lg { margin: var(--spacing-lg); }
 .m-xl { margin: var(--spacing-xl); }
 
-.mt-0 { margin-top: 0; }
 .mt-xs { margin-top: var(--spacing-xs); }
 .mt-sm { margin-top: var(--spacing-sm); }
 .mt-md { margin-top: var(--spacing-md); }
 .mt-lg { margin-top: var(--spacing-lg); }
 .mt-xl { margin-top: var(--spacing-xl); }
 
-.mb-0 { margin-bottom: 0; }
 .mb-xs { margin-bottom: var(--spacing-xs); }
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
 .mb-xl { margin-bottom: var(--spacing-xl); }
 
-/* Padding Utilities */
-.p-0 { padding: 0; }
 .p-xs { padding: var(--spacing-xs); }
 .p-sm { padding: var(--spacing-sm); }
 .p-md { padding: var(--spacing-md); }
 .p-lg { padding: var(--spacing-lg); }
 .p-xl { padding: var(--spacing-xl); }
 
-.pt-0 { padding-top: 0; }
 .pt-xs { padding-top: var(--spacing-xs); }
 .pt-sm { padding-top: var(--spacing-sm); }
 .pt-md { padding-top: var(--spacing-md); }
 .pt-lg { padding-top: var(--spacing-lg); }
 .pt-xl { padding-top: var(--spacing-xl); }
 
-.pb-0 { padding-bottom: 0; }
 .pb-xs { padding-bottom: var(--spacing-xs); }
 .pb-sm { padding-bottom: var(--spacing-sm); }
 .pb-md { padding-bottom: var(--spacing-md); }
 .pb-lg { padding-bottom: var(--spacing-lg); }
 .pb-xl { padding-bottom: var(--spacing-xl); }
 
-/* ==========================================================================
-   FLEXBOX UTILITIES
-   ========================================================================== */
-
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.flex-row { flex-direction: row; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-nowrap { flex-wrap: nowrap; }
-
 .items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.items-end { align-items: flex-end; }
+.items-start { align-items: flex--start; }
+.items-end { align-items: flex--end; }
 .items-baseline { align-items: baseline; }
 
 .justify-center { justify-content: center; }
-.justify-start { justify-content: flex-start; }
-.justify-end { justify-content: flex-end; }
+.justify-start { justify-content: flex--start; }
+.justify-end { justify-content: flex--end; }
 .justify-between { justify-content: space-between; }
 .justify-around { justify-content: space-around; }
 
@@ -487,10 +240,6 @@
 .gap-md { gap: var(--spacing-md); }
 .gap-lg { gap: var(--spacing-lg); }
 .gap-xl { gap: var(--spacing-xl); }
-
-/* ==========================================================================
-   POSITIONING UTILITIES
-   ========================================================================== */
 
 .relative { position: relative; }
 .absolute { position: absolute; }
@@ -507,20 +256,12 @@
 .z-20 { z-index: 20; }
 .z-30 { z-index: 30; }
 
-/* ==========================================================================
-   BACKGROUND UTILITIES
-   ========================================================================== */
-
 .bg-white { background: white; }
 .bg-light { background: var(--background-light); }
 .bg-secondary { background: var(--background-secondary); }
 .bg-tertiary { background: var(--background-tertiary); }
 .bg-primary { background: var(--primary-blue); }
 .bg-orange { background: var(--primary-orange); }
-
-/* ==========================================================================
-   BORDER UTILITIES
-   ========================================================================== */
 
 .border { border: 1px solid #e2e8f0; }
 .border-2 { border: 2px solid #e2e8f0; }
@@ -532,51 +273,34 @@
 .rounded-lg { border-radius: var(--radius-lg); }
 .rounded-xl { border-radius: var(--radius-xl); }
 
-/* ==========================================================================
-   SHADOW UTILITIES
-   ========================================================================== */
-
 .shadow-none { box-shadow: none; }
 .shadow-light { box-shadow: var(--shadow-light); }
 .shadow-medium { box-shadow: var(--shadow-medium); }
 .shadow-heavy { box-shadow: var(--shadow-heavy); }
-
-/* ==========================================================================
-   TRANSITION UTILITIES
-   ========================================================================== */
 
 .transition-none { transition: none; }
 .transition-fast { transition: all var(--transition-fast); }
 .transition-normal { transition: all var(--transition-normal); }
 .transition-slow { transition: all var(--transition-slow); }
 
-/* ==========================================================================
-   RESPONSIVE UTILITIES
-   ========================================================================== */
-
-/* Mobile First Approach */
 @media (min-width: 768px) {
-  .md\:grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .md\:grid-3 { grid-template-columns: repeat(3, 1fr); }
-  .md\:grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .md\:grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .md\:grid--4 { grid-template-columns: repeat(4, 1fr); }
   .md\:flex-row { flex-direction: row; }
-  .md\:text-left { text-align: left; }
-  .md\:text-center { text-align: center; }
-  .md\:text-right { text-align: right; }
+  .md\:text--left { text-align: left; }
+  .md\:text--center { text-align: center; }
+  .md\:text--right { text-align: right; }
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .lg\:grid-3 { grid-template-columns: repeat(3, 1fr); }
-  .lg\:grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .lg\:grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .lg\:grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid--4 { grid-template-columns: repeat(4, 1fr); }
   .lg\:text-2xl { font-size: 1.5rem; }
   .lg\:text-3xl { font-size: 2rem; }
   .lg\:text-4xl { font-size: 2.5rem; }
 }
-
-/* ==========================================================================
-   ACCESSIBILITY UTILITIES
-   ========================================================================== */
 
 .sr-only {
   position: absolute;
@@ -598,20 +322,12 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }
 
-/* ==========================================================================
-   PRINT UTILITIES
-   ========================================================================== */
-
 @media print {
   .print\:hidden { display: none; }
   .print\:block { display: block; }
   .print\:text-black { color: black; }
   .print\:bg-white { background: white; }
 }
-
-/* ==========================================================================
-   ANIMATION UTILITIES
-   ========================================================================== */
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -667,168 +383,24 @@
   animation: slideInRight var(--transition-normal);
 }
 
-/* ==========================================================================
-   UTILITY MIXINS (for future use)
-   ========================================================================== */
-
-/* These can be used with CSS preprocessors like Sass */
-/*
-@mixin card-layout($padding: var(--spacing-lg)) {
-  @extend .card-layout-base;
-  padding: $padding;
-}
-
-@mixin responsive-grid($columns: 1, $min-width: 300px) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
-  gap: var(--spacing-md);
-}
-*/
-
-/* ==========================================================================
-   UNIVERSAL COMPONENT SYSTEMS
-   ========================================================================== */
-
-/* ==========================================================================
-   UNIVERSAL CARD SYSTEM
-   ========================================================================== */
-
-/* Universal Card Base */
-.card-base {
-  background: white;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-base:hover {
+.card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
 }
 
-/* Card Variants */
-.card-preview {
-  /* Preview card specific styles */
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.card-detail {
-  /* Detail card specific styles */
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.card-feature {
-  /* Feature card specific styles */
-  text-align: center;
-  padding: var(--spacing-lg);
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;;
-  padding: 1rem;
-}
-
-/* ==========================================================================
-   UNIVERSAL BADGE SYSTEM
-   ========================================================================== */
-
-/* Universal Badge Base */
-.badge-base {
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Badge Color Variants */
-.badge-primary {
-  background: rgba(31, 86, 164, 0.9);
-  color: white;
-}
-
-.badge-secondary {
-  background: rgba(230, 196, 59, 0.9);
-  color: var(--text-dark);
-}
-
-.badge-success {
-  background: rgba(39, 174, 96, 0.9);
-  color: white;
-}
-
-.badge-warning {
-  background: rgba(245, 158, 11, 0.9);
-  color: white;
-}
-
-.badge-danger {
-  background: rgba(239, 68, 68, 0.9);
-  color: white;
-}
-
-.badge-info {
-  background: transparent;
-  border: 1px solid var(--primary-blue);
-}
-
-/* Badge Size Variants */
-.badge-sm {
-  padding: 0.125rem 0.5rem;
-  font-size: 0.625rem;
-}
-
-.badge-lg {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-}
-
-/* ==========================================================================
-   UNIVERSAL GRID SYSTEM (Simplified - Uses globals.css as foundation)
-   ========================================================================== */
-
-/* Universal Grid Base - Extends globals.css */
-.grid-base {
-  display: grid;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Grid Auto-fit utilities (extensions to globals.css) */
-.grid-auto-fit {
+.grid--auto-fit {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.grid-auto-fill {
+.grid--auto-fill {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-/* Responsive Grid */
 @media (max-width: 768px) {
-  .grid-auto-fit,
-  .grid-auto-fill {
+  .grid--auto-fit,
+  .grid--auto-fill {
     grid-template-columns: 1fr;
   }
-}
-
-/* ==========================================================================
-   UNIVERSAL HERO SYSTEM
-   ========================================================================== */
-
-/* Universal Hero Base */
-.hero-base {
-  position: relative;
-  padding: 6rem 0;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-  margin-top: var(--nav-height);
 }
 
 .hero-base::before {
@@ -842,48 +414,8 @@
   z-index: 1;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Hero Variants */
-.hero-primary {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-}
-
-.hero-secondary {
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
-}
-
-.hero-dark {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-}
-
-.hero-light {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: var(--text-dark);
-}
-
-/* Mobile Responsive */
 @media (max-width: 768px) {
-  .hero-base {
-    margin-top: var(--nav-height-mobile);
-    padding: 4rem 0;
   }
-}
-
-/* Missing Utility Classes */
-.text-muted {
-  color: var(--text-medium);
-}
-
-.text-accent {
-  color: var(--accent-yellow);
-}
 
 .bg-accent {
   background-color: var(--background-accent);

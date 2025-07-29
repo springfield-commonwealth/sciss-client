@@ -12,31 +12,31 @@ const SectionHeader = ({
   showDivider = false,
   children,
 }) => {
-  const baseClasses = "section-header-base";
+  const baseClasses = "section-header";
   const variantClasses = {
-    default: "section-header-default",
-    primary: "section-header-primary",
-    secondary: "section-header-secondary",
-    accent: "section-header-accent",
+    default: "section-header--default",
+    primary: "section-header--primary",
+    secondary: "section-header--secondary",
+    accent: "section-header--accent",
+    directory: "section-header--directory",
   };
 
   const alignClasses = {
-    left: "section-header-left",
-    center: "section-header-center",
-    right: "section-header-right",
+    left: "section-header--left",
+    center: "section-header--center",
+    right: "section-header--right",
   };
 
-  const dividerClasses = showDivider ? "section-header-with-divider" : "";
+  const dividerClasses = showDivider ? "section-header--with-divider" : "";
 
   const headerClasses =
     `${baseClasses} ${variantClasses[variant]} ${alignClasses[align]} ${dividerClasses} ${className}`.trim();
 
   return (
     <div className={headerClasses}>
-      {subtitle && <p className="section-subtitle">{subtitle}</p>}
-      {title && <h2 className="section-title">{title}</h2>}
-      {description && <p className="section-description">{description}</p>}
-      {showDivider && <div className="section-divider" />}
+      {subtitle && <p className="section__subtitle">{subtitle}</p>}
+      {title && <h2 className="section__title">{title}</h2>}
+      {description && <p className="section__description">{description}</p>}
       {children}
     </div>
   );
@@ -56,9 +56,9 @@ const PageHeader = ({
 }) => {
   const baseClasses = "page-header";
   const variantClasses = {
-    default: "page-header-default",
-    hero: "page-header-hero",
-    minimal: "page-header-minimal",
+    default: "page-header--default",
+    hero: "page-header--hero",
+    minimal: "page-header--minimal",
   };
 
   const headerClasses =

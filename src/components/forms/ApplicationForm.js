@@ -257,7 +257,7 @@ const ApplicationForm = () => {
               resetForm();
               router.push("/");
             }}
-            className="btn btn-primary"
+            className="btn btn--primary"
           >
             Go to Home Page
           </button>

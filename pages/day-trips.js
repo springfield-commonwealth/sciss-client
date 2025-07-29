@@ -36,7 +36,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       {/* Featured University Trips */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>University Visits</h2>
             <p>
               Experience prestigious institutions and explore your academic
@@ -70,7 +70,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
 
                   <Link
                     href={`/trips/${trip.slug}`}
-                    className="btn btn-primary btn-sm"
+                    className="btn btn--primary btn--sm"
                   >
                     View Details
                   </Link>
@@ -79,8 +79,8 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
             ))}
           </div>
 
-          <div className="text-center mt-4">
-            <Link href="/trips" className="btn btn-secondary btn-large">
+          <div className="text--center mt--md">
+            <Link href="/trips" className="btn btn--secondary btn--lg">
               View All Trips
             </Link>
           </div>
@@ -90,7 +90,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       {/* Day Trips Carousel */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Trip Highlights</h2>
             <p>Discover amazing destinations and create lasting memories</p>
           </div>
@@ -102,7 +102,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       {/* University Trips */}
       <section id="universities" className="section">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>University Visits</h2>
             <p>
               Experience prestigious universities and explore your academic
@@ -155,7 +155,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       {/* Cultural & Recreation Trips */}
       <section id="all-trips" className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Cultural & Recreation Trips</h2>
             <p>
               Explore local culture, history, and enjoy exciting recreational
@@ -163,7 +163,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
             </p>
           </div>
 
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             {DayTripsCulturalTrips.map((trip, index) => (
               <div key={index} className="cultural-trip-card">
                 <div className="trip-header">
@@ -197,12 +197,12 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       {/* Travel Information */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Travel Information</h2>
             <p>Everything you need to know about our trips</p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="grid grid--3">
             <div className="info-card">
               <h3>🚌 Transportation</h3>
               <ul>

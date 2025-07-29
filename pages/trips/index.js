@@ -13,7 +13,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
   const renderTripContent = (trip) => {
     return (
       <>
-        <div className="card-highlights">
+        <div className="card__highlights">
           {trip.highlights?.slice(0, 3).map((highlight, index) => (
             <span key={index} className="highlight-tag">
               {highlight}
@@ -25,7 +25,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
             </span>
           )}
         </div>
-        <div className="card-info">
+        <div className="card__info">
           <div className="info-item">
             <strong>Duration:</strong> {trip.duration}
           </div>

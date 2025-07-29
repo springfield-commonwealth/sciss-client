@@ -7,14 +7,14 @@ const Highlights = ({ highlights, title, desc }) => {
   return (
     <section className="section highlights-section bg-light">
       <div className="container">
-        <div className="text-center mb-5">
+        <div className="text--center mb--lg">
           {title && <h2>{title}</h2>}
           {desc && <p>{desc}</p>}
         </div>
-        <div className="grid grid-3">
+        <div className="grid grid--3">
           {highlights.map((highlight, index) => (
             <div key={index} className="gallery-card">
-              <div className="card-image">
+              <div className="card__image">
                 <img src={highlight.image} alt={highlight.title} />
               </div>
               <h3>{highlight.title}</h3>

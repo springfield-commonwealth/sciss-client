@@ -52,7 +52,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footerContainer grid grid-4">
+      <div className="footerContainer grid grid--4">
         <div className="footerSection">
           <h4>Sessions 2025</h4>
           <p>Session 1: June 29 - July 18</p>
@@ -105,7 +105,7 @@ const Footer = () => {
               />
             ))}
           </div>
-          <h4 className="mt-3">Accreditation</h4>
+          <h4 className="mt--sm">Accreditation</h4>
           <p>
             National Honor Society (NHS)
             <br />

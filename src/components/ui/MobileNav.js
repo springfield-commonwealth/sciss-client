@@ -63,7 +63,7 @@ const MobileNav = ({
     <li className="mobile-cta">
       <Link
         href="/tuitions-and-fees"
-        className="btn btn-primary btn-large"
+        className="btn btn--primary btn--lg"
         onClick={() => setIsMobileMenuOpen(false)}
       >
         Apply Now

@@ -13,7 +13,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
   const renderStaffContent = (member) => {
     return (
       <>
-        <div className="card-expertise">
+        <div className="card__expertise">
           {member.expertise && member.expertise.length > 0 ? (
             <>
               {member.expertise.slice(0, 3).map((skill, index) => (
@@ -31,7 +31,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
             <span className="expertise-badge">Expert</span>
           )}
         </div>
-        <div className="card-bio">
+        <div className="card__bio">
           {member.bio
             ? member.bio.length > 120
               ? `${member.bio.substring(0, 120)}...`
@@ -39,7 +39,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
             : "Experienced professional with expertise in their field."}
         </div>
         {member.courses && member.courses.length > 0 && (
-          <div className="card-courses">
+          <div className="card__courses">
             <p className="teaches-label">
               Teaches: {member.courses.length} course
               {member.courses.length !== 1 ? "s" : ""}

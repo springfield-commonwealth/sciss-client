@@ -41,7 +41,7 @@ const DirectoryFilters = ({
 
   return (
     <section
-      className={`${type}-directory-filters directory-filters ${className}`}
+      className={`directory-filters ${className}`}
     >
       <div className="container">
         <div className="filter-controls">

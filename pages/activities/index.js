@@ -18,7 +18,7 @@ const ActivitiesDirectory = ({
   const renderActivityContent = (activity) => {
     return (
       <>
-        <div className="card-features">
+        <div className="card__features">
           {activity.features?.slice(0, 3).map((feature, index) => (
             <span key={index} className="feature-tag">
               {feature}
@@ -30,7 +30,7 @@ const ActivitiesDirectory = ({
             </span>
           )}
         </div>
-        <div className="card-info">
+        <div className="card__info">
           <div className="info-item">
             <strong>Level:</strong> {activity.level}
           </div>

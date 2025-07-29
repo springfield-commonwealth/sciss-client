@@ -127,13 +127,13 @@ const CoursePage = ({ course, breadcrumbs }) => {
 
               <div className="course-page-actions">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn--primary"
                   onClick={() => router.push("/apply")}
                 >
                   Apply Now
                 </button>
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn--secondary"
                   onClick={() => router.push("/academics")}
                 >
                   View All Courses
@@ -196,7 +196,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
                 journey toward academic excellence.
               </p>
               <button
-                className="btn btn-primary btn-large"
+                className="btn btn--primary btn--lg"
                 onClick={() => router.push("/apply")}
               >
                 Apply Now

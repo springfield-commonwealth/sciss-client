@@ -9,27 +9,27 @@ describe("EnhancedButton", () => {
 
     const button = screen.getByRole("button", { name: /click me/i });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveClass("btn", "btn-primary");
+    expect(button).toHaveClass("btn", "btn--primary");
   });
 
   test("renders with different variants", () => {
     const { rerender } = render(
       <EnhancedButton variant="secondary">Secondary</EnhancedButton>
     );
-    expect(screen.getByRole("button")).toHaveClass("btn-secondary");
+    expect(screen.getByRole("button")).toHaveClass("btn--secondary");
 
     rerender(<EnhancedButton variant="blurred">Blurred</EnhancedButton>);
-    expect(screen.getByRole("button")).toHaveClass("btn-blurred");
+    expect(screen.getByRole("button")).toHaveClass("btn--blurred");
   });
 
   test("renders with different sizes", () => {
     const { rerender } = render(
       <EnhancedButton size="small">Small</EnhancedButton>
     );
-    expect(screen.getByRole("button")).toHaveClass("btn-small");
+    expect(screen.getByRole("button")).toHaveClass("btn--sm");
 
     rerender(<EnhancedButton size="large">Large</EnhancedButton>);
-    expect(screen.getByRole("button")).toHaveClass("btn-large");
+    expect(screen.getByRole("button")).toHaveClass("btn--lg");
   });
 
   test("shows loading state", () => {
@@ -46,7 +46,7 @@ describe("EnhancedButton", () => {
 
     const button = screen.getByRole("button");
     expect(button).toBeDisabled();
-    expect(button).toHaveClass("btn-primary");
+    expect(button).toHaveClass("btn--primary");
   });
 
   test("calls onClick when not loading or disabled", () => {

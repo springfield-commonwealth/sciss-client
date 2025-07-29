@@ -9,7 +9,7 @@ const CampSchedule = () => {
 
   return (
     <section className="camp-schedule-section container" id="schedule">
-      <h2 className="text-center">Session Schedules</h2>
+      <h2 className="text--center">Session Schedules</h2>
       {/* Session Tabs (future-proof) */}
       <div className="session-tabs" style={{ marginBottom: 16 }}>
         <button

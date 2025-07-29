@@ -41,16 +41,16 @@ const LifeActivities = ({
       {/* Popular Activities Preview */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Popular Activities</h2>
             <p>Discover our most engaging and sought-after activities</p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="grid grid--3">
             {popularActivities.map((activity) => (
               <div
                 key={activity.id}
-                className="activity-preview-card card-base"
+                className="activity-preview-card card"
               >
                 <div className="activity-preview-image">
                   <img src={activity.image} alt={activity.title} />
@@ -78,8 +78,8 @@ const LifeActivities = ({
             ))}
           </div>
 
-          <div className="text-center mt-4">
-            <Link href="/activities" className="btn btn-secondary btn-large">
+          <div className="text--center mt--md">
+            <Link href="/activities" className="btn btn--secondary btn--lg">
               View All Activities
             </Link>
           </div>
@@ -89,7 +89,7 @@ const LifeActivities = ({
       {/* Sports Programs */}
       <section id="sports" className="section">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Sports Programs</h2>
             <p>
               Professional coaching and state-of-the-art facilities for athletic
@@ -99,7 +99,7 @@ const LifeActivities = ({
 
           <div className="programs-grid">
             {LifeActivitiesSportsPrograms.map((sport, index) => (
-              <div key={index} className="sport-card card-base">
+              <div key={index} className="sport-card card">
                 <div className="sport-header">
                   <h3>{sport.title}</h3>
                   <span className="level-badge">{sport.level}</span>
@@ -128,16 +128,16 @@ const LifeActivities = ({
       {/* Fitness Programs */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Fitness & Wellness</h2>
             <p>
               Stay active and healthy with our comprehensive fitness programs
             </p>
           </div>
 
-          <div className="grid grid-3">
+          <div className="grid grid--3">
             {LifeActivitiesFitnessPrograms.map((program, index) => (
-              <div key={index} className="fitness-card card-base">
+              <div key={index} className="fitness-card card">
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
                 <div className="fitness-highlights">
@@ -157,14 +157,14 @@ const LifeActivities = ({
       {/* Recreation Activities */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Recreation & Leisure</h2>
             <p>Fun and engaging activities for relaxation and entertainment</p>
           </div>
 
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             {LifeActivitiesRecreationalActivities.map((activity, index) => (
-              <div key={index} className="recreation-card card-base">
+              <div key={index} className="recreation-card card">
                 <h3>{activity.category}</h3>
                 <div className="activity-grid">
                   {activity.activities.map((item, idx) => (

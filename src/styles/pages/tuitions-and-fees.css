@@ -183,7 +183,7 @@
 }
 
 .service-category {
-  @extend .card-layout-base;
+  @extend .card;
 }
 
 .service-category h3 {
@@ -200,7 +200,7 @@
 
 .service-item {
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 0.75rem;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .payment-plan-card {
-  @extend .card-layout-base;
+  @extend .card;
 }
 
 .payment-plan-card h3 {
@@ -270,7 +270,7 @@
 }
 
 .cost-item {
-  @extend .card-layout-base;
+  @extend .card;
   padding: 1.5rem;
 }
 
@@ -315,7 +315,7 @@
 }
 
 .scholarship-card {
-  @extend .card-layout-base;
+  @extend .card;
 }
 
 .scholarship-header {
@@ -350,7 +350,7 @@
 
 .application-step {
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
@@ -398,7 +398,7 @@
 
 .policy-item {
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--border-light);
@@ -470,13 +470,13 @@
 
   .scholarship-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex--start;
     gap: 1rem;
   }
 
   .cost-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex--start;
     gap: 0.5rem;
   }
 

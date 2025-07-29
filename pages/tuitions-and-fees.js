@@ -35,7 +35,7 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
       <section className="section">
         <div className="container">
           {/* Session Selection */}
-          <div className="sessions-selection grid grid-2">
+          <div className="sessions-selection grid grid--2">
             <h3>Choose Your Session</h3>
             {TuitionsSessions.map((session, index) => (
               <div key={index} className="session-card">
@@ -60,14 +60,14 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
       {/* What's Included */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>What's Included</h2>
             <p>Comprehensive program with no hidden fees</p>
           </div>
 
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             {TuitionsIncludedServices.map((service, index) => (
-              <div key={index} className="service-category card-base">
+              <div key={index} className="service-category card">
                 <h3>{service.category}</h3>
                 <div className="service-items">
                   {service.items.map((item, idx) => (
@@ -86,7 +86,7 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
       {/* Additional Costs */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Additional Considerations</h2>
             <p>
               Plan for these additional expenses not included in program fee
@@ -117,14 +117,14 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
       {/* Application Process */}
       <section id="apply" className="section bg-light">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text--center mb--lg">
             <h2>Application Process</h2>
             <p>Simple steps to secure your spot at SCISS 2025</p>
           </div>
 
           <div className="application-timeline">
             {TuitionsApplicationProcess.map((step, index) => (
-              <div key={index} className="application-step card-base">
+              <div key={index} className="application-step card">
                 <div className="step-number">{step.step}</div>
                 <div className="step-content">
                   <h4>{step.title}</h4>
@@ -135,7 +135,7 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
                 </div>
               </div>
             ))}
-            <Link href="/apply" className="btn btn-primary">
+            <Link href="/apply" className="btn btn--primary">
               Apply Now
             </Link>
           </div>

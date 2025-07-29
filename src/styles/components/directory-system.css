@@ -1,22 +1,10 @@
-/* Directory System - Universal CSS for Trips, Staff, Courses, Activities */
-/* Applies DRY principles with type-specific variants */
-
-/* ==========================================================================
-   UNIVERSAL DIRECTORY PAGE LAYOUT
-   ========================================================================== */
-
 .directory-page {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ==========================================================================
-   UNIVERSAL HEADER SPACING (Fixes navigation overlap)
-   ========================================================================== */
-
 .directory-header {
-  /* Apply universal header spacing to prevent nav overlap */
-  margin-top: var(--nav-height);
+    margin-top: var(--nav-height);
   padding: 4rem 0;
   text-align: center;
   position: relative;
@@ -30,7 +18,6 @@
   }
 }
 
-/* Type-specific header backgrounds */
 .trips-directory-header {
   background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
   color: white;
@@ -51,7 +38,6 @@
   color: white;
 }
 
-/* Header overlay for all types */
 .directory-header::before {
   content: '';
   position: absolute;
@@ -63,23 +49,32 @@
   z-index: 1;
 }
 
-.directory-header .container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* SectionHeader styles for directory pages - light text on dark backgrounds */
+.directory-header .section-header {
+  color: var(--color-text-white);
 }
 
-/* ==========================================================================
-   UNIVERSAL FILTERS SECTION
-   ========================================================================== */
+.directory-header .section__subtitle {
+  color: var(--color-primary-200);
+}
+
+.directory-header .section__title {
+  color: var(--color-text-white);
+}
+
+.directory-header .section__description {
+  color: var(--color-primary-100);
+}
+
+.directory-header .section__divider {
+  background: var(--color-primary-200);
+}
 
 .directory-filters {
-  background: white;
-  padding: 2rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--color-bg-primary);
+  padding: var(--space-8) 0;
+  box-shadow: var(--shadow-nav-sticky);
+  border-bottom: 1px solid var(--color-border-light);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
@@ -88,11 +83,11 @@
 .filter-controls {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 2rem;
+  gap: var(--space-8);
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-8);
 }
 
 .search-box {
@@ -101,69 +96,65 @@
 
 .search-input {
   width: 100%;
-  padding: 1rem 1.5rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: #f8fafc;
+  padding: var(--input-padding-y) var(--input-padding-x);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  transition: all var(--transition-normal);
+  background: var(--color-bg-secondary);
 }
 
 .search-input:focus {
   outline: none;
-  border-color: var(--primary-blue);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--color-primary-500);
+  background: var(--color-bg-primary);
+  box-shadow: var(--shadow-input-focus);
 }
 
 .search-input::placeholder {
-  color: #a0aec0;
+  color: var(--color-text-tertiary);
 }
 
 .category-select {
-  padding: 1rem 1.5rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 25px;
-  font-size: 1rem;
-  background: #f8fafc;
+  padding: var(--input-padding-y) var(--input-padding-x);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  background: var(--color-bg-secondary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   min-width: 200px;
 }
 
 .category-select:focus {
   outline: none;
-  border-color: var(--primary-blue);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--color-primary-500);
+  background: var(--color-bg-primary);
+  box-shadow: var(--shadow-input-focus);
 }
 
 .clear-filters-btn {
-  background: var(--primary-blue);
-  color: white;
+  background: var(--color-primary-500);
+  color: var(--color-text-white);
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-normal);
 }
 
 .clear-filters-btn:hover {
-  background: #2563eb;
+  background: var(--color-primary-600);
 }
 
 .results-count {
   max-width: 1200px;
-  margin: 1rem auto 0;
-  padding: 0 2rem;
-  color: #64748b;
-  font-weight: 500;
+  margin: var(--space-4) auto 0;
+  padding: 0 var(--space-8);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
 }
-
-/* ==========================================================================
-   UNIVERSAL DIRECTORY GRID
-   ========================================================================== */
 
 .directory-grid {
   padding: 3rem 0;
@@ -178,14 +169,12 @@
   padding: 0 2rem;
 }
 
-/* Ensure max 2 cards per row on larger screens */
 @media (min-width: 1200px) {
   .directory-items-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
   .directory-items-grid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -195,19 +184,15 @@
 @media (max-width: 768px) {
   .directory-items-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
+    gap: var(--space-6);
+    padding: 0 var(--space-4);
   }
   
   .filter-controls {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: var(--space-4);
   }
 }
-
-/* ==========================================================================
-   UNIVERSAL DIRECTORY CARD
-   ========================================================================== */
 
 .directory-card {
   background: white;
@@ -220,6 +205,57 @@
   display: block;
 }
 
+/* Ensure directory card images display properly */
+.directory-card .card__image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0; /* Override negative margins from card-system.css */
+}
+
+.directory-card .card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.directory-card:hover .card__image img {
+  transform: scale(1.05);
+}
+
+/* Specific image heights for different directory card types */
+.directory-card--trips .card__image {
+  height: 180px;
+  border-radius: 25px 25px 0 0; /* Match directory card border radius */
+}
+
+.directory-card--courses .card__image {
+  height: 160px;
+  border-radius: 25px 25px 0 0; /* Match directory card border radius */
+}
+
+.directory-card--activities .card__image {
+  height: 200px;
+  border-radius: 25px 25px 0 0; /* Match directory card border radius */
+}
+
+/* Staff cards need to maintain circular styling */
+.directory-card--staff .card__image {
+  border-radius: 50% !important;
+  width: 180px !important;
+  height: 180px !important;
+  margin: var(--space-4) auto var(--space-4) auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.directory-card--staff .card__image img {
+  border-radius: 50% !important;
+  border: 3px solid var(--color-gray-200) !important;
+}
+
 .directory-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
@@ -227,90 +263,12 @@
   color: inherit;
 }
 
-/* Card Image Section */
-.card-image {
-  position: relative;
-  height: 250px;
-  overflow: hidden;
-}
-
-.card-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.directory-card:hover .card-photo {
-  transform: scale(1.05);
-}
-
-/* Card Badges */
-.card-badges {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 2;
-}
-
-/* Card Content Section */
-.card-content {
-  padding: 2rem;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #1e293b;
-  line-height: 1.3;
-}
-
-.card-position,
+.directory-card:hover .card-position,
 .card-department,
-.card-category {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--primary-blue);
-  margin: 0 0 0.25rem 0;
-}
-
-.card-department {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin: 0 0 1rem 0;
-}
-
-/* Card Content Elements */
 .card-highlights,
 .card-expertise,
-.card-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .card-description,
-.card-bio {
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
 .card-info,
-.card-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 15px;
-}
-
 .info-item,
 .detail-item {
   font-size: 0.875rem;
@@ -322,10 +280,6 @@
   color: var(--primary-blue);
   font-weight: 600;
   display: block;
-}
-
-.card-outcomes {
-  margin-bottom: 1.5rem;
 }
 
 .card-outcomes strong {
@@ -347,10 +301,6 @@
   font-size: 0.875rem;
 }
 
-.card-courses {
-  margin-bottom: 1rem;
-}
-
 .teaches-label {
   font-size: 0.75rem;
   color: #059669;
@@ -358,11 +308,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
-}
-
-/* Card Footer */
-.card-footer {
-  padding: 0 2rem 2rem;
 }
 
 .view-details-text {
@@ -377,40 +322,6 @@
 .directory-card:hover .view-details-text {
   gap: 1rem;
 }
-
-/* ==========================================================================
-   TYPE-SPECIFIC CARD VARIANTS
-   ========================================================================== */
-
-/* Staff Card Specific Styles */
-.directory-card--staff .card-image {
-  background: var(--background-blue);
-  padding: 2rem;
-  text-align: center;
-}
-
-.directory-card--staff .card-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.directory-card--staff .card-badges {
-  position: static;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-/* Courses Card Specific Styles */
-.directory-card--courses .card-image {
-  height: 350px;
-}
-
-/* ==========================================================================
-   UNIVERSAL CATEGORIES SECTION
-   ========================================================================== */
 
 .directory-categories {
   padding: 3rem 0;
@@ -478,10 +389,6 @@
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
-/* ==========================================================================
-   UNIVERSAL CTA SECTION
-   ========================================================================== */
-
 .directory-cta {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   color: white;
@@ -489,13 +396,7 @@
   text-align: center;
 }
 
-.directory-cta .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.cta-actions {
+.directory-cta .cta-actions {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -503,9 +404,26 @@
   flex-wrap: wrap;
 }
 
-/* ==========================================================================
-   NO RESULTS SECTION
-   ========================================================================== */
+/* SectionHeader styles for directory CTA - light text on dark backgrounds */
+.directory-cta .section-header {
+  color: var(--color-text-white);
+}
+
+.directory-cta .section__subtitle {
+  color: var(--color-warning-200);
+}
+
+.directory-cta .section__title {
+  color: var(--color-text-white);
+}
+
+.directory-cta .section__description {
+  color: var(--color-warning-100);
+}
+
+.directory-cta .section__divider {
+  background: var(--color-warning-200);
+}
 
 .no-results {
   text-align: center;
@@ -537,10 +455,6 @@
 .reset-filters-btn:hover {
   background: #2563eb;
 }
-
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
 
 @media (max-width: 768px) {
   .directory-header {
@@ -591,11 +505,4 @@
     gap: 1rem;
   }
   
-  .card-content {
-    padding: 1.5rem;
-  }
-  
-  .card-footer {
-    padding: 0 1.5rem 1.5rem;
-  }
-} 
+    }

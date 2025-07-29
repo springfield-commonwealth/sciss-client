@@ -641,7 +641,7 @@
   padding: 2rem;
   border-radius: 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -775,7 +775,7 @@
   padding: 2rem;
   border-radius: 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
@@ -814,7 +814,7 @@
   padding: 2rem;
   border-radius: 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: flex--start;
   gap: 1.5rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
@@ -1006,17 +1006,7 @@
   margin-bottom: 1rem;
 }
 
-.btn.btn-outline {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-top: 1rem;
-}
+.btn/* Outline button styles moved to button-base.css */
 
 .btn.btn-outline:hover {
   background: white;
@@ -1045,50 +1035,7 @@
   margin-top: 2rem;
 }
 
-/* Button Styles */
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background: linear-gradient(45deg, #0ea5e9, #0284c7);
-  color: white;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
-  text-decoration: none;
-  color: white;
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #f59e0b;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #d97706;
-  text-decoration: none;
-}
-
-.btn-large {
-  padding: 1.25rem 2.5rem;
-  font-size: 1.1rem;
-}
+/* Button styles moved to button-base.css */
 
 /* Animations */
 @keyframes slideInLeft {

@@ -1,3 +1,17 @@
+
+/* Design Tokens - Single source of truth */
+@import './design-tokens/colors.css';
+@import './design-tokens/spacing.css';
+@import './design-tokens/typography.css';
+@import './design-tokens/shadows.css';
+
+/* Layout System */
+@import './components/layout/layout-system.css';
+@import './components/cards/card-system.css';
+
+/* Component System */
+@import './components/buttons/button-base.css';
+
 /* Import all styles in the correct order */
 
 /* Global styles */
@@ -10,6 +24,7 @@
 @import './components/navigation.css';
 @import './components/footer.css';
 @import './components/footer-cta.css';
+@import './components/section-header.css';
 @import './components/carousel.css';
 @import './components/carousel-card.css';
 @import './components/weekly-schedule.css';

@@ -1,0 +1,181 @@
+/* ==========================================================================
+   DESIGN TOKENS: SHADOWS
+   Systematic shadow scale for consistent depth and elevation
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     SHADOW SCALE
+     ========================================================================== */
+  
+  /* Subtle shadows - for cards and subtle elevation */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* ==========================================================================
+     COMPONENT-SPECIFIC SHADOWS
+     ========================================================================== */
+  
+  /* Button shadows */
+  --shadow-btn: var(--shadow-sm);
+  --shadow-btn-hover: var(--shadow-md);
+  --shadow-btn-active: var(--shadow-xs);
+  --shadow-btn-disabled: none;
+  
+  /* Card shadows */
+  --shadow-card: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-md);
+  --shadow-card-elevated: var(--shadow-lg);
+  
+  /* Modal shadows */
+  --shadow-modal: var(--shadow-2xl);
+  --shadow-modal-backdrop: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  
+  /* Dropdown shadows */
+  --shadow-dropdown: var(--shadow-lg);
+  --shadow-dropdown-hover: var(--shadow-xl);
+  
+  /* Tooltip shadows */
+  --shadow-tooltip: var(--shadow-md);
+  
+  /* Form element shadows */
+  --shadow-input: var(--shadow-xs);
+  --shadow-input-focus: 0 0 0 3px rgba(31, 86, 164, 0.1);
+  --shadow-input-error: 0 0 0 3px rgba(204, 29, 47, 0.1);
+  --shadow-input-success: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  
+  /* Navigation shadows */
+  --shadow-nav: var(--shadow-sm);
+  --shadow-nav-sticky: var(--shadow-md);
+  
+  /* ==========================================================================
+     INTERACTIVE SHADOWS
+     ========================================================================== */
+  
+  /* Hover effects */
+  --shadow-hover: var(--shadow-md);
+  --shadow-hover-strong: var(--shadow-lg);
+  
+  /* Active states */
+  --shadow-active: var(--shadow-xs);
+  --shadow-active-strong: var(--shadow-sm);
+  
+  /* Focus states */
+  --shadow-focus: 0 0 0 3px rgba(230, 196, 59, 0.3);
+  --shadow-focus-primary: 0 0 0 3px rgba(31, 86, 164, 0.2);
+  --shadow-focus-success: 0 0 0 3px rgba(39, 174, 96, 0.2);
+  --shadow-focus-warning: 0 0 0 3px rgba(243, 156, 18, 0.2);
+  --shadow-focus-error: 0 0 0 3px rgba(204, 29, 47, 0.2);
+  
+  /* ==========================================================================
+     DEPTH-BASED SHADOWS
+     ========================================================================== */
+  
+  /* Level 1 - Subtle elevation */
+  --shadow-depth-1: var(--shadow-sm);
+  
+  /* Level 2 - Cards and panels */
+  --shadow-depth-2: var(--shadow-md);
+  
+  /* Level 3 - Modals and overlays */
+  --shadow-depth-3: var(--shadow-lg);
+  
+  /* Level 4 - Tooltips and dropdowns */
+  --shadow-depth-4: var(--shadow-xl);
+  
+  /* Level 5 - Maximum elevation */
+  --shadow-depth-5: var(--shadow-2xl);
+  
+  /* ==========================================================================
+     COLORED SHADOWS
+     ========================================================================== */
+  
+  /* Primary color shadows */
+  --shadow-primary: 0 4px 14px 0 rgba(31, 86, 164, 0.25);
+  --shadow-primary-hover: 0 6px 20px 0 rgba(31, 86, 164, 0.35);
+  
+  /* Success color shadows */
+  --shadow-success: 0 4px 14px 0 rgba(39, 174, 96, 0.25);
+  --shadow-success-hover: 0 6px 20px 0 rgba(39, 174, 96, 0.35);
+  
+  /* Warning color shadows */
+  --shadow-warning: 0 4px 14px 0 rgba(243, 156, 18, 0.25);
+  --shadow-warning-hover: 0 6px 20px 0 rgba(243, 156, 18, 0.35);
+  
+  /* Error color shadows */
+  --shadow-error: 0 4px 14px 0 rgba(204, 29, 47, 0.25);
+  --shadow-error-hover: 0 6px 20px 0 rgba(204, 29, 47, 0.35);
+  
+  /* Accent color shadows */
+  --shadow-accent: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
+  --shadow-accent-hover: 0 6px 20px 0 rgba(245, 158, 11, 0.35);
+  
+  /* ==========================================================================
+     RESPONSIVE SHADOWS
+     ========================================================================== */
+  
+  /* Mobile - reduce shadow intensity for performance */
+  --shadow-mobile-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-mobile-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-mobile-md: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --shadow-mobile-lg: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  
+  /* Tablet - standard shadows */
+  --shadow-tablet-xs: var(--shadow-xs);
+  --shadow-tablet-sm: var(--shadow-sm);
+  --shadow-tablet-md: var(--shadow-md);
+  --shadow-tablet-lg: var(--shadow-lg);
+  
+  /* Desktop - full shadow range */
+  --shadow-desktop-xs: var(--shadow-xs);
+  --shadow-desktop-sm: var(--shadow-sm);
+  --shadow-desktop-md: var(--shadow-md);
+  --shadow-desktop-lg: var(--shadow-lg);
+  --shadow-desktop-xl: var(--shadow-xl);
+  --shadow-desktop-2xl: var(--shadow-2xl);
+  
+  /* ==========================================================================
+     PERFORMANCE OPTIMIZATIONS
+     ========================================================================== */
+  
+  /* Reduced motion shadows */
+  --shadow-reduced-motion: none;
+  
+  /* High contrast mode shadows */
+  --shadow-high-contrast: 0 0 0 2px currentColor;
+  
+  /* Print shadows */
+  --shadow-print: none;
+  
+  /* ==========================================================================
+     LEGACY COMPATIBILITY
+     ========================================================================== */
+  
+  /* Maintain backward compatibility during migration */
+  --shadow-subtle: var(--shadow-sm);
+  --shadow-medium: var(--shadow-md);
+  --shadow-elevated: var(--shadow-lg);
+  --shadow-heavy: var(--shadow-xl);
+  
+  /* ==========================================================================
+     UTILITY SHADOWS
+     ========================================================================== */
+  
+  /* Inset shadows for pressed states */
+  --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-inset-strong: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  
+  /* Glow effects */
+  --shadow-glow-primary: 0 0 20px rgba(31, 86, 164, 0.3);
+  --shadow-glow-success: 0 0 20px rgba(39, 174, 96, 0.3);
+  --shadow-glow-warning: 0 0 20px rgba(243, 156, 18, 0.3);
+  --shadow-glow-error: 0 0 20px rgba(204, 29, 47, 0.3);
+  
+  /* Text shadows */
+  --shadow-text: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-text-strong: 0 2px 4px rgba(0, 0, 0, 0.2);
+} 

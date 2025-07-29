@@ -1,5 +1,6 @@
 .next/
-
+public/css/
+src/styles/critical
 # Ignore Next.js build output
 out/
 dist/

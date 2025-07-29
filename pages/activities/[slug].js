@@ -31,7 +31,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
         <div className="activity-not-found">
           <h1>Activity Not Found</h1>
           <p>The activity you're looking for could not be found.</p>
-          <Link href="/activities" className="btn btn-primary">
+          <Link href="/activities" className="btn btn--primary">
             View All Activities
           </Link>
         </div>
@@ -145,10 +145,10 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
               </div>
 
               <div className="activity-actions">
-                <Link href="/apply" className="btn btn-primary btn-large">
+                <Link href="/apply" className="btn btn--primary btn--lg">
                   Register for This Activity
                 </Link>
-                <Link href="/activities" className="btn btn-secondary">
+                <Link href="/activities" className="btn btn--secondary">
                   View All Activities
                 </Link>
               </div>
@@ -323,10 +323,10 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
               spot!
             </p>
             <div className="cta-actions">
-              <Link href="/apply" className="btn btn-primary btn-large">
+              <Link href="/apply" className="btn btn--primary btn--lg">
                 Register Now
               </Link>
-              <Link href="/life-activities" className="btn btn-secondary">
+              <Link href="/life-activities" className="btn btn--secondary">
                 Explore More Activities
               </Link>
             </div>

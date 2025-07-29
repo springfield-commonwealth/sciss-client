@@ -238,7 +238,7 @@
   display: flex;
   gap: 1.5rem;
   padding: 1.5rem;
-  align-items: flex-start;
+  align-items: flex--start;
 }
 
 .course-preview-image {
@@ -339,42 +339,7 @@
   align-items: center;
 }
 
-.course-preview-actions .btn {
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.875rem;
-  transition: all 0.2s ease;
-  border: 2px solid transparent;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-}
-
-.course-preview-actions .btn-primary {
-  background: #2563eb;
-  color: white;
-  border-color: #2563eb;
-}
-
-.course-preview-actions .btn-primary:hover {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  transform: translateY(-1px);
-}
-
-.course-preview-actions .btn-outline {
-  background: transparent;
-  color: #2563eb;
-  border-color: #2563eb;
-}
-
-.course-preview-actions .btn-outline:hover {
-  background: #2563eb;
-  color: white;
-  transform: translateY(-1px);
-}
+/* Button styles moved to button-base.css */
 
 .course-directory-note {
   color: #6b7280;
@@ -382,6 +347,7 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  margin: 1rem auto;
 }
 
 /* Responsive Design */
@@ -400,9 +366,7 @@
     flex-direction: column;
   }
 
-  .course-preview-actions .btn {
-    width: 100%;
-  }
+  /* Button styles moved to button-base.css */
 
   .course-preview-meta {
     justify-content: center;

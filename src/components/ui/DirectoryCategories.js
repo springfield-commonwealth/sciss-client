@@ -84,7 +84,7 @@ const DirectoryCategories = ({
 
         <div className="categories-grid">
           {Object.entries(groupedItems).map(([category, items]) => (
-            <div key={category} className="category-overview-card card-base">
+            <div key={category} className="category-overview-card card">
               <h3>{category.toUpperCase()}</h3>
               <div className="category-count">
                 {items.length} {getCategoryCountLabel(items.length)}

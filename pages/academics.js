@@ -9,7 +9,6 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
-import GalleryCard from "@/components/ui/GalleryCard";
 import { AcademicsCarouselItems } from "@/constants/academicsContent";
 import { AcademicsHero } from "@/constants/images";
 import {
@@ -81,6 +80,7 @@ const Academics = ({
             subtitle="Choose Your Path to Excellence"
             description="Six specialized tracks designed to match your interests and career aspirations"
             showDivider
+            align="center"
           />
 
           <Carousel items={AcademicsCarouselItems} />
@@ -117,7 +117,7 @@ const Academics = ({
           />
 
           {hasValidCourses ? (
-            <div className="course-directory grid grid-2">
+            <div className="course-directory grid grid--2">
               {coursesList.map((course) => (
                 <div
                   key={course.id || course.slug}
@@ -178,11 +178,11 @@ const Academics = ({
                     <div className="course-preview-actions">
                       <Link
                         href={`/courses/${course.slug}`}
-                        className="btn btn-primary"
+                        className=" btn btn--primary"
                       >
                         View Full Details
                       </Link>
-                      <Link href="/apply" className="btn btn-outline">
+                      <Link href="/apply" className=" btn btn--outline">
                         Apply Now
                       </Link>
                     </div>
@@ -203,12 +203,12 @@ const Academics = ({
             </div>
           )}
 
-          <div className="text-center mt-5">
+          <div className="text--center mt--lg">
             <p className="course-directory-note">
               Each program includes comprehensive curriculum, expert
               instruction, hands-on projects, and career preparation.
             </p>
-            <Link href="/courses" className="btn btn-primary btn-large">
+            <Link href="/courses" className="btn btn--primary btn--lg">
               View All Courses
             </Link>
           </div>

@@ -1,0 +1,223 @@
+/* ==========================================================================
+   DESIGN TOKENS: TYPOGRAPHY
+   Systematic typography scale for consistent text hierarchy
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     FONT FAMILIES
+     ========================================================================== */
+  
+  --font-family-sans: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-serif: Georgia, 'Times New Roman', serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* ==========================================================================
+     FONT SIZES
+     ========================================================================== */
+  
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+  --text-8xl: 6rem;      /* 96px */
+  --text-9xl: 8rem;      /* 128px */
+  
+  /* ==========================================================================
+     FONT WEIGHTS
+     ========================================================================== */
+  
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  
+  /* ==========================================================================
+     LINE HEIGHTS
+     ========================================================================== */
+  
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* ==========================================================================
+     LETTER SPACING
+     ========================================================================== */
+  
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* ==========================================================================
+     HEADING STYLES
+     ========================================================================== */
+  
+  /* H1 */
+  --heading-1-font-size: var(--text-5xl);
+  --heading-1-font-weight: var(--font-bold);
+  --heading-1-line-height: var(--leading-tight);
+  --heading-1-letter-spacing: var(--tracking-tight);
+  
+  /* H2 */
+  --heading-2-font-size: var(--text-4xl);
+  --heading-2-font-weight: var(--font-semibold);
+  --heading-2-line-height: var(--leading-tight);
+  --heading-2-letter-spacing: var(--tracking-tight);
+  
+  /* H3 */
+  --heading-3-font-size: var(--text-3xl);
+  --heading-3-font-weight: var(--font-semibold);
+  --heading-3-line-height: var(--leading-snug);
+  --heading-3-letter-spacing: var(--tracking-normal);
+  
+  /* H4 */
+  --heading-4-font-size: var(--text-2xl);
+  --heading-4-font-weight: var(--font-semibold);
+  --heading-4-line-height: var(--leading-snug);
+  --heading-4-letter-spacing: var(--tracking-normal);
+  
+  /* H5 */
+  --heading-5-font-size: var(--text-xl);
+  --heading-5-font-weight: var(--font-semibold);
+  --heading-5-line-height: var(--leading-normal);
+  --heading-5-letter-spacing: var(--tracking-normal);
+  
+  /* H6 */
+  --heading-6-font-size: var(--text-lg);
+  --heading-6-font-weight: var(--font-semibold);
+  --heading-6-line-height: var(--leading-normal);
+  --heading-6-letter-spacing: var(--tracking-normal);
+  
+  /* ==========================================================================
+     BODY TEXT STYLES
+     ========================================================================== */
+  
+  /* Body Large */
+  --body-large-font-size: var(--text-lg);
+  --body-large-font-weight: var(--font-normal);
+  --body-large-line-height: var(--leading-relaxed);
+  --body-large-letter-spacing: var(--tracking-normal);
+  
+  /* Body */
+  --body-font-size: var(--text-base);
+  --body-font-weight: var(--font-normal);
+  --body-line-height: var(--leading-normal);
+  --body-letter-spacing: var(--tracking-normal);
+  
+  /* Body Small */
+  --body-small-font-size: var(--text-sm);
+  --body-small-font-weight: var(--font-normal);
+  --body-small-line-height: var(--leading-normal);
+  --body-small-letter-spacing: var(--tracking-normal);
+  
+  /* Caption */
+  --caption-font-size: var(--text-xs);
+  --caption-font-weight: var(--font-medium);
+  --caption-line-height: var(--leading-normal);
+  --caption-letter-spacing: var(--tracking-wide);
+  
+  /* ==========================================================================
+     BUTTON TYPOGRAPHY
+     ========================================================================== */
+  
+  /* Button Large */
+  --btn-large-font-size: var(--text-lg);
+  --btn-large-font-weight: var(--font-semibold);
+  --btn-large-line-height: var(--leading-tight);
+  --btn-large-letter-spacing: var(--tracking-wide);
+  
+  /* Button */
+  --btn-font-size: var(--text-base);
+  --btn-font-weight: var(--font-semibold);
+  --btn-line-height: var(--leading-tight);
+  --btn-letter-spacing: var(--tracking-wide);
+  
+  /* Button Small */
+  --btn-small-font-size: var(--text-sm);
+  --btn-small-font-weight: var(--font-semibold);
+  --btn-small-line-height: var(--leading-tight);
+  --btn-small-letter-spacing: var(--tracking-wide);
+  
+  /* ==========================================================================
+     FORM TYPOGRAPHY
+     ========================================================================== */
+  
+  /* Input */
+  --input-font-size: var(--text-base);
+  --input-font-weight: var(--font-normal);
+  --input-line-height: var(--leading-normal);
+  --input-letter-spacing: var(--tracking-normal);
+  
+  /* Label */
+  --label-font-size: var(--text-sm);
+  --label-font-weight: var(--font-medium);
+  --label-line-height: var(--leading-tight);
+  --label-letter-spacing: var(--tracking-wide);
+  
+  /* Helper Text */
+  --helper-font-size: var(--text-xs);
+  --helper-font-weight: var(--font-normal);
+  --helper-line-height: var(--leading-normal);
+  --helper-letter-spacing: var(--tracking-normal);
+  
+  /* ==========================================================================
+     RESPONSIVE TYPOGRAPHY
+     ========================================================================== */
+  
+  /* Mobile adjustments */
+  --mobile-heading-1-font-size: var(--text-4xl);
+  --mobile-heading-2-font-size: var(--text-3xl);
+  --mobile-heading-3-font-size: var(--text-2xl);
+  --mobile-body-large-font-size: var(--text-base);
+  
+  /* Tablet adjustments */
+  --tablet-heading-1-font-size: var(--text-4xl);
+  --tablet-heading-2-font-size: var(--text-3xl);
+  --tablet-heading-3-font-size: var(--text-2xl);
+  
+  /* Desktop adjustments */
+  --desktop-heading-1-font-size: var(--text-5xl);
+  --desktop-heading-2-font-size: var(--text-4xl);
+  --desktop-heading-3-font-size: var(--text-3xl);
+  
+  /* ==========================================================================
+     LEGACY COMPATIBILITY
+     ========================================================================== */
+  
+  /* Maintain backward compatibility during migration */
+  --font-size-xs: var(--text-xs);
+  --font-size-sm: var(--text-sm);
+  --font-size-base: var(--text-base);
+  --font-size-lg: var(--text-lg);
+  --font-size-xl: var(--text-xl);
+  --font-size-2xl: var(--text-2xl);
+  --font-size-3xl: var(--text-3xl);
+  --font-size-4xl: var(--text-4xl);
+  
+  --font-weight-normal: var(--font-normal);
+  --font-weight-medium: var(--font-medium);
+  --font-weight-semibold: var(--font-semibold);
+  --font-weight-bold: var(--font-bold);
+  
+  --line-height-tight: var(--leading-tight);
+  --line-height-normal: var(--leading-normal);
+  --line-height-relaxed: var(--leading-relaxed);
+} 

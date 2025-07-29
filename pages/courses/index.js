@@ -13,14 +13,14 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
   const renderCourseContent = (course) => {
     return (
       <>
-        <div className="card-description">
+        <div className="card__description">
           {course.description
             ? course.description.length > 120
               ? `${course.description.substring(0, 120)}...`
               : course.description
             : "Comprehensive course designed to provide cutting-edge knowledge and practical skills."}
         </div>
-        <div className="card-details">
+        <div className="card__details">
           <div className="detail-item">
             <strong>Duration:</strong> {course.duration}
           </div>
@@ -29,7 +29,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
           </div>
         </div>
         {course.outcomes && course.outcomes.length > 0 && (
-          <div className="card-outcomes">
+          <div className="card__outcomes">
             <strong>Key Outcomes:</strong>
             <ul>
               {course.outcomes.slice(0, 2).map((outcome, index) => (

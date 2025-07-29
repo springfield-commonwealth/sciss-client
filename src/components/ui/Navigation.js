@@ -104,7 +104,7 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
                 setOpenDropdown={setOpenDropdown}
               />
               <div className="nav-cta">
-                <Link href="/apply" className="btn btn-primary">
+                <Link href="/apply" className="btn btn--primary">
                   Apply Now
                 </Link>
               </div>

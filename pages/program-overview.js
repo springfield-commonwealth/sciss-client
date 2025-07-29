@@ -50,7 +50,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       {/* Mission & Vision */}
       <section className="section">
         <div className="container">
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             <div className="mission-content">
               <SectionHeader
                 title="Our Mission"

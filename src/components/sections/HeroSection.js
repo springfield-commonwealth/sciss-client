@@ -40,14 +40,14 @@ const HeroSection = ({
 
           <div className="hero-actions">
             {ctaText && ctaLink && (
-              <Link href={ctaLink} className="btn btn-primary btn-large">
+              <Link href={ctaLink} className="btn btn--primary btn--lg">
                 {ctaText}
               </Link>
             )}
             {secondaryCtaText && secondaryCtaLink && (
               <Link
                 href={secondaryCtaLink}
-                className="btn btn-secondary btn-large"
+                className="btn btn--secondary btn--lg"
               >
                 {secondaryCtaText}
               </Link>

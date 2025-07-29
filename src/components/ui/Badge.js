@@ -10,25 +10,25 @@ const Badge = ({
   onClick,
   disabled = false,
 }) => {
-  const baseClasses = "badge-base";
+  const baseClasses = "badge";
   const variantClasses = {
-    default: "badge-default",
-    primary: "badge-primary",
-    secondary: "badge-secondary",
-    success: "badge-success",
-    warning: "badge-warning",
-    error: "badge-error",
-    info: "badge-info",
+    default: "badge--default",
+    primary: "badge--primary",
+    secondary: "badge--secondary",
+    success: "badge--success",
+    warning: "badge--warning",
+    error: "badge--error",
+    info: "badge--info",
   };
 
   const sizeClasses = {
-    small: "badge-sm",
-    medium: "badge-md",
-    large: "badge-lg",
+    small: "badge--sm",
+    medium: "badge--md",
+    large: "badge--lg",
   };
 
-  const stateClasses = disabled ? "badge-disabled" : "";
-  const clickClasses = onClick && !disabled ? "badge-clickable" : "";
+  const stateClasses = disabled ? "badge--disabled" : "";
+  const clickClasses = onClick && !disabled ? "badge--clickable" : "";
 
   const badgeClasses =
     `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${stateClasses} ${clickClasses} ${className}`.trim();

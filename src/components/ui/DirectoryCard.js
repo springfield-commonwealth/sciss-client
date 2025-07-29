@@ -1,4 +1,3 @@
-import { Badge, BadgeGroup } from "@/components/ui";
 import Link from "next/link";
 
 /**
@@ -68,12 +67,8 @@ const DirectoryCard = ({
     if (type === "trips") {
       return (
         <>
-          <Badge variant="primary" size="small">
-            {item.category}
-          </Badge>
-          <Badge variant="secondary" size="small">
-            {item.duration}
-          </Badge>
+          <span className="category-badge">{item.category}</span>
+          <span className="duration-badge">{item.duration}</span>
         </>
       );
     }
@@ -84,20 +79,18 @@ const DirectoryCard = ({
           {item.expertise && item.expertise.length > 0 ? (
             <>
               {item.expertise.slice(0, 3).map((skill, index) => (
-                <Badge key={index} variant="info" size="small">
+                <span key={index} className="expertise-badge">
                   {skill}
-                </Badge>
+                </span>
               ))}
               {item.expertise.length > 3 && (
-                <Badge variant="default" size="small">
+                <span className="expertise-more">
                   +{item.expertise.length - 3} more
-                </Badge>
+                </span>
               )}
             </>
           ) : (
-            <Badge variant="secondary" size="small">
-              Expert
-            </Badge>
+            <span className="expertise-badge">Expert</span>
           )}
         </>
       );
@@ -106,12 +99,8 @@ const DirectoryCard = ({
     if (type === "courses") {
       return (
         <>
-          <Badge variant="primary" size="small">
-            {item.category}
-          </Badge>
-          <Badge variant="secondary" size="small">
-            {item.level}
-          </Badge>
+          <span className="category-badge">{item.category}</span>
+          <span className="level-badge">{item.level}</span>
         </>
       );
     }
@@ -119,12 +108,8 @@ const DirectoryCard = ({
     if (type === "activities") {
       return (
         <>
-          <Badge variant="primary" size="small">
-            {item.category}
-          </Badge>
-          <Badge variant="secondary" size="small">
-            {item.level}
-          </Badge>
+          <span className="category-badge">{item.category}</span>
+          <span className="level-badge">{item.level}</span>
         </>
       );
     }
@@ -137,21 +122,19 @@ const DirectoryCard = ({
     if (type === "trips") {
       return (
         <>
-          <div className="card-highlights">
-            <BadgeGroup>
-              {item.highlights?.slice(0, 3).map((highlight, index) => (
-                <Badge key={index} variant="info" size="small">
-                  {highlight}
-                </Badge>
-              ))}
-              {item.highlights?.length > 3 && (
-                <Badge variant="default" size="small">
-                  +{item.highlights.length - 3} more
-                </Badge>
-              )}
-            </BadgeGroup>
+          <div className="card__highlights">
+            {item.highlights?.slice(0, 3).map((highlight, index) => (
+              <span key={index} className="highlight-tag">
+                {highlight}
+              </span>
+            ))}
+            {item.highlights?.length > 3 && (
+              <span className="highlight-more">
+                +{item.highlights.length - 3} more
+              </span>
+            )}
           </div>
-          <div className="card-info">
+          <div className="card__info">
             <div className="info-item">
               <strong>Duration:</strong> {item.duration}
             </div>
@@ -163,31 +146,27 @@ const DirectoryCard = ({
     if (type === "staff") {
       return (
         <>
-          <div className="card-expertise">
-            <BadgeGroup>
-              {item.expertise && item.expertise.length > 0 ? (
-                <>
-                  {item.expertise.slice(0, 3).map((skill, index) => (
-                    <Badge key={index} variant="info" size="small">
-                      {skill}
-                    </Badge>
-                  ))}
-                  {item.expertise.length > 3 && (
-                    <Badge variant="default" size="small">
-                      +{item.expertise.length - 3} more
-                    </Badge>
-                  )}
-                </>
-              ) : (
-                <Badge variant="secondary" size="small">
-                  Expert
-                </Badge>
-              )}
-            </BadgeGroup>
+          <div className="card__expertise">
+            {item.expertise && item.expertise.length > 0 ? (
+              <>
+                {item.expertise.slice(0, 3).map((skill, index) => (
+                  <span key={index} className="expertise-badge">
+                    {skill}
+                  </span>
+                ))}
+                {item.expertise.length > 3 && (
+                  <span className="expertise-more">
+                    +{item.expertise.length - 3} more
+                  </span>
+                )}
+              </>
+            ) : (
+              <span className="expertise-badge">Expert</span>
+            )}
           </div>
-          <div className="card-bio">{getItemDescription(item)}</div>
+          <div className="card__bio">{getItemDescription(item)}</div>
           {item.courses && item.courses.length > 0 && (
-            <div className="card-courses">
+            <div className="card__courses">
               <p className="teaches-label">
                 Teaches: {item.courses.length} course
                 {item.courses.length !== 1 ? "s" : ""}
@@ -201,8 +180,8 @@ const DirectoryCard = ({
     if (type === "courses") {
       return (
         <>
-          <div className="card-description">{getItemDescription(item)}</div>
-          <div className="card-details">
+          <div className="card__description">{getItemDescription(item)}</div>
+          <div className="card__details">
             <div className="detail-item">
               <strong>Duration:</strong> {item.duration}
             </div>
@@ -211,7 +190,7 @@ const DirectoryCard = ({
             </div>
           </div>
           {item.outcomes && item.outcomes.length > 0 && (
-            <div className="card-outcomes">
+            <div className="card__outcomes">
               <strong>Key Outcomes:</strong>
               <ul>
                 {item.outcomes.slice(0, 2).map((outcome, index) => (
@@ -227,21 +206,19 @@ const DirectoryCard = ({
     if (type === "activities") {
       return (
         <>
-          <div className="card-features">
-            <BadgeGroup>
-              {item.features?.slice(0, 3).map((feature, index) => (
-                <Badge key={index} variant="info" size="small">
-                  {feature}
-                </Badge>
-              ))}
-              {item.features?.length > 3 && (
-                <Badge variant="default" size="small">
-                  +{item.features.length - 3} more
-                </Badge>
-              )}
-            </BadgeGroup>
+          <div className="card__features">
+            {item.features?.slice(0, 3).map((feature, index) => (
+              <span key={index} className="feature-tag">
+                {feature}
+              </span>
+            ))}
+            {item.features?.length > 3 && (
+              <span className="feature-more">
+                +{item.features.length - 3} more
+              </span>
+            )}
           </div>
-          <div className="card-info">
+          <div className="card__info">
             <div className="info-item">
               <strong>Level:</strong> {item.level}
             </div>
@@ -259,22 +236,28 @@ const DirectoryCard = ({
   return (
     <Link
       href={getItemUrl(data)}
-      className={`card-base card-preview directory-card directory-card--${type} ${className}`}
+      className={`card ${
+        type === "staff"
+          ? "card--staff"
+          : type === "trips"
+          ? "card--trips"
+          : type === "courses"
+          ? "card--courses"
+          : type === "activities"
+          ? "card--activities"
+          : ""
+      } directory-card directory-card--${type} ${className}`}
     >
       {/* Card Image Section */}
-      <div className="card-image">
+      <div className="card__image">
         {getItemImage(data) && (
-          <img
-            src={getItemImage(data)}
-            alt={getItemTitle(data)}
-            className="card-photo"
-          />
+          <img src={getItemImage(data)} alt={getItemTitle(data)} />
         )}
       </div>
 
       {/* Card Content Section */}
-      <div className="card-content">
-        <h3 className="card-title">{getItemTitle(data)}</h3>
+      <div className="card__content">
+        <h3 className="card__title">{getItemTitle(data)}</h3>
 
         {/* Custom or default content renderer */}
         {renderCardContent
@@ -282,8 +265,11 @@ const DirectoryCard = ({
           : defaultContentRenderer(data)}
       </div>
 
-      {/* Card Footer */}
-      <div className="card-footer">
+      {/* Card Footer with Badges */}
+      <div className="card__footer">
+        {/* Custom or default badge renderer */}
+        {/* {renderBadges ? renderBadges(data) : defaultBadgeRenderer(data)} */}
+
         <span className="view-details-text">{cardConfig.viewDetailsText}</span>
       </div>
     </Link>

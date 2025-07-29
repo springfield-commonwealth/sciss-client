@@ -31,7 +31,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
         <div className="staff-not-found">
           <h1>Staff Profile Not Found</h1>
           <p>The staff member you're looking for could not be found.</p>
-          <Link href="/staff" className="btn btn-primary">
+          <Link href="/staff" className="btn btn--primary">
             View All Staff
           </Link>
         </div>
@@ -139,7 +139,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
                     Contact {firstName}
                   </a>
                 )}
-                <Link href="/apply" className="btn btn-primary">
+                <Link href="/apply" className="btn btn--primary">
                   Apply to Learn from {firstName}
                 </Link>
               </div>
@@ -288,10 +288,10 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               experience by joining our programs at SCISS.
             </p>
             <div className="cta-actions">
-              <Link href="/apply" className="btn btn-primary btn-large">
+              <Link href="/apply" className="btn btn--primary btn--lg">
                 Apply Now
               </Link>
-              <Link href="/staff" className="btn btn-secondary">
+              <Link href="/staff" className="btn btn--secondary">
                 View All Faculty
               </Link>
             </div>

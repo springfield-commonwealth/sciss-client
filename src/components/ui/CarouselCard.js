@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
-const CarouselCard = (item, index) => {
+const CarouselCard = ({ title, description, image, link }, index) => {
   const router = useRouter();
 
   const handleClick = () => {
-    if (item.link) {
-      router.push(item.link);
+    if (link) {
+      router.push(link);
     }
   };
 
@@ -20,11 +20,11 @@ const CarouselCard = (item, index) => {
         if (e.key === "Enter" || e.key === " ") handleClick();
       }}
     >
-      <div className="carousel-card-image">
-        <img src={item.image} alt={item.title} loading="lazy" />
+      <div className="carousel-card__image">
+        <img src={image} alt={title} loading="lazy" />
         <div className="carousel-overlay">
-          <h3>{item.title}</h3>
-          {item.description && <p>{item.description}</p>}
+          <h3>{title}</h3>
+          {description && <p>{description}</p>}
         </div>
       </div>
     </div>

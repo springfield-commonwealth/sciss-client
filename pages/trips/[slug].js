@@ -31,7 +31,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         <div className="trip-not-found">
           <h1>Trip Not Found</h1>
           <p>The trip you're looking for could not be found.</p>
-          <Link href="/trips" className="btn btn-primary">
+          <Link href="/trips" className="btn btn--primary">
             View All Trips
           </Link>
         </div>
@@ -144,10 +144,10 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               </div>
 
               <div className="trip-actions">
-                <Link href="/apply" className="btn btn-primary btn-large">
+                <Link href="/apply" className="btn btn--primary btn--lg">
                   Register for This Trip
                 </Link>
-                <Link href="/trips" className="btn btn-secondary">
+                <Link href="/trips" className="btn btn--secondary">
                   View All Trips
                 </Link>
               </div>
@@ -309,10 +309,10 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               educational insights!
             </p>
             <div className="cta-actions">
-              <Link href="/apply" className="btn btn-primary btn-large">
+              <Link href="/apply" className="btn btn--primary btn--lg">
                 Reserve Your Spot
               </Link>
-              <Link href="/day-trips" className="btn btn-secondary">
+              <Link href="/day-trips" className="btn btn--secondary">
                 Explore More Trips
               </Link>
             </div>

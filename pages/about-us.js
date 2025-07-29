@@ -44,7 +44,7 @@ const AboutUs = ({ breadcrumbs = [] }) => {
       {/* Mission & Vision */}
       <section className="section" id="mission">
         <div className="container">
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             <div className="mission-section">
               <SectionHeader
                 title="Our Mission"

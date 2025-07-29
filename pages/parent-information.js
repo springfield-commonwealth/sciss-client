@@ -104,9 +104,9 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
             showDivider
           />
 
-          <div className="grid grid-2">
+          <div className="grid grid--2">
             {ParentInfoSafetyMeasures.map((category, index) => (
-              <div key={index} className="safety-category card-base">
+              <div key={index} className="safety-category card">
                 <h3>{category.category}</h3>
                 <ul className="safety-list">
                   {category.measures.map((measure, idx) => (
@@ -130,7 +130,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="communication-timeline">
             {ParentInfoCommunicationSchedule.map((comm, index) => (
-              <div key={index} className="comm-item card-base">
+              <div key={index} className="comm-item card">
                 <div className="comm-type">
                   <h4>{comm.type}</h4>
                   <span className="comm-timing">{comm.timing}</span>
@@ -168,7 +168,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="health-requirements">
             {ParentInfoHealthRequirements.map((req, index) => (
-              <div key={index} className="health-req-item card-base">
+              <div key={index} className="health-req-item card">
                 <div className="req-header">
                   <h4>{req.requirement}</h4>
                   <span className="req-deadline">Due: {req.deadline}</span>
@@ -192,7 +192,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
           <div className="packing-categories">
             {Object.entries(ParentInfoPackingList).map(
               ([category, items], index) => (
-                <div key={index} className="packing-category card-base">
+                <div key={index} className="packing-category card">
                   <h3>
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </h3>
@@ -231,7 +231,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="services-grid">
             {ParentInfoCampusServices.map((service, index) => (
-              <div key={index} className="service-card card-base">
+              <div key={index} className="service-card card">
                 <h3>{service.service}</h3>
                 <p>{service.description}</p>
                 <div className="service-cost">{service.cost}</div>
@@ -252,7 +252,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="travel-tips">
             {ParentInfoTravelTips.map((tip, index) => (
-              <div key={index} className="travel-tip-card card-base">
+              <div key={index} className="travel-tip-card card">
                 <div className="tip-header">
                   <h4>{tip.tip}</h4>
                 </div>
@@ -278,7 +278,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="protocols-grid">
             {ParentInfoEmergencyProtocols.map((protocol, index) => (
-              <div key={index} className="protocol-card card-base">
+              <div key={index} className="protocol-card card">
                 <h3>{protocol.scenario}</h3>
                 <p>{protocol.description}</p>
                 <div className="protocol-steps">
@@ -306,7 +306,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
 
           <div className="testimonials-grid">
             {ParentInfoParentTestimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card card-base">
+              <div key={index} className="testimonial-card card">
                 <div className="quote-icon">💬</div>
                 <blockquote>"{testimonial.quote}"</blockquote>
                 <div className="testimonial-author">

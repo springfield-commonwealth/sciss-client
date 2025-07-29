@@ -50,7 +50,7 @@ const StatsGrid = ({
   hoverable = false,
   onStatClick,
 }) => {
-  const gridClasses = `stats-grid stats-grid-${columns} ${className}`.trim();
+  const gridClasses = `grid grid--${columns} ${className}`.trim();
 
   return (
     <div className={gridClasses}>

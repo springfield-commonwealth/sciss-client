@@ -15,6 +15,7 @@ const DirectoryPage = ({
   type, // "trips" | "staff" | "courses" | "activities"
   title,
   description,
+  gridColumns = 2,
   items = [],
   categories = [],
   stats = {},
@@ -179,7 +180,7 @@ const DirectoryPage = ({
         <section className={`${type}-directory-grid directory-grid`}>
           <div className="container">
             {filteredItems.length > 0 ? (
-              <div className="grid grid-2">
+              <div className={`grid grid-${gridColumns}`}>
                 {filteredItems.map((item, index) => (
                   <DirectoryCard
                     key={item.id || item.slug || index}
@@ -197,14 +198,14 @@ const DirectoryPage = ({
           </div>
         </section>
 
-        {/* Categories Overview
+        {/* Categories Overview */}
         {Object.keys(groupedItems).length > 0 && (
           <DirectoryCategories
             groupedItems={groupedItems}
             type={type}
             onCategorySelect={setSelectedCategory}
           />
-        )} */}
+        )}
 
         {/* Call to Action */}
         {ctaConfig.showCTA && (

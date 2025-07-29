@@ -46,7 +46,7 @@ const LifeActivities = ({
             <p>Discover our most engaging and sought-after activities</p>
           </div>
 
-          <div className="activities-preview-grid">
+          <div className="grid grid-3">
             {popularActivities.map((activity) => (
               <div
                 key={activity.id}
@@ -56,7 +56,6 @@ const LifeActivities = ({
                   <img src={activity.image} alt={activity.title} />
                   <div className="activity-badges">
                     <span className="category-badge">{activity.category}</span>
-                    <span className="level-badge">{activity.level}</span>
                   </div>
                 </div>
                 <div className="activity-preview-content">

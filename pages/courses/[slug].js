@@ -123,14 +123,6 @@ const CoursePage = ({ course, breadcrumbs }) => {
                   <span className="meta-label">Session:</span>
                   <span className="meta-value">{session}</span>
                 </div>
-                {/* <div className="course-page-meta-item">
-                  <span className="meta-label">Capacity:</span>
-                  <span className="meta-value">{capacity} students</span>
-                </div>
-                <div className="course-page-meta-item">
-                  <span className="meta-label">Age Range:</span>
-                  <span className="meta-value">{ageRange}</span>
-                </div> */}
               </div>
 
               <div className="course-page-actions">

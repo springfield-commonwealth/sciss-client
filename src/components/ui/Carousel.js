@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
-import CarouselCard from './CarouselCard';
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
+import { useRef, useState } from "react";
+import CarouselCard from "./CarouselCard";
 
-const Carousel = ({ items, className = '' }) => {
+const Carousel = ({ items, className = "" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
@@ -11,11 +11,11 @@ const Carousel = ({ items, className = '' }) => {
     if (!container) return;
 
     const cardWidth = 520; // Card width + gap
-    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-    
+    const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+
     container.scrollBy({
       left: scrollAmount,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -26,7 +26,7 @@ const Carousel = ({ items, className = '' }) => {
     const cardWidth = 520;
     container.scrollTo({
       left: index * cardWidth,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     setCurrentIndex(index);
   };
@@ -34,35 +34,28 @@ const Carousel = ({ items, className = '' }) => {
   return (
     <div className={`carousel-container ${className}`}>
       {/* Navigation Arrows */}
-      <button 
+      <button
         className="carousel-arrow carousel-arrow-left"
-        onClick={() => scroll('left')}
+        onClick={() => scroll("left")}
         aria-label="Previous items"
       >
         <ChevronLeftIcon />
       </button>
-      
-      <button 
+
+      <button
         className="carousel-arrow carousel-arrow-right"
-        onClick={() => scroll('right')}
+        onClick={() => scroll("right")}
         aria-label="Next items"
       >
         <ChevronRightIcon />
       </button>
 
       {/* Carousel Track */}
-      <div 
-        ref={carouselRef}
-        className="carousel-track"
-      >
+      <div ref={carouselRef} className="carousel-track">
         {items.map((item, index) => (
-          <CarouselCard 
-            key={index}
-            {...item}
-            />
+          <CarouselCard key={index} {...item} />
         ))}
       </div>
-      
     </div>
   );
 };

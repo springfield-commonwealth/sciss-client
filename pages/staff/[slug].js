@@ -101,10 +101,13 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               image: seo.ogImage,
               url: `https://sciss.org/staff/${staff.slug}`,
               knowsAbout: expertise,
-              alumniOf: education.map((edu) => ({
-                "@type": "EducationalOrganization",
-                name: edu.institution,
-              })),
+              ...(education &&
+                education.length > 0 && {
+                  alumniOf: education.map((edu) => ({
+                    "@type": "EducationalOrganization",
+                    name: edu.institution,
+                  })),
+                }),
               ...(contactEmail && { email: contactEmail }),
             }),
           }}
@@ -145,26 +148,30 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
         </section>
 
         {/* Professional Biography */}
-        <section className="staff-bio">
-          <div className="staff-content">
-            <h2>Professional Background</h2>
-            <p className="bio-text">{bio}</p>
-          </div>
-        </section>
+        {bio && (
+          <section className="staff-bio">
+            <div className="staff-content">
+              <h2>Professional Background</h2>
+              <p className="bio-text">{bio}</p>
+            </div>
+          </section>
+        )}
 
         {/* Expertise */}
-        <section className="staff-expertise">
-          <div className="staff-content">
-            <h2>Areas of Expertise</h2>
-            <div className="expertise-list">
-              {expertise.map((skill, index) => (
-                <span key={index} className="expertise-tag">
-                  {skill}
-                </span>
-              ))}
+        {expertise && expertise.length > 0 && (
+          <section className="staff-expertise">
+            <div className="staff-content">
+              <h2>Areas of Expertise</h2>
+              <div className="expertise-list">
+                {expertise.map((skill, index) => (
+                  <span key={index} className="expertise-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Education */}
         {education && education.length > 0 && (

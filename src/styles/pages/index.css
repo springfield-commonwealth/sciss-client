@@ -108,7 +108,7 @@
 .testimonial-card blockquote {
   font-style: italic;
   margin-bottom: 1.5rem;
-  color: var(--text-light);
+  color: var(--text-dark);
   line-height: 1.6;
 }
 

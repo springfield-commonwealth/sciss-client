@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import FacultySection from "@/components/sections/FacultySection";
 import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
@@ -7,28 +6,6 @@ import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
-const LeadershipTeam = [
-  {
-    name: "Si Qin",
-    role: "Camp President",
-    photo: "/images/faculties/si.JPG",
-    background: ["CEO of SCISS"],
-  },
-  {
-    name: "Beth Moriarty",
-    role: "Camp Director",
-    photo: "/images/faculties/beth.JPG",
-    background: ["President of SCA"],
-    expertise: "President of SCA",
-  },
-  {
-    name: "Erik",
-    role: "Camp Director",
-    photo: "/images/instructors/erik.jpg",
-    background: [],
-    expertise: "",
-  },
-];
 
 const AboutUs = ({ breadcrumbs = [] }) => {
   // Prepare stats data for StatsGrid component
@@ -59,7 +36,7 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         description="Discover the vision, values, and passionate educators who make SCISS a transformative experience for students from around the world."
         backgroundImage={AboutUsHero}
         ctaText="Meet Our Team"
-        ctaLink="#team"
+        ctaLink="/staff"
         secondaryCtaText="Our Programs"
         secondaryCtaLink="/program-overview"
       />
@@ -143,15 +120,6 @@ const AboutUs = ({ breadcrumbs = [] }) => {
             }}
           />
         </div>
-      </section>
-
-      <section className="section bg-light" id="team">
-        <FacultySection
-          title="Leadership Team"
-          desc="Meet the visionary educators who lead SCISS with passion and dedication"
-          faculty={LeadershipTeam}
-          gridsize="3"
-        />
       </section>
 
       <FooterCTA linkTitle="Academic Programs" link="/academics" />

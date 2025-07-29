@@ -60,6 +60,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
         description="Discover our exciting day trips and educational excursions designed to expand your horizons. From prestigious university visits to cultural adventures, explore the best of New England with SCISS."
         items={trips}
         categories={categories}
+        gridColumns={3}
         stats={stats}
         breadcrumbs={breadcrumbs}
         renderCardContent={renderTripContent}

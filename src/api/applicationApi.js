@@ -115,7 +115,7 @@ export const submitApplication = async (formData) => {
  * Validate email address
  */
 export const validateEmail = async (email) => {
-  console.log("api url: ", API_BASE_URL)
+  console.log("api url: ", API_BASE_URL);
   try {
     const response = await fetch(ENDPOINTS.VALIDATE_EMAIL, {
       method: "POST",

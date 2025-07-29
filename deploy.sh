@@ -17,11 +17,12 @@ echo "Local dist folder exists: $(ls -la $LOCAL_DIST | wc -l) files"
 echo "Testing SSH connection..."
 ssh -i "$SSH_KEY_PATH" -p $SSH_PORT "$REMOTE_USER@$REMOTE_HOST" "echo 'SSH connection successful'"
 
-# Sync everything except videos
+# Sync everything except videos and images
 echo "Starting rsync..."
 rsync -avz --progress --itemize-changes -e "ssh -i $SSH_KEY_PATH -p $SSH_PORT" \
   --exclude='.DS_Store' \
   --exclude='videos/' \
+  --exclude='images/' \
   "$LOCAL_DIST"/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
 
 # Ask user if they want to sync videos
@@ -31,6 +32,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Syncing videos..."
     rsync -avz --progress -e "ssh -i $SSH_KEY_PATH -p $SSH_PORT" \
       "$LOCAL_DIST/videos/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/videos/"
+fi
+
+# Ask user if they want to sync images
+read -p "Do you want to sync images folder? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Syncing images..."
+    rsync -avz --progress -e "ssh -i $SSH_KEY_PATH -p $SSH_PORT" \
+      "$LOCAL_DIST/images/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/images/"
 fi
 
 echo "Deployment complete!"

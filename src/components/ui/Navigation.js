@@ -25,8 +25,8 @@ const navLinks = [
     href: "/academics", // Overview page
     children: [
       { href: "/academics", label: "Overview" },
+      { href: "/academics#schedule", label: "Schedule" },
       { href: "/courses", label: "Browse All Courses" },
-      { href: "/courses?category=core", label: "Core Courses" },
       { href: "/staff", label: "Our Instructors" },
     ],
   },
@@ -64,7 +64,7 @@ const navLinks = [
     children: [
       { href: "/about-us#mission", label: "Missions & Vision" },
       { href: "/about-us#values", label: "Our Values" },
-      { href: "/about-us#team", label: "Our Team" },
+      { href: "/staff", label: "Our Team" },
     ],
   },
 ];

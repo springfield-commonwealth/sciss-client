@@ -89,6 +89,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
         title="Faculty & Staff Directory"
         description="Meet our exceptional team of educators, industry experts, and professionals who bring real-world expertise to the SCISS learning experience."
         items={staff}
+        gridColumns={3}
         categories={departments}
         stats={stats}
         breadcrumbs={breadcrumbs}

@@ -1,7 +1,13 @@
 import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import HeroSection from "@/components/sections/HeroSection";
-import { Badge, BadgeGroup, FeatureGrid, FooterCTA, SectionHeader } from "@/components/ui";
+import {
+  Badge,
+  BadgeGroup,
+  FeatureGrid,
+  FooterCTA,
+  SectionHeader,
+} from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
 import GalleryCard from "@/components/ui/GalleryCard";
 import { AcademicsCarouselItems } from "@/constants/academicsContent";
@@ -67,6 +73,20 @@ const Academics = ({
         secondaryCtaLink="/tuitions-and-fees"
       />
 
+      {/* Core Courses Overview */}
+      <section className="section bg-light" id="core-courses-carousel">
+        <div className="container">
+          <SectionHeader
+            title="Core Academic Courses"
+            subtitle="Choose Your Path to Excellence"
+            description="Six specialized tracks designed to match your interests and career aspirations"
+            showDivider
+          />
+
+          <Carousel items={AcademicsCarouselItems} />
+        </div>
+      </section>
+
       {/* Academic Support */}
       <section className="section bg-light">
         <div className="container">
@@ -84,40 +104,6 @@ const Academics = ({
               console.log("Clicked support feature:", feature, index);
             }}
           />
-        </div>
-      </section>
-
-      {/* Academic Programs Carousel */}
-      <section className="section">
-        <div className="container">
-          <SectionHeader
-            title="Master Tomorrow's Skills Today"
-            description="Discover the academic tracks that will shape your future"
-            showDivider
-          />
-
-          <div className="grid grid-1">
-            <GalleryCard
-              key="1"
-              image="/images/featured/core.png"
-              title="Core Courses"
-              link="#core-courses-carousel"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Core Courses Overview */}
-      <section className="section bg-light" id="core-courses-carousel">
-        <div className="container">
-          <SectionHeader
-            title="Core Academic Courses"
-            subtitle="Choose Your Path to Excellence"
-            description="Six specialized tracks designed to match your interests and career aspirations"
-            showDivider
-          />
-
-          <Carousel items={AcademicsCarouselItems} />
         </div>
       </section>
 
@@ -230,7 +216,12 @@ const Academics = ({
       </section>
 
       <CampSchedule />
-      <FooterCTA link="/courses" linkTitle="All Courses" />
+      <FooterCTA
+        link="/courses"
+        linkTitle="All Courses"
+        ctaTitle="Master Tomorrow's Skills Today"
+        ctaDescription="Discover the academic tracks that will shape your future"
+      />
     </Layout>
   );
 };

@@ -1,12 +1,12 @@
 .faculty-section {
-  padding: 80px 0;
-  background: var(--background-secondary);
+  padding: var(--space-20) 0;
+  background: var(--color-bg-secondary);
 }
 
 
 @media (max-width: 768px) {
   .faculty-section {
-    padding: 50px 0;
+    padding: var(--space-12) 0;
   }
 
 }

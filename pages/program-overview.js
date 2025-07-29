@@ -55,7 +55,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
               <SectionHeader
                 title="Our Mission"
                 description="At SCISS, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success."
-                align="left"
+                align="center"
                 showDivider
               />
 
@@ -87,7 +87,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
             <div className="vision-content">
               <SectionHeader
                 title="What Sets Us Apart"
-                align="left"
+                align="center"
                 showDivider
               />
 

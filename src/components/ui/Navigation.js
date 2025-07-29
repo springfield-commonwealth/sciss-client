@@ -165,8 +165,8 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
         <div className="mobile-menu-overlay">
           <div className="mobile-menu">
             <div className="mobile-menu-header">
-              <Link href="/" className="logo">
-                SCISS
+              <Link href="/" className="mobile-logo">
+                <img src={LogoBlack} alt="SC International Summer School" />
               </Link>
               <button
                 className="mobile-menu-close"

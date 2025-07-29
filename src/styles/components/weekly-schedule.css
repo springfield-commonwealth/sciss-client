@@ -1,4 +1,7 @@
 /* Weekly Schedule Component Styles */
+.weekly-schedule-section {
+  margin: var(--space-8) 0;
+}
 
 .weekly-schedule {
   background: white;

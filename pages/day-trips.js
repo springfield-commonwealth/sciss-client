@@ -118,7 +118,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
                     <h3>{trip.university}</h3>
                     <div className="university-meta">
                       <span className="location">📍 {trip.location}</span>
-                      <span className="duration">🕐 {trip.duration}</span>
+                      <span className="t-duration">🕐 {trip.duration}</span>
                     </div>
                   </div>
                 </div>

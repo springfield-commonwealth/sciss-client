@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+.gallery-card h3, 
+.gallery-card p {
+  padding: 0.5rem 1rem;
+}
+
 .gallery-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-heavy);

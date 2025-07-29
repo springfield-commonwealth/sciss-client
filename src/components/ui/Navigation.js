@@ -36,12 +36,6 @@ const navLinks = [
     children: [
       { href: "/life-activities", label: "Overview" },
       { href: "/activities", label: "Browse All Activities" },
-      { href: "/activities?category=Sports", label: "Sports Programs" },
-      { href: "/activities?category=Fitness", label: "Fitness Programs" },
-      {
-        href: "/activities?category=Arts & Recreation",
-        label: "Arts & Recreation",
-      },
     ],
   },
   {

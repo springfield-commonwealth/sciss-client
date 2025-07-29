@@ -387,7 +387,6 @@
   background: var(--background-blue);
   padding: 2rem;
   text-align: center;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 .directory-card--staff .card-photo {
@@ -406,7 +405,7 @@
 
 /* Courses Card Specific Styles */
 .directory-card--courses .card-image {
-  height: 200px;
+  height: 350px;
 }
 
 /* ==========================================================================

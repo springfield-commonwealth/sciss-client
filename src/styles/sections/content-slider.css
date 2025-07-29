@@ -1,16 +1,14 @@
 .content-slider {
     display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-direction: column;
     gap: 2rem;
     align-items: flex-start;
-    align-content: center;
     justify-content: center;
 }
 
 .content-slider__content {
   margin: 0 auto;
-  max-width: 25vw;
+  max-width: 50vw;
 }
 
 .content-slider__heading {
@@ -53,6 +51,7 @@
 .content-slider__slider {
   flex: 2 1 400px;
   min-width: 320px;
+  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
@@ -64,7 +63,7 @@
     max-width: 100vw;
   }
   .content-slider__slider {
-    min-width: 0;
+    max-width: 90vw;
     flex: none;
   }
 } 

@@ -74,17 +74,9 @@ const ActivitiesDirectory = ({
         renderBadges={renderActivityBadges}
         getItemCategories={getActivityCategories}
         ctaConfig={{
-          showCTA: true,
-          title: "Ready to Get Active?",
-          description:
-            "Join our exciting life activities and develop essential skills while having fun and building lasting friendships.",
-          primaryAction: {
-            text: "Join Activities",
-            href: "/apply",
-          },
-          secondaryAction: {
-            text: "Learn About SCISS",
-            href: "/about-us",
+          footerCTA: {
+            title: "Academic Programs",
+            link: "/courses",
           },
         }}
         seoConfig={{

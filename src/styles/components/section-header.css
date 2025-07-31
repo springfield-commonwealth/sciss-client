@@ -70,7 +70,6 @@
 }
 
 @media (max-width: 768px) {
-
   .section__title {
     font-size: var(--text-2xl);
   }

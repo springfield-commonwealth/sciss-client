@@ -74,17 +74,9 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
         renderBadges={renderCourseBadges}
         getItemCategories={getCourseCategories}
         ctaConfig={{
-          showCTA: true,
-          title: "Ready to Start Your Journey?",
-          description:
-            "Join our comprehensive academic programs and gain the knowledge, skills, and connections needed for your future success.",
-          primaryAction: {
-            text: "Apply Now",
-            href: "/apply",
-          },
-          secondaryAction: {
-            text: "Learn About SCISS",
-            href: "/about-us",
+          footerCTA: {
+            title: "Life Activities",
+            link: "/activities",
           },
         }}
         seoConfig={{

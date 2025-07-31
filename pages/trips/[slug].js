@@ -312,7 +312,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <Link href="/apply" className="btn btn--primary btn--lg">
                 Reserve Your Spot
               </Link>
-              <Link href="/day-trips" className="btn btn--header">
+              <Link href="/day-trips" className="btn btn--secondary">
                 View All Trips
               </Link>
             </div>

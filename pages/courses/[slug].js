@@ -194,7 +194,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
                 journey toward academic excellence.
               </p>
               <button
-                className="btn btn--primary btn--lg"
+                className="btn btn--header btn--lg"
                 onClick={() => router.push("/apply")}
               >
                 Apply Now

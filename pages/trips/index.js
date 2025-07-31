@@ -67,17 +67,9 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
         renderBadges={renderTripBadges}
         getItemCategories={getTripCategories}
         ctaConfig={{
-          showCTA: true,
-          title: "Ready to Explore?",
-          description:
-            "Join our exciting trips and excursions designed to expand your horizons, build cultural awareness, and create unforgettable memories at SCISS.",
-          primaryAction: {
-            text: "Apply Now",
-            href: "/apply",
-          },
-          secondaryAction: {
-            text: "Learn More",
-            href: "/day-trips",
+          footerCTA: {
+            title: "Life Activities",
+            link: "/activities",
           },
         }}
         seoConfig={{

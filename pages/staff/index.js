@@ -97,17 +97,9 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
         renderBadges={renderStaffBadges}
         getItemCategories={getStaffDepartments}
         ctaConfig={{
-          showCTA: true,
-          title: "Join Our Team",
-          description:
-            "Interested in joining our exceptional faculty? We're always looking for passionate educators and industry experts.",
-          primaryAction: {
-            text: "Apply to Join Faculty",
-            href: "mailto:info@springfield.org",
-          },
-          secondaryAction: {
-            text: "Learn About SCISS",
-            href: "/about-us",
+          footerCTA: {
+            title: "Academic Programs",
+            link: "/courses",
           },
         }}
         seoConfig={{

@@ -291,7 +291,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               <Link href="/apply" className="btn btn--primary btn--lg">
                 Apply Now
               </Link>
-              <Link href="/staff" className="btn btn--header">
+              <Link href="/staff" className="btn btn--secondary">
                 View All Faculty
               </Link>
             </div>

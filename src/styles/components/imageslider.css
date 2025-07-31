@@ -20,12 +20,12 @@
 
 /* Swiper pagination dots */
 .swiper-pagination-bullet {
-  background: #bbb;
+  background: var(--color-gray-400);
   opacity: 1;
   margin: 0 4px;
 }
 .swiper-pagination-bullet-active {
-  background: #222;
+  background: var(--color-gray-900);
 }
 
 /* Image Slider Component Styles */
@@ -42,7 +42,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ccc;
+  background: var(--color-gray-300);
   cursor: pointer;
   transition: background 0.3s ease;
   margin: 0 4px;

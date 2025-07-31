@@ -1,41 +1,41 @@
 .footer {
-    background: var(--background-dark);
+    background: var(--color-bg-dark);
     color: var(--white);
-    padding: 3rem 0 2rem;
+    padding: var(--footer-padding-y, 3rem) 0 var(--footer-padding-bottom, 2rem);
 }
 
 .footerContainer {
-    max-width: 1200px;
+    max-width: var(--container-max-width, 1200px);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--footer-container-padding, 20px);
 }
 
 .footerSection h4 {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
-    color: var(--accent-yellow);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+    color: var(--color-yellow-500);
 }
 
 .footerSection strong {
-    color: var(--accent-yellow);
-    font-size: 14px;
+    color: var(--color-yellow-500);
+    font-size: var(--text-sm);
 }
 
 .footerSection p,
 .footerSection a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    line-height: 1.8;
+    line-height: var(--leading-relaxed);
 }
 
 .footerSection a:hover {
-    color: var(--accent-yellow);
+    color: var(--color-yellow-500);
 }
 
 .footerBottom {
     text-align: center;
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: var(--space-8);
+    margin-top: var(--space-8);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.6);
 }
@@ -43,25 +43,25 @@
 /* Social Links */
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-6);
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
+  color: var(--color-text-light);
   text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
+  transition: all var(--transition-normal);
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
 }
 
 .social-link:hover {
-  color: var(--primary-blue);
-  transform: translateY(-1px);
+  color: var(--color-primary-500);
+  transform: translateY(var(--hover-lift-distance-small, -1px));
 }
 
 .social-link__icon {
@@ -71,10 +71,10 @@
 }
 
 .social-link__icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--social-icon-size, 1.5rem);
+  height: var(--social-icon-size, 1.5rem);
   fill: currentColor;
-  transition: fill 0.3s ease;
+  transition: fill var(--transition-normal);
 }
 
 .social-link__label {
@@ -84,11 +84,11 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .social-links {
-    gap: 1rem;
+    gap: var(--space-4);
   }
   
   .social-link__icon svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: var(--social-icon-size-mobile, 1.25rem);
+    height: var(--social-icon-size-mobile, 1.25rem);
   }
 }

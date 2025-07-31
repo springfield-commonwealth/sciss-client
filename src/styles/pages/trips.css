@@ -429,13 +429,13 @@
    ========================================================================== */
 
 .trip-page {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
   min-height: 100vh;
 }
 
 /* Trip Hero Section */
 .trip-hero {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   color: white;
   padding: 4rem 0 6rem;
   position: relative;
@@ -501,12 +501,12 @@
 }
 
 .duration-badge {
-  background: linear-gradient(45deg, #10b981, #059669);
+  background: linear-gradient(45deg, var(--color-success-500), var(--color-success-600));
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .difficulty-badge {
-  background: linear-gradient(45deg, #f59e0b, #d97706);
+  background: linear-gradient(45deg, var(--color-warning-500), var(--color-warning-600));
   box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
@@ -515,7 +515,7 @@
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  background: linear-gradient(45deg, #ffffff, #f0f9ff);
+  background: linear-gradient(45deg, var(--color-white), var(--color-primary-50));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -547,7 +547,7 @@
 }
 
 .quick-info-item strong {
-  color: #fbbf24;
+  color: var(--color-warning-400);
   font-weight: 600;
 }
 
@@ -612,7 +612,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: var(--color-gray-800);
   position: relative;
 }
 
@@ -624,7 +624,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-700));
   border-radius: 2px;
 }
 
@@ -651,13 +651,13 @@
 .highlight-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: #0ea5e9;
+  border-color: var(--color-primary-500);
 }
 
 .highlight-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(45deg, #10b981, #059669);
+  background: linear-gradient(45deg, var(--color-success-500), var(--color-success-600));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -669,13 +669,13 @@
 .highlight-item p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #475569;
+  color: var(--color-gray-600);
   margin: 0;
 }
 
 /* Itinerary Timeline */
 .trip-itinerary {
-  background: #f8fafc;
+  background: var(--color-gray-50);
 }
 
 .itinerary-timeline {
@@ -693,7 +693,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #0ea5e9, #0284c7);
+  background: linear-gradient(to bottom, var(--color-primary-500), var(--color-primary-700));
   border-radius: 2px;
 }
 
@@ -711,7 +711,7 @@
 }
 
 .time-badge {
-  background: linear-gradient(45deg, #0ea5e9, #0284c7);
+  background: linear-gradient(45deg, var(--color-primary-500), var(--color-primary-700));
   color: white;
   padding: 0.75rem 1rem;
   border-radius: 20px;
@@ -730,10 +730,10 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: linear-gradient(45deg, #0ea5e9, #0284c7);
+  background: linear-gradient(45deg, var(--color-primary-500), var(--color-primary-700));
   border-radius: 50%;
   border: 4px solid white;
-  box-shadow: 0 0 0 4px #f8fafc;
+  box-shadow: 0 0 0 4px var(--color-gray-50);
 }
 
 .itinerary-details {
@@ -752,12 +752,12 @@
 .itinerary-details h4 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--color-gray-800);
   margin-bottom: 0.5rem;
 }
 
 .itinerary-details p {
-  color: #64748b;
+  color: var(--color-gray-500);
   line-height: 1.6;
   margin: 0;
 }
@@ -788,7 +788,7 @@
 .inclusion-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(45deg, #10b981, #059669);
+  background: linear-gradient(45deg, var(--color-success-500), var(--color-success-600));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -827,7 +827,7 @@
 .value-number {
   width: 40px;
   height: 40px;
-  background: linear-gradient(45deg, #f59e0b, #d97706);
+  background: linear-gradient(45deg, var(--color-warning-500), var(--color-warning-600));
   color: white;
   border-radius: 50%;
   display: flex;
@@ -839,7 +839,7 @@
 
 /* Preparation */
 .trip-preparation {
-  background: #f8fafc;
+  background: var(--color-gray-50);
 }
 
 .preparation-grid {
@@ -860,7 +860,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #1e293b;
+  color: var(--color-gray-800);
 }
 
 .preparation-list {
@@ -871,7 +871,7 @@
 
 .preparation-list li {
   padding: 1rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--color-gray-200);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -893,18 +893,18 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: #f8fafc;
+  background: var(--color-gray-50);
   border-radius: 15px;
 }
 
 .detail-item strong {
-  color: #0ea5e9;
+  color: var(--color-primary-500);
   font-weight: 600;
 }
 
 /* Related Trips */
 .related-trips {
-  background: #f8fafc;
+  background: var(--color-gray-50);
 }
 
 .related-trips-grid {
@@ -956,17 +956,17 @@
 }
 
 .category-tag {
-  background: linear-gradient(45deg, #0ea5e9, #0284c7);
+  background: linear-gradient(45deg, var(--color-primary-500), var(--color-primary-700));
   color: white;
 }
 
 .duration-tag {
-  background: linear-gradient(45deg, #10b981, #059669);
+  background: linear-gradient(45deg, var(--color-success-500), var(--color-success-600));
   color: white;
 }
 
 .related-trip-location {
-  color: #64748b;
+  color: var(--color-gray-500);
   font-size: 0.875rem;
   margin-top: 1rem;
   display: flex;
@@ -976,7 +976,7 @@
 
 /* Complete Experience Section */
 .trip-complete-experience {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   color: white;
 }
 
@@ -1006,17 +1006,11 @@
   margin-bottom: 1rem;
 }
 
-.btn/* Outline button styles moved to button-base.css */
 
-.btn.btn-outline:hover {
-  background: white;
-  color: #0ea5e9;
-  text-decoration: none;
-}
 
 /* Call to Action */
 .trip-cta {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  background: linear-gradient(135deg, var(--color-warning-500) 0%, var(--color-warning-600) 100%);
   color: white;
   text-align: center;
 }
@@ -1035,30 +1029,7 @@
   margin-top: 2rem;
 }
 
-/* Button styles moved to button-base.css */
 
-/* Animations */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 /* ==========================================================================
    RESPONSIVE DESIGN

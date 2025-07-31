@@ -1,25 +1,20 @@
-/* SectionHeader Component Styles */
-
-/* Base SectionHeader */
 .section-header {
-  margin-bottom: var(--space-8);
+  text-align: center;
+  margin-bottom: var(--space-16);
+  position: relative;
+  padding-bottom: var(--space-8);
+}
+
+.section-header--left {
+  text-align: left;
+}
+
+.section-header--center {
   text-align: center;
 }
 
-/* SectionHeader Variants */
-/* .section-header--default {
-} */
-
-.section-header--primary {
-  color: var(--color-primary-600);
-}
-
-.section-header--secondary {
-  color: var(--color-text-secondary);
-}
-
-.section-header--directory {
-  color: var(--color-text-white);
+.section-header--right {
+  text-align: right;
 }
 
 .section-header--directory .section__subtitle {
@@ -38,42 +33,18 @@
   background: var(--color-primary-200);
 }
 
-.section-header--accent {
-  color: var(--color-accent-600);
-}
-
-/* SectionHeader Alignment */
-.section-header.section-header--left {
-  text-align: left !important;
-}
-
-.section-header.section-header--center {
-  text-align: center !important;
-}
-
-.section-header.section-header--right {
-  text-align: right !important;
-}
-
-/* SectionHeader with Divider */
-.section-header--with-divider {
-  position: relative;
-  padding-bottom: var(--space-6);
-}
-
-.section-header--with-divider::after {
+.section-header.section-header.section-header.section-header--with-divider::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: var(--divider-width, 60px);
+  height: var(--divider-height, 3px);
   background: var(--color-primary-500);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
-/* SectionHeader Elements */
 .section__subtitle {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
@@ -88,22 +59,18 @@
   font-weight: var(--font-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 }
 
 .section__description {
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
   margin: 0 auto;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .section-header {
-    margin-bottom: var(--space-6);
-  }
-  
+
   .section__title {
     font-size: var(--text-2xl);
   }
@@ -113,16 +80,14 @@
   }
   
   .section-header--with-divider::after {
-    width: 40px;
-    height: 2px;
+    width: var(--divider-width-mobile, 40px);
+    height: var(--divider-height-mobile, 2px);
   }
 }
 
-/* Alignment overrides for mobile */
 @media (max-width: 768px) {
   .section-header--left,
-  .section-header--center,
-  .section-header--right {
+  .section-header--center {
     text-align: center;
   }
-} 
+}

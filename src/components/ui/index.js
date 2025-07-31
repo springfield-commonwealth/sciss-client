@@ -5,7 +5,6 @@ export { default as CarouselCard } from "./CarouselCard";
 export { default as ChevronDown } from "./ChevronDown";
 export { default as DesktopNav } from "./DesktopNav";
 export { default as EnhancedButton } from "./EnhancedButton";
-export { default as FacultyCard } from "./FacultyCard";
 export { default as FeatureVideo } from "./FeatureVideo";
 export { default as Footer } from "./Footer";
 export { default as FooterCTA } from "./FooterCTA";

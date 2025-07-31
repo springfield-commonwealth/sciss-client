@@ -1,44 +1,36 @@
-/* Carousel Container */
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow: hidden;
+  padding: 0 60px;
 }
 
-/* Carousel Track */
 .carousel-track {
   display: flex;
-  gap: var(--space-6);
-  overflow-x: auto;
+  gap: 20px;
   scroll-behavior: smooth;
+  overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: var(--space-4) 60px;
 }
 
-/* Carousel Cards */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
 .carousel-card {
-  flex: 0 0 480px;
-  min-width: 480px;
-  background: var(--color-bg-primary);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  cursor: pointer;
+  flex: 0 0 500px;
+  width: 500px;
 }
 
 .carousel-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: var(--shadow-xl);
 }
 
-/* Carousel Card Image */
 .carousel-card__image {
   position: relative;
-  height: 280px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -53,156 +45,56 @@
   transform: scale(1.05);
 }
 
-/* Carousel Overlay */
-.carousel-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  color: var(--color-text-white);
-  padding: var(--space-6);
-  transform: translateY(100%);
-  transition: transform var(--transition-normal);
-}
-
-.carousel-card:hover .carousel-overlay {
-  transform: translateY(0);
-}
-
-.carousel-overlay h3 {
-  font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  margin-bottom: var(--space-2);
-  color: var(--color-text-white);
-}
-
-.carousel-overlay p {
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-gray-100);
-}
-
-/* Carousel Navigation Arrows */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 48px;
   height: 48px;
+  background: white;
+  border: 2px solid var(--color-border-light);
   border-radius: 50%;
-  background: var(--color-bg-primary);
-  border: none;
-  box-shadow: var(--shadow-medium);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-normal);
-  z-index: 20;
-  pointer-events: auto;
+  cursor: pointer;
+  color: var(--color-primary-500);
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
 }
 
 .carousel-arrow-left {
-  left: var(--space-2);
+  left: 0;
 }
 
 .carousel-arrow-right {
-  right: var(--space-2);
+  right: 0;
 }
 
 .carousel-arrow:hover {
   background: var(--color-bg-primary);
   transform: translateY(-50%) scale(1.05);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: var(--shadow-lg);
   color: var(--color-primary-600);
 }
 
-.carousel-arrow:active {
-  transform: translateY(-50%) scale(0.95);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.carousel-arrow:focus-visible {
-  outline: 2px solid var(--accent-yellow);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
-}
-
-.carousel-arrow:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: translateY(-50%);
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-dot.active,
-.carousel-dot:hover {
-  background: var(--primary-blue);
-  transform: scale(1.2);
-}
-
-.carousel-dot:active {
-  transform: scale(0.9);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.carousel-dot:focus-visible {
-  outline: 2px solid var(--accent-yellow);
-  outline-offset: 2px;
-}
-
-/* Responsive Design */
 @media (max-width: 1024px) {
-  .carousel-card {
-    flex: 0 0 400px;
-    min-width: 400px;
-  }
-  
-  .carousel-card__image {
+    .carousel-card__image {
     height: 240px;
   }
 }
 
 @media (max-width: 768px) {
-  .carousel-container {
-    max-width: 100%;
-    padding: 0 var(--space-4);
-  }
-  
-  .carousel-track {
-    padding: var(--space-4) 50px;
-  }
-  
-  .carousel-card {
-    flex: 0 0 320px;
-    min-width: 320px;
-  }
-  
-  .carousel-card__image {
+        .carousel-card__image {
     height: 200px;
   }
   
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .carousel-arrow-left {
-    left: var(--space-1);
-  }
-  
-  .carousel-arrow-right {
-    right: var(--space-1);
-  }
-  
-  @media (hover: none) {
+        @media (hover: none) {
     .carousel-arrow:hover {
       transform: translateY(-50%);
-      box-shadow: var(--shadow-medium);
+      box-shadow: var(--shadow-md);
     }
     
     .carousel-dot:hover {

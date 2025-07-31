@@ -35,14 +35,14 @@
 .btn--primary:hover {
   border-color: var(--color-primary-600);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
 }
 
 .btn--primary:active {
   background-color: var(--color-primary-700);
   border-color: var(--color-primary-700);
   transform: translateY(0);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn--primary:disabled {
@@ -65,14 +65,14 @@
   border-color: var(--color-primary-500);
   color: var(--color-text-white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
 }
 
 .btn--secondary:active {
   background-color: var(--color-primary-600);
   border-color: var(--color-primary-600);
   transform: translateY(0);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn--secondary:disabled {
@@ -94,14 +94,14 @@
   border-color: var(--color-primary-500);
   color: var(--color-text-white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
 }
 
 .btn--outline:active {
   background-color: var(--color-primary-600);
   border-color: var(--color-primary-600);
   transform: translateY(0);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn--outline:disabled {
@@ -230,18 +230,3 @@
     transform: none;
   }
 }
-
-/* Button Size Variants */
-.btn--sm {
-  min-height: 36px;
-  padding: var(--space-2) var(--space-4);
-  font-size: 0.875rem;
-}
-
-.btn--lg {
-  min-height: 52px;
-  padding: var(--space-4) var(--space-8);
-  font-size: 1.125rem;
-}
-
-/* Button styles moved to button-base.css */

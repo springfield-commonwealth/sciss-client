@@ -5,17 +5,17 @@
 
 .duration,
 .level {
-  background: var(--background-light);
+  background: var(--color-bg-light);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
 }
 
 .level {
-  background: var(--primary-blue);
-  color: var(--text-white);
+  background: var(--color-primary-500);
+  color: var(--color-text-white);
 }
 
 .program-highlights {
@@ -25,7 +25,7 @@
 .program-highlights h4 {
   font-size: 1rem;
   margin-bottom: 0.75rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
 }
 
 .program-highlights ul {
@@ -41,7 +41,7 @@
 
 .program-highlights li::before {
   content: "•";
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   position: absolute;
   left: 0;
 }
@@ -53,9 +53,9 @@
 }
 
 .program-detail-card {
-  background: var(--text-white);
+  background: var(--color-bg-primary);
   border-radius: 16px;
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   transition: transform 0.3s ease;
   max-width: 65vw;
@@ -64,21 +64,21 @@
 
 .program-detail-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: var(--shadow-lg);
 }
 
 .program-header {
   background: linear-gradient(
     135deg,
-    var(--primary-blue) 0%,
-    var(--secondary-blue) 100%
+    var(--color-primary-500) 0%,
+    var(--color-primary-600) 100%
   );
-  color: var(--text-white);
+  color: var(--color-text-white);
   padding: 2rem;
 }
 
 .program-title-section h3 {
-  color: var(--text-white);
+  color: var(--color-text-white);
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }
@@ -92,7 +92,7 @@
 .level-badge,
 .duration-badge {
   background: rgba(255, 255, 255, 0.2);
-  color: var(--text-white);
+  color: var(--color-text-white);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -110,7 +110,7 @@
 .prerequisites {
   margin-top: 1rem;
   padding: 1rem;
-  background: var(--background-light);
+  background: var(--color-bg-light);
   border-radius: 8px;
   font-size: 0.9rem;
 }
@@ -123,14 +123,14 @@
 
 .curriculum-section,
 .outcomes-section {
-  background: var(--background-light);
+  background: var(--color-bg-light);
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .curriculum-section h4,
 .outcomes-section h4 {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -146,7 +146,7 @@
   padding: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .curriculum-list li:last-child,
@@ -158,28 +158,28 @@
   content: "■";
   position: absolute;
   left: 0;
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
 }
 
 .outcomes-list li::before {
   content: "▸";
   position: absolute;
   left: 0;
-  color: var(--success-color);
+  color: var(--color-success-500);
 }
 
 .support-card {
-  background: var(--background-primary);
+  background: var(--color-bg-primary);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-xs);
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .support-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-md);
 }
 
 .support-icon {
@@ -188,7 +188,7 @@
 }
 
 .support-card h4 {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   margin-bottom: 1rem;
 }
 
@@ -226,7 +226,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-gray-200);
 }
 
 .course-preview-card:hover {
@@ -247,7 +247,7 @@
   height: 80px;
   border-radius: 8px;
   overflow: hidden;
-  background: #f3f4f6;
+  background: var(--color-gray-100);
 }
 
 .course-preview-image img {
@@ -264,7 +264,7 @@
   margin: 0 0 0.75rem 0;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-gray-800);
   line-height: 1.3;
 }
 
@@ -286,18 +286,18 @@
 }
 
 .course-preview-meta .level-badge {
-  background: #dbeafe;
-  color: #1e40af;
+  background: var(--color-primary-100);
+  color: var(--color-primary-800);
 }
 
 .course-preview-meta .duration-badge {
-  background: #d1fae5;
-  color: #065f46;
+  background: var(--color-success-100);
+  color: var(--color-success-800);
 }
 
 .course-preview-meta .session-badge {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--color-yellow-100);
+  color: var(--color-yellow-800);
 }
 
 .course-preview-content {
@@ -306,7 +306,7 @@
 
 .course-preview-description {
   margin: 0 0 1.5rem 0;
-  color: #6b7280;
+  color: var(--color-gray-500);
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -319,13 +319,13 @@
   margin: 0 0 0.75rem 0;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-gray-700);
 }
 
 .course-preview-highlights ul {
   margin: 0;
   padding-left: 1.25rem;
-  color: #6b7280;
+  color: var(--color-gray-500);
 }
 
 .course-preview-highlights li {
@@ -342,7 +342,7 @@
 /* Button styles moved to button-base.css */
 
 .course-directory-note {
-  color: #6b7280;
+  color: var(--color-gray-500);
   font-style: italic;
   max-width: 600px;
   margin: 0 auto;

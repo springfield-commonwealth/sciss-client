@@ -9,7 +9,7 @@
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 2rem;
-  color: var(--text-light);
+  color: var(--color-text-light);
 }
 
 .mission-highlights {
@@ -23,7 +23,7 @@
   align-items: flex--start;
   gap: 1rem;
   padding: 1rem;
-  background: var(--background-light);
+  background: var(--color-bg-light);
   border-radius: 8px;
 }
 
@@ -33,13 +33,13 @@
 }
 
 .highlight-item h4 {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .highlight-item p {
-  color: var(--text-light);
+  color: var(--color-text-light);
   margin: 0;
   font-size: 0.95rem;
 }
@@ -49,7 +49,7 @@
   padding: 1.5rem;
   background: white;
   border-radius: 8px;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-xs);
 }
 
 .stat-icon {
@@ -61,18 +61,18 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   margin-bottom: 0.25rem;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
   font-weight: 500;
 }
 
 .expertise-tag {
-  background: var(--primary-blue);
+  background: var(--color-primary-500);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;

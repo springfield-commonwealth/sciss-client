@@ -5,7 +5,7 @@
 
 .directory-header {
     margin-top: var(--nav-height);
-  padding: 4rem 0;
+  padding: var(--space-16) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -14,27 +14,27 @@
 @media (max-width: 768px) {
   .directory-header {
     margin-top: var(--nav-height-mobile);
-    padding: 3rem 0;
+    padding: var(--space-12) 0;
   }
 }
 
 .trips-directory-header {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   color: white;
 }
 
 .staff-directory-header {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-700) 100%);
   color: white;
 }
 
 .courses-directory-header {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   color: white;
 }
 
 .activities-directory-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   color: white;
 }
 
@@ -49,10 +49,7 @@
   z-index: 1;
 }
 
-/* SectionHeader styles for directory pages - light text on dark backgrounds */
-.directory-header .section-header {
-  color: var(--color-text-white);
-}
+.directory-header 
 
 .directory-header .section__subtitle {
   color: var(--color-primary-200);
@@ -85,7 +82,7 @@
   grid-template-columns: 1fr auto;
   gap: var(--space-8);
   align-items: center;
-  max-width: 1200px;
+  max-width: var(--container-max-width, 1200px);
   margin: 0 auto;
   padding: 0 var(--space-8);
 }
@@ -97,7 +94,7 @@
 .search-input {
   width: 100%;
   padding: var(--input-padding-y) var(--input-padding-x);
-  border: 2px solid var(--color-border-light);
+  border: var(--border-2) solid var(--color-border-light);
   border-radius: var(--radius-lg);
   font-size: var(--text-base);
   transition: all var(--transition-normal);
@@ -117,13 +114,13 @@
 
 .category-select {
   padding: var(--input-padding-y) var(--input-padding-x);
-  border: 2px solid var(--color-border-light);
+  border: var(--border-2) solid var(--color-border-light);
   border-radius: var(--radius-lg);
   font-size: var(--text-base);
   background: var(--color-bg-secondary);
   cursor: pointer;
   transition: all var(--transition-normal);
-  min-width: 200px;
+  min-width: var(--select-min-width, 200px);
 }
 
 .category-select:focus {
@@ -149,7 +146,7 @@
 }
 
 .results-count {
-  max-width: 1200px;
+  max-width: var(--container-max-width, 1200px);
   margin: var(--space-4) auto 0;
   padding: 0 var(--space-8);
   color: var(--color-text-secondary);
@@ -157,16 +154,16 @@
 }
 
 .directory-grid {
-  padding: 3rem 0;
+  padding: var(--space-12) 0;
 }
 
 .directory-items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  gap: var(--space-8);
+  max-width: var(--container-max-width, 1200px);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-8);
 }
 
 @media (min-width: 1200px) {
@@ -195,56 +192,49 @@
 }
 
 .directory-card {
-  background: white;
-  border-radius: 25px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-3xl);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-/* Ensure directory card images display properly */
 .directory-card .card__image {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 0; /* Override negative margins from card-system.css */
-}
+  margin: 0; }
 
 .directory-card .card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .directory-card:hover .card__image img {
   transform: scale(1.05);
 }
 
-/* Specific image heights for different directory card types */
 .directory-card--trips .card__image {
-  height: 180px;
-  border-radius: 25px 25px 0 0; /* Match directory card border radius */
-}
+  height: var(--card-image-height-lg, 180px);
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
 
 .directory-card--courses .card__image {
-  height: 160px;
-  border-radius: 25px 25px 0 0; /* Match directory card border radius */
-}
+  height: var(--card-image-height-md, 160px);
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
 
 .directory-card--activities .card__image {
-  height: 200px;
-  border-radius: 25px 25px 0 0; /* Match directory card border radius */
-}
+  height: var(--card-image-height-xl, 200px);
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
 
-/* Staff cards need to maintain circular styling */
 .directory-card--staff .card__image {
-  border-radius: 50% !important;
-  width: 180px !important;
-  height: 180px !important;
+  border-radius: var(--radius-full) !important;
+  width: var(--staff-image-size, 180px) !important;
+  height: var(--staff-image-size, 180px) !important;
   margin: var(--space-4) auto var(--space-4) auto !important;
   display: flex !important;
   justify-content: center !important;
@@ -253,12 +243,12 @@
 
 .directory-card--staff .card__image img {
   border-radius: 50% !important;
-  border: 3px solid var(--color-gray-200) !important;
+  border: var(--border-3) solid var(--color-gray-200) !important;
 }
 
 .directory-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-card-elevated);
   text-decoration: none;
   color: inherit;
 }
@@ -277,13 +267,13 @@
 
 .info-item strong,
 .detail-item strong {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   font-weight: 600;
   display: block;
 }
 
 .card-outcomes strong {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
@@ -297,13 +287,13 @@
 
 .card-outcomes li {
   padding: 0.25rem 0;
-  color: #64748b;
+  color: var(--color-gray-500);
   font-size: 0.875rem;
 }
 
 .teaches-label {
   font-size: 0.75rem;
-  color: #059669;
+  color: var(--color-success-600);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -311,7 +301,7 @@
 }
 
 .view-details-text {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -325,7 +315,7 @@
 
 .directory-categories {
   padding: 3rem 0;
-  background: #f8fafc;
+  background: var(--color-gray-50);
 }
 
 .categories-grid {
@@ -352,12 +342,12 @@
 .category-overview-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--color-gray-800);
   margin: 0 0 0.5rem 0;
 }
 
 .category-count {
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -367,13 +357,13 @@
 }
 
 .example-item {
-  color: #64748b;
+  color: var(--color-gray-500);
   font-size: 0.875rem;
   padding: 0.25rem 0;
 }
 
 .category-filter-btn {
-  background: var(--primary-blue);
+  background: var(--color-primary-500);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -390,7 +380,7 @@
 }
 
 .directory-cta {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  background: linear-gradient(135deg, var(--color-warning-500) 0%, var(--color-warning-600) 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -404,10 +394,7 @@
   flex-wrap: wrap;
 }
 
-/* SectionHeader styles for directory CTA - light text on dark backgrounds */
-.directory-cta .section-header {
-  color: var(--color-text-white);
-}
+.directory-cta 
 
 .directory-cta .section__subtitle {
   color: var(--color-warning-200);
@@ -428,13 +415,13 @@
 .no-results {
   text-align: center;
   padding: 4rem 2rem;
-  color: #64748b;
+  color: var(--color-gray-500);
 }
 
 .no-results h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #374151;
+  color: var(--color-gray-700);
 }
 
 .no-results p {
@@ -442,7 +429,7 @@
 }
 
 .reset-filters-btn {
-  background: var(--primary-blue);
+  background: var(--color-primary-500);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -453,7 +440,7 @@
 }
 
 .reset-filters-btn:hover {
-  background: #2563eb;
+  background: var(--color-primary-600);
 }
 
 @media (max-width: 768px) {

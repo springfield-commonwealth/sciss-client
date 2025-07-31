@@ -1,24 +1,18 @@
 
-/* Design Tokens - Single source of truth */
-@import './design-tokens/colors.css';
-@import './design-tokens/spacing.css';
-@import './design-tokens/typography.css';
-@import './design-tokens/shadows.css';
+/* ==========================================================================
+   MAIN STYLES INDEX
+   Central import file for all styles
+   ========================================================================== */
 
-/* Layout System */
-@import './components/layout/layout-system.css';
-@import './components/cards/card-system.css';
+/* Import design tokens and reset */
+@import './tokens/index.css';
+@import './components/reset.css';
+@import './components/utilities.css';
+@import './components/layout.css';
 
 /* Component System */
 @import './components/buttons/button-base.css';
-
-/* Import all styles in the correct order */
-
-/* Global styles */
-@import './globals.css';
-
-/* Shared styles - Universal CSS classes and design tokens */
-@import './shared.css';
+@import './components/cards/card-system.css';
 
 /* Base component styles */
 @import './components/navigation.css';
@@ -28,7 +22,6 @@
 @import './components/carousel.css';
 @import './components/carousel-card.css';
 @import './components/weekly-schedule.css';
-@import './components/faculty-card.css';
 @import './components/gallery-card.css';
 @import './components/featurevideo.css';
 @import './components/imageslider.css';

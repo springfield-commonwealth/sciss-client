@@ -224,9 +224,28 @@
    RESPONSIVE LAYOUT ADJUSTMENTS
    ========================================================================== */
 
+/* Mobile-first responsive grid adjustments */
 @media (max-width: 767px) {
   .sm\:hidden { display: none; }
   .sm\:block { display: block; }
+  
+  /* Force single column on mobile for all grids */
+  .grid--2,
+  .grid--3,
+  .grid--4,
+  .grid--5,
+  .grid--6 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Adjust auto-fit for mobile */
+  .grid--auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .grid--auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {

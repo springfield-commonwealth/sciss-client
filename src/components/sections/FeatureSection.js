@@ -24,43 +24,52 @@ const FeatureSection = ({
 
   // Handle old API with heading, paragraphs, image
   return (
-    <section className="section bg-light feature-section">
+    <section className="feature-section">
       <div className="container">
-        <h1 className="text--center mb--lg">{heading}</h1>
-        <div className="grid grid--2">
-          {image && (
-            <div className="feature-section__image">
-              <figure className="feature-section__figure">
-                <picture className="feature-section__picture">
-                  {image.sources &&
-                    image.sources.map((source, idx) => (
-                      <source
-                        key={idx}
-                        srcSet={source.srcSet}
-                        media={source.media}
-                      />
-                    ))}
-                  <img
-                    loading="lazy"
-                    src={image.src}
-                    alt={image.alt}
-                    className="feature-section__img"
-                    style={{
-                      width: `${imageWidth}`,
-                    }}
-                  />
-                </picture>
-              </figure>
-            </div>
-          )}
-          <article className="feature-section__text text--left mb--lg">
-            {paragraphs &&
-              paragraphs.map((text, idx) => (
-                <p className="lead" key={idx}>
-                  {text}
-                </p>
-              ))}
-          </article>
+        {heading && (
+          <div className="feature-section__header">
+            <h2 className="feature-section__title">{heading}</h2>
+          </div>
+        )}
+
+        <div className="feature-section__content">
+          <div className="feature-section__layout">
+            {image && (
+              <div className="feature-section__media">
+                <figure className="feature-section__figure">
+                  <picture className="feature-section__picture">
+                    {image.sources &&
+                      image.sources.map((source, idx) => (
+                        <source
+                          key={idx}
+                          srcSet={source.srcSet}
+                          media={source.media}
+                        />
+                      ))}
+                    <img
+                      loading="lazy"
+                      src={image.src}
+                      alt={image.alt}
+                      className="feature-section__img"
+                      style={{
+                        width: imageWidth || "100%",
+                      }}
+                    />
+                  </picture>
+                </figure>
+              </div>
+            )}
+
+            {paragraphs && paragraphs.length > 0 && (
+              <div className="feature-section__text">
+                {paragraphs.map((text, idx) => (
+                  <p className="feature-section__paragraph" key={idx}>
+                    {text}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

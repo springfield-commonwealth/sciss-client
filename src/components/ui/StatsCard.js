@@ -11,16 +11,16 @@ const StatsCard = ({
   onClick,
   hoverable = false,
 }) => {
-  const baseClasses = "stat-item";
+  const baseClasses = "card card--feature";
   const variantClasses = {
     default: "",
-    primary: "stat-item-primary",
-    secondary: "stat-item-secondary",
-    accent: "stat-item-accent",
+    primary: "card--primary",
+    secondary: "card--secondary",
+    accent: "card--accent",
   };
 
-  const hoverClasses = hoverable ? "stat-item-hoverable" : "";
-  const clickClasses = onClick ? "stat-item-clickable" : "";
+  const hoverClasses = hoverable ? "card--hoverable" : "";
+  const clickClasses = onClick ? "card--clickable" : "";
 
   const cardClasses =
     `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${clickClasses} ${className}`.trim();
@@ -32,9 +32,11 @@ const StatsCard = ({
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      {icon && <div className="stat-icon">{icon}</div>}
-      <span className="stat-number">{number}</span>
-      <span className="stat-label">{label}</span>
+      {icon && <div className="card__icon">{icon}</div>}
+      <div className="card__content">
+        <span className="card__number">{number}</span>
+        <span className="card__label">{label}</span>
+      </div>
     </div>
   );
 };

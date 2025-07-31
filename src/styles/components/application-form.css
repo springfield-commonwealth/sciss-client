@@ -65,7 +65,7 @@
 }
 
 .application-form .label-text .asterisk {
-  color: var(--error-color);
+  color: var(--color-error-500);
   margin-left: 0.18em;
   font-size: 1em;
   font-weight: 700;
@@ -87,7 +87,7 @@
 
 .application-form input:hover,
 .application-form select:hover {
-  border-color: var(--secondary-blue);
+  border-color: var(--color-primary-600);
 }
 
 .application-form input[type="text"]:focus,
@@ -95,7 +95,7 @@
 .application-form input[type="tel"]:focus,
 .application-form input[type="date"]:focus,
 .application-form select:focus {
-  border-color: var(--primary-blue);
+  border-color: var(--color-primary-500);
   outline: none;
 }
 
@@ -112,11 +112,11 @@
 }
 
 .application-form .PhoneInput:hover {
-  border-color: var(--secondary-blue);
+  border-color: var(--color-primary-600);
 }
 
 .application-form .PhoneInput:focus-within {
-  border-color: var(--primary-blue);
+  border-color: var(--color-primary-500);
   outline: none;
 }
 
@@ -135,7 +135,7 @@
   background: transparent;
   border: none;
   font-size: 0.9rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
   cursor: pointer;
   padding: 0.2rem;
   border-radius: 3px;
@@ -163,13 +163,13 @@
   border: none;
   background: transparent;
   font-size: 1rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
   outline: none;
   box-shadow: none;
 }
 
 .application-form .PhoneInputInput::placeholder {
-  color: var(--text-light);
+  color: var(--color-text-secondary);
   opacity: 0.7;
 }
 
@@ -206,7 +206,7 @@
 }
 
 .application-form input[type="checkbox"] {
-  accent-color: var(--primary-blue);
+  accent-color: var(--color-primary-500);
   transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 0.4);
 }
 
@@ -231,7 +231,7 @@
 }
 
 .application-form input[type="radio"] {
-  accent-color: var(--primary-blue);
+  accent-color: var(--color-primary-500);
   transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 0.4);
 }
 
@@ -252,7 +252,7 @@
 }
 
 .form-radio-label:hover {
-  color: var(--secondary-blue);
+  color: var(--color-primary-600);
 }
 
 /* File Upload Styles */
@@ -516,15 +516,15 @@
    Error & Button Styles
    ========================= */
 .application-form .error {
-  color: var(--error-color);
+  color: var(--color-error-500);
   font-size: 0.92rem;
   margin-top: 0.2rem;
   font-weight: 500;
 }
 
 .application-form .submit-btn {
-  background: var(--primary-blue);
-  color: var(--text-white);
+  background: var(--color-primary-500);
+  color: var(--color-text-white);
   font-size: 1.1rem;
   font-weight: 600;
   padding: 0.9rem 0;
@@ -537,7 +537,7 @@
 }
 
 .application-form .submit-btn:hover:not(:disabled) {
-  background: var(--secondary-blue);
+  background: var(--color-primary-600);
   transform: translateY(-2px);
 }
 
@@ -557,7 +557,7 @@
 }
 
 @keyframes successPulse {
-  0% { box-shadow: 0 0 0 0 var(--success-color, var(--color-success-500)); }
+  0% { box-shadow: 0 0 0 0 var(--color-success-500); }
   70% { box-shadow: 0 0 0 6px rgba(39, 174, 96, 0); }
   100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
 }
@@ -565,14 +565,14 @@
 /* Error shake for invalid fields */
 .input-error-animate {
   animation: shake 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--error-color) !important;
+  border-color: var(--color-error-500);
   background: rgba(204, 29, 47, 0.05);
 }
 
 /* Success pulse for valid fields */
 .input-success-animate {
   animation: successPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--success-color) !important;
+  border-color: var(--color-success-500);
   background: rgba(39, 174, 96, 0.05);
 }
 
@@ -592,54 +592,54 @@
 /* File upload area animation states */
 .file-upload-area.upload-error {
   animation: shake 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--error-color) !important;
+  border-color: var(--color-error-500);
   background: rgba(204, 29, 47, 0.07);
 }
 .file-upload-area.upload-success {
   animation: successPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--success-color) !important;
+  border-color: var(--color-success-500);
   background: rgba(39, 174, 96, 0.07);
 }
 
 @keyframes errorPulse {
   0% {
-    box-shadow: 0 0 0 0 var(--error-color, var(--color-error-500));
-    border-color: var(--error-color, var(--color-error-500));
+    box-shadow: 0 0 0 0 var(--color-error-500);
+    border-color: var(--color-error-500);
   }
   60% {
     box-shadow: 0 0 0 4px rgba(204, 29, 47, 0.25);
-    border-color: var(--error-color, var(--color-error-500));
+    border-color: var(--color-error-500);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(204, 29, 47, 0);
-    border-color: var(--error-color, var(--color-error-500));
+    border-color: var(--color-error-500);
   }
 }
 
 .input-error-pulse {
   animation: errorPulse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--error-color, var(--color-error-500)) !important;
+  border-color: var(--color-error-500);
 }
 
 /* Success state animation for valid fields */
 @keyframes successGlow {
   0% {
-    box-shadow: 0 0 0 0 var(--success-color, var(--color-success-500));
-    border-color: var(--success-color, var(--color-success-500));
+    box-shadow: 0 0 0 0 var(--color-success-500);
+    border-color: var(--color-success-500);
   }
   50% {
     box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
-    border-color: var(--success-color, var(--color-success-500));
+    border-color: var(--color-success-500);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
-    border-color: var(--success-color, var(--color-success-500));
+    border-color: var(--color-success-500);
   }
 }
 
 .input-success-glow {
   animation: successGlow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: var(--success-color, var(--color-success-500)) !important;
+  border-color: var(--color-success-500);
 }
 
 /* Enhanced error message transitions */
@@ -834,18 +834,18 @@
 }
 
 .application-form .form-field:focus {
-  border-color: var(--primary-blue);
+  border-color: var(--color-primary-500);
   outline: none;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Form validation states with enhanced specificity */
 .application-form .form-field.error {
-  border-color: var(--error-color);
+  border-color: var(--color-error-500);
 }
 
 .application-form .form-field.success {
-  border-color: var(--success-color);
+  border-color: var(--color-success-500);
 }
 
 /* Form layout with enhanced specificity */
@@ -858,18 +858,18 @@
 
 /* Validation states with enhanced specificity */
 .application-form .form-field.error:focus {
-  border-color: var(--error-color, var(--color-error-500));
+  border-color: var(--color-error-500);
 }
 
 .application-form .form-field.success:focus {
-  border-color: var(--success-color, var(--color-success-500));
+  border-color: var(--color-success-500);
 }
 
 .application-form .form-field.success {
-  border-color: var(--success-color, var(--color-success-500));
+  border-color: var(--color-success-500);
 }
 
 .application-form .form-field.error {
-  border-color: var(--error-color, var(--color-error-500));
+  border-color: var(--color-error-500);
 }
 

@@ -11,7 +11,7 @@ const GalleryCard = (item, index) => {
   return (
     <div
       key={index}
-      className="gallery-card"
+      className="card card--feature"
       role="button"
       tabIndex={0}
       onClick={handleClick}
@@ -21,7 +21,7 @@ const GalleryCard = (item, index) => {
     >
       <div className="card__image">
         <img src={item.image} alt={item.title} loading="lazy" />
-        <div className="gallery-overlay">
+        <div className="card__content">
           <h3>{item.title}</h3>
           {item.description && <p>{item.description}</p>}
         </div>

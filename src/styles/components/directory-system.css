@@ -232,22 +232,22 @@
   border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
 
 .directory-card--staff .card__image {
-  border-radius: var(--radius-full) !important;
-  width: var(--staff-image-size, 180px) !important;
-  height: var(--staff-image-size, 180px) !important;
-  margin: var(--space-4) auto var(--space-4) auto !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  border-radius: var(--radius-full);
+  width: var(--staff-image-size, 180px);
+  height: var(--staff-image-size, 180px);
+  margin: var(--space-4) auto var(--space-4) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .directory-card--staff .card__image img {
-  border-radius: 50% !important;
-  border: var(--border-3) solid var(--color-gray-200) !important;
+  border-radius: 50%;
+  border: var(--border-3) solid var(--color-gray-200);
 }
 
 .directory-card:hover {
-  scale: 1.02;
+  /* scale: 1.02; */
   box-shadow: var(--shadow-card-elevated);
   text-decoration: none;
   color: inherit;

@@ -147,7 +147,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
                 <Link href="/apply" className="btn btn--primary btn--lg">
                   Register for This Trip
                 </Link>
-                <Link href="/trips" className="btn btn--secondary">
+                <Link href="/trips" className="btn btn--header">
                   View All Trips
                 </Link>
               </div>
@@ -312,8 +312,8 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <Link href="/apply" className="btn btn--primary btn--lg">
                 Reserve Your Spot
               </Link>
-              <Link href="/day-trips" className="btn btn--secondary">
-                Explore More Trips
+              <Link href="/day-trips" className="btn btn--header">
+                View All Trips
               </Link>
             </div>
           </div>

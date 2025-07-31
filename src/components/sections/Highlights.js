@@ -13,12 +13,14 @@ const Highlights = ({ highlights, title, desc }) => {
         </div>
         <div className="grid grid--3">
           {highlights.map((highlight, index) => (
-            <div key={index} className="gallery-card">
+            <div key={index} className="card">
               <div className="card__image">
                 <img src={highlight.image} alt={highlight.title} />
               </div>
-              <h3>{highlight.title}</h3>
-              <p>{highlight.description}</p>
+              <div className="card__content">
+                <h3 className="card__title">{highlight.title}</h3>
+                <p className="card__description">{highlight.description}</p>
+              </div>
             </div>
           ))}
         </div>

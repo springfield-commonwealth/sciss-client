@@ -139,7 +139,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
                     Contact {firstName}
                   </a>
                 )}
-                <Link href="/apply" className="btn btn--primary">
+                <Link href="/apply" className="btn btn--header">
                   Apply to Learn from {firstName}
                 </Link>
               </div>
@@ -291,7 +291,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               <Link href="/apply" className="btn btn--primary btn--lg">
                 Apply Now
               </Link>
-              <Link href="/staff" className="btn btn--secondary">
+              <Link href="/staff" className="btn btn--header">
                 View All Faculty
               </Link>
             </div>

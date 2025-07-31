@@ -32,9 +32,11 @@ const FeatureCard = ({
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      {icon && <div className="feature-icon">{icon}</div>}
-      <h3 className="feature-title">{title}</h3>
-      {description && <p className="feature-description">{description}</p>}
+      {icon && <div className="card__icon">{icon}</div>}
+      <div className="card__content">
+        <h3 className="card__title">{title}</h3>
+        {description && <p className="card__description">{description}</p>}
+      </div>
     </div>
   );
 };

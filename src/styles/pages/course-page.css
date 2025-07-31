@@ -5,12 +5,13 @@
   background: var(--background-primary);
 }
 
-/* Course Hero Section */
+/* Universal Slug Header Style */
 .course-page-hero {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-  color: var(--text-white);
-  padding: 4rem 2rem;
-  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  color: white;
+  padding: 4rem 0 6rem;
+  position: relative;
+  overflow: hidden;
   /* Apply universal header spacing to prevent nav overlap */
   margin-top: var(--nav-height);
 }
@@ -21,12 +22,26 @@
   }
 }
 
+.course-page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
 .course-page-hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -37,18 +52,23 @@
 }
 
 .course-page-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
   margin: 0;
-  color: var(--text-white);
+  color: white;
+  background: linear-gradient(45deg, var(--color-white), var(--color-primary-50));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .course-page-description {
   font-size: 1.25rem;
-  line-height: 1.6;
+  line-height: 1.7;
   opacity: 0.95;
   margin: 0;
+  color: white;
 }
 
 .course-page-meta {
@@ -57,8 +77,9 @@
   gap: 1rem;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 15px;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .course-page-meta-item {
@@ -71,30 +92,40 @@
   font-size: 0.875rem;
   opacity: 0.8;
   font-weight: 500;
+  color: white;
 }
 
 .meta-value {
   font-size: 1rem;
   font-weight: 600;
+  color: white;
 }
 
 .course-page-actions {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .course-page-hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .course-page-hero-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: var(--shadow-elevated);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.course-page-hero-image img:hover {
+  transform: rotate(0deg) scale(1.05);
 }
 
 /* Course Details Section */

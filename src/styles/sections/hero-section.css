@@ -44,16 +44,12 @@
   margin-top: var(--space-8);
 }
 
-.hero-actions .btn {
-  min-width: 160px;
-  padding: var(--space-4) var(--space-8);
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-}
+
 
 /* Hero buttons should have white text */
 .hero-actions .btn--secondary {
   color: var(--color-text-white);
+  backdrop-filter: blur(5px);
 }
 
 .hero-actions .btn--secondary:hover {

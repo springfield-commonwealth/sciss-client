@@ -1,16 +1,16 @@
 # CSS Analysis Report - SCISS Website
-Generated: 2025-07-31T00:25:10.741Z
+Generated: 2025-07-31T15:56:07.376Z
 
 ## 📊 Summary Statistics
 
-- **Total CSS Files**: 42
-- **Total CSS Classes**: 924
-- **Used Classes**: 534
-- **Unused Classes**: 472
-- **Redundant Patterns**: 326
-- **Estimated Savings**: 51%
+- **Total CSS Files**: 40
+- **Total CSS Classes**: 914
+- **Used Classes**: 524
+- **Unused Classes**: 471
+- **Redundant Patterns**: 335
+- **Estimated Savings**: 52%
 
-## 🚫 Unused Classes (472)
+## 🚫 Unused Classes (471)
 
 - `.PhoneInput`
 - `.PhoneInputCountry`
@@ -64,22 +64,19 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.btn--loading`
 - `.btn--success`
 - `.btn--warning`
-- `.btn-base`
 - `.btn-group`
-- `.btn-large`
-- `.btn-outline`
-- `.btn-primary`
-- `.btn-secondary`
 - `.btn__spinner`
+- `.card--accent`
 - `.card--activities`
 - `.card--clickable`
 - `.card--courses`
 - `.card--elevated`
-- `.card--feature`
 - `.card--horizontal`
 - `.card--hoverable`
 - `.card--interactive`
 - `.card--outline`
+- `.card--primary`
+- `.card--secondary`
 - `.card--staff`
 - `.card--staggered`
 - `.card--trips`
@@ -144,7 +141,7 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.experience-grid`
 - `.explore-grid`
 - `.explore-item`
-- `.faculty-card`
+- `.faculty-section`
 - `.faq-grid`
 - `.faq-item`
 - `.feature`
@@ -178,6 +175,8 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.form-input`
 - `.form-layout`
 - `.form-radio`
+- `.gallery-card`
+- `.gallery-overlay`
 - `.gallery-track`
 - `.gap--0`
 - `.gap--1`
@@ -208,9 +207,6 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.grid-auto-fill`
 - `.grid-auto-fit`
 - `.grid-base`
-- `.grid-layout`
-- `.grid-layout-lg`
-- `.grid-layout-sm`
 - `.has-file`
 - `.header`
 - `.hero-base`
@@ -402,12 +398,15 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.stack-sm`
 - `.staff-directory-header`
 - `.stat-card`
+- `.stat-icon`
 - `.stat-item`
 - `.stat-item-accent`
 - `.stat-item-clickable`
 - `.stat-item-hoverable`
 - `.stat-item-primary`
 - `.stat-item-secondary`
+- `.stat-label`
+- `.stat-number`
 - `.stats-card-base`
 - `.stats-grid`
 - `.stats-grid-1`
@@ -485,7 +484,7 @@ Generated: 2025-07-31T00:25:10.741Z
 - `.z-20`
 - `.z-30`
 
-## 🔄 Redundant Style Patterns (326)
+## 🔄 Redundant Style Patterns (335)
 
 
 ### Pattern 2 files
@@ -2065,24 +2064,6 @@ flex-direction:column;align-items:center;
 
 ### Pattern 2 files
 **Files**: src/styles/components/utilities.css, src/styles/components/utilities.css
-**Selectors**: `.badge-primary`, `.btn-primary`
-**Styles**:
-```css
-background:var(--color-primary-500);color:white;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/utilities.css
-**Selectors**: `.badge-outline`, `.btn-secondary`
-**Styles**:
-```css
-background:transparent;color:var(--color-primary-500);border:2px solid var(--color-primary-500);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/utilities.css
 **Selectors**: `.stats-card-base`, `.stat-item`
 **Styles**:
 ```css
@@ -2460,15 +2441,6 @@ text-align:right;
 
 
 ### Pattern 2 files
-**Files**: src/styles/sections/hero-section.css, src/styles/components/section-header.css
-**Selectors**: `.btn--secondary`, `.section__title`
-**Styles**:
-```css
-color:var(--color-text-white);
-```
-
-
-### Pattern 2 files
 **Files**: src/styles/pages/staff-profile.css, src/styles/components/section-header.css
 **Selectors**: `.staff-name`, `.section__title`
 **Styles**:
@@ -2546,6 +2518,348 @@ position:relative;
 **Styles**:
 ```css
 margin-top:var(--nav-height-mobile);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.p-0`, `.section--no-padding`
+**Styles**:
+```css
+padding:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.stats-grid-2`, `.grid--2`
+**Styles**:
+```css
+grid-template-columns:repeat(2, 1fr);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.stats-grid-3`, `.grid--3`
+**Styles**:
+```css
+grid-template-columns:repeat(3, 1fr);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.stats-grid-4`, `.grid--4`
+**Styles**:
+```css
+grid-template-columns:repeat(4, 1fr);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.grid-auto-fit`, `.grid--auto-fit`
+**Styles**:
+```css
+grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.grid-auto-fill`, `.grid--auto-fill`
+**Styles**:
+```css
+grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.flex`, `.flex`
+**Styles**:
+```css
+display:flex;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/index.css, src/styles/components/layout.css
+**Selectors**: `.price`, `.items--center`
+**Styles**:
+```css
+align-items:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.items-start`, `.items--start`
+**Styles**:
+```css
+align-items:flex-start;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.items-end`, `.items--end`
+**Styles**:
+```css
+align-items:flex-end;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.items-baseline`, `.items--baseline`
+**Styles**:
+```css
+align-items:baseline;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/staff-profile.css, src/styles/components/layout.css
+**Selectors**: `.staff-contact`, `.justify--center`
+**Styles**:
+```css
+justify-content:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.justify-start`, `.justify--start`
+**Styles**:
+```css
+justify-content:flex-start;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.justify-end`, `.justify--end`
+**Styles**:
+```css
+justify-content:flex-end;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.justify-between`, `.justify--between`
+**Styles**:
+```css
+justify-content:space-between;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.justify-around`, `.justify--around`
+**Styles**:
+```css
+justify-content:space-around;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/layout.css, src/styles/components/layout.css
+**Selectors**: `.grid--no-gap`, `.gap--0`
+**Styles**:
+```css
+gap:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.gap-xs`, `.gap--2`
+**Styles**:
+```css
+gap:var(--space-2);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.gap-sm`, `.gap--4`
+**Styles**:
+```css
+gap:var(--space-4);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.gap-md`, `.gap--6`
+**Styles**:
+```css
+gap:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.gap-lg`, `.gap--8`
+**Styles**:
+```css
+gap:var(--space-8);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.gap-xl`, `.gap--12`
+**Styles**:
+```css
+gap:var(--space-12);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.relative`, `.relative`
+**Styles**:
+```css
+position:relative;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.absolute`, `.absolute`
+**Styles**:
+```css
+position:absolute;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.fixed`, `.fixed`
+**Styles**:
+```css
+position:fixed;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.sticky`, `.sticky`
+**Styles**:
+```css
+position:sticky;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.top-0`, `.top--0`
+**Styles**:
+```css
+top:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.right-0`, `.right--0`
+**Styles**:
+```css
+right:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.bottom-0`, `.bottom--0`
+**Styles**:
+```css
+bottom:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.left-0`, `.left--0`
+**Styles**:
+```css
+left:0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.z-1`, `.z--1`
+**Styles**:
+```css
+z-index:1;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.z-10`, `.z--10`
+**Styles**:
+```css
+z-index:10;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.z-20`, `.z--20`
+**Styles**:
+```css
+z-index:20;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
+**Selectors**: `.z-30`, `.z--30`
+**Styles**:
+```css
+z-index:30;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/a-day-at-sciss.css, src/styles/components/layout.css
+**Selectors**: `.time-indicator`, `.hidden`
+**Styles**:
+```css
+display:none;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/navigation.css, src/styles/components/layout.css
+**Selectors**: `.mobile-menu-toggle`, `.block`
+**Styles**:
+```css
+display:block;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/activities.css, src/styles/components/layout.css
+**Selectors**: `.activity-preview-card`, `.overflow--hidden`
+**Styles**:
+```css
+overflow:hidden;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/components/layout.css
+**Selectors**: `.preparation-grid`, `.grid--6`
+**Styles**:
+```css
+grid-template-columns:1fr;
 ```
 
 
@@ -2658,8 +2972,8 @@ color:var(--color-primary-200);
 
 
 ### Pattern 2 files
-**Files**: src/styles/sections/hero-section.css, src/styles/components/directory-system.css
-**Selectors**: `.btn--secondary`, `.section__title`
+**Files**: src/styles/components/section-header.css, src/styles/components/directory-system.css
+**Selectors**: `.section__title`, `.section__title`
 **Styles**:
 ```css
 color:var(--color-text-white);
@@ -2730,8 +3044,8 @@ margin-bottom:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/sections/hero-section.css, src/styles/components/directory-system.css
-**Selectors**: `.btn--secondary`, `.section__title`
+**Files**: src/styles/components/section-header.css, src/styles/components/directory-system.css
+**Selectors**: `.section__title`, `.section__title`
 **Styles**:
 ```css
 color:var(--color-text-white);
@@ -2874,380 +3188,20 @@ transition:none;
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/layout.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.section--sm`, `.section--sm`
+**Files**: src/styles/components/application-form.css, src/styles/components/application-form.css
+**Selectors**: `.success`, `.success`
 **Styles**:
 ```css
-padding:var(--section-padding-sm) 0;
+border-color:var(--color-success-500);
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/layout.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.section--lg`, `.section--lg`
+**Files**: src/styles/components/application-form.css, src/styles/components/application-form.css
+**Selectors**: `.error`, `.error`
 **Styles**:
 ```css
-padding:var(--section-padding-lg) 0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.p-0`, `.section--no-padding`
-**Styles**:
-```css
-padding:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/layout.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid-layout`, `.grid`
-**Styles**:
-```css
-display:grid;gap:var(--grid-gap);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/layout.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid-layout-sm`, `.grid--sm`
-**Styles**:
-```css
-gap:var(--grid-gap-sm);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/layout.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid-layout-lg`, `.grid--lg`
-**Styles**:
-```css
-gap:var(--grid-gap-lg);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.stats-grid-2`, `.grid--2`
-**Styles**:
-```css
-grid-template-columns:repeat(2, 1fr);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.stats-grid-3`, `.grid--3`
-**Styles**:
-```css
-grid-template-columns:repeat(3, 1fr);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.stats-grid-4`, `.grid--4`
-**Styles**:
-```css
-grid-template-columns:repeat(4, 1fr);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid-auto-fit`, `.grid--auto-fit`
-**Styles**:
-```css
-grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid-auto-fill`, `.grid--auto-fill`
-**Styles**:
-```css
-grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.flex`, `.flex`
-**Styles**:
-```css
-display:flex;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/index.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.price`, `.items--center`
-**Styles**:
-```css
-align-items:center;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.items-start`, `.items--start`
-**Styles**:
-```css
-align-items:flex-start;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.items-end`, `.items--end`
-**Styles**:
-```css
-align-items:flex-end;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.items-baseline`, `.items--baseline`
-**Styles**:
-```css
-align-items:baseline;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.staff-contact`, `.justify--center`
-**Styles**:
-```css
-justify-content:center;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.justify-start`, `.justify--start`
-**Styles**:
-```css
-justify-content:flex-start;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.justify-end`, `.justify--end`
-**Styles**:
-```css
-justify-content:flex-end;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.justify-between`, `.justify--between`
-**Styles**:
-```css
-justify-content:space-between;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.justify-around`, `.justify--around`
-**Styles**:
-```css
-justify-content:space-around;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/layout/layout-system.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.grid--no-gap`, `.gap--0`
-**Styles**:
-```css
-gap:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.gap-xs`, `.gap--2`
-**Styles**:
-```css
-gap:var(--space-2);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.gap-sm`, `.gap--4`
-**Styles**:
-```css
-gap:var(--space-4);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.gap-md`, `.gap--6`
-**Styles**:
-```css
-gap:var(--space-6);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.gap-lg`, `.gap--8`
-**Styles**:
-```css
-gap:var(--space-8);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.gap-xl`, `.gap--12`
-**Styles**:
-```css
-gap:var(--space-12);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.relative`, `.relative`
-**Styles**:
-```css
-position:relative;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.absolute`, `.absolute`
-**Styles**:
-```css
-position:absolute;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.fixed`, `.fixed`
-**Styles**:
-```css
-position:fixed;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.sticky`, `.sticky`
-**Styles**:
-```css
-position:sticky;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.top-0`, `.top--0`
-**Styles**:
-```css
-top:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.right-0`, `.right--0`
-**Styles**:
-```css
-right:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.bottom-0`, `.bottom--0`
-**Styles**:
-```css
-bottom:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.left-0`, `.left--0`
-**Styles**:
-```css
-left:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.z-1`, `.z--1`
-**Styles**:
-```css
-z-index:1;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.z-10`, `.z--10`
-**Styles**:
-```css
-z-index:10;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.z-20`, `.z--20`
-**Styles**:
-```css
-z-index:20;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.z-30`, `.z--30`
-**Styles**:
-```css
-z-index:30;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/a-day-at-sciss.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.time-indicator`, `.hidden`
-**Styles**:
-```css
-display:none;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/navigation.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.mobile-menu-toggle`, `.block`
-**Styles**:
-```css
-display:block;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/activities.css, src/styles/components/layout/layout-system.css
-**Selectors**: `.activity-preview-card`, `.overflow--hidden`
-**Styles**:
-```css
-overflow:hidden;
+border-color:var(--color-error-500);
 ```
 
 
@@ -3352,24 +3306,6 @@ flex:1;
 
 ### Pattern 2 files
 **Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.stat-item-hoverable`, `.card--hoverable`
-**Styles**:
-```css
-cursor:pointer;transition:all var(--transition-normal);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.stat-item-clickable`, `.card--clickable`
-**Styles**:
-```css
-cursor:pointer;user-select:none;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
 **Selectors**: `.stats-grid-2`, `.card-grid--2`
 **Styles**:
 ```css
@@ -3401,6 +3337,150 @@ grid-template-columns:repeat(4, 1fr);
 **Styles**:
 ```css
 grid-template-columns:1fr;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.stat-item-primary`, `.card--primary`
+**Styles**:
+```css
+background:rgba(59, 130, 246, 0.1);border-color:rgba(59, 130, 246, 0.2);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.stat-item-secondary`, `.card--secondary`
+**Styles**:
+```css
+background:rgba(139, 92, 246, 0.1);border-color:rgba(139, 92, 246, 0.2);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.stat-item-accent`, `.card--accent`
+**Styles**:
+```css
+background:rgba(245, 158, 11, 0.1);border-color:rgba(245, 158, 11, 0.2);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/section-header.css, src/styles/components/cards/card-system.css
+**Selectors**: `.section__divider`, `.card__icon`
+**Styles**:
+```css
+background:var(--color-primary-200);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/staff-profile.css, src/styles/components/cards/card-system.css
+**Selectors**: `.staff-position`, `.card__title`
+**Styles**:
+```css
+font-size:var(--text-lg);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.text-sm`, `.card__description`
+**Styles**:
+```css
+font-size:var(--text-sm);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.text-base`, `.card__title`
+**Styles**:
+```css
+font-size:var(--text-base);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.text-xs`, `.card__description`
+**Styles**:
+```css
+font-size:var(--text-xs);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.stat-item-hoverable`, `.card--hoverable`
+**Styles**:
+```css
+cursor:pointer;transition:all var(--transition-normal);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.stat-item-clickable`, `.card--clickable`
+**Styles**:
+```css
+cursor:pointer;user-select:none;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/cards/card-system.css
+**Selectors**: `.amount`, `.card__number`
+**Styles**:
+```css
+font-size:2.5rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/components/cards/card-system.css
+**Selectors**: `.trip-title`, `.card__number`
+**Styles**:
+```css
+font-size:2rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.text-sm`, `.card__label`
+**Styles**:
+```css
+font-size:var(--text-sm);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/components/cards/card-system.css
+**Selectors**: `.preparation-grid`, `.card-grid--4`
+**Styles**:
+```css
+grid-template-columns:1fr;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
+**Selectors**: `.p-md`, `.card--feature`
+**Styles**:
+```css
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/components/cards/card-system.css, src/styles/components/cards/card-system.css
+**Selectors**: `.card__image`, `.card__image`
+**Styles**:
+```css
+width:100%;height:200px;margin:0 0 var(--space-4) 0;border-radius:var(--radius-md) var(--radius-md) 0 0;
 ```
 
 
@@ -3444,7 +3524,7 @@ Consider creating shared component styles for common patterns like:
 
 ## 📁 Files Analyzed
 
-### CSS Files (42)
+### CSS Files (40)
 - src/styles/index.css
 - src/styles/tokens/visual-effects.css
 - src/styles/tokens/typography-system.css
@@ -3479,16 +3559,14 @@ Consider creating shared component styles for common patterns like:
 - src/styles/components/footer.css
 - src/styles/components/footer-cta.css
 - src/styles/components/featurevideo.css
-- src/styles/components/faculty-card.css
 - src/styles/components/directory-system.css
 - src/styles/components/carousel.css
 - src/styles/components/carousel-card.css
 - src/styles/components/application-form.css
-- src/styles/components/layout/layout-system.css
 - src/styles/components/cards/card-system.css
 - src/styles/components/buttons/button-base.css
 
-### JS Files (62)
+### JS Files (60)
 - pages/tuitions-and-fees.js
 - pages/program-overview.js
 - pages/parent-information.js
@@ -3523,7 +3601,6 @@ Consider creating shared component styles for common patterns like:
 - src/components/ui/Footer.js
 - src/components/ui/FeatureVideo.js
 - src/components/ui/FeatureCard.js
-- src/components/ui/FacultyCard.js
 - src/components/ui/EnhancedButton.js
 - src/components/ui/DirectoryPage.js
 - src/components/ui/DirectoryFilters.js
@@ -3545,7 +3622,6 @@ Consider creating shared component styles for common patterns like:
 - src/components/sections/Highlights.js
 - src/components/sections/HeroSection.js
 - src/components/sections/FeatureSection.js
-- src/components/sections/FacultySection.js
 - src/components/sections/ContentSlider.js
 - src/components/sections/CampSchedule.js
 - src/components/layouts/Layout.js

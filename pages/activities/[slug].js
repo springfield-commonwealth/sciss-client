@@ -148,7 +148,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
                 <Link href="/apply" className="btn btn--primary btn--lg">
                   Register for This Activity
                 </Link>
-                <Link href="/activities" className="btn btn--secondary">
+                <Link href="/activities" className="btn btn--header">
                   View All Activities
                 </Link>
               </div>
@@ -326,8 +326,8 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
               <Link href="/apply" className="btn btn--primary btn--lg">
                 Register Now
               </Link>
-              <Link href="/life-activities" className="btn btn--secondary">
-                Explore More Activities
+              <Link href="/life-activities" className="btn btn--header">
+                View All Activities
               </Link>
             </div>
           </div>

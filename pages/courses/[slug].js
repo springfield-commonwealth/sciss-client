@@ -2,6 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import { getAllCourses, getCourseBySlug } from "@/lib/content/courses";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 // Individual Course Page Component
@@ -132,12 +133,9 @@ const CoursePage = ({ course, breadcrumbs }) => {
                 >
                   Apply Now
                 </button>
-                <button
-                  className="btn btn--secondary"
-                  onClick={() => router.push("/academics")}
-                >
+                <Link href="/courses" className="btn btn--header">
                   View All Courses
-                </button>
+                </Link>
               </div>
             </div>
 

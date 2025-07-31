@@ -43,7 +43,6 @@ const HomePage = ({ breadcrumbs = [] }) => {
         heading="Welcome to Springfield Commonwealth International Summer School"
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
-        imageWidth={"90%"}
       />
 
       <FeatureVideo
@@ -67,7 +66,6 @@ const HomePage = ({ breadcrumbs = [] }) => {
         heading="Letter From the President"
         image={HomeFeaturePresidents}
         paragraphs={HomePresidentLetter}
-        imageWidth={"70%"}
       />
 
       {/* Testimonials Section */}

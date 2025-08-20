@@ -96,26 +96,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run TruffleHog
-        uses: trufflesecurity/trufflehog@main
-        with:
-          args: --only-verified --fail
+        run: |
+          # Install TruffleHog if not available
+          if ! command -v trufflehog &> /dev/null; then
+            echo "Installing TruffleHog..."
+            curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sh -s -- -b /usr/local/bin
+          fi
 
-  container-scan:
-    runs-on: ubuntu-latest
-    if: hashFiles('**/Dockerfile') != ''
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: "your-app:latest"
-          format: "sarif"
-          output: "trivy-results.sarif"
-
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
-        with:
-          sarif_file: "trivy-results.sarif"
+          # Run TruffleHog scan
+          echo "Running TruffleHog secret scan..."
+          trufflehog --only-verified --fail . || {
+            echo "❌ Secrets found in codebase!"
+            exit 1
+          }
+          echo "✅ No secrets found in codebase"

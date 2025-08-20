@@ -6,7 +6,7 @@ const nextConfig = {
     domains: [],
     unoptimized: true,
   },
-  output: "export",
+  output: process.env.NODE_ENV === "production" ? "export" : undefined,
   distDir: "dist",
   basePath: "",
   assetPrefix: "",

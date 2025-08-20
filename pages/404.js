@@ -1,17 +1,14 @@
 import Layout from "@/components/layouts/Layout";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function Custom404() {
-  const router = useRouter();
-
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("/");
+      window.location.href = "/";
     }, 3000); // 3 seconds
     return () => clearTimeout(timer);
-  }, [router]);
+  }, []);
 
   return (
     <Layout>

@@ -131,7 +131,7 @@ const useNavigationState = (router) => {
     if (!router || !router.pathname) {
       return false;
     }
-    
+
     if (href === "/") {
       return router.pathname === "/";
     }

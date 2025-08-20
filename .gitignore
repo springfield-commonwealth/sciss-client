@@ -28,3 +28,6 @@ README-MDC.md
 .claude/
 .bmad-*/
 web-bundles/
+
+codebase.xml
+codebase.stats.md

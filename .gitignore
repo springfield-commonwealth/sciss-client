@@ -8,7 +8,6 @@ build/
 .cache/
 .next/cache/
 pnpm-debug.log*
-coverage/
 .pnpm-debug.log*
 
 # Ignore dependencies

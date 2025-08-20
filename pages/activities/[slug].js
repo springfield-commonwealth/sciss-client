@@ -162,7 +162,6 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
           </div>
         </section>
 
-
         <section className="activity-schedule">
           <div className="activity-content">
             <h2>Schedule & Times</h2>

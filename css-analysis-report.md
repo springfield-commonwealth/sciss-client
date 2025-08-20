@@ -1,16 +1,16 @@
 # CSS Analysis Report - SCISS Website
-Generated: 2025-07-31T15:56:07.376Z
+Generated: 2025-08-19T20:08:02.654Z
 
 ## 📊 Summary Statistics
 
 - **Total CSS Files**: 40
-- **Total CSS Classes**: 914
-- **Used Classes**: 524
-- **Unused Classes**: 471
-- **Redundant Patterns**: 335
-- **Estimated Savings**: 52%
+- **Total CSS Classes**: 909
+- **Used Classes**: 528
+- **Unused Classes**: 457
+- **Redundant Patterns**: 354
+- **Estimated Savings**: 50%
 
-## 🚫 Unused Classes (471)
+## 🚫 Unused Classes (457)
 
 - `.PhoneInput`
 - `.PhoneInputCountry`
@@ -113,10 +113,8 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.content-slider__button`
 - `.content-slider__link`
 - `.cost-required`
-- `.countdown-text`
 - `.courses-directory-header`
 - `.css`
-- `.cta-countdown`
 - `.currency`
 - `.curriculum-section`
 - `.day-activities`
@@ -146,8 +144,6 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.faq-item`
 - `.feature`
 - `.feature-list`
-- `.feature-section-image__img`
-- `.feature-section-image__picture`
 - `.file-upload-area`
 - `.file-upload-dragover`
 - `.file-upload-error`
@@ -241,6 +237,7 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.justify-between`
 - `.justify-end`
 - `.justify-start`
+- `.lead`
 - `.left--0`
 - `.left-0`
 - `.level`
@@ -279,6 +276,7 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.nav-link-with-chevron`
 - `.open`
 - `.optional`
+- `.org`
 - `.outcomes-section`
 - `.overflow--auto`
 - `.overflow--hidden`
@@ -303,20 +301,12 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.page-header-margin`
 - `.page-header-spacing`
 - `.parent-feature`
-- `.payment-plan-card`
 - `.pb-0`
 - `.pb-lg`
 - `.pb-md`
 - `.pb-sm`
 - `.pb-xl`
 - `.pb-xs`
-- `.plan-benefit`
-- `.plan-description`
-- `.plan-structure`
-- `.policy-icon`
-- `.policy-item`
-- `.policy-list`
-- `.policy-note`
 - `.prerequisites`
 - `.price`
 - `.price-main`
@@ -344,7 +334,6 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.pt-sm`
 - `.pt-xl`
 - `.pt-xs`
-- `.refund-policy`
 - `.regular-price`
 - `.relative`
 - `.reset-filters-btn`
@@ -364,11 +353,6 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.schedule-header`
 - `.schedule-time`
 - `.schedule-timeline`
-- `.scholarship-amount`
-- `.scholarship-card`
-- `.scholarship-criteria`
-- `.scholarship-deadline`
-- `.scholarship-header`
 - `.scrolled`
 - `.section--lg`
 - `.section--no-padding`
@@ -426,6 +410,7 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.swiper-button-prev`
 - `.swiper-pagination-bullet`
 - `.swiper-pagination-bullet-active`
+- `.text--left`
 - `.text--right`
 - `.text-2xl`
 - `.text-3xl`
@@ -465,6 +450,7 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.upload-success`
 - `.visible`
 - `.vision-text`
+- `.w3`
 - `.week-schedule`
 - `.week-trips`
 - `.weekly-schedule`
@@ -484,24 +470,33 @@ Generated: 2025-07-31T15:56:07.376Z
 - `.z-20`
 - `.z-30`
 
-## 🔄 Redundant Style Patterns (335)
+## 🔄 Redundant Style Patterns (354)
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
-**Selectors**: `.price-main`, `.early-bird-main`
+**Files**: src/styles/sections/feature-section.css, src/styles/sections/faculty-section.css
+**Selectors**: `.feature-section`, `.faculty-section`
 **Styles**:
 ```css
-display:flex;align-items:baseline;justify-content:center;margin-bottom:0.5rem;
+padding:var(--space-12) 0;
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
-**Selectors**: `.service-category`, `.payment-plan-card`
+**Files**: src/styles/sections/feature-section.css, src/styles/sections/camp-schedule.css
+**Selectors**: `.feature-section`, `.camp-schedule-section`
 **Styles**:
 ```css
-@extend .card;
+padding:var(--space-8) 0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__title`, `.currency`
+**Styles**:
+```css
+font-size:var(--text-xl);
 ```
 
 
@@ -510,25 +505,7 @@ display:flex;align-items:baseline;justify-content:center;margin-bottom:0.5rem;
 **Selectors**: `.session-header`, `.cost-header`
 **Styles**:
 ```css
-@extend .section-header-base;display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
-**Selectors**: `.service-category`, `.scholarship-card`
-**Styles**:
-```css
-@extend .card;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
-**Selectors**: `.application-timeline`, `.refund-policy`
-**Styles**:
-```css
-max-width:800px;margin:0 auto;
+display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);
 ```
 
 
@@ -537,25 +514,97 @@ max-width:800px;margin:0 auto;
 **Selectors**: `.amount`, `.amount`
 **Styles**:
 ```css
-font-size:3rem;
+font-size:var(--text-4xl);
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/trips.css
-**Selectors**: `.pricing-features`, `.university-content`
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.session-header`, `.cost-header`
 **Styles**:
 ```css
-padding:2rem;
+flex-direction:column;align-items:flex-start;gap:var(--space-2);
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/trips.css
-**Selectors**: `.required`, `.trip-type`
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.service-category`
 **Styles**:
 ```css
-background:var(--primary-blue);color:white;
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.pricing-features`
+**Styles**:
+```css
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.pricing-header`
+**Styles**:
+```css
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.early-bird-offer`
+**Styles**:
+```css
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.amount`, `.amount`
+**Styles**:
+```css
+font-size:var(--text-3xl);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.session-card`
+**Styles**:
+```css
+padding:var(--space-4);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.feature-section__text`, `.application-step`
+**Styles**:
+```css
+padding:var(--space-4);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.session-card`, `.cost-item`
+**Styles**:
+```css
+animation:fadeinup 0.6s ease-out;animation-delay:calc(var(--animation-delay, 0) * 0.1s);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/tuitions-and-fees.css
+**Selectors**: `.session-card`, `.application-step`
+**Styles**:
+```css
+animation:fadeinup 0.6s ease-out;animation-delay:calc(var(--animation-delay, 0) * 0.1s);
 ```
 
 
@@ -650,24 +699,6 @@ padding:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/trips.css
-**Selectors**: `.amount`, `.trip-title`
-**Styles**:
-```css
-font-size:2.5rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/trips.css
-**Selectors**: `.application-step`, `.itinerary-item`
-**Styles**:
-```css
-flex-direction:column;gap:1rem;
-```
-
-
-### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/pages/trips.css
 **Selectors**: `.preparation-grid`, `.trip-quick-info`
 **Styles**:
@@ -713,38 +744,146 @@ grid-template-columns:1fr;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
-**Selectors**: `.preparation-list`, `.achievements-list`
+**Files**: src/styles/sections/hero-section.css, src/styles/pages/staff-profile.css
+**Selectors**: `.hero`, `.staff-hero`
 **Styles**:
 ```css
-list-style:none;padding:0;margin:0;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/sections/camp-schedule.css, src/styles/pages/staff-profile.css
-**Selectors**: `.camp-schedule-section`, `.staff-cta`
-**Styles**:
-```css
-padding:var(--space-8) 0;
+margin-top:var(--nav-height-mobile);
 ```
 
 
 ### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
-**Selectors**: `.trip-actions`, `.cta-actions`
+**Selectors**: `.trip-content`, `.staff-content`
 **Styles**:
 ```css
-flex-direction:column;
+max-width:1200px;margin:0 auto;padding:0 2rem;
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/pages/staff-profile.css
-**Selectors**: `.staff-contact`, `.expertise-list`
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-cta`, `.staff-cta`
 **Styles**:
 ```css
-justify-content:center;
+padding:4rem 0;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-highlights`, `.staff-bio`
+**Styles**:
+```css
+background:white;box-shadow:0 10px 30px rgba(0, 0, 0, 0.1);margin:-3rem 0 0;border-radius:30px 30px 0 0;position:relative;z-index:3;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-itinerary`, `.related-staff`
+**Styles**:
+```css
+background:var(--color-gray-50);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.related-trips-grid`, `.related-staff-grid`
+**Styles**:
+```css
+display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;margin-top:2rem;max-width:1200px;margin-left:auto;margin-right:auto;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.related-trip-card`, `.related-staff-card`
+**Styles**:
+```css
+background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0, 0, 0, 0.1);transition:transform 0.3s ease, box-shadow 0.3s ease;text-decoration:none;color:inherit;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-preview-content`, `.related-staff-info`
+**Styles**:
+```css
+padding:1.5rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-cta`, `.staff-cta`
+**Styles**:
+```css
+background:linear-gradient(135deg, var(--color-warning-500) 0%, var(--color-warning-600) 100%);color:white;text-align:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-hero-content`, `.staff-hero-content`
+**Styles**:
+```css
+grid-template-columns:1fr;gap:2rem;text-align:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-title`, `.staff-name`
+**Styles**:
+```css
+font-size:2.5rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-hero`, `.staff-hero`
+**Styles**:
+```css
+padding:2rem 0 4rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-hero-content`, `.staff-hero-content`
+**Styles**:
+```css
+padding:0 1rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-title`, `.staff-name`
+**Styles**:
+```css
+font-size:2rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.cta-actions`, `.staff-contact`
+**Styles**:
+```css
+flex-direction:column;align-items:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-hero-content`, `.staff-content`
+**Styles**:
+```css
+padding:0 1rem;
 ```
 
 
@@ -758,8 +897,26 @@ grid-template-columns:1fr;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/program-overview.css
-**Selectors**: `.pricing-features`, `.stat-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.cta-actions`, `.cta-actions`
+**Styles**:
+```css
+flex-direction:column;align-items:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/staff-profile.css
+**Selectors**: `.trip-description`, `.bio-text`
+**Styles**:
+```css
+font-size:1rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/program-overview.css
+**Selectors**: `.university-content`, `.stat-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -776,8 +933,8 @@ font-weight:500;color:var(--text-dark);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/program-overview.css
-**Selectors**: `.pricing-features`, `.vision-content`
+**Files**: src/styles/pages/trips.css, src/styles/pages/program-overview.css
+**Selectors**: `.university-content`, `.vision-content`
 **Styles**:
 ```css
 padding:2rem;
@@ -812,8 +969,8 @@ max-width:800px;margin:0 auto;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.safety-category`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.safety-category`
 **Styles**:
 ```css
 padding:2rem;
@@ -839,17 +996,8 @@ display:flex;flex-direction:column;gap:1rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.additional-costs`, `.health-requirements`
-**Styles**:
-```css
-display:grid;gap:1.5rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.health-req-item`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.health-req-item`
 **Styles**:
 ```css
 padding:2rem;
@@ -866,8 +1014,8 @@ display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.packing-category`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.packing-category`
 **Styles**:
 ```css
 padding:2rem;
@@ -884,8 +1032,8 @@ list-style:none;padding:0;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.service-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.service-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -893,8 +1041,8 @@ padding:2rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.protocol-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.protocol-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -902,8 +1050,8 @@ padding:2rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.travel-tip-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.travel-tip-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -920,29 +1068,11 @@ padding:2rem;text-align:center;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.pricing-features`, `.faq-item`
+**Files**: src/styles/pages/trips.css, src/styles/pages/parent-information.css
+**Selectors**: `.university-content`, `.faq-item`
 **Styles**:
 ```css
 padding:2rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.cost-header`, `.comm-type`
-**Styles**:
-```css
-flex-direction:column;align-items:flex--start;gap:0.5rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/parent-information.css
-**Selectors**: `.scholarship-header`, `.req-header`
-**Styles**:
-```css
-flex-direction:column;align-items:flex--start;gap:1rem;
 ```
 
 
@@ -992,6 +1122,15 @@ font-size:3rem;margin-bottom:1rem;
 
 
 ### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/course-page.css
+**Selectors**: `.trip-hero`, `.course-page-hero`
+**Styles**:
+```css
+background:linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);color:white;padding:4rem 0 6rem;position:relative;overflow:hidden;/* apply universal header spacing to prevent nav overlap */ margin-top:var(--nav-height);
+```
+
+
+### Pattern 2 files
 **Files**: src/styles/sections/hero-section.css, src/styles/pages/course-page.css
 **Selectors**: `.hero`, `.course-page-hero`
 **Styles**:
@@ -1019,29 +1158,11 @@ display:flex;flex-direction:column;gap:0.25rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/pages/course-page.css
-**Selectors**: `.staff-hero-image`, `.course-page-hero-image`
-**Styles**:
-```css
-display:flex;justify-content:center;align-items:center;
-```
-
-
-### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/pages/course-page.css
 **Selectors**: `.university-trips`, `.course-page-content`
 **Styles**:
 ```css
 display:flex;flex-direction:column;gap:3rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/course-page.css
-**Selectors**: `.pricing-showcase`, `.course-page-hero-content`
-**Styles**:
-```css
-grid-template-columns:1fr;gap:2rem;
 ```
 
 
@@ -1078,6 +1199,15 @@ flex-direction:column;
 **Styles**:
 ```css
 padding:1.5rem;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/staff-profile.css, src/styles/pages/course-page.css
+**Selectors**: `.staff-name`, `.course-page-title`
+**Styles**:
+```css
+font-size:1.75rem;
 ```
 
 
@@ -1119,16 +1249,16 @@ position:absolute;top:1rem;right:1rem;display:flex;flex-direction:column;gap:0.5
 
 ### Pattern 2 files
 **Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.session-highlights`, `.activity-features-preview`
+**Selectors**: `.pricing-features`, `.sport-card`
 **Styles**:
 ```css
-display:flex;flex-wrap:wrap;gap:0.5rem;
+padding:var(--space-8);
 ```
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/activities.css, src/styles/pages/activities.css
-**Selectors**: `.sport-card`, `.fitness-card`
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
+**Selectors**: `.pricing-features`, `.fitness-card`
 **Styles**:
 ```css
 padding:var(--space-8);
@@ -1145,8 +1275,8 @@ margin-bottom:var(--space-6);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.pricing-features`, `.recreation-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
+**Selectors**: `.university-content`, `.recreation-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -1154,8 +1284,8 @@ padding:2rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.pricing-features`, `.wellness-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
+**Selectors**: `.university-content`, `.wellness-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -1168,15 +1298,6 @@ padding:2rem;
 **Styles**:
 ```css
 margin-bottom:1.5rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.policy-note`, `.schedule-container`
-**Styles**:
-```css
-background:var(--background-light);padding:2rem;border-radius:12px;
 ```
 
 
@@ -1199,11 +1320,11 @@ padding:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.service-items`, `.day-activities`
+**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
+**Selectors**: `.trip-page`, `.activity-page`
 **Styles**:
 ```css
-display:flex;flex-direction:column;gap:0.75rem;
+background:linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);min-height:100vh;
 ```
 
 
@@ -1213,6 +1334,15 @@ display:flex;flex-direction:column;gap:0.75rem;
 **Styles**:
 ```css
 background:linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);color:white;padding:4rem 0 6rem;position:relative;overflow:hidden;/* apply universal header spacing to prevent nav overlap */ margin-top:var(--nav-height);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/hero-section.css, src/styles/pages/activities.css
+**Selectors**: `.hero`, `.activity-hero`
+**Styles**:
+```css
+margin-top:var(--nav-height-mobile);
 ```
 
 
@@ -1254,55 +1384,10 @@ padding:0.5rem 1rem;border-radius:25px;font-size:0.875rem;font-weight:600;text-t
 
 ### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.category-badge`, `.category-badge`
+**Selectors**: `.trip-title`, `.activity-title`
 **Styles**:
 ```css
-background:rgba(255, 255, 255, 0.2);border:2px solid rgba(255, 255, 255, 0.3);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.difficulty-badge`, `.level-badge`
-**Styles**:
-```css
-background:linear-gradient(45deg, var(--color-warning-500), var(--color-warning-600));box-shadow:0 4px 15px rgba(245, 158, 11, 0.3);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.duration-badge`, `.difficulty-badge`
-**Styles**:
-```css
-background:linear-gradient(45deg, var(--color-success-500), var(--color-success-600));box-shadow:0 4px 15px rgba(16, 185, 129, 0.3);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.trip-description`, `.activity-description`
-**Styles**:
-```css
-font-size:1.25rem;line-height:1.7;margin-bottom:2rem;opacity:0.95;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.trip-quick-info`, `.activity-quick-info`
-**Styles**:
-```css
-display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;padding:1.5rem;background:rgba(255, 255, 255, 0.1);border-radius:15px;backdrop-filter:blur(10px);
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.quick-info-item`, `.quick-info-item`
-**Styles**:
-```css
-font-size:0.95rem;display:flex;align-items:center;gap:0.5rem;
+font-size:3.5rem;font-weight:800;margin-bottom:1.5rem;line-height:1.1;background:linear-gradient(45deg, var(--color-white), var(--color-primary-50));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 ```
 
 
@@ -1321,6 +1406,15 @@ display:flex;gap:1rem;flex-wrap:wrap;
 **Styles**:
 ```css
 animation:slideinright 0.8s ease-out;position:relative;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
+**Selectors**: `.trip-image`, `.activity-image`
+**Styles**:
+```css
+width:100%;height:300px;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0, 0, 0, 0.3);transform:rotate(-2deg);transition:transform 0.3s ease;
 ```
 
 
@@ -1353,19 +1447,10 @@ background:white;box-shadow:0 10px 30px rgba(0, 0, 0, 0.1);margin:-3rem 0 0;bord
 
 ### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
-**Selectors**: `.experience-grid`, `.schedule-details`
+**Selectors**: `.related-trips-grid`, `.schedule-details`
 **Styles**:
 ```css
-display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:2rem;margin-top:2rem;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.session-highlights`, `.time-slots`
-**Styles**:
-```css
-display:flex;flex-wrap:wrap;gap:0.5rem;
+display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;margin-top:2rem;max-width:1200px;margin-left:auto;margin-right:auto;
 ```
 
 
@@ -1455,7 +1540,7 @@ background:var(--color-gray-50);
 **Selectors**: `.related-trips-grid`, `.related-activities-grid`
 **Styles**:
 ```css
-display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;margin-top:2rem;
+display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;margin-top:2rem;max-width:1200px;margin-left:auto;margin-right:auto;
 ```
 
 
@@ -1595,8 +1680,8 @@ font-size:0.7rem;padding:0.2rem 0.4rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.cost-header`, `.sport-header`
+**Files**: src/styles/pages/parent-information.css, src/styles/pages/activities.css
+**Selectors**: `.comm-type`, `.sport-header`
 **Styles**:
 ```css
 flex-direction:column;align-items:flex--start;gap:0.5rem;
@@ -1676,8 +1761,8 @@ grid-template-columns:1fr;gap:2rem;text-align:center;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/activities.css
-**Selectors**: `.amount`, `.activity-title`
+**Files**: src/styles/pages/trips.css, src/styles/pages/activities.css
+**Selectors**: `.trip-title`, `.activity-title`
 **Styles**:
 ```css
 font-size:2.5rem;
@@ -1802,8 +1887,8 @@ display:flex;gap:1rem;flex-wrap:wrap;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/academics.css
-**Selectors**: `.pricing-features`, `.program-content`
+**Files**: src/styles/pages/trips.css, src/styles/pages/academics.css
+**Selectors**: `.university-content`, `.program-content`
 **Styles**:
 ```css
 padding:2rem;
@@ -1856,15 +1941,6 @@ grid-template-columns:1fr;gap:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/pages/academics.css
-**Selectors**: `.staff-contact`, `.program-badges`
-**Styles**:
-```css
-justify-content:center;
-```
-
-
-### Pattern 2 files
 **Files**: src/styles/pages/apply.css, src/styles/pages/academics.css
 **Selectors**: `.apply-header`, `.course-preview-highlights`
 **Styles**:
@@ -1874,8 +1950,8 @@ margin-bottom:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/academics.css
-**Selectors**: `.application-step`, `.course-preview-header`
+**Files**: src/styles/pages/trips.css, src/styles/pages/academics.css
+**Selectors**: `.itinerary-item`, `.course-preview-header`
 **Styles**:
 ```css
 flex-direction:column;gap:1rem;
@@ -1892,8 +1968,8 @@ flex-direction:column;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/pages/academics.css
-**Selectors**: `.staff-contact`, `.course-preview-meta`
+**Files**: src/styles/pages/academics.css, src/styles/pages/academics.css
+**Selectors**: `.program-badges`, `.course-preview-meta`
 **Styles**:
 ```css
 justify-content:center;
@@ -1910,8 +1986,8 @@ padding:1rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/about-us.css
-**Selectors**: `.pricing-features`, `.vision-section`
+**Files**: src/styles/pages/trips.css, src/styles/pages/about-us.css
+**Selectors**: `.university-content`, `.vision-section`
 **Styles**:
 ```css
 padding:2rem;
@@ -1955,15 +2031,6 @@ font-size:3rem;margin-bottom:1rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/a-day-at-sciss.css
-**Selectors**: `.currency`, `.activity-icon`
-**Styles**:
-```css
-font-size:1.5rem;
-```
-
-
-### Pattern 2 files
 **Files**: src/styles/pages/parent-information.css, src/styles/pages/a-day-at-sciss.css
 **Selectors**: `.tips-grid`, `.weekly-grid`
 **Styles**:
@@ -1982,8 +2049,8 @@ padding:1.5rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/pages/a-day-at-sciss.css
-**Selectors**: `.pricing-features`, `.dining-card`
+**Files**: src/styles/pages/trips.css, src/styles/pages/a-day-at-sciss.css
+**Selectors**: `.university-content`, `.dining-card`
 **Styles**:
 ```css
 padding:2rem;
@@ -2045,8 +2112,8 @@ font-size:1rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/course-page.css, src/styles/components/weekly-schedule.css
-**Selectors**: `.course-page-title`, `.schedule-title`
+**Files**: src/styles/pages/staff-profile.css, src/styles/components/weekly-schedule.css
+**Selectors**: `.staff-name`, `.schedule-title`
 **Styles**:
 ```css
 font-size:1.75rem;
@@ -2059,6 +2126,15 @@ font-size:1.75rem;
 **Styles**:
 ```css
 flex-direction:column;align-items:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.required`, `.badge-primary`
+**Styles**:
+```css
+background:var(--color-primary-500);color:white;
 ```
 
 
@@ -2090,6 +2166,15 @@ display:block;font-size:var(--text-base);font-weight:var(--font-medium);opacity:
 
 
 ### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.additional-costs`, `.stats-grid`
+**Styles**:
+```css
+display:grid;gap:var(--space-6);max-width:800px;margin:0 auto;
+```
+
+
+### Pattern 2 files
 **Files**: src/styles/pages/trips.css, src/styles/components/utilities.css
 **Selectors**: `.preparation-grid`, `.stats-grid-1`
 **Styles**:
@@ -2104,15 +2189,6 @@ grid-template-columns:1fr;
 **Styles**:
 ```css
 grid-template-columns:1fr;
-```
-
-
-### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/utilities.css
-**Selectors**: `.education-list`, `.grid-base`
-**Styles**:
-```css
-display:grid;gap:var(--space-6);
 ```
 
 
@@ -2162,8 +2238,35 @@ grid-template-columns:1fr;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/utilities.css
-**Selectors**: `.staff-position`, `.text-lg`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__paragraph`, `.text-xs`
+**Styles**:
+```css
+font-size:var(--text-xs);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__paragraph`, `.text-sm`
+**Styles**:
+```css
+font-size:var(--text-sm);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__title`, `.text-base`
+**Styles**:
+```css
+font-size:var(--text-base);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__title`, `.text-lg`
 **Styles**:
 ```css
 font-size:var(--text-lg);
@@ -2171,8 +2274,17 @@ font-size:var(--text-lg);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/utilities.css
-**Selectors**: `.staff-name`, `.text-2xl`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__title`, `.text-xl`
+**Styles**:
+```css
+font-size:var(--text-xl);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.amount`, `.text-2xl`
 **Styles**:
 ```css
 font-size:var(--text-2xl);
@@ -2180,11 +2292,20 @@ font-size:var(--text-2xl);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/utilities.css
-**Selectors**: `.staff-name`, `.text-3xl`
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.amount`, `.text-3xl`
 **Styles**:
 ```css
 font-size:var(--text-3xl);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.amount`, `.text-4xl`
+**Styles**:
+```css
+font-size:var(--text-4xl);
 ```
 
 
@@ -2297,6 +2418,15 @@ margin-bottom:var(--space-6);
 
 
 ### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__header`, `.mb-lg`
+**Styles**:
+```css
+margin-bottom:var(--space-8);
+```
+
+
+### Pattern 2 files
 **Files**: src/styles/components/utilities.css, src/styles/components/utilities.css
 **Selectors**: `.mb-0`, `.mb--0`
 **Styles**:
@@ -2333,8 +2463,8 @@ margin-bottom:var(--space-6);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/utilities.css
-**Selectors**: `.mb-lg`, `.mb--lg`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__header`, `.mb--lg`
 **Styles**:
 ```css
 margin-bottom:var(--space-8);
@@ -2351,8 +2481,26 @@ margin-bottom:var(--space-12);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/activities.css, src/styles/components/utilities.css
-**Selectors**: `.sport-card`, `.p-lg`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__text`, `.p-sm`
+**Styles**:
+```css
+padding:var(--space-4);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__text`, `.p-md`
+**Styles**:
+```css
+padding:var(--space-6);
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/utilities.css
+**Selectors**: `.pricing-features`, `.p-lg`
 **Styles**:
 ```css
 padding:var(--space-8);
@@ -2387,11 +2535,20 @@ align-items:center;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/utilities.css
-**Selectors**: `.staff-contact`, `.justify-center`
+**Files**: src/styles/pages/academics.css, src/styles/components/utilities.css
+**Selectors**: `.program-badges`, `.justify-center`
 **Styles**:
 ```css
 justify-content:center;
+```
+
+
+### Pattern 2 files
+**Files**: src/styles/sections/feature-section.css, src/styles/components/utilities.css
+**Selectors**: `.feature-section__layout`, `.gap-xl`
+**Styles**:
+```css
+gap:var(--space-12);
 ```
 
 
@@ -2441,8 +2598,8 @@ text-align:right;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/section-header.css
-**Selectors**: `.staff-name`, `.section__title`
+**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/section-header.css
+**Selectors**: `.amount`, `.section__title`
 **Styles**:
 ```css
 font-size:var(--text-2xl);
@@ -2450,8 +2607,8 @@ font-size:var(--text-2xl);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/section-header.css
-**Selectors**: `.text-base`, `.section__description`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/section-header.css
+**Selectors**: `.feature-section__title`, `.section__description`
 **Styles**:
 ```css
 font-size:var(--text-base);
@@ -2621,8 +2778,8 @@ align-items:baseline;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/layout.css
-**Selectors**: `.staff-contact`, `.justify--center`
+**Files**: src/styles/pages/academics.css, src/styles/components/layout.css
+**Selectors**: `.program-badges`, `.justify--center`
 **Styles**:
 ```css
 justify-content:center;
@@ -2711,8 +2868,8 @@ gap:var(--space-8);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/layout.css
-**Selectors**: `.gap-xl`, `.gap--12`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/layout.css
+**Selectors**: `.feature-section__layout`, `.gap--12`
 **Styles**:
 ```css
 gap:var(--space-12);
@@ -3008,8 +3165,8 @@ position:relative;
 
 
 ### Pattern 2 files
-**Files**: src/styles/sections/faculty-section.css, src/styles/components/directory-system.css
-**Selectors**: `.faculty-section`, `.directory-grid`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/directory-system.css
+**Selectors**: `.feature-section`, `.directory-grid`
 **Styles**:
 ```css
 padding:var(--space-12) 0;
@@ -3377,8 +3534,8 @@ background:var(--color-primary-200);
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/staff-profile.css, src/styles/components/cards/card-system.css
-**Selectors**: `.staff-position`, `.card__title`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__title`, `.card__title`
 **Styles**:
 ```css
 font-size:var(--text-lg);
@@ -3386,8 +3543,8 @@ font-size:var(--text-lg);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.text-sm`, `.card__description`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__paragraph`, `.card__description`
 **Styles**:
 ```css
 font-size:var(--text-sm);
@@ -3395,8 +3552,8 @@ font-size:var(--text-sm);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.text-base`, `.card__title`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__title`, `.card__title`
 **Styles**:
 ```css
 font-size:var(--text-base);
@@ -3404,8 +3561,8 @@ font-size:var(--text-base);
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.text-xs`, `.card__description`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__paragraph`, `.card__description`
 **Styles**:
 ```css
 font-size:var(--text-xs);
@@ -3431,8 +3588,8 @@ cursor:pointer;user-select:none;
 
 
 ### Pattern 2 files
-**Files**: src/styles/pages/tuitions-and-fees.css, src/styles/components/cards/card-system.css
-**Selectors**: `.amount`, `.card__number`
+**Files**: src/styles/pages/trips.css, src/styles/components/cards/card-system.css
+**Selectors**: `.trip-title`, `.card__number`
 **Styles**:
 ```css
 font-size:2.5rem;
@@ -3449,8 +3606,8 @@ font-size:2rem;
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.text-sm`, `.card__label`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__paragraph`, `.card__label`
 **Styles**:
 ```css
 font-size:var(--text-sm);
@@ -3467,8 +3624,8 @@ grid-template-columns:1fr;
 
 
 ### Pattern 2 files
-**Files**: src/styles/components/utilities.css, src/styles/components/cards/card-system.css
-**Selectors**: `.p-md`, `.card--feature`
+**Files**: src/styles/sections/feature-section.css, src/styles/components/cards/card-system.css
+**Selectors**: `.feature-section__text`, `.card--feature`
 **Styles**:
 ```css
 padding:var(--space-6);

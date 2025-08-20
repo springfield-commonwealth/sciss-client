@@ -27,3 +27,7 @@ export { default as DirectoryCard } from "./DirectoryCard";
 export { default as DirectoryCategories } from "./DirectoryCategories";
 export { default as DirectoryFilters } from "./DirectoryFilters";
 export { default as DirectoryPage } from "./DirectoryPage";
+
+// Radix UI Components
+export { ModalTrigger, default as RadixModal } from "./radix/Modal";
+export { default as RadixSelect } from "./radix/Select";

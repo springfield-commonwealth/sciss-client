@@ -2,6 +2,13 @@ import { fireEvent, render, screen } from "@testing-library/react";
 // import { axe, toHaveNoViolations } from "jest-axe";
 import { ModalTrigger, RadixModal, RadixSelect } from "../index";
 
+// Mock ImageSlider to prevent CSS import issues
+jest.mock("../ImageSlider", () => {
+  return function MockImageSlider() {
+    return <div data-testid="image-slider">Mock Image Slider</div>;
+  };
+});
+
 // Extend Jest matchers
 // expect.extend(toHaveNoViolations);
 

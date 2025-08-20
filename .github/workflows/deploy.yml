@@ -59,8 +59,24 @@ jobs:
           # Extract coverage percentage and check if it meets minimum threshold
           COVERAGE=$(node -e "
             const fs = require('fs');
-            const coverage = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
-            const total = coverage.total.lines.pct;
+            const coverage = JSON.parse(fs.readFileSync('coverage/coverage-final.json', 'utf8'));
+            
+            // Calculate total coverage from all files
+            let totalLines = 0;
+            let coveredLines = 0;
+            
+            Object.values(coverage).forEach(file => {
+              if (file && file.s) {
+                Object.values(file.s).forEach(lineCoverage => {
+                  totalLines++;
+                  if (lineCoverage > 0) {
+                    coveredLines++;
+                  }
+                });
+              }
+            });
+            
+            const total = totalLines > 0 ? Math.round((coveredLines / totalLines) * 100) : 0;
             console.log(total);
             if (total < 80) {
               console.error('Coverage below 80% threshold');

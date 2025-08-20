@@ -1,7 +1,7 @@
 import addressOptions from "@/data/addressOptions.json";
 import formOptions from "@/data/formOptions.json";
 import { useApplicationForm } from "@/hooks/useApplicationForm";
-import { useRouter } from "next/router";
+import { useRouter } from "next/compat/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";

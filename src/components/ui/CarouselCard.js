@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/compat/router";
 
 const CarouselCard = ({ title, description, image, link }, index) => {
   const router = useRouter();

@@ -8,8 +8,8 @@ import {
   HamburgerMenuIcon,
   HomeIcon,
 } from "@radix-ui/react-icons";
+import { useRouter } from "next/compat/router";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const navLinks = [
   {

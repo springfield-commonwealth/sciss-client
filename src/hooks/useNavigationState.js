@@ -127,6 +127,11 @@ const useNavigationState = (router) => {
   }, [isMobile]);
 
   const isActiveLink = (href) => {
+    // Check if router is available (null during static generation)
+    if (!router || !router.pathname) {
+      return false;
+    }
+    
     if (href === "/") {
       return router.pathname === "/";
     }

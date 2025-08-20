@@ -1,0 +1,121 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Run security scans weekly
+    - cron: "0 2 * * 1"
+
+jobs:
+  dependency-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: "10"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        env:
+          NEXT_PUBLIC_API_URL: "https://sciss.org/api"
+
+      - name: Run pnpm audit
+        run: |
+          echo "Running pnpm audit..."
+          pnpm audit --audit-level=moderate || {
+            echo "⚠️ Security vulnerabilities found in dependencies"
+            echo "Please review and update vulnerable packages"
+            exit 1
+          }
+          echo "✅ No critical security vulnerabilities found"
+
+      - name: Run pnpm audit with detailed report
+        run: |
+          echo "Running detailed pnpm audit..."
+          pnpm audit --audit-level=moderate --json > audit-report.json || true
+
+          # Check if there are any high/critical vulnerabilities
+          if pnpm audit --audit-level=high 2>/dev/null; then
+            echo "❌ High or critical vulnerabilities found!"
+            echo "Please review and update vulnerable packages"
+            exit 1
+          else
+            echo "✅ No high or critical vulnerabilities found"
+          fi
+
+          # Generate summary report
+          echo "📊 Security Audit Summary:"
+          pnpm audit --audit-level=moderate --parseable | head -20
+
+      - name: Check for outdated packages
+        run: |
+          echo "Checking for outdated packages..."
+          pnpm outdated --json > outdated-packages.json || true
+
+          # Count outdated packages
+          OUTDATED_COUNT=$(pnpm outdated --json | jq 'length' 2>/dev/null || echo "0")
+          echo "📦 Found $OUTDATED_COUNT outdated packages"
+
+          if [ "$OUTDATED_COUNT" -gt 10 ]; then
+            echo "⚠️ Many packages are outdated. Consider updating them for security."
+          fi
+
+  code-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          args: --only-verified --fail
+
+  container-scan:
+    runs-on: ubuntu-latest
+    if: hashFiles('**/Dockerfile') != ''
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "your-app:latest"
+          format: "sarif"
+          output: "trivy-results.sarif"
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: "trivy-results.sarif"

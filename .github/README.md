@@ -6,87 +6,146 @@ This directory contains GitHub Actions workflows for automated building, testing
 
 ### 1. `deploy.yml` - Main CI/CD Pipeline
 
-- **Triggers**: Push to main/master branch, pull requests, manual dispatch
+- **Triggers**: Push to main/master branch, pull requests
 - **Jobs**:
-  - `build-and-test`: Runs linting, type checking, tests, and builds the application
-  - `deploy`: Deploys to Hostinger (only on main/master pushes)
+  - `test`: Runs linting, type checking, tests with coverage, and builds the application
+  - `deploy`: Deploys to production (only on main/master pushes)
+  - `deploy-failure`: Handles deployment failure notifications
 
-### 2. `develop.yml` - Development Checks
+### 2. `staging.yml` - Staging Environment
+
+- **Triggers**: Push to develop/staging branches, pull requests, manual dispatch
+- **Jobs**:
+  - `test`: Runs validation and builds for staging
+  - `deploy-staging`: Deploys to staging environment
+
+### 3. `develop.yml` - Development Checks
 
 - **Triggers**: Pull requests, pushes to non-main branches
 - **Jobs**:
   - `validate`: Runs all checks without deployment
 
-### 3. `manual-deploy.yml` - Manual Deployment
+### 4. `manual-deploy.yml` - Manual Deployment
 
 - **Triggers**: Manual workflow dispatch
 - **Jobs**:
   - `manual-deploy`: Full build and deployment process
 
+### 5. `security.yml` - Security Scanning
+
+- **Triggers**: Push to main/master/develop, pull requests, weekly schedule
+- **Jobs**:
+  - `dependency-scan`: Scans for vulnerable dependencies
+  - `code-scan`: Performs CodeQL analysis
+  - `secret-scan`: Scans for exposed secrets
+  - `container-scan`: Scans container images (if applicable)
+
 ## Required Secrets
+
+**⚠️ IMPORTANT**: See [SECRETS_SETUP.md](./SECRETS_SETUP.md) for complete setup instructions.
 
 Add these secrets to your GitHub repository (Settings > Secrets and variables > Actions):
 
-### `HOSTINGER_SSH_KEY`
+### Production Secrets
 
-Your SSH private key for connecting to Hostinger. This should be the content of your `~/.ssh/hostinger_viswise` file.
+- `HOSTINGER_SSH_KEY` - SSH private key for production server
+- `HOSTINGER_USER` - SSH username for production server
+- `HOSTINGER_HOST` - Production server hostname/IP
+- `HOSTINGER_PATH` - Production deployment path
+- `HOSTINGER_SSH_PORT` - SSH port for production server
+- `NEXT_PUBLIC_API_URL` - Production API URL
+- `HEALTH_CHECK_URL` - Production health check URL
 
-**To add this secret:**
+### Staging Secrets (Optional)
 
-1. Go to your GitHub repository
-2. Navigate to Settings > Secrets and variables > Actions
-3. Click "New repository secret"
-4. Name: `HOSTINGER_SSH_KEY`
-5. Value: Copy the entire content of your SSH private key file
+- `STAGING_SSH_KEY` - SSH private key for staging server
+- `STAGING_USER` - SSH username for staging server
+- `STAGING_HOST` - Staging server hostname/IP
+- `STAGING_PATH` - Staging deployment path
+- `STAGING_SSH_PORT` - SSH port for staging server
+- `STAGING_API_URL` - Staging API URL
+- `STAGING_HEALTH_CHECK_URL` - Staging health check URL
+- `STAGING_URL` - Staging site URL
 
-## Setup Instructions
+### Security Secrets (Optional)
 
-### 1. Generate SSH Key (if not already done)
+- `SNYK_TOKEN` - Snyk API token for security scanning
+
+**⚠️ For detailed setup instructions, see [SECRETS_SETUP.md](./SECRETS_SETUP.md)**
+
+## Quick Setup
+
+### 1. Generate SSH Keys
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your-email@example.com" -f ~/.ssh/hostinger_viswise
+# Production
+ssh-keygen -t rsa -b 4096 -C "production@sciss.org" -f ~/.ssh/hostinger_viswise_production
+
+# Staging (optional)
+ssh-keygen -t rsa -b 4096 -C "staging@sciss.org" -f ~/.ssh/hostinger_viswise_staging
 ```
 
-### 2. Add Public Key to Hostinger
+### 2. Add Public Keys to Servers
 
 ```bash
-cat ~/.ssh/hostinger_viswise.pub
+# Production
+cat ~/.ssh/hostinger_viswise_production.pub
+# Add to production server's authorized_keys
+
+# Staging
+cat ~/.ssh/hostinger_viswise_staging.pub
+# Add to staging server's authorized_keys
 ```
 
-Copy the output and add it to your Hostinger SSH keys.
-
-### 3. Add Private Key to GitHub Secrets
+### 3. Add Private Keys to GitHub Secrets
 
 ```bash
-cat ~/.ssh/hostinger_viswise
+# Production
+cat ~/.ssh/hostinger_viswise_production
+# Copy to HOSTINGER_SSH_KEY secret
+
+# Staging
+cat ~/.ssh/hostinger_viswise_staging
+# Copy to STAGING_SSH_KEY secret
 ```
 
-Copy the entire output and add it as the `HOSTINGER_SSH_KEY` secret.
-
-### 4. Test the Connection
+### 4. Test Connections
 
 ```bash
-ssh -i ~/.ssh/hostinger_viswise -p 65002 u356222743@217.21.66.232
+# Production
+ssh -i ~/.ssh/hostinger_viswise_production -p 65002 u356222743@217.21.66.232
+
+# Staging
+ssh -i ~/.ssh/hostinger_viswise_staging -p 65002 u356222743@staging.sciss.org
 ```
 
 ## Workflow Features
 
-### Automatic Deployment
+### Production Deployment
 
-- Deploys automatically when code is pushed to main/master branch
-- Runs all tests and checks before deployment
-- Uses build artifacts to ensure consistency
+- **Automatic**: Deploys when code is pushed to main/master branch
+- **Quality Gates**: Requires 80% test coverage minimum
+- **Health Checks**: Post-deployment verification
+- **Rollback Ready**: Build artifacts for quick rollback
 
-### Manual Deployment
+### Staging Environment
 
-- Can be triggered manually from GitHub Actions tab
-- Useful for emergency deployments or testing
+- **Testing Ground**: Deploy to staging before production
+- **Manual Trigger**: Can be triggered manually for testing
+- **Separate Infrastructure**: Isolated from production
 
-### Development Checks
+### Security Scanning
 
-- Runs on all pull requests
-- Ensures code quality before merging
-- No deployment, just validation
+- **Dependency Scanning**: Weekly vulnerability checks
+- **Code Analysis**: CodeQL for security issues
+- **Secret Detection**: Prevents credential exposure
+- **Container Scanning**: Image vulnerability scanning
+
+### Development Workflow
+
+- **PR Validation**: All checks on pull requests
+- **Quality Assurance**: Linting, type checking, tests
+- **No Deployment**: Safe validation without deployment
 
 ## Troubleshooting
 

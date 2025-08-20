@@ -1,0 +1,145 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [develop, staging]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Staging environment to deploy to"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - preview
+
+env:
+  NODE_VERSION: "20"
+  PNPM_VERSION: "10"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linting
+        run: pnpm run lint
+
+      - name: Run type checking
+        run: pnpm run type-check
+
+      - name: Run tests
+        run: pnpm run test:ci
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+
+      - name: Build application (staging)
+        run: pnpm run deploy:dev
+        env:
+          NODE_ENV: staging
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging-build
+          path: dist/
+          retention-days: 1
+
+  deploy-staging:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: staging-build
+          path: dist/
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to staging environment..."
+
+          # Create deployment script
+          cat > deploy_staging.sh << 'EOF'
+          #!/bin/bash
+          REMOTE_USER="${{ secrets.STAGING_USER }}"
+          REMOTE_HOST="${{ secrets.STAGING_HOST }}"
+          REMOTE_PATH="${{ secrets.STAGING_PATH }}"
+          SSH_PORT="${{ secrets.STAGING_SSH_PORT }}"
+
+          echo "Staging deployment to Hostinger..."
+
+          # Sync everything except videos and images
+          rsync -avz --progress --itemize-changes \
+            -e "ssh -p $SSH_PORT" \
+            --exclude='.DS_Store' \
+            --exclude='videos/' \
+            --exclude='images/' \
+            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+            
+          echo "Staging deployment complete!"
+          EOF
+
+          chmod +x deploy_staging.sh
+          ./deploy_staging.sh
+
+      - name: Health check
+        run: |
+          echo "Performing post-deployment health check..."
+          sleep 10
+          curl -f ${{ secrets.STAGING_HEALTH_CHECK_URL }} || exit 1
+          echo "Staging health check passed!"
+
+      - name: Notify staging deployment
+        if: success()
+        run: |
+          echo "✅ Staging deployment completed successfully!"
+          echo "Deployed commit: ${{ github.sha }}"
+          echo "Deployed by: ${{ github.actor }}"
+          echo "Staging URL: ${{ secrets.STAGING_URL }}"

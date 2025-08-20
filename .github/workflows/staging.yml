@@ -90,10 +90,24 @@ jobs:
           name: staging-build
           path: dist/
 
+      - name: Debug SSH Key
+        run: |
+          echo "🔍 Debugging SSH key..."
+          if [ -z "${{ secrets.STAGING_SSH_KEY }}" ]; then
+            echo "❌ STAGING_SSH_KEY secret is empty or not set"
+            exit 1
+          else
+            echo "✅ STAGING_SSH_KEY secret is set"
+            echo "Key length: ${#STAGING_SSH_KEY} characters"
+            echo "First 50 chars: ${STAGING_SSH_KEY:0:50}..."
+            echo "Last 50 chars: ...${STAGING_SSH_KEY: -50}"
+          fi
+
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
+          log-public-key: true
 
       - name: Debug SSH setup
         run: |

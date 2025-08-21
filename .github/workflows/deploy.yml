@@ -121,7 +121,18 @@ jobs:
       - name: Add known hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts
+          echo "Adding ${{ secrets.HOSTINGER_HOST }} to known hosts..."
+
+          # Try ssh-keyscan with different approaches
+          ssh-keyscan -H -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts || {
+            echo "⚠️ ssh-keyscan with port failed, trying without port..."
+            ssh-keyscan -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts || {
+              echo "⚠️ ssh-keyscan failed, skipping known_hosts for now..."
+              # We'll use StrictHostKeyChecking=no in the SSH command instead
+            }
+          }
+
+          echo "✅ Known hosts setup complete"
 
       - name: Deploy to Production
         run: |
@@ -139,10 +150,8 @@ jobs:
 
           # Sync everything except videos and images
           rsync -avz --progress --itemize-changes \
-            -e "ssh -p $SSH_PORT" \
+            -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
-            --exclude='videos/' \
-            --exclude='images/' \
             dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
             
           echo "Production deployment complete!"

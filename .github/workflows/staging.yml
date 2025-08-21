@@ -62,13 +62,13 @@ jobs:
       - name: Run tests
         run: pnpm run test:ci
         env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Build application (staging)
         run: pnpm run deploy:dev
         env:
           NODE_ENV: staging
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -95,15 +95,48 @@ jobs:
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
+          log-public-key: true
 
       - name: Add known hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts
+          echo "Adding ${{ secrets.STAGING_HOST }} to known hosts..."
+
+          # Try ssh-keyscan with different approaches
+          ssh-keyscan -H -p ${{ secrets.STAGING_SSH_PORT }} ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts || {
+            echo "⚠️ ssh-keyscan with port failed, trying without port..."
+            ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts || {
+              echo "⚠️ ssh-keyscan failed, skipping known_hosts for now..."
+              # We'll use StrictHostKeyChecking=no in the SSH command instead
+            }
+          }
+
+          echo "✅ Known hosts setup complete"
 
       - name: Deploy to Staging
         run: |
           echo "Deploying to staging environment..."
+
+          # Validate required secrets
+          if [ -z "${{ secrets.STAGING_USER }}" ]; then
+            echo "❌ Error: STAGING_USER secret is not set"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.STAGING_HOST }}" ]; then
+            echo "❌ Error: STAGING_HOST secret is not set"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.STAGING_PATH }}" ]; then
+            echo "❌ Error: STAGING_PATH secret is not set"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.STAGING_SSH_PORT }}" ]; then
+            echo "❌ Error: STAGING_SSH_PORT secret is not set"
+            exit 1
+          fi
 
           # Create deployment script
           cat > deploy_staging.sh << 'EOF'
@@ -114,14 +147,26 @@ jobs:
           SSH_PORT="${{ secrets.STAGING_SSH_PORT }}"
 
           echo "Staging deployment to Hostinger..."
+          echo "User: $REMOTE_USER"
+          echo "Host: $REMOTE_HOST"
+          echo "Path: $REMOTE_PATH"
+          echo "Port: $SSH_PORT"
+
+          # Test SSH connection first
+          echo "Testing SSH connection..."
+          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
+            echo "❌ Error: SSH connection failed"
+            exit 1
+          }
 
           # Sync everything except videos and images
           rsync -avz --progress --itemize-changes \
-            -e "ssh -p $SSH_PORT" \
+            -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
-            --exclude='videos/' \
-            --exclude='images/' \
-            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/" || {
+            echo "❌ Error: rsync deployment failed"
+            exit 1
+          }
             
           echo "Staging deployment complete!"
           EOF

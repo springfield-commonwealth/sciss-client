@@ -4,7 +4,7 @@ This guide explains how to set up all required secrets for the enhanced CI/CD in
 
 ## Required Secrets
 
-### Production Environment Secrets
+### Production Environment Secrets (7 secrets)
 
 Add these secrets in your GitHub repository: **Settings > Secrets and variables > Actions**
 
@@ -18,18 +18,18 @@ Add these secrets in your GitHub repository: **Settings > Secrets and variables 
 | `NEXT_PUBLIC_API_URL` | Production API URL                    | `https://sciss.org/api`                  |
 | `HEALTH_CHECK_URL`    | Production health check URL           | `https://sciss.org/api/health-check.php` |
 
-### Staging Environment Secrets
+### Staging Environment Secrets (8 secrets)
 
-| Secret Name                | Description                        | Example Value                                    |
-| -------------------------- | ---------------------------------- | ------------------------------------------------ |
-| `STAGING_SSH_KEY`          | SSH private key for staging server | Content of staging SSH private key               |
-| `STAGING_USER`             | SSH username for staging server    | `u356222743`                                     |
-| `STAGING_HOST`             | Staging server hostname/IP         | `staging.sciss.org`                              |
-| `STAGING_PATH`             | Staging deployment path            | `domains/staging.sciss.org/public_html`          |
-| `STAGING_SSH_PORT`         | SSH port for staging server        | `65002`                                          |
-| `STAGING_API_URL`          | Staging API URL                    | `https://staging.sciss.org/api`                  |
-| `STAGING_HEALTH_CHECK_URL` | Staging health check URL           | `https://staging.sciss.org/api/health-check.php` |
-| `STAGING_URL`              | Staging site URL                   | `https://staging.sciss.org`                      |
+| Secret Name                   | Description                        | Example Value                                    |
+| ----------------------------- | ---------------------------------- | ------------------------------------------------ |
+| `STAGING_SSH_KEY`             | SSH private key for staging server | Content of staging SSH private key               |
+| `STAGING_USER`                | SSH username for staging server    | `u356222743`                                     |
+| `STAGING_HOST`                | Staging server hostname/IP         | `217.21.66.232` (same as production)             |
+| `STAGING_PATH`                | Staging deployment path            | `domains/staging.sciss.org/public_html`          |
+| `STAGING_SSH_PORT`            | SSH port for staging server        | `65002` (same as production)                     |
+| `STAGING_NEXT_PUBLIC_API_URL` | Staging API URL                    | `https://staging.sciss.org/api`                  |
+| `STAGING_HEALTH_CHECK_URL`    | Staging health check URL           | `https://staging.sciss.org/api/health-check.php` |
+| `STAGING_URL`                 | Staging site URL                   | `https://staging.sciss.org`                      |
 
 ### Security Scanning Secrets
 
@@ -59,6 +59,9 @@ cat ~/.ssh/hostinger_viswise.pub
 # Staging (same server, different key for security)
 cat ~/.ssh/hostinger_viswise_staging.pub
 # Add this to your production server's authorized_keys (same server as staging)
+
+# OR use the same SSH key for both environments (simpler setup)
+# Just copy the production public key to the server
 ```
 
 ### 3. Add Private Keys to GitHub Secrets

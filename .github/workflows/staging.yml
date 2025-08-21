@@ -62,13 +62,12 @@ jobs:
       - name: Run tests
         run: pnpm run test:ci
         env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Build application (staging)
-        run: pnpm run deploy:dev
+        run: pnpm run deploy:staging
         env:
-          NODE_ENV: staging
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

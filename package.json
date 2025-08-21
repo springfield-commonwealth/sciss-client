@@ -12,6 +12,7 @@
     "clean": "rm -rf .next out node_modules/.cache",
     "fresh": "pnpm run clean && pnpm install",
     "deploy:dev": "rm -rf .next dist && NODE_ENV=production pnpm run build",
+    "deploy:staging": "rm -rf .next dist && NODE_ENV=staging pnpm run build",
     "deploy:prod": "rm -rf .next dist && NODE_ENV=production NEXT_PUBLIC_API_URL=https://sciss.org/api pnpm run build",
     "test": "jest",
     "test:watch": "jest --watch",

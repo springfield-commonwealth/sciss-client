@@ -80,6 +80,7 @@ jobs:
   deploy-staging:
     needs: test
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -90,94 +91,17 @@ jobs:
           name: staging-build
           path: dist/
 
-      - name: Debug All Secrets
-        run: |
-          echo "🔍 Debugging all secrets..."
-          echo "Available secrets:"
-          echo "- STAGING_SSH_KEY: ${{ secrets.STAGING_SSH_KEY != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_USER: ${{ secrets.STAGING_USER != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_HOST: ${{ secrets.STAGING_HOST != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_PATH: ${{ secrets.STAGING_PATH != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_SSH_PORT: ${{ secrets.STAGING_SSH_PORT != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_HEALTH_CHECK_URL: ${{ secrets.STAGING_HEALTH_CHECK_URL != '' && 'SET' || 'EMPTY' }}"
-          echo "- STAGING_URL: ${{ secrets.STAGING_URL != '' && 'SET' || 'EMPTY' }}"
-
-          echo ""
-          echo "Production secrets for comparison:"
-          echo "- HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY != '' && 'SET' || 'EMPTY' }}"
-          echo "- HOSTINGER_USER: ${{ secrets.HOSTINGER_USER != '' && 'SET' || 'EMPTY' }}"
-
-      - name: Debug SSH Key
-        run: |
-          echo "🔍 Debugging SSH key..."
-          STAGING_SSH_KEY="${{ secrets.STAGING_SSH_KEY }}"
-          if [ -z "$STAGING_SSH_KEY" ]; then
-            echo "❌ STAGING_SSH_KEY secret is empty or not set"
-            echo "Trying to use production SSH key as fallback..."
-            STAGING_SSH_KEY="${{ secrets.HOSTINGER_SSH_KEY }}"
-            if [ -z "$STAGING_SSH_KEY" ]; then
-              echo "❌ Production SSH key is also empty"
-              exit 1
-            else
-              echo "✅ Using production SSH key for staging"
-            fi
-          else
-            echo "✅ STAGING_SSH_KEY secret is set"
-          fi
-          echo "Key length: ${#STAGING_SSH_KEY} characters"
-          echo "First 50 chars: ${STAGING_SSH_KEY:0:50}..."
-          echo "Last 50 chars: ...${STAGING_SSH_KEY: -50}"
-
       - name: Setup SSH
-        run: |
-          echo "Setting up SSH with key..."
-          # Create SSH key file
-          echo "$STAGING_SSH_KEY" > ~/.ssh/staging_key
-          chmod 600 ~/.ssh/staging_key
-
-          # Start SSH agent and add key
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/staging_key
-
-          # Show loaded keys
-          ssh-add -l
-
-      - name: Debug SSH setup
-        run: |
-          echo "🔍 Debugging SSH setup..."
-          echo "SSH_AUTH_SOCK: $SSH_AUTH_SOCK"
-          echo "SSH_AGENT_PID: $SSH_AGENT_PID"
-
-          # Check if SSH agent is running
-          if [ -n "$SSH_AUTH_SOCK" ]; then
-            echo "✅ SSH agent is running"
-            ssh-add -l || echo "⚠️ No keys loaded in SSH agent"
-          else
-            echo "❌ SSH agent is not running"
-          fi
-
-          # Check if we can connect to the host
-          echo "Testing connection to ${{ secrets.STAGING_HOST }}..."
-          nc -z -w5 ${{ secrets.STAGING_HOST }} ${{ secrets.STAGING_SSH_PORT }} && echo "✅ Port is reachable" || echo "❌ Port is not reachable"
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
+          log-public-key: true
 
       - name: Add known hosts
         run: |
           mkdir -p ~/.ssh
           echo "Adding ${{ secrets.STAGING_HOST }} to known hosts..."
-
-          # Check if STAGING_HOST is set
-          if [ -z "${{ secrets.STAGING_HOST }}" ]; then
-            echo "❌ Error: STAGING_HOST secret is not set"
-            exit 1
-          fi
-
-          # Add host to known_hosts
-          ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts || {
-            echo "❌ Error: Failed to add ${{ secrets.STAGING_HOST }} to known hosts"
-            exit 1
-          }
-
+          ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts
           echo "✅ Successfully added ${{ secrets.STAGING_HOST }} to known hosts"
 
       - name: Deploy to Staging

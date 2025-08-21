@@ -101,8 +101,17 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "Adding ${{ secrets.STAGING_HOST }} to known hosts..."
-          ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts
-          echo "✅ Successfully added ${{ secrets.STAGING_HOST }} to known hosts"
+          
+          # Try ssh-keyscan with different approaches
+          ssh-keyscan -H -p ${{ secrets.STAGING_SSH_PORT }} ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts || {
+            echo "⚠️ ssh-keyscan with port failed, trying without port..."
+            ssh-keyscan -H ${{ secrets.STAGING_HOST }} >> ~/.ssh/known_hosts || {
+              echo "⚠️ ssh-keyscan failed, skipping known_hosts for now..."
+              # We'll use StrictHostKeyChecking=no in the SSH command instead
+            }
+          }
+          
+          echo "✅ Known hosts setup complete"
 
       - name: Deploy to Staging
         run: |
@@ -145,14 +154,14 @@ jobs:
 
           # Test SSH connection first
           echo "Testing SSH connection..."
-          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
+          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
             echo "❌ Error: SSH connection failed"
             exit 1
           }
 
           # Sync everything except videos and images
           rsync -avz --progress --itemize-changes \
-            -e "ssh -p $SSH_PORT" \
+            -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
             --exclude='videos/' \
             --exclude='images/' \

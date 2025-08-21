@@ -90,25 +90,58 @@ jobs:
           name: staging-build
           path: dist/
 
+      - name: Debug All Secrets
+        run: |
+          echo "🔍 Debugging all secrets..."
+          echo "Available secrets:"
+          echo "- STAGING_SSH_KEY: ${{ secrets.STAGING_SSH_KEY != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_USER: ${{ secrets.STAGING_USER != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_HOST: ${{ secrets.STAGING_HOST != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_PATH: ${{ secrets.STAGING_PATH != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_SSH_PORT: ${{ secrets.STAGING_SSH_PORT != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_HEALTH_CHECK_URL: ${{ secrets.STAGING_HEALTH_CHECK_URL != '' && 'SET' || 'EMPTY' }}"
+          echo "- STAGING_URL: ${{ secrets.STAGING_URL != '' && 'SET' || 'EMPTY' }}"
+
+          echo ""
+          echo "Production secrets for comparison:"
+          echo "- HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY != '' && 'SET' || 'EMPTY' }}"
+          echo "- HOSTINGER_USER: ${{ secrets.HOSTINGER_USER != '' && 'SET' || 'EMPTY' }}"
+
       - name: Debug SSH Key
         run: |
           echo "🔍 Debugging SSH key..."
           STAGING_SSH_KEY="${{ secrets.STAGING_SSH_KEY }}"
           if [ -z "$STAGING_SSH_KEY" ]; then
             echo "❌ STAGING_SSH_KEY secret is empty or not set"
-            exit 1
+            echo "Trying to use production SSH key as fallback..."
+            STAGING_SSH_KEY="${{ secrets.HOSTINGER_SSH_KEY }}"
+            if [ -z "$STAGING_SSH_KEY" ]; then
+              echo "❌ Production SSH key is also empty"
+              exit 1
+            else
+              echo "✅ Using production SSH key for staging"
+            fi
           else
             echo "✅ STAGING_SSH_KEY secret is set"
-            echo "Key length: ${#STAGING_SSH_KEY} characters"
-            echo "First 50 chars: ${STAGING_SSH_KEY:0:50}..."
-            echo "Last 50 chars: ...${STAGING_SSH_KEY: -50}"
           fi
+          echo "Key length: ${#STAGING_SSH_KEY} characters"
+          echo "First 50 chars: ${STAGING_SSH_KEY:0:50}..."
+          echo "Last 50 chars: ...${STAGING_SSH_KEY: -50}"
 
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
-          log-public-key: true
+        run: |
+          echo "Setting up SSH with key..."
+          # Create SSH key file
+          echo "$STAGING_SSH_KEY" > ~/.ssh/staging_key
+          chmod 600 ~/.ssh/staging_key
+
+          # Start SSH agent and add key
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/staging_key
+
+          # Show loaded keys
+          ssh-add -l
 
       - name: Debug SSH setup
         run: |

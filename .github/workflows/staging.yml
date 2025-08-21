@@ -62,13 +62,13 @@ jobs:
       - name: Run tests
         run: pnpm run test:ci
         env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Build application (staging)
         run: pnpm run deploy:dev
         env:
           NODE_ENV: staging
-          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_NEXT_PUBLIC_API_URL }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -93,7 +93,8 @@ jobs:
       - name: Debug SSH Key
         run: |
           echo "🔍 Debugging SSH key..."
-          if [ -z "${{ secrets.STAGING_SSH_KEY }}" ]; then
+          STAGING_SSH_KEY="${{ secrets.STAGING_SSH_KEY }}"
+          if [ -z "$STAGING_SSH_KEY" ]; then
             echo "❌ STAGING_SSH_KEY secret is empty or not set"
             exit 1
           else

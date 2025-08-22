@@ -1,6 +1,6 @@
 import { GRAPHQL_POST } from '@payloadcms/next/routes';
 import { NextRequest } from 'next/server';
-import config from '../../../payload.config';
+import config from '@/payload.config';
 
 // Enhanced error handling for GraphQL
 const withErrorHandling = (handler: Function) => {

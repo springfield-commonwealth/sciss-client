@@ -1,0 +1,348 @@
+{
+  "academicPrograms": [
+    {
+      "title": "Path to Wall Street & Impact Investment",
+      "description": "Dive deep into finance, economics, and investment strategies. Learn from Wall Street professionals and develop real-world financial analysis skills with hands-on stock market simulation.",
+      "category": "core",
+      "ageRange": "14-16 years",
+      "duration": "3 weeks",
+      "session": "Session 1",
+      "prerequisites": "8th grade level, strong analytical skills",
+      "status": "active"
+    },
+    {
+      "title": "Youth Innovation & Entrepreneurship",
+      "description": "Transform your ideas into viable business concepts. Develop entrepreneurial mindset and learn startup fundamentals through hands-on business plan development.",
+      "category": "core",
+      "ageRange": "14-16 years",
+      "duration": "3 weeks",
+      "session": "Session 2",
+      "prerequisites": "8th grade level, interest in entrepreneurship and innovation",
+      "status": "active"
+    },
+    {
+      "title": "Artificial Intelligence",
+      "description": "Explore the frontier of AI and machine learning. Build practical projects and understand AI's impact on society with hands-on programming experience.",
+      "category": "core",
+      "ageRange": "15-17 years",
+      "duration": "3 weeks",
+      "session": "Session 1",
+      "prerequisites": "Pre-calculus level mathematics, strong analytical thinking",
+      "status": "active"
+    },
+    {
+      "title": "Public Speaking & Debate",
+      "description": "Master the art of communication and persuasion. Build confidence through structured debate and presentation practice with professional coaching.",
+      "category": "core",
+      "ageRange": "12-17 years",
+      "duration": "3 weeks",
+      "session": "Session 2",
+      "prerequisites": "6th grade level, willingness to participate actively",
+      "status": "active"
+    },
+    {
+      "title": "Language Programs",
+      "description": "Immersive language learning experience with native speakers. Develop fluency through interactive activities, cultural exchange, and practical application.",
+      "category": "language",
+      "ageRange": "12-17 years",
+      "duration": "3 weeks",
+      "session": "Both Sessions",
+      "prerequisites": "Basic language foundation recommended but not required",
+      "status": "active"
+    },
+    {
+      "title": "Visual Arts",
+      "description": "Explore creativity through various artistic mediums. Develop technical skills and artistic expression through guided instruction and personal projects.",
+      "category": "arts",
+      "ageRange": "10-17 years",
+      "duration": "3 weeks",
+      "session": "Both Sessions",
+      "prerequisites": "Interest in art and creativity, no prior experience required",
+      "status": "active"
+    }
+  ],
+  "staff": [
+    {
+      "name": "Si Qin",
+      "position": "Camp President",
+      "department": "Camp Leadership",
+      "bio": "Si Qin serves as the CEO of SCISS and Camp President, providing visionary leadership and strategic direction for the summer program. With extensive experience in educational leadership and program development, Si ensures SCISS maintains its commitment to academic excellence and student success.",
+      "status": "active"
+    },
+    {
+      "name": "Beth Moriarty",
+      "position": "Camp Director",
+      "department": "Camp Leadership",
+      "bio": "Beth Moriarty serves as President of SCA and Camp Director, overseeing the daily operations of SCISS and ensuring an exceptional student experience. Her leadership ensures smooth program delivery and maintains the high standards of SCISS educational excellence.",
+      "status": "active"
+    },
+    {
+      "name": "Erik ",
+      "position": "Camp Director",
+      "department": "Camp Leadership",
+      "bio": "Erik brings extensive experience in camp leadership and program coordination to SCISS. As Camp Director, he ensures smooth operations, engaging student activities, and maintains the high standards of educational excellence that define SCISS.",
+      "status": "active"
+    },
+    {
+      "name": "Raymond Mathis",
+      "position": "Senior Wall Street Analyst",
+      "department": "Finance & Investment",
+      "bio": "Raymond Mathis brings over 15 years of experience as a senior equity research analyst at S&P Global and portfolio manager at David Lerner Associates. He currently serves as a financial mentor at Viswise Academy, training future decision-makers to Wall Street standards. He specializes in REITs, financial sectors, fixed income, equities, and alternative assets, and is an innovator in financial education.",
+      "status": "active"
+    },
+    {
+      "name": "Frank ",
+      "position": "CEO & Alternative Investment Expert",
+      "department": "Entrepreneurship",
+      "bio": "Frank combines his Wharton education with real-world entrepreneurial success as Founder of Ancilla Capital Advisors and CEO of Atrata Inc. His extensive Wall Street experience provides students with insider knowledge of alternative investments and business strategy.",
+      "status": "active"
+    },
+    {
+      "name": "Jonathan ",
+      "position": "AI Innovation Director",
+      "department": "AI & Technology",
+      "bio": "Jonathan brings a unique combination of prestigious academic background from NYU and Johns Hopkins, entrepreneurial success as founder of YEFA AI Innovation, and practical Wall Street experience to guide students through the complexities of artificial intelligence and technology innovation.",
+      "status": "active"
+    },
+    {
+      "name": "Angelene Huang",
+      "position": "President & Chair of SCA",
+      "department": "Camp Leadership",
+      "bio": "Angelene Huang serves as President and Chair of Springfield Commonwealth Academy (SCA). With nearly a decade in high-frequency trading and global capital markets, she brings cross-sector leadership in finance, education, technology, and social impact. She previously served as President of New York Military Academy (NYMA), where she reversed financial deficits and restored school reputation. Her leadership style combines warmth within rationality, and her mission is to cultivate responsible global citizens.",
+      "status": "active"
+    },
+    {
+      "name": "Satya S. Tripathi",
+      "position": "Former UN Assistant Secretary-General",
+      "department": "Guest Speakers",
+      "bio": "Satya S. Tripathi serves as Secretary-General of the Global Alliance for a Sustainable Planet. With over 35 years of experience, he was Assistant Secretary-General and Head of the New York Office at the United Nations Environment Programme (UNEP). He pioneered planet-centered development focusing on green technology, carbon finance, and impact investment. His philosophy centers on planet-centered development, with focus areas including green technology, carbon finance, and impact investment.",
+      "status": "active"
+    },
+    {
+      "name": "石羽非 (Sophia Shi)",
+      "position": "CEO of IvyCompass",
+      "department": "Guest Speakers",
+      "bio": "石羽非 (Sophia Shi) is CEO of IvyCompass, an educational consultancy specializing in personalized college admissions and academic development. With over 30 years of experience across hospitality, retail, finance, and international business, she brings cross-industry expertise to global talent development.",
+      "status": "active"
+    },
+    {
+      "name": "Tony Zhou",
+      "position": "Managing Director",
+      "department": "Guest Speakers",
+      "bio": "Tony Zhou brings cutting-edge investment expertise as Managing Director at a leading hedge fund, providing students with insights into quantitative finance, advanced trading strategies, and the sophisticated world of hedge fund management.",
+      "status": "active"
+    },
+    {
+      "name": "Robyn Lee Miller",
+      "position": "MorningBird Media Founder",
+      "department": "Guest Speakers",
+      "bio": "Robyn Lee Miller founded MorningBird Media in 2018, a full-service, woman-owned marketing and advertising agency based in Springfield, MA. With over 20 years of experience in radio and corporate communications, she specializes in AI tools for marketing and empowering small businesses. She is an adjunct professor at Western New England University and has founded the MorningBird Moms support network for over 1,500 mom-entrepreneurs.",
+      "status": "active"
+    },
+    {
+      "name": "Prof. Jianwei Zhang",
+      "position": "Director of TAMS Lab",
+      "department": "AI & Technology",
+      "bio": "Prof. Jianwei Zhang is an Academician of the German National Academy of Engineering and Hamburg Academy of Sciences. As tenured professor and Director of the TAMS Lab at University of Hamburg, he leads research in sensor fusion, semantic perception, reinforcement learning, and cognitive control. He has published 500+ academic papers and holds 40+ patents, with multiple IEEE Best Paper Awards to his credit.",
+      "status": "active"
+    },
+    {
+      "name": "Lawrence Pan",
+      "position": "Former Chief Representative of NASDAQ China",
+      "department": "Finance & Investment",
+      "bio": "Lawrence Pan brings over 30 years of experience in cross-border IPO and capital market operations. As former Chief Representative of NASDAQ China and Asia-Pacific Director, he has helped over 30 Chinese companies successfully list on NASDAQ, facilitating billions in capital. He specializes in U.S. securities law, IPO procedures, M&A, and financial compliance.",
+      "status": "active"
+    },
+    {
+      "name": "Leena Palav",
+      "position": "Global Business Growth Consultant",
+      "department": "Entrepreneurship",
+      "bio": "Leena Palav is President of Grandview Group and Senior Mentor at Founders Institute. With over 20 years of experience across healthcare, energy, technology, and consumer goods, she specializes in med-tech, clean energy, digital health, and consumer innovation startups. She previously served as COO of VisionSpring, where she led the company to over 30% growth during the pandemic and delivered 2 million PPE items and 1,000 ventilators worldwide.",
+      "status": "active"
+    },
+    {
+      "name": "Deano Pape",
+      "position": "Director of Membership, NSDA",
+      "department": "Academic Leadership",
+      "bio": "Deano Pape serves as Director of Membership at the National Speech & Debate Association (NSDA), overseeing coach support, member engagement, and program outreach for thousands of schools nationwide. With 25+ years of experience, he focuses on educational equity and speech access. He previously served as Assistant Director of Speech & Debate and Co-Director of Ethics Bowl at Simpson College, and has taught at the Harvard Debate Council Summer Workshop.",
+      "status": "active"
+    },
+    {
+      "name": "Alex Song",
+      "position": "General Manager of Mascon",
+      "department": "Guest Speakers",
+      "bio": "Alex Song serves as General Manager of Mascon, a U.S.-based company with nearly 50 years of history. He leads precision manufacturing, medical devices, defense, and emergency supply operations, with expertise in building global supply chains and industrial strategy. He previously served as VP of Engineering at Mascon and has led the company's global response to COVID-19, building emergency supply chains from China to U.S.",
+      "status": "active"
+    },
+    {
+      "name": "Mary Cao",
+      "position": "International Film Producer",
+      "department": "Guest Speakers",
+      "bio": "Mary Cao is a Canada-based international film producer with over 20 years of experience. She is the sole Asian partner of Italian legendary producer Mario Cotone and founder of the Sino-Euro Women's Film Festival. Her work spans feature films, documentaries, and cultural exchange initiatives. She has produced notable films including The Last Emperor, Life is Beautiful, Malèna, and Two Tigers, and received the International Expert Prize at Waseda University Metaverse Conference in Japan (2024).",
+      "status": "active"
+    },
+    {
+      "name": "Sunny Zhang",
+      "position": "Co-Founder & President",
+      "department": "Guest Speakers",
+      "bio": "Sunny Zhang is Co-Founder & President of Longteng Cultural Development Foundation and Chief Planner of the International Chinese Original IP Film Festival. With background as senior film reporter at Wenhui Daily, author, screenwriter, and digital strategist, she bridges creative expression with cultural leadership. She is a pioneer of internet marketing in China, co-authored the bestseller Super Girl, Super Planning, and was named one of China's Top 10 Women in IT.",
+      "status": "active"
+    },
+    {
+      "name": "Stephanie Sun",
+      "position": "COO of The Welcoming Center",
+      "department": "Guest Speakers",
+      "bio": "Stephanie Sun serves as Chief Operating Officer (COO) of The Welcoming Center and Vice President of the League of Women Voters of Pennsylvania. She is the first Asian American and first immigrant COO of The Welcoming Center, and the first Asian American elected Vice President of League of Women Voters of Pennsylvania. She has executive roles in three Fortune Global 100 companies across three countries and was a key figure behind the inclusion of Chinese as the first Asian language in Pennsylvania's election system.",
+      "status": "active"
+    }
+  ],
+  "activities": [
+    {
+      "title": "Basketball Training & Competition",
+      "description": "Professional basketball training and competitive games as part of our afternoon elective sports program with skill development for all levels.",
+      "category": "Sports",
+      "duration": "Afternoon sessions",
+      "maxParticipants": 20,
+      "status": "active"
+    },
+    {
+      "title": "Rowing & Water Sports",
+      "description": "Professional rowing instruction and water sports training in our comprehensive elective sports program with emphasis on technique and teamwork.",
+      "category": "Sports",
+      "duration": "Afternoon sessions",
+      "maxParticipants": 16,
+      "status": "active"
+    },
+    {
+      "title": "Golf Instruction & Practice",
+      "description": "Learn golf fundamentals and practice with professional instruction as part of our diverse elective sports offerings focused on technique and strategy.",
+      "category": "Sports",
+      "duration": "Afternoon sessions",
+      "maxParticipants": 12,
+      "status": "active"
+    },
+    {
+      "title": "Fencing & Martial Arts",
+      "description": "Learn the art and discipline of fencing with professional instruction, proper equipment, and emphasis on technique, strategy, and historical context.",
+      "category": "Sports",
+      "duration": "Afternoon sessions",
+      "maxParticipants": 15,
+      "status": "active"
+    },
+    {
+      "title": "Personal Fitness Training",
+      "description": "Customized fitness programs designed to meet individual goals and fitness levels with one-on-one assessments and personalized workout plans.",
+      "category": "Fitness",
+      "duration": "Flexible sessions",
+      "maxParticipants": 8,
+      "status": "active"
+    },
+    {
+      "title": "Group Fitness Classes",
+      "description": "Fun and energizing group fitness classes that promote teamwork, healthy competition, and diverse workout styles from HIIT to yoga.",
+      "category": "Fitness",
+      "duration": "60-minute sessions",
+      "maxParticipants": 25,
+      "status": "active"
+    },
+    {
+      "title": "Dance & Choreography",
+      "description": "Express creativity and stay active through various dance styles, choreography workshops, and performance opportunities from hip-hop to cultural dance.",
+      "category": "Arts & Recreation",
+      "duration": "90-minute sessions",
+      "maxParticipants": 20,
+      "status": "active"
+    },
+    {
+      "title": "Arts & Crafts Workshop",
+      "description": "Explore creative expression through pottery, painting, jewelry making, textile arts, and photography workshops in our comprehensive arts program.",
+      "category": "Arts & Recreation",
+      "duration": "2-hour sessions",
+      "maxParticipants": 15,
+      "status": "active"
+    },
+    {
+      "title": "Music & Performance Arts",
+      "description": "Develop musical talents through instrument lessons, choir, drama, music production, and talent show opportunities in our performance arts program.",
+      "category": "Arts & Recreation",
+      "duration": "Variable sessions",
+      "maxParticipants": 18,
+      "status": "active"
+    },
+    {
+      "title": "Games & Recreation",
+      "description": "Enjoy diverse recreational activities including board game tournaments, video game competitions, outdoor adventures, and team building challenges.",
+      "category": "Arts & Recreation",
+      "duration": "Flexible sessions",
+      "maxParticipants": 30,
+      "status": "active"
+    },
+    {
+      "title": "Cultural Exchange Programs",
+      "description": "Experience global diversity through international food festivals, cultural presentations, language exchange, and traditional games from around the world.",
+      "category": "Arts & Recreation",
+      "duration": "Event-based",
+      "maxParticipants": 40,
+      "status": "active"
+    },
+    {
+      "title": "Wellness & Mental Health",
+      "description": "Support student wellbeing through mindfulness, stress management, nutrition education, and comprehensive wellness programs designed for holistic health.",
+      "category": "Wellness",
+      "duration": "60-minute sessions",
+      "maxParticipants": 15,
+      "status": "active"
+    }
+  ],
+  "trips": [
+    {
+      "title": "Harvard University Campus Tour",
+      "description": "Experience the academic excellence and rich history of Harvard University, one of the world's most prestigious institutions with guided tours and admissions insights.",
+      "category": "University Visits",
+      "duration": "Full Day",
+      "status": "active"
+    },
+    {
+      "title": "MIT Innovation & Technology Tour",
+      "description": "Discover the cutting-edge world of technology and innovation at MIT with lab visits, tech demonstrations, and insights into groundbreaking research.",
+      "category": "University Visits",
+      "duration": "Full Day",
+      "status": "active"
+    },
+    {
+      "title": "Yale University Cultural Experience",
+      "description": "Explore the beautiful Gothic Revival architecture and rich traditions of Yale University while learning about the residential college system and academic community.",
+      "category": "University Visits",
+      "duration": "Full Day",
+      "status": "active"
+    },
+    {
+      "title": "Basketball Hall of Fame Experience",
+      "description": "Immerse yourself in basketball history at the world's premier basketball museum, located in Springfield where the sport was invented.",
+      "category": "Cultural Experiences",
+      "duration": "Half Day",
+      "status": "active"
+    },
+    {
+      "title": "Boston Museum of Science Adventure",
+      "description": "Explore hands-on science exhibits, planetarium shows, and interactive demonstrations that bring science to life in Boston's premier science museum.",
+      "category": "Educational Tours",
+      "duration": "Full Day",
+      "status": "active"
+    },
+    {
+      "title": "Boston Freedom Trail Historical Tour",
+      "description": "Walk through American history on Boston's famous Freedom Trail, visiting 16 historically significant sites and experiencing Revolutionary War heritage.",
+      "category": "Cultural Experiences",
+      "duration": "Full Day",
+      "status": "active"
+    },
+    {
+      "title": "Six Flags New England Adventure",
+      "description": "Experience thrilling roller coasters and exciting rides at one of New England's premier amusement parks with friends and fellow students.",
+      "category": "Recreation",
+      "duration": "Full Day",
+      "status": "active"
+    }
+  ]
+}

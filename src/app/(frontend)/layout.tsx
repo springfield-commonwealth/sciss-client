@@ -46,14 +46,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function FrontendLayout({
   children,
 }: {
   children: React.ReactNode;
 }): React.JSX.Element {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }

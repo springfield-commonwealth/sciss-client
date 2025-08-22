@@ -62,6 +62,7 @@
       "@/public/*": ["./public/*"] /* Public asset imports */,
       "@/utils/*": ["src/lib/utils/*"] /* Utility imports */,
       "@/hooks/*": ["src/hooks/*"] /* Custom hooks */,
+      "@payload/*": ["src/payload/*"] /* Payload CMS imports */,
       "@/types/*": ["src/types/*"] /* Type definitions */,
       "@/data/*": ["src/lib/content/data/*"],
       "@/constants/*": ["src/constants/*"],

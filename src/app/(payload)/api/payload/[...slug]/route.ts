@@ -1,12 +1,13 @@
 import { REST_DELETE, REST_GET, REST_PATCH, REST_POST } from '@payloadcms/next/routes';
 import { NextRequest } from 'next/server';
-import config from '../../../../payload.config';
+import config from '@/payload.config';
 
 // Enhanced error handling wrapper
 const withErrorHandling = (handler: Function) => {
-  return async (req: NextRequest) => {
+  return async (req: NextRequest, { params }: { params: Promise<{ slug: string[] }> }) => {
     try {
-      return await handler(req);
+      const resolvedParams = await params;
+      return await handler(req, { params: resolvedParams });
     } catch (error) {
       console.error('Payload API Error:', error);
 
@@ -31,4 +32,3 @@ export const GET = withErrorHandling(REST_GET(config));
 export const POST = withErrorHandling(REST_POST(config));
 export const PATCH = withErrorHandling(REST_PATCH(config));
 export const DELETE = withErrorHandling(REST_DELETE(config));
-

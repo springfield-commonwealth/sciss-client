@@ -34,3 +34,12 @@ web-bundles/
 
 codebase.xml
 codebase.stats.md
+.env.local
+.gitignore
+.gitignore
+.env.local.example
+.env.local.cloud
+.gitignore
+.env.local.backup
+~/screenshot-*.png
+supabase/

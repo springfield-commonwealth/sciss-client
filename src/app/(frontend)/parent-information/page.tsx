@@ -1,11 +1,6 @@
-import Layout from "@/components/layouts/Layout";
-import React from "react";
-export const metadata = {
-  title: "Parent Information - SCISS",
-  description:
-    "Essential information for parents about SCISS Summer School programs, safety, and communication.",
-};
+"use client";
 
+import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
@@ -20,6 +15,7 @@ import {
   ParentInfoTravelTips,
 } from "@/constants/parentInformationContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import React from "react";
 
 export default function ParentInformation(): React.JSX.Element {
   // Generate breadcrumbs for parent-information page

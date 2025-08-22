@@ -6,8 +6,8 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const ENDPOINTS = {
-  SUBMIT_APPLICATION: `${API_BASE_URL}/submit-application.php`,
-  VALIDATE_EMAIL: `${API_BASE_URL}/validate-email.php`,
+  SUBMIT_APPLICATION: `${API_BASE_URL}/submit-application`,
+  VALIDATE_EMAIL: `${API_BASE_URL}/validate-email`,
 };
 
 /**

@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
-import { withPayload } from "@Payloadcms/next/withPayload";
+import { withPayload } from "@payloadcms/next/withPayload";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: true,
+  // trailingSlash: false, // Removed to let Next.js handle default behavior
   poweredByHeader: false,
   compress: true,
 
@@ -71,25 +76,8 @@ const nextConfig = {
     return config;
   },
 
-  // Only use static export for production/staging builds
-  ...(process.env.NODE_ENV === "production" ||
-  process.env.NODE_ENV === "staging"
-    ? {
-        output: "export",
-        distDir: "dist",
-        // Disable features incompatible with static export
-        // Ensure all pages are statically generated
-        generateBuildId: async () => {
-          return "build";
-        },
-        // Optimize static export
-        trailingSlash: true,
-        assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
-      }
-    : {
-        // Development configuration
-        distDir: ".next",
-      }),
+  // Development configuration (removed static export as it conflicts with Payload CMS)
+  distDir: ".next",
 
   basePath: "",
   assetPrefix: "",

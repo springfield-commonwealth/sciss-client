@@ -1,11 +1,6 @@
-import Layout from "@/components/layouts/Layout";
-import React from "react";
-export const metadata = {
-  title: "Program Overview - SCISS",
-  description:
-    "Get an overview of SCISS Summer School programs, structure, and what to expect.",
-};
+"use client";
 
+import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
@@ -14,6 +9,7 @@ import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import { ProgramOverviewHero } from "@/constants/images";
 import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import React from "react";
 
 export default function ProgramOverview(): React.JSX.Element {
   // Generate breadcrumbs for program-overview page

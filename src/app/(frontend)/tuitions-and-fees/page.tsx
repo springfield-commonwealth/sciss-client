@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "Tuitions and Fees - SCISS",
@@ -6,16 +6,16 @@ export const metadata = {
     "Learn about SCISS Summer School tuition fees, payment options, and financial information.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
-import { TuitionsAndFeesHero } from "@/app/src/constants/images";
+import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
+import { TuitionsAndFeesHero } from "@/constants/images";
 import {
   TuitionsAdditionalCosts,
   TuitionsApplicationProcess,
   TuitionsIncludedServices,
   TuitionsSessions,
-} from "@/app/src/constants/tuitionsAndFeesContent";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/constants/tuitionsAndFeesContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
 export default function TuitionsAndFees(): React.JSX.Element {

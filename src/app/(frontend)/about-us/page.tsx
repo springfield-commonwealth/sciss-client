@@ -1,15 +1,15 @@
 "use client";
 
-import Layout from "@/app/src/components/layouts/Layout";
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import { FeatureGrid, SectionHeader, StatsGrid } from "@/app/src/components/ui";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
+import Layout from "@/components/layouts/Layout";
+import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   AboutUsStats,
   AboutUsValues,
-} from "@/app/src/constants/aboutUsContent";
-import { AboutUsHero } from "@/app/src/constants/images";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/constants/aboutUsContent";
+import { AboutUsHero } from "@/constants/images";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import React from "react";
 
 export default function AboutUs(): React.JSX.Element {

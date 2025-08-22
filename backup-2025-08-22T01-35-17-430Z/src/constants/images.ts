@@ -1,0 +1,108 @@
+const LogoBlack = "/logos/sciss-logo-black.png";
+const LogoWhite = "/logos/sciss-logo-white.png";
+const LogoBlue = "/logos/sciss-logo-blue.png";
+const LogoYellow = "/logos/sciss-logo-yellow.png";
+const LogoWhiteLong = "/logos/sciss-logo-white-long.png";
+
+const HomeFeaturePresidents = {
+  src: "/images/featured/presidents.png",
+  alt: "Beth and Angelene",
+};
+
+const HomeFeature = {
+  src: "/images/featured/school-hero.jpg",
+  alt: "Welcome to SCISS",
+};
+
+const HomeHero = {
+  src: "/images/hero/home-hero.png",
+  alt: "Image of rowing team",
+};
+
+const ProgramOverviewHero = {
+  src: "/images/hero/program-overview-hero.png",
+  alt: "springfield campus",
+};
+
+const LifeActivitiesHero = {
+  src: "/images/hero/life-activities-hero.png",
+  alt: "image of 4",
+};
+
+const AcademicsHero = {
+  src: "/images/hero/academic-hero.png",
+  alt: "sca trophies",
+};
+
+const DayTripsHero = {
+  src: "/images/hero/day-trips-hero.png",
+  alt: "students of sciss at harvard",
+};
+
+const AboutUsHero = {
+  src: "/images/hero/about-us-hero.png",
+  alt: "front view of springfield commonwealth campus",
+};
+
+const TuitionHero = {
+  src: "/images/featured/school-building-0.JPG",
+  alt: "springfield campus view",
+};
+
+// Add missing hero images
+const TuitionsAndFeesHero = {
+  src: "/images/featured/school-building-0.JPG",
+  alt: "springfield campus view",
+};
+
+const ADayAtScissHero = {
+  src: "/images/hero/a-day-at-sciss-hero.png",
+  alt: "A day at SCISS",
+};
+
+const HomeSliderImages = [
+  {
+    src: "/images/slider/home/flute performance 2.JPG",
+    alt: "Student performing flute on stage",
+  },
+  {
+    src: "/images/slider/home/fencing.JPG",
+    alt: "Student fencing during summer camp activity",
+  },
+  {
+    src: "/images/slider/home/archery.JPG",
+    alt: "Student practicing archery outdoors",
+  },
+  {
+    src: "/images/slider/home/rowing.jpg",
+    alt: "Students rowing on the river",
+  },
+  {
+    src: "/images/slider/home/investment-presentation.JPG",
+    alt: "Student giving investment presentation",
+  },
+  {
+    src: "/images/slider/home/harvard-trip.JPG",
+    alt: "Group photo during Harvard trip",
+  },
+];
+
+export {
+  AboutUsHero,
+  AcademicsHero,
+  ADayAtScissHero,
+  DayTripsHero,
+  HomeFeature,
+  HomeFeaturePresidents,
+  HomeHero,
+  HomeSliderImages,
+  LifeActivitiesHero,
+  LogoBlack,
+  LogoBlue,
+  LogoWhite,
+  LogoWhiteLong,
+  LogoYellow,
+  ProgramOverviewHero,
+  TuitionHero,
+  TuitionsAndFeesHero,
+};

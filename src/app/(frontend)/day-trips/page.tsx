@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "Day Trips - SCISS",
@@ -6,21 +6,21 @@ export const metadata = {
     "Explore the day trips and local excursions available at SCISS Summer School.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import Carousel from "@/app/src/components/ui/Carousel";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
+import HeroSection from "@/components/sections/HeroSection";
+import Carousel from "@/components/ui/Carousel";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   DayTripsCarouselItems,
   DayTripsCulturalTrips,
   DayTripsTravelInfo,
   DayTripsUniversityTrips,
-} from "@/app/src/constants/dayTripsContent";
-import { DayTripsHero } from "@/app/src/constants/images";
+} from "@/constants/dayTripsContent";
+import { DayTripsHero } from "@/constants/images";
 import {
   getPopularTrips,
   getUniversityTrips,
-} from "@/app/src/lib/content/trips";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/trips";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
 export default function DayTrips(): React.JSX.Element {

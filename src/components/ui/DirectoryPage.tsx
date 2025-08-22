@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionHeader, StatsGrid } from "@/app/src/components/ui";
+import { SectionHeader, StatsGrid } from "@/components/ui";
 import Head from "next/head";
 import React, { useMemo, useState } from "react";
 import DirectoryCard from "./DirectoryCard";

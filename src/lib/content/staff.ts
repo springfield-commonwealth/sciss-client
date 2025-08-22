@@ -1,7 +1,7 @@
 // Staff Content Management - Epic 5: Staff and Lecturer Profile System
 // Professional staff profile management with comprehensive utilities
 
-import staffData from "@/data/content/staff-profiles.json";
+import staffData from "@/lib/content/data/staff-profiles.json";
 
 /**
  * Get all published staff members

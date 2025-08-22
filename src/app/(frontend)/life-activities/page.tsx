@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "Life Activities - SCISS",
@@ -6,19 +6,19 @@ export const metadata = {
     "Explore the exciting life activities and experiences available at SCISS Summer School.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
-import { LifeActivitiesHero } from "@/app/src/constants/images";
+import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
+import { LifeActivitiesHero } from "@/constants/images";
 import {
   LifeActivitiesFitnessPrograms,
   LifeActivitiesRecreationalActivities,
   LifeActivitiesSportsPrograms,
-} from "@/app/src/constants/lifeActivitiesContent";
+} from "@/constants/lifeActivitiesContent";
 import {
   getActivityCategories,
   getPopularActivities,
-} from "@/app/src/lib/content/activities";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/activities";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
 export default function LifeActivities(): React.JSX.Element {

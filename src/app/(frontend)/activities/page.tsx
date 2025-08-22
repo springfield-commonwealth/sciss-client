@@ -1,13 +1,13 @@
 "use client";
 
-import Layout from "@/app/src/components/layouts/Layout";
-import { DirectoryPage } from "@/app/src/components/ui";
+import Layout from "@/components/layouts/Layout";
+import { DirectoryPage } from "@/components/ui";
 import {
   getActivityCategories,
   getActivityStats,
   getAllActivities,
-} from "@/app/src/lib/content/activities";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/activities";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import React from "react";
 
 export default function ActivitiesDirectory(): React.JSX.Element {

@@ -1,6 +1,6 @@
-import ApplicationForm from "@/app/src/components/forms/ApplicationForm";
-import Layout from "@/app/src/components/layouts/Layout";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+import ApplicationForm from "@/components/forms/ApplicationForm";
+import Layout from "@/components/layouts/Layout";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 import React from "react";
 

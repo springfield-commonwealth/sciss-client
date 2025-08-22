@@ -2,8 +2,8 @@ import {
   submitApplication,
   validateEmail,
   validateTranscriptFile,
-} from "@/app/src/api/applicationApi.js";
-import { applicationFormSchema } from "@/app/src/lib/schemas/applicationFormSchema";
+} from "@/front-end-api/applicationApi.js";
+import { applicationFormSchema } from "@/lib/schemas/applicationFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCallback, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";

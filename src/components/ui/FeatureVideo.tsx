@@ -1,6 +1,6 @@
 "use client";
 
-import useAutoplayOnView from "@/app/src/hooks/useAutoplayOnView";
+import useAutoplayOnView from "@/hooks/useAutoplayOnView";
 import { useRef } from "react";
 
 interface VideoObject {

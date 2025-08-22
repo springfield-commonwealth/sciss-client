@@ -95,18 +95,7 @@ export const Pages: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
-      editor: lexicalEditor({
-        features: {
-          heading: {
-            options: [
-              { label: 'Heading 1', value: 'h1' },
-              { label: 'Heading 2', value: 'h2' },
-              { label: 'Heading 3', value: 'h3' },
-              { label: 'Heading 4', value: 'h4' },
-            ],
-          },
-        },
-      }),
+      editor: lexicalEditor(),
       admin: {
         description: 'Main page content',
       },

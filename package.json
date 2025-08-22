@@ -32,6 +32,8 @@
     "db:setup": "node scripts/setup-database.js",
     "db:test": "DATABASE_URI=postgresql://test:test@localhost:5432/test node scripts/setup-database.js",
     "migrate:v3": "node scripts/migrate-to-v3.js",
+    "migrate:content": "node scripts/migrate-content-architecture.js",
+    "fix:migration": "node scripts/fix-migration-issues.js",
     "setup:env": "node scripts/setup-env.js"
   },
   "dependencies": {

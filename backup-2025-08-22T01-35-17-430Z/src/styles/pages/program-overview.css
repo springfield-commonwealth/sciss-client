@@ -1,0 +1,79 @@
+/* Program Overview Page Styles */
+.stat-card {
+  padding: 2rem;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.mission-content,
+.vision-content {
+  padding: 2rem;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+}
+
+.values-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.values-list li:last-child {
+  border-bottom: none;
+}
+
+.unique-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  padding: 1.5rem;
+}
+
+.feature h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.schedule-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: var(--primary-blue);
+  min-width: 100px;
+  margin-right: 2rem;
+} 

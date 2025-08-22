@@ -1,7 +1,7 @@
 // Trips Content Management - Epic 5: Story 5.2 Task 2
 // Day trips and educational excursions management with comprehensive utilities
 
-import tripsData from "@/data/content/trips.json";
+import tripsData from "@/lib/content/data/trips.json";
 
 /**
  * Get all published trips

@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionHeader } from "@/app/src/components/ui";
+import { SectionHeader } from "@/components/ui";
 import React from "react";
 
 interface DirectoryItem {

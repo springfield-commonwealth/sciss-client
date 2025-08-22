@@ -1,5 +1,5 @@
-import Footer from "@/app/src/components/ui/Footer";
-import Navigation from "@/app/src/components/ui/Navigation";
+import Footer from "@/components/ui/Footer";
+import Navigation from "@/components/ui/Navigation";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 

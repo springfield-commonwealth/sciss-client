@@ -1,0 +1,374 @@
+{
+  "metadata": {
+    "totalCourses": 6,
+    "lastUpdated": "2024-12-19T00:00:00Z",
+    "version": "1.0.0",
+    "categories": [
+      "core",
+      "language",
+      "arts"
+    ]
+  },
+  "courses": [
+    {
+      "id": "path-to-wall-street",
+      "slug": "path-to-wall-street",
+      "title": "Path to Wall Street & Impact Investment",
+      "description": "Dive deep into finance, economics, and investment strategies. Learn from Wall Street professionals and develop real-world financial analysis skills with hands-on stock market simulation.",
+      "image": "/images/carousel/investment.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "finance",
+        "investment",
+        "wall-street",
+        "economics",
+        "advanced"
+      ],
+      "seo": {
+        "metaTitle": "Path to Wall Street Program | SCISS Summer School",
+        "metaDescription": "Master finance and investment strategies in our intensive Wall Street program. Learn from industry professionals with hands-on stock market simulation and real-world case studies.",
+        "keywords": [
+          "wall street program",
+          "finance summer school",
+          "investment education",
+          "stock market course",
+          "economic education"
+        ],
+        "ogImage": "/images/carousel/investment.png"
+      },
+      "level": "Advanced",
+      "duration": "3 weeks",
+      "session": "Session 1",
+      "curriculum": [
+        "Investment Strategies & Stock Markets",
+        "Finance, Economics & Accounting Fundamentals",
+        "Sustainable Investment Principles",
+        "Lectures by Wall Street Investment Experts",
+        "Team-based Final Competition",
+        "Global High School Investment Competition Preparation"
+      ],
+      "outcomes": [
+        "Win top 10 and top 15 from most prestigious global high school investment competition",
+        "Opportunities to win various prizes based on performance",
+        "Many alumni received offers from Ivy League schools",
+        "College summer internships and job offers from banks and investment companies"
+      ],
+      "prerequisites": "8th grade level, strong analytical skills",
+      "highlights": [
+        "Stock market simulation trading",
+        "Investment portfolio management",
+        "Economic trend analysis",
+        "Guest speakers from major financial firms"
+      ],
+      "category": "core",
+      "instructors": [
+        "angelene-huang",
+        "wall-street-expert-1"
+      ],
+      "capacity": 25,
+      "ageRange": "14-16 years"
+    },
+    {
+      "id": "youth-innovation-entrepreneurship",
+      "slug": "youth-innovation-entrepreneurship",
+      "title": "Youth Innovation & Entrepreneurship",
+      "description": "Transform your ideas into viable business concepts. Develop entrepreneurial mindset and learn startup fundamentals through hands-on business plan development.",
+      "image": "/images/carousel/entrepreneur.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "entrepreneurship",
+        "innovation",
+        "startup",
+        "business",
+        "intermediate"
+      ],
+      "seo": {
+        "metaTitle": "Youth Innovation & Entrepreneurship | SCISS Summer Program",
+        "metaDescription": "Learn entrepreneurship and innovation fundamentals. Transform ideas into business concepts with expert CEO guidance and hands-on startup development.",
+        "keywords": [
+          "youth entrepreneurship",
+          "innovation program",
+          "startup education",
+          "business plan development",
+          "teen entrepreneur"
+        ],
+        "ogImage": "/images/carousel/entrepreneur.png"
+      },
+      "level": "Intermediate",
+      "duration": "3 weeks",
+      "session": "Session 2",
+      "curriculum": [
+        "Design Thinking Process",
+        "Problem Identification & Solution Definition",
+        "Startup Business Plan Development",
+        "CEO-led Industry Expert Instruction",
+        "Teamwork & Innovation Skills",
+        "Communication & Sustainability Principles"
+      ],
+      "outcomes": [
+        "Create startup business plan from scratch",
+        "Develop teamwork and innovation skills",
+        "Foster creativity and communication abilities",
+        "Learn sustainability principles"
+      ],
+      "prerequisites": "8th grade level, interest in entrepreneurship and innovation",
+      "highlights": [
+        "Business plan development",
+        "Pitch presentation skills",
+        "Market research techniques",
+        "Startup funding strategies"
+      ],
+      "category": "core",
+      "instructors": [
+        "ceo-expert-1",
+        "innovation-mentor-1"
+      ],
+      "capacity": 30,
+      "ageRange": "14-16 years"
+    },
+    {
+      "id": "artificial-intelligence",
+      "slug": "artificial-intelligence",
+      "title": "Artificial Intelligence",
+      "description": "Explore the frontier of AI and machine learning. Build practical projects and understand AI's impact on society with hands-on programming experience.",
+      "image": "/images/carousel/ai.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "artificial-intelligence",
+        "machine-learning",
+        "programming",
+        "technology",
+        "advanced"
+      ],
+      "seo": {
+        "metaTitle": "Artificial Intelligence Program | SCISS Tech Education",
+        "metaDescription": "Master AI and machine learning fundamentals. Build practical AI projects with Python programming and explore technology's future impact on society.",
+        "keywords": [
+          "AI summer program",
+          "machine learning course",
+          "artificial intelligence education",
+          "teen programming",
+          "technology camp"
+        ],
+        "ogImage": "/images/carousel/ai.png"
+      },
+      "level": "Advanced",
+      "duration": "3 weeks",
+      "session": "Session 1",
+      "curriculum": [
+        "Machine Learning Fundamentals",
+        "AI Programming Applications",
+        "Computer Science Principles",
+        "Mathematical Foundations for AI",
+        "Practical AI Project Development",
+        "Technology Innovation & Implementation"
+      ],
+      "outcomes": [
+        "Understand core AI and machine learning concepts",
+        "Develop practical programming skills",
+        "Create AI-based projects and applications",
+        "Apply mathematical concepts to technology solutions"
+      ],
+      "prerequisites": "Pre-calculus level mathematics, strong analytical thinking",
+      "highlights": [
+        "Python programming for AI",
+        "Machine learning algorithms",
+        "Neural network design",
+        "AI ethics and applications"
+      ],
+      "category": "core",
+      "instructors": [
+        "ai-expert-1",
+        "computer-science-prof"
+      ],
+      "capacity": 20,
+      "ageRange": "15-17 years"
+    },
+    {
+      "id": "public-speaking-debate",
+      "slug": "public-speaking-debate",
+      "title": "Public Speaking & Debate",
+      "description": "Master the art of communication and persuasion. Build confidence through structured debate and presentation practice with professional coaching.",
+      "image": "/images/carousel/public-speaking.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "public-speaking",
+        "debate",
+        "communication",
+        "presentation",
+        "all-levels"
+      ],
+      "seo": {
+        "metaTitle": "Public Speaking & Debate Program | SCISS Communication Skills",
+        "metaDescription": "Build confidence and communication skills through structured debate training. Master presentation techniques and persuasive speaking with expert coaching.",
+        "keywords": [
+          "public speaking course",
+          "debate training",
+          "communication skills",
+          "presentation skills",
+          "teen confidence building"
+        ],
+        "ogImage": "/images/carousel/public-speaking.png"
+      },
+      "level": "All Levels",
+      "duration": "3 weeks",
+      "session": "Session 2",
+      "curriculum": [
+        "Speech Writing and Delivery",
+        "Debate Tournament Participation",
+        "Body Language and Presence",
+        "Media Interview Techniques",
+        "Persuasive Communication",
+        "Confidence Building Exercises"
+      ],
+      "outcomes": [
+        "Build confidence in public speaking",
+        "Develop persuasive communication skills",
+        "Master debate techniques and strategy",
+        "Improve presentation and body language"
+      ],
+      "prerequisites": "6th grade level, willingness to participate actively",
+      "highlights": [
+        "Speech writing and delivery",
+        "Debate tournament participation",
+        "Body language and presence",
+        "Media interview techniques"
+      ],
+      "category": "core",
+      "instructors": [
+        "debate-coach-1",
+        "communication-expert"
+      ],
+      "capacity": 35,
+      "ageRange": "12-17 years"
+    },
+    {
+      "id": "language-programs",
+      "slug": "language-programs",
+      "title": "Language Programs",
+      "description": "Immersive language learning experience with native speakers. Develop fluency through interactive activities, cultural exchange, and practical application.",
+      "image": "/images/carousel/language.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "language-learning",
+        "cultural-exchange",
+        "immersion",
+        "communication",
+        "all-levels"
+      ],
+      "seo": {
+        "metaTitle": "Language Programs | SCISS International Summer School",
+        "metaDescription": "Immersive language learning with native speakers. Develop fluency through cultural exchange and interactive activities in a supportive international environment.",
+        "keywords": [
+          "language immersion",
+          "international language program",
+          "cultural exchange",
+          "language fluency",
+          "teen language learning"
+        ],
+        "ogImage": "/images/carousel/language.png"
+      },
+      "level": "All Levels",
+      "duration": "3 weeks",
+      "session": "Both Sessions",
+      "curriculum": [
+        "Interactive Language Immersion",
+        "Cultural Exchange Activities",
+        "Native Speaker Conversations",
+        "Language Application Projects",
+        "Cross-Cultural Communication",
+        "Language Proficiency Assessment"
+      ],
+      "outcomes": [
+        "Improve language fluency and confidence",
+        "Develop cross-cultural communication skills",
+        "Build international friendships",
+        "Gain cultural awareness and sensitivity"
+      ],
+      "prerequisites": "Basic language foundation recommended but not required",
+      "highlights": [
+        "Native speaker instruction",
+        "Cultural immersion activities",
+        "International peer interaction",
+        "Real-world language application"
+      ],
+      "category": "language",
+      "instructors": [
+        "language-expert-1",
+        "cultural-coordinator"
+      ],
+      "capacity": 40,
+      "ageRange": "12-17 years"
+    },
+    {
+      "id": "visual-arts",
+      "slug": "visual-arts",
+      "title": "Visual Arts",
+      "description": "Explore creativity through various artistic mediums. Develop technical skills and artistic expression through guided instruction and personal projects.",
+      "image": "/images/carousel/art.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "visual-arts",
+        "creativity",
+        "artistic-expression",
+        "fine-arts",
+        "all-ages"
+      ],
+      "seo": {
+        "metaTitle": "Visual Arts Program | SCISS Creative Summer School",
+        "metaDescription": "Explore creativity through visual arts. Develop artistic skills in painting, drawing, and mixed media with professional art instruction and personal projects.",
+        "keywords": [
+          "visual arts program",
+          "teen art classes",
+          "creative summer camp",
+          "artistic expression",
+          "art education"
+        ],
+        "ogImage": "/images/carousel/visual-arts.png"
+      },
+      "level": "All Ages",
+      "duration": "3 weeks",
+      "session": "Both Sessions",
+      "curriculum": [
+        "Drawing and Sketching Fundamentals",
+        "Painting Techniques and Color Theory",
+        "Mixed Media and Experimental Art",
+        "Digital Art and Design",
+        "Art History and Appreciation",
+        "Personal Portfolio Development"
+      ],
+      "outcomes": [
+        "Develop artistic skills and techniques",
+        "Build a personal art portfolio",
+        "Explore various artistic mediums",
+        "Gain appreciation for art history and culture"
+      ],
+      "prerequisites": "Interest in art and creativity, no prior experience required",
+      "highlights": [
+        "Professional art instruction",
+        "Various artistic mediums",
+        "Personal portfolio creation",
+        "Art exhibition showcase"
+      ],
+      "category": "arts",
+      "instructors": [
+        "art-instructor-1",
+        "visual-arts-specialist"
+      ],
+      "capacity": 25,
+      "ageRange": "10-17 years"
+    }
+  ]
+}

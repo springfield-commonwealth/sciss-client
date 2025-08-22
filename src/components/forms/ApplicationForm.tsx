@@ -1,8 +1,8 @@
 "use client";
 
-import { useApplicationForm } from "@/app/src/hooks/useApplicationForm";
-import addressOptions from "@/data/addressOptions.json";
-import formOptions from "@/data/formOptions.json";
+import { useApplicationForm } from "@/hooks/useApplicationForm";
+import addressOptions from "@/lib/content/data/addressOptions.json";
+import formOptions from "@/lib/content/data/formOptions.json";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import PhoneInput from "react-phone-number-input";

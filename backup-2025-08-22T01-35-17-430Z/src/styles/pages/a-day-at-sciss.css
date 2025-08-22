@@ -1,0 +1,237 @@
+/* A Day at SCISS Page Styles */
+.overview-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.overview-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overview-card h3 {
+  color: var(--color-primary-500);
+  margin-bottom: 1rem;
+}
+
+.schedule-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.schedule-timeline::before {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--color-primary-500), var(--color-primary-600));
+  border-radius: 2px;
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.schedule-time {
+  min-width: 120px;
+  padding-right: 2rem;
+  text-align: right;
+  position: relative;
+}
+
+.time-text {
+  font-weight: 600;
+  color: var(--color-primary-500);
+  font-size: 1.1rem;
+}
+
+.time-indicator {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--color-border-light);
+}
+
+.schedule-content {
+  flex: 1;
+  padding: 1.5rem;
+  margin-left: 1rem;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+}
+
+.activity-header h4 {
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.activity-description {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.activity-type {
+  display: inline-block;
+  background: var(--color-bg-light);
+  color: var(--color-primary-500);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.day-card {
+  padding: 1.5rem;
+}
+
+.day-header h4 {
+  color: var(--color-primary-500);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.day-highlight {
+  background: var(--color-bg-light);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.day-special {
+  background: var(--color-yellow-500);
+  color: var(--color-text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.accommodation-card,
+.dining-card {
+  padding: 2rem;
+}
+
+.accommodation-card h3,
+.dining-card h3 {
+  color: var(--color-primary-500);
+  margin-bottom: 1rem;
+}
+
+.accommodation-card ul,
+.dining-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accommodation-card li,
+.dining-card li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.accommodation-card li:last-child,
+.dining-card li:last-child {
+  border-bottom: none;
+}
+
+.accommodation-card li::before,
+.dining-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-success-500);
+  font-weight: bold;
+}
+
+.safety-feature {
+  padding: 2rem;
+  text-align: center;
+}
+
+.safety-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.safety-feature h4 {
+  color: var(--color-primary-500);
+  margin-bottom: 0.75rem;
+}
+
+.safety-feature p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .schedule-timeline::before {
+    left: 60px;
+  }
+
+  .schedule-time {
+    min-width: 100px;
+    padding-right: 1rem;
+  }
+
+  .time-indicator {
+    right: -6px;
+  }
+
+  .weekly-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-item {
+    flex-direction: column;
+  }
+
+  .schedule-time {
+    min-width: auto;
+    padding-right: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .schedule-content {
+    margin-left: 0;
+  }
+
+  .schedule-timeline::before {
+    display: none;
+  }
+
+  .time-indicator {
+    display: none;
+  }
+} 

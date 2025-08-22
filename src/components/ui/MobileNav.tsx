@@ -1,4 +1,4 @@
-import ChevronDown from "@/app/src/components/ui/ChevronDown";
+import ChevronDown from "@/components/ui/ChevronDown";
 import Link from "next/link";
 
 const MobileNav = ({

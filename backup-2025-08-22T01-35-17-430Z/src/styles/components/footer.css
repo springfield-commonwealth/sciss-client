@@ -1,0 +1,94 @@
+.footer {
+    background: var(--color-bg-dark);
+    color: var(--color-text-white);
+    padding: var(--footer-padding-y, 3rem) 0 var(--footer-padding-bottom, 2rem);
+}
+
+.footerContainer {
+    max-width: var(--container-max-width, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--footer-container-padding, 20px);
+}
+
+.footerSection h4 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+    color: var(--color-yellow-500);
+}
+
+.footerSection strong {
+    color: var(--color-yellow-500);
+    font-size: var(--text-sm);
+}
+
+.footerSection p,
+.footerSection a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    line-height: var(--leading-relaxed);
+}
+
+.footerSection a:hover {
+    color: var(--color-yellow-500);
+}
+
+.footerBottom {
+    text-align: center;
+    padding-top: var(--space-8);
+    margin-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+}
+
+.social-link:hover {
+  color: var(--color-primary-500);
+  transform: translateY(var(--hover-lift-distance-small, -1px));
+}
+
+.social-link__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link__icon svg {
+  width: var(--social-icon-size, 1.5rem);
+  height: var(--social-icon-size, 1.5rem);
+  fill: currentColor;
+  transition: fill var(--transition-normal);
+}
+
+.social-link__label {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-links {
+    gap: var(--space-4);
+  }
+  
+  .social-link__icon svg {
+    width: var(--social-icon-size-mobile, 1.25rem);
+    height: var(--social-icon-size-mobile, 1.25rem);
+  }
+}

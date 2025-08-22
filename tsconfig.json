@@ -13,7 +13,6 @@
     "jsx": "preserve",
     "experimentalDecorators": true,
     "useDefineForClassFields": true,
-
     /* Modules */
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -25,7 +24,6 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
-
     /* Emit */
     "noEmit": true,
     "declaration": false,
@@ -33,10 +31,8 @@
     "sourceMap": true,
     "removeComments": true,
     "newLine": "lf",
-
     /* Interop Constraints */
     "forceConsistentCasingInFileNames": true,
-
     /* Type Checking */
     "strict": false,
     "exactOptionalPropertyTypes": false,
@@ -48,38 +44,36 @@
     "noUncheckedIndexedAccess": false,
     "noImplicitOverride": false,
     "noPropertyAccessFromIndexSignature": false,
-
     /* JavaScript Support */
     "allowJs": true,
     "checkJs": false,
     "maxNodeModuleJsDepth": 1,
-
     /* Performance */
     "skipLibCheck": true,
     "incremental": true,
     "assumeChangesOnlyAffectDirectDependencies": true,
-
     /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["app/src/*"] /* Absolute imports */,
-      "@/components/*": ["app/src/components/*"] /* Component imports */,
-      "@/lib/*": ["app/src/lib/*"] /* Library imports */,
-      "@/styles/*": ["app/src/styles/*"] /* Style imports */,
+      "@/*": ["src/*"] /* Absolute imports */,
+      "@/components/*": ["src/components/*"] /* Component imports */,
+      "@/lib/*": ["src/lib/*"] /* Library imports */,
+      "@/styles/*": ["src/styles/*"] /* Style imports */,
       "@/public/*": ["./public/*"] /* Public asset imports */,
-      "@/utils/*": ["app/src/utils/*"] /* Utility imports */,
-      "@/hooks/*": ["app/src/hooks/*"] /* Custom hooks */,
-      "@/types/*": ["app/src/types/*"] /* Type definitions */,
-      "@/data/*": ["app/src/data/*"],
-      "@/constants/*": ["app/src/constants/*"],
-      "@/api/*": ["app/src/api/*"],
-      "@/collections/*": ["./payload/collections/*"] /* Payload collections */,
-      "@/app/*": ["./app/*"] /* App directory imports */,
-      "@/app/(frontend)/*": ["./app/(frontend)/*"] /* Frontend pages */,
-      "@/app/api/*": ["./app/api/*"] /* API routes */,
-      "@/payload/*": ["./payload/*"] /* Payload specific files */
+      "@/utils/*": ["src/lib/utils/*"] /* Utility imports */,
+      "@/hooks/*": ["src/hooks/*"] /* Custom hooks */,
+      "@/types/*": ["src/types/*"] /* Type definitions */,
+      "@/data/*": ["src/lib/content/data/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/front-end-api/*": ["src/front-end-api/*"],
+      "@/collections/*": [
+        "./src/payload/collections/*"
+      ] /* Payload collections */,
+      "@/app/*": ["./src/app/*"] /* App directory imports */,
+      "@/app/(frontend)/*": ["./src/app/(frontend)/*"] /* Frontend pages */,
+      "@/app/api/*": ["./src/app/api/*"] /* API routes */,
+      "@/payload/*": ["./src/payload/*"] /* Payload specific files */
     },
-
     /* Next.js Specific */
     "plugins": [
       {
@@ -87,20 +81,19 @@
       }
     ]
   },
-
   /* File Inclusion */
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "**/*.cts",
     "**/*.js",
     "**/*.jsx",
     "**/*.mts",
-    "**/*.cts",
+    "**/*.ts",
+    "**/*.tsx",
     ".next/types/**/*.ts",
-    "babel.config.js.bak"
+    "babel.config.js.bak",
+    "next-env.d.ts",
+    "dist/types/**/*.ts"
   ],
-
   /* File Exclusion */
   "exclude": [
     "node_modules",
@@ -110,6 +103,7 @@
     "build",
     "coverage",
     "cypress",
+    "backup-*",
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.test.js",
@@ -119,7 +113,6 @@
     "**/*.spec.js",
     "**/*.spec.jsx"
   ],
-
   /* TypeScript-ESLint Integration */
   "ts-node": {
     "esm": true,

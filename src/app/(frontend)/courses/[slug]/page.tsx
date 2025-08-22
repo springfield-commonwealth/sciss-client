@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 
 // Generate metadata for the page
@@ -43,8 +43,8 @@ export async function generateStaticParams() {
   }));
 }
 
-import { getAllCourses, getCourseBySlug } from "@/app/src/lib/content/courses";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+import { getAllCourses, getCourseBySlug } from "@/lib/content/courses";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 import Link from "next/link";
 

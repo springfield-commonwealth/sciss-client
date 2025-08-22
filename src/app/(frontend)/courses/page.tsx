@@ -1,13 +1,13 @@
 "use client";
 
-import Layout from "@/app/src/components/layouts/Layout";
-import { DirectoryPage } from "@/app/src/components/ui";
+import Layout from "@/components/layouts/Layout";
+import { DirectoryPage } from "@/components/ui";
 import {
   getAllCourses,
   getCourseCategories,
   getCourseStats,
-} from "@/app/src/lib/content/courses";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/courses";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import React from "react";
 
 export default function CoursesDirectory(): React.JSX.Element {

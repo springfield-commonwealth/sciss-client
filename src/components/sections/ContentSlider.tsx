@@ -1,6 +1,6 @@
 "use client";
 
-import ImageSlider from "@/app/src/components/ui/ImageSlider";
+import ImageSlider from "@/components/ui/ImageSlider";
 
 const ContentSlider = ({ heading, text, links = [], images = [] }) => {
   return (

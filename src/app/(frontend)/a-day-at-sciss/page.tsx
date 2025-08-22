@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "A Day at SCISS - SCISS",
@@ -6,17 +6,17 @@ export const metadata = {
     "Experience a typical day at SCISS Summer School with our comprehensive schedule and activities.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
-import WeeklySchedule from "@/app/src/components/ui/WeeklySchedule";
+import HeroSection from "@/components/sections/HeroSection";
+import FooterCTA from "@/components/ui/FooterCTA";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import {
   ADayAtScissAccommodationInfo,
   ADayAtScissDailySchedule,
   ADayAtScissDiningInfo,
   ADayAtScissWeeklyVariations,
-} from "@/app/src/constants/aDayAtScissContent";
-import { ADayAtScissHero } from "@/app/src/constants/images";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/constants/aDayAtScissContent";
+import { ADayAtScissHero } from "@/constants/images";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 export default function ADayAtSciss(): React.JSX.Element {
   // Generate breadcrumbs for a-day-at-sciss page

@@ -1,6 +1,6 @@
 "use client";
 
-import { campSchedules } from "@/app/src/constants/CampScheduleData";
+import { campSchedules } from "@/constants/CampScheduleData";
 import { useState } from "react";
 
 const CampSchedule = () => {

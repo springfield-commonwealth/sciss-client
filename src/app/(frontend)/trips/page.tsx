@@ -1,15 +1,15 @@
 "use client";
 
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 
-import { DirectoryPage } from "@/app/src/components/ui";
+import { DirectoryPage } from "@/components/ui";
 import {
   getAllTrips,
   getTripCategories,
   getTripStats,
-} from "@/app/src/lib/content/trips";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/trips";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 // Trips Directory Page Component - Using Universal Directory System
 export default function TripsDirectory(): React.JSX.Element {

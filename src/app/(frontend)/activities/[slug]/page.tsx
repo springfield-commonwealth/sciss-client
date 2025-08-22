@@ -1,10 +1,10 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import {
   getActivityBySlug,
   getAllActivities,
   getRelatedActivities,
-} from "@/app/src/lib/content/activities";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/activities";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 import React from "react";
 

@@ -1,22 +1,22 @@
-import Layout from "@/app/src/components/layouts/Layout";
-import CampSchedule from "@/app/src/components/sections/CampSchedule";
-import HeroSection from "@/app/src/components/sections/HeroSection";
+import Layout from "@/components/layouts/Layout";
+import CampSchedule from "@/components/sections/CampSchedule";
+import HeroSection from "@/components/sections/HeroSection";
 import {
   Badge,
   BadgeGroup,
   FeatureGrid,
   FooterCTA,
   SectionHeader,
-} from "@/app/src/components/ui";
-import Carousel from "@/app/src/components/ui/Carousel";
-import { AcademicsCarouselItems } from "@/app/src/constants/academicsContent";
-import { AcademicsHero } from "@/app/src/constants/images";
+} from "@/components/ui";
+import Carousel from "@/components/ui/Carousel";
+import { AcademicsCarouselItems } from "@/constants/academicsContent";
+import { AcademicsHero } from "@/constants/images";
 import {
   getAllCourses,
   getCourseCategories,
   getCourseStats,
-} from "@/app/src/lib/content/courses";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/courses";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 import React from "react";
 

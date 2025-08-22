@@ -1,7 +1,7 @@
 // Course Content Management - Epic 5: Content Architecture Modernization
 // Replaces monolithic academicsContent.js with structured JSON-based content management
 
-import coursesData from "@/data/content/academic-programs.json";
+import coursesData from "@/lib/content/data/academic-programs.json";
 
 /**
  * Get all published courses

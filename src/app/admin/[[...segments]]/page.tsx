@@ -1,5 +1,5 @@
 import { getPayload } from "payload";
-import config from "../../payload.config";
+import config from "../../../payload.config";
 
 // This page will render the Payload admin interface
 export default async function AdminPage() {

@@ -1,0 +1,49 @@
+/* Apply Page Styles */
+
+.apply-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.apply-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.apply-description {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .apply-title {
+    font-size: 2rem;
+  }
+  
+  .apply-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .apply-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .apply-title {
+    font-size: 1.8rem;
+  }
+}
+
+.apply-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.apply-logo {
+  max-width: 180px;
+  height: auto;
+} 

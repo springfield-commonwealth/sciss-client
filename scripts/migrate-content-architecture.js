@@ -5,23 +5,27 @@
  * Migrates from current scattered structure to clean Payload CMS v3 structure
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import { execSync } from "child_process";
+import fs from "fs";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Colors for console output
 const colors = {
-  reset: '\x1b[0m',
-  bright: '\x1b[1m',
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m',
-  cyan: '\x1b[36m',
+  reset: "\x1b[0m",
+  bright: "\x1b[1m",
+  red: "\x1b[31m",
+  green: "\x1b[32m",
+  yellow: "\x1b[33m",
+  blue: "\x1b[34m",
+  magenta: "\x1b[35m",
+  cyan: "\x1b[36m",
 };
 
-function log(message, color = 'reset') {
+function log(message, color = "reset") {
   console.log(`${colors[color]}${message}${colors.reset}`);
 }
 
@@ -30,15 +34,15 @@ function logStep(step) {
 }
 
 function logSuccess(message) {
-  log(`✅ ${message}`, 'green');
+  log(`✅ ${message}`, "green");
 }
 
 function logWarning(message) {
-  log(`⚠️  ${message}`, 'yellow');
+  log(`⚠️  ${message}`, "yellow");
 }
 
 function logError(message) {
-  log(`❌ ${message}`, 'red');
+  log(`❌ ${message}`, "red");
 }
 
 function ensureDirectoryExists(dirPath) {
@@ -56,7 +60,7 @@ function moveFile(source, destination) {
       // Ensure destination directory exists
       const destDir = path.dirname(destination);
       ensureDirectoryExists(destDir);
-      
+
       // Move the file
       fs.renameSync(source, destination);
       logSuccess(`Moved: ${source} → ${destination}`);
@@ -71,12 +75,12 @@ function moveFile(source, destination) {
 function updateImportsInFile(filePath, oldImport, newImport) {
   try {
     if (fs.existsSync(filePath)) {
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(filePath, "utf8");
       const originalContent = content;
-      
+
       // Update import paths
-      content = content.replace(new RegExp(oldImport, 'g'), newImport);
-      
+      content = content.replace(new RegExp(oldImport, "g"), newImport);
+
       if (content !== originalContent) {
         fs.writeFileSync(filePath, content);
         logSuccess(`Updated imports in: ${filePath}`);
@@ -89,12 +93,12 @@ function updateImportsInFile(filePath, oldImport, newImport) {
 
 function findAndUpdateImports(directory, oldImport, newImport) {
   if (!fs.existsSync(directory)) return;
-  
+
   const files = fs.readdirSync(directory, { withFileTypes: true });
-  
+
   for (const file of files) {
     const fullPath = path.join(directory, file.name);
-    
+
     if (file.isDirectory()) {
       findAndUpdateImports(fullPath, oldImport, newImport);
     } else if (file.name.match(/\.(ts|tsx|js|jsx)$/)) {
@@ -117,54 +121,72 @@ function backupDirectory(sourceDir, backupDir) {
 
 // Main migration function
 function migrateContentArchitecture() {
-  logStep('Starting Content Architecture Migration');
-  
+  logStep("Starting Content Architecture Migration");
+
   // Create backup
-  logStep('Creating Backup');
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  backupDirectory('src', `backup-${timestamp}`);
-  
+  logStep("Creating Backup");
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  backupDirectory("src", `backup-${timestamp}`);
+
   // Phase 1: Create new directory structure
-  logStep('Phase 1: Creating New Directory Structure');
-  
+  logStep("Phase 1: Creating New Directory Structure");
+
   const newDirectories = [
-    'src/lib/payload',
-    'src/lib/content',
-    'src/lib/utils',
-    'src/components/content',
-    'src/components/blocks',
-    'src/payload/blocks',
-    'src/payload/fields',
-    'src/payload/hooks',
-    'src/payload/access',
+    "src/lib/payload",
+    "src/lib/content",
+    "src/lib/utils",
+    "src/components/content",
+    "src/components/blocks",
+    "src/payload/blocks",
+    "src/payload/fields",
+    "src/payload/hooks",
+    "src/payload/access",
   ];
-  
-  newDirectories.forEach(dir => ensureDirectoryExists(dir));
-  
+
+  newDirectories.forEach((dir) => ensureDirectoryExists(dir));
+
   // Phase 2: Move existing files
-  logStep('Phase 2: Moving Existing Files');
-  
+  logStep("Phase 2: Moving Existing Files");
+
   const fileMoves = [
     // Payload utilities
-    { source: 'src/app/src/lib/utils/payload.ts', dest: 'src/lib/payload/getPayload.ts' },
-    
+    {
+      source: "src/app/src/lib/utils/payload.ts",
+      dest: "src/lib/payload/getPayload.ts",
+    },
+
     // Content files (if they exist)
-    { source: 'src/app/src/lib/content/courses.ts', dest: 'src/lib/content/courses.ts' },
-    { source: 'src/app/src/lib/content/activities.ts', dest: 'src/lib/content/activities.ts' },
-    { source: 'src/app/src/lib/content/trips.ts', dest: 'src/lib/content/trips.ts' },
-    { source: 'src/app/src/lib/content/staff.ts', dest: 'src/lib/content/staff.ts' },
-    
+    {
+      source: "src/app/src/lib/content/courses.ts",
+      dest: "src/lib/content/courses.ts",
+    },
+    {
+      source: "src/app/src/lib/content/activities.ts",
+      dest: "src/lib/content/activities.ts",
+    },
+    {
+      source: "src/app/src/lib/content/trips.ts",
+      dest: "src/lib/content/trips.ts",
+    },
+    {
+      source: "src/app/src/lib/content/staff.ts",
+      dest: "src/lib/content/staff.ts",
+    },
+
     // Components
-    { source: 'src/app/src/components/ui', dest: 'src/components/ui' },
-    { source: 'src/app/src/components/sections', dest: 'src/components/content' },
+    { source: "src/app/src/components/ui", dest: "src/components/ui" },
+    {
+      source: "src/app/src/components/sections",
+      dest: "src/components/content",
+    },
   ];
-  
+
   fileMoves.forEach(({ source, dest }) => {
     if (fs.existsSync(source)) {
       if (fs.statSync(source).isDirectory()) {
         // Move directory contents
         const files = fs.readdirSync(source);
-        files.forEach(file => {
+        files.forEach((file) => {
           const sourceFile = path.join(source, file);
           const destFile = path.join(dest, file);
           moveFile(sourceFile, destFile);
@@ -174,25 +196,25 @@ function migrateContentArchitecture() {
       }
     }
   });
-  
+
   // Phase 3: Update import paths
-  logStep('Phase 3: Updating Import Paths');
-  
+  logStep("Phase 3: Updating Import Paths");
+
   const importUpdates = [
-    { old: '@/app/src/lib/content/', new: '@/lib/content/' },
-    { old: '@/app/src/lib/utils/', new: '@/lib/utils/' },
-    { old: '@/app/src/components/', new: '@/components/' },
-    { old: '@/content/', new: '@/lib/content/' },
+    { old: "@/app/src/lib/content/", newPath: "@/lib/content/" },
+    { old: "@/app/src/lib/utils/", newPath: "@/lib/utils/" },
+    { old: "@/app/src/components/", newPath: "@/components/" },
+    { old: "@/content/", newPath: "@/lib/content/" },
   ];
-  
-  importUpdates.forEach(({ old, new }) => {
-    findAndUpdateImports('src', old, new);
-    findAndUpdateImports('tests', old, new);
+
+  importUpdates.forEach(({ old, newPath }) => {
+    findAndUpdateImports("src", old, newPath);
+    findAndUpdateImports("tests", old, newPath);
   });
-  
+
   // Phase 4: Create new content index
-  logStep('Phase 4: Creating Unified Content Exports');
-  
+  logStep("Phase 4: Creating Unified Content Exports");
+
   const contentIndexContent = `// Unified Content Exports - Epic 5: Content Architecture Modernization
 // Centralized exports for all content types
 
@@ -228,19 +250,19 @@ export const CONTENT_COLLECTIONS = {
 } as const;
 `;
 
-  fs.writeFileSync('src/lib/content/index.ts', contentIndexContent);
-  logSuccess('Created unified content exports');
-  
+  fs.writeFileSync("src/lib/content/index.ts", contentIndexContent);
+  logSuccess("Created unified content exports");
+
   // Phase 5: Clean up old directories
-  logStep('Phase 5: Cleaning Up Old Directories');
-  
+  logStep("Phase 5: Cleaning Up Old Directories");
+
   const directoriesToRemove = [
-    'src/content',
-    'src/app/src/lib/content',
-    'src/app/src/data/content',
+    "src/content",
+    "src/app/src/lib/content",
+    "src/app/src/data/content",
   ];
-  
-  directoriesToRemove.forEach(dir => {
+
+  directoriesToRemove.forEach((dir) => {
     if (fs.existsSync(dir)) {
       try {
         fs.rmSync(dir, { recursive: true, force: true });
@@ -250,14 +272,14 @@ export const CONTENT_COLLECTIONS = {
       }
     }
   });
-  
-  logStep('Migration Complete!');
-  logSuccess('Content architecture has been successfully migrated');
-  logWarning('Please review the changes and test your application');
-  logWarning('Check the backup directory if you need to rollback');
-  
+
+  logStep("Migration Complete!");
+  logSuccess("Content architecture has been successfully migrated");
+  logWarning("Please review the changes and test your application");
+  logWarning("Check the backup directory if you need to rollback");
+
   // Next steps
-  logStep('Next Steps');
+  logStep("Next Steps");
   console.log(`
 ${colors.cyan}1.${colors.reset} Review the migrated structure
 ${colors.cyan}2.${colors.reset} Update any remaining import paths manually
@@ -269,7 +291,7 @@ ${colors.cyan}6.${colors.reset} Update documentation to reflect new structure
 }
 
 // Run migration if this script is executed directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   try {
     migrateContentArchitecture();
   } catch (error) {
@@ -278,4 +300,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { migrateContentArchitecture };
+export { migrateContentArchitecture };

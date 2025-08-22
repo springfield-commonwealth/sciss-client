@@ -1,15 +1,15 @@
 "use client";
 
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 
-import { DirectoryPage } from "@/app/src/components/ui";
+import { DirectoryPage } from "@/components/ui";
 import {
   getAllStaff,
   getStaffDepartments,
   getStaffStats,
-} from "@/app/src/lib/content/staff";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/lib/content/staff";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 // Staff Directory Page Component - Using Universal Directory System
 export default function StaffDirectory(): React.JSX.Element {

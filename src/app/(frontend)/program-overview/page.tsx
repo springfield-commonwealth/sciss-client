@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "Program Overview - SCISS",
@@ -6,14 +6,14 @@ export const metadata = {
     "Get an overview of SCISS Summer School programs, structure, and what to expect.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import { FeatureGrid, SectionHeader } from "@/app/src/components/ui";
-import Carousel from "@/app/src/components/ui/Carousel";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
-import WeeklySchedule from "@/app/src/components/ui/WeeklySchedule";
-import { ProgramOverviewHero } from "@/app/src/constants/images";
-import { ProgramOverviewCoreCourses } from "@/app/src/constants/programOverviewContent";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader } from "@/components/ui";
+import Carousel from "@/components/ui/Carousel";
+import FooterCTA from "@/components/ui/FooterCTA";
+import WeeklySchedule from "@/components/ui/WeeklySchedule";
+import { ProgramOverviewHero } from "@/constants/images";
+import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 export default function ProgramOverview(): React.JSX.Element {
   // Generate breadcrumbs for program-overview page

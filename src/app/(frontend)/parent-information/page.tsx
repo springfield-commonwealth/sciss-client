@@ -1,4 +1,4 @@
-import Layout from "@/app/src/components/layouts/Layout";
+import Layout from "@/components/layouts/Layout";
 import React from "react";
 export const metadata = {
   title: "Parent Information - SCISS",
@@ -6,9 +6,9 @@ export const metadata = {
     "Essential information for parents about SCISS Summer School programs, safety, and communication.",
 };
 
-import HeroSection from "@/app/src/components/sections/HeroSection";
-import { FeatureGrid, SectionHeader } from "@/app/src/components/ui";
-import FooterCTA from "@/app/src/components/ui/FooterCTA";
+import HeroSection from "@/components/sections/HeroSection";
+import { FeatureGrid, SectionHeader } from "@/components/ui";
+import FooterCTA from "@/components/ui/FooterCTA";
 import {
   ParentInfoCampusServices,
   ParentInfoCommunicationSchedule,
@@ -18,8 +18,8 @@ import {
   ParentInfoParentTestimonials,
   ParentInfoSafetyMeasures,
   ParentInfoTravelTips,
-} from "@/app/src/constants/parentInformationContent";
-import { generateBreadcrumbs } from "@/app/src/lib/utils/navigation";
+} from "@/constants/parentInformationContent";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 export default function ParentInformation(): React.JSX.Element {
   // Generate breadcrumbs for parent-information page

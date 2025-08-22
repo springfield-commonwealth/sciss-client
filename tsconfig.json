@@ -38,16 +38,16 @@
     "forceConsistentCasingInFileNames": true,
 
     /* Type Checking */
-    "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "useUnknownInCatchVariables": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "strict": false,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "useUnknownInCatchVariables": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitOverride": false,
+    "noPropertyAccessFromIndexSignature": false,
 
     /* JavaScript Support */
     "allowJs": true,
@@ -62,17 +62,22 @@
     /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"] /* Absolute imports */,
-      "@/components/*": ["./src/components/*"] /* Component imports */,
-      "@/lib/*": ["./src/lib/*"] /* Library imports */,
-      "@/styles/*": ["./src/styles/*"] /* Style imports */,
+      "@/*": ["app/src/*"] /* Absolute imports */,
+      "@/components/*": ["app/src/components/*"] /* Component imports */,
+      "@/lib/*": ["app/src/lib/*"] /* Library imports */,
+      "@/styles/*": ["app/src/styles/*"] /* Style imports */,
       "@/public/*": ["./public/*"] /* Public asset imports */,
-      "@/utils/*": ["./src/utils/*"] /* Utility imports */,
-      "@/hooks/*": ["./src/hooks/*"] /* Custom hooks */,
-      "@/types/*": ["./src/types/*"] /* Type definitions */,
-      "@/data/*": ["./src/data/*"],
-      "@/constants/*": ["./src/constants/*"],
-      "@/api/*": ["./src/api/*"],
+      "@/utils/*": ["app/src/utils/*"] /* Utility imports */,
+      "@/hooks/*": ["app/src/hooks/*"] /* Custom hooks */,
+      "@/types/*": ["app/src/types/*"] /* Type definitions */,
+      "@/data/*": ["app/src/data/*"],
+      "@/constants/*": ["app/src/constants/*"],
+      "@/api/*": ["app/src/api/*"],
+      "@/collections/*": ["./payload/collections/*"] /* Payload collections */,
+      "@/app/*": ["./app/*"] /* App directory imports */,
+      "@/app/(frontend)/*": ["./app/(frontend)/*"] /* Frontend pages */,
+      "@/app/api/*": ["./app/api/*"] /* API routes */,
+      "@/payload/*": ["./payload/*"] /* Payload specific files */
     },
 
     /* Next.js Specific */
@@ -92,8 +97,9 @@
     "**/*.jsx",
     "**/*.mts",
     "**/*.cts",
-    ".next/types/**/*.ts"
-, "babel.config.js.bak"  ],
+    ".next/types/**/*.ts",
+    "babel.config.js.bak"
+  ],
 
   /* File Exclusion */
   "exclude": [

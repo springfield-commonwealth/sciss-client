@@ -20,6 +20,10 @@ dist.zip
 
 .env.production
 
+# Payload CMS
+src/types/payload-types.ts
+src/types/generated-schema.graphql
+public/media/uploads/
 
 .mdc/
 README-MDC.md

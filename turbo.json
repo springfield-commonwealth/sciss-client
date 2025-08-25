@@ -1,0 +1,86 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": [
+    "//"
+  ],
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "tasks": {
+    "build": {
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**"
+      ],
+      "env": [
+        "NODE_ENV",
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "outputs": []
+    },
+    "type-check": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": [
+        "coverage/**"
+      ],
+      "env": [
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "test:ci": {
+      "outputs": [
+        "coverage/**"
+      ],
+      "env": [
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "test:coverage": {
+      "outputs": [
+        "coverage/**"
+      ],
+      "env": [
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "deploy:dev": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "env": [
+        "NODE_ENV",
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "deploy:prod": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "env": [
+        "NODE_ENV",
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
+    "fresh": {
+      "cache": false
+    }
+  }
+}

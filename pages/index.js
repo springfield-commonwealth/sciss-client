@@ -40,19 +40,19 @@ const HomePage = ({ breadcrumbs = [] }) => {
 
       {/* Welcome Section */}
       <FeatureSection
-        heading="Welcome to Springfield Commonwealth International Summer School"
+        heading="Welcome to SC International Summer School"
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
       />
 
-      <FeatureVideo
+      {/* <FeatureVideo
         VideoObject={WelcomeVideo}
         autoPlay={false}
         muted={true}
         loop={true}
         playsInline={true}
         playBackSpeed={0.7}
-      />
+      /> */}
 
       <Highlights highlights={HomeHighlights} />
 

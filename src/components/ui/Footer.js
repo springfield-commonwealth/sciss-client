@@ -1,5 +1,5 @@
-import Link from "next/link";
 import SocialLink from "@/components/ui/SocialLink";
+import Link from "next/link";
 
 const Footer = () => {
   const socialLinks = [
@@ -54,7 +54,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footerContainer grid grid--4">
         <div className="footerSection">
-          <h4>Sessions 2025</h4>
+          <h4>Sessions 2026</h4>
           <p>Session 1: June 29 - July 18</p>
           <p>Session 2: July 20 - August 8</p>
           <p>Early Bird Deadline: April 1st</p>
@@ -105,19 +105,18 @@ const Footer = () => {
               />
             ))}
           </div>
-          <h4 className="mt--sm">Accreditation</h4>
+          {/* <h4 className="mt--sm">Accreditation</h4>
           <p>
             National Honor Society (NHS)
             <br />
             New England Association of Schools and Colleges (NEASC)
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="footerBottom">
         <p>
-          &copy; 2025 Springfield Commonwealth International Summer School (A
-          Product of Viswise Academy, 501(c)(3) non-profit (EIN: 85-2331341)).
-          All rights reserved.
+          &copy; 2025 SC International Summer School (A Product of Viswise
+          Academy, 501(c)(3) non-profit (EIN: 85-2331341)). All rights reserved.
         </p>
       </div>
     </footer>

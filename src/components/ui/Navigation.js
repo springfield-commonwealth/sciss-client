@@ -13,11 +13,21 @@ import Link from "next/link";
 
 const navLinks = [
   {
-    label: "Program",
+    label: "About Us",
+    href: "/about-us",
+    children: [
+      { href: "/about-us#mission", label: "Missions & Vision" },
+      { href: "/about-us#values", label: "Our Values" },
+      { href: "/staff", label: "Our Team" },
+    ],
+  },
+  {
+    label: "Our Program",
     href: "/program-overview",
     children: [
       { href: "/program-overview", label: "Overview" },
       { href: "/tuitions-and-fees", label: "Tuitions & Fees" },
+      { href: "/parent-information", label: "Parent Information" },
     ],
   },
   {
@@ -50,15 +60,6 @@ const navLinks = [
         label: "Cultural Experiences",
       },
       { href: "/trips?category=Educational Tours", label: "Educational Tours" },
-    ],
-  },
-  {
-    label: "About Us",
-    href: "/about-us",
-    children: [
-      { href: "/about-us#mission", label: "Missions & Vision" },
-      { href: "/about-us#values", label: "Our Values" },
-      { href: "/staff", label: "Our Team" },
     ],
   },
 ];

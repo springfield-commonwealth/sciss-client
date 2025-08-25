@@ -1,4 +1,4 @@
-import { SectionHeader, StatsGrid } from "@/components/ui";
+import { SectionHeader } from "@/components/ui";
 import Head from "next/head";
 import { useMemo, useState } from "react";
 import DirectoryCard from "./DirectoryCard";
@@ -153,16 +153,25 @@ const DirectoryPage = ({
             />
 
             {/* Statistics using reusable StatsGrid component */}
-            <StatsGrid
+            {/* <StatsGrid
               stats={statsData}
               columns={3}
               hoverable
               onStatClick={(stat, index) => {
                 console.log("Clicked stat:", stat, index);
               }}
-            />
+            /> */}
           </div>
         </section>
+
+        {/* Categories Overview */}
+        {Object.keys(groupedItems).length > 0 && (
+          <DirectoryCategories
+            groupedItems={groupedItems}
+            type={type}
+            onCategorySelect={setSelectedCategory}
+          />
+        )}
 
         {/* Search and Filter Section */}
         <DirectoryFilters
@@ -200,15 +209,6 @@ const DirectoryPage = ({
             )}
           </div>
         </section>
-
-        {/* Categories Overview */}
-        {Object.keys(groupedItems).length > 0 && (
-          <DirectoryCategories
-            groupedItems={groupedItems}
-            type={type}
-            onCategorySelect={setSelectedCategory}
-          />
-        )}
 
         {/* Call to Action */}
         {ctaConfig.showCTA && (

@@ -44,12 +44,12 @@ const AboutUs = ({ breadcrumbs = [] }) => {
       {/* Mission & Vision */}
       <section className="section" id="mission">
         <div className="container">
-          <div className="grid grid--2">
+          <div className="">
             <div className="mission-section">
               <SectionHeader
                 title="Our Mission"
                 description="At Springfield Commonwealth International Summer School, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success while building global perspectives and lifelong connections."
-                align="left"
+                align="center"
                 showDivider
               />
 
@@ -75,7 +75,7 @@ const AboutUs = ({ breadcrumbs = [] }) => {
                         "Building bridges between cultures and creating lasting international friendships",
                     },
                   ]}
-                  columns={1}
+                  columns={3}
                   hoverable
                 />
               </div>
@@ -85,7 +85,7 @@ const AboutUs = ({ breadcrumbs = [] }) => {
               <SectionHeader
                 title="Our Vision"
                 description="To be the world's leading international summer school, known for academic innovation, cultural exchange, and transformative student experiences that shape future global leaders and change-makers."
-                align="left"
+                align="center"
                 showDivider
               />
 

@@ -76,16 +76,16 @@ const DirectoryCategories = ({
       className={`${type}-categories-overview directory-categories ${className}`}
     >
       <div className="container">
-        <SectionHeader
+        {/* <SectionHeader
           title={getSectionTitle()}
           description={getSectionDescription()}
           showDivider
-        />
+        /> */}
 
         <div className="categories-grid">
           {Object.entries(groupedItems).map(([category, items]) => (
             <div key={category} className="category-overview-card card">
-              <h3>{category.toUpperCase()}</h3>
+              <h5>{category.toUpperCase()}</h5>
               <div className="category-count">
                 {items.length} {getCategoryCountLabel(items.length)}
               </div>

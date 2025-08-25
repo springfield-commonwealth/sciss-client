@@ -95,7 +95,12 @@ export const Pages: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
-      editor: lexicalEditor(),
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          // Add custom features if needed
+        ],
+      }),
       admin: {
         description: 'Main page content',
       },

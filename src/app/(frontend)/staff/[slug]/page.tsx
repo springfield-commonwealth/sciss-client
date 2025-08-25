@@ -1,4 +1,7 @@
 import Layout from "@/components/layouts/Layout";
+import { getAllStaff, getStaffBySlug } from "@/lib/content/staff";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 import React from "react";
 
 // Generate metadata for the page
@@ -35,18 +38,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Generate static params for all staff members
-export async function generateStaticParams() {
-  const staffMembers = getAllStaff();
-  return staffMembers.map((staff) => ({
-    slug: staff.slug,
-  }));
-}
-
-import { getAllStaff, getStaffBySlug } from "@/lib/content/staff";
-import { generateBreadcrumbs } from "@/lib/utils/navigation";
-
-import Link from "next/link";
+// This duplicate function will be removed - keeping only the one at the bottom
 
 // Individual Staff Profile Page Component
 export default function StaffPage({
@@ -257,16 +249,11 @@ export default function StaffPage({
   );
 }
 
-// Static Site Generation Functions
-export async function getStaticPaths() {
+// Static Site Generation Functions - App Router
+export async function generateStaticParams() {
   const staff = getAllStaff();
 
-  const paths = staff.map((member) => ({
-    params: { slug: member.slug },
+  return staff.map((member) => ({
+    slug: member.slug,
   }));
-
-  return {
-    paths,
-    fallback: false, // Show 404 for non-existent staff
-  };
 }

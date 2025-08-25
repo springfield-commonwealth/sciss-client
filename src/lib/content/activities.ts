@@ -1,7 +1,7 @@
 // Activities Content Management - Epic 5: Story 5.2 Task 1
 // Life activities and sports program management with comprehensive utilities
 
-import activitiesData from "@/lib/content/data/activities.json";
+import activitiesData from "@/data/content/activities.json";
 
 /**
  * Get all published activities

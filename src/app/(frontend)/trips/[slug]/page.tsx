@@ -1,4 +1,7 @@
 import Layout from "@/components/layouts/Layout";
+import { getAllTrips, getTripBySlug } from "@/lib/content/trips";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 import React from "react";
 
 // Generate metadata for the page
@@ -35,18 +38,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Generate static params for all trips
-export async function generateStaticParams() {
-  const trips = getAllTrips();
-  return trips.map((trip) => ({
-    slug: trip.slug,
-  }));
-}
-
-import { getAllTrips, getTripBySlug } from "@/lib/content/trips";
-import { generateBreadcrumbs } from "@/lib/utils/navigation";
-
-import Link from "next/link";
+// This duplicate function will be removed - keeping only the one at the bottom
 
 // Individual Trip Page Component
 export default function TripPage({
@@ -272,16 +264,11 @@ export default function TripPage({
   );
 }
 
-// Static Site Generation Functions
-export async function getStaticPaths() {
+// Static Site Generation Functions - App Router
+export async function generateStaticParams() {
   const trips = getAllTrips();
 
-  const paths = trips.map((trip) => ({
-    params: { slug: trip.slug },
+  return trips.map((trip) => ({
+    slug: trip.slug,
   }));
-
-  return {
-    paths,
-    fallback: false, // Show 404 for non-existent trips
-  };
 }

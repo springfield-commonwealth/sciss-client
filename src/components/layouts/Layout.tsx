@@ -1,6 +1,7 @@
 import Footer from "@/components/ui/Footer";
 import Navigation from "@/components/ui/Navigation";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,11 +20,20 @@ const Layout = ({
   className = "",
 }) => {
   return (
-    <div className={`site-wrapper ${inter.className} ${className}`}>
-      <Navigation showBreadcrumb={showBreadcrumb} breadcrumbs={breadcrumbs} />
-      <main className="main-content">{children}</main>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <div className={`site-wrapper ${inter.className} ${className}`}>
+        <Navigation showBreadcrumb={showBreadcrumb} breadcrumbs={breadcrumbs} />
+        <main className="main-content">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

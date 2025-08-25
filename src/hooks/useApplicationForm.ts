@@ -2,7 +2,7 @@ import {
   submitApplication,
   validateEmail,
   validateTranscriptFile,
-} from "@/front-end-api/applicationApi.js";
+} from "@/api/applicationApi.js";
 import { applicationFormSchema } from "@/lib/schemas/applicationFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCallback, useMemo, useState } from "react";

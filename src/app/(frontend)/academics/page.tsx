@@ -1,5 +1,3 @@
-"use client";
-
 import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import HeroSection from "@/components/sections/HeroSection";
@@ -21,6 +19,12 @@ import {
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 import React from "react";
+
+export const metadata = {
+  title: "Academic Programs - SCISS",
+  description:
+    "Explore cutting-edge academic programs at SCISS including Path to Wall Street, AI, Entrepreneurship, and more.",
+};
 
 export default function Academics(): React.JSX.Element {
   // Generate breadcrumbs for academics page

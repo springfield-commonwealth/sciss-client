@@ -1,4 +1,7 @@
 import Layout from "@/components/layouts/Layout";
+import { getAllCourses, getCourseBySlug } from "@/lib/content/courses";
+import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 import React from "react";
 
 // Generate metadata for the page
@@ -34,19 +37,6 @@ export async function generateMetadata({ params }) {
     },
   };
 }
-
-// Generate static params for all courses
-export async function generateStaticParams() {
-  const courses = getAllCourses();
-  return courses.map((course) => ({
-    slug: course.slug,
-  }));
-}
-
-import { getAllCourses, getCourseBySlug } from "@/lib/content/courses";
-import { generateBreadcrumbs } from "@/lib/utils/navigation";
-
-import Link from "next/link";
 
 // Individual Course Page Component
 export default function CoursePage({
@@ -193,16 +183,11 @@ export default function CoursePage({
   );
 }
 
-// Static Site Generation Functions
-export async function getStaticPaths() {
+// Static Site Generation Functions - App Router
+export async function generateStaticParams() {
   const courses = getAllCourses();
 
-  const paths = courses.map((course) => ({
-    params: { slug: course.slug },
+  return courses.map((course) => ({
+    slug: course.slug,
   }));
-
-  return {
-    paths,
-    fallback: false, // Show 404 for non-existent courses
-  };
 }

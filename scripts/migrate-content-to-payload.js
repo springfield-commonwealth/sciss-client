@@ -36,8 +36,12 @@ async function migrateContentToPayload() {
 
   try {
     // Initialize Payload
-    const { getPayload } = await import("../src/lib/payload/getPayload.ts");
-    const config = await import("../src/payload.config.ts");
+    const { getPayload } = await import(
+      "../.backup-2025-08-22T1430/src/lib/payload/getPayload.js"
+    );
+    const config = await import(
+      "../.backup-2025-08-22T1430/src/payload.config.js"
+    );
 
     const payload = await getPayload({ config: config.default });
 

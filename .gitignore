@@ -44,3 +44,8 @@ codebase.stats.md
 ~/screenshot-*.png
 supabase/
 .backup*/
+
+
+codebase.stats.md
+sciss-codebase.xml
+tokens.xml

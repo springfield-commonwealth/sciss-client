@@ -53,13 +53,13 @@ const navLinks = [
     href: "/day-trips", // Overview page
     children: [
       { href: "/day-trips", label: "Overview" },
-      { href: "/trips", label: "Browse All Trips" },
       { href: "/trips?category=University Visits", label: "University Visits" },
       {
         href: "/trips?category=Cultural Experiences",
         label: "Cultural Experiences",
       },
       { href: "/trips?category=Educational Tours", label: "Educational Tours" },
+      { href: "/trips", label: "Browse All Trips" },
     ],
   },
 ];

@@ -43,3 +43,4 @@ codebase.stats.md
 .env.local.backup
 ~/screenshot-*.png
 supabase/
+.backup*/

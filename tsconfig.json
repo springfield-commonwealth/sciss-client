@@ -55,32 +55,33 @@
     /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"] /* Absolute imports */,
-      "@/components/*": ["src/components/*"] /* Component imports */,
-      "@/lib/*": ["src/lib/*"] /* Library imports */,
-      "@/styles/*": ["src/styles/*"] /* Style imports */,
+      "@/*": ["./src/*"] /* Absolute imports */,
+      "@/components/*": ["./src/components/*"] /* Component imports */,
+      "@/lib/*": ["./src/lib/*"] /* Library imports */,
+      "@/styles/*": ["./src/styles/*"] /* Style imports */,
       "@/public/*": ["./public/*"] /* Public asset imports */,
-      "@/utils/*": ["src/lib/utils/*"] /* Utility imports */,
-      "@/hooks/*": ["src/hooks/*"] /* Custom hooks */,
-      "@payload/*": ["src/payload/*"] /* Payload CMS imports */,
-      "@/types/*": ["src/types/*"] /* Type definitions */,
-      "@/data/*": ["src/lib/content/data/*"],
-      "@/constants/*": ["src/constants/*"],
-      "@/front-end-api/*": ["src/front-end-api/*"],
+      "@/utils/*": ["./src/lib/utils/*"] /* Utility imports */,
+      "@/hooks/*": ["./src/hooks/*"] /* Custom hooks */,
+      "@/payload/*": ["./src/payload/*"] /* Payload CMS imports */,
+      "@/types/*": ["./src/types/*"] /* Type definitions */,
+      "@/data/*": ["./src/data/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/front-end-api/*": ["./src/front-end-api/*"],
       "@/collections/*": [
         "./src/payload/collections/*"
       ] /* Payload collections */,
       "@/app/*": ["./src/app/*"] /* App directory imports */,
       "@/app/(frontend)/*": ["./src/app/(frontend)/*"] /* Frontend pages */,
       "@/app/api/*": ["./src/app/api/*"] /* API routes */,
-      "@/payload/*": ["./src/payload/*"] /* Payload specific files */
+      "@payload-config": ["./src/payload.config.ts"] /* Payload config alias */
     },
     /* Next.js Specific */
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   /* File Inclusion */
   "include": [

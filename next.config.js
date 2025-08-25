@@ -57,22 +57,8 @@ const nextConfig = {
     ];
   },
 
-  // Enhanced webpack configuration
-  webpack: (config, { dev, isServer }) => {
-    // Optimize bundle size
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: "all",
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: "vendors",
-            chunks: "all",
-          },
-        },
-      };
-    }
-
+  // Simplified webpack configuration
+  webpack: (config) => {
     return config;
   },
 
@@ -86,6 +72,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@radix-ui/react-icons", "framer-motion"],
   },
+
+  // External packages for server components
+  serverExternalPackages: ["payload", "sharp"],
 };
 
 console.log("NEXT_PUBLIC_API_URL at build:", process.env.NEXT_PUBLIC_API_URL);

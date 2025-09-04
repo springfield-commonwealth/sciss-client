@@ -1,6 +1,6 @@
 import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
-import { LogoWhite } from "@/constants/images";
+import { LogoWhite, LogoBlack } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/compat/router";

@@ -102,7 +102,7 @@
   --heading-5-letter-spacing: var(--tracking-normal);
   
   /* H6 */
-  --heading-6-font-size: var(--text-lg);
+  --heading-6-font-size: var(--text-sm);
   --heading-6-font-weight: var(--font-semibold);
   --heading-6-line-height: var(--leading-snug);
   --heading-6-letter-spacing: var(--tracking-normal);
@@ -207,7 +207,6 @@
     font-weight: var(--heading-6-font-weight);
     line-height: var(--heading-6-line-height);
     letter-spacing: var(--heading-6-letter-spacing);
-    margin-bottom: var(--space-4);
   }
   
   /* Body text */

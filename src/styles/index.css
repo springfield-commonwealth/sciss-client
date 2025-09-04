@@ -16,6 +16,7 @@
 
 /* Base component styles */
 @import './components/navigation.css';
+@import './components/breadcrumb.css';
 @import './components/footer.css';
 @import './components/footer-cta.css';
 @import './components/section-header.css';

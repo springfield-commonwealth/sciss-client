@@ -1,17 +1,21 @@
 import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
-import { LogoBlack } from "@/constants/images";
+import { LogoWhite } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
-import {
-  ChevronRightIcon,
-  Cross1Icon,
-  HamburgerMenuIcon,
-  HomeIcon,
-} from "@radix-ui/react-icons";
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/compat/router";
 import Link from "next/link";
 
 const navLinks = [
+  {
+    label: "Admissions",
+    href: "/admissions",
+    // children: [
+    //   { href: "/how-to-apply", label: "How to Apply" },
+    //   { href: "/tuitions-and-fees", label: "Tuitions & Fees" },
+    //   { href: "/contact", label: "Contact Admissions" },
+    // ],
+  },
   {
     label: "About Us",
     href: "/about-us",
@@ -64,7 +68,11 @@ const navLinks = [
   },
 ];
 
-const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
+const Navigation = ({
+  utilityNav = [],
+  utilityNavTitle = "",
+  portalNav = [],
+}) => {
   const router = useRouter();
   const {
     isScrolled,
@@ -79,87 +87,136 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
     navHeight,
   } = useNavigationState(router);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <>
       <header className={`header${isScrolled ? " scrolled" : ""}`}>
-        <nav className="nav">
-          <Link href="/" className="logo">
-            <img src={LogoBlack} alt="SC International Summer School" />
+        <div className="nav-container">
+          {/* Left Column: Logo */}
+          <Link href="/" className="nav-logo">
+            <img src={LogoWhite} alt="SC International Summer School" />
           </Link>
-          {isMobile ? (
-            <>
-              <button
-                className="mobile-menu-toggle"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle mobile menu"
-              >
-                <HamburgerMenuIcon />
-              </button>
-            </>
-          ) : (
-            <>
-              <DesktopNav
-                navLinks={navLinks}
-                isActiveLink={isActiveLink}
-                openDropdown={openDropdown}
-                setOpenDropdown={setOpenDropdown}
-              />
-              <div className="nav-cta">
-                <Link href="/apply" className="btn btn--primary">
-                  Apply Now
-                </Link>
-              </div>
-            </>
-          )}
-        </nav>
 
-        {/* Enhanced integrated breadcrumb */}
-        {showBreadcrumb && breadcrumbs.length > 0 && (
-          <div className="nav-breadcrumb">
-            <nav aria-label="Breadcrumb" role="navigation">
-              <ol className="nav-breadcrumb-list">
-                {breadcrumbs.map((crumb, index) => (
-                  <li key={crumb.href} className="nav-breadcrumb-item">
-                    {index < breadcrumbs.length - 1 ? (
-                      <Link href={crumb.href} className="nav-breadcrumb-link">
-                        {index === 0 && (
-                          <HomeIcon
-                            className="nav-breadcrumb-home-icon"
-                            aria-hidden="true"
-                          />
-                        )}
-                        <span className="nav-breadcrumb-text">
-                          {crumb.label}
-                        </span>
+          {/* Right Column: Navigation Content */}
+          <div className="nav-content">
+            {/* Top Row: Utility Navigation */}
+            {utilityNav.length > 0 && (
+              <div className="nav-utility-row">
+                {utilityNavTitle && (
+                  <h6 className="nav-utility-title">{utilityNavTitle}</h6>
+                )}
+                <nav className="nav-utility-links">
+                  {utilityNav.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      className={`nav-utility-link ${
+                        item.href?.includes(".pdf")
+                          ? "nav-utility-link--pdf"
+                          : ""
+                      }`}
+                    >
+                      {item.label}
+                      {item.href?.includes(".pdf") && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 32 31"
+                          className="nav-utility-icon"
+                        >
+                          <g data-name="Group 497">
+                            <g data-name="Group 496">
+                              <g
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                data-name="Group 495"
+                              >
+                                <path
+                                  strokeLinecap="square"
+                                  d="M11.5 16.986l4.243 4.243"
+                                  data-name="Line 1"
+                                ></path>
+                                <path
+                                  strokeLinecap="square"
+                                  d="M15.742 21.228l4.243-4.243"
+                                  data-name="Line 3"
+                                ></path>
+                                <path
+                                  d="M15.814 0v20.5"
+                                  data-name="Line 27"
+                                ></path>
+                              </g>
+                            </g>
+                            <path
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              d="M1 22v8h30v-8"
+                              data-name="Path 72"
+                            ></path>
+                          </g>
+                        </svg>
+                      )}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            )}
+
+            {/* Bottom Row: Main Nav and Portal Nav */}
+            <div className="nav-main-row">
+              {isMobile ? (
+                <button
+                  className="mobile-menu-toggle"
+                  onClick={toggleMobileMenu}
+                  aria-label="Toggle mobile menu"
+                >
+                  <HamburgerMenuIcon />
+                </button>
+              ) : (
+                <>
+                  <DesktopNav
+                    navLinks={navLinks}
+                    isActiveLink={isActiveLink}
+                    openDropdown={openDropdown}
+                    setOpenDropdown={setOpenDropdown}
+                  />
+                  <div className="nav-portal-cta">
+                    {portalNav.length > 0 && (
+                      <nav className="nav-portal-links">
+                        {portalNav.map((item, i) => (
+                          <Link
+                            key={i}
+                            href={item.href}
+                            className={`nav-portal-link ${
+                              item.label === "Contact us"
+                                ? "nav-portal-link--contact"
+                                : ""
+                            } ${
+                              item.label === "Book Now"
+                                ? "nav-portal-link--cta"
+                                : ""
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </nav>
+                    )}
+                    {/* <div className="nav-cta">
+                      <Link href="/apply" className="btn btn--primary">
+                        Apply Now
                       </Link>
-                    ) : (
-                      <span
-                        className="nav-breadcrumb-current"
-                        aria-current="page"
-                      >
-                        {index === 0 && (
-                          <HomeIcon
-                            className="nav-breadcrumb-home-icon"
-                            aria-hidden="true"
-                          />
-                        )}
-                        <span className="nav-breadcrumb-text">
-                          {crumb.label}
-                        </span>
-                      </span>
-                    )}
-                    {index < breadcrumbs.length - 1 && (
-                      <ChevronRightIcon
-                        className="nav-breadcrumb-separator"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </nav>
+                    </div> */}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-        )}
+        </div>
       </header>
 
       {isMobileMenuOpen && isMobile && (
@@ -171,7 +228,7 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
               </Link>
               <button
                 className="mobile-menu-close"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={toggleMobileMenu}
                 aria-label="Close mobile menu"
               >
                 <Cross1Icon />

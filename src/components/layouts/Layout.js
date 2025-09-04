@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import Footer from "@/components/ui/Footer";
 import Navigation from "@/components/ui/Navigation";
 import { Inter } from "next/font/google";
@@ -9,6 +10,18 @@ const inter = Inter({
   display: "swap",
 });
 
+// In your page component
+const defaultUtilityNav = [
+  { label: "Parent Information", href: "/parent-information" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Brochure", href: "/brochure.pdf" }, // Gets PDF styling
+];
+
+const defaultPortalNav = [
+  { label: "Contact us", href: "/contact" },
+  { label: "Book Now", href: "/apply" },
+];
+
 const Layout = ({
   children,
   title = "SCISS - Springfield Commonwealth International Summer School",
@@ -17,6 +30,9 @@ const Layout = ({
   FooterCTALink = "/academics",
   breadcrumbs = [],
   showBreadcrumb = false,
+  utilityNav = defaultUtilityNav,
+  utilityNavTitle = "Inspire Global Leaders for Tomorrow",
+  portalNav = defaultPortalNav,
   className = "",
 }) => {
   return (
@@ -29,7 +45,12 @@ const Layout = ({
       </Head>
 
       <div className={`site-wrapper ${inter.className} ${className}`}>
-        <Navigation showBreadcrumb={showBreadcrumb} breadcrumbs={breadcrumbs} />
+        <Navigation
+          utilityNav={utilityNav}
+          utilityNavTitle={utilityNavTitle}
+          portalNav={portalNav}
+        />
+        {showBreadcrumb && <Breadcrumb breadcrumbs={breadcrumbs} />}
         <main className="main-content">{children}</main>
         <Footer />
       </div>

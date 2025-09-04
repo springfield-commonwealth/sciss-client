@@ -8,7 +8,6 @@
   text-align: center;
   color: white;
   overflow: hidden;
-    margin-top: var(--nav-height);
 }
 
 @media (max-width: 768px) {

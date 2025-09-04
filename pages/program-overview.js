@@ -28,6 +28,39 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
     },
   ];
 
+  // Prepare core values data for FeatureGrid component
+  const coreValuesData = [
+    {
+      icon: "⭐",
+      title: "Excellence",
+      description:
+        "Striving for the highest standards in education and personal development",
+    },
+    {
+      icon: "💡",
+      title: "Innovation",
+      description:
+        "Embracing cutting-edge approaches to learning and problem-solving",
+    },
+    {
+      icon: "🌍",
+      title: "Diversity",
+      description:
+        "Celebrating different perspectives and cultural backgrounds",
+    },
+    {
+      icon: "🤝",
+      title: "Integrity",
+      description: "Building character through honest and ethical practices",
+    },
+    {
+      icon: "👥",
+      title: "Community",
+      description:
+        "Creating lasting connections and collaborative relationships",
+    },
+  ];
+
   return (
     <Layout
       title="Program Overview - SCISS"
@@ -50,8 +83,8 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       {/* Mission & Vision */}
       <section className="section">
         <div className="container">
-          <div className="grid grid--2">
-            <div className="mission-content">
+          <div className="grid grid--1">
+            <div className="mission-content text-center">
               <SectionHeader
                 title="Our Mission"
                 description="At SCISS, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success."
@@ -60,28 +93,12 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
               />
 
               <h3>Core Values</h3>
-              <ul className="values-list">
-                <li>
-                  <strong>Excellence:</strong> Striving for the highest
-                  standards in education and personal development
-                </li>
-                <li>
-                  <strong>Innovation:</strong> Embracing cutting-edge approaches
-                  to learning and problem-solving
-                </li>
-                <li>
-                  <strong>Diversity:</strong> Celebrating different perspectives
-                  and cultural backgrounds
-                </li>
-                <li>
-                  <strong>Integrity:</strong> Building character through honest
-                  and ethical practices
-                </li>
-                <li>
-                  <strong>Community:</strong> Creating lasting connections and
-                  collaborative relationships
-                </li>
-              </ul>
+              <FeatureGrid
+                features={coreValuesData}
+                columns={2}
+                variant="default"
+                hoverable={true}
+              />
             </div>
 
             <div className="vision-content">
@@ -93,7 +110,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
 
               <FeatureGrid
                 features={uniqueFeaturesData}
-                columns={1}
+                columns={3}
                 hoverable
                 onFeatureClick={(feature, index) => {
                   console.log("Clicked feature:", feature, index);

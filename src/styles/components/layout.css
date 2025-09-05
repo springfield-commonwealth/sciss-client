@@ -43,10 +43,17 @@
 /* ==========================================================================
    CONTAINER LAYOUTS
    ========================================================================== */
+  
+.container-sm {
+  width: 100%;
+  max-width: var(--container-max-width-sm);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
 
 .container {
   width: 100%;
-  max-width: var(--container-max-width);
+  max-width: var(--container-max-width-base);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }

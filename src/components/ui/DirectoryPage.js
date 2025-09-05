@@ -141,7 +141,7 @@ const DirectoryPage = ({
         )}
       </Head>
 
-      <main className={`${type}-directory directory-page`}>
+      <div className={`${type}-directory directory-page`}>
         {/* Header Section */}
         <section className={`${type}-directory-header directory-header`}>
           <div className="container">
@@ -210,40 +210,19 @@ const DirectoryPage = ({
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* Call to Action - Replaced with SessionInfo */}
         {ctaConfig.showCTA && (
-          <section className={`${type}-directory-cta directory-cta`}>
-            <div className="container">
-              <SectionHeader
-                title={ctaConfig.title || `Ready to Explore?`}
-                description={
-                  ctaConfig.description ||
-                  `Join our exciting ${type} and discover amazing opportunities.`
-                }
-                showDivider
-              />
-              <div className="cta-actions">
-                {ctaConfig.primaryAction && (
-                  <a
-                    href={ctaConfig.primaryAction.href}
-                    className="btn btn--primary btn--lg"
-                  >
-                    {ctaConfig.primaryAction.text}
-                  </a>
-                )}
-                {ctaConfig.secondaryAction && (
-                  <a
-                    href={ctaConfig.secondaryAction.href}
-                    className="btn btn--secondary"
-                  >
-                    {ctaConfig.secondaryAction.text}
-                  </a>
-                )}
-              </div>
-            </div>
-          </section>
+          <SessionInfo
+            linkTitle={ctaConfig.primaryAction?.text || `Explore ${type}`}
+            link={ctaConfig.primaryAction?.href || `/${type}`}
+            ctaTitle={ctaConfig.title || `Ready to Explore?`}
+            ctaDescription={
+              ctaConfig.description ||
+              `Join our exciting ${type} and discover amazing opportunities.`
+            }
+          />
         )}
-      </main>
+      </div>
 
       {/* Footer CTA */}
       {ctaConfig.footerCTA && (

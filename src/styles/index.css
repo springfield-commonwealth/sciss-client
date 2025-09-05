@@ -37,6 +37,7 @@
 @import './sections/testimonials.css';
 @import './sections/content-slider.css';
 @import './sections/camp-schedule.css';
+@import './sections/course-showcase.css';
 
 /* Page styles */
 @import './pages/index.css';
@@ -47,12 +48,12 @@
 @import './pages/program-overview.css';
 @import './pages/tuitions-and-fees.css';
 @import './pages/apply.css';
-@import './pages/course-page.css';
-@import './pages/staff-profile.css';
+@import './pages/course-detail.css';
+@import './pages/staff-detail.css';
 
 /* NEW: Epic 5 Content Architecture Styles */
-@import './pages/activities.css';
-@import './pages/trips.css';
+@import './pages/activity-detail.css';
+@import './pages/trip-detail.css';
 
 /* Universal Directory System - DRY & SOLID Implementation */
 @import './components/directory-system.css';

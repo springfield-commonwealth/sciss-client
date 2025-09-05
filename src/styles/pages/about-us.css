@@ -1,8 +1,16 @@
 /* About Us Page Styles */
-.mission-section,
-.vision-section {
-  padding: 2rem;
+
+/* Why SCISS Intro Section */
+.intro-section {
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-50) 100%);
+  position: relative;
+  overflow: hidden;
 }
+
+/* What Differentiates SCISS Section - now uses FeatureGrid component */
+
+/* Mission and Vision sections now use standard section styling */
 
 .mission-text,
 .vision-text {
@@ -12,11 +20,7 @@
   color: var(--color-text-light);
 }
 
-.mission-highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+/* Mission highlights now use FeatureGrid component */
 
 .highlight-item {
   display: flex;
@@ -80,13 +84,17 @@
   font-weight: 500;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .mission-highlights {
-    gap: 1rem;
+  .intro-section {
+    padding: var(--space-12) 0;
   }
 
-  .highlight-item {
-    flex-direction: column;
-    text-align: center;
+  /* Mission and Vision sections now use standard responsive styling */
+}
+
+@media (max-width: 480px) {
+  .intro-section {
+    padding: var(--space-10) 0;
   }
 } 

@@ -4,7 +4,6 @@
 }
 
 .directory-header {
-    margin-top: var(--nav-height);
   padding: var(--space-16) 0;
   text-align: center;
   position: relative;
@@ -13,7 +12,6 @@
 
 @media (max-width: 768px) {
   .directory-header {
-    margin-top: var(--nav-height-mobile);
     padding: var(--space-12) 0;
   }
 }
@@ -380,38 +378,7 @@
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
-.directory-cta {
-  background: linear-gradient(135deg, var(--color-warning-500) 0%, var(--color-warning-600) 100%);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.directory-cta .cta-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.directory-cta 
-
-.directory-cta .section__subtitle {
-  color: var(--color-warning-200);
-}
-
-.directory-cta .section__title {
-  color: var(--color-text-white);
-}
-
-.directory-cta .section__description {
-  color: var(--color-warning-100);
-}
-
-.directory-cta .section__divider {
-  background: var(--color-warning-200);
-}
+/* Directory CTA styles removed - now using SessionInfo component */
 
 .no-results {
   text-align: center;
@@ -465,13 +432,7 @@
     padding: 2rem 0;
   }
   
-  .directory-cta {
-    padding: 3rem 0;
-  }
-  
-  .cta-actions {
-    flex-direction: column;
-  }
+  /* Directory CTA mobile styles removed - now using SessionInfo component */
   
   .categories-grid {
     grid-template-columns: 1fr;

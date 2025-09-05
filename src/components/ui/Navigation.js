@@ -1,6 +1,6 @@
 import DesktopNav from "@/components/ui/DesktopNav";
 import MobileNav from "@/components/ui/MobileNav";
-import { LogoWhite, LogoBlack } from "@/constants/images";
+import { LogoBlack, LogoWhite } from "@/constants/images";
 import useNavigationState from "@/hooks/useNavigationState";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/compat/router";
@@ -17,8 +17,8 @@ const navLinks = [
     // ],
   },
   {
-    label: "About Us",
-    href: "/about-us",
+    label: "About SCISS",
+    href: "/about",
     children: [
       { href: "/about-us#mission", label: "Missions & Vision" },
       { href: "/about-us#values", label: "Our Values" },
@@ -26,7 +26,7 @@ const navLinks = [
     ],
   },
   {
-    label: "Our Program",
+    label: "Our Programs",
     href: "/program-overview",
     children: [
       { href: "/program-overview", label: "Overview" },
@@ -57,12 +57,6 @@ const navLinks = [
     href: "/day-trips", // Overview page
     children: [
       { href: "/day-trips", label: "Overview" },
-      { href: "/trips?category=University Visits", label: "University Visits" },
-      {
-        href: "/trips?category=Cultural Experiences",
-        label: "Cultural Experiences",
-      },
-      { href: "/trips?category=Educational Tours", label: "Educational Tours" },
       { href: "/trips", label: "Browse All Trips" },
     ],
   },

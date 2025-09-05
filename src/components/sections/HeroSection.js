@@ -33,7 +33,7 @@ const HeroSection = ({
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
-        <div className="container">
+        <div className="container-sm">
           {subtitle && <p className="hero-subtitle">{subtitle}</p>}
           <h1 className="hero-title">{title}</h1>
           {description && <p className="hero-description">{description}</p>}

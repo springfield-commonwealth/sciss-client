@@ -6,6 +6,10 @@ const FeatureCard = ({
   icon,
   title,
   description,
+  image,
+  level,
+  duration,
+  highlights,
   className = "",
   variant = "default",
   onClick,
@@ -17,6 +21,7 @@ const FeatureCard = ({
     primary: "card--primary",
     secondary: "card--secondary",
     accent: "card--accent",
+    "image-overlay": "card--image-overlay",
   };
 
   const hoverClasses = hoverable ? "card--hoverable" : "";
@@ -25,6 +30,51 @@ const FeatureCard = ({
   const cardClasses =
     `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${clickClasses} ${className}`.trim();
 
+  // Image overlay variant
+  if (variant === "image-overlay" && image) {
+    return (
+      <div
+        className={cardClasses}
+        onClick={onClick}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+      >
+        <div className="card__image-overlay">
+          <img src={image.src} alt={image.alt} className="card__image" />
+          <div className="card__overlay">
+            <div className="card__overlay-content">
+              <h3 className="card__title card__title--overlay">{title}</h3>
+              {description && (
+                <p className="card__description card__description--overlay">
+                  {description}
+                </p>
+              )}
+              {/* Additional content for enhanced cards */}
+              {(level || duration) && (
+                <div className="card__meta card__meta--overlay">
+                  {level && <span className="card__level">{level}</span>}
+                  {duration && (
+                    <span className="card__duration">{duration}</span>
+                  )}
+                </div>
+              )}
+              {highlights && highlights.length > 0 && (
+                <div className="card__highlights card__highlights--overlay">
+                  {highlights.slice(0, 2).map((highlight, idx) => (
+                    <span key={idx} className="card__highlight-tag">
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default variant
   return (
     <div
       className={cardClasses}
@@ -62,6 +112,10 @@ const FeatureGrid = ({
           icon={feature.icon}
           title={feature.title}
           description={feature.description}
+          image={feature.image}
+          level={feature.level}
+          duration={feature.duration}
+          highlights={feature.highlights}
           variant={variant}
           hoverable={hoverable}
           onClick={

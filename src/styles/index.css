@@ -32,6 +32,9 @@
 @import './sections/hero-section.css';
 @import './sections/faculty-section.css';
 @import './sections/feature-section.css';
+@import './sections/cta-section.css';
+@import './sections/session-info.css';
+@import './sections/testimonials.css';
 @import './sections/content-slider.css';
 @import './sections/camp-schedule.css';
 

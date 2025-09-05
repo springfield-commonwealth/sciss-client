@@ -1,11 +1,10 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import SessionInfo from "@/components/sections/SessionInfo";
 import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
-import FooterCTA from "@/components/ui/FooterCTA";
 import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
-
 
 const AboutUs = ({ breadcrumbs = [] }) => {
   // Prepare stats data for StatsGrid component
@@ -122,7 +121,7 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      <SessionInfo linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

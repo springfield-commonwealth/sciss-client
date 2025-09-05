@@ -1,6 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import FooterCTA from "@/components/ui/FooterCTA";
+import SessionInfo from "@/components/sections/SessionInfo";
 import { TuitionsAndFeesHero } from "@/constants/images";
 import {
   TuitionsAdditionalCosts,
@@ -142,7 +142,7 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      <FooterCTA linkTitle="Apply Now" link="/apply" />
+      <SessionInfo linkTitle="Apply Now" link="/apply" />
     </Layout>
   );
 };

@@ -88,38 +88,7 @@
   border-radius: 8px;
 }
 
-.testimonial-card {
-  text-align: center;
-  position: relative;
-}
-
-.quote-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-primary-500);
-}
-
-.testimonial-card blockquote {
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-.testimonial-author {
-  margin-top: 1rem;
-  color: var(--color-text-primary);
-  font-size: 1rem;
-}
-
-.testimonial-author strong {
-  color: var(--text-dark);
-}
-
-.testimonial-author span {
-  font-size: 0.9rem;
-  color: var(--primary-blue);
-}
+/* Testimonial styles moved to dedicated testimonials.css file */
 
 @media (max-width: 768px) {
 

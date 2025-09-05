@@ -1,5 +1,6 @@
 // UI Components Index
 // This file exports all UI components for easy importing
+export { default as SessionInfo } from "../sections/SessionInfo";
 export { default as Carousel } from "./Carousel";
 export { default as CarouselCard } from "./CarouselCard";
 export { default as ChevronDown } from "./ChevronDown";
@@ -7,7 +8,6 @@ export { default as DesktopNav } from "./DesktopNav";
 export { default as EnhancedButton } from "./EnhancedButton";
 export { default as FeatureVideo } from "./FeatureVideo";
 export { default as Footer } from "./Footer";
-export { default as FooterCTA } from "./FooterCTA";
 export { default as GalleryCard, default as GalleryGrid } from "./GalleryGrid";
 export { default as ImageSlider } from "./ImageSlider";
 export { default as LoadingSpinner } from "./LoadingSpinner";

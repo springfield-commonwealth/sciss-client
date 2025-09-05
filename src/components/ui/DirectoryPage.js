@@ -1,10 +1,10 @@
 import { SectionHeader } from "@/components/ui";
 import Head from "next/head";
 import { useMemo, useState } from "react";
+import SessionInfo from "../sections/SessionInfo";
 import DirectoryCard from "./DirectoryCard";
 import DirectoryCategories from "./DirectoryCategories";
 import DirectoryFilters from "./DirectoryFilters";
-import FooterCTA from "./FooterCTA";
 
 /**
  * Universal Directory Page Component
@@ -247,7 +247,7 @@ const DirectoryPage = ({
 
       {/* Footer CTA */}
       {ctaConfig.footerCTA && (
-        <FooterCTA
+        <SessionInfo
           linkTitle={ctaConfig.footerCTA.title}
           link={ctaConfig.footerCTA.link}
         />

@@ -1,7 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import SessionInfo from "@/components/sections/SessionInfo";
 import Carousel from "@/components/ui/Carousel";
-import FooterCTA from "@/components/ui/FooterCTA";
 import {
   DayTripsCarouselItems,
   DayTripsCulturalTrips,
@@ -233,7 +233,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      <SessionInfo linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

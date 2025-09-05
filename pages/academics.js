@@ -5,8 +5,8 @@ import {
   Badge,
   BadgeGroup,
   FeatureGrid,
-  FooterCTA,
   SectionHeader,
+  SessionInfo,
 } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
 import { AcademicsCarouselItems } from "@/constants/academicsContent";
@@ -55,8 +55,8 @@ const Academics = ({
     <Layout
       title="Academic Programs - SCISS"
       description="Explore cutting-edge academic programs at SCISS including Path to Wall Street, AI, Entrepreneurship, and more."
-      FooterCTALinkTitle="Life & Activities"
-      FooterCTALink="/life-activities"
+      SessionInfoLinkTitle="Life & Activities"
+      SessionInfoLink="/life-activities"
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
@@ -216,7 +216,7 @@ const Academics = ({
       </section>
 
       <CampSchedule />
-      <FooterCTA
+      <SessionInfo
         link="/courses"
         linkTitle="All Courses"
         ctaTitle="Master Tomorrow's Skills Today"

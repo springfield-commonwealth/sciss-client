@@ -1,0 +1,266 @@
+/* ==========================================================================
+   TESTIMONIALS SECTION COMPONENT
+   ========================================================================== */
+
+.testimonials-section {
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-accent-50) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.testimonials-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials-section h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  position: relative;
+}
+
+.testimonials-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-yellow-500));
+  border-radius: 2px;
+}
+
+.testimonials-section p {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-12);
+  line-height: 1.6;
+}
+
+/* Testimonial Grid */
+.testimonials-section .grid--3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-yellow-500));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Quote Icon */
+.quote-icon {
+  font-size: var(--text-6xl);
+  color: var(--color-primary-500);
+  opacity: 0.3;
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: Georgia, serif;
+  line-height: 1;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Quote Text */
+.testimonial-card blockquote {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  margin: var(--space-6) 0 var(--space-8);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  quotes: none;
+}
+
+.testimonial-card blockquote::before,
+.testimonial-card blockquote::after {
+  content: '';
+}
+
+/* Author Section */
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+  position: relative;
+}
+
+.testimonial-author strong {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.testimonial-author span {
+  font-size: var(--text-sm);
+  color: var(--color-primary-500);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Rating Stars (if needed) */
+.testimonial-rating {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.testimonial-rating .star {
+  color: var(--color-yellow-500);
+  font-size: var(--text-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .testimonials-section .grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: var(--space-12) 0;
+  }
+
+  .testimonials-section h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .testimonials-section p {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .testimonials-section .grid--3 {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .testimonial-card {
+    padding: var(--space-6);
+  }
+
+  .testimonial-card blockquote {
+    font-size: var(--text-base);
+    margin: var(--space-4) 0 var(--space-6);
+  }
+
+  .quote-icon {
+    font-size: var(--text-4xl);
+    top: var(--space-3);
+    right: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: var(--space-10) 0;
+  }
+
+  .testimonials-section h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .testimonial-card {
+    padding: var(--space-5);
+  }
+
+  .testimonial-card blockquote {
+    font-size: var(--text-sm);
+  }
+
+  .testimonial-author strong {
+    font-size: var(--text-base);
+  }
+
+  .testimonial-author span {
+    font-size: var(--text-xs);
+  }
+}
+
+/* Animation for staggered loading */
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .testimonial-card blockquote {
+    color: var(--color-text-light);
+  }
+
+  .testimonial-author strong {
+    color: var(--color-text-light);
+  }
+
+  .testimonial-author {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}

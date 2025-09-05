@@ -1,6 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import FooterCTA from "@/components/ui/FooterCTA";
+import SessionInfo from "@/components/sections/SessionInfo";
 import { LifeActivitiesHero } from "@/constants/images";
 import {
   LifeActivitiesFitnessPrograms,
@@ -48,10 +48,7 @@ const LifeActivities = ({
 
           <div className="grid grid--3">
             {popularActivities.map((activity) => (
-              <div
-                key={activity.id}
-                className="activity-preview-card card"
-              >
+              <div key={activity.id} className="activity-preview-card card">
                 <div className="activity-preview-image">
                   <img src={activity.image} alt={activity.title} />
                   <div className="activity-badges">
@@ -180,7 +177,7 @@ const LifeActivities = ({
         </div>
       </section>
 
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      <SessionInfo linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

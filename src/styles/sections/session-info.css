@@ -1,0 +1,259 @@
+/* ==========================================================================
+   SESSION INFO COMPONENT
+   ========================================================================== */
+
+.sciss-cta {
+  -webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 2.5vw;
+  position: relative;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--color-primary-500) 82.5vw, var(--color-primary-700) 0);
+}
+
+.sciss-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sciss-cta__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Session Contact */
+.sciss-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sciss-contact__header {
+  text-align: left;
+}
+
+.sciss-contact__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  color: #fff;
+}
+
+.sciss-contact__intro {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: none;
+}
+
+.sciss-contact__cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sciss-contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sciss-contact__info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.sciss-contact__info:hover {
+  opacity: 0.8;
+}
+
+.sciss-contact__info svg {
+  flex-shrink: 0;
+}
+
+.sciss-contact__info span {
+  text-transform: none;
+}
+
+/* Single Session */
+.sciss-session-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sciss-session-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sciss-session {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.sciss-session__place {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: #fff;
+}
+
+.sciss-session__place .text-muted {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: none;
+}
+
+.sciss-session__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sciss-session__details,
+.session-session__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sciss-session__term {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+}
+
+.sciss-session__date {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  text-transform: none;
+}
+
+.sciss-session__btn-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.btn.sciss-btn {
+  background: #fff;
+  color: var(--color-primary-500);
+  border-color: #fff;
+}
+
+.btn.sciss-btn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* SVG Icons */
+.svg-size {
+  width: 24px;
+  height: 24px;
+}
+
+.theme-icon-bg {
+  fill: #0c0c0c;
+}
+
+.theme-icon-content-stroke {
+  stroke: #fff;
+}
+
+.sciss-icon-email,
+.sciss-icon-phone {
+  stroke: #fff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sciss-cta {
+    padding: 1.5rem;
+  }
+
+  .sciss-cta__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sciss-contact__heading {
+    font-size: 2rem;
+  }
+
+  .sciss-contact__intro {
+    font-size: 1.125rem;
+  }
+
+  .sciss-session__place {
+    font-size: 1.25rem;
+  }
+
+  .sciss-contact__cta-wrapper,
+  .sciss-session__btn-wrapper {
+    justify-content: center;
+  }
+
+  .sciss-contact__list {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sciss-cta {
+    padding: 1rem;
+  }
+
+  .sciss-contact__heading {
+    font-size: 1.75rem;
+  }
+
+  .sciss-session__place {
+    font-size: 1.125rem;
+  }
+
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}

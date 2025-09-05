@@ -1,8 +1,8 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import SessionInfo from "@/components/sections/SessionInfo";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
-import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import { ProgramOverviewHero } from "@/constants/images";
 import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
@@ -136,7 +136,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       </section>
 
       <WeeklySchedule />
-      <FooterCTA linkTitle="Apply Now" link="/apply" />
+      <SessionInfo linkTitle="Apply Now" link="/apply" />
     </Layout>
   );
 };

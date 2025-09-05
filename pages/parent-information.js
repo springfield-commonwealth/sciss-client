@@ -1,7 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import SessionInfo from "@/components/sections/SessionInfo";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
-import FooterCTA from "@/components/ui/FooterCTA";
 import {
   ParentInfoCampusServices,
   ParentInfoCommunicationSchedule,
@@ -320,7 +320,7 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      <SessionInfo linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

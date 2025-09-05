@@ -1,24 +1,24 @@
 import Layout from "@/components/layouts/Layout";
-import ContentSlider from "@/components/sections/ContentSlider";
+import CTASection from "@/components/sections/CTASection";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
-import Highlights from "@/components/sections/Highlights";
+import SessionInfo from "@/components/sections/SessionInfo";
 import Testimonials from "@/components/sections/Testimonials";
-import FeatureVideo from "@/components/ui/FeatureVideo";
-import FooterCTA from "@/components/ui/FooterCTA";
+import { WeeklySchedule } from "@/components/ui";
+import { FeatureGrid } from "@/components/ui/FeatureCard";
 import {
-  HomeHighlights,
-  HomePresidentLetter,
   HomeTestimonials,
   HomeWelcomeParagraphs,
+  ParentPeaceOfMind,
+  ProgramBenefits,
+  ProgramTracks,
 } from "@/constants/homeContent";
 import {
-  HomeFeature,
-  HomeFeaturePresidents,
   HomeHero,
-  HomeSliderImages,
+  HomeWelcomeImages,
+  ParentPeaceOfMindImage,
+  ProgramBenefitsImage,
 } from "@/constants/images";
-import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 const HomePage = ({ breadcrumbs = [] }) => {
@@ -32,41 +32,56 @@ const HomePage = ({ breadcrumbs = [] }) => {
     >
       {/* Hero Section */}
       <HeroSection
-        title="Inspire Global Leaders for Tomorrow"
-        subtitle="Summer 2025"
-        description="An enriching summer experience combining cutting-edge academics, sports, field trips, and inclusive cultural activities."
+        title="A Summer that Counts"
+        subtitle="Summer 2026"
+        description="Learn big. Build real. Shine bright."
         backgroundImage={HomeHero}
       />
 
       {/* Welcome Section */}
       <FeatureSection
-        heading="Welcome to SC International Summer School"
+        heading="SCISS — SC International Summer School"
         paragraphs={HomeWelcomeParagraphs}
-        image={HomeFeature}
+        images={HomeWelcomeImages}
       />
 
-      {/* <FeatureVideo
-        VideoObject={WelcomeVideo}
-        autoPlay={false}
-        muted={true}
-        loop={true}
-        playsInline={true}
-        playBackSpeed={0.7}
-      /> */}
+      {/* Program Tracks */}
+      <section className="section">
+        <div className="container">
+          <div className="text--center mb--lg">
+            <h2>Program Tracks</h2>
+            <p>Choose one or stack across sessions</p>
+          </div>
+          <FeatureGrid
+            features={ProgramTracks}
+            columns={2}
+            variant="image-overlay"
+            hoverable={true}
+            className="grid--mobile-1"
+          />
+        </div>
+      </section>
 
-      <Highlights highlights={HomeHighlights} />
-
-      <ContentSlider
-        heading="Unique Summer Experience with unforgettable memories"
-        text="Our program combines daily academic coursework with organized, supervised activities to create a comprehensive experience. Each student who joins our community develops essential life skills, builds enduring friendships, and becomes a valued member of our international community"
-        images={HomeSliderImages}
+      {/* What Your Child Gains CTA */}
+      <CTASection
+        title="What Your Child Gains"
+        benefits={ProgramBenefits}
+        ctaText="Achivements by Our Students"
+        ctaLink="/program-outcomes"
+        image={ProgramBenefitsImage}
       />
 
-      <FeatureSection
-        heading="Letter From the President"
-        image={HomeFeaturePresidents}
-        paragraphs={HomePresidentLetter}
+      {/* Parent Peace of Mind CTA */}
+      <CTASection
+        title="Parent Peace-of-Mind"
+        benefits={ParentPeaceOfMind}
+        ctaText="Get Parent Information"
+        ctaLink="/parent-information"
+        image={ParentPeaceOfMindImage}
       />
+
+      {/* Weekly Schedule */}
+      <WeeklySchedule />
 
       {/* Testimonials Section */}
       <Testimonials
@@ -74,7 +89,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         desc="Don't just head from us. Hear from our amazing SCISS alumni"
         testimonials={HomeTestimonials}
       />
-      <FooterCTA linkTitle="Life & Activities" link="/activities" />
+      <SessionInfo linkTitle="Life & Activities" link="/activities" />
     </Layout>
   );
 };

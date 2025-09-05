@@ -14,6 +14,45 @@ const HomeFeature = {
   alt: "Welcome to SCISS",
 };
 
+// Home Welcome Section Images (one per paragraph)
+const HomeWelcomeImages = [
+  {
+    src: "/images/featured/school-hero.jpg",
+    alt: "SCISS campus and students",
+  },
+  {
+    src: "/images/slider/home/investment-presentation.JPG",
+    alt: "Students learning in expert-led sessions",
+  },
+  {
+    src: "/images/slider/home/harvard-trip.JPG",
+    alt: "Students grouped by level during activities",
+  },
+  {
+    src: "/images/slider/home/rowing.jpg",
+    alt: "Students building lasting friendships and skills",
+  },
+  {
+    src: "/images/slider/home/fencing.JPG",
+    alt: "Students creating memorable summer experiences",
+  },
+  {
+    src: "/images/slider/home/flute performance 2.JPG",
+    alt: "Students exploring new subjects and skills",
+  },
+];
+
+// CTA Section Images
+const ProgramBenefitsImage = {
+  src: "/images/slider/home/investment-presentation.JPG",
+  alt: "Students gaining confidence and building real projects at SCISS",
+};
+
+const ParentPeaceOfMindImage = {
+  src: "/images/slider/home/harvard-trip.JPG",
+  alt: "Parents can trust SCISS with their child's safety and development",
+};
+
 const HomeHero = {
   src: "/images/hero/home-hero.png",
   alt: "Image of rowing team",
@@ -96,12 +135,15 @@ export {
   HomeFeaturePresidents,
   HomeHero,
   HomeSliderImages,
+  HomeWelcomeImages,
   LifeActivitiesHero,
   LogoBlack,
   LogoBlue,
   LogoWhite,
   LogoWhiteLong,
   LogoYellow,
+  ParentPeaceOfMindImage,
+  ProgramBenefitsImage,
   ProgramOverviewHero,
   TuitionHero,
   TuitionsAndFeesHero,

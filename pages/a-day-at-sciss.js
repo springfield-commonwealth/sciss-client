@@ -1,6 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-import FooterCTA from "@/components/ui/FooterCTA";
+import SessionInfo from "@/components/sections/SessionInfo";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import {
   ADayAtScissAccommodationInfo,
@@ -156,7 +156,7 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       </section>
 
       <WeeklySchedule />
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      <SessionInfo linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );
 };

@@ -2,7 +2,7 @@
 
 .feature-section {
   padding: var(--space-16) 0;
-  background: var(--color-bg-primary);
+  background: var(--color-primary-50);
   border-top: 1px solid var(--color-border-subtle);
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -10,9 +10,8 @@
 .feature-section__header {
   text-align: center;
   margin-bottom: var(--space-12);
-  padding-bottom: var(--space-6);
   border-bottom: 2px solid var(--color-primary);
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -44,13 +43,20 @@
   align-items: start;
 }
 
+/* When no media element exists, center the layout */
+.feature-section__layout:not(:has(.feature-section__media)) {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .feature-section__media {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border-subtle);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary-50);
   padding: var(--space-4);
 }
 
@@ -84,61 +90,30 @@
   display: flex;
   flex-direction: column;
   padding: var(--space-4);
-  background: var(--color-bg-secondary);
+  /* background: var(--color-bg-secondary); */
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border-subtle);
   box-shadow: var(--shadow-sm);
   position: relative;
 }
 
+/* When in centered layout, center the text */
+.feature-section__layout:not(:has(.feature-section__media)) .feature-section__text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
 .feature-section__paragraph {
-  font-size: var(--text-base);
-  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
   margin: 0;
   text-align: left;
-  font-family: var(--font-serif, serif);
 }
 
-.feature-section__paragraph:first-child, .feature-section__paragraph:last-child {
-  font-size: var(--text-lg);
-  font-weight: var(--font-medium);
-  color: var(--color-text-primary);
-  font-style: italic;
-  border-left: 3px solid var(--color-primary);
-  padding-left: var(--space-4);
-  margin-bottom: var(--space-4);
-  position: relative;
+.feature-section__first-words {
+  font-weight: bold;
 }
 
-.feature-section__paragraph:first-child::before {
-  content: '"';
-  position: absolute;
-  left: -8px;
-  top: -4px;
-  font-size: var(--text-2xl);
-  color: var(--color-primary);
-  font-weight: var(--font-bold);
-}
-
-.feature-section__paragraph:last-child {
-  font-weight: var(--font-medium);
-  color: var(--color-text-primary);
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--color-border-subtle);
-  position: relative;
-}
-
-.feature-section__paragraph:last-child::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  right: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--color-primary);
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -188,9 +163,6 @@
     font-size: var(--text-sm);
   }
   
-  .feature-section__paragraph:first-child {
-    font-size: var(--text-base);
-  }
 }
 
 @media (max-width: 480px) {
@@ -210,7 +182,49 @@
     font-size: var(--text-xs);
   }
   
-  .feature-section__paragraph:first-child {
-    font-size: var(--text-sm);
+}
+
+/* Multiple Paragraphs with Images */
+.feature-section__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.feature-section__paragraph-item {
+  width: 100%;
+}
+
+.feature-section__paragraph-item .feature-section__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* Order is now handled by inline styles for alternating layout */
+
+/* Empty media div for alternating layout when no image */
+.feature-section__media--empty {
+  /* Empty div to maintain grid structure for alternating layout */
+  min-height: 0;
+}
+
+/* Mobile adjustments for paragraph items */
+@media (max-width: 768px) {
+  .feature-section__paragraph-item .feature-section__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  /* Reset order on mobile - always text first, then image */
+  .feature-section__paragraph-item .feature-section__text {
+    order: 1 !important;
+  }
+  
+  .feature-section__paragraph-item .feature-section__media {
+    order: 2 !important;
   }
 }
+
+

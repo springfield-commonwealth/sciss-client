@@ -81,6 +81,7 @@
 .nav-link {
   color: var(--color-text-primary);
   font-weight: 500;
+  font-size: var(--text-sm); /* 0.875rem = 14px - smaller than default */
   padding: var(--nav-link-padding-y, 0.5rem) 0;
   display: flex;
   position: relative;

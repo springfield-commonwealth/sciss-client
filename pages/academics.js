@@ -401,25 +401,7 @@ const Academics = ({
         imagePosition="right"
       />
 
-      {/* Academic Support */}
-      <section className="section bg-light">
-        <div className="container-lg">
-          <SectionHeader
-            title="Comprehensive Academic Support"
-            description="Beyond world-class instruction, we provide comprehensive support to ensure every student succeeds"
-            showDivider
-          />
-
-          <FeatureGrid
-            features={academicSupportData}
-            columns={3}
-            hoverable
-            onFeatureClick={(feature, index) => {
-              console.log("Clicked support feature:", feature, index);
-            }}
-          />
-        </div>
-      </section>
+      
 
 
       <CampSchedule />

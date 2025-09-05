@@ -20,9 +20,16 @@ const navLinks = [
     label: "About SCISS",
     href: "/about",
     children: [
-      { href: "/about-us#mission", label: "Missions & Vision" },
-      { href: "/about-us#values", label: "Our Values" },
-      { href: "/staff", label: "Our Team" },
+      { href: "/about#why-sciss", label: "Why SCISS" },
+      {
+        href: "/about#what-differentiates",
+        label: "What Differentiates SCISS",
+      },
+      { href: "/about#program-offerings", label: "Program Offerings" },
+      { href: "/about#team", label: "Our Team" },
+      { href: "/about#mission", label: "Mission & Vision" },
+      { href: "/about#values", label: "Our Values" },
+      { href: "/about#past-sessions", label: "Past Sessions" },
     ],
   },
   {

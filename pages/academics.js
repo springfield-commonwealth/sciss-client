@@ -2,13 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import CourseShowcase from "@/components/sections/CourseShowcase";
 import HeroSection from "@/components/sections/HeroSection";
-import {
-  Badge,
-  BadgeGroup,
-  FeatureGrid,
-  SectionHeader,
-  SessionInfo,
-} from "@/components/ui";
+import { FeatureGrid, SectionHeader, SessionInfo } from "@/components/ui";
 import { AcademicsHero } from "@/constants/images";
 import {
   getAllCourses,
@@ -16,7 +10,6 @@ import {
   getCourseStats,
 } from "@/lib/content/courses";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
-import Link from "next/link";
 
 const Academics = ({
   courses = [],
@@ -401,8 +394,434 @@ const Academics = ({
         imagePosition="right"
       />
 
-      
+      {/* Practice & Competitions */}
+      <section className="section" id="practice-competitions">
+        <div className="container-lg">
+          <SectionHeader
+            title="Practice & Competitions"
+            description="Across SCISS, learning leads to the real thing: AI & Robotics teams build and demo working prototypes; Investment students compete in a simulator-based stock challenge with a notional $1M fund; Entrepreneurship cohorts pitch ventures to a mentor panel; Leadership/Arts students step onto real stages for debates, exhibitions, and a final show; and Sports culminates in basketball games and skills challenges that celebrate progress."
+            align="center"
+            showDivider={true}
+          />
+        </div>
+      </section>
 
+      {/* AI & Robotics Competition */}
+      <CourseShowcase
+        title="AI & Robotics Competition"
+        leadText="Build and demo working prototypes with real-world applications that showcase the power of artificial intelligence and robotics."
+        detailsText="Students work in teams to create functional AI-powered robots that solve real problems. From autonomous navigation to computer vision applications, these prototypes demonstrate the practical impact of cutting-edge technology."
+        highlightText={{
+          title: "Live Demo Showcase",
+          description:
+            "Present your working prototypes to industry professionals and receive expert feedback on your innovations.",
+        }}
+        image={{
+          src: "/images/carousel/ai.png",
+          alt: "Students presenting AI and robotics prototypes",
+          icon: "🤖",
+        }}
+        badges={[
+          { text: "Team Project", type: "primary" },
+          { text: "Live Demo", type: "secondary" },
+          { text: "Industry Feedback", type: "accent" },
+        ]}
+        features={[
+          {
+            icon: "🔧",
+            title: "Prototype Development",
+            description:
+              "Build functional AI-powered robots from concept to completion",
+          },
+          {
+            icon: "🎯",
+            title: "Real-World Applications",
+            description:
+              "Solve actual problems using computer vision and machine learning",
+          },
+          {
+            icon: "👥",
+            title: "Team Collaboration",
+            description:
+              "Work with peers to combine diverse skills and perspectives",
+          },
+          {
+            icon: "🏆",
+            title: "Competition Recognition",
+            description:
+              "Compete for awards and recognition from industry experts",
+          },
+        ]}
+        techStack={[
+          "Python",
+          "OpenCV",
+          "TensorFlow",
+          "Arduino",
+          "Raspberry Pi",
+        ]}
+        theme="ai"
+        imagePosition="right"
+      />
+
+      {/* Investment Challenge */}
+      <CourseShowcase
+        title="Investment Challenge"
+        leadText="Compete in a simulator-based stock challenge with a notional $1M fund, making real-time investment decisions in a dynamic market environment."
+        detailsText="Students manage a virtual portfolio, analyze market trends, and make strategic investment decisions. Track performance, adjust strategies, and compete against peers in this realistic trading simulation."
+        highlightText={{
+          title: "$1M Virtual Fund",
+          description:
+            "Manage a substantial virtual portfolio and compete for the highest returns in our investment challenge.",
+        }}
+        image={{
+          src: "/images/carousel/investment.png",
+          alt: "Students analyzing investment data and market trends",
+          icon: "💰",
+        }}
+        badges={[
+          { text: "$1M Fund", type: "primary" },
+          { text: "Real-Time Trading", type: "secondary" },
+          { text: "Portfolio Management", type: "accent" },
+        ]}
+        features={[
+          {
+            icon: "📊",
+            title: "Market Analysis",
+            description:
+              "Analyze financial data and market trends for informed decisions",
+          },
+          {
+            icon: "💹",
+            title: "Trading Simulation",
+            description: "Execute trades in real-time market conditions",
+          },
+          {
+            icon: "📈",
+            title: "Portfolio Tracking",
+            description: "Monitor performance and adjust investment strategies",
+          },
+          {
+            icon: "🎯",
+            title: "Competition Rankings",
+            description: "Compete for top performance and recognition",
+          },
+        ]}
+        metrics={[
+          { value: "$1M", label: "Virtual Fund" },
+          { value: "24/7", label: "Market Access" },
+          { value: "Real-Time", label: "Trading" },
+        ]}
+        theme="wallstreet"
+        imagePosition="left"
+      />
+
+      {/* Venture Pitch Competition */}
+      <CourseShowcase
+        title="Venture Pitch Competition"
+        leadText="Present startup ideas to mentor panels and investors, refining your pitch through multiple rounds of feedback and competition."
+        detailsText="Students develop compelling business ideas, create pitch decks, and present to panels of successful entrepreneurs, VCs, and industry experts. Receive actionable feedback and compete for recognition and potential funding opportunities."
+        highlightText={{
+          title: "Investor Panel",
+          description:
+            "Present to real investors and entrepreneurs who provide valuable feedback and potential funding opportunities.",
+        }}
+        image={{
+          src: "/images/carousel/entrepreneur.png",
+          alt: "Students pitching their startup ideas to investors",
+          icon: "🚀",
+        }}
+        badges={[
+          { text: "Investor Panel", type: "primary" },
+          { text: "Pitch Deck", type: "secondary" },
+          { text: "Funding Opportunity", type: "accent" },
+        ]}
+        features={[
+          {
+            icon: "💡",
+            title: "Business Development",
+            description: "Create viable business models and market strategies",
+          },
+          {
+            icon: "📋",
+            title: "Pitch Deck Creation",
+            description: "Design compelling presentations for investors",
+          },
+          {
+            icon: "🎤",
+            title: "Public Speaking",
+            description:
+              "Develop confidence in presenting to professional audiences",
+          },
+          {
+            icon: "🤝",
+            title: "Networking",
+            description: "Connect with successful entrepreneurs and investors",
+          },
+        ]}
+        theme="entrepreneurship"
+        imagePosition="right"
+      />
+
+      {/* Stage Performance Showcase */}
+      <CourseShowcase
+        title="Stage Performance Showcase"
+        leadText="Step onto real stages for debates, exhibitions, and final performances that showcase your leadership, artistic, and communication skills."
+        detailsText="Students participate in public debates, art exhibitions, and theatrical performances. From persuasive speaking to creative expression, these showcases provide real-world experience in public presentation and artistic performance."
+        highlightText={{
+          title: "Public Performance",
+          description:
+            "Perform on professional stages and exhibition spaces, building confidence and real-world experience.",
+        }}
+        image={{
+          src: "/images/carousel/public-speaking.png",
+          alt: "Students performing on stage and in exhibitions",
+          icon: "🎭",
+        }}
+        badges={[
+          { text: "Public Stage", type: "primary" },
+          { text: "Live Performance", type: "secondary" },
+          { text: "Professional Venue", type: "accent" },
+        ]}
+        features={[
+          {
+            icon: "🎤",
+            title: "Public Speaking",
+            description: "Develop confidence in debates and presentations",
+          },
+          {
+            icon: "🎨",
+            title: "Art Exhibitions",
+            description:
+              "Showcase creative work in professional gallery spaces",
+          },
+          {
+            icon: "🎭",
+            title: "Theatrical Performance",
+            description:
+              "Perform in full productions with professional staging",
+          },
+          {
+            icon: "👥",
+            title: "Audience Engagement",
+            description:
+              "Connect with real audiences and receive live feedback",
+          },
+        ]}
+        theme="leadership"
+        imagePosition="left"
+      />
+
+      {/* Sports Competition */}
+      <CourseShowcase
+        title="Sports Competition"
+        leadText="Basketball games and skills challenges that celebrate progress, teamwork, and athletic achievement in a competitive yet supportive environment."
+        detailsText="Students participate in organized basketball games, skills competitions, and multi-sport challenges. These competitions emphasize teamwork, sportsmanship, and personal improvement while celebrating athletic achievement."
+        highlightText={{
+          title: "Championship Games",
+          description:
+            "Compete in organized tournaments and skills challenges with awards and recognition for outstanding performance.",
+        }}
+        image={{
+          src: "/images/carousel/language.png",
+          alt: "Students competing in basketball and sports activities",
+          icon: "🏀",
+        }}
+        badges={[
+          { text: "Tournament", type: "primary" },
+          { text: "Skills Challenge", type: "secondary" },
+          { text: "Team Competition", type: "accent" },
+        ]}
+        features={[
+          {
+            icon: "🏀",
+            title: "Basketball Games",
+            description:
+              "Organized games and tournaments with professional coaching",
+          },
+          {
+            icon: "🎯",
+            title: "Skills Challenges",
+            description: "Individual and team skills competitions",
+          },
+          {
+            icon: "👥",
+            title: "Team Building",
+            description: "Develop teamwork and leadership through sports",
+          },
+          {
+            icon: "🏆",
+            title: "Recognition",
+            description: "Awards and recognition for outstanding performance",
+          },
+        ]}
+        theme="sports"
+        imagePosition="right"
+      />
+
+      {/* Assessment & Portfolio */}
+      <section className="section bg-light" id="assessment-portfolio">
+        <div className="container-lg">
+          <SectionHeader
+            title="Assessment & Portfolio"
+            description="Capstones: stock-pitch presentations, startup pitches, public talks, performances, or robotics challenges."
+            align="center"
+            showDivider={true}
+          />
+          <div className="grid grid--2-cols gap--lg">
+            <div className="card bg-white p--lg rounded--lg shadow--md border border-gray-200">
+              <div className="text--center mb--md">
+                <div className="text-4xl mb--sm">🎓</div>
+                <h3 className="text-xl font-bold text-primary mb--sm">
+                  Certificate of Completion
+                </h3>
+                <p className="text-gray-700">
+                  Every student receives a SCISS/YEFA Certificate of Completion
+                </p>
+              </div>
+            </div>
+            <div className="card bg-white p--lg rounded--lg shadow--md border border-gray-200">
+              <div className="text--center mb--md">
+                <div className="text-4xl mb--sm">🏆</div>
+                <h3 className="text-xl font-bold text-primary mb--sm">
+                  Awards & Showcases
+                </h3>
+                <p className="text-gray-700">
+                  Celebrate growth and achievement with recognition awards
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Completion & Alumni Support */}
+      <section className="section" id="completion-alumni">
+        <div className="container-lg">
+          <SectionHeader
+            title="Completion & Alumni Support"
+            description="Every student finishes with a SCISS/YEFA Certificate of Completion, and select honors—such as Best Investment Team, Best Venture Pitch, or Best Stage Performance—recognize outstanding work. Certificates and awards strengthen future applications to selective universities and competitive internships."
+            align="center"
+            showDivider={true}
+          />
+          <FeatureGrid
+            features={[
+              {
+                icon: "📜",
+                title: "SCISS/YEFA Certificate",
+                description:
+                  "Official completion certificate for every student",
+              },
+              {
+                icon: "⭐",
+                title: "Select Honors",
+                description:
+                  "Best Investment Team, Best Venture Pitch, Best Stage Performance",
+              },
+              {
+                icon: "🎓",
+                title: "University Applications",
+                description:
+                  "Strengthen applications to selective universities and internships",
+              },
+              {
+                icon: "🌍",
+                title: "Alumni Community",
+                description:
+                  "Join SCISS Summer Camp Alumni network for ongoing support",
+              },
+              {
+                icon: "👨‍🏫",
+                title: "Post-Camp Guidance",
+                description:
+                  "5 hours of complimentary mentor guidance on competitions",
+              },
+              {
+                icon: "🎯",
+                title: "Competition Prep",
+                description:
+                  "Topic selection, solution design, and presentation coaching",
+              },
+            ]}
+            columns={3}
+            hoverable={true}
+          />
+        </div>
+      </section>
+
+      {/* Faculty & Mentors */}
+      <section className="section bg-light" id="faculty-mentors">
+        <div className="container-lg">
+          <SectionHeader
+            title="Faculty & Mentors"
+            description="Courses are led by industry professionals and expert educators—from Wall Street professionals (10+ years) and startup mentors/VCs to CEOs/GMs to university professors in AI/ML—who teach by doing and bringing real-world insights to the classroom."
+            align="center"
+            showDivider={true}
+          />
+          <FeatureGrid
+            features={[
+              {
+                icon: "💼",
+                title: "Wall Street Professionals",
+                description: "10+ years experience in finance and investment",
+              },
+              {
+                icon: "🚀",
+                title: "Startup Mentors & VCs",
+                description: "Venture capitalists and successful entrepreneurs",
+              },
+              {
+                icon: "👔",
+                title: "CEOs & GMs",
+                description:
+                  "Executive leadership and business strategy experts",
+              },
+              {
+                icon: "🎓",
+                title: "University Professors",
+                description: "AI/ML researchers and academic specialists",
+              },
+            ]}
+            columns={2}
+            hoverable={true}
+          />
+        </div>
+      </section>
+
+      {/* Beyond the Classroom */}
+      <section className="section" id="beyond-classroom">
+        <div className="container-lg">
+          <SectionHeader
+            title="Beyond the Classroom"
+            description="Evenings and weekends feature social events (movies, game nights, talent shows), sports, and themed activities that build community and confidence. Signature trips include Harvard & MIT, Brown and Yale."
+            align="center"
+            showDivider={true}
+          />
+          <div className="grid grid--2-cols gap--lg">
+            <div className="card bg-gradient-to-br from-blue-50 to-indigo-100 p--lg rounded--lg shadow--md border border-blue-200">
+              <div className="text--center mb--md">
+                <div className="text-4xl mb--sm">🎉</div>
+                <h3 className="text-xl font-bold text-blue-800 mb--sm">
+                  Social Events
+                </h3>
+                <p className="text-blue-700">
+                  Movies, game nights, talent shows, and themed activities
+                </p>
+              </div>
+            </div>
+            <div className="card bg-gradient-to-br from-green-50 to-emerald-100 p--lg rounded--lg shadow--md border border-green-200">
+              <div className="text--center mb--md">
+                <div className="text-4xl mb--sm">🏛️</div>
+                <h3 className="text-xl font-bold text-green-800 mb--sm">
+                  Signature Trips
+                </h3>
+                <p className="text-green-700">
+                  Harvard & MIT, Brown and Yale university visits
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CampSchedule />
       <SessionInfo

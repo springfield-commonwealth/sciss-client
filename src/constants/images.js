@@ -24,6 +24,11 @@ const ProgramOverviewHero = {
   alt: "springfield campus",
 };
 
+const ProgramOverviewSchedule = {
+  src: "/images/sciss-weekly-overview.png",
+  alt: "Weekly Schedule overview",
+};
+
 const LifeActivitiesHero = {
   src: "/images/hero/life-activities-hero.png",
   alt: "image of 4",

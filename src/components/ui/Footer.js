@@ -82,7 +82,7 @@ const Footer = () => {
           <p>
             <strong>Phone:</strong> (929) 928-1085
             <br />
-            <strong>Email:</strong> info@springfieldca.org
+            <strong>Email:</strong> sciss@springfieldca.org
             <br />
             <strong>Office:</strong> (413) 345-6116
             <br />

@@ -118,4 +118,10 @@ export {
   HomePresidentLetter,
   HomeTestimonials,
   HomeWelcomeParagraphs,
+  HomeAboutParagraphs,
+  HomeProgramTracksSection,
+  HomeGainsSection,
+  HomeParentPeaceSection,
+  HomeQuickFactsSection,
+  HomeDailyRhythmSection
 };

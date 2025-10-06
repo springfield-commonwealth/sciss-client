@@ -11,6 +11,12 @@ import {
   HomePresidentLetter,
   HomeTestimonials,
   HomeWelcomeParagraphs,
+  HomeAboutParagraphs,
+  HomeProgramTracksSection,
+  HomeGainsSection,
+  HomeParentPeaceSection,
+  HomeQuickFactsSection,
+  HomeDailyRhythmSection,
 } from "@/constants/homeContent";
 import {
   HomeFeature,

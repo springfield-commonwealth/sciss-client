@@ -2,10 +2,20 @@ import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
+import { AboutUsFounders, AboutUsStats, AboutUsValues, AboutUsCTAs, AboutUsSessions, AboutUsAlsoIncluded, AboutUsPrograms, AboutUsTeam, AboutUsValueProps, AboutUsDifferentiators, AboutUsIntro } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
+const FeatureSection = ({ heading, paragraphs }) => (
+  <section className="section" id={heading.toLowerCase().replace(/\s+/g, "-")}>
+    <div className="container">
+      <SectionHeader title={heading} showDivider />
+      {paragraphs.map((p, i) => (
+        <p key={i} className="mb-4">{p}</p>
+      ))}
+    </div>
+  </section>
+);
 
 const AboutUs = ({ breadcrumbs = [] }) => {
   // Prepare stats data for StatsGrid component
@@ -119,6 +129,53 @@ const AboutUs = ({ breadcrumbs = [] }) => {
               console.log("Clicked value:", feature, index);
             }}
           />
+        </div>
+      </section>
+
+      {/* New Sections */}
+      <FeatureSection 
+        heading="Why SCISS" 
+        paragraphs={AboutUsIntro} 
+      />
+
+      <FeatureSection 
+        heading="What Makes SCISS Different" 
+        paragraphs={AboutUsDifferentiators} 
+      />
+
+      <FeatureSection 
+        heading="Our Value" 
+        paragraphs={AboutUsValueProps} 
+      />
+
+      <FeatureSection 
+        heading="Our Team" 
+        desc="Your child learns from people who do the work every day:"
+        paragraphs={AboutUsTeam} 
+      />
+
+      <FeatureSection 
+        heading="Learn More About Programs (G4–G12 • Residential)" 
+        desc="Choose one track per session (students may stack across sessions):"
+        paragraphs={AboutUsPrograms} 
+      />
+
+      <FeatureSection 
+        heading="Also Included" 
+        paragraphs={AboutUsAlsoIncluded} 
+      />
+
+      <FeatureSection 
+        heading="2026 Sessions" 
+        paragraphs={AboutUsSessions} 
+      />
+
+      {/* Calls to Action */}
+      <section className="section bg-light" id="ctas">
+        <div className="container flex gap-4">
+          {AboutUsCTAs.map((cta, i) => (
+            <a key={i} href={cta.link} className="btn btn-primary">{cta.title}</a>
+          ))}
         </div>
       </section>
 

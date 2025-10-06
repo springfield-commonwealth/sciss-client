@@ -32,17 +32,23 @@ const HomePage = ({ breadcrumbs = [] }) => {
     >
       {/* Hero Section */}
       <HeroSection
-        title="Inspire Global Leaders for Tomorrow"
-        subtitle="Summer 2025"
+        title="Give your child a global summer that counts."
+        subtitle="Learn big. Build real. Shine bright."
         description="An enriching summer experience combining cutting-edge academics, sports, field trips, and inclusive cultural activities."
         backgroundImage={HomeHero}
       />
 
-      {/* Welcome Section */}
+      {/* Short Intro / Welcome Section */}
       <FeatureSection
         heading="Welcome to Springfield Commonwealth International Summer School"
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
+      />
+
+      {/* Expanded About Section */}
+      <FeatureSection
+        heading="About SCISS"
+        paragraphs={HomeAboutParagraphs}
       />
 
       <FeatureVideo
@@ -60,6 +66,36 @@ const HomePage = ({ breadcrumbs = [] }) => {
         heading="Unique Summer Experience with unforgettable memories"
         text="Our program combines daily academic coursework with organized, supervised activities to create a comprehensive experience. Each student who joins our community develops essential life skills, builds enduring friendships, and becomes a valued member of our international community"
         images={HomeSliderImages}
+      />
+
+      <FeatureSection
+        heading="Program Tracks"
+        desc="Students choose one track per session, or stack tracks across sessions to explore multiple areas."
+        paragraphs={HomeProgramTracksSection}
+      />
+
+      {/* What Your Child Gains */}
+      <FeatureSection
+        heading="What Your Child Gains"
+        paragraphs={HomeGainsSection}
+      />
+
+      {/* Parent Peace-of-Mind */}
+      <FeatureSection
+        heading="Parent Peace-of-Mind"
+        paragraphs={HomeParentPeaceSection}
+      />
+
+      {/* Quick Facts */}
+      <FeatureSection
+        heading="Quick Facts"
+        paragraphs={HomeQuickFactsSection}
+      />
+
+      {/* Sample Daily Rhythm */}
+      <FeatureSection
+        heading="Sample Daily Rhythm"
+        paragraphs={HomeDailyRhythmSection}
       />
 
       <FeatureSection

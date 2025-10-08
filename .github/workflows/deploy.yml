@@ -177,9 +177,7 @@ jobs:
           echo "Setting up SSH known hosts..."
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts || {
-            echo "⚠️ Failed to add known hosts, continuing anyway..."
-          }
+          ssh-keyscan -p ${{ secrets.HOSTINGER_SSH_PORT }} -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts
           echo "✅ SSH setup completed"
 
       - name: Deploy to Production
@@ -201,14 +199,14 @@ jobs:
 
           # Test SSH connection first
           echo "Testing SSH connection..."
-          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
+          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
             echo "⚠️ SSH connection failed, but continuing with deployment..."
           }
 
           # Sync everything except videos and images
           echo "Starting file sync..."
           rsync -avz --progress --itemize-changes \
-            -e "ssh -p $SSH_PORT -o ConnectTimeout=10" \
+            -e "ssh -p $SSH_PORT -o ConnectTimeout=10 -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
             --exclude='videos/' \
             --exclude='images/' \

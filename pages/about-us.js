@@ -14,7 +14,7 @@ const FeatureSection = ({ heading, paragraphs }) => (
         <p key={i} className="mb-4">{p}</p>
       ))}
     </div>
-  </section> 
+  </section>
 );
 
 const AboutUs = ({ breadcrumbs = [] }) => {

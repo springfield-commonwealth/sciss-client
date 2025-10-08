@@ -574,7 +574,7 @@ import staffData from <span class="cstat-no" title="statement not covered" >"@/d
  * Get all published staff members
  * @returns {Array} Array of staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllStaff(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllStaff() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return staffData.staff.filter(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.published)</span>;</span>
 }
 &nbsp;
@@ -583,7 +583,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} slug - The staff slug
  * @returns {Object|null} Staff object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffBySlug(</span></span>slug) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffBySlug(s</span></span>lug) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     staffData.staff.find(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.slug === slug &amp;&amp; staff.published)</span> ||
     null
@@ -595,7 +595,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} id - The staff ID
  * @returns {Object|null} Staff object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffById(</span></span>id) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffById(i</span></span>d) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     staffData.staff.find(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.id === id &amp;&amp; staff.published)</span> || null
   );
@@ -606,7 +606,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} department - Department name
  * @returns {Array} Array of staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByDepartment(</span></span>department) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByDepartment(d</span></span>epartment) {
 <span class="cstat-no" title="statement not covered" >  return staffData.staff.filter(</span>
 <span class="fstat-no" title="function not covered" >    (s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.department === department &amp;&amp; staff.published</span>
   );
@@ -617,7 +617,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} position - Position title
  * @returns {Array} Array of staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByPosition(</span></span>position) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByPosition(p</span></span>osition) {
 <span class="cstat-no" title="statement not covered" >  return staffData.staff.filter(</span>
 <span class="fstat-no" title="function not covered" >    (s</span>taff) =&gt;
 <span class="cstat-no" title="statement not covered" >      staff.position.toLowerCase().includes(position.toLowerCase()) &amp;&amp;</span>
@@ -630,7 +630,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} query - Search query
  * @returns {Array} Array of matching staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchStaff(</span></span>query) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchStaff(q</span></span>uery) {
   const searchTerm = <span class="cstat-no" title="statement not covered" >query.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  return staffData.staff.filter(</span>
 <span class="fstat-no" title="function not covered" >    (s</span>taff) =&gt;
@@ -650,7 +650,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} courseId - Course ID
  * @returns {Array} Array of staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByCourse(</span></span>courseId) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffByCourse(c</span></span>ourseId) {
 <span class="cstat-no" title="statement not covered" >  return staffData.staff.filter(</span>
 <span class="fstat-no" title="function not covered" >    (s</span>taff) =&gt;
 <span class="cstat-no" title="statement not covered" >      staff.published &amp;&amp; staff.courses &amp;&amp; staff.courses.includes(courseId)</span>
@@ -663,7 +663,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {number} limit - Maximum number of related staff to return
  * @returns {Array} Array of related staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedStaff(</span></span>staff, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedStaff(s</span></span>taff, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
   const related = <span class="cstat-no" title="statement not covered" >staffData.staff.filter(</span>
 <span class="fstat-no" title="function not covered" >    (s</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >      s.published &amp;&amp;</span>
@@ -699,7 +699,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique departments
  * @returns {Array} Array of department strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffDepartments(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffDepartments() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return staffData.metadata.departments;</span>
 }
 &nbsp;
@@ -707,7 +707,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique expertise areas
  * @returns {Array} Array of expertise strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffExpertise(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffExpertise() {</span></span>
   const expertise = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       staffData.staff
@@ -722,7 +722,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique positions
  * @returns {Array} Array of position strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffPositions(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffPositions() {</span></span>
   const positions = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       staffData.staff
@@ -737,7 +737,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get staff statistics
  * @returns {Object} Staff statistics
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffStats(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffStats() {</span></span>
   const publishedStaff = <span class="cstat-no" title="statement not covered" >staffData.staff.filter(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.published)</span>;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
@@ -757,7 +757,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {Object} filters - Filter object with department, position, expertise, search
  * @returns {Array} Array of filtered staff objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterStaff(</span></span>filters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterStaff(f</span></span>ilters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
   let filtered = <span class="cstat-no" title="statement not covered" >staffData.staff.filter(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.published)</span>;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (filters.department) {</span>
@@ -802,7 +802,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get faculty preview cards for directory display
  * @returns {Array} Array of staff preview objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffPreviews(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getStaffPreviews() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return staffData.staff</span>
     .filter(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; <span class="cstat-no" title="statement not covered" >staff.published)</span>
     .map(<span class="fstat-no" title="function not covered" >(s</span>taff) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -823,7 +823,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-20T22:10:46.758Z
+                at 2025-10-08T19:45:48.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

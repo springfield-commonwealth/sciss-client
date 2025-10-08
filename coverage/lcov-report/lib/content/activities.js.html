@@ -662,7 +662,7 @@ import activitiesData from <span class="cstat-no" title="statement not covered" 
  * Get all published activities
  * @returns {Array} Array of activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllActivities(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllActivities() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(<span class="fstat-no" title="function not covered" >(a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.published)</span>;</span>
 }
 &nbsp;
@@ -671,7 +671,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} slug - The activity slug
  * @returns {Object|null} Activity object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityBySlug(</span></span>slug) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityBySlug(s</span></span>lug) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     activitiesData.activities.find(
 <span class="fstat-no" title="function not covered" >      (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.slug === slug &amp;&amp; activity.published</span>
@@ -684,7 +684,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} id - The activity ID
  * @returns {Object|null} Activity object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityById(</span></span>id) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityById(i</span></span>d) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     activitiesData.activities.find(
 <span class="fstat-no" title="function not covered" >      (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.id === id &amp;&amp; activity.published</span>
@@ -697,7 +697,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} category - Category name (Sports, Fitness, Arts &amp; Recreation, Wellness)
  * @returns {Array} Array of activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByCategory(</span></span>category) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByCategory(c</span></span>ategory) {
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.category === category &amp;&amp; activity.published</span>
   );
@@ -708,7 +708,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} level - Difficulty level
  * @returns {Array} Array of activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByLevel(</span></span>level) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByLevel(l</span></span>evel) {
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.level === level &amp;&amp; activity.published</span>
   );
@@ -719,7 +719,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} query - Search query
  * @returns {Array} Array of matching activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchActivities(</span></span>query) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchActivities(q</span></span>uery) {
   const searchTerm = <span class="cstat-no" title="statement not covered" >query.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt;
@@ -738,7 +738,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} feature - Feature to search for
  * @returns {Array} Array of activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByFeature(</span></span>feature) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByFeature(f</span></span>eature) {
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt;
 <span class="cstat-no" title="statement not covered" >      activity.published &amp;&amp;</span>
@@ -754,7 +754,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {number} limit - Maximum number of related activities to return
  * @returns {Array} Array of related activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedActivities(</span></span>activity, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedActivities(a</span></span>ctivity, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
   const related = <span class="cstat-no" title="statement not covered" >activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >      a.published &amp;&amp;</span>
@@ -790,7 +790,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique categories
  * @returns {Array} Array of category strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityCategories(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityCategories() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return activitiesData.metadata.categories;</span>
 }
 &nbsp;
@@ -798,7 +798,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique difficulty levels
  * @returns {Array} Array of level strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityLevels(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityLevels() {</span></span>
   const levels = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       activitiesData.activities
@@ -813,7 +813,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique time slots
  * @returns {Array} Array of time slot strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityTimeSlots(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityTimeSlots() {</span></span>
   const timeSlots = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       activitiesData.activities
@@ -828,7 +828,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get activity statistics
  * @returns {Object} Activity statistics
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityStats(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityStats() {</span></span>
   const publishedActivities = <span class="cstat-no" title="statement not covered" >activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.published</span>
   );
@@ -857,7 +857,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {Object} filters - Filter object with category, level, timeSlot, search
  * @returns {Array} Array of filtered activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterActivities(</span></span>filters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterActivities(f</span></span>ilters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
   let filtered = <span class="cstat-no" title="statement not covered" >activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.published</span>
   );
@@ -897,7 +897,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get activity preview cards for directory display
  * @returns {Array} Array of activity preview objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityPreviews(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivityPreviews() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities</span>
     .filter(<span class="fstat-no" title="function not covered" >(a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.published)</span>
     .map(<span class="fstat-no" title="function not covered" >(a</span>ctivity) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -921,7 +921,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} instructorType - Type of instructor
  * @returns {Array} Array of activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByInstructor(</span></span>instructorType) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getActivitiesByInstructor(i</span></span>nstructorType) {
 <span class="cstat-no" title="statement not covered" >  return activitiesData.activities.filter(</span>
 <span class="fstat-no" title="function not covered" >    (a</span>ctivity) =&gt;
 <span class="cstat-no" title="statement not covered" >      activity.published &amp;&amp;</span>
@@ -936,7 +936,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {number} limit - Number of popular activities to return
  * @returns {Array} Array of popular activity objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getPopularActivities(</span></span>limit = <span class="branch-0 cbranch-no" title="branch not covered" >6)</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getPopularActivities(l</span></span>imit = <span class="branch-0 cbranch-no" title="branch not covered" >6)</span> {
   const activities = <span class="cstat-no" title="statement not covered" >activitiesData.activities</span>
     .filter(<span class="fstat-no" title="function not covered" >(a</span>ctivity) =&gt; <span class="cstat-no" title="statement not covered" >activity.published)</span>
     .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {
@@ -955,7 +955,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-20T22:10:46.758Z
+                at 2025-10-08T19:45:48.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

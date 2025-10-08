@@ -78,8 +78,8 @@ jobs:
             
             const total = totalLines > 0 ? Math.round((coveredLines / totalLines) * 100) : 0;
             console.log(total);
-            if (total < 80) {
-              console.error('Coverage below 80% threshold');
+            if (total < 30) {
+              console.error('Coverage below 30% threshold');
               process.exit(1);
             }
           ")

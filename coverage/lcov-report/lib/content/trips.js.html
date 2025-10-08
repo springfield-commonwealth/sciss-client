@@ -710,7 +710,7 @@ import tripsData from <span class="cstat-no" title="statement not covered" >"@/d
  * Get all published trips
  * @returns {Array} Array of trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllTrips(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getAllTrips() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.published)</span>;</span>
 }
 &nbsp;
@@ -719,7 +719,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} slug - The trip slug
  * @returns {Object|null} Trip object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripBySlug(</span></span>slug) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripBySlug(s</span></span>lug) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     tripsData.trips.find(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.slug === slug &amp;&amp; trip.published)</span> || null
   );
@@ -730,7 +730,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} id - The trip ID
  * @returns {Object|null} Trip object or null if not found
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripById(</span></span>id) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripById(i</span></span>d) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     tripsData.trips.find(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.id === id &amp;&amp; trip.published)</span> || null
   );
@@ -741,7 +741,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} category - Category name (University Visits, Cultural Experiences, etc.)
  * @returns {Array} Array of trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByCategory(</span></span>category) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByCategory(c</span></span>ategory) {
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.category === category &amp;&amp; trip.published</span>
   );
@@ -752,7 +752,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} duration - Trip duration (Full Day, Half Day, etc.)
  * @returns {Array} Array of trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByDuration(</span></span>duration) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByDuration(d</span></span>uration) {
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.duration === duration &amp;&amp; trip.published</span>
   );
@@ -763,7 +763,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} query - Search query
  * @returns {Array} Array of matching trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchTrips(</span></span>query) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >searchTrips(q</span></span>uery) {
   const searchTerm = <span class="cstat-no" title="statement not covered" >query.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>rip) =&gt;
@@ -782,7 +782,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} highlight - Highlight to search for
  * @returns {Array} Array of trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByHighlight(</span></span>highlight) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByHighlight(h</span></span>ighlight) {
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>rip) =&gt;
 <span class="cstat-no" title="statement not covered" >      trip.published &amp;&amp;</span>
@@ -798,7 +798,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {number} limit - Maximum number of related trips to return
  * @returns {Array} Array of related trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedTrips(</span></span>trip, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRelatedTrips(t</span></span>rip, limit = <span class="branch-0 cbranch-no" title="branch not covered" >3)</span> {
   const related = <span class="cstat-no" title="statement not covered" >tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >      t.published &amp;&amp;</span>
@@ -830,7 +830,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique categories
  * @returns {Array} Array of category strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripCategories(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripCategories() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return tripsData.metadata.categories;</span>
 }
 &nbsp;
@@ -838,7 +838,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique locations
  * @returns {Array} Array of location strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripLocations(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripLocations() {</span></span>
   const locations = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       tripsData.trips
@@ -853,7 +853,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get all unique transport modes
  * @returns {Array} Array of transport mode strings
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripTransportModes(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripTransportModes() {</span></span>
   const transportModes = <span class="cstat-no" title="statement not covered" >[</span>
     ...new Set(
       tripsData.trips
@@ -868,7 +868,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get trip statistics
  * @returns {Object} Trip statistics
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripStats(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripStats() {</span></span>
   const publishedTrips = <span class="cstat-no" title="statement not covered" >tripsData.trips.filter(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.published)</span>;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
@@ -895,7 +895,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {Object} filters - Filter object with category, duration, location, search
  * @returns {Array} Array of filtered trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterTrips(</span></span>filters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >filterTrips(f</span></span>ilters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
   let filtered = <span class="cstat-no" title="statement not covered" >tripsData.trips.filter(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.published)</span>;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (filters.category) {</span>
@@ -931,7 +931,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get trip preview cards for directory display
  * @returns {Array} Array of trip preview objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripPreviews(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripPreviews() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips</span>
     .filter(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.published)</span>
     .map(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -956,7 +956,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {string} focus - Educational focus area
  * @returns {Array} Array of trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByEducationalFocus(</span></span>focus) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getTripsByEducationalFocus(f</span></span>ocus) {
 <span class="cstat-no" title="statement not covered" >  return tripsData.trips.filter(</span>
 <span class="fstat-no" title="function not covered" >    (t</span>rip) =&gt;
 <span class="cstat-no" title="statement not covered" >      trip.published &amp;&amp;</span>
@@ -970,7 +970,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get university visit trips
  * @returns {Array} Array of university trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getUniversityTrips(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getUniversityTrips() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return getTripsByCategory("University Visits");</span>
 }
 &nbsp;
@@ -978,7 +978,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get cultural experience trips
  * @returns {Array} Array of cultural trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getCulturalTrips(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getCulturalTrips() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return getTripsByCategory("Cultural Experiences");</span>
 }
 &nbsp;
@@ -986,7 +986,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get educational tour trips
  * @returns {Array} Array of educational tour objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getEducationalTours(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getEducationalTours() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return getTripsByCategory("Educational Tours");</span>
 }
 &nbsp;
@@ -994,7 +994,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * Get recreational trips
  * @returns {Array} Array of recreational trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRecreationalTrips(</span></span>) {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getRecreationalTrips() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return getTripsByCategory("Recreation");</span>
 }
 &nbsp;
@@ -1003,7 +1003,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
  * @param {number} limit - Number of popular trips to return
  * @returns {Array} Array of popular trip objects
  */
-export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getPopularTrips(</span></span>limit = <span class="branch-0 cbranch-no" title="branch not covered" >6)</span> {
+export function <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >getPopularTrips(l</span></span>imit = <span class="branch-0 cbranch-no" title="branch not covered" >6)</span> {
   const trips = <span class="cstat-no" title="statement not covered" >tripsData.trips</span>
     .filter(<span class="fstat-no" title="function not covered" >(t</span>rip) =&gt; <span class="cstat-no" title="statement not covered" >trip.published)</span>
     .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {
@@ -1027,7 +1027,7 @@ export function <span class="cstat-no" title="statement not covered" ><span clas
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-20T22:10:46.758Z
+                at 2025-10-08T19:45:48.196Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

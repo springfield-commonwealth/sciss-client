@@ -36,12 +36,8 @@ jobs:
       - name: Run pnpm audit
         run: |
           echo "Running pnpm audit..."
-          pnpm audit --audit-level=critical || {
-            echo "⚠️ Critical security vulnerabilities found in dependencies"
-            echo "Please review and update vulnerable packages"
-            echo "Continuing with build despite vulnerabilities..."
-          }
-          echo "✅ Audit completed (warnings may exist)"
+          pnpm audit --audit-level=critical || echo "⚠️ Security vulnerabilities found - continuing anyway"
+          echo "✅ Audit step completed"
 
       - name: Run pnpm audit with detailed report
         run: |

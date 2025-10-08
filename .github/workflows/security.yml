@@ -39,10 +39,9 @@ jobs:
           pnpm audit --audit-level=critical || {
             echo "⚠️ Critical security vulnerabilities found in dependencies"
             echo "Please review and update vulnerable packages"
-            # For now, don't fail the build - just warn
-            exit 0
+            echo "Continuing with build despite vulnerabilities..."
           }
-          echo "✅ No critical security vulnerabilities found"
+          echo "✅ Audit completed (warnings may exist)"
 
       - name: Run pnpm audit with detailed report
         run: |

@@ -42,7 +42,7 @@ const HomeTestimonials = [
 
 const HomeWelcomeParagraphs = [
   "SCISS — SC International Summer School is a residential, hands-on summer program where motivated students (Grades 4–12) learn from inspiring mentors, build real projects, and make friends from around the world. It’s safe, structured, and designed to spark confidence—so your child comes home proud, skilled, and excited for what’s next.",
-  ];
+];
 
 // const HomeWelcomeParagraphs = [
 //   "Located in historic Springfield, Massachusetts - the birthplace of basketball, SCISS has been developing tomorrow's leaders for over 14 years, it is where academic excellence meets unforgettable experiences.",
@@ -66,7 +66,7 @@ const HomeProgramTracksSection = [
   "**Sports (e.g., Basketball, Soccer)** — Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.",
 ]
 
-export const HomeGainsSection = [
+const HomeGainsSection = [
   "Confidence & communication: daily presenting, feedback, and leadership moments",
   "Real projects: portfolio pieces they can show schools and future mentors",
   "Global perspective: collaborate with peers from multiple countries and backgrounds",
@@ -74,7 +74,7 @@ export const HomeGainsSection = [
   "Next-step readiness: time management, teamwork, problem-solving, and resilience",
 ];
 
-export const HomeParentPeaceSection = [
+const HomeParentPeaceSection = [
   "Residential care: dedicated dorm staff, clear conduct guidelines, and structured routines",
   "Age-appropriate cohorts: Junior (G4–G7) and Senior (G8–G12) learning paths",
   "Balanced days: academic blocks + project studio + sports/arts + downtime",
@@ -82,7 +82,7 @@ export const HomeParentPeaceSection = [
   "Open communication: regular updates and a dedicated parent contact channel",
 ];
 
-export const HomeQuickFactsSection = [
+const HomeQuickFactsSection = [
   "Who: Grades 4–12 (grouped Junior G4–G7, Senior G8–G12)",
   "When: June–August 2026 (multiple residential sessions)",
   "Format: Residential (boarding on campus)",
@@ -90,7 +90,7 @@ export const HomeQuickFactsSection = [
   "Outcomes: Capstone presentation or performance, portfolio artifact, certificate of completion, Medals and Trophies.",
 ];
 
-export const HomeDailyRhythmSection = [
+const HomeDailyRhythmSection = [
   "8:00–8:55 Breakfast & morning meetup",
   "9:00–12:00 Learning block: core classes + hands-on workshop",
   "12:00–1:00 Lunch & community time",
@@ -114,14 +114,7 @@ const HomePresidentLetter = [
 ];
 
 export {
-  HomeHighlights,
-  HomePresidentLetter,
-  HomeTestimonials,
-  HomeWelcomeParagraphs,
-  HomeAboutParagraphs,
-  HomeProgramTracksSection,
-  HomeGainsSection,
-  HomeParentPeaceSection,
-  HomeQuickFactsSection,
-  HomeDailyRhythmSection
+  HomeAboutParagraphs, HomeDailyRhythmSection, HomeGainsSection, HomeHighlights, HomeParentPeaceSection, HomePresidentLetter, HomeProgramTracksSection, HomeQuickFactsSection, HomeTestimonials,
+  HomeWelcomeParagraphs
 };
+

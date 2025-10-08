@@ -8,23 +8,20 @@ const nextConfig = {
   },
   // Only use static export for production/staging builds
   ...(process.env.NODE_ENV === "production" ||
-  process.env.NODE_ENV === "staging"
+    process.env.NODE_ENV === "staging"
     ? {
-        output: "export",
-        distDir: "dist",
-        // Disable features incompatible with static export
-        experimental: {
-          esmExternals: false,
-        },
-        // Ensure all pages are statically generated
-        generateBuildId: async () => {
-          return "build";
-        },
-      }
+      output: "export",
+      distDir: "dist",
+      // Disable features incompatible with static export
+      // Ensure all pages are statically generated
+      generateBuildId: async () => {
+        return "build";
+      },
+    }
     : {
-        // Development configuration
-        distDir: ".next",
-      }),
+      // Development configuration
+      distDir: ".next",
+    }),
   basePath: "",
   assetPrefix: "",
 };

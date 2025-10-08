@@ -59,17 +59,17 @@ const AboutUsStats = [
 ];
 
 // constants/aboutUsContent.js
-export const AboutUsIntro = [
+const AboutUsIntro = [
   "Give your child a global summer that counts. SCISS (SC International Summer School) is a residential program for Grades 4–12 that blends big ideas with practical doing. Across June–August 2026, students live and learn on campus with caring 24/7 supervision, structured days, and memorable weekend excursions. They’ll build real projects, grow confidence, and make friends from around the world—then come home proud, skilled, and excited for what’s next."
 ];
 
-export const AboutUsDifferentiators = [
+const AboutUsDifferentiators = [
   "Residential community with age-appropriate cohorts (Junior G4–G7 and Senior G8–G12) and a friendly, safe campus atmosphere.",
   "Balanced days: morning learning, afternoon project studio/electives, evening community events, and weekend excursions.",
   "Portfolio-ready outcomes: capstone presentation or performance, plus a course-completion certificate."
 ];
 
-export const AboutUsValueProps = [
+const AboutUsValueProps = [
   "Learning that sticks — Morning learning + afternoon project studio + evening events = skills, portfolios, and a capstone showcase with a certificate.",
   "Hands-on & applied — Finance students run a $1M virtual trading challenge and deliver a stock pitch; founders-in-training build MVPs and pitch to mentors; AI students code and test; performers rehearse and showcase; leaders speak daily.",
   "Real-world mentors — Instructors include Wall Street professionals, entrepreneurs/VC mentors, CEOs/GMs, technologists, and specialist coaches who teach by doing.",
@@ -78,7 +78,7 @@ export const AboutUsValueProps = [
   "Beyond the classroom — Signature trips (e.g., Harvard & MIT & Brown full day; Yale half day), museums and regional landmarks, themed socials, and cultural nights broaden horizons."
 ];
 
-export const AboutUsTeam = [
+const AboutUsTeam = [
   "Finance & Entrepreneurship: Wall Street professionals (10+ yrs exp.), founders, and venture mentors guide research, strategy, and pitching.",
   "AI/Robotics: Technologists and university-affiliated educators lead labs that connect code and sensors to real-world impact.",
   "Leadership/Public Speaking: Specialist communication coaches build presence, debate, and persuasive speaking with daily practice.",
@@ -86,7 +86,7 @@ export const AboutUsTeam = [
   "We also host guest speakers and alumni panels to inspire pathways into college and careers."
 ];
 
-export const AboutUsPrograms = [
+const AboutUsPrograms = [
   "Path to Wall Street (Investment): Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone.",
   "Youth Innovation & Entrepreneurship (Teen Start-ups): Go idea → prototype → pitch using design thinking, market research, and AI tools. Teams build an MVP and pitch to mentors in a friendly challenge aligned with global competitions.",
   "AI & Robotics: Juniors: visual coding and hardware kits; Seniors: Python-based projects, intro ML, end-of-session robotics/automation challenge.",
@@ -95,11 +95,11 @@ export const AboutUsPrograms = [
   "Sports (e.g., Basketball, Soccer): Skill development, conditioning, game IQ, teamwork, sportsmanship, drills, scrimmages, and tournament."
 ];
 
-export const AboutUsAlsoIncluded = [
+const AboutUsAlsoIncluded = [
   "Dorm housing (typically 4-5 per room), 24-hour supervision, meals, evening/weekend activities, excursions, and a course-completion certificate."
 ];
 
-export const AboutUsSessions = [
+const AboutUsSessions = [
   "Location: 1 Ames Hill Dr, Springfield, MA 01105, USA (residential campus)",
   "Four Sessions:",
   "Session 1: June 14 – June 26 (2 weeks)",
@@ -114,11 +114,11 @@ export const AboutUsSessions = [
   "Note: Program details evolve each year; 2026 will follow the same high-care, high-impact model with updated speakers, trips, and schedules."
 ];
 
-export const AboutUsCTAs = [
+const AboutUsCTAs = [
   { title: "Apply Now", link: "/apply" },
   { title: "Download 2026 Brochure", link: "/brochure.pdf" },
   { title: "Join a Parent Info Session", link: "/parent-info" }
 ];
 
+export { AboutUsAlsoIncluded, AboutUsCTAs, AboutUsDifferentiators, AboutUsFounders, AboutUsIntro, AboutUsPrograms, AboutUsSessions, AboutUsStats, AboutUsTeam, AboutUsValueProps, AboutUsValues };
 
-export { AboutUsFounders, AboutUsStats, AboutUsValues, AboutUsCTAs, AboutUsSessions, AboutUsAlsoIncluded, AboutUsPrograms, AboutUsTeam, AboutUsValueProps, AboutUsDifferentiators, AboutUsIntro };

@@ -56,9 +56,11 @@ const navLinks = [
     label: "About Us",
     href: "/about-us",
     children: [
-      { href: "/about-us#mission", label: "Missions & Vision" },
+      { href: "/about-us#mission", label: "Mission & Vision" },
       { href: "/about-us#values", label: "Our Values" },
-      { href: "/staff", label: "Our Team" },
+      { href: "/about-us/why-sciss", label: "Why SCISS" },
+      { href: "/about-us#typical-week", label: "Typical Week" },
+      { href: "/staff", label: "Meet Our Staff" },
     ],
   },
 ];

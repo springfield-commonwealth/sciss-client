@@ -9,6 +9,8 @@ const HeroSection = ({
   ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
+  tertiaryCtaText,
+  tertiaryCtaLink,
 }) => {
   return (
     <section className="hero">
@@ -50,6 +52,14 @@ const HeroSection = ({
                 className="btn btn--secondary btn--lg"
               >
                 {secondaryCtaText}
+              </Link>
+            )}
+            {tertiaryCtaText && tertiaryCtaLink && (
+              <Link
+                href={tertiaryCtaLink}
+                className="btn btn--outline btn--lg"
+              >
+                {tertiaryCtaText}
               </Link>
             )}
           </div>

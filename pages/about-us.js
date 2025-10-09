@@ -3,7 +3,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
-import { AboutUsAlsoIncluded, AboutUsDifferentiators, AboutUsIntro, AboutUsPrograms, AboutUsStats, AboutUsTeam, AboutUsValueProps, AboutUsValues } from "@/constants/aboutUsContent";
+import { AboutUsStats, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
@@ -18,219 +18,12 @@ const FeatureSection = ({ heading, paragraphs }) => (
   </section>
 );
 
-const AlsoIncludedSection = ({ data }) => (
-  <section className="section" id="also-included">
-    <div className="container">
-      <SectionHeader title="Also Included" showDivider />
-      <div className="also-included-content">
-        <div className="included-items">
-          <div className="included-item">
-            <div className="included-icon">🏠</div>
-            <div className="included-text">
-              <h4>Dorm Housing</h4>
-              <p>Typically 4-5 per room</p>
-            </div>
-          </div>
-          <div className="included-item">
-            <div className="included-icon">🛡️</div>
-            <div className="included-text">
-              <h4>24-Hour Supervision</h4>
-              <p>Round-the-clock care and support</p>
-            </div>
-          </div>
-          <div className="included-item">
-            <div className="included-icon">🍽️</div>
-            <div className="included-text">
-              <h4>All Meals</h4>
-              <p>Nutritious breakfast, lunch, and dinner</p>
-            </div>
-          </div>
-          <div className="included-item">
-            <div className="included-icon">🎉</div>
-            <div className="included-text">
-              <h4>Evening & Weekend Activities</h4>
-              <p>Engaging social and recreational programs</p>
-            </div>
-          </div>
-          <div className="included-item">
-            <div className="included-icon">🗺️</div>
-            <div className="included-text">
-              <h4>Excursions</h4>
-              <p>Educational trips and cultural experiences</p>
-            </div>
-          </div>
-          <div className="included-item">
-            <div className="included-icon">📜</div>
-            <div className="included-text">
-              <h4>Course Completion Certificate</h4>
-              <p>Official recognition of achievement</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
-const WhyScissSection = ({ data }) => (
-  <section className="section bg-light" id="why-sciss">
-    <div className="container">
-      <SectionHeader
-        title={data.title}
-        description={data.subtitle}
-        showDivider
-      />
-      <p className="text-lg mb-6">{data.description}</p>
-      <div className="grid grid--3">
-        {data.highlights.map((highlight, i) => (
-          <div key={i} className="highlight-card">
-            <div className="highlight-icon">✓</div>
-            <p>{highlight}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
-const DifferentiatorsSection = ({ data }) => (
-  <section className="section" id="differentiators">
-    <div className="container">
-      <SectionHeader title={data.title} showDivider />
-      <div className="grid grid--3">
-        {data.items.map((item, i) => (
-          <div key={i} className="differentiator-card">
-            <div className="differentiator-icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
-const ValuePropsSection = ({ data }) => (
-  <section className="section bg-light" id="value-props">
-    <div className="container">
-      <SectionHeader title={data.title} showDivider />
-      <div className="value-props-layout">
-        {data.items.map((item, i) => (
-          <div key={i} className={`value-item ${i % 2 === 0 ? 'value-item--left' : 'value-item--right'}`}>
-            <div className="value-item-content">
-              <div className="value-icon-wrapper">
-                <div className="value-icon">{item.icon}</div>
-              </div>
-              <div className="value-text">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
-const TeamSection = ({ data }) => (
-  <section className="section" id="team">
-    <div className="container">
-      <SectionHeader
-        title={data.title}
-        description={data.subtitle}
-        showDivider
-      />
-      <div className="team-layout">
-        {data.items.map((item, i) => (
-          <div key={i} className="team-item">
-            <div className="team-item-content">
-              <div className="team-icon-section">
-                <div className="team-icon">{item.icon}</div>
-                <div className="team-icon-bg"></div>
-              </div>
-              <div className="team-text-section">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="team-note">
-        <p>{data.note}</p>
-      </div>
-    </div>
-  </section>
-);
 
-const ProgramsSection = ({ data }) => (
-  <section className="section bg-light" id="programs">
-    <div className="container">
-      <SectionHeader
-        title={data.title}
-        description={data.subtitle}
-        showDivider
-      />
-      <div className="programs-grid">
-        {data.tracks.map((track, i) => (
-          <div key={i} className="program-card">
-            <div className="program-icon">{track.icon}</div>
-            <h3>{track.title}</h3>
-            <p>{track.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
-const ActivitiesTripsSection = () => (
-  <section className="section" id="activities-trips">
-    <div className="container">
-      <SectionHeader
-        title="Activities & Trips"
-        description="Community every night, horizons every week."
-        showDivider
-      />
-
-      <div className="activities-content">
-        <p className="activities-intro mb-6">
-          Evenings feature relaxed campus events—movie nights, competitive game nights, themed parties, cultural nights, campfires under the stars, and our always-popular student-run talent show—plus team-building challenges like scavenger hunts, trivia, and friendly tournaments.
-        </p>
-
-        <div className="trips-grid">
-          <div className="trip-section">
-            <h3>🎓 Signature Trips</h3>
-            <div className="trip-items">
-              <div className="trip-item">
-                <h4>Boston (Full Day)</h4>
-                <p>Harvard & MIT campus tours plus city exploration.</p>
-              </div>
-              <div className="trip-item">
-                <h4>Yale & Brown University</h4>
-                <p>Official tour-guide campus visits with admissions info sessions.</p>
-              </div>
-              <div className="trip-item">
-                <h4>Springfield Highlights</h4>
-                <p>The Naismith Basketball Hall of Fame and regional museums/historic sites.</p>
-              </div>
-              <div className="trip-item">
-                <h4>Other destinations by session</h4>
-                <p>Local attractions (e.g., museums, theme parks) subject to schedule.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="logistics-section">
-            <h3>🛡️ Logistics & Safety</h3>
-            <p>All trips and on-campus activities are fully supervised by SCISS staff. Transportation, tickets, and meals on official excursions are organized by the program so students can focus on learning and fun. The exact itinerary varies by session and weather; families receive the final schedule before arrival.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
 const TypicalWeekSection = () => (
   <section className="section bg-light" id="typical-week">
@@ -468,16 +261,6 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* Redesigned Sections */}
-      <WhyScissSection data={AboutUsIntro} />
-      <DifferentiatorsSection data={AboutUsDifferentiators} />
-      <ValuePropsSection data={AboutUsValueProps} />
-      <TeamSection data={AboutUsTeam} />
-      <ProgramsSection data={AboutUsPrograms} />
-
-      <AlsoIncludedSection data={AboutUsAlsoIncluded} />
-
-      <ActivitiesTripsSection />
       <TypicalWeekSection />
 
       <FooterCTA linkTitle="Academic Programs" link="/academics" />

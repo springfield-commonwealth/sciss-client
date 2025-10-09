@@ -207,9 +207,17 @@
   flex: 1;
   overflow-y: auto;
   padding-right: var(--space-2);
+  max-height: calc(100vh - 200px);
 }
 
 .mobile-nav-links li {
+  margin-bottom: 1rem;
+}
+
+/* Visual separator for long dropdowns */
+.mobile-nav-link-dropdown:has(.mobile-dropdown-menu) {
+  border-bottom: 2px solid var(--color-border-light);
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -277,6 +285,21 @@
     height: 50px;
     max-width: 150px;
   }
+
+  .mobile-dropdown-menu {
+    max-height: 50vh;
+    padding: 0.5rem;
+  }
+
+  .mobile-dropdown-link {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
+
+  .mobile-nav-links {
+    max-height: calc(100vh - 180px);
+  }
 }
 
 /* Mobile optimization for touch devices */
@@ -287,6 +310,28 @@
   .mobile-nav-link:hover {
     background: transparent;
     color: var(--text-dark);
+  }
+
+  .mobile-dropdown-link:hover {
+    background: var(--color-primary-50);
+    color: var(--primary-red);
+  }
+}
+
+/* Enhanced mobile dropdown animations */
+.mobile-dropdown-menu {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -541,23 +586,61 @@
   display: flex;
   flex-direction: column;
   background: none;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  padding: 0.75rem;
+  border: 1px solid var(--color-border-light);
 }
 
 .mobile-dropdown-link {
   display: block;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0.5rem;
   color: var(--text-dark);
   border-bottom: 1px solid var(--border-light);
   font-weight: 400;
-  font-size: 0.98rem;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.25rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .mobile-dropdown-link:hover {
   color: var(--primary-red);
+  background: var(--color-primary-50);
+  padding-left: 0.75rem;
+}
+
+.mobile-dropdown-link:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .dropdown-menu li,
 .mobile-dropdown-menu li {
   list-style: none;
+}
+
+/* Scrollbar styling for mobile dropdown */
+.mobile-dropdown-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-dropdown-menu::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+  border-radius: 2px;
+}
+
+.mobile-dropdown-menu::-webkit-scrollbar-thumb {
+  background: var(--color-border-medium);
+  border-radius: 2px;
+}
+
+.mobile-dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-300);
 }

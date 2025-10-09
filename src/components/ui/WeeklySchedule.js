@@ -275,83 +275,7 @@ const WeeklySchedule = () => {
   };
 
   return (
-    <section className="weekly-schedule-section">
-      <div className="schedule-intro">
-        <div className="schedule-intro__content">
-          <h2 className="schedule-title">A Typical Week at SCISS</h2>
-          <p className="schedule-description">
-            While each student enjoys an individually tailored summer school
-            experience at SCISS, our structured schedule ensures they maximize
-            their time with us. The timetable below provides an outline of what
-            to expect during a typical week.
-          </p>
-          <p className="schedule-description">
-            <strong>Residential • Grades 4–12 • Junior (G4–G7) & Senior (G8–G12) cohorts</strong>
-          </p>
-        </div>
-      </div>
-
-      <div className="schedule-content">
-        <h3>Sunday — Arrivals & Welcome</h3>
-        <p>
-          Students check in to the residence halls, meet their dorm leaders & roommates,
-          and join a campus tour and safety briefing. After dinner, we run icebreakers
-          and a relaxed welcome night so everyone starts Monday confident and connected.
-        </p>
-
-        <h3>Monday & Tuesday — Settle In, Start Strong</h3>
-        <p>
-          Mornings focus on core academics in each student’s chosen track (Investment, Entrepreneurship, AI/Robotics, Leadership/English/Stage, or Sports).
-          After lunch, project studios and electives kick in: stock-pitch research, prototyping and testing, coding and robotics lab time, rehearsal and stagecraft, or skills training on the courts and fields.
-          Evenings bring community events—game/movie night, team challenges, and dorm meetings—before quiet hours (earlier for Juniors).
-        </p>
-
-        <h3>Wednesday — Learning Beyond Campus</h3>
-        <p>
-          Midweek we step off campus for a curated trip that ties learning to the real world—think university visits (Harvard & MIT), an official campus tour and admissions info session at Yale & Brown, or a landmark like the Basketball Hall of Fame.
-          Students are decompressed with a movie night or open studio when we return.
-        </p>
-
-        <h3>Thursday — Build, Refine, Rehearse</h3>
-        <p>
-          With new inspiration and feedback, students double down on capstone work: investment theses and slide decks, MVP demos, robotics challenges, debate speeches, music and theatre scenes, or sports scrimmages.
-          Mentors hold extended office hours; cohorts practice presentations and get peer critique.
-        </p>
-
-        <h3>Friday — Showcase & Celebrate</h3>
-        <p>
-          The week culminates in a capstone milestone or mini-showcase: a stock pitch, a venture demo, a robotics trial, a debate round, scenes and songs on stage, or a friendly tournament.
-          Parents receive highlights in the weekly update, and students enjoy a celebration night.
-        </p>
-
-        <h3>Saturday — Big Excursion & Community Day</h3>
-        <p>
-          A full-day trip (weather permitting) broadens horizons and bonds the cohort—often a university and/or city day or a regional highlight.
-          Back on campus we host a light evening social and prep for the next academic block.
-        </p>
-
-        <p className="schedule-note">
-          Notes: Offerings rotate by session; students can adjust electives before Day three.
-          All activities are fully supervised with a safety-first approach and clear conduct norms.
-        </p>
-
-        <h3>Daily Rhythm (Mon–Fri)</h3>
-        <ul className="daily-rhythm-list">
-          <li>8:00–8:55 Breakfast & morning meetup</li>
-          <li>9:00–12:00 Learning block: core classes + hands-on workshop</li>
-          <li>12:00–1:00 Lunch & community time</li>
-          <li>1:15–3:00 Project studio (capstone work with coaching)</li>
-          <li>3:15–5:30 Choice time: skills lab, electives & fitness, mentor office hours</li>
-          <li>6:00–7:00 Dinner</li>
-          <li>7:15–9:30 Evening program (speaker, games/movies, showcase prep)</li>
-          <li>10:00 Collect phones & Lights out (Junior / Senior)</li>
-        </ul>
-
-        <p className="schedule-note">
-          Notes: Offerings rotate by session; students can adjust electives before Day three.
-          All activities are fully supervised with a safety-first approach and clear conduct norms.
-        </p>
-      </div>
+    <section className="section">
 
       <div className="weekly-image">
         <img
@@ -359,9 +283,10 @@ const WeeklySchedule = () => {
           alt="SCISS Weekly Overview"
           className="weekly-image__img"
         />
-        <p className="weekly-image__caption">
-          Sample overview only — daily times may vary by session.
-        </p>
+        <div className="week-notes">
+          <p><strong>Notes:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms.</p>
+          <p><strong>Note:</strong> Field trips, and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.</p>
+        </div>
       </div>
 
       <div className="schedule-wrapper">

@@ -59,41 +59,138 @@ const AboutUsStats = [
 ];
 
 // constants/aboutUsContent.js
-const AboutUsIntro = [
-  "Give your child a global summer that counts. SCISS (SC International Summer School) is a residential program for Grades 4–12 that blends big ideas with practical doing. Across June–August 2026, students live and learn on campus with caring 24/7 supervision, structured days, and memorable weekend excursions. They’ll build real projects, grow confidence, and make friends from around the world—then come home proud, skilled, and excited for what’s next."
-];
+const AboutUsIntro = {
+  title: "Why SCISS",
+  subtitle: "A Global Summer That Counts",
+  description: "SCISS is a residential program for Grades 4–12 that blends big ideas with practical doing. Students live and learn on campus with 24/7 supervision, structured days, and memorable excursions.",
+  highlights: [
+    "Build real projects and grow confidence",
+    "Make friends from around the world",
+    "Come home proud, skilled, and excited for what's next"
+  ]
+};
 
-const AboutUsDifferentiators = [
-  "Residential community with age-appropriate cohorts (Junior G4–G7 and Senior G8–G12) and a friendly, safe campus atmosphere.",
-  "Balanced days: morning learning, afternoon project studio/electives, evening community events, and weekend excursions.",
-  "Portfolio-ready outcomes: capstone presentation or performance, plus a course-completion certificate."
-];
+const AboutUsDifferentiators = {
+  title: "What Makes SCISS Different",
+  items: [
+    {
+      icon: "🏠",
+      title: "Residential Community",
+      description: "Age-appropriate cohorts (Junior G4–G7, Senior G8–G12) with safe campus atmosphere"
+    },
+    {
+      icon: "⚖️",
+      title: "Balanced Days",
+      description: "Morning learning + afternoon projects + evening events + weekend excursions"
+    },
+    {
+      icon: "📋",
+      title: "Portfolio Outcomes",
+      description: "Capstone presentation/performance + course completion certificate"
+    }
+  ]
+};
 
-const AboutUsValueProps = [
-  "Learning that sticks — Morning learning + afternoon project studio + evening events = skills, portfolios, and a capstone showcase with a certificate.",
-  "Hands-on & applied — Finance students run a $1M virtual trading challenge and deliver a stock pitch; founders-in-training build MVPs and pitch to mentors; AI students code and test; performers rehearse and showcase; leaders speak daily.",
-  "Real-world mentors — Instructors include Wall Street professionals, entrepreneurs/VC mentors, CEOs/GMs, technologists, and specialist coaches who teach by doing.",
-  "Age-appropriate cohorts — Junior (G4–G7) and Senior (G8–G12) groups ensure the right pace, tools, and challenge.",
-  "Safe & supported — Residential staff, clear conduct policies, and open parent communication; dorm living (typically 2–4 per room), meals, and full-time supervision included.",
-  "Beyond the classroom — Signature trips (e.g., Harvard & MIT & Brown full day; Yale half day), museums and regional landmarks, themed socials, and cultural nights broaden horizons."
-];
+const AboutUsValueProps = {
+  title: "Our Value",
+  items: [
+    {
+      icon: "🎯",
+      title: "Learning That Sticks",
+      description: "Morning learning + afternoon projects + evening events = skills, portfolios, and capstone showcase"
+    },
+    {
+      icon: "💼",
+      title: "Hands-on & Applied",
+      description: "$1M trading challenges, MVP builds, coding projects, performances, and daily speaking practice"
+    },
+    {
+      icon: "👨‍🏫",
+      title: "Real-world Mentors",
+      description: "Wall Street professionals, entrepreneurs, CEOs, technologists, and specialist coaches"
+    },
+    {
+      icon: "👥",
+      title: "Age-appropriate Cohorts",
+      description: "Junior (G4–G7) and Senior (G8–G12) groups with right pace, tools, and challenge"
+    },
+    {
+      icon: "🛡️",
+      title: "Safe & Supported",
+      description: "24/7 residential staff, clear policies, open communication, meals, and supervision included"
+    },
+    {
+      icon: "🌍",
+      title: "Beyond the Classroom",
+      description: "Harvard & MIT visits, Yale & Brown trips, museums, landmarks, and cultural experiences"
+    }
+  ]
+};
 
-const AboutUsTeam = [
-  "Finance & Entrepreneurship: Wall Street professionals (10+ yrs exp.), founders, and venture mentors guide research, strategy, and pitching.",
-  "AI/Robotics: Technologists and university-affiliated educators lead labs that connect code and sensors to real-world impact.",
-  "Leadership/Public Speaking: Specialist communication coaches build presence, debate, and persuasive speaking with daily practice.",
-  "Music/Stage & Sports: Practitioners and certified coaches develop craft, teamwork, and performance confidence.",
-  "We also host guest speakers and alumni panels to inspire pathways into college and careers."
-];
+const AboutUsTeam = {
+  title: "Our Team",
+  subtitle: "Your child learns from people who do the work every day",
+  items: [
+    {
+      icon: "💰",
+      title: "Finance & Entrepreneurship",
+      description: "Wall Street professionals (10+ yrs), founders, and venture mentors"
+    },
+    {
+      icon: "🤖",
+      title: "AI/Robotics",
+      description: "Technologists and university educators connecting code to real-world impact"
+    },
+    {
+      icon: "🎤",
+      title: "Leadership/Public Speaking",
+      description: "Specialist coaches building presence, debate, and persuasive speaking"
+    },
+    {
+      icon: "🎭",
+      title: "Music/Stage & Sports",
+      description: "Practitioners and certified coaches developing craft and performance confidence"
+    }
+  ],
+  note: "Plus guest speakers and alumni panels to inspire college and career pathways"
+};
 
-const AboutUsPrograms = [
-  "Path to Wall Street (Investment): Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone.",
-  "Youth Innovation & Entrepreneurship (Teen Start-ups): Go idea → prototype → pitch using design thinking, market research, and AI tools. Teams build an MVP and pitch to mentors in a friendly challenge aligned with global competitions.",
-  "AI & Robotics: Juniors: visual coding and hardware kits; Seniors: Python-based projects, intro ML, end-of-session robotics/automation challenge.",
-  "Leadership & Public Speaking/Debate: Communication drills, debate, stage presence, conflict resolution, teamwork, polished final talk.",
-  "Music & Stage Performing Arts: Vocal/instrumental ensembles, movement & stagecraft, lighting/sound basics, live showcase.",
-  "Sports (e.g., Basketball, Soccer): Skill development, conditioning, game IQ, teamwork, sportsmanship, drills, scrimmages, and tournament."
-];
+const AboutUsPrograms = {
+  title: "Programs (G4–G12 • Residential)",
+  subtitle: "Choose one track per session (students may stack across sessions)",
+  tracks: [
+    {
+      icon: "📈",
+      title: "Path to Wall Street (Investment)",
+      description: "Build financial fluency from market basics to analysis, portfolio management, and valuation. Practice with trading simulator and finish with stock-pitch capstone."
+    },
+    {
+      icon: "🚀",
+      title: "Youth Innovation & Entrepreneurship",
+      description: "Go idea → prototype → pitch using design thinking, market research, and AI tools. Build MVP and pitch to mentors."
+    },
+    {
+      icon: "🤖",
+      title: "AI & Robotics",
+      description: "Juniors: visual coding and hardware kits. Seniors: Python projects, intro ML, robotics/automation challenges."
+    },
+    {
+      icon: "🎤",
+      title: "Leadership & Public Speaking/Debate",
+      description: "Communication drills, debate, stage presence, conflict resolution, teamwork, and polished final talk."
+    },
+    {
+      icon: "🎭",
+      title: "Music & Stage Performing Arts",
+      description: "Vocal/instrumental ensembles, movement & stagecraft, lighting/sound basics, and live showcase."
+    },
+    {
+      icon: "⚽",
+      title: "Sports (Basketball, Soccer)",
+      description: "Skill development, conditioning, game IQ, teamwork, sportsmanship, drills, scrimmages, and tournaments."
+    }
+  ]
+};
 
 const AboutUsAlsoIncluded = [
   "Dorm housing (typically 4-5 per room), 24-hour supervision, meals, evening/weekend activities, excursions, and a course-completion certificate."
@@ -111,7 +208,29 @@ const AboutUsSessions = [
   "Signature excursions: Boston (Harvard & MIT), Yale & Brown University, Basketball Hall of Fame, museums and regional attractions.",
   "Activities & sports examples: Basketball, Soccer, Golf, Zumba, Yoga, Rock climbing, Archery, Swimming, Ultimate Frisbee, Rowing, Badminton, Table Tennis, Volleyball, Hiking, Fitness & Dance, Arts & Crafts.",
   "Investment track highlights: Multi-level curriculum, trading simulator with virtual investment challenge, and guest speakers from top firms.",
-  "Note: Program details evolve each year; 2026 will follow the same high-care, high-impact model with updated speakers, trips, and schedules."
+  "Note: Program details evolve each year; 2026 will follow the same high-care, high-impact model with updated speakers, trips, and schedules. Back to original: sample overview only — daily times may vary by session.",
+  "",
+  "Academic Classes | Elective Sports | Field Trips | Activities | Team Events | Entertainment | Special Events | Free Time | Breakfast | Lunch | Dinner",
+  "",
+  "Time | Saturday | Sunday | Monday | Tuesday | Wednesday | Thursday | Friday",
+  "07:00 - 08:00 | Breakfast | Breakfast | Breakfast | Breakfast | Breakfast | Breakfast | Breakfast",
+  "08:00 - 09:00 | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional) | Yoga, Meditation or Training in the Gym (Optional)",
+  "09:00 - 10:00 | Day Trips | Group Activity | Academic Classes | Academic Classes | Academic Classes | Academic Classes | Academic Classes",
+  "10:00 - 11:00 | Harvard & MIT Visits | Group Activity | Path to Wall Street / AI / Public Speaking | Path to Wall Street / AI / Public Speaking | Path to Wall Street / AI / Public Speaking | Path to Wall Street / AI / Public Speaking | Professional CEO Speaker",
+  "11:00 - 12:00 | Yale University Visits | Group Activity | Youth Innovation / Language / Visual Arts | Youth Innovation / Language / Visual Arts | Youth Innovation / Language / Visual Arts | Youth Innovation / Language / Visual Arts | Professional CEO Speaker",
+  "12:00 - 01:00 | Lunch | Lunch | Lunch | Lunch | Lunch | Lunch | Lunch",
+  "01:00 - 02:00 | Museums & Historical Sites | Shopping Mall: Daily Necessities | Electives (Sports) | Electives (Sports) | Field Trip: Museums/Basketball Hall of Fame | Electives (Sports) | Electives/Awarding Ceremony",
+  "02:00 - 03:00 | Basketball Hall of Fame | Free Activities: Bowling and Games | Basketball/Rowing/Golf/Fencing | Basketball/Rowing/Golf/Fencing | Field Trip: Museums/Basketball Hall of Fame | Basketball/Rowing/Golf/Fencing | Sports Competition Finals",
+  "03:00 - 04:00 | Six Flags Theme Park | Free Activities: Bowling and Games | Soccer/Archery/Fitness Training | Soccer/Archery/Fitness Training | Field Trip: Museums/Basketball Hall of Fame | Soccer/Archery/Fitness Training | Sports Competition Finals",
+  "04:00 - 05:00 | Return to Campus | Return to Campus | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities | Return from Field Trip | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities",
+  "05:00 - 06:00 | Free Time & Rest | Free Time & Rest | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities | Free Time, Workshops and Organized Activities",
+  "06:00 - 07:00 | Dinner | Dinner | Dinner | Dinner | Dinner | Dinner | Dinner",
+  "07:00 - 08:00 | Entertainment | Team Activities | Team Activities | Team Activities | Team Activities | Team Activities | DJ Dancing/Talent Show",
+  "08:00 - 09:00 | Movie Night | Movie Night/Board Games | Bonfire Party/Basketball Game | Bonfire Party/Basketball Game | Bonfire Party/Basketball Game | Kickball/Team Building | Formal Gala",
+  "",
+  "Every student at SCISS will relish a distinctive experience customized to match their interests and talents. However, this chart provides a glimpse into what lies ahead.",
+  "",
+  "Note: Field trips, and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events."
 ];
 
 const AboutUsCTAs = [

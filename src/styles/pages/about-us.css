@@ -867,18 +867,43 @@
 
 .weekly-schedule-section .schedule-header {
   margin-bottom: var(--space-6);
-  padding: var(--space-4);
-  background: var(--color-gray-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-gray-200);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  border-radius: var(--radius-xl);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.weekly-schedule-section .schedule-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 .weekly-schedule-section .schedule-header h3 {
+  color: white;
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.weekly-schedule-section .schedule-header p {
   color: var(--color-text-primary);
-  margin: 0 0 var(--space-2) 0;
-  font-size: var(--text-xl);
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
 }
 
 .schedule-note {

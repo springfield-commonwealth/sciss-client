@@ -311,6 +311,8 @@ const WeeklySchedule = () => {
       </div>
 
       <div className="schedule-wrapper">
+        {/* Legend section - commented out per client request */}
+        {/*
         <div className="legend">
           {Object.entries(activityTypes).map(([key, { color, label }]) => (
             <span key={key} className="legend__item">
@@ -322,9 +324,10 @@ const WeeklySchedule = () => {
             </span>
           ))}
         </div>
+        */}
 
         {/* Detailed hourly schedule table - commented out per client request */}
-        {/* 
+        {/*
         <div className="table-scroller">
           <table className="schedule-table">
             <thead>

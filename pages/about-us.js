@@ -3,7 +3,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader, StatsGrid } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
-import { AboutUsAlsoIncluded, AboutUsCTAs, AboutUsDifferentiators, AboutUsIntro, AboutUsPrograms, AboutUsStats, AboutUsTeam, AboutUsValueProps, AboutUsValues } from "@/constants/aboutUsContent";
+import { AboutUsAlsoIncluded, AboutUsDifferentiators, AboutUsIntro, AboutUsPrograms, AboutUsStats, AboutUsTeam, AboutUsValueProps, AboutUsValues } from "@/constants/aboutUsContent";
 import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
@@ -14,6 +14,60 @@ const FeatureSection = ({ heading, paragraphs }) => (
       {paragraphs.map((p, i) => (
         <p key={i} className="mb-4">{p}</p>
       ))}
+    </div>
+  </section>
+);
+
+const AlsoIncludedSection = ({ data }) => (
+  <section className="section" id="also-included">
+    <div className="container">
+      <SectionHeader title="Also Included" showDivider />
+      <div className="also-included-content">
+        <div className="included-items">
+          <div className="included-item">
+            <div className="included-icon">🏠</div>
+            <div className="included-text">
+              <h4>Dorm Housing</h4>
+              <p>Typically 4-5 per room</p>
+            </div>
+          </div>
+          <div className="included-item">
+            <div className="included-icon">🛡️</div>
+            <div className="included-text">
+              <h4>24-Hour Supervision</h4>
+              <p>Round-the-clock care and support</p>
+            </div>
+          </div>
+          <div className="included-item">
+            <div className="included-icon">🍽️</div>
+            <div className="included-text">
+              <h4>All Meals</h4>
+              <p>Nutritious breakfast, lunch, and dinner</p>
+            </div>
+          </div>
+          <div className="included-item">
+            <div className="included-icon">🎉</div>
+            <div className="included-text">
+              <h4>Evening & Weekend Activities</h4>
+              <p>Engaging social and recreational programs</p>
+            </div>
+          </div>
+          <div className="included-item">
+            <div className="included-icon">🗺️</div>
+            <div className="included-text">
+              <h4>Excursions</h4>
+              <p>Educational trips and cultural experiences</p>
+            </div>
+          </div>
+          <div className="included-item">
+            <div className="included-icon">📜</div>
+            <div className="included-text">
+              <h4>Course Completion Certificate</h4>
+              <p>Official recognition of achievement</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -60,12 +114,18 @@ const ValuePropsSection = ({ data }) => (
   <section className="section bg-light" id="value-props">
     <div className="container">
       <SectionHeader title={data.title} showDivider />
-      <div className="value-props-grid">
+      <div className="value-props-layout">
         {data.items.map((item, i) => (
-          <div key={i} className="value-card">
-            <div className="value-icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+          <div key={i} className={`value-item ${i % 2 === 0 ? 'value-item--left' : 'value-item--right'}`}>
+            <div className="value-item-content">
+              <div className="value-icon-wrapper">
+                <div className="value-icon">{item.icon}</div>
+              </div>
+              <div className="value-text">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -81,16 +141,25 @@ const TeamSection = ({ data }) => (
         description={data.subtitle}
         showDivider
       />
-      <div className="team-grid">
+      <div className="team-layout">
         {data.items.map((item, i) => (
-          <div key={i} className="team-card">
-            <div className="team-icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+          <div key={i} className="team-item">
+            <div className="team-item-content">
+              <div className="team-icon-section">
+                <div className="team-icon">{item.icon}</div>
+                <div className="team-icon-bg"></div>
+              </div>
+              <div className="team-text-section">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      <p className="text-center mt-6 text-muted">{data.note}</p>
+      <div className="team-note">
+        <p>{data.note}</p>
+      </div>
     </div>
   </section>
 );
@@ -375,14 +444,11 @@ const AboutUs = ({ breadcrumbs = [] }) => {
       <TeamSection data={AboutUsTeam} />
       <ProgramsSection data={AboutUsPrograms} />
 
-      <FeatureSection
-        heading="Also Included"
-        paragraphs={AboutUsAlsoIncluded}
-      />
+      <AlsoIncludedSection data={AboutUsAlsoIncluded} />
 
       <ActivitiesTripsSection />
       <TypicalWeekSection />
-      
+
       <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );

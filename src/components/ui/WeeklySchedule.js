@@ -276,7 +276,6 @@ const WeeklySchedule = () => {
 
   return (
     <section className="section">
-
       <div className="weekly-image">
         <img
           src="/images/sciss-weekly-overview.png"

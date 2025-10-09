@@ -408,24 +408,6 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
-            {/* Calls to Action */}
-            <section className="section" id="calls-to-action">
-                <div className="container">
-                    <SectionHeader
-                        title="Calls to Action"
-                        showDivider
-                    />
-                    <div className="cta-buttons">
-                        <a href="/apply" className="btn btn--primary btn--lg">
-                            Apply Now
-                        </a>
-                        <a href="/program-overview" className="btn btn--outline btn--lg">
-                            Explore Academic Programs
-                        </a>
-                    </div>
-                </div>
-            </section>
-
             <FooterCTA linkTitle="Academic Programs" link="/program-overview" />
         </Layout>
     );

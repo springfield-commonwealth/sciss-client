@@ -52,9 +52,12 @@ const HomePage = ({ breadcrumbs = [] }) => {
       <section className="section about-sciss-section">
         <div className="container">
           <div className="about-sciss-header">
-            <h2 className="about-sciss-title">About SCISS</h2>
-            <div className="about-sciss-divider"></div>
-            <p className="about-sciss-subtitle">Where big ideas meet practical doing</p>
+            <SectionHeader
+              title="About SCISS"
+              description="Where big ideas meet practical doing"
+              align="center"
+              showDivider={true}
+            />
           </div>
 
           <div className="about-sciss-content">

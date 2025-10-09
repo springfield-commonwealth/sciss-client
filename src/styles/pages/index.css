@@ -121,9 +121,56 @@
   color: var(--primary-blue);
 }
 
+/* Explore SCISS section styling */
+.category-card h3 {
+  text-align: center;
+}
+
+.category-card p {
+  text-align: center;
+}
+
+.category-details {
+  margin: var(--space-6) 0;
+}
+
+.category-details ul {
+  margin: var(--space-6);
+}
+
+.category-links {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
 
   .price {
     align-items: center;
+  }
+
+  .category-details {
+    margin: var(--space-4) 0;
+  }
+
+  .category-details ul {
+    margin: var(--space-4);
+  }
+
+  .category-links {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .category-details {
+    margin: var(--space-3) 0;
+  }
+
+  .category-details ul {
+    margin: var(--space-3);
   }
 }

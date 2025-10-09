@@ -3,6 +3,7 @@ import useAutoplayOnView from "@/hooks/useAutoplayOnView";
 
 const FeatureVideo = ({
   VideoObject,
+  autoPlay,
   muted,
   loop,
   playsInline,
@@ -18,11 +19,12 @@ const FeatureVideo = ({
           ref={videoRef}
           className="feature-video"
           src={VideoObject.src}
+          autoPlay={autoPlay}
           muted={muted}
           loop={loop}
           playsInline={playsInline}
           poster={VideoObject.fallback}
-          playbackrate={playBackSpeed}
+          playbackRate={playBackSpeed}
         />
       </div>
     </section>

@@ -137,7 +137,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
                   <p><em>Students choose one track per session, or stack tracks across sessions to explore multiple areas.</em></p>
                 </div>
                 <div className="category-links">
-                  <a href="/programs" className="btn btn--primary">View Programs</a>
+                  <a href="/program-overview/" className="btn btn--primary">View Programs</a>
                   <a href="/academics" className="btn btn--secondary">Academic Details</a>
                 </div>
               </div>

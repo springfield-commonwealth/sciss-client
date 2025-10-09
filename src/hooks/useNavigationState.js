@@ -17,7 +17,7 @@ const useNavigationState = (router) => {
   }, []);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 976);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -34,8 +34,7 @@ const useNavigationState = (router) => {
         const isMobileView = window.innerWidth <= 768;
 
         console.log(
-          `📏 Navigation found! Height: ${height}px (${
-            isMobileView ? "mobile" : "desktop"
+          `📏 Navigation found! Height: ${height}px (${isMobileView ? "mobile" : "desktop"
           })`
         );
         setNavHeight(height);

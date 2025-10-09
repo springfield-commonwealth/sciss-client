@@ -11,6 +11,18 @@
   ],
   "risingGradeOptions": [
     {
+      "value": "G4",
+      "label": "Rising G4"
+    },
+    {
+      "value": "G5",
+      "label": "Rising G5"
+    },
+    {
+      "value": "G6",
+      "label": "Rising G6"
+    },
+    {
       "value": "G7",
       "label": "Rising G7"
     },
@@ -71,28 +83,28 @@
   ],
   "courseOptions": [
     {
-      "value": "Path to Wall Street & Impact Investment",
-      "label": "Path to Wall Street & Impact Investment (Advanced, Session 1 only)"
+      "value": "Path to Wall Street (Investment)",
+      "label": "Path to Wall Street (Investment)"
     },
     {
-      "value": "Youth Innovation & Entrepreneurship",
-      "label": "Youth Innovation & Entrepreneurship (Intermediate, Session 2 only)"
+      "value": "Youth Innovation & Entrepreneurship (Teen Start-ups)",
+      "label": "Youth Innovation & Entrepreneurship (Teen Start-ups)"
     },
     {
-      "value": "Artificial Intelligence",
-      "label": "Artificial Intelligence (Advanced, Session 1 only)"
+      "value": "AI & Robotics",
+      "label": "AI & Robotics"
     },
     {
-      "value": "Public Speaking & Debate",
-      "label": "Public Speaking & Debate (All Levels, Session 2 only)"
+      "value": "Leadership & Public Speaking/Debate",
+      "label": "Leadership & Public Speaking/Debate"
     },
     {
-      "value": "Language Programs",
-      "label": "Language Programs (All Levels, Session 1 & 2)"
+      "value": "Music & Stage Performing Arts",
+      "label": "Music & Stage Performing Arts"
     },
     {
-      "value": "Visual Arts",
-      "label": "Visual Arts (All Ages, Session 1 & 2)"
+      "value": "Sports (e.g., Basketball, Soccer)",
+      "label": "Sports (e.g., Basketball, Soccer)"
     }
   ],
   "sportsOptions": [
@@ -101,28 +113,44 @@
       "label": "Basketball"
     },
     {
-      "value": "Fitness Training",
-      "label": "Fitness Training"
+      "value": "Soccer",
+      "label": "Soccer"
     },
     {
-      "value": "Rowing Crew",
-      "label": "Rowing Crew"
+      "value": "Volleyball",
+      "label": "Volleyball"
     },
     {
-      "value": "Fencing",
-      "label": "Fencing"
+      "value": "Badminton",
+      "label": "Badminton"
+    },
+    {
+      "value": "Table Tennis",
+      "label": "Table Tennis"
+    },
+    {
+      "value": "Hiking",
+      "label": "Hiking"
     },
     {
       "value": "Golf",
       "label": "Golf"
     },
     {
-      "value": "Soccer",
-      "label": "Soccer"
+      "value": "Zumba",
+      "label": "Zumba"
     },
     {
-      "value": "Hiking",
-      "label": "Hiking"
+      "value": "Yoga",
+      "label": "Yoga"
+    },
+    {
+      "value": "Rowing",
+      "label": "Rowing"
+    },
+    {
+      "value": "Gym",
+      "label": "Gym"
     }
   ]
 }

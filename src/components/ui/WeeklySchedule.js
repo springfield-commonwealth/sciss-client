@@ -285,7 +285,7 @@ const WeeklySchedule = () => {
   ];
 
   return (
-    <section className="section">
+    <>
       <div className="weekly-overview-table">
         <table className="overview-table">
           <thead>
@@ -417,7 +417,7 @@ const WeeklySchedule = () => {
         </div>
         */}
       </div>
-    </section>
+    </>
   );
 };
 

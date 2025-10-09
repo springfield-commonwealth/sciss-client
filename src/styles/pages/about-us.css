@@ -664,7 +664,7 @@
 /* Typical Week Section - New Design */
 .typical-week-content {
   background: var(--color-bg-primary);
-  padding: var(--space-8);
+  padding: var(--space-6);
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-primary-100);
   position: relative;
@@ -683,7 +683,7 @@
 
 .week-overview {
   text-align: center;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .overview-badge {
@@ -703,7 +703,7 @@
 /* Week Timeline */
 .week-timeline {
   position: relative;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .week-timeline::before {
@@ -721,7 +721,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--space-6);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   position: relative;
 }
 
@@ -779,17 +779,17 @@
 /* Daily Schedule Section - Clean Minimalist Design */
 .daily-schedule-section {
   background: var(--color-bg-primary);
-  padding: var(--space-6);
+  padding: var(--space-4);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-gray-200);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   position: relative;
 }
 
 .schedule-header {
   text-align: center;
-  margin-bottom: var(--space-6);
-  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
   background: var(--color-gray-50);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-gray-200);
@@ -859,48 +859,39 @@
 /* Weekly Schedule Section - Clean Minimalist Design */
 .weekly-schedule-section {
   background: var(--color-bg-primary);
-  padding: var(--space-6);
+  padding: var(--space-5);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-gray-200);
   position: relative;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-5);
 }
 
 .weekly-schedule-section .schedule-header {
-  margin-bottom: var(--space-6);
-  padding: var(--space-6);
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
-  border-radius: var(--radius-xl);
-  border: none;
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
   position: relative;
   overflow: hidden;
 }
 
-.weekly-schedule-section .schedule-header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  animation: shimmer 3s ease-in-out infinite;
-}
 
 .weekly-schedule-section .schedule-header h3 {
-  color: white;
+  color: var(--color-text-primary);
   margin: 0 0 var(--space-3) 0;
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: 0.5px;
   position: relative;
   z-index: 2;
 }
 
 .weekly-schedule-section .schedule-header p {
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   margin: 0;
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 500;
   position: relative;
   z-index: 2;
@@ -908,15 +899,9 @@
 
 .schedule-note {
   color: var(--color-text-secondary);
-  font-style: italic;
   margin: 0;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 500;
-  text-align: center;
-  padding: var(--space-3);
-  background: var(--color-gray-50);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-gray-200);
 }
 
 .week-notes {

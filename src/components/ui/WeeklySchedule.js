@@ -274,18 +274,40 @@ const WeeklySchedule = () => {
     };
   };
 
+  const weeklyOverviewData = [
+    { day: "Sunday", activity: "Arrivals, campus tour, safety briefing, welcome night" },
+    { day: "Monday", activity: "Core classes, project studio, community events" },
+    { day: "Tuesday", activity: "Core classes, labs/rehearsals, dorm community time" },
+    { day: "Wednesday", activity: "Signature trip (e.g., Harvard & MIT; Yale & Brown tours + admissions)" },
+    { day: "Thursday", activity: "Capstone build & rehearsals, mentor office hours" },
+    { day: "Friday", activity: "Showcase (pitches, demos, performances, tournament)" },
+    { day: "Saturday", activity: "Full-day excursion, evening social" }
+  ];
+
   return (
     <section className="section">
-      <div className="weekly-image">
-        <img
-          src="/images/sciss-weekly-overview.png"
-          alt="SCISS Weekly Overview"
-          className="weekly-image__img"
-        />
-        <div className="week-notes">
-          <p><strong>Notes:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms.</p>
-          <p><strong>Note:</strong> Field trips, and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.</p>
-        </div>
+      <div className="weekly-overview-table">
+        <table className="overview-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>What Happens</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weeklyOverviewData.map((item, index) => (
+              <tr key={index}>
+                <td className="day-cell">{item.day}</td>
+                <td className="activity-cell">{item.activity}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="week-notes">
+        <p><strong>Notes:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms.</p>
+        <p><strong>Note:</strong> Field trips, and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.</p>
       </div>
 
       <div className="schedule-wrapper">
@@ -301,6 +323,8 @@ const WeeklySchedule = () => {
           ))}
         </div>
 
+        {/* Detailed hourly schedule table - commented out per client request */}
+        {/* 
         <div className="table-scroller">
           <table className="schedule-table">
             <thead>
@@ -388,6 +412,7 @@ const WeeklySchedule = () => {
             cultural excursions and recreational events.
           </p>
         </div>
+        */}
       </div>
     </section>
   );

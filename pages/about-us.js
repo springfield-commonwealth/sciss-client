@@ -242,77 +242,108 @@ const TypicalWeekSection = () => (
       />
 
       <div className="typical-week-content">
-        <div className="week-overview mb-6">
-          <p className="week-subtitle">
-            <strong>Residential • Grades 4–12 • Junior (G4–G7) & Senior (G8–G12) cohorts</strong>
-          </p>
-        </div>
-
-        <div className="week-schedule">
-          <div className="day-schedule">
-            <h3>📅 Sunday — Arrivals & Welcome</h3>
-            <p>Students check in to the residence halls, meet their dorm leaders & roommates, and join a campus tour and safety briefing. After dinner, we run icebreakers and a relaxed welcome night so everyone starts Monday confident and connected.</p>
-          </div>
-
-          <div className="day-schedule">
-            <h3>📚 Monday & Tuesday — Settle In, Start Strong</h3>
-            <p>Mornings focus on core academics in each student's chosen track (Investment, Entrepreneurship, AI/Robotics, Leadership/English/Stage, or Sports). After lunch, project studios and electives kick in: stock-pitch research, prototyping and testing, coding and robotics lab time, rehearsal and stagecraft, or skills training on the courts and fields. Evenings bring community events—game/movie night, team challenges, and dorm meetings—before quiet hours (earlier for Juniors).</p>
-          </div>
-
-          <div className="day-schedule">
-            <h3>🌍 Wednesday — Learning Beyond Campus</h3>
-            <p>Midweek we step off campus for a curated trip that ties learning to the real world—think university visits (Harvard & MIT), an official campus tour and admissions info session at Yale & Brown, or a landmark like the Basketball Hall of Fame. Students are decompressed with a movie night or open studio when we return.</p>
-          </div>
-
-          <div className="day-schedule">
-            <h3>🔨 Thursday — Build, Refine, Rehearse</h3>
-            <p>With new inspiration and feedback, students double down on capstone work: investment theses and slide decks, MVP demos, robotics challenges, debate speeches, music and theatre scenes, or sports scrimmages. Mentors hold extended office hours; cohorts practice presentations and get peer critique.</p>
-          </div>
-
-          <div className="day-schedule">
-            <h3>🎉 Friday — Showcase & Celebrate</h3>
-            <p>The week culminates in a capstone milestone or mini-showcase: a stock pitch, a venture demo, a robotics trial, a debate round, scenes and songs on stage, or a friendly tournament. Parents receive highlights in the weekly update, and students enjoy a celebration night.</p>
-          </div>
-
-          <div className="day-schedule">
-            <h3>🚌 Saturday — Big Excursion & Community Day</h3>
-            <p>A full-day trip (weather permitting) broadens horizons and bonds the cohort—often a university and/or city day or a regional highlight. Back on campus we host a light evening social and prep for the next academic block.</p>
+        <div className="week-overview">
+          <div className="overview-badge">
+            <span className="badge-text">Residential • Grades 4–12 • Junior (G4–G7) & Senior (G8–G12) cohorts</span>
           </div>
         </div>
 
-        <div className="daily-rhythm mb-6">
-          <h3>⏰ Daily Rhythm (Mon–Fri)</h3>
-          <div className="rhythm-grid">
-            <div className="rhythm-item">
-              <strong>8:00–8:55</strong> Breakfast & morning meetup
+        <div className="week-timeline">
+          <div className="timeline-item">
+            <div className="timeline-icon">📅</div>
+            <div className="timeline-content">
+              <h3>Sunday — Arrivals & Welcome</h3>
+              <p>Students check in to the residence halls, meet their dorm leaders & roommates, and join a campus tour and safety briefing. After dinner, we run icebreakers and a relaxed welcome night so everyone starts Monday confident and connected.</p>
             </div>
-            <div className="rhythm-item">
-              <strong>9:00–12:00</strong> Learning block: core classes + hands-on workshop
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-icon">📚</div>
+            <div className="timeline-content">
+              <h3>Monday & Tuesday — Settle In, Start Strong</h3>
+              <p>Mornings focus on core academics in each student's chosen track (Investment, Entrepreneurship, AI/Robotics, Leadership/English/Stage, or Sports). After lunch, project studios and electives kick in: stock-pitch research, prototyping and testing, coding and robotics lab time, rehearsal and stagecraft, or skills training on the courts and fields. Evenings bring community events—game/movie night, team challenges, and dorm meetings—before quiet hours (earlier for Juniors).</p>
             </div>
-            <div className="rhythm-item">
-              <strong>12:00–1:00</strong> Lunch & community time
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-icon">🌍</div>
+            <div className="timeline-content">
+              <h3>Wednesday — Learning Beyond Campus</h3>
+              <p>Midweek we step off campus for a curated trip that ties learning to the real world—think university visits (Harvard & MIT), an official campus tour and admissions info session at Yale & Brown, or a landmark like the Basketball Hall of Fame. Students are decompressed with a movie night or open studio when we return.</p>
             </div>
-            <div className="rhythm-item">
-              <strong>1:15–3:00</strong> Project studio (capstone work with coaching)
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-icon">🔨</div>
+            <div className="timeline-content">
+              <h3>Thursday — Build, Refine, Rehearse</h3>
+              <p>With new inspiration and feedback, students double down on capstone work: investment theses and slide decks, MVP demos, robotics challenges, debate speeches, music and theatre scenes, or sports scrimmages. Mentors hold extended office hours; cohorts practice presentations and get peer critique.</p>
             </div>
-            <div className="rhythm-item">
-              <strong>3:15–5:30</strong> Choice time: skills lab, electives & fitness, mentor office hours
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-icon">🎉</div>
+            <div className="timeline-content">
+              <h3>Friday — Showcase & Celebrate</h3>
+              <p>The week culminates in a capstone milestone or mini-showcase: a stock pitch, a venture demo, a robotics trial, a debate round, scenes and songs on stage, or a friendly tournament. Parents receive highlights in the weekly update, and students enjoy a celebration night.</p>
             </div>
-            <div className="rhythm-item">
-              <strong>6:00–7:00</strong> Dinner
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-icon">🚌</div>
+            <div className="timeline-content">
+              <h3>Saturday — Big Excursion & Community Day</h3>
+              <p>A full-day trip (weather permitting) broadens horizons and bonds the cohort—often a university and/or city day or a regional highlight. Back on campus we host a light evening social and prep for the next academic block.</p>
             </div>
-            <div className="rhythm-item">
-              <strong>7:15–9:30</strong> Evening program (speaker, games/movies, showcase prep)
+          </div>
+        </div>
+
+        <div className="daily-schedule-section">
+          <div className="schedule-header">
+            <h3>⏰ Daily Rhythm (Mon–Fri)</h3>
+            <p>Structured learning with flexibility for individual growth</p>
+          </div>
+          <div className="schedule-grid">
+            <div className="schedule-item">
+              <div className="time-badge">8:00–8:55</div>
+              <div className="activity">Breakfast & morning meetup</div>
             </div>
-            <div className="rhythm-item">
-              <strong>10:00</strong> Collect phones & Lights out (Junior / Senior)
+            <div className="schedule-item">
+              <div className="time-badge">9:00–12:00</div>
+              <div className="activity">Learning block: core classes + hands-on workshop</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">12:00–1:00</div>
+              <div className="activity">Lunch & community time</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">1:15–3:00</div>
+              <div className="activity">Project studio (capstone work with coaching)</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">3:15–5:30</div>
+              <div className="activity">Choice time: skills lab, electives & fitness, mentor office hours</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">6:00–7:00</div>
+              <div className="activity">Dinner</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">7:15–9:30</div>
+              <div className="activity">Evening program (speaker, games/movies, showcase prep)</div>
+            </div>
+            <div className="schedule-item">
+              <div className="time-badge">10:00</div>
+              <div className="activity">Collect phones & Lights out (Junior / Senior)</div>
             </div>
           </div>
         </div>
 
         <div className="weekly-schedule-section">
-          <h3>📊 SCISS Weekly Overview</h3>
-          <p className="schedule-note">Sample overview only — daily times may vary by session.</p>
+          <div className="schedule-header">
+            <h3>📊 SCISS Weekly Overview</h3>
+            <p className="schedule-note">Sample overview only — daily times may vary by session.</p>
+          </div>
           <WeeklySchedule />
         </div>
 

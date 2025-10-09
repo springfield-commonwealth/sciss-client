@@ -50,9 +50,8 @@ const MobileNav = ({
         <li key={link.href}>
           <Link
             href={link.href}
-            className={`mobile-nav-link${
-              isActiveLink(link.href) ? " active" : ""
-            }`}
+            className={`mobile-nav-link${isActiveLink(link.href) ? " active" : ""
+              }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             {link.label}
@@ -62,7 +61,7 @@ const MobileNav = ({
     )}
     <li className="mobile-cta">
       <Link
-        href="/tuitions-and-fees"
+        href="/apply"
         className="btn btn--primary btn--lg"
         onClick={() => setIsMobileMenuOpen(false)}
       >

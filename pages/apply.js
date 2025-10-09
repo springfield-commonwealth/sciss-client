@@ -24,7 +24,7 @@ const Apply = ({ breadcrumbs = [] }) => {
           </div>
           <div className="apply-header">
             <h2 className="apply-title">
-              2025 Springfield Commonwealth Summer School Application
+              2026 Springfield Commonwealth Summer School Application
             </h2>
             <p className="apply-description">
               Complete the form below to apply for our summer program

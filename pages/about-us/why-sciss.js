@@ -22,9 +22,9 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                 ctaText="Apply Now"
                 ctaLink="/apply"
                 secondaryCtaText="Download 2026 Brochure"
-                secondaryCtaLink="/"
+                secondaryCtaLink="/about-us/why-sciss/"
                 tertiaryCtaText="Join a Parent Info Session"
-                tertiaryCtaLink="/"
+                tertiaryCtaLink="/about-us/why-sciss/"
             />
 
             {/* What Makes SCISS Different */}

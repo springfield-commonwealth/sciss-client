@@ -22,7 +22,7 @@ const FeatureVideo = ({
           loop={loop}
           playsInline={playsInline}
           poster={VideoObject.fallback}
-          playbackrate={playBackSpeed}
+          playbackRate={playBackSpeed}
         />
       </div>
     </section>

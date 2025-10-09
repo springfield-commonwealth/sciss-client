@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.application-form > *,
+.application-form>*,
 .application-form .form-row,
 .application-form .file-upload-container,
 .application-form .file-upload-area,
@@ -22,14 +22,31 @@
 
 .application-form {
   background: var(--color-bg-primary);
-  max-width: var(--form-max-width, 600px);
-  margin: var(--space-8) auto;
-  padding: var(--space-10) var(--space-8);
+  max-width: 100%;
+  width: 100%;
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-6);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-medium);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-6);
+}
+
+/* Tablet improvements */
+@media (min-width: 768px) {
+  .application-form {
+    max-width: 95%;
+    padding: var(--space-8) var(--space-8);
+  }
+}
+
+/* Desktop improvements */
+@media (min-width: 1024px) {
+  .application-form {
+    max-width: 1100px;
+    padding: var(--space-10) var(--space-10);
+  }
 }
 
 .application-form fieldset {
@@ -181,13 +198,37 @@
 
 .application-form .form-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .application-form .form-row label {
-  flex: 1 1 200px;
-  min-width: 150px;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+/* Tablet form row improvements */
+@media (min-width: 768px) {
+  .application-form .form-row {
+    gap: 1.5rem;
+  }
+
+  .application-form .form-row label {
+    flex: 1 1 240px;
+    min-width: 200px;
+  }
+}
+
+/* Desktop form row improvements */
+@media (min-width: 1024px) {
+  .application-form .form-row {
+    gap: 1.75rem;
+  }
+
+  .application-form .form-row label {
+    flex: 1 1 280px;
+    min-width: 220px;
+  }
 }
 
 /* Checkbox Styles */
@@ -410,39 +451,48 @@
     margin: 0;
     padding: 1.2rem 0.5rem;
   }
+
   .application-form .form-row {
     flex-direction: column;
     gap: 0.5rem;
   }
+
   .file-upload-area {
     padding: 1.5rem;
     min-height: 100px;
   }
+
   .file-upload-container {
     flex-direction: column;
     gap: 0.5rem;
   }
+
   .file-upload-area.has-file {
     flex: none;
     width: 100%;
   }
+
   .file-upload-container:has(.has-file) .remove-file {
     flex: none;
     width: 100%;
     height: 40px;
     border-radius: 8px;
   }
+
   .file-info {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
+
   .file-details {
     text-align: center;
   }
+
   .application-form .form-row label {
     flex: none;
   }
+
   /* Mobile-friendly radio group styles */
   .radio-group {
     display: flex !important;
@@ -450,6 +500,7 @@
     align-items: stretch !important;
     gap: 0.75rem !important;
   }
+
   .form-radio-item {
     width: 100%;
     padding: 0.75rem 0.5rem;
@@ -462,20 +513,24 @@
     align-items: center;
     display: flex;
   }
+
   .form-radio-label {
     font-size: 0.9rem;
     padding-left: 0.5rem;
     width: 100%;
   }
+
   .form-radio {
     min-width: 24px;
     min-height: 24px;
   }
+
   /* Mobile-friendly checkbox group styles */
   .form-row {
     flex-direction: column;
     gap: 0.75rem;
   }
+
   .checkbox-label {
     width: 100%;
     padding: 0.75rem 0.5rem;
@@ -489,6 +544,7 @@
     display: flex;
     font-size: 0.9rem;
   }
+
   .checkbox-label input[type="checkbox"] {
     margin-right: 0.75rem;
   }
@@ -549,17 +605,41 @@
 /* === Validation Animations (Story 1.2) === */
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-5px);
+  }
+
+  40% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes successPulse {
-  0% { box-shadow: 0 0 0 0 var(--color-success-500); }
-  70% { box-shadow: 0 0 0 6px rgba(39, 174, 96, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+  0% {
+    box-shadow: 0 0 0 0 var(--color-success-500);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(39, 174, 96, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+  }
 }
 
 /* Error shake for invalid fields */
@@ -582,6 +662,7 @@
   transform: translateY(0);
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .form-error-hidden {
   opacity: 0;
   transform: translateY(-8px);
@@ -595,6 +676,7 @@
   border-color: var(--color-error-500);
   background: rgba(204, 29, 47, 0.07);
 }
+
 .file-upload-area.upload-success {
   animation: successPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-color: var(--color-success-500);
@@ -606,10 +688,12 @@
     box-shadow: 0 0 0 0 var(--color-error-500);
     border-color: var(--color-error-500);
   }
+
   60% {
     box-shadow: 0 0 0 4px rgba(204, 29, 47, 0.25);
     border-color: var(--color-error-500);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(204, 29, 47, 0);
     border-color: var(--color-error-500);
@@ -627,10 +711,12 @@
     box-shadow: 0 0 0 0 var(--color-success-500);
     border-color: var(--color-success-500);
   }
+
   50% {
     box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
     border-color: var(--color-success-500);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
     border-color: var(--color-success-500);
@@ -735,6 +821,7 @@
   from {
     width: 0%;
   }
+
   to {
     width: var(--progress-width, 0%);
   }
@@ -791,6 +878,7 @@
   0% {
     box-shadow: 0 0 0 0 rgba(230, 196, 59, 0.2);
   }
+
   100% {
     box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
   }
@@ -798,6 +886,7 @@
 
 /* Reduced motion support (enhanced) */
 @media (prefers-reduced-motion: reduce) {
+
   .input-error-pulse,
   .input-success-glow,
   .file-upload-hover,
@@ -810,12 +899,12 @@
     animation: none;
     transition: none;
   }
-  
+
   .file-upload-area,
   .form-error {
     transition: none;
   }
-  
+
   .form-input:focus-visible,
   .form-radio:focus-visible,
   .form-checkbox:focus-visible {
@@ -872,4 +961,3 @@
 .application-form .form-field.error {
   border-color: var(--color-error-500);
 }
-

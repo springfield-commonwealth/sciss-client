@@ -69,7 +69,7 @@ const Academics = ({
         ctaText="View All Programs"
         ctaLink="#programs"
         secondaryCtaText="Apply Now"
-        secondaryCtaLink="/tuitions-and-fees"
+        secondaryCtaLink="/apply"
       />
 
       {/* Overview Section - Simple & Bold */}

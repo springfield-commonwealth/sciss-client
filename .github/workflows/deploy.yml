@@ -141,7 +141,16 @@ jobs:
           echo "Setting up SSH known hosts..."
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          echo "SSH setup completed"
+          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
+          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
+          if [ -n "$HOSTINGER_HOST" ] && [ -n "$HOSTINGER_SSH_PORT" ]; then
+            ssh-keyscan -p $HOSTINGER_SSH_PORT -H $HOSTINGER_HOST >> ~/.ssh/known_hosts || {
+              echo "⚠️ SSH keyscan failed, but continuing..."
+            }
+            echo "✅ SSH setup completed"
+          else
+            echo "⚠️ SSH credentials not fully configured"
+          fi
         continue-on-error: true
 
       - name: Deploy to Production

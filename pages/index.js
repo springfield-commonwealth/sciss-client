@@ -8,6 +8,7 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import FeatureVideo from "@/components/ui/FeatureVideo";
+import Link from "next/link";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   HomeHighlights,
@@ -137,8 +138,8 @@ const HomePage = ({ breadcrumbs = [] }) => {
                   <p><em>Students choose one track per session, or stack tracks across sessions to explore multiple areas.</em></p>
                 </div>
                 <div className="category-links">
-                  <a href="/program-overview/" className="btn btn--primary">View Programs</a>
-                  <a href="/academics" className="btn btn--secondary">Academic Details</a>
+                  <Link href="/program-overview/" className="btn btn--primary">View Programs</Link>
+                  <Link href="/academics" className="btn btn--secondary">Academic Details</Link>
                 </div>
               </div>
             </div>
@@ -159,8 +160,8 @@ const HomePage = ({ breadcrumbs = [] }) => {
                   <p>8:00-12:00 Learning blocks • 1:15-3:00 Project studio • 3:15-5:30 Choice time & electives • 6:00-7:00 Dinner • 7:15-9:30 Evening programs</p>
                 </div>
                 <div className="category-links">
-                  <a href="/activities" className="btn btn--primary">Activities & Trips</a>
-                  <a href="/life-activities" className="btn btn--secondary">Student Life</a>
+                  <Link href="/activities" className="btn btn--primary">Activities & Trips</Link>
+                  <Link href="/life-activities" className="btn btn--secondary">Student Life</Link>
                 </div>
               </div>
             </div>
@@ -180,8 +181,8 @@ const HomePage = ({ breadcrumbs = [] }) => {
                   </ul>
                 </div>
                 <div className="category-links">
-                  <a href="/parent-information" className="btn btn--primary">Parent Info</a>
-                  <a href="/apply" className="btn btn--secondary">Apply Now</a>
+                  <Link href="/parent-information" className="btn btn--primary">Parent Info</Link>
+                  <Link href="/apply" className="btn btn--secondary">Apply Now</Link>
                 </div>
               </div>
             </div>
@@ -201,8 +202,8 @@ const HomePage = ({ breadcrumbs = [] }) => {
                   </ul>
                 </div>
                 <div className="category-links">
-                  <a href="/about-us" className="btn btn--primary">About Us</a>
-                  <a href="/staff" className="btn btn--secondary">Meet Our Team</a>
+                  <Link href="/about-us" className="btn btn--primary">About Us</Link>
+                  <Link href="/staff" className="btn btn--secondary">Meet Our Team</Link>
                 </div>
               </div>
             </div>

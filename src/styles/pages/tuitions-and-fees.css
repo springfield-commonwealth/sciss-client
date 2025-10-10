@@ -193,7 +193,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #000000, #fbbf24);
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-yellow));
 }
 
 .session-card:hover {

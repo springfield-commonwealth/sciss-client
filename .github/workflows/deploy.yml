@@ -140,8 +140,10 @@ jobs:
           echo "Setting up SSH known hosts..."
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          if [ -n "${{ secrets.HOSTINGER_HOST }}" ] && [ -n "${{ secrets.HOSTINGER_SSH_PORT }}" ]; then
-            ssh-keyscan -p ${{ secrets.HOSTINGER_SSH_PORT }} -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts || {
+          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
+          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
+          if [ -n "$HOSTINGER_HOST" ] && [ -n "$HOSTINGER_SSH_PORT" ]; then
+            ssh-keyscan -p $HOSTINGER_SSH_PORT -H $HOSTINGER_HOST >> ~/.ssh/known_hosts || {
               echo "⚠️ SSH keyscan failed, but continuing..."
             }
             echo "✅ SSH setup completed"
@@ -156,7 +158,11 @@ jobs:
           echo "Deploying to production..."
           
           # Check if all required secrets are set
-          if [ -z "${{ secrets.HOSTINGER_USER }}" ] || [ -z "${{ secrets.HOSTINGER_HOST }}" ] || [ -z "${{ secrets.HOSTINGER_PATH }}" ] || [ -z "${{ secrets.HOSTINGER_SSH_PORT }}" ]; then
+          HOSTINGER_USER="${{ secrets.HOSTINGER_USER }}"
+          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
+          HOSTINGER_PATH="${{ secrets.HOSTINGER_PATH }}"
+          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
+          if [ -z "$HOSTINGER_USER" ] || [ -z "$HOSTINGER_HOST" ] || [ -z "$HOSTINGER_PATH" ] || [ -z "$HOSTINGER_SSH_PORT" ]; then
             echo "⚠️ Required deployment secrets not configured. Skipping deployment."
             echo "Build completed successfully but deployment was skipped."
             echo "deployment_status=skipped" >> $GITHUB_OUTPUT
@@ -166,10 +172,10 @@ jobs:
           # Create deployment script
           cat > deploy_production.sh << 'EOF'
           #!/bin/bash
-          REMOTE_USER="${{ secrets.HOSTINGER_USER }}"
-          REMOTE_HOST="${{ secrets.HOSTINGER_HOST }}"
-          REMOTE_PATH="${{ secrets.HOSTINGER_PATH }}"
-          SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
+          REMOTE_USER="$HOSTINGER_USER"
+          REMOTE_HOST="$HOSTINGER_HOST"
+          REMOTE_PATH="$HOSTINGER_PATH"
+          SSH_PORT="$HOSTINGER_SSH_PORT"
 
           echo "Production deployment to Hostinger..."
           echo "Remote: $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
@@ -199,7 +205,7 @@ jobs:
           EOF
 
           chmod +x deploy_production.sh
-          ./deploy_production.sh
+          HOSTINGER_USER="$HOSTINGER_USER" HOSTINGER_HOST="$HOSTINGER_HOST" HOSTINGER_PATH="$HOSTINGER_PATH" HOSTINGER_SSH_PORT="$HOSTINGER_SSH_PORT" ./deploy_production.sh
 
       - name: Upload Build Artifacts (if deployment fails)
         if: steps.deploy.outcome == 'failure' || steps.deploy.outputs.deployment_status == 'partial'
@@ -213,8 +219,9 @@ jobs:
         run: |
           echo "Performing post-deployment health check..."
           sleep 10
-          if [ -n "${{ secrets.HEALTH_CHECK_URL }}" ]; then
-            curl -f ${{ secrets.HEALTH_CHECK_URL }} || {
+          HEALTH_CHECK_URL="${{ secrets.HEALTH_CHECK_URL }}"
+          if [ -n "$HEALTH_CHECK_URL" ]; then
+            curl -f $HEALTH_CHECK_URL || {
               echo "⚠️ Health check failed, but deployment completed"
               exit 0
             }

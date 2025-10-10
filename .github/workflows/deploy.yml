@@ -127,8 +127,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    continue-on-error: false
     environment: production
+    needs: test
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -188,6 +188,7 @@ jobs:
         continue-on-error: true
 
       - name: Deploy to Production
+        id: deploy
         run: |
           echo "Deploying to production..."
           
@@ -195,6 +196,7 @@ jobs:
           if [ -z "${{ secrets.HOSTINGER_USER }}" ] || [ -z "${{ secrets.HOSTINGER_HOST }}" ] || [ -z "${{ secrets.HOSTINGER_PATH }}" ] || [ -z "${{ secrets.HOSTINGER_SSH_PORT }}" ]; then
             echo "⚠️ Required deployment secrets not configured. Skipping deployment."
             echo "Build completed successfully but deployment was skipped."
+            echo "deployment_status=skipped" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -212,28 +214,38 @@ jobs:
 
           # Test SSH connection first
           echo "Testing SSH connection..."
-          ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'" || {
+          if ssh -p $SSH_PORT -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST "echo 'SSH connection successful'"; then
+            echo "✅ SSH connection successful"
+          else
             echo "⚠️ SSH connection failed, but continuing with deployment..."
-          }
+          fi
 
           # Sync everything except videos and images
           echo "Starting file sync..."
-          rsync -avz --progress --itemize-changes \
+          if rsync -avz --progress --itemize-changes \
             -e "ssh -p $SSH_PORT -o ConnectTimeout=10 -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
             --exclude='videos/' \
             --exclude='images/' \
-            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/" || {
+            dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"; then
+            echo "✅ Production deployment complete!"
+            echo "deployment_status=success" >> $GITHUB_OUTPUT
+          else
             echo "⚠️ Rsync failed, but deployment may have partially succeeded"
-            exit 0
-          }
-            
-          echo "✅ Production deployment complete!"
+            echo "deployment_status=partial" >> $GITHUB_OUTPUT
+          fi
           EOF
 
           chmod +x deploy_production.sh
           ./deploy_production.sh
-        continue-on-error: true
+
+      - name: Upload Build Artifacts (if deployment fails)
+        if: steps.deploy.outcome == 'failure' || steps.deploy.outputs.deployment_status == 'partial'
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build-${{ github.run_number }}
+          path: dist/
+          retention-days: 7
 
       - name: Health check
         run: |

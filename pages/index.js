@@ -8,7 +8,6 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import FeatureVideo from "@/components/ui/FeatureVideo";
-import Link from "next/link";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   HomeHighlights,
@@ -24,6 +23,7 @@ import {
 } from "@/constants/images";
 import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 
 const HomePage = ({ breadcrumbs = [] }) => {
   return (
@@ -128,14 +128,14 @@ const HomePage = ({ breadcrumbs = [] }) => {
                 <div className="category-details">
                   <h4>Program Tracks:</h4>
                   <ul>
-                    <li><strong>Path to Wall Street (Investment)</strong> — Learn markets, analyze companies, build mock portfolio</li>
-                    <li><strong>Youth Innovation & Entrepreneurship</strong> — From idea to pitch: design thinking, prototyping, MVP</li>
-                    <li><strong>AI & Robotics</strong> — Code smart systems, wire sensors, train models</li>
-                    <li><strong>Leadership & Public Speaking/Debate</strong> — Communication, debate, stage presence</li>
-                    <li><strong>Music & Stage Performing Arts</strong> — Vocal/instrumental ensembles, movement, stagecraft</li>
-                    <li><strong>Sports</strong> — Basketball, Soccer: skill development, conditioning, game IQ</li>
+                    <li><strong>Investment</strong> — Markets, analysis, portfolio building</li>
+                    <li><strong>Entrepreneurship</strong> — Idea to pitch, prototyping, MVP</li>
+                    <li><strong>AI & Robotics</strong> — Code systems, sensors, models</li>
+                    <li><strong>Leadership & Debate</strong> — Communication, stage presence</li>
+                    <li><strong>Music & Stage Arts</strong> — Ensembles, movement, stagecraft</li>
+                    <li><strong>Sports</strong> — Basketball & Soccer development</li>
                   </ul>
-                  <p><em>Students choose one track per session, or stack tracks across sessions to explore multiple areas.</em></p>
+                  <p><em>Students choose one track per session, or combine tracks across sessions.</em></p>
                 </div>
                 <div className="category-links">
                   <Link href="/program-overview/" className="btn btn--primary">View Programs</Link>
@@ -151,13 +151,13 @@ const HomePage = ({ breadcrumbs = [] }) => {
                 <div className="category-details">
                   <h4>What Your Child Gains:</h4>
                   <ul>
-                    <li>Confidence & communication through daily presenting and leadership moments</li>
-                    <li>Real projects: portfolio pieces for schools and future mentors</li>
-                    <li>Global perspective collaborating with international peers</li>
-                    <li>Mentorship and next-step readiness skills</li>
+                    <li>Confidence through daily presentations</li>
+                    <li>Real portfolio pieces for schools</li>
+                    <li>Global peer collaboration</li>
+                    <li>Mentorship and readiness skills</li>
                   </ul>
-                  <h4>Sample Daily Rhythm:</h4>
-                  <p>8:00-12:00 Learning blocks • 1:15-3:00 Project studio • 3:15-5:30 Choice time & electives • 6:00-7:00 Dinner • 7:15-9:30 Evening programs</p>
+                  <h4>Daily Rhythm:</h4>
+                  <p>8:00-12:00 Learning • 1:15-3:00 Projects • 3:15-5:30 Electives • 6:00-7:00 Dinner • 7:15-9:30 Evening programs</p>
                 </div>
                 <div className="category-links">
                   <Link href="/activities" className="btn btn--primary">Activities & Trips</Link>
@@ -173,11 +173,11 @@ const HomePage = ({ breadcrumbs = [] }) => {
                 <div className="category-details">
                   <h4>Parent Peace-of-Mind:</h4>
                   <ul>
-                    <li>Dedicated dorm staff with clear conduct guidelines and structured routines</li>
-                    <li>Age-appropriate cohorts: Junior (G4–G7) and Senior (G8–G12)</li>
-                    <li>Balanced days: academic blocks + project studio + sports/arts + downtime</li>
-                    <li>Health & safety: on-site first-aid and established protocols</li>
-                    <li>Open communication: regular updates and dedicated parent contact</li>
+                    <li>Dedicated dorm staff with clear guidelines</li>
+                    <li>Age-appropriate cohorts: Junior (G4–G7), Senior (G8–G12)</li>
+                    <li>Balanced days: academics, projects, sports, downtime</li>
+                    <li>On-site first-aid and safety protocols</li>
+                    <li>Regular updates and parent contact</li>
                   </ul>
                 </div>
                 <div className="category-links">
@@ -194,11 +194,11 @@ const HomePage = ({ breadcrumbs = [] }) => {
                 <div className="category-details">
                   <h4>Quick Facts:</h4>
                   <ul>
-                    <li>Who: Grades 4–12 (Junior G4–G7, Senior G8–G12)</li>
-                    <li>When: June–August 2026 (multiple residential sessions)</li>
-                    <li>Format: Residential boarding on campus</li>
+                    <li>Grades 4–12 (Junior G4–G7, Senior G8–G12)</li>
+                    <li>June–August 2026 residential sessions</li>
                     <li>6 Tracks: Investment • Entrepreneurship • AI/Robotics • Leadership • Music/Stage • Sports</li>
-                    <li>Outcomes: Capstone presentations, portfolio artifacts, certificates, medals & trophies</li>
+                    <li>Outcomes: Capstone presentations, portfolios, certificates</li>
+                    <li>Campus boarding with full supervision</li>
                   </ul>
                 </div>
                 <div className="category-links">

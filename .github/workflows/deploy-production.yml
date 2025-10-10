@@ -1,10 +1,15 @@
-name: Deploy to Production
+name: 🚀 Deploy to Production
 
 on:
   push:
-    branches: [main, master]
+    branches: 
+      - main
+      - master
   pull_request:
-    branches: [main, master]
+    branches: 
+      - main
+      - master
+  workflow_dispatch:
 
 env:
   NODE_VERSION: "20"
@@ -251,5 +256,6 @@ jobs:
           echo "Failed by: ${{ github.actor }}"
           echo "Failure time: $(date -u)"
           # Add your notification logic here (Slack, email, etc.)
- 
+
+ 
  

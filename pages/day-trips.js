@@ -5,8 +5,7 @@ import FooterCTA from "@/components/ui/FooterCTA";
 import {
   DayTripsCarouselItems,
   DayTripsCulturalTrips,
-  DayTripsTravelInfo,
-  DayTripsUniversityTrips,
+  DayTripsTravelInfo
 } from "@/constants/dayTripsContent";
 import { DayTripsHero } from "@/constants/images";
 import { getPopularTrips, getUniversityTrips } from "@/lib/content/trips";
@@ -99,58 +98,6 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* University Trips */}
-      <section id="universities" className="section">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>University Visits</h2>
-            <p>
-              Experience prestigious universities and explore your academic
-              future
-            </p>
-          </div>
-
-          <div className="university-trips">
-            {DayTripsUniversityTrips.map((trip, index) => (
-              <div key={index} className="university-card">
-                <div className="university-header">
-                  <div className="university-info">
-                    <h3>{trip.university}</h3>
-                    <div className="university-meta">
-                      <span className="location">📍 {trip.location}</span>
-                      <span className="t-duration">🕐 {trip.duration}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="university-content">
-                  <p className="university-description">{trip.description}</p>
-
-                  <div className="university-details">
-                    <div className="highlights-section">
-                      <h4>Trip Highlights</h4>
-                      <ul className="highlights-list">
-                        {trip.highlights.map((highlight, idx) => (
-                          <li key={idx}>{highlight}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="inclusions-section">
-                      <h4>What's Included</h4>
-                      <ul className="inclusions-list">
-                        {trip.inclusions.map((inclusion, idx) => (
-                          <li key={idx}>{inclusion}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Cultural & Recreation Trips */}
       <section id="all-trips" className="section bg-light">

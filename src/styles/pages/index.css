@@ -15,7 +15,7 @@
 }
 
 .session {
-  background: white;
+  background: var(--color-bg-primary);
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -29,14 +29,14 @@
 
 .pricing-highlight {
   background: var(--color-primary-500);
-  color: white;
+  color: var(--color-text-white);
   padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
 }
 
 .pricing-highlight h4 {
-  color: white;
+  color: var(--color-text-white);
   margin-bottom: 1rem;
 }
 
@@ -102,7 +102,7 @@
 .testimonial-card blockquote {
   font-style: italic;
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
   line-height: 1.6;
 }
 
@@ -113,12 +113,12 @@
 }
 
 .testimonial-author strong {
-  color: var(--text-dark);
+  color: var(--color-text-primary);
 }
 
 .testimonial-author span {
   font-size: 0.9rem;
-  color: var(--primary-blue);
+  color: var(--color-primary-500);
 }
 
 /* Explore SCISS section styling */

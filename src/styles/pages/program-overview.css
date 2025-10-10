@@ -139,11 +139,11 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #f59e0b, #f97316);
+  background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-600));
 }
 
 .activity-block--trips::before {
-  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400));
 }
 
 .activity-block:hover {
@@ -182,12 +182,12 @@
 .activity-tag {
   display: inline-block;
   padding: var(--space-2) var(--space-4);
-  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-  color: #ea580c;
+  background: linear-gradient(135deg, var(--color-accent-50) 0%, var(--color-accent-100) 100%);
+  color: var(--color-accent-700);
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  border: 1px solid #fed7aa;
+  border: 1px solid var(--color-accent-200);
   transition: all var(--transition-fast);
 }
 
@@ -208,15 +208,15 @@
   align-items: flex-start;
   gap: var(--space-3);
   padding: var(--space-4);
-  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
   border-radius: var(--radius-lg);
-  border: 1px solid #ddd6fe;
+  border: 1px solid var(--color-primary-200);
   transition: all var(--transition-fast);
 }
 
 .trip-item:hover {
   transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
+  box-shadow: 0 2px 8px rgba(31, 86, 164, 0.15);
 }
 
 .trip-icon {
@@ -244,14 +244,14 @@
 /* Safety Banner */
 .safety-banner {
   margin-top: var(--space-8);
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border: 2px solid #bbf7d0;
+  background: linear-gradient(135deg, var(--color-success-50) 0%, var(--color-success-100) 100%);
+  border: 2px solid var(--color-success-200);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.1);
 }
 
 .safety-banner__icon {
@@ -261,12 +261,12 @@
 
 .safety-banner__content {
   flex: 1;
-  color: #15803d;
+  color: var(--color-success-700);
   line-height: var(--leading-relaxed);
 }
 
 .safety-banner__content strong {
-  color: #166534;
+  color: var(--color-success-800);
   font-weight: var(--font-bold);
 }
 
@@ -280,12 +280,12 @@
 
 /* Weekly Schedule Section - Light Style */
 .weekly-overview-section {
-  background: #f9fafb;
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
 .weekly-overview-section .overview-table {
-  background: white;
+  background: var(--color-bg-primary);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -297,7 +297,7 @@
 }
 
 .weekly-overview-section .week-notes {
-  background: white;
+  background: var(--color-bg-primary);
   border-left-color: var(--color-primary-500);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }

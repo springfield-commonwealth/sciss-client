@@ -41,7 +41,7 @@ if errorlevel 1 (
 )
 
 echo 📤 Deploying files to Hostinger...
-rsync -avz --progress --itemize-changes -e "ssh -p %HOSTINGER_SSH_PORT% -o ConnectTimeout=10 -o StrictHostKeyChecking=no" --exclude=.DS_Store --exclude=videos/ --exclude=images/ dist/ %HOSTINGER_USER%@%HOSTINGER_HOST%:%HOSTINGER_PATH%/
+rsync -avz --progress --itemize-changes -e "ssh -p %HOSTINGER_SSH_PORT% -o ConnectTimeout=10 -o StrictHostKeyChecking=no" --exclude=.DS_Store --exclude=videos/ dist/ %HOSTINGER_USER%@%HOSTINGER_HOST%:%HOSTINGER_PATH%/
 
 echo ✅ Deployment completed successfully!
 echo 🌐 Your site should be live at: https://sciss.org

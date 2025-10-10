@@ -46,7 +46,6 @@ rsync -avz --progress --itemize-changes \
     -e "ssh -p $HOSTINGER_SSH_PORT -o ConnectTimeout=10 -o StrictHostKeyChecking=no" \
     --exclude='.DS_Store' \
     --exclude='videos/' \
-    --exclude='images/' \
     dist/ "$HOSTINGER_USER@$HOSTINGER_HOST:$HOSTINGER_PATH/"
 
 echo "✅ Deployment completed successfully!"

@@ -220,13 +220,12 @@ jobs:
             echo "⚠️ SSH connection failed, but continuing with deployment..."
           fi
 
-          # Sync everything except videos and images
+          # Sync everything except videos (keep images for the website)
           echo "Starting file sync..."
           if rsync -avz --progress --itemize-changes \
             -e "ssh -p $SSH_PORT -o ConnectTimeout=10 -o StrictHostKeyChecking=no" \
             --exclude='.DS_Store' \
             --exclude='videos/' \
-            --exclude='images/' \
             dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"; then
             echo "✅ Production deployment complete!"
             echo "deployment_status=success" >> $GITHUB_OUTPUT

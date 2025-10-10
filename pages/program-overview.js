@@ -43,8 +43,8 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         backgroundImage={ProgramOverviewHero}
         // ctaText="View Academic Programs"
         ctaLink="#program-carousel"
-        // secondaryCtaText="Apply Today"
-        // secondaryCtaLink="/tuitions-and-fees"
+      // secondaryCtaText="Apply Today"
+      // secondaryCtaLink="/tuitions-and-fees"
       />
 
       {/* Mission & Vision */}
@@ -122,101 +122,142 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       <section className="section">
         <div className="container">
           <SectionHeader
-            title="Programs: Sports & Electives"
-            description="Balanced, active, and student-choice."
+            title="Sports & Electives"
+            description="Choose what excites you. Train at your level."
+            align="center"
             showDivider
           />
-          <p>
-            Every afternoon, students select sports and electives that match
-            their interests and energy level. Juniors (G4–G7) and Seniors
-            (G8–G12) train separately so coaching, pace, and safety are always
-            age-appropriate. Offerings vary by session and skill level.
-          </p>
 
-          <h4>Sports Menu (Examples)</h4>
-          <p>
-            Basketball (our core), soccer, volleyball, badminton, table tennis,
-            hiking, golf, Zumba, yoga, rowing, gym—and more.
-          </p>
+          <div className="grid grid--3">
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">⚽</div>
+                <h3>Sports</h3>
+                <div className="category-details">
+                  <p><strong>Basketball</strong> (our core), soccer, volleyball, badminton, table tennis, hiking, golf, Zumba, yoga, rowing, gym.</p>
+                </div>
+              </div>
+            </div>
 
-          <h4>Electives & Studios</h4>
-          <p>
-            Fitness & dance, arts & crafts, digital/brand design, and creative
-            workshops that change by session.
-          </p>
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">🎨</div>
+                <h3>Electives</h3>
+                <div className="category-details">
+                  <p>Fitness & dance, arts & crafts, digital design, creative workshops.</p>
+                </div>
+              </div>
+            </div>
 
-          <h4>Others (Upon Request)</h4>
-          <p>
-            SAT/ACT tutoring and mock tests, piano/vocal/stage performance 1:1
-            tutoring, 3D printing guidance.
-          </p>
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">📝</div>
+                <h3>Upon Request</h3>
+                <div className="category-details">
+                  <p>SAT/ACT prep, music/vocal tutoring, 3D printing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h4>How It Works</h4>
-          <p>
-            Students choose their sport/elective during orientation and can
-            adjust during the first week. Coaching emphasizes fundamentals,
-            game IQ, and teamwork; elective studios emphasize creativity, craft,
-            and confidence. All sessions are supervised by trained staff and
-            scheduled to balance academics with rest and recovery.
-          </p>
-
-          <p>
-            <em>
-              Note: Some advanced options (e.g., golf course time) may be
-              limited by availability and may carry a small additional fee.
-            </em>
-          </p>
+          <div className="content-note">
+            <p>
+              <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety.
+            </p>
+            <p className="note">
+              <em>Some options (e.g., golf) may carry a small fee.</em>
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Activities & Trips Section */}
-      <section className="section bg-light">
+      {/* Activities & Trips Section - Unique Layout */}
+      <section className="section activities-trips-section">
         <div className="container">
           <SectionHeader
             title="Activities & Trips"
-            description="Community every night, horizons every week."
+            description="Campus fun nightly. World-class destinations weekly."
+            align="center"
             showDivider
           />
-          <p>
-            Evenings feature relaxed campus events—movie nights, competitive
-            game nights, themed parties, cultural nights, campfires under the
-            stars, and our always-popular student-run talent show—plus
-            team-building challenges like scavenger hunts, trivia, and friendly
-            tournaments.
-          </p>
 
-          <h4>Signature Trips</h4>
-          <ul>
-            <li>
-              <strong>Boston (Full Day):</strong> Harvard & MIT campus tours
-              plus city exploration.
-            </li>
-            <li>
-              <strong>Yale & Brown University:</strong> Official tour-guide
-              campus visits with admissions info sessions.
-            </li>
-            <li>
-              <strong>Springfield Highlights:</strong> The Naismith Basketball
-              Hall of Fame and regional museums/historic sites.
-            </li>
-            <li>
-              Other destinations by session: local attractions (e.g., museums,
-              theme parks) subject to schedule.
-            </li>
-          </ul>
+          <div className="activities-trips-container">
+            {/* Left Side - Evening Activities */}
+            <div className="activity-block activity-block--evening">
+              <div className="activity-block__icon-badge">🎉</div>
+              <h3 className="activity-block__title">Evening Activities</h3>
+              <div className="activity-tags">
+                <span className="activity-tag">Movie nights</span>
+                <span className="activity-tag">Game tournaments</span>
+                <span className="activity-tag">Themed parties</span>
+                <span className="activity-tag">Cultural events</span>
+                <span className="activity-tag">Campfires</span>
+                <span className="activity-tag">Talent shows</span>
+                <span className="activity-tag">Scavenger hunts</span>
+                <span className="activity-tag">Trivia challenges</span>
+              </div>
+            </div>
 
-          <h4>Logistics & Safety</h4>
-          <p>
-            All trips and on-campus activities are fully supervised by SCISS
-            staff. Transportation, tickets, and meals on official excursions are
-            organized by the program so students can focus on learning and fun.
-            The exact itinerary varies by session and weather; families receive
-            the final schedule before arrival.
-          </p>
+            {/* Right Side - Signature Trips */}
+            <div className="activity-block activity-block--trips">
+              <div className="activity-block__icon-badge">🎓</div>
+              <h3 className="activity-block__title">Signature Trips</h3>
+              <div className="trips-list">
+                <div className="trip-item">
+                  <span className="trip-icon">🏛️</span>
+                  <div className="trip-content">
+                    <strong>Boston</strong>
+                    <p>Harvard & MIT tours + city exploration</p>
+                  </div>
+                </div>
+                <div className="trip-item">
+                  <span className="trip-icon">🎓</span>
+                  <div className="trip-content">
+                    <strong>Yale & Brown</strong>
+                    <p>Campus visits + admissions sessions</p>
+                  </div>
+                </div>
+                <div className="trip-item">
+                  <span className="trip-icon">🏀</span>
+                  <div className="trip-content">
+                    <strong>Springfield</strong>
+                    <p>Basketball Hall of Fame, museums</p>
+                  </div>
+                </div>
+                <div className="trip-item">
+                  <span className="trip-icon">✨</span>
+                  <div className="trip-content">
+                    <strong>Local Attractions</strong>
+                    <p>Varies by session</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Safety Footer Banner */}
+          <div className="safety-banner">
+            <div className="safety-banner__icon">🛡️</div>
+            <div className="safety-banner__content">
+              <strong>Safety First:</strong> All activities and trips are fully supervised. Transportation, tickets, and meals organized. Final schedule sent before arrival.
+              <span className="safety-banner__note">Trips subject to weather and availability.</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <WeeklySchedule />
+      {/* Weekly Schedule Section - Different Style */}
+      <section className="section weekly-overview-section">
+        <div className="container">
+          <SectionHeader
+            title="Weekly Schedule"
+            description="Your week at a glance"
+            align="center"
+            showDivider
+          />
+          <WeeklySchedule />
+        </div>
+      </section>
       <FooterCTA linkTitle="Apply Now" link="/apply" />
     </Layout>
   );

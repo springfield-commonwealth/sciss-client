@@ -59,7 +59,7 @@ jobs:
             echo '{}' > coverage/coverage-final.json
           }
         env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://sciss.org/api' }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           NODE_ENV: test
         continue-on-error: true
 
@@ -85,7 +85,7 @@ jobs:
           echo "✅ Build completed successfully"
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://sciss.org/api' }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         continue-on-error: false
 
       - name: Verify build output
@@ -130,6 +130,7 @@ jobs:
           fi
 
       - name: Setup SSH
+        if: ${{ secrets.HOSTINGER_SSH_KEY }}
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.HOSTINGER_SSH_KEY }}
@@ -140,28 +141,20 @@ jobs:
           echo "Setting up SSH known hosts..."
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
-          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
-          if [ -n "$HOSTINGER_HOST" ] && [ -n "$HOSTINGER_SSH_PORT" ]; then
-            ssh-keyscan -p $HOSTINGER_SSH_PORT -H $HOSTINGER_HOST >> ~/.ssh/known_hosts || {
-              echo "⚠️ SSH keyscan failed, but continuing..."
-            }
-            echo "✅ SSH setup completed"
-          else
-            echo "⚠️ SSH credentials not fully configured"
-          fi
+          echo "SSH setup completed"
         continue-on-error: true
 
       - name: Deploy to Production
         id: deploy
+        env:
+          HOSTINGER_USER: ${{ secrets.HOSTINGER_USER }}
+          HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST }}
+          HOSTINGER_PATH: ${{ secrets.HOSTINGER_PATH }}
+          HOSTINGER_SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
         run: |
           echo "Deploying to production..."
           
           # Check if all required secrets are set
-          HOSTINGER_USER="${{ secrets.HOSTINGER_USER }}"
-          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
-          HOSTINGER_PATH="${{ secrets.HOSTINGER_PATH }}"
-          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
           if [ -z "$HOSTINGER_USER" ] || [ -z "$HOSTINGER_HOST" ] || [ -z "$HOSTINGER_PATH" ] || [ -z "$HOSTINGER_SSH_PORT" ]; then
             echo "⚠️ Required deployment secrets not configured. Skipping deployment."
             echo "Build completed successfully but deployment was skipped."

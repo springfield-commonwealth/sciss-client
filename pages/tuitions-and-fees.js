@@ -9,7 +9,6 @@ import {
   TuitionsSessions,
 } from "@/constants/tuitionsAndFeesContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
-import Link from "next/link";
 
 const TuitionsAndFees = ({ breadcrumbs = [] }) => {
   return (

@@ -161,5 +161,6 @@ export {
   TuitionsAdditionalCosts,
   TuitionsApplicationProcess,
   TuitionsIncludedServices,
-  TuitionsSessions,
+  TuitionsSessions
 };
+

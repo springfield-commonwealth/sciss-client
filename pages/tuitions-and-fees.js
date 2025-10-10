@@ -27,28 +27,34 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
         backgroundImage={TuitionsAndFeesHero}
         ctaText="Application Process"
         ctaLink="#apply"
-        // secondaryCtaText="View Payment Plans"
-        // secondaryCtaLink="#payment"
+      // secondaryCtaText="View Payment Plans"
+      // secondaryCtaLink="#payment"
       />
 
       {/* Program Pricing */}
       <section className="section">
         <div className="container">
+          <div className="text--center mb--lg">
+            <h2>Choose Your Session</h2>
+            <p>Four 2-week sessions across Summer 2026</p>
+          </div>
+
           {/* Session Selection */}
-          <div className="sessions-selection grid grid--2">
-            <h3>Choose Your Session</h3>
+          <div className="sessions-grid">
             {TuitionsSessions.map((session, index) => (
               <div key={index} className="session-card">
-                <div className="session-header">
-                  <h4>{session.name}</h4>
-                </div>
+                <div className="session-badge">{session.name}</div>
                 <div className="session-dates">{session.dates}</div>
-                <div className="session-duration">{session.duration}</div>
+                <div className="session-duration">
+                  <span className="duration-icon">📅</span>
+                  {session.duration}
+                </div>
                 <div className="session-highlights">
                   {session.highlights.map((highlight, idx) => (
-                    <span key={idx} className="highlight-tag">
+                    <div key={idx} className="highlight-item">
+                      <span className="highlight-bullet">•</span>
                       {highlight}
-                    </span>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -99,9 +105,8 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
                 <div className="cost-header">
                   <h4>{cost.item}</h4>
                   <span
-                    className={`cost-required ${
-                      cost.required ? "required" : "optional"
-                    }`}
+                    className={`cost-required ${cost.required ? "required" : "optional"
+                      }`}
                   >
                     {cost.required ? "Required" : "Optional"}
                   </span>
@@ -135,9 +140,6 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
                 </div>
               </div>
             ))}
-            <Link href="/apply" className="btn btn--primary">
-              Apply Now
-            </Link>
           </div>
         </div>
       </section>

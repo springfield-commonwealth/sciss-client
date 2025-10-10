@@ -130,7 +130,6 @@ jobs:
           fi
 
       - name: Setup SSH
-        if: ${{ secrets.HOSTINGER_SSH_KEY }}
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.HOSTINGER_SSH_KEY }}
@@ -155,15 +154,14 @@ jobs:
 
       - name: Deploy to Production
         id: deploy
-        env:
-          HOSTINGER_USER: ${{ secrets.HOSTINGER_USER }}
-          HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST }}
-          HOSTINGER_PATH: ${{ secrets.HOSTINGER_PATH }}
-          HOSTINGER_SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
         run: |
           echo "Deploying to production..."
           
           # Check if all required secrets are set
+          HOSTINGER_USER="${{ secrets.HOSTINGER_USER }}"
+          HOSTINGER_HOST="${{ secrets.HOSTINGER_HOST }}"
+          HOSTINGER_PATH="${{ secrets.HOSTINGER_PATH }}"
+          HOSTINGER_SSH_PORT="${{ secrets.HOSTINGER_SSH_PORT }}"
           if [ -z "$HOSTINGER_USER" ] || [ -z "$HOSTINGER_HOST" ] || [ -z "$HOSTINGER_PATH" ] || [ -z "$HOSTINGER_SSH_PORT" ]; then
             echo "⚠️ Required deployment secrets not configured. Skipping deployment."
             echo "Build completed successfully but deployment was skipped."

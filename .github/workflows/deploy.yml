@@ -139,7 +139,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.HOSTINGER_SSH_KEY }}
         continue-on-error: false
-        if: ${{ secrets.HOSTINGER_SSH_KEY != '' }}
+        if: ${{ secrets.HOSTINGER_SSH_KEY }}
 
       - name: Add known hosts
         run: |

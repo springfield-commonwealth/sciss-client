@@ -105,12 +105,12 @@ const HomeDailyRhythmSection = [
 
 
 const HomePresidentLetter = [
-  "We are delighted to extend our warmest greetings to you as you embark on this exciting journey with us. As you prepare to join us for an amazing three weeks, we want to assure you that you are about to embark on an enriching and memorable experience.",
-  "At Springfield Commonwealth International Summer School, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. Whether you're joining us to explore new subjects, enhance your skills, or simply make the most of your summer break, we have crafted a program that we believe will exceed your expectations.",
-  "Throughout your time with us, you will have the opportunity to engage with passionate instructors who are experts in their fields, participate in hands-on activities that bring learning to life, and connect with peers from diverse backgrounds who share your enthusiasm for knowledge and discovery.",
-  "In addition to our academic curriculum, we have curated a range of extracurricular activities designed to complement your learning experience and ensure that your time with us is both fulfilling and enjoyable. From outdoor adventures to creative workshops, there will be something for everyone to enjoy.",
-  "As you prepare for your arrival, please take some time to review the enclosed materials, including your schedule, packing list, and any additional information you may need to make the most of your time with us. Should you have any questions or require further assistance, please do not hesitate to reach out to our team. We are here to support you every step of the way.",
-  "Once again, welcome to Springfield Commonwealth International Summer School. We are thrilled to have you join us, and we look forward to helping you make the most of your summer!",
+  "Welcome to Springfield Commonwealth International Summer School! As you prepare to join us for two transformative weeks, we're excited to share an enriching and memorable experience with you.",
+  "Our mission is simple: foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. Our program blends expert instruction with hands-on activities and meaningful connections with peers from around the world.",
+  "You'll engage with passionate instructors who are experts in their fields, participate in real-world projects that bring learning to life, and build lasting friendships with students who share your enthusiasm for discovery.",
+  "Beyond academics, we've curated activities designed to complement your learning—from university visits and outdoor adventures to creative workshops and evening showcases. There's something for everyone.",
+  "Please review your schedule, packing list, and additional materials before arrival. If you have questions, our team is here to support you every step of the way.",
+  "Once again, welcome to SCISS. We're thrilled to have you join us and look forward to an amazing summer together!",
 ];
 
 export {

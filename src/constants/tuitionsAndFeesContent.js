@@ -1,24 +1,46 @@
 const TuitionsSessions = [
   {
     name: "Session 1",
-    dates: "June 29 - July 18, 2025",
-    duration: "21 Days",
+    dates: "June 14 - June 26, 2026",
+    duration: "2 weeks",
     status: "Open for Registration",
     highlights: [
       "Peak summer weather",
-      "Maximum university visits",
+      "University visits",
       "Full program offerings",
     ],
   },
   {
     name: "Session 2",
-    dates: "July 20 - August 8, 2025",
-    duration: "21 Days",
+    dates: "June 28 - July 10, 2026",
+    duration: "2 weeks",
     status: "Open for Registration",
     highlights: [
-      "Extended summer experience",
-      "Advanced project work",
-      "Alumni networking events",
+      "Summer immersion",
+      "Project development",
+      "Campus excursions",
+    ],
+  },
+  {
+    name: "Session 3",
+    dates: "July 12 - July 24, 2026",
+    duration: "2 weeks",
+    status: "Open for Registration",
+    highlights: [
+      "Mid-summer showcase",
+      "Advanced workshops",
+      "Cultural experiences",
+    ],
+  },
+  {
+    name: "Session 4",
+    dates: "July 26 - August 7, 2026",
+    duration: "2 weeks",
+    status: "Open for Registration",
+    highlights: [
+      "Summer finale",
+      "Capstone presentations",
+      "Final celebrations",
     ],
   },
 ];
@@ -27,18 +49,18 @@ const TuitionsIncludedServices = [
   {
     category: "Academic Program",
     items: [
-      "3-week intensive academic program in chosen track",
+      "2-week intensive academic program in chosen track",
       "Expert instruction from industry professionals",
       "All course materials and textbooks",
       "Laboratory and technology access",
-      "Academic certification upon completion",
+      "Certificate of completion",
       "Portfolio development support",
     ],
   },
   {
     category: "Accommodation & Meals",
     items: [
-      "Shared dormitory accommodation for 21 days",
+      "Shared dormitory accommodation (typically 4-5 per room)",
       "Three nutritious meals per day",
       "Healthy snacks and beverages",
       "24/7 residential supervision",
@@ -49,12 +71,12 @@ const TuitionsIncludedServices = [
   {
     category: "Activities & Excursions",
     items: [
-      "Harvard University campus visit and tour",
-      "MIT research facilities tour",
-      "Yale University cultural experience",
-      "Basketball Hall of Fame visit",
-      "Museum visits and cultural excursions",
-      "Sports and recreational activities",
+      "Boston full-day trip (Harvard & MIT tours + city exploration)",
+      "Yale & Brown University campus visits with admissions sessions",
+      "Springfield highlights: Basketball Hall of Fame, museums",
+      "Regional attractions and cultural excursions",
+      "Evening activities and weekend events",
+      "Sports and recreational programs",
     ],
   },
   {

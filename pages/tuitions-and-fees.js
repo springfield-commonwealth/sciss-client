@@ -119,7 +119,7 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Application Process</h2>
-            <p>Simple steps to secure your spot at SCISS 2025</p>
+            <p>Simple steps to secure your spot at SCISS 2026</p>
           </div>
 
           <div className="application-timeline">

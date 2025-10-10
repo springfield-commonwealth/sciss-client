@@ -68,11 +68,9 @@
 }
 
 .program-header {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-500) 0%,
-    var(--color-primary-600) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary-500) 0%,
+      var(--color-primary-600) 100%);
   color: var(--color-text-white);
   padding: 2rem;
 }
@@ -211,7 +209,7 @@
   .program-detail-card {
     max-width: none;
   }
-} 
+}
 
 /* Course Directory Styles - Epic 5: Story 5.2 Individual Content Pages */
 .course-directory {
@@ -390,4 +388,333 @@
   .course-preview-content {
     padding-top: 0;
   }
-} 
+}
+
+/* ========================================
+   ACADEMICS OVERVIEW - SIMPLE & BOLD DESIGN
+   ======================================== */
+
+.academics-overview {
+  background: var(--color-bg-primary);
+  padding: var(--space-12) 0;
+}
+
+.academics-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.academics-intro-card {
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-primary-500);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.academics-intro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.intro-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.academics-intro-card h3 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.academics-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.academics-benefits-list li {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-gray-200);
+  line-height: 1.6;
+}
+
+.academics-benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.academics-benefits-list strong {
+  color: var(--color-primary-600);
+  font-weight: 600;
+}
+
+/* ========================================
+   ACADEMIC TRACKS - NUMBERED CARDS
+   ======================================== */
+
+.academics-courses {
+  padding: var(--space-12) 0;
+}
+
+.academics-track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.academics-track-card {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--color-primary-500);
+  position: relative;
+}
+
+.academics-track-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-left-width: 6px;
+}
+
+.track-number {
+  position: absolute;
+  top: -12px;
+  right: var(--space-5);
+  background: var(--color-primary-500);
+  color: var(--color-text-white);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.academics-track-card h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  padding-right: var(--space-10);
+}
+
+.academics-track-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.academics-track-card strong {
+  color: var(--color-primary-600);
+  font-weight: 600;
+}
+
+/* ========================================
+   ACADEMIC FEATURES - ICON GRID
+   ======================================== */
+
+.academics-features {
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-bg-light) 100%);
+  padding: var(--space-12) 0;
+}
+
+.academics-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.academics-feature-item {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.academics-feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-badge {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.academics-feature-item h4 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.academics-feature-item p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 976px) {
+  .academics-intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .academics-track-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .academics-features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .academics-overview,
+  .academics-courses,
+  .academics-features {
+    padding: var(--space-8) 0;
+  }
+
+  .intro-icon {
+    font-size: 2.5rem;
+  }
+
+  .academics-intro-card h3 {
+    font-size: var(--text-xl);
+  }
+
+  .academics-benefits-list li {
+    font-size: var(--text-base);
+  }
+
+  .track-number {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-lg);
+    top: -10px;
+    right: var(--space-4);
+  }
+
+  .academics-track-card {
+    padding: var(--space-6);
+  }
+
+  .academics-track-card h3 {
+    font-size: var(--text-lg);
+    padding-right: var(--space-8);
+  }
+
+  .academics-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-badge {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========================================
+   QUICK FACTS SECTION
+   ======================================== */
+
+.academics-quick-facts {
+  margin-top: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--color-primary-500);
+}
+
+.academics-quick-facts h3 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.quick-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.quick-fact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary-500);
+  transition: all 0.3s ease;
+}
+
+.quick-fact-item:hover {
+  background: var(--color-primary-50);
+  transform: translateX(4px);
+}
+
+.fact-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.quick-fact-item strong {
+  color: var(--color-primary-600);
+  margin-right: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .quick-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academics-quick-facts {
+    padding: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .quick-fact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .fact-icon {
+    font-size: 1.75rem;
+  }
+}

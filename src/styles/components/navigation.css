@@ -97,11 +97,12 @@
 
 .mobile-menu-toggle svg {
   width: 32px;
-  height: 32px;
+  height: 36px;
   stroke-width: 1.75;
   fill: currentColor;
   stroke: currentColor;
   transition: all 0.3s ease;
+  transform: scaleY(1.1);
 }
 
 .mobile-menu-toggle:hover {
@@ -114,8 +115,14 @@
 }
 
 .mobile-menu-toggle:active {
+  color: #000;
   transform: scale(0.95);
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-toggle:active svg {
+  fill: #000;
+  stroke: #000;
 }
 
 .mobile-menu-toggle:focus-visible {

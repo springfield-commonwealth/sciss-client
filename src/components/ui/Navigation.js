@@ -13,6 +13,19 @@ import Link from "next/link";
 
 const navLinks = [
   {
+    label: "About Us",
+    href: "/about-us",
+    children: [
+      { href: "/about-us", label: "Overview" },
+      { href: "/about-us/why-sciss", label: "Why SCISS" },
+      { href: "/about-us#mission", label: "Mission & Vision" },
+      { href: "/about-us#values", label: "Our Values" },
+      { href: "/staff", label: "Meet Our Staff" },
+      { href: "/photo-galleries", label: "Photo Galleries" },
+      { href: "/about-us#typical-week", label: "Typical Week" },
+    ],
+  },
+  {
     label: "Program",
     href: "/program-overview",
     children: [
@@ -31,40 +44,13 @@ const navLinks = [
     ],
   },
   {
-    label: "Life & Activities",
+    label: "Experience",
     href: "/life-activities", // Overview page
     children: [
-      { href: "/life-activities", label: "Overview" },
+      { href: "/life-activities", label: "Life & Activities" },
+      { href: "/day-trips", label: "Day Trips" },
       { href: "/activities", label: "Browse All Activities" },
-    ],
-  },
-  {
-    label: "Day Trips",
-    href: "/day-trips", // Overview page
-    children: [
-      { href: "/day-trips", label: "Overview" },
       { href: "/trips", label: "Browse All Trips" },
-      { href: "/trips?category=University Visits", label: "University Visits" },
-      {
-        href: "/trips?category=Cultural Experiences",
-        label: "Cultural Experiences",
-      },
-      { href: "/trips?category=Educational Tours", label: "Educational Tours" },
-    ],
-  },
-  {
-    label: "Photo Galleries",
-    href: "/photo-galleries",
-  },
-  {
-    label: "About Us",
-    href: "/about-us",
-    children: [
-      { href: "/about-us#mission", label: "Mission & Vision" },
-      { href: "/about-us#values", label: "Our Values" },
-      { href: "/about-us/why-sciss", label: "Why SCISS" },
-      { href: "/about-us#typical-week", label: "Typical Week" },
-      { href: "/staff", label: "Meet Our Staff" },
     ],
   },
 ];

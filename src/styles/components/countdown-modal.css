@@ -120,7 +120,7 @@
 
 .countdown-modal__title-highlight {
   display: block;
-  color: var(--color-primary-600);
+  color: var(--color-accent-500);
   font-weight: var(--font-extrabold);
 }
 

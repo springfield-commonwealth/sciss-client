@@ -98,7 +98,7 @@
 .mobile-menu-toggle svg {
   width: 32px;
   height: 32px;
-  stroke-width: 2.5;
+  stroke-width: 1.75;
   fill: currentColor;
   stroke: currentColor;
   transition: all 0.3s ease;

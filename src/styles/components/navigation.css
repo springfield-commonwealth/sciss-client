@@ -83,36 +83,31 @@
 
 .mobile-menu-toggle {
   display: none;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
-  border: 2px solid rgba(59, 130, 246, 0.2);
+  background: none;
+  border: none;
   cursor: pointer;
-  color: var(--color-primary-600);
-  padding: 12px;
-  border-radius: var(--radius-lg);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 52px;
-  min-width: 52px;
+  color: #000;
+  padding: 8px;
+  transition: color 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
 }
 
 .mobile-menu-toggle svg {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
+  stroke-width: 2.5;
 }
 
 .mobile-menu-toggle:hover {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.1));
-  border-color: rgba(59, 130, 246, 0.4);
-  color: var(--color-primary-700);
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  color: var(--color-primary-500);
 }
 
 .mobile-menu-toggle:active {
-  transform: scale(0.98);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.95);
+  transition: all 0.1s ease;
 }
 
 .mobile-menu-toggle:focus-visible {

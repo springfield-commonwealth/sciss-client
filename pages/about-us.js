@@ -180,6 +180,46 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         secondaryCtaLink="/program-overview"
       />
 
+      {/* Quick Facts */}
+      <section className="section bg-light">
+        <div className="container">
+          <SectionHeader
+            title="Quick Facts"
+            description="Our mission, team, campus, and what makes SCISS different"
+            align="center"
+            showDivider={true}
+          />
+
+          <div className="quick-facts-grid">
+            <div className="fact-card">
+              <div className="fact-icon">🎓</div>
+              <h3>Grades 4–12</h3>
+              <p>Junior (G4–G7) and Senior (G8–G12) groups</p>
+            </div>
+            <div className="fact-card">
+              <div className="fact-icon">📅</div>
+              <h3>June–August 2026</h3>
+              <p>Residential sessions with flexible scheduling</p>
+            </div>
+            <div className="fact-card">
+              <div className="fact-icon">🎯</div>
+              <h3>6 Tracks</h3>
+              <p>Investment • Entrepreneurship • AI/Robotics • Leadership • Music/Stage • Sports</p>
+            </div>
+            <div className="fact-card">
+              <div className="fact-icon">🏆</div>
+              <h3>Real Outcomes</h3>
+              <p>Capstone presentations, portfolios, certificates</p>
+            </div>
+            <div className="fact-card">
+              <div className="fact-icon">🏠</div>
+              <h3>Campus Boarding</h3>
+              <p>Full supervision with residential care</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className="section" id="mission">
         <div className="container">

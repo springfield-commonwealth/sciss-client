@@ -75,6 +75,46 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
         secondaryCtaLink="#health"
       />
 
+      {/* Parent Peace-of-Mind */}
+      <section className="section bg-light">
+        <div className="container">
+          <SectionHeader
+            title="Parent Peace-of-Mind"
+            description="Everything parents need to know for confidence and comfort"
+            align="center"
+            showDivider={true}
+          />
+
+          <div className="parent-peace-grid">
+            <div className="peace-card">
+              <div className="peace-icon">🏠</div>
+              <h3>Dedicated Dorm Staff</h3>
+              <p>Clear guidelines and 24/7 supervision with caring residential staff</p>
+            </div>
+            <div className="peace-card">
+              <div className="peace-icon">👥</div>
+              <h3>Age-Appropriate Cohorts</h3>
+              <p>Junior (G4–G7) and Senior (G8–G12) groups ensure right pace and support</p>
+            </div>
+            <div className="peace-card">
+              <div className="peace-icon">⚖️</div>
+              <h3>Balanced Days</h3>
+              <p>Academics, projects, sports, and downtime for healthy development</p>
+            </div>
+            <div className="peace-card">
+              <div className="peace-icon">🏥</div>
+              <h3>Safety Protocols</h3>
+              <p>On-site first-aid and established escalation protocols</p>
+            </div>
+            <div className="peace-card">
+              <div className="peace-icon">📞</div>
+              <h3>Regular Updates</h3>
+              <p>Open communication with dedicated parent contact channel</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Overview for Parents */}
       <section className="section">
         <div className="container">

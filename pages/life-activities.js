@@ -1,6 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Highlights from "@/components/sections/Highlights";
+import { SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { HomeHighlights } from "@/constants/homeContent";
 import { LifeActivitiesHero } from "@/constants/images";
@@ -46,6 +47,58 @@ const LifeActivities = ({
         title="Experience Highlights"
         desc="Discover what makes SCISS summer experience truly special"
       />
+
+      {/* Student Experience Overview */}
+      <section className="section">
+        <div className="container">
+          <SectionHeader
+            title="Student Experience"
+            description="Residential life, daily schedule, activities, trips to Harvard/MIT/Yale, and what students gain"
+            align="center"
+            showDivider={true}
+          />
+
+          <div className="student-experience-grid">
+            <div className="experience-card">
+              <div className="experience-icon">🎯</div>
+              <h3>What Your Child Gains</h3>
+              <ul className="experience-list">
+                <li>Confidence through daily presentations</li>
+                <li>Real portfolio pieces for schools</li>
+                <li>Global peer collaboration</li>
+                <li>Mentorship and readiness skills</li>
+              </ul>
+            </div>
+
+            <div className="experience-card">
+              <div className="experience-icon">⏰</div>
+              <h3>Daily Rhythm</h3>
+              <div className="daily-schedule">
+                <div className="schedule-item">
+                  <span className="time">8:00-12:00</span>
+                  <span className="activity">Learning</span>
+                </div>
+                <div className="schedule-item">
+                  <span className="time">1:15-3:00</span>
+                  <span className="activity">Projects</span>
+                </div>
+                <div className="schedule-item">
+                  <span className="time">3:15-5:30</span>
+                  <span className="activity">Electives</span>
+                </div>
+                <div className="schedule-item">
+                  <span className="time">6:00-7:00</span>
+                  <span className="activity">Dinner</span>
+                </div>
+                <div className="schedule-item">
+                  <span className="time">7:15-9:30</span>
+                  <span className="activity">Evening programs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Popular Activities Preview */}
       <section className="section bg-light">

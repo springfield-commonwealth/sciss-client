@@ -72,6 +72,51 @@ const Academics = ({
         secondaryCtaLink="/apply"
       />
 
+      {/* Program Highlights - Parent Focused */}
+      <section className="section bg-light">
+        <div className="container">
+          <SectionHeader
+            title="6 Specialized Tracks"
+            description="Choose one track per session, or combine tracks across sessions"
+            align="center"
+            showDivider={true}
+          />
+
+          <div className="program-highlights-grid">
+            <div className="program-highlight-card">
+              <div className="highlight-icon">💼</div>
+              <h3>Investment</h3>
+              <p>Markets, analysis, portfolio building</p>
+            </div>
+            <div className="program-highlight-card">
+              <div className="highlight-icon">🚀</div>
+              <h3>Entrepreneurship</h3>
+              <p>Idea to pitch, prototyping, MVP</p>
+            </div>
+            <div className="program-highlight-card">
+              <div className="highlight-icon">🤖</div>
+              <h3>AI & Robotics</h3>
+              <p>Code systems, sensors, models</p>
+            </div>
+            <div className="program-highlight-card">
+              <div className="highlight-icon">🎤</div>
+              <h3>Leadership & Debate</h3>
+              <p>Communication, stage presence</p>
+            </div>
+            <div className="program-highlight-card">
+              <div className="highlight-icon">🎭</div>
+              <h3>Music & Stage Arts</h3>
+              <p>Ensembles, movement, stagecraft</p>
+            </div>
+            <div className="program-highlight-card">
+              <div className="highlight-icon">⚽</div>
+              <h3>Sports</h3>
+              <p>Basketball & Soccer development</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Overview Section - Simple & Bold */}
       <section className="section academics-overview">
         <div className="container">

@@ -408,5 +408,73 @@
     grid-template-columns: 1fr;
   }
 
+}
 
+/* Parent Peace-of-Mind Grid */
+.parent-peace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.peace-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.peace-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-200);
+}
+
+.peace-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.peace-card h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.peace-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .parent-peace-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .peace-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .peace-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent-peace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .peace-card {
+    padding: 1.25rem;
+  }
 } 

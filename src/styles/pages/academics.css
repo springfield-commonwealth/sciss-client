@@ -1160,3 +1160,68 @@
     font-size: 1.5rem;
   }
 }
+
+/* Program Highlights Grid - Parent Focused */
+.program-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.program-highlight-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.program-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-200);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.program-highlight-card h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.program-highlight-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .program-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .program-highlight-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .highlight-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}

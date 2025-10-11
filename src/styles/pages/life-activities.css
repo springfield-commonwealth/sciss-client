@@ -1,0 +1,138 @@
+/* Life Activities Page Styles */
+
+/* Student Experience Section */
+.student-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-200);
+}
+
+.experience-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.experience-card h3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-list li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.experience-list li::before {
+  content: "✓";
+  color: var(--color-primary-500);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+}
+
+/* Daily Schedule */
+.daily-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary-500);
+}
+
+.schedule-item .time {
+  font-weight: var(--font-bold);
+  color: var(--color-primary-600);
+  font-size: 0.95rem;
+}
+
+.schedule-item .activity {
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .experience-icon {
+    font-size: 2.5rem;
+  }
+
+  .experience-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .schedule-item .time {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-card {
+    padding: 1rem;
+  }
+
+  .experience-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .schedule-item {
+    padding: 0.75rem;
+  }
+}

@@ -61,9 +61,9 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
           <div className="countdown-modal__header">
             <div className="countdown-modal__badge">Summer 2026</div>
             <h2 className="countdown-modal__title">
-              Give Your Child <br />
+              Secure Your Spot <br />
               <span className="countdown-modal__title-highlight">
-                A Summer That Counts
+                Before It's Too Late
               </span>
             </h2>
             <p className="countdown-modal__subtitle">

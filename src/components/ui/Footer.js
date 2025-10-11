@@ -1,5 +1,5 @@
-import Link from "next/link";
 import SocialLink from "@/components/ui/SocialLink";
+import Link from "next/link";
 
 const Footer = () => {
   const socialLinks = [

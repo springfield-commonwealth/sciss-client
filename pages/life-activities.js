@@ -2,8 +2,8 @@ import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import Highlights from "@/components/sections/Highlights";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { LifeActivitiesHero } from "@/constants/images";
 import { HomeHighlights } from "@/constants/homeContent";
+import { LifeActivitiesHero } from "@/constants/images";
 import {
   LifeActivitiesFitnessPrograms,
   LifeActivitiesRecreationalActivities,
@@ -41,8 +41,8 @@ const LifeActivities = ({
       />
 
       {/* Key Highlights */}
-      <Highlights 
-        highlights={HomeHighlights} 
+      <Highlights
+        highlights={HomeHighlights}
         title="Experience Highlights"
         desc="Discover what makes SCISS summer experience truly special"
       />

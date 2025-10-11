@@ -1,6 +1,5 @@
 import Layout from "@/components/layouts/Layout";
 import { SectionHeader } from "@/components/ui";
-import FooterCTA from "@/components/ui/FooterCTA";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 const galleryImages = [
@@ -61,8 +60,8 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
 
           <div className="photo-gallery-grid">
             {galleryImages.map((image, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="photo-gallery-item"
                 style={{ '--animation-delay': index }}
               >
@@ -105,15 +104,15 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
 export default PhotoGalleries;
 
 export async function getStaticProps() {
-    const breadcrumbs = generateBreadcrumbs([
-        { label: "Home", href: "/" },
-        { label: "Photo Galleries", href: "/photo-galleries", active: true },
-    ]);
+  const breadcrumbs = generateBreadcrumbs([
+    { label: "Home", href: "/" },
+    { label: "Photo Galleries", href: "/photo-galleries", active: true },
+  ]);
 
-    return {
-        props: {
-            breadcrumbs,
-        },
-    };
+  return {
+    props: {
+      breadcrumbs,
+    },
+  };
 }
 

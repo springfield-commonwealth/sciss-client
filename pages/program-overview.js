@@ -129,12 +129,6 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
           />
           <WeeklySchedule />
 
-          <div className="schedule-notes">
-            <p><strong>Notes:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms.</p>
-            <p className="note">
-              <em>Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.</em>
-            </p>
-          </div>
         </div>
       </section>
 

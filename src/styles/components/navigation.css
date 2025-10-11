@@ -97,12 +97,12 @@
 
 .mobile-menu-toggle svg {
   width: 32px;
-  height: 36px;
-  stroke-width: 1.75;
+  height: 38px;
+  stroke-width: 1.5;
   fill: currentColor;
   stroke: currentColor;
   transition: all 0.3s ease;
-  transform: scaleY(1.1);
+  transform: scaleY(1.15);
 }
 
 .mobile-menu-toggle:hover {

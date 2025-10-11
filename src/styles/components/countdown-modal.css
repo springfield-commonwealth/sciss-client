@@ -282,6 +282,13 @@
   border-color: var(--color-accent-600);
 }
 
+/* Different hover color for Learn More button */
+.countdown-modal__actions .btn--secondary:hover {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-700);
+  color: white;
+}
+
 /* Footer Note */
 .countdown-modal__footer-note {
   text-align: center;

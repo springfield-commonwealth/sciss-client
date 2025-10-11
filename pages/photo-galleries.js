@@ -81,23 +81,23 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
               </div>
             ))}
           </div>
-
-          <div className="photo-gallery-cta">
-            <h3>Ready to Create Your Own Memories?</h3>
-            <p>Join SCISS Summer 2026 and be part of our next success story</p>
-            <div className="photo-gallery-cta-buttons">
-              <a href="/apply" className="btn btn--primary btn--large">
-                Apply Now
-              </a>
-              <a href="/program-overview" className="btn btn--secondary btn--large">
-                Learn More
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
-      <FooterCTA linkTitle="View Programs" link="/program-overview" />
+      <div className="photo-gallery-cta">
+        <div className="container">
+          <h3>Ready to Create Your Own Memories?</h3>
+          <p>Join SCISS Summer 2026 and be part of our next success story</p>
+          <div className="photo-gallery-cta-buttons">
+            <a href="/apply" className="btn btn--primary btn--large">
+              Apply Now
+            </a>
+            <a href="/program-overview" className="btn btn--secondary btn--large">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

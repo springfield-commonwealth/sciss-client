@@ -110,13 +110,10 @@
 /* CTA Section at Bottom - Match Footer CTA Style */
 .photo-gallery-cta {
   text-align: center;
-  margin-top: 5rem;
   padding: var(--space-40) 0;
   background: var(--color-accent-500);
   color: white;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
+  margin: 0;
 }
 
 .photo-gallery-cta h3 {

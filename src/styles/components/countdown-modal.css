@@ -276,6 +276,12 @@
   min-height: 56px;
 }
 
+/* Simple hover color change for Apply Now button */
+.countdown-modal__actions .btn--primary:hover {
+  background: var(--color-accent-500);
+  border-color: var(--color-accent-600);
+}
+
 /* Footer Note */
 .countdown-modal__footer-note {
   text-align: center;

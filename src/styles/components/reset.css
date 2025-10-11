@@ -30,46 +30,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Global Scrollbar Styling - Match Modal Style */
-html {
+/* Global Scrollbar Styling - Match Modal Blue Style */
+* {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-border-medium) var(--color-bg-primary);
+  scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
 }
 
-html::-webkit-scrollbar {
-  width: 6px;
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-html::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-html::-webkit-scrollbar-thumb {
-  background: var(--color-border-medium);
-  border-radius: 3px;
+*::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
   transition: background 0.3s ease;
 }
 
-html::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-300);
-}
-
-/* Also apply to body for compatibility */
-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--color-border-medium);
-  border-radius: 3px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-300);
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
 }
 
 /* ==========================================================================

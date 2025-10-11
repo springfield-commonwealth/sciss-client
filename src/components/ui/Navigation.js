@@ -88,9 +88,14 @@ const Navigation = ({ showBreadcrumb = false, breadcrumbs = [] }) => {
     <>
       <header className={`header${isScrolled ? " scrolled" : ""}`}>
         <nav className="nav">
-          <Link href="/" className="logo">
-            <img src={LogoBlack} alt="SC International Summer School" />
-          </Link>
+          <div className="nav-brand">
+            <Link href="/" className="logo">
+              <img src={LogoBlack} alt="SC International Summer School" />
+            </Link>
+            <Link href="/" className="nav-home-link">
+              Home
+            </Link>
+          </div>
           {isMobile ? (
             <>
               <button

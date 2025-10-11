@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CountdownModal = ({ isOpen, onClose, targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -8,6 +8,8 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
     seconds: 0,
   });
   const [isExpired, setIsExpired] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -37,6 +39,24 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
+  // Handle scroll detection for X button color change
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (!modal || !isOpen) return;
+
+    const handleScroll = () => {
+      // Change color when scrolled more than 50px
+      if (modal.scrollTop > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    modal.addEventListener('scroll', handleScroll);
+    return () => modal.removeEventListener('scroll', handleScroll);
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -45,10 +65,10 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
       <div className="countdown-modal-backdrop" onClick={onClose} />
 
       {/* Modal */}
-      <div className="countdown-modal">
+      <div className="countdown-modal" ref={modalRef}>
         {/* Close Button */}
         <button
-          className="countdown-modal__close"
+          className={`countdown-modal__close ${isScrolled ? 'countdown-modal__close--scrolled' : ''}`}
           onClick={onClose}
           aria-label="Close modal"
         >

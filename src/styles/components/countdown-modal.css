@@ -68,7 +68,7 @@
   font-size: 1.5rem;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,10 +78,24 @@
   margin-bottom: -40px;
 }
 
+/* X button when scrolled - black background with gray X */
+.countdown-modal__close--scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .countdown-modal__close:hover {
   background: rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
   color: var(--color-text-primary);
+}
+
+/* When scrolled, hover effect */
+.countdown-modal__close--scrolled:hover {
+  background: rgba(0, 0, 0, 0.95);
+  color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.15);
 }
 
 /* Modal Content */

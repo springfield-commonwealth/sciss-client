@@ -1,7 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
-import Highlights from "@/components/sections/Highlights";
 import Testimonials from "@/components/sections/Testimonials";
 import {
   SectionHeader,
@@ -9,7 +8,6 @@ import {
 import CountdownModal from "@/components/ui/CountdownModal";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
-  HomeHighlights,
   HomePresidentLetter,
   HomeTestimonials,
   HomeWelcomeParagraphs
@@ -71,8 +69,6 @@ const HomePage = ({ breadcrumbs = [] }) => {
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
       />
-
-      <Highlights highlights={HomeHighlights} />
 
       {/* Main Categories - Simple & Bold */}
       <section className="section bg-light">

@@ -1,7 +1,9 @@
 import Layout from "@/components/layouts/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import Highlights from "@/components/sections/Highlights";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { LifeActivitiesHero } from "@/constants/images";
+import { HomeHighlights } from "@/constants/homeContent";
 import {
   LifeActivitiesFitnessPrograms,
   LifeActivitiesRecreationalActivities,
@@ -36,6 +38,13 @@ const LifeActivities = ({
         ctaLink="/activities"
         secondaryCtaText="Apply Now"
         secondaryCtaLink="/apply"
+      />
+
+      {/* Key Highlights */}
+      <Highlights 
+        highlights={HomeHighlights} 
+        title="Experience Highlights"
+        desc="Discover what makes SCISS summer experience truly special"
       />
 
       {/* Popular Activities Preview */}

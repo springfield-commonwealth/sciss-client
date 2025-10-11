@@ -83,26 +83,35 @@
 
 .mobile-menu-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+  border: 2px solid rgba(59, 130, 246, 0.2);
   cursor: pointer;
-  color: var(--color-text-primary);
-  padding: var(--mobile-toggle-padding, 8px);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-  min-height: var(--touch-target-size, 44px);
-  min-width: var(--touch-target-size, 44px);
+  color: var(--color-primary-600);
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 52px;
+  min-width: 52px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.mobile-menu-toggle svg {
+  width: 28px;
+  height: 28px;
 }
 
 .mobile-menu-toggle:hover {
-  background: rgba(31, 86, 164, 0.1);
-  color: var(--color-primary-500);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.1));
+  border-color: rgba(59, 130, 246, 0.4);
+  color: var(--color-primary-700);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
 }
 
 .mobile-menu-toggle:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
   transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

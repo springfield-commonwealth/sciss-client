@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import { SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
@@ -50,20 +49,12 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Memories That Last a Lifetime"
-        subtitle="Photo Galleries"
-        description="Witness the SCISS experience through moments of growth, achievement, and joy"
-        backgroundImage={{ src: "/images/slider/home/harvard-trip.JPG", alt: "SCISS students" }}
-      />
-
       {/* Main Gallery Grid */}
       <section className="section photo-galleries-section">
         <div className="container">
           <SectionHeader
-            title="Summer 2026 Highlights"
-            description="Academics • Sports • Trips • Performances"
+            title="Summer 2025 Highlights"
+            description="See the fun and growth from 2025 - your child's 2026 experience awaits!"
             align="center"
             showDivider={true}
           />

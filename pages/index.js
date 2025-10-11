@@ -33,7 +33,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
   useEffect(() => {
     // Check if modal has been shown in this session
     const hasSeenModal = sessionStorage.getItem("sciss-countdown-modal-seen");
-    
+
     if (!hasSeenModal) {
       // Show modal after a short delay for better UX
       const timer = setTimeout(() => {
@@ -65,7 +65,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
       <CountdownModal
         isOpen={showModal}
         onClose={handleCloseModal}
-        targetDate="2026-06-29T00:00:00"
+        targetDate="2026-06-14T00:00:00"
       />
 
       {/* Hero Section */}

@@ -55,9 +55,11 @@ const Footer = () => {
       <div className="footerContainer grid grid--4">
         <div className="footerSection">
           <h4>Sessions 2026</h4>
-          <p>Session 1: June 29 - July 18</p>
-          <p>Session 2: July 20 - August 8</p>
-          <p>Early Bird Deadline: April 1st</p>
+          <p>Session 1: June 14 - June 26</p>
+          <p>Session 2: June 28 - July 10</p>
+          <p>Session 3: July 12 - July 24</p>
+          <p>Session 4: July 26 - August 7</p>
+          <p style={{ marginTop: '0.5rem', color: '#f59e0b', fontWeight: 600 }}>Early Bird Deadline: April 1st</p>
         </div>
         <div className="footerSection">
           <h4>Quick Links</h4>

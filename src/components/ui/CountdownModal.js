@@ -116,7 +116,7 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
               <div>
                 <div className="countdown-modal__detail-label">Session 1</div>
                 <div className="countdown-modal__detail-value">
-                  June 29 - July 18
+                  June 14 - June 26
                 </div>
               </div>
             </div>
@@ -125,11 +125,29 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
               <div>
                 <div className="countdown-modal__detail-label">Session 2</div>
                 <div className="countdown-modal__detail-value">
-                  July 20 - August 8
+                  June 28 - July 10
                 </div>
               </div>
             </div>
             <div className="countdown-modal__detail">
+              <span className="countdown-modal__detail-icon">📅</span>
+              <div>
+                <div className="countdown-modal__detail-label">Session 3</div>
+                <div className="countdown-modal__detail-value">
+                  July 12 - July 24
+                </div>
+              </div>
+            </div>
+            <div className="countdown-modal__detail">
+              <span className="countdown-modal__detail-icon">📅</span>
+              <div>
+                <div className="countdown-modal__detail-label">Session 4</div>
+                <div className="countdown-modal__detail-value">
+                  July 26 - August 7
+                </div>
+              </div>
+            </div>
+            <div className="countdown-modal__detail countdown-modal__detail--highlight">
               <span className="countdown-modal__detail-icon">⭐</span>
               <div>
                 <div className="countdown-modal__detail-label">

@@ -36,7 +36,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
       setShowModal(true);
       // Lock body scroll when modal opens
       document.body.classList.add("modal-open");
-    }, 1000);
+    }, 500); // 0.5 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -47,6 +47,14 @@
   align-items: center;
 }
 
+.feature-section__layout--reverse .feature-section__media {
+  order: 2;
+}
+
+.feature-section__layout--reverse .feature-section__text {
+  order: 1;
+}
+
 .feature-section__media {
   position: relative;
   border-radius: var(--radius-xl);

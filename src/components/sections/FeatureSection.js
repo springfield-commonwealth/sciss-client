@@ -6,6 +6,7 @@ const FeatureSection = ({
   paragraphs,
   image,
   imageWidth,
+  imagePosition = "left", // "left" or "right"
 }) => {
   // Handle new API with features array
   if (features && Array.isArray(features)) {
@@ -33,7 +34,7 @@ const FeatureSection = ({
         )}
 
         <div className="feature-section__content">
-          <div className="feature-section__layout">
+          <div className={`feature-section__layout ${imagePosition === "right" ? "feature-section__layout--reverse" : ""}`}>
             {image && (
               <div className="feature-section__media">
                 <figure className="feature-section__figure">

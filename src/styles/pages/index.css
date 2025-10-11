@@ -174,3 +174,30 @@
     margin: var(--space-3);
   }
 }
+
+/* Welcome Section - Enhanced Header Styling */
+.home-page .feature-section:first-of-type .feature-section__header::after {
+  display: none;
+  /* Remove blue divider bar */
+}
+
+.home-page .feature-section:first-of-type .feature-section__title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-primary-700);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .home-page .feature-section:first-of-type .feature-section__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .feature-section:first-of-type .feature-section__title {
+    font-size: var(--text-2xl);
+  }
+}

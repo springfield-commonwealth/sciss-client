@@ -1,3 +1,5 @@
+import { SectionHeader } from "../ui";
+
 const Testimonials = ({ testimonials, title, desc }) => {
   // Handle missing testimonials prop
   if (!testimonials || !Array.isArray(testimonials)) {
@@ -7,10 +9,12 @@ const Testimonials = ({ testimonials, title, desc }) => {
   return (
     <section className="section testimonials-section">
       <div className="container">
-        <div className="text--center mb--lg">
-          {title && <h2>{title}</h2>}
-          {desc && <p>{desc}</p>}
-        </div>
+        <SectionHeader
+          title={title}
+          description={desc}
+          align="center"
+          showDivider={true}
+        />
         <div className="grid grid--3">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="card testimonial-card">

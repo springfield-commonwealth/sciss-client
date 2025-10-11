@@ -31,25 +31,18 @@ const HomePage = ({ breadcrumbs = [] }) => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Check if modal has been shown in this session
-    const hasSeenModal = sessionStorage.getItem("sciss-countdown-modal-seen");
+    // Show modal every time the page loads/refreshes
+    const timer = setTimeout(() => {
+      setShowModal(true);
+      // Lock body scroll when modal opens
+      document.body.classList.add("modal-open");
+    }, 1000);
 
-    if (!hasSeenModal) {
-      // Show modal after a short delay for better UX
-      const timer = setTimeout(() => {
-        setShowModal(true);
-        // Lock body scroll when modal opens
-        document.body.classList.add("modal-open");
-      }, 1000);
-
-      return () => clearTimeout(timer);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const handleCloseModal = () => {
     setShowModal(false);
-    // Mark as seen for this session
-    sessionStorage.setItem("sciss-countdown-modal-seen", "true");
     // Unlock body scroll
     document.body.classList.remove("modal-open");
   };

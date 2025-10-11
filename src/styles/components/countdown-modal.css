@@ -76,6 +76,9 @@
   margin-right: 1rem;
   margin-top: 1rem;
   margin-bottom: -40px;
+  padding-top: 0;
+  padding-left: 1px;
+  line-height: 0.9;
 }
 
 /* X button when scrolled - black background with gray X */

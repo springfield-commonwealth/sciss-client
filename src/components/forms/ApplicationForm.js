@@ -520,7 +520,7 @@ const ApplicationForm = () => {
             <option value="">Select</option>
             {/* You can replace these with formOptions.yearApplyingForOptions if available */}
             <option value="2024">2024</option>
-            <option value="2025">2025</option>
+            <option value="2026">2026</option>
             <option value="2026">2026</option>
           </select>
         </label>

@@ -88,7 +88,7 @@
   cursor: pointer;
   color: #000;
   padding: 8px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   min-height: 44px;
   min-width: 44px;
   align-items: center;
@@ -99,10 +99,18 @@
   width: 32px;
   height: 32px;
   stroke-width: 2.5;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: all 0.3s ease;
 }
 
 .mobile-menu-toggle:hover {
   color: var(--color-primary-500);
+}
+
+.mobile-menu-toggle:hover svg {
+  fill: var(--color-primary-500);
+  stroke: var(--color-primary-500);
 }
 
 .mobile-menu-toggle:active {

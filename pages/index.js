@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import ContentSlider from "@/components/sections/ContentSlider";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Highlights from "@/components/sections/Highlights";
@@ -8,7 +7,6 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import CountdownModal from "@/components/ui/CountdownModal";
-import FeatureVideo from "@/components/ui/FeatureVideo";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
   HomeHighlights,
@@ -20,9 +18,7 @@ import {
   HomeFeature,
   HomeFeaturePresidents,
   HomeHero,
-  HomeSliderImages,
 } from "@/constants/images";
-import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -76,22 +72,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         image={HomeFeature}
       />
 
-      <FeatureVideo
-        VideoObject={WelcomeVideo}
-        autoPlay={false}
-        muted={true}
-        loop={true}
-        playsInline={true}
-        playBackSpeed={0.7}
-      />
-
       <Highlights highlights={HomeHighlights} />
-
-      <ContentSlider
-        heading="Unique Summer Experience with unforgettable memories"
-        text="Our program combines daily academic coursework with organized, supervised activities to create a comprehensive experience. Each student who joins our community develops essential life skills, builds enduring friendships, and becomes a valued member of our international community"
-        images={HomeSliderImages}
-      />
 
       {/* Main Categories - Simple & Bold */}
       <section className="section bg-light">

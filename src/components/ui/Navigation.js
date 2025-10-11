@@ -53,6 +53,10 @@ const navLinks = [
     ],
   },
   {
+    label: "Photo Galleries",
+    href: "/photo-galleries",
+  },
+  {
     label: "About Us",
     href: "/about-us",
     children: [

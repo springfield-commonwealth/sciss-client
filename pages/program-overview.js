@@ -118,135 +118,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section className="section">
-        <div className="container">
-          <SectionHeader
-            title="Sports & Electives"
-            description="Choose what excites you. Train at your level."
-            align="center"
-            showDivider
-          />
-
-          <div className="grid grid--3">
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">⚽</div>
-                <h3>Sports</h3>
-                <div className="category-details">
-                  <p><strong>Basketball</strong> (our core), soccer, volleyball, badminton, table tennis, hiking, golf, Zumba, yoga, rowing, gym.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">🎨</div>
-                <h3>Electives</h3>
-                <div className="category-details">
-                  <p>Fitness & dance, arts & crafts, digital design, creative workshops.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">📝</div>
-                <h3>Upon Request</h3>
-                <div className="category-details">
-                  <p>SAT/ACT prep, music/vocal tutoring, 3D printing.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="content-note">
-            <p>
-              <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety.
-            </p>
-            <p className="note">
-              <em>Some options (e.g., golf) may carry a small fee.</em>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Activities & Trips Section - Unique Layout */}
-      <section className="section activities-trips-section">
-        <div className="container">
-          <SectionHeader
-            title="Activities & Trips"
-            description="Campus fun nightly. World-class destinations weekly."
-            align="center"
-            showDivider
-          />
-
-          <div className="activities-trips-container">
-            {/* Left Side - Evening Activities */}
-            <div className="activity-block activity-block--evening">
-              <div className="activity-block__icon-badge">🎉</div>
-              <h3 className="activity-block__title">Evening Activities</h3>
-              <div className="activity-tags">
-                <span className="activity-tag">Movie nights</span>
-                <span className="activity-tag">Game tournaments</span>
-                <span className="activity-tag">Themed parties</span>
-                <span className="activity-tag">Cultural events</span>
-                <span className="activity-tag">Campfires</span>
-                <span className="activity-tag">Talent shows</span>
-                <span className="activity-tag">Scavenger hunts</span>
-                <span className="activity-tag">Trivia challenges</span>
-              </div>
-            </div>
-
-            {/* Right Side - Signature Trips */}
-            <div className="activity-block activity-block--trips">
-              <div className="activity-block__icon-badge">🎓</div>
-              <h3 className="activity-block__title">Signature Trips</h3>
-              <div className="trips-list">
-                <div className="trip-item">
-                  <span className="trip-icon">🏛️</span>
-                  <div className="trip-content">
-                    <strong>Boston</strong>
-                    <p>Harvard & MIT tours + city exploration</p>
-                  </div>
-                </div>
-                <div className="trip-item">
-                  <span className="trip-icon">🎓</span>
-                  <div className="trip-content">
-                    <strong>Yale & Brown</strong>
-                    <p>Campus visits + admissions sessions</p>
-                  </div>
-                </div>
-                <div className="trip-item">
-                  <span className="trip-icon">🏀</span>
-                  <div className="trip-content">
-                    <strong>Springfield</strong>
-                    <p>Basketball Hall of Fame, museums</p>
-                  </div>
-                </div>
-                <div className="trip-item">
-                  <span className="trip-icon">✨</span>
-                  <div className="trip-content">
-                    <strong>Local Attractions</strong>
-                    <p>Varies by session</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Safety Footer Banner */}
-          <div className="safety-banner">
-            <div className="safety-banner__icon">🛡️</div>
-            <div className="safety-banner__content">
-              <strong>Safety First:</strong> All activities and trips are fully supervised. Transportation, tickets, and meals organized. Final schedule sent before arrival.
-              <span className="safety-banner__note">Trips subject to weather and availability.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Weekly Schedule Section - Different Style */}
+      {/* Weekly Schedule Section */}
       <section className="section weekly-overview-section">
         <div className="container">
           <SectionHeader
@@ -256,8 +128,16 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
             showDivider
           />
           <WeeklySchedule />
+
+          <div className="schedule-notes">
+            <p><strong>Notes:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms.</p>
+            <p className="note">
+              <em>Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.</em>
+            </p>
+          </div>
         </div>
       </section>
+
       <FooterCTA linkTitle="Apply Now" link="/apply" />
     </Layout>
   );

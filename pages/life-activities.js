@@ -100,6 +100,59 @@ const LifeActivities = ({
         </div>
       </section>
 
+      {/* Sports & Electives Section */}
+      <section className="section">
+        <div className="container">
+          <SectionHeader
+            title="Sports & Electives"
+            description="Choose what excites you. Train at your level."
+            align="center"
+            showDivider
+          />
+
+          <div className="grid grid--3">
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">⚽</div>
+                <h3>Sports</h3>
+                <div className="category-details">
+                  <p><strong>Basketball</strong> (our core), soccer, volleyball, badminton, table tennis, hiking, golf, Zumba, yoga, rowing, gym.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">🎨</div>
+                <h3>Electives</h3>
+                <div className="category-details">
+                  <p>Fitness & dance, arts & crafts, digital design, creative workshops.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="category-card">
+              <div className="category-card__content">
+                <div className="category-card__icon">📝</div>
+                <h3>Upon Request</h3>
+                <div className="category-details">
+                  <p>SAT/ACT prep, music/vocal tutoring, 3D printing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="content-note">
+            <p>
+              <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety.
+            </p>
+            <p className="note">
+              <em>Some options (e.g., golf) may carry a small fee.</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Popular Activities Preview */}
       <section className="section bg-light">
         <div className="container">
@@ -238,6 +291,41 @@ const LifeActivities = ({
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Evening Activities Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <SectionHeader
+            title="Evening Activities"
+            description="Campus fun nightly - making every evening memorable"
+            align="center"
+            showDivider
+          />
+
+          <div className="activity-block activity-block--evening">
+            <div className="activity-block__icon-badge">🎉</div>
+            <h3 className="activity-block__title">Evening Activities</h3>
+            <div className="activity-tags">
+              <span className="activity-tag">Movie nights</span>
+              <span className="activity-tag">Game tournaments</span>
+              <span className="activity-tag">Themed parties</span>
+              <span className="activity-tag">Cultural events</span>
+              <span className="activity-tag">Campfires</span>
+              <span className="activity-tag">Talent shows</span>
+              <span className="activity-tag">Scavenger hunts</span>
+              <span className="activity-tag">Trivia challenges</span>
+            </div>
+          </div>
+
+          {/* Safety Footer Banner */}
+          <div className="safety-banner">
+            <div className="safety-banner__icon">🛡️</div>
+            <div className="safety-banner__content">
+              <strong>Safety First:</strong> All activities are fully supervised with clear conduct norms.
+            </div>
           </div>
         </div>
       </section>

@@ -180,6 +180,60 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
+      {/* Signature Trips Section */}
+      <section className="section">
+        <div className="container">
+          <div className="text--center mb--lg">
+            <h2>Signature Trips</h2>
+            <p>World-class destinations weekly</p>
+          </div>
+
+          <div className="activity-block activity-block--trips">
+            <div className="activity-block__icon-badge">🎓</div>
+            <h3 className="activity-block__title">Signature Trips</h3>
+            <div className="trips-list">
+              <div className="trip-item">
+                <span className="trip-icon">🏛️</span>
+                <div className="trip-content">
+                  <strong>Boston</strong>
+                  <p>Harvard & MIT tours + city exploration</p>
+                </div>
+              </div>
+              <div className="trip-item">
+                <span className="trip-icon">🎓</span>
+                <div className="trip-content">
+                  <strong>Yale & Brown</strong>
+                  <p>Campus visits + admissions sessions</p>
+                </div>
+              </div>
+              <div className="trip-item">
+                <span className="trip-icon">🏀</span>
+                <div className="trip-content">
+                  <strong>Springfield</strong>
+                  <p>Basketball Hall of Fame, museums</p>
+                </div>
+              </div>
+              <div className="trip-item">
+                <span className="trip-icon">✨</span>
+                <div className="trip-content">
+                  <strong>Local Attractions</strong>
+                  <p>Varies by session</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Safety Footer Banner */}
+          <div className="safety-banner">
+            <div className="safety-banner__icon">🛡️</div>
+            <div className="safety-banner__content">
+              <strong>Safety First:</strong> All trips are fully supervised. Transportation, tickets, and meals organized. Final schedule sent before arrival.
+              <span className="safety-banner__note">Trips subject to weather and availability.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FooterCTA linkTitle="Academic Programs" link="/academics" />
     </Layout>
   );

@@ -7,6 +7,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import {
   SectionHeader,
 } from "@/components/ui";
+import CountdownModal from "@/components/ui/CountdownModal";
 import FeatureVideo from "@/components/ui/FeatureVideo";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
@@ -24,8 +25,34 @@ import {
 import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const HomePage = ({ breadcrumbs = [] }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // Check if modal has been shown in this session
+    const hasSeenModal = sessionStorage.getItem("sciss-countdown-modal-seen");
+    
+    if (!hasSeenModal) {
+      // Show modal after a short delay for better UX
+      const timer = setTimeout(() => {
+        setShowModal(true);
+        // Lock body scroll when modal opens
+        document.body.classList.add("modal-open");
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    // Mark as seen for this session
+    sessionStorage.setItem("sciss-countdown-modal-seen", "true");
+    // Unlock body scroll
+    document.body.classList.remove("modal-open");
+  };
   return (
     <Layout
       title="SCISS - Springfield Commonwealth International Summer School"
@@ -34,6 +61,13 @@ const HomePage = ({ breadcrumbs = [] }) => {
       breadcrumbs={breadcrumbs}
       className="home-page"
     >
+      {/* Countdown Modal - First Session 2026 */}
+      <CountdownModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        targetDate="2026-06-29T00:00:00"
+      />
+
       {/* Hero Section */}
       <HeroSection
         title="Give your child a global summer that counts."

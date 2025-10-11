@@ -25,6 +25,7 @@
 @import './components/featurevideo.css';
 @import './components/imageslider.css';
 @import './components/application-form.css';
+@import './components/countdown-modal.css';
 
 /* Section styles */
 @import './sections/hero-section.css';

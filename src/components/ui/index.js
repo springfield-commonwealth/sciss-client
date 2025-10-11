@@ -3,6 +3,7 @@
 export { default as Carousel } from "./Carousel";
 export { default as CarouselCard } from "./CarouselCard";
 export { default as ChevronDown } from "./ChevronDown";
+export { default as CountdownModal } from "./CountdownModal";
 export { default as DesktopNav } from "./DesktopNav";
 export { default as EnhancedButton } from "./EnhancedButton";
 export { default as FeatureVideo } from "./FeatureVideo";

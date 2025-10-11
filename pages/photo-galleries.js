@@ -1,50 +1,112 @@
 import Layout from "@/components/layouts/Layout";
-import ContentSlider from "@/components/sections/ContentSlider";
+import HeroSection from "@/components/sections/HeroSection";
 import { SectionHeader } from "@/components/ui";
-import FeatureVideo from "@/components/ui/FeatureVideo";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { HomeSliderImages } from "@/constants/images";
-import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+
+const galleryImages = [
+  {
+    src: "/images/featured/school-building-0.JPG",
+    alt: "Springfield Commonwealth Campus",
+    category: "Campus Life",
+  },
+  {
+    src: "/images/slider/home/flute performance 2.JPG",
+    alt: "Student performing flute on stage",
+    category: "Performing Arts",
+  },
+  {
+    src: "/images/slider/home/fencing.JPG",
+    alt: "Student fencing during summer camp activity",
+    category: "Sports & Activities",
+  },
+  {
+    src: "/images/slider/home/archery.JPG",
+    alt: "Student practicing archery outdoors",
+    category: "Sports & Activities",
+  },
+  {
+    src: "/images/slider/home/rowing.jpg",
+    alt: "Students rowing on the river",
+    category: "Sports & Activities",
+  },
+  {
+    src: "/images/slider/home/investment-presentation.JPG",
+    alt: "Student giving investment presentation",
+    category: "Academics",
+  },
+  {
+    src: "/images/slider/home/harvard-trip.JPG",
+    alt: "Group photo during Harvard trip",
+    category: "Field Trips",
+  },
+];
 
 const PhotoGalleries = ({ breadcrumbs = [] }) => {
   return (
     <Layout
       title="Photo Galleries - SCISS"
-      description="Explore photos and videos from SCISS summer sessions. See students learning, creating, and making unforgettable memories."
+      description="Explore photos from SCISS summer sessions. See students learning, creating, and making unforgettable memories."
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Page Header */}
-      <section className="section" style={{ paddingTop: 'var(--nav-height)', background: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)' }}>
+      {/* Hero Section */}
+      <HeroSection
+        title="Memories That Last a Lifetime"
+        subtitle="Photo Galleries"
+        description="Witness the SCISS experience through moments of growth, achievement, and joy"
+        backgroundImage={{ src: "/images/slider/home/harvard-trip.JPG", alt: "SCISS students" }}
+      />
+
+      {/* Main Gallery Grid */}
+      <section className="section photo-galleries-section">
         <div className="container">
           <SectionHeader
-            title="Photo & Video Galleries"
-            description="Capture the SCISS experience through our collection of photos and videos"
+            title="Summer 2026 Highlights"
+            description="Academics • Sports • Trips • Performances"
             align="center"
             showDivider={true}
           />
+
+          <div className="photo-gallery-grid">
+            {galleryImages.map((image, index) => (
+              <div 
+                key={index} 
+                className="photo-gallery-item"
+                style={{ '--animation-delay': index }}
+              >
+                <div className="photo-gallery-image-wrapper">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="photo-gallery-image"
+                    loading="lazy"
+                  />
+                  <div className="photo-gallery-overlay">
+                    <span className="photo-gallery-category">{image.category}</span>
+                    <p className="photo-gallery-caption">{image.alt}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="photo-gallery-cta">
+            <h3>Ready to Create Your Own Memories?</h3>
+            <p>Join SCISS Summer 2026 and be part of our next success story</p>
+            <div className="photo-gallery-cta-buttons">
+              <a href="/apply" className="btn btn--primary btn--large">
+                Apply Now
+              </a>
+              <a href="/program-overview" className="btn btn--secondary btn--large">
+                Learn More
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Feature Video Section */}
-      <FeatureVideo
-        VideoObject={WelcomeVideo}
-        autoPlay={false}
-        muted={true}
-        loop={true}
-        playsInline={true}
-        playBackSpeed={0.7}
-      />
-
-      {/* Content Slider - Unique Summer Experience */}
-      <ContentSlider
-        heading="Unique Summer Experience with unforgettable memories"
-        text="Our program combines daily academic coursework with organized, supervised activities to create a comprehensive experience. Each student who joins our community develops essential life skills, builds enduring friendships, and becomes a valued member of our international community"
-        images={HomeSliderImages}
-      />
-
-      <FooterCTA linkTitle="Apply Now" link="/apply" />
+      <FooterCTA linkTitle="View Programs" link="/program-overview" />
     </Layout>
   );
 };
@@ -52,15 +114,15 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
 export default PhotoGalleries;
 
 export async function getStaticProps() {
-  const breadcrumbs = generateBreadcrumbs([
-    { label: "Home", href: "/" },
-    { label: "Photo Galleries", href: "/photo-galleries", active: true },
-  ]);
+    const breadcrumbs = generateBreadcrumbs([
+        { label: "Home", href: "/" },
+        { label: "Photo Galleries", href: "/photo-galleries", active: true },
+    ]);
 
-  return {
-    props: {
-      breadcrumbs,
-    },
-  };
+    return {
+        props: {
+            breadcrumbs,
+        },
+    };
 }
 

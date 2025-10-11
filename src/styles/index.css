@@ -50,6 +50,7 @@
 /* NEW: Epic 5 Content Architecture Styles */
 @import './pages/activities.css';
 @import './pages/trips.css';
+@import './pages/photo-galleries.css';
 
 /* Universal Directory System - DRY & SOLID Implementation */
 @import './components/directory-system.css';

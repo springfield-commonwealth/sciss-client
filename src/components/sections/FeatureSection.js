@@ -7,6 +7,7 @@ const FeatureSection = ({
   image,
   imageWidth,
   imagePosition = "left", // "left" or "right"
+  showDivider = true, // Show/hide blue divider bar under heading
 }) => {
   // Handle new API with features array
   if (features && Array.isArray(features)) {
@@ -28,7 +29,7 @@ const FeatureSection = ({
     <section className="feature-section">
       <div className="container">
         {heading && (
-          <div className="feature-section__header">
+          <div className={`feature-section__header ${!showDivider ? 'feature-section__header--no-divider' : ''}`}>
             <h2 className="feature-section__title">{heading}</h2>
           </div>
         )}

@@ -64,13 +64,15 @@ const HomePage = ({ breadcrumbs = [] }) => {
         heading="Welcome to Springfield Commonwealth International Summer School"
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
-        imagePosition="right"
+        imagePosition="left"
+        showDivider={true}
       />
 
       <FeatureSection
         heading="Letter From the President"
         image={HomeFeaturePresidents}
         paragraphs={HomePresidentLetter}
+        imagePosition="right"
       />
 
       {/* Testimonials Section */}

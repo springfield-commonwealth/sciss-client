@@ -34,6 +34,10 @@
   border-radius: var(--radius-sm);
 }
 
+.feature-section__header--no-divider::after {
+  display: none;
+}
+
 .feature-section__content {
   max-width: 1200px;
   margin: 0 auto;

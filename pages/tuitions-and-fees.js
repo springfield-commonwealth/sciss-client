@@ -1,7 +1,5 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { TuitionsAndFeesHero } from "@/constants/images";
 import {
   TuitionsAdditionalCosts,
   TuitionsApplicationProcess,
@@ -9,6 +7,7 @@ import {
   TuitionsSessions,
 } from "@/constants/tuitionsAndFeesContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 
 const TuitionsAndFees = ({ breadcrumbs = [] }) => {
   return (
@@ -18,17 +17,19 @@ const TuitionsAndFees = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Tuitions & Fees"
-        subtitle="Invest in Your Future"
-        description="Discover our competitive pricing, flexible payment options, and scholarship opportunities for an exceptional summer learning experience."
-        backgroundImage={TuitionsAndFeesHero}
-        ctaText="Application Process"
-        ctaLink="#apply"
-      // secondaryCtaText="View Payment Plans"
-      // secondaryCtaLink="#payment"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">Tuitions & Fees</h1>
+            <p className="page-subtitle">Invest in Your Future</p>
+            <p className="page-description">Discover our competitive pricing, flexible payment options, and scholarship opportunities for an exceptional summer learning experience.</p>
+            <div className="page-header-cta">
+              <Link href="#apply" className="btn btn--primary">Application Process</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Program Pricing */}
       <section className="section">

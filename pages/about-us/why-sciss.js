@@ -1,9 +1,8 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import { SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { AboutUsHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 
 const WhyScissPage = ({ breadcrumbs = [] }) => {
     return (
@@ -13,19 +12,21 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             showBreadcrumb={true}
             breadcrumbs={breadcrumbs}
         >
-            {/* Hero Section */}
-            <HeroSection
-                title="Why SCISS"
-                subtitle="Give your child a global summer that counts"
-                description="SCISS (Springfield Commonwealth International Summer School) is a residential program for Grades 4–12 that blends big ideas with practical doing. Across June–August 2026, students live and learn on campus with caring 24/7 supervision, structured days, and memorable weekend excursions. They'll build real projects, grow confidence, and make friends from around the world—then come home proud, skilled, and excited for what's next."
-                backgroundImage={AboutUsHero}
-                ctaText="Apply Now"
-                ctaLink="/apply"
-                secondaryCtaText="Download 2026 Brochure"
-                secondaryCtaLink="/about-us/why-sciss/"
-                tertiaryCtaText="Join a Parent Info Session"
-                tertiaryCtaLink="/about-us/why-sciss/"
-            />
+            {/* Page Header Section */}
+            <section className="section page-header-section">
+                <div className="container">
+                    <div className="page-header-content">
+                        <h1 className="page-title">Why SCISS</h1>
+                        <p className="page-subtitle">Give your child a global summer that counts</p>
+                        <p className="page-description">SCISS (Springfield Commonwealth International Summer School) is a residential program for Grades 4–12 that blends big ideas with practical doing. Across June–August 2026, students live and learn on campus with caring 24/7 supervision, structured days, and memorable weekend excursions. They'll build real projects, grow confidence, and make friends from around the world—then come home proud, skilled, and excited for what's next.</p>
+                        <div className="page-header-cta">
+                            <Link href="/apply" className="btn btn--primary">Apply Now</Link>
+                            <Link href="/about-us/why-sciss/" className="btn btn--secondary">Download 2026 Brochure</Link>
+                            <Link href="/about-us/why-sciss/" className="btn btn--tertiary">Join a Parent Info Session</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* What Makes SCISS Different */}
             <section className="section bg-light" id="what-makes-different">

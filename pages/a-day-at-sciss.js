@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
 import {
@@ -8,7 +7,6 @@ import {
   ADayAtScissDiningInfo,
   ADayAtScissWeeklyVariations,
 } from "@/constants/aDayAtScissContent";
-import { ADayAtScissHero } from "@/constants/images";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 const ADayAtSciss = ({ breadcrumbs = [] }) => {
@@ -19,17 +17,20 @@ const ADayAtSciss = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="A Day at SCISS"
-        subtitle="Experience the Magic"
-        description="Discover what makes every day at SCISS special - from morning assembly to evening activities, and everything in between."
-        backgroundImage={ADayAtScissHero}
-        ctaText="View Daily Schedule"
-        ctaLink="#schedule"
-        secondaryCtaText="Weekly Overview"
-        secondaryCtaLink="#weekly"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">A Day at SCISS</h1>
+            <p className="page-subtitle">Experience the Magic</p>
+            <p className="page-description">Discover what makes every day at SCISS special - from morning assembly to evening activities, and everything in between.</p>
+            <div className="page-header-cta">
+              <Link href="#schedule" className="btn btn--primary">View Daily Schedule</Link>
+              <Link href="#weekly" className="btn btn--secondary">Weekly Overview</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Daily Schedule */}
       <section id="schedule" className="section">

@@ -1,10 +1,8 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
 import Carousel from "@/components/ui/Carousel";
 import FooterCTA from "@/components/ui/FooterCTA";
 import WeeklySchedule from "@/components/ui/WeeklySchedule";
-import { ProgramOverviewHero } from "@/constants/images";
 import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
@@ -35,17 +33,16 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Program Overview"
-        subtitle="Excellence in Education"
-        description="A comprehensive overview of our academic programs, daily structure, and what makes SCISS a transformative summer experience."
-        backgroundImage={ProgramOverviewHero}
-        // ctaText="View Academic Programs"
-        ctaLink="#program-carousel"
-      // secondaryCtaText="Apply Today"
-      // secondaryCtaLink="/tuitions-and-fees"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">Program Overview</h1>
+            <p className="page-subtitle">Excellence in Education</p>
+            <p className="page-description">A comprehensive overview of our academic programs, daily structure, and what makes SCISS a transformative summer experience.</p>
+          </div>
+        </div>
+      </section>
 
       {/* Mission & Vision */}
       <section className="section">

@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import { FeatureGrid, SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
@@ -63,17 +62,20 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Parent Information"
-        subtitle="Your Peace of Mind Matters"
-        description="Comprehensive information to help you prepare for your teen's SCISS experience and feel confident about their safety and wellbeing."
-        backgroundImage="/images/academics-hero.jpg"
-        ctaText="Safety & Security"
-        ctaLink="#safety"
-        secondaryCtaText="Health Requirements"
-        secondaryCtaLink="#health"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">Parent Information</h1>
+            <p className="page-subtitle">Your Peace of Mind Matters</p>
+            <p className="page-description">Comprehensive information to help you prepare for your teen's SCISS experience and feel confident about their safety and wellbeing.</p>
+            <div className="page-header-cta">
+              <Link href="#safety" className="btn btn--primary">Safety & Security</Link>
+              <Link href="#health" className="btn btn--secondary">Health Requirements</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Parent Peace-of-Mind */}
       <section className="section bg-light">

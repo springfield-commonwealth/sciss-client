@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import Carousel from "@/components/ui/Carousel";
 import FooterCTA from "@/components/ui/FooterCTA";
 import {
@@ -7,7 +6,6 @@ import {
   DayTripsCulturalTrips,
   DayTripsTravelInfo
 } from "@/constants/dayTripsContent";
-import { DayTripsHero } from "@/constants/images";
 import { getPopularTrips, getUniversityTrips } from "@/lib/content/trips";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
@@ -20,17 +18,20 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Unforgettable Day Trips"
-        subtitle="Explore & Discover"
-        description="Journey beyond the classroom with exciting trips to world-renowned universities, cultural landmarks, and fun destinations throughout New England."
-        backgroundImage={DayTripsHero}
-        ctaText="Explore All Trips"
-        ctaLink="/trips"
-        secondaryCtaText="Apply Now"
-        secondaryCtaLink="/apply"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">Unforgettable Day Trips</h1>
+            <p className="page-subtitle">Explore & Discover</p>
+            <p className="page-description">Journey beyond the classroom with exciting trips to world-renowned universities, cultural landmarks, and fun destinations throughout New England.</p>
+            <div className="page-header-cta">
+              <Link href="/trips" className="btn btn--primary">Explore All Trips</Link>
+              <Link href="/apply" className="btn btn--secondary">Apply Now</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Featured University Trips */}
       <section className="section bg-light">

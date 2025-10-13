@@ -1,10 +1,8 @@
 import Layout from "@/components/layouts/Layout";
-import HeroSection from "@/components/sections/HeroSection";
 import Highlights from "@/components/sections/Highlights";
 import { SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { HomeHighlights } from "@/constants/homeContent";
-import { LifeActivitiesHero } from "@/constants/images";
 import {
   LifeActivitiesFitnessPrograms,
   LifeActivitiesRecreationalActivities,
@@ -29,17 +27,20 @@ const LifeActivities = ({
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="Life & Activities"
-        subtitle="Beyond the Classroom"
-        description="Discover a world of sports, fitness, arts, and recreational activities designed to enrich your summer experience and build lasting friendships."
-        backgroundImage={LifeActivitiesHero}
-        ctaText="Explore All Activities"
-        ctaLink="/activities"
-        secondaryCtaText="Apply Now"
-        secondaryCtaLink="/apply"
-      />
+      {/* Page Header Section */}
+      <section className="section page-header-section">
+        <div className="container">
+          <div className="page-header-content">
+            <h1 className="page-title">Life & Activities</h1>
+            <p className="page-subtitle">Beyond the Classroom</p>
+            <p className="page-description">Discover a world of sports, fitness, arts, and recreational activities designed to enrich your summer experience and build lasting friendships.</p>
+            <div className="page-header-cta">
+              <Link href="/activities" className="btn btn--primary">Explore All Activities</Link>
+              <Link href="/apply" className="btn btn--secondary">Apply Now</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Key Highlights */}
       <Highlights

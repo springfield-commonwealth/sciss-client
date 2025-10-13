@@ -75,32 +75,81 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Quick Facts Section */}
-      <section className="section bg-light">
+      {/* Quick Facts Section - Enhanced Modern Design */}
+      <section className="section quick-facts-section">
         <div className="container">
-          <div className="academics-quick-facts">
-            <h3>Quick Facts</h3>
-            <div className="quick-facts-grid">
-              <div className="quick-fact-item">
-                <span className="fact-icon">🎓</span>
-                <strong>Grades:</strong> 4–12 (Junior & Senior cohorts)
+          <div className="quick-facts-wrapper">
+            <div className="quick-facts-intro">
+              <span className="section-badge">At a Glance</span>
+              <h2 className="quick-facts-title">Quick Facts</h2>
+              <p className="quick-facts-subtitle">Everything you need to know about SCISS academics</p>
+            </div>
+
+            <div className="quick-facts-container">
+              <div className="quick-fact-item" data-category="academics">
+                <div className="fact-icon-circle">
+                  <span className="fact-emoji">🎓</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">Grades</span>
+                  <span className="fact-value">4–12</span>
+                  <span className="fact-meta">Junior & Senior cohorts</span>
+                </div>
               </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🏠</span>
-                <strong>Format:</strong> Residential (boarding)
+
+              <div className="quick-fact-item" data-category="format">
+                <div className="fact-icon-circle">
+                  <span className="fact-emoji">🏠</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">Format</span>
+                  <span className="fact-value">Residential</span>
+                  <span className="fact-meta">Full boarding experience</span>
+                </div>
               </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🏆</span>
-                <strong>Outcome:</strong> Portfolio artifact + capstone + certificate
+
+              <div className="quick-fact-item" data-category="outcome">
+                <div className="fact-icon-circle">
+                  <span className="fact-emoji">🏆</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">What You'll Earn</span>
+                  <span className="fact-value">Real Portfolio</span>
+                  <span className="fact-meta">Artifact + capstone + certificate</span>
+                </div>
               </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">💰</span>
-                <strong>Signature Feature:</strong> $1M Virtual Investment Competition
+
+              <div className="quick-fact-item featured-fact" data-category="signature">
+                <div className="featured-badge">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Signature Program
+                </div>
+                <div className="fact-icon-circle featured-icon">
+                  <span className="fact-emoji">💰</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">Exclusive Challenge</span>
+                  <span className="fact-value">$1M Investment</span>
+                  <span className="fact-meta">Virtual stock competition</span>
+                </div>
               </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🎖️</span>
-                <strong>Bonus:</strong> Renowned Business Competition guidance
+
+              <div className="quick-fact-item" data-category="bonus">
+                <div className="fact-icon-circle">
+                  <span className="fact-emoji">🎖️</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">Bonus Opportunity</span>
+                  <span className="fact-value">Competition Prep</span>
+                  <span className="fact-meta">Elite business competitions</span>
+                </div>
               </div>
+            </div>
+
+            <div className="quick-facts-footer">
+              <p>📍 <strong>Location:</strong> Springfield, MA | ⏰ <strong>Duration:</strong> 2-week sessions | 🌍 <strong>Students from:</strong> 15+ countries</p>
             </div>
           </div>
         </div>

@@ -75,46 +75,32 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Program Highlights - Parent Focused */}
+      {/* Quick Facts Section */}
       <section className="section bg-light">
         <div className="container">
-          <SectionHeader
-            title="6 Specialized Tracks"
-            description="Choose one track per session, or combine tracks across sessions"
-            align="center"
-            showDivider={true}
-          />
-
-          <div className="program-highlights-grid">
-            <div className="program-highlight-card">
-              <div className="highlight-icon">💼</div>
-              <h3>Investment</h3>
-              <p>Markets, analysis, portfolio building</p>
-            </div>
-            <div className="program-highlight-card">
-              <div className="highlight-icon">🚀</div>
-              <h3>Entrepreneurship</h3>
-              <p>Idea to pitch, prototyping, MVP</p>
-            </div>
-            <div className="program-highlight-card">
-              <div className="highlight-icon">🤖</div>
-              <h3>AI & Robotics</h3>
-              <p>Code systems, sensors, models</p>
-            </div>
-            <div className="program-highlight-card">
-              <div className="highlight-icon">🎤</div>
-              <h3>Leadership & Debate</h3>
-              <p>Communication, stage presence</p>
-            </div>
-            <div className="program-highlight-card">
-              <div className="highlight-icon">🎭</div>
-              <h3>Music & Stage Arts</h3>
-              <p>Ensembles, movement, stagecraft</p>
-            </div>
-            <div className="program-highlight-card">
-              <div className="highlight-icon">⚽</div>
-              <h3>Sports</h3>
-              <p>Basketball & Soccer development</p>
+          <div className="academics-quick-facts">
+            <h3>Quick Facts</h3>
+            <div className="quick-facts-grid">
+              <div className="quick-fact-item">
+                <span className="fact-icon">🎓</span>
+                <strong>Grades:</strong> 4–12 (Junior & Senior cohorts)
+              </div>
+              <div className="quick-fact-item">
+                <span className="fact-icon">🏠</span>
+                <strong>Format:</strong> Residential (boarding)
+              </div>
+              <div className="quick-fact-item">
+                <span className="fact-icon">🏆</span>
+                <strong>Outcome:</strong> Portfolio artifact + capstone + certificate
+              </div>
+              <div className="quick-fact-item">
+                <span className="fact-icon">💰</span>
+                <strong>Signature Feature:</strong> $1M Virtual Investment Competition
+              </div>
+              <div className="quick-fact-item">
+                <span className="fact-icon">🎖️</span>
+                <strong>Bonus:</strong> Renowned Business Competition guidance
+              </div>
             </div>
           </div>
         </div>
@@ -246,32 +232,6 @@ const Academics = ({
             </div>
           </div>
 
-          {/* Quick Facts Section */}
-          <div className="academics-quick-facts">
-            <h3>Quick Facts</h3>
-            <div className="quick-facts-grid">
-              <div className="quick-fact-item">
-                <span className="fact-icon">🎓</span>
-                <strong>Grades:</strong> 4–12 (Junior & Senior cohorts)
-              </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🏠</span>
-                <strong>Format:</strong> Residential (boarding)
-              </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🏆</span>
-                <strong>Outcome:</strong> Portfolio artifact + capstone + certificate
-              </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">💰</span>
-                <strong>Signature Feature:</strong> $1M Virtual Investment Competition
-              </div>
-              <div className="quick-fact-item">
-                <span className="fact-icon">🎖️</span>
-                <strong>Bonus:</strong> Renowned Business Competition guidance
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

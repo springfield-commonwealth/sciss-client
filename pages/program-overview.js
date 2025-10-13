@@ -17,6 +17,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
+      <div className="padding-top-100"></div>
       {/* Page Header Section */}
       <section className="section page-header-section">
         <div className="container">
@@ -28,11 +29,34 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
+      {/* Section Navigation */}
+      <section className="section section-nav">
+        <div className="container">
+          <div className="section-nav-content">
+            <h3>Jump to Section:</h3>
+            <div className="section-nav-links">
+              <button
+                className="section-nav-link"
+                onClick={() => document.getElementById('schedule-section')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Daily and Weekly Schedule
+              </button>
+              <button
+                className="section-nav-link"
+                onClick={() => document.getElementById('activity-highlights')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Activity Highlights
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 1. DAILY AND WEEKLY SCHEDULE - Grid Layout */}
       <section className="section">
         <div className="container">
           <div className="program-overview-container">
-            <div className="simple-section schedule-section">
+            <div className="simple-section schedule-section" id="schedule-section">
               <h2>Daily and Weekly Schedule</h2>
               <p>Each weekday morning, students participate in academic classes of their choice. Here's your week at a glance:</p>
 
@@ -76,7 +100,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
       </section>
 
       {/* 2. ACTIVITY HIGHLIGHTS - Tabbed Interface */}
-      <section className="section bg-light">
+      <section className="section bg-light" id="activity-highlights">
         <div className="container">
           <div className="program-overview-container">
             <div className="simple-section">

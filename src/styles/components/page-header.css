@@ -30,7 +30,7 @@
 }
 
 .page-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
     font-weight: var(--font-bold);
     color: var(--color-text-primary);
     margin-bottom: var(--space-4);
@@ -39,7 +39,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .page-subtitle {
@@ -241,6 +240,17 @@
 /* Section styling */
 .section {
     /* padding: var(--section-padding) 0; */
+}
+
+/* Padding component styling */
+.padding-top-100 {
+    padding: 80px !important;
+}
+
+@media (max-width: 976px) {
+    .padding-top-100 {
+        padding: 77px !important;
+    }
 }
 
 /* Tab content styling */

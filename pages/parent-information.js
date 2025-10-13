@@ -62,6 +62,8 @@ const ParentInformation = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
+      <div className="padding-top-100"></div>
+
       {/* Page Header Section */}
       <section className="section page-header-section">
         <div className="container">

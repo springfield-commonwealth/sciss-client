@@ -28,9 +28,6 @@ const navLinks = [
   {
     label: "Program",
     href: "/program-overview",
-    children: [
-      { href: "/program-overview", label: "Overview" },
-    ],
   },
   {
     label: "Academics",

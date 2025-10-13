@@ -1,14 +1,10 @@
 import Layout from "@/components/layouts/Layout";
 import CampSchedule from "@/components/sections/CampSchedule";
 import {
-  Badge,
-  BadgeGroup,
   FeatureGrid,
   FooterCTA,
-  SectionHeader,
+  SectionHeader
 } from "@/components/ui";
-import Carousel from "@/components/ui/Carousel";
-import { AcademicsCarouselItems } from "@/constants/academicsContent";
 import {
   getAllCourses,
   getCourseCategories,
@@ -201,6 +197,57 @@ const Academics = ({
         </div>
       </section>
 
+      {/* Key Features - Bold & Visual */}
+      <section className="section academics-features">
+        <div className="container">
+          <SectionHeader
+            title="What Makes SCISS Different"
+            description="From expert faculty to real-world competitions, discover the comprehensive support that turns summer learning into lasting success."
+            showDivider
+            align="center"
+          />
+
+          <div className="academics-features-grid">
+            <div className="academics-feature-item">
+              <div className="feature-badge">📈</div>
+              <h4>Placement & Progression</h4>
+              <p>Start at your level, progress across sessions. Advanced students dive deep; beginners build fundamentals with age-appropriate tools.</p>
+            </div>
+
+            <div className="academics-feature-item">
+              <div className="feature-badge">🏆</div>
+              <h4>Practice & Competitions</h4>
+              <p>Real competitions: <strong>$1M trading challenge</strong>, startup pitches to mentors, robotics demos, stage performances, sports tournaments.</p>
+            </div>
+
+            <div className="academics-feature-item">
+              <div className="feature-badge">📜</div>
+              <h4>Assessment & Portfolio</h4>
+              <p>Every student earns a certificate plus capstone projects for college applications. Awards celebrate achievement.</p>
+            </div>
+
+            <div className="academics-feature-item">
+              <div className="feature-badge">🎯</div>
+              <h4>Alumni Support</h4>
+              <p>SCISS/YEFA Certificate, select honors, and <strong>5 hours of free coaching</strong> for business competitions and university applications.</p>
+            </div>
+
+            <div className="academics-feature-item">
+              <div className="feature-badge">👨‍💼</div>
+              <h4>Faculty & Mentors</h4>
+              <p>Wall Street pros (10+ years), startup founders, VCs, CEOs, and university professors who teach by doing.</p>
+            </div>
+
+            <div className="academics-feature-item">
+              <div className="feature-badge">🌟</div>
+              <h4>Beyond the Classroom</h4>
+              <p>Game nights, talent shows, cultural trips to <strong>Harvard, MIT, Yale & Brown</strong>. Community and confidence-building every day.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Core Courses Section - Enhanced Modern Design */}
       <section className="section academic-tracks-section">
         <div className="container">
@@ -297,57 +344,6 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Key Features - Bold & Visual */}
-      <section className="section academics-features">
-        <div className="container">
-          <SectionHeader
-            title="What Makes SCISS Different"
-            description="From expert faculty to real-world competitions, discover the comprehensive support that turns summer learning into lasting success."
-            showDivider
-            align="center"
-          />
-
-          <div className="academics-features-grid">
-            <div className="academics-feature-item">
-              <div className="feature-badge">📈</div>
-              <h4>Placement & Progression</h4>
-              <p>Start at your level, progress across sessions. Advanced students dive deep; beginners build fundamentals with age-appropriate tools.</p>
-            </div>
-
-            <div className="academics-feature-item">
-              <div className="feature-badge">🏆</div>
-              <h4>Practice & Competitions</h4>
-              <p>Real competitions: <strong>$1M trading challenge</strong>, startup pitches to mentors, robotics demos, stage performances, sports tournaments.</p>
-            </div>
-
-            <div className="academics-feature-item">
-              <div className="feature-badge">📜</div>
-              <h4>Assessment & Portfolio</h4>
-              <p>Every student earns a certificate plus capstone projects for college applications. Awards celebrate achievement.</p>
-            </div>
-
-            <div className="academics-feature-item">
-              <div className="feature-badge">🎯</div>
-              <h4>Alumni Support</h4>
-              <p>SCISS/YEFA Certificate, select honors, and <strong>5 hours of free coaching</strong> for business competitions and university applications.</p>
-            </div>
-
-            <div className="academics-feature-item">
-              <div className="feature-badge">👨‍💼</div>
-              <h4>Faculty & Mentors</h4>
-              <p>Wall Street pros (10+ years), startup founders, VCs, CEOs, and university professors who teach by doing.</p>
-            </div>
-
-            <div className="academics-feature-item">
-              <div className="feature-badge">🌟</div>
-              <h4>Beyond the Classroom</h4>
-              <p>Game nights, talent shows, cultural trips to <strong>Harvard, MIT, Yale & Brown</strong>. Community and confidence-building every day.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
       {/* Academic Support */}
       <section className="section bg-light">
         <div className="container">
@@ -368,7 +364,7 @@ const Academics = ({
         </div>
       </section>
 
-    
+
       <CampSchedule />
       <FooterCTA
         link="/courses"

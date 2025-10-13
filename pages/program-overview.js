@@ -1,11 +1,14 @@
 import Layout from "@/components/layouts/Layout";
-import Carousel from "@/components/ui/Carousel";
 import FooterCTA from "@/components/ui/FooterCTA";
-import WeeklySchedule from "@/components/ui/WeeklySchedule";
-import { ProgramOverviewCoreCourses } from "@/constants/programOverviewContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import { useState } from "react";
 
 const ProgramOverview = ({ breadcrumbs = [] }) => {
+  const [activeTab, setActiveTab] = useState('courses');
+
+  const showTab = (tabName) => {
+    setActiveTab(tabName);
+  };
 
   return (
     <Layout
@@ -25,92 +28,147 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* 1. DAILY AND WEEKLY SCHEDULE - Combined Header */}
+      {/* 1. DAILY AND WEEKLY SCHEDULE - Grid Layout */}
       <section className="section">
         <div className="container">
           <div className="program-overview-container">
             <div className="simple-section schedule-section">
               <h2>Daily and Weekly Schedule</h2>
               <p>Each weekday morning, students participate in academic classes of their choice. Here's your week at a glance:</p>
+
+              <div className="schedule-grid">
+                <div className="day-card">
+                  <h3>Sunday</h3>
+                  <p>Arrivals & Welcome - Check-in, campus tour, safety briefing, welcome night</p>
+                </div>
+                <div className="day-card">
+                  <h3>Monday</h3>
+                  <p>Core academics + project studio + electives + community events</p>
+                </div>
+                <div className="day-card">
+                  <h3>Tuesday</h3>
+                  <p>Core academics + project studio + electives + dorm meetings</p>
+                </div>
+                <div className="day-card">
+                  <h3>Wednesday</h3>
+                  <p>Learning Beyond Campus - University visits (Harvard & MIT, Yale & Brown)</p>
+                </div>
+                <div className="day-card">
+                  <h3>Thursday</h3>
+                  <p>Build, Refine, Rehearse - Capstone work + mentor office hours</p>
+                </div>
+                <div className="day-card">
+                  <h3>Friday</h3>
+                  <p>Showcase & Celebrate - Stock pitches, demos, performances, tournaments</p>
+                </div>
+                <div className="day-card">
+                  <h3>Saturday</h3>
+                  <p>Big Excursion & Community Day - Full-day trips + evening social</p>
+                </div>
+              </div>
+
+              <div className="note-box">
+                <strong>Note:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms. Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.
+              </div>
             </div>
           </div>
-          <WeeklySchedule />
         </div>
       </section>
 
-      {/* Activity Highlights - Right After Weekly Schedule */}
+      {/* 2. ACTIVITY HIGHLIGHTS - Tabbed Interface */}
       <section className="section bg-light">
         <div className="container">
           <div className="program-overview-container">
             <div className="simple-section">
               <h2>Activity Highlights</h2>
               <p>Experience the best in sports, fitness, and recreational activities</p>
-            </div>
-          </div>
-          <Carousel items={ProgramOverviewCoreCourses} />
-        </div>
-      </section>
 
-      {/* 2. MORNING ACADEMIC COURSES OFFERED - Matching Brochure Structure */}
-      <section className="section">
-        <div className="container">
-          <div className="program-overview-container">
-            <div className="simple-section courses-section">
-              <h2>Morning Academic Courses Offered:</h2>
-              <ul className="simple-list">
-                <li>Path to Wall St. & Impact Investment (8th+ grade, Session 1 ONLY)</li>
-                <li>Artificial Intelligence (Pre-Calc+, Session 1 ONLY)</li>
-                <li>Youth Innovation and Entrepreneurship (6th+ grade, Session 2 ONLY)</li>
-                <li>Public Speaking and Debate (4th+ grade, Session 2 ONLY)</li>
-                <li>English and Creative Writing (Beginner to Intensive, 4th+ grade)</li>
-                <li>SAT/ACT/TOEFL Test Preparation (9-12th grade)</li>
-                <li>Visual/Creative Art (All Ages)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div className="tabs">
+                <button className={`tab-btn ${activeTab === 'courses' ? 'active' : ''}`} onClick={() => showTab('courses')}>Courses</button>
+                <button className={`tab-btn ${activeTab === 'activities' ? 'active' : ''}`} onClick={() => showTab('activities')}>Activities</button>
+                <button className={`tab-btn ${activeTab === 'trips' ? 'active' : ''}`} onClick={() => showTab('trips')}>Trips</button>
+              </div>
 
-      {/* 3. ELECTIVE SPORTS - Matching Brochure Structure */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="program-overview-container">
-            <div className="simple-section sports-section">
-              <h2>Elective Sports</h2>
-              <p>In the afternoon, students choose elective sports to focus on:</p>
-              <ul className="simple-list">
-                <li>Rowing</li>
-                <li>Basketball</li>
-                <li>Golf</li>
-                <li>Fencing</li>
-                <li>Soccer</li>
-                <li>Fitness Training</li>
-                <li className="highlighted">Archery</li>
-                <li className="highlighted">Hip-hop Dancing</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div className={`tab-content ${activeTab === 'courses' ? 'active' : ''}`}>
+                <h3>Six Transformative Program Tracks</h3>
+                <p>Choose one track per session (students may stack across sessions):</p>
+                <div className="course-list">
+                  <div className="course-card">
+                    <h4>Path to Wall Street (Investment)</h4>
+                    <div className="course-badge">Financial fluency • $1M virtual competition</div>
+                  </div>
+                  <div className="course-card">
+                    <h4>Youth Innovation & Entrepreneurship</h4>
+                    <div className="course-badge">Idea to pitch • MVP development</div>
+                  </div>
+                  <div className="course-card">
+                    <h4>AI & Robotics</h4>
+                    <div className="course-badge">Python programming • Machine learning</div>
+                  </div>
+                  <div className="course-card">
+                    <h4>Leadership & Public Speaking/Debate</h4>
+                    <div className="course-badge">Communication • Stage presence</div>
+                  </div>
+                  <div className="course-card">
+                    <h4>Music & Stage Performing Arts</h4>
+                    <div className="course-badge">Vocal/instrumental • Live showcase</div>
+                  </div>
+                  <div className="course-card">
+                    <h4>Sports (Basketball, Soccer)</h4>
+                    <div className="course-badge">Skill development • Tournament play</div>
+                  </div>
+                </div>
+              </div>
 
-      {/* 4. FIELD TRIPS - Matching Brochure Structure */}
-      <section className="section">
-        <div className="container">
-          <div className="program-overview-container">
-            <div className="simple-section trips-section">
-              <h2>Field Trips</h2>
-              <p>Each Wednesday and weekend, students participate in engaging field trips to various destinations, combining learning with fun outside the classroom, including:</p>
-              <ul className="simple-list">
-                <li>Boston trip (Harvard and MIT Visit)</li>
-                <li>Yale University Visit</li>
-                <li>Wood Museum of Springfield History</li>
-                <li>Dr. Seuss National Memorial Sculpture Garden</li>
-                <li>Michele and Donald D'Amour Museum of Fine Arts</li>
-                <li>George Walter Vincent Smith Art Museum</li>
-                <li>Smith College Museum of Art</li>
-                <li>Springfield Armory National Historic Site</li>
-                <li>Basketball Hall of Fame</li>
-              </ul>
+              <div className={`tab-content ${activeTab === 'activities' ? 'active' : ''}`}>
+                <h3>Sports & Electives</h3>
+                <p>Every afternoon, students select sports and electives that match their interests. Juniors (G4–G7) and Seniors (G8–G12) train separately:</p>
+                <div className="course-list">
+                  <div className="course-card"><h4>🏀 Basketball (our core)</h4></div>
+                  <div className="course-card"><h4>⚽ Soccer</h4></div>
+                  <div className="course-card"><h4>🏐 Volleyball</h4></div>
+                  <div className="course-card"><h4>🏓 Badminton</h4></div>
+                  <div className="course-card"><h4>🏓 Table Tennis</h4></div>
+                  <div className="course-card"><h4>🥾 Hiking</h4></div>
+                  <div className="course-card"><h4>⛳ Golf</h4></div>
+                  <div className="course-card"><h4>💃 Zumba</h4></div>
+                  <div className="course-card"><h4>🧘 Yoga</h4></div>
+                  <div className="course-card"><h4>⛵ Rowing</h4></div>
+                  <div className="course-card"><h4>💪 Gym & Fitness</h4></div>
+                  <div className="course-card"><h4>🎨 Arts & Crafts</h4></div>
+                </div>
+              </div>
+
+              <div className={`tab-content ${activeTab === 'trips' ? 'active' : ''}`}>
+                <h3>Signature Excursions</h3>
+                <p>Midweek and weekend trips that tie learning to the real world:</p>
+                <div className="trip-grid">
+                  <div className="trip-item">
+                    <div className="trip-icon">🎓</div>
+                    <div>Boston (Harvard & MIT) - Full-day university immersion</div>
+                  </div>
+                  <div className="trip-item">
+                    <div className="trip-icon">🎓</div>
+                    <div>Yale & Brown University - Official tours + admissions info</div>
+                  </div>
+                  <div className="trip-item">
+                    <div className="trip-icon">🏀</div>
+                    <div>Basketball Hall of Fame - Springfield highlights</div>
+                  </div>
+                  <div className="trip-item">
+                    <div className="trip-icon">🏛️</div>
+                    <div>Regional Museums & Historic Sites</div>
+                  </div>
+                  <div className="trip-item">
+                    <div className="trip-icon">🎨</div>
+                    <div>Cultural Attractions & Landmarks</div>
+                  </div>
+                  <div className="trip-item">
+                    <div className="trip-icon">🎪</div>
+                    <div>Theme Parks & Entertainment (by session)</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

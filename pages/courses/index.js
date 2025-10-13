@@ -73,6 +73,7 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
         renderCardContent={renderCourseContent}
         renderBadges={renderCourseBadges}
         getItemCategories={getCourseCategories}
+        showCategories={false}
         ctaConfig={{
           footerCTA: {
             title: "Life Activities",

@@ -25,6 +25,7 @@ const DirectoryPage = ({
   getItemCategories, // Function to get categories for grouping
   ctaConfig = {}, // CTA configuration
   seoConfig = {}, // SEO configuration
+  showCategories = true, // New prop to control categories section visibility
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -202,7 +203,7 @@ const DirectoryPage = ({
         </section>
 
         {/* Categories Overview */}
-        {Object.keys(groupedItems).length > 0 && (
+        {showCategories && Object.keys(groupedItems).length > 0 && (
           <DirectoryCategories
             groupedItems={groupedItems}
             type={type}

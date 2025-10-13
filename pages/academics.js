@@ -201,45 +201,98 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Core Courses Section - Clean & Scannable */}
-      <section className="section bg-light academics-courses">
+      {/* Core Courses Section - Enhanced Modern Design */}
+      <section className="section academic-tracks-section">
         <div className="container">
-          <SectionHeader
-            title="Core Academic Tracks"
-            description="Choose one per session"
-            showDivider
-            align="center"
-          />
+          <div className="tracks-header">
+            <span className="tracks-badge">Choose Your Path</span>
+            <h2 className="tracks-title">Program Tracks</h2>
+            <p className="tracks-subtitle">Choose one or stack across sessions</p>
+          </div>
 
-          <div className="academics-track-grid">
-            <div className="academics-track-card">
-              <div className="track-number">01</div>
-              <h3>Path to Wall Street (Investment)</h3>
-              <p>Markets, financial statements, trading simulators, portfolio management. Compete in our <strong>$1M virtual challenge</strong> and deliver a stock pitch that sharpens analysis and decision-making.</p>
+          <div className="academic-tracks-grid">
+            <div className="track-card featured-track">
+              <div className="track-number-badge">01</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">💼</span>
+              </div>
+              <h3 className="track-title">Path to Wall Street (Investment)</h3>
+              <span className="track-category">Investment Track</span>
+              <p className="track-description">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">💰 Stock Pitch</span>
+                <span className="highlight-tag">📊 Portfolio Building</span>
+              </div>
             </div>
 
-            <div className="academics-track-card">
-              <div className="track-number">02</div>
-              <h3>Youth Innovation & Entrepreneurship</h3>
-              <p>Idea to pitch: design thinking, market research, AI prototyping (ChatGPT/DeepSeek). Present to mentors and get real feedback.</p>
+            <div className="track-card">
+              <div className="track-number-badge">02</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">💡</span>
+              </div>
+              <h3 className="track-title">Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
+              <span className="track-category">Startup Track</span>
+              <p className="track-description">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">🚀 MVP Development</span>
+                <span className="highlight-tag">🎯 Pitch to Mentors</span>
+              </div>
             </div>
 
-            <div className="academics-track-card">
-              <div className="track-number">03</div>
-              <h3>AI & Robotics</h3>
-              <p>Python, machine learning, Transformers, and LLMs. Build working prototypes that connect to real-world applications and explore tech careers.</p>
+            <div className="track-card">
+              <div className="track-number-badge">03</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">🤖</span>
+              </div>
+              <h3 className="track-title">AI & Robotics</h3>
+              <span className="track-category">Technology Track</span>
+              <p className="track-description">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">🐍 Python Coding</span>
+                <span className="highlight-tag">🏆 Robotics Challenge</span>
+              </div>
             </div>
 
-            <div className="academics-track-card">
-              <div className="track-number">04</div>
-              <h3>Leadership · Arts · English · Stage</h3>
-              <p>Daily debate, English writing, SAT prep, ESL support. Plus visual arts, music, and theater—ending with a live performance.</p>
+            <div className="track-card">
+              <div className="track-number-badge">04</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">🎤</span>
+              </div>
+              <h3 className="track-title">Leadership & Public Speaking/Debate</h3>
+              <span className="track-category">Communication Track</span>
+              <p className="track-description">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">🗣️ Daily Practice</span>
+                <span className="highlight-tag">🎯 Final Presentation</span>
+              </div>
             </div>
 
-            <div className="academics-track-card">
-              <div className="track-number">05</div>
-              <h3>Sports Intensive (Basketball)</h3>
-              <p>Fundamentals, tactics, conditioning, sports psychology. Professional coaching plus multi-sport variety: soccer, golf, dance, and more.</p>
+            <div className="track-card">
+              <div className="track-number-badge">05</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">🎭</span>
+              </div>
+              <h3 className="track-title">Music & Stage Performing Arts</h3>
+              <span className="track-category">Performing Arts Track</span>
+              <p className="track-description">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">🎵 Ensembles</span>
+                <span className="highlight-tag">🎬 Live Showcase</span>
+              </div>
+            </div>
+
+            <div className="track-card">
+              <div className="track-number-badge">06</div>
+              <div className="track-icon-wrapper">
+                <span className="track-emoji">🏀</span>
+              </div>
+              <h3 className="track-title">Sports (e.g., Basketball, Soccer)</h3>
+              <span className="track-category">Athletics Track</span>
+              <p className="track-description">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
+              <div className="track-highlights">
+                <span className="highlight-tag">⚽ Daily Drills</span>
+                <span className="highlight-tag">🏆 Tournament</span>
+              </div>
             </div>
           </div>
         </div>

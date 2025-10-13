@@ -318,20 +318,6 @@
 }
 
 /* Responsive Navigation */
-@media (max-width: 1024px) {
-  .nav {
-    padding: 0 var(--space-4);
-  }
-
-  .nav-brand {
-    gap: 0.75rem;
-  }
-
-  .nav-links {
-    gap: 1.5rem;
-  }
-}
-
 @media (max-width: 976px) {
 
   .nav-links,

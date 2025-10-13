@@ -257,7 +257,7 @@ const Academics = ({
           </div>
 
           <div className="academic-tracks-grid">
-            <div className="track-card featured-track">
+            <Link href="/courses/path-to-wall-street" className="track-card featured-track">
               <div className="track-number-badge">01</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">💼</span>
@@ -269,9 +269,9 @@ const Academics = ({
                 <span className="highlight-tag">💰 Stock Pitch</span>
                 <span className="highlight-tag">📊 Portfolio Building</span>
               </div>
-            </div>
+            </Link>
 
-            <div className="track-card">
+            <Link href="/courses/youth-innovation-entrepreneurship" className="track-card">
               <div className="track-number-badge">02</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">💡</span>
@@ -283,9 +283,9 @@ const Academics = ({
                 <span className="highlight-tag">🚀 MVP Development</span>
                 <span className="highlight-tag">🎯 Pitch to Mentors</span>
               </div>
-            </div>
+            </Link>
 
-            <div className="track-card">
+            <Link href="/courses/artificial-intelligence" className="track-card">
               <div className="track-number-badge">03</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">🤖</span>
@@ -297,9 +297,9 @@ const Academics = ({
                 <span className="highlight-tag">🐍 Python Coding</span>
                 <span className="highlight-tag">🏆 Robotics Challenge</span>
               </div>
-            </div>
+            </Link>
 
-            <div className="track-card">
+            <Link href="/courses/public-speaking-debate" className="track-card">
               <div className="track-number-badge">04</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">🎤</span>
@@ -311,9 +311,9 @@ const Academics = ({
                 <span className="highlight-tag">🗣️ Daily Practice</span>
                 <span className="highlight-tag">🎯 Final Presentation</span>
               </div>
-            </div>
+            </Link>
 
-            <div className="track-card">
+            <Link href="/courses/music-performing-arts" className="track-card">
               <div className="track-number-badge">05</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">🎭</span>
@@ -325,9 +325,9 @@ const Academics = ({
                 <span className="highlight-tag">🎵 Ensembles</span>
                 <span className="highlight-tag">🎬 Live Showcase</span>
               </div>
-            </div>
+            </Link>
 
-            <div className="track-card">
+            <Link href="/courses/sports-intensive" className="track-card">
               <div className="track-number-badge">06</div>
               <div className="track-icon-wrapper">
                 <span className="track-emoji">🏀</span>
@@ -339,7 +339,7 @@ const Academics = ({
                 <span className="highlight-tag">⚽ Daily Drills</span>
                 <span className="highlight-tag">🏆 Tournament</span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

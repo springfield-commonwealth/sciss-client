@@ -1,66 +1,69 @@
 {
   "metadata": {
     "totalCourses": 6,
-    "lastUpdated": "2024-12-19T00:00:00Z",
-    "version": "1.0.0",
+    "lastUpdated": "2025-10-04T00:00:00Z",
+    "version": "2.0.0",
     "categories": [
       "core",
-      "language",
-      "arts"
+      "arts",
+      "athletics"
     ]
   },
   "courses": [
     {
       "id": "path-to-wall-street",
       "slug": "path-to-wall-street",
-      "title": "Path to Wall Street & Impact Investment",
-      "description": "Dive deep into finance, economics, and investment strategies. Learn from Wall Street professionals and develop real-world financial analysis skills with hands-on stock market simulation.",
+      "title": "Path to Wall Street (Investment)",
+      "description": "Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone.",
       "image": "/images/carousel/investment.png",
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
       "tags": [
         "finance",
         "investment",
         "wall-street",
-        "economics",
-        "advanced"
+        "stock-trading",
+        "portfolio-management"
       ],
       "seo": {
-        "metaTitle": "Path to Wall Street Program | SCISS Summer School",
-        "metaDescription": "Master finance and investment strategies in our intensive Wall Street program. Learn from industry professionals with hands-on stock market simulation and real-world case studies.",
+        "metaTitle": "Path to Wall Street Investment Program | SCISS Summer School",
+        "metaDescription": "Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making with our $1M virtual investment challenge.",
         "keywords": [
           "wall street program",
-          "finance summer school",
           "investment education",
           "stock market course",
-          "economic education"
+          "financial analysis",
+          "$1M investment competition"
         ],
         "ogImage": "/images/carousel/investment.png"
       },
-      "level": "Advanced",
-      "duration": "3 weeks",
-      "session": "Session 1",
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
       "curriculum": [
-        "Investment Strategies & Stock Markets",
-        "Finance, Economics & Accounting Fundamentals",
-        "Sustainable Investment Principles",
-        "Lectures by Wall Street Investment Experts",
-        "Team-based Final Competition",
-        "Global High School Investment Competition Preparation"
+        "Market Basics & Financial Statements",
+        "Fundamental Analysis",
+        "Portfolio & Risk Management",
+        "Financial Modeling & Valuation",
+        "Trading Simulator Practice",
+        "$1M Virtual Investment Challenge",
+        "Stock Pitch Capstone Presentation"
       ],
       "outcomes": [
-        "Win top 10 and top 15 from most prestigious global high school investment competition",
-        "Opportunities to win various prizes based on performance",
-        "Many alumni received offers from Ivy League schools",
-        "College summer internships and job offers from banks and investment companies"
+        "Master financial fluency and market analysis",
+        "Build and manage a diversified portfolio",
+        "Deliver a polished stock pitch presentation",
+        "Practice ethical decision-making in finance",
+        "Compete in $1M virtual trading challenge"
       ],
-      "prerequisites": "8th grade level, strong analytical skills",
+      "prerequisites": "None - appropriate for all skill levels with differentiated instruction",
       "highlights": [
-        "Stock market simulation trading",
-        "Investment portfolio management",
-        "Economic trend analysis",
-        "Guest speakers from major financial firms"
+        "$1M virtual investment competition",
+        "Stock market trading simulator",
+        "Real-world portfolio management",
+        "Wall Street professional mentors (10+ years)",
+        "Stock pitch capstone presentation"
       ],
       "category": "core",
       "instructors": [
@@ -68,59 +71,63 @@
         "wall-street-expert-1"
       ],
       "capacity": 25,
-      "ageRange": "14-16 years"
+      "ageRange": "10-18 years"
     },
     {
       "id": "youth-innovation-entrepreneurship",
       "slug": "youth-innovation-entrepreneurship",
-      "title": "Youth Innovation & Entrepreneurship",
-      "description": "Transform your ideas into viable business concepts. Develop entrepreneurial mindset and learn startup fundamentals through hands-on business plan development.",
+      "title": "Youth Innovation & Entrepreneurship (Teen Start-ups)",
+      "description": "From mindset to model to market, blend business-model design with design thinking. Test ideas through research, use modern AI tools to accelerate prototyping, and refine a story investors can believe in.",
       "image": "/images/carousel/entrepreneur.png",
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
       "tags": [
         "entrepreneurship",
         "innovation",
         "startup",
-        "business",
-        "intermediate"
+        "mvp-development",
+        "pitch-competition"
       ],
       "seo": {
-        "metaTitle": "Youth Innovation & Entrepreneurship | SCISS Summer Program",
-        "metaDescription": "Learn entrepreneurship and innovation fundamentals. Transform ideas into business concepts with expert CEO guidance and hands-on startup development.",
+        "metaTitle": "Youth Innovation & Entrepreneurship Program | SCISS Summer School",
+        "metaDescription": "From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.",
         "keywords": [
-          "youth entrepreneurship",
-          "innovation program",
-          "startup education",
-          "business plan development",
-          "teen entrepreneur"
+          "teen entrepreneurship",
+          "startup program",
+          "mvp development",
+          "pitch competition",
+          "design thinking"
         ],
         "ogImage": "/images/carousel/entrepreneur.png"
       },
-      "level": "Intermediate",
-      "duration": "3 weeks",
-      "session": "Session 2",
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
       "curriculum": [
-        "Design Thinking Process",
-        "Problem Identification & Solution Definition",
-        "Startup Business Plan Development",
-        "CEO-led Industry Expert Instruction",
-        "Teamwork & Innovation Skills",
-        "Communication & Sustainability Principles"
+        "Business Model Design",
+        "Design Thinking & Problem Discovery",
+        "Market Research & Trend Analysis",
+        "AI Tools for Prototyping (ChatGPT/DeepSeek)",
+        "MVP Development",
+        "Go-to-Market Strategy",
+        "Pitch Story & Presentation",
+        "Mentor Pitch Showcase"
       ],
       "outcomes": [
-        "Create startup business plan from scratch",
-        "Develop teamwork and innovation skills",
-        "Foster creativity and communication abilities",
-        "Learn sustainability principles"
+        "Develop a complete MVP and business model",
+        "Master design thinking methodology",
+        "Use AI tools to accelerate prototyping",
+        "Deliver a compelling investor pitch",
+        "Receive actionable feedback from mentors and awards"
       ],
-      "prerequisites": "8th grade level, interest in entrepreneurship and innovation",
+      "prerequisites": "None - all skill levels welcome",
       "highlights": [
-        "Business plan development",
-        "Pitch presentation skills",
-        "Market research techniques",
-        "Startup funding strategies"
+        "Idea to MVP development",
+        "AI-powered prototyping (ChatGPT/DeepSeek)",
+        "Friendly pitch showcase to mentors",
+        "Startup founder & VC mentorship",
+        "Aligned with global competitions"
       ],
       "category": "core",
       "instructors": [
@@ -128,59 +135,62 @@
         "innovation-mentor-1"
       ],
       "capacity": 30,
-      "ageRange": "14-16 years"
+      "ageRange": "10-18 years"
     },
     {
       "id": "artificial-intelligence",
       "slug": "artificial-intelligence",
-      "title": "Artificial Intelligence",
-      "description": "Explore the frontier of AI and machine learning. Build practical projects and understand AI's impact on society with hands-on programming experience.",
+      "title": "AI & Robotics",
+      "description": "Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.",
       "image": "/images/carousel/ai.png",
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
       "tags": [
         "artificial-intelligence",
+        "robotics",
+        "python",
         "machine-learning",
-        "programming",
-        "technology",
-        "advanced"
+        "automation"
       ],
       "seo": {
-        "metaTitle": "Artificial Intelligence Program | SCISS Tech Education",
-        "metaDescription": "Master AI and machine learning fundamentals. Build practical AI projects with Python programming and explore technology's future impact on society.",
+        "metaTitle": "AI & Robotics Program | SCISS Summer School",
+        "metaDescription": "From Python programming to machine learning and robotics. Connect concepts to real-world applications and explore career pathways in technology.",
         "keywords": [
-          "AI summer program",
+          "AI robotics program",
+          "python programming",
           "machine learning course",
-          "artificial intelligence education",
-          "teen programming",
-          "technology camp"
+          "robotics challenge",
+          "teen technology education"
         ],
         "ogImage": "/images/carousel/ai.png"
       },
-      "level": "Advanced",
-      "duration": "3 weeks",
-      "session": "Session 1",
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
       "curriculum": [
-        "Machine Learning Fundamentals",
-        "AI Programming Applications",
-        "Computer Science Principles",
-        "Mathematical Foundations for AI",
-        "Practical AI Project Development",
-        "Technology Innovation & Implementation"
+        "Python Programming Fundamentals",
+        "Machine Learning & Deep Learning Concepts",
+        "Transformers & Large Language Models (LLMs)",
+        "Robotics & Sensor Integration",
+        "Real-World AI Applications (autonomous driving, conversational AI)",
+        "Industry & Career Pathways",
+        "Team AI + Robotics Prototype & Demo"
       ],
       "outcomes": [
-        "Understand core AI and machine learning concepts",
-        "Develop practical programming skills",
-        "Create AI-based projects and applications",
-        "Apply mathematical concepts to technology solutions"
+        "Master Python programming for AI",
+        "Understand ML/DL concepts and applications",
+        "Build working AI + robotics prototypes",
+        "Connect technology to real-world problems",
+        "Explore tech career pathways"
       ],
-      "prerequisites": "Pre-calculus level mathematics, strong analytical thinking",
+      "prerequisites": "None - differentiated for Junior (G4-G7) and Senior (G8-G12) cohorts",
       "highlights": [
-        "Python programming for AI",
-        "Machine learning algorithms",
-        "Neural network design",
-        "AI ethics and applications"
+        "Python-based projects for seniors",
+        "Visual coding & hardware kits for juniors",
+        "End-of-session robotics challenge",
+        "Real-world application focus",
+        "University-affiliated educators"
       ],
       "category": "core",
       "instructors": [
@@ -188,59 +198,62 @@
         "computer-science-prof"
       ],
       "capacity": 20,
-      "ageRange": "15-17 years"
+      "ageRange": "10-18 years"
     },
     {
       "id": "public-speaking-debate",
       "slug": "public-speaking-debate",
-      "title": "Public Speaking & Debate",
-      "description": "Master the art of communication and persuasion. Build confidence through structured debate and presentation practice with professional coaching.",
+      "title": "Leadership & Public Speaking/Debate",
+      "description": "Confidence grows through daily public speaking and debate, targeted English writing support, and workshops on responsibility, communication, innovation, and teamwork.",
       "image": "/images/carousel/public-speaking.png",
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
       "tags": [
+        "leadership",
         "public-speaking",
         "debate",
         "communication",
-        "presentation",
-        "all-levels"
+        "teamwork"
       ],
       "seo": {
-        "metaTitle": "Public Speaking & Debate Program | SCISS Communication Skills",
-        "metaDescription": "Build confidence and communication skills through structured debate training. Master presentation techniques and persuasive speaking with expert coaching.",
+        "metaTitle": "Leadership & Public Speaking/Debate Program | SCISS Summer School",
+        "metaDescription": "Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.",
         "keywords": [
+          "leadership program",
           "public speaking course",
           "debate training",
           "communication skills",
-          "presentation skills",
           "teen confidence building"
         ],
         "ogImage": "/images/carousel/public-speaking.png"
       },
       "level": "All Levels",
-      "duration": "3 weeks",
-      "session": "Session 2",
+      "duration": "2 weeks",
+      "session": "All Sessions",
       "curriculum": [
-        "Speech Writing and Delivery",
-        "Debate Tournament Participation",
-        "Body Language and Presence",
-        "Media Interview Techniques",
-        "Persuasive Communication",
-        "Confidence Building Exercises"
+        "Daily Public Speaking & Debate",
+        "English Writing Support",
+        "Responsibility & Communication Workshops",
+        "Innovation & Teamwork Training",
+        "Conflict Resolution",
+        "Academic Coaching (Math, SAT, ESL)",
+        "Polished Final Talk Presentation"
       ],
       "outcomes": [
         "Build confidence in public speaking",
-        "Develop persuasive communication skills",
-        "Master debate techniques and strategy",
-        "Improve presentation and body language"
+        "Master persuasive communication",
+        "Develop leadership and teamwork skills",
+        "Improve English writing abilities",
+        "Deliver a polished final presentation"
       ],
-      "prerequisites": "6th grade level, willingness to participate actively",
+      "prerequisites": "None - all skill levels welcome",
       "highlights": [
-        "Speech writing and delivery",
-        "Debate tournament participation",
-        "Body language and presence",
-        "Media interview techniques"
+        "Daily speaking practice",
+        "Debate and stage presence training",
+        "English writing & SAT support",
+        "Leadership workshops",
+        "Communication specialist coaches"
       ],
       "category": "core",
       "instructors": [
@@ -248,127 +261,133 @@
         "communication-expert"
       ],
       "capacity": 35,
-      "ageRange": "12-17 years"
+      "ageRange": "10-18 years"
     },
     {
-      "id": "language-programs",
-      "slug": "language-programs",
-      "title": "Language Programs",
-      "description": "Immersive language learning experience with native speakers. Develop fluency through interactive activities, cultural exchange, and practical application.",
-      "image": "/images/carousel/language.png",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
-      "published": true,
-      "tags": [
-        "language-learning",
-        "cultural-exchange",
-        "immersion",
-        "communication",
-        "all-levels"
-      ],
-      "seo": {
-        "metaTitle": "Language Programs | SCISS International Summer School",
-        "metaDescription": "Immersive language learning with native speakers. Develop fluency through cultural exchange and interactive activities in a supportive international environment.",
-        "keywords": [
-          "language immersion",
-          "international language program",
-          "cultural exchange",
-          "language fluency",
-          "teen language learning"
-        ],
-        "ogImage": "/images/carousel/language.png"
-      },
-      "level": "All Levels",
-      "duration": "3 weeks",
-      "session": "Both Sessions",
-      "curriculum": [
-        "Interactive Language Immersion",
-        "Cultural Exchange Activities",
-        "Native Speaker Conversations",
-        "Language Application Projects",
-        "Cross-Cultural Communication",
-        "Language Proficiency Assessment"
-      ],
-      "outcomes": [
-        "Improve language fluency and confidence",
-        "Develop cross-cultural communication skills",
-        "Build international friendships",
-        "Gain cultural awareness and sensitivity"
-      ],
-      "prerequisites": "Basic language foundation recommended but not required",
-      "highlights": [
-        "Native speaker instruction",
-        "Cultural immersion activities",
-        "International peer interaction",
-        "Real-world language application"
-      ],
-      "category": "language",
-      "instructors": [
-        "language-expert-1",
-        "cultural-coordinator"
-      ],
-      "capacity": 40,
-      "ageRange": "12-17 years"
-    },
-    {
-      "id": "visual-arts",
-      "slug": "visual-arts",
-      "title": "Visual Arts",
-      "description": "Explore creativity through various artistic mediums. Develop technical skills and artistic expression through guided instruction and personal projects.",
+      "id": "music-performing-arts",
+      "slug": "music-performing-arts",
+      "title": "Music & Stage Performing Arts",
+      "description": "Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.",
       "image": "/images/carousel/art.png",
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
       "tags": [
-        "visual-arts",
-        "creativity",
-        "artistic-expression",
-        "fine-arts",
-        "all-ages"
+        "music",
+        "performing-arts",
+        "theatre",
+        "stagecraft",
+        "ensemble"
       ],
       "seo": {
-        "metaTitle": "Visual Arts Program | SCISS Creative Summer School",
-        "metaDescription": "Explore creativity through visual arts. Develop artistic skills in painting, drawing, and mixed media with professional art instruction and personal projects.",
+        "metaTitle": "Music & Stage Performing Arts Program | SCISS Summer School",
+        "metaDescription": "Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles, and close with a live showcase.",
         "keywords": [
-          "visual arts program",
-          "teen art classes",
-          "creative summer camp",
-          "artistic expression",
-          "art education"
+          "music program",
+          "performing arts",
+          "theatre camp",
+          "vocal ensemble",
+          "live showcase"
         ],
-        "ogImage": "/images/carousel/visual-arts.png"
+        "ogImage": "/images/carousel/art.png"
       },
-      "level": "All Ages",
-      "duration": "3 weeks",
-      "session": "Both Sessions",
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
       "curriculum": [
-        "Drawing and Sketching Fundamentals",
-        "Painting Techniques and Color Theory",
-        "Mixed Media and Experimental Art",
-        "Digital Art and Design",
-        "Art History and Appreciation",
-        "Personal Portfolio Development"
+        "Vocal/Instrumental Ensembles",
+        "Movement & Choreography",
+        "Stagecraft & Production",
+        "Sound & Lighting Basics",
+        "Direction & Collaboration",
+        "Rehearsal with Mentors",
+        "Live Public Showcase Performance"
       ],
       "outcomes": [
-        "Develop artistic skills and techniques",
-        "Build a personal art portfolio",
-        "Explore various artistic mediums",
-        "Gain appreciation for art history and culture"
+        "Develop musical and performance skills",
+        "Master stagecraft and production roles",
+        "Collaborate across creative disciplines",
+        "Build confidence through live performance",
+        "Deliver a polished public showcase"
       ],
-      "prerequisites": "Interest in art and creativity, no prior experience required",
+      "prerequisites": "None - all skill levels welcome",
       "highlights": [
-        "Professional art instruction",
-        "Various artistic mediums",
-        "Personal portfolio creation",
-        "Art exhibition showcase"
+        "Vocal & instrumental training",
+        "Movement and stagecraft",
+        "Cross-role collaboration (sound, lighting, direction)",
+        "Mentor-guided rehearsals",
+        "Live showcase performance"
       ],
       "category": "arts",
       "instructors": [
-        "art-instructor-1",
-        "visual-arts-specialist"
+        "music-director",
+        "theatre-coach"
       ],
-      "capacity": 25,
-      "ageRange": "10-17 years"
+      "capacity": 35,
+      "ageRange": "10-18 years"
+    },
+    {
+      "id": "sports-intensive",
+      "slug": "sports-intensive",
+      "title": "Sports Intensive (Basketball)",
+      "description": "Basketball anchors this track, with fundamentals, tactics, and live play layered over structured conditioning and sports-psychology habits. Round out your week with multi-sport options.",
+      "image": "/images/carousel/sports.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2025-10-04T00:00:00Z",
+      "published": true,
+      "tags": [
+        "sports",
+        "basketball",
+        "athletics",
+        "conditioning",
+        "teamwork"
+      ],
+      "seo": {
+        "metaTitle": "Sports Intensive Basketball Program | SCISS Summer School",
+        "metaDescription": "Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.",
+        "keywords": [
+          "basketball program",
+          "sports intensive",
+          "athletic training",
+          "youth basketball",
+          "sports camp"
+        ],
+        "ogImage": "/images/carousel/sports.png"
+      },
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
+      "curriculum": [
+        "Basketball Fundamentals & Tactics",
+        "Live Game Play & Scrimmages",
+        "Conditioning & Fitness Training",
+        "Sports Psychology & Mental Game",
+        "Multi-Sport Variety (Soccer, Golf, Dance)",
+        "Teamwork & Sportsmanship",
+        "End-of-Session Tournament"
+      ],
+      "outcomes": [
+        "Improve basketball skills and game IQ",
+        "Build physical conditioning and fitness",
+        "Develop teamwork and sportsmanship",
+        "Experience multi-sport variety",
+        "Compete in friendly tournament"
+      ],
+      "prerequisites": "None - all skill levels welcome",
+      "highlights": [
+        "Professional coaching team (U.S. high-school/college players)",
+        "Daily drills and scrimmages",
+        "Multi-sport options (soccer, golf, dance)",
+        "Sports psychology training",
+        "Fun tournament to finish strong"
+      ],
+      "category": "athletics",
+      "instructors": [
+        "basketball-coach",
+        "sports-trainer"
+      ],
+      "capacity": 30,
+      "ageRange": "10-18 years"
     }
   ]
 }

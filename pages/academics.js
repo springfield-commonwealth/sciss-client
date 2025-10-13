@@ -79,11 +79,12 @@ const Academics = ({
       <section className="section quick-facts-section">
         <div className="container">
           <div className="quick-facts-wrapper">
-            <div className="quick-facts-intro">
-              <span className="section-badge">At a Glance</span>
-              <h2 className="quick-facts-title">Quick Facts</h2>
-              <p className="quick-facts-subtitle">Everything you need to know about SCISS academics</p>
-            </div>
+            <SectionHeader
+              title="Quick Facts"
+              description="Everything you need to know about SCISS academics at a glance"
+              showDivider
+              align="center"
+            />
 
             <div className="quick-facts-container">
               <div className="quick-fact-item" data-category="academics">
@@ -130,7 +131,7 @@ const Academics = ({
                   <span className="fact-emoji">💰</span>
                 </div>
                 <div className="fact-details">
-                  <span className="fact-label">Exclusive Challenge</span>
+                  <span className="fact-label">Signature Feature</span>
                   <span className="fact-value">$1M Investment</span>
                   <span className="fact-meta">Virtual stock competition</span>
                 </div>

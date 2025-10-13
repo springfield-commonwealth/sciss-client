@@ -1368,10 +1368,6 @@
   .quick-fact-item {
     padding: var(--space-8);
   }
-
-  .featured-fact {
-    grid-column: span 2;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {

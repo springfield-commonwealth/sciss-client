@@ -125,15 +125,15 @@ const Academics = ({
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
-                  Signature Program
+                  Signature Feature
                 </div>
                 <div className="fact-icon-circle featured-icon">
                   <span className="fact-emoji">💰</span>
                 </div>
                 <div className="fact-details">
-                  <span className="fact-label">Signature Feature</span>
-                  <span className="fact-value">$1M Investment</span>
-                  <span className="fact-meta">Virtual stock competition</span>
+                  <span className="fact-label">Stock Trading Challenge</span>
+                  <span className="fact-value">$1M Virtual Investment</span>
+                  <span className="fact-meta">Competition in the Investment track</span>
                 </div>
               </div>
 
@@ -145,6 +145,17 @@ const Academics = ({
                   <span className="fact-label">Bonus Opportunity</span>
                   <span className="fact-value">Competition Prep</span>
                   <span className="fact-meta">Elite business competitions</span>
+                </div>
+              </div>
+
+              <div className="quick-fact-item" data-category="rewards">
+                <div className="fact-icon-circle">
+                  <span className="fact-emoji">💎</span>
+                </div>
+                <div className="fact-details">
+                  <span className="fact-label">Rewards</span>
+                  <span className="fact-value">Diamond Challenge</span>
+                  <span className="fact-meta">Students receive from competition</span>
                 </div>
               </div>
             </div>

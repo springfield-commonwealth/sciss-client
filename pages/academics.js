@@ -205,8 +205,7 @@ const Academics = ({
       <section className="section academic-tracks-section">
         <div className="container">
           <div className="tracks-header">
-            <span className="tracks-badge">Choose Your Path</span>
-            <h2 className="tracks-title">Program Tracks</h2>
+            <h2 className="tracks-title">Core Academic Program Tracks</h2>
             <p className="tracks-subtitle">Choose one or stack across sessions</p>
           </div>
 

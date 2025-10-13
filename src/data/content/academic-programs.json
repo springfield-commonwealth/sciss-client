@@ -331,7 +331,7 @@
       "slug": "sports-intensive",
       "title": "Sports Intensive (Basketball)",
       "description": "Basketball anchors this track, with fundamentals, tactics, and live play layered over structured conditioning and sports-psychology habits. Round out your week with multi-sport options.",
-      "image": "/images/carousel/sports.png",
+      "image": "/images/carousel/basketball.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
@@ -352,7 +352,7 @@
           "youth basketball",
           "sports camp"
         ],
-        "ogImage": "/images/carousel/sports.png"
+        "ogImage": "/images/carousel/basketball.png"
       },
       "level": "All Levels",
       "duration": "2 weeks",

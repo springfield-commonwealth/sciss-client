@@ -30,7 +30,6 @@ const navLinks = [
     href: "/program-overview",
     children: [
       { href: "/program-overview", label: "Overview" },
-      { href: "/tuitions-and-fees", label: "Tuitions & Fees" },
     ],
   },
   {

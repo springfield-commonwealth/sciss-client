@@ -348,21 +348,6 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Core Courses Overview */}
-      <section className="section bg-light" id="core-courses-carousel">
-        <div className="container">
-          <SectionHeader
-            title="Core Academic Courses"
-            subtitle="Choose Your Path to Excellence"
-            description="Six specialized tracks designed to match your interests and career aspirations"
-            showDivider
-            align="center"
-          />
-
-          <Carousel items={AcademicsCarouselItems} />
-        </div>
-      </section>
-
       {/* Academic Support */}
       <section className="section bg-light">
         <div className="container">
@@ -383,114 +368,7 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Individual Course Directory */}
-      <section className="section bg-light" id="programs">
-        <div className="container">
-          <SectionHeader
-            title="Explore Our Academic Programs"
-            description="Click on any program to view detailed curriculum, learning outcomes, and application information"
-            showDivider
-          />
-
-          {hasValidCourses ? (
-            <div className="course-directory grid grid--2">
-              {coursesList.map((course) => (
-                <div
-                  key={course.id || course.slug}
-                  className="course-preview-card"
-                >
-                  <div className="course-preview-header">
-                    <div className="course-preview-image">
-                      {course.image && (
-                        <img src={course.image} alt={course.title} />
-                      )}
-                    </div>
-                    <div className="course-preview-info">
-                      <h3>{course.title}</h3>
-                      <div className="course-preview-meta">
-                        <BadgeGroup>
-                          <Badge variant="primary" size="small">
-                            {course.level || "Intermediate"}
-                          </Badge>
-                          <Badge variant="secondary" size="small">
-                            {course.duration || "3 weeks"}
-                          </Badge>
-                          <Badge variant="info" size="small">
-                            {course.session || "Summer"}
-                          </Badge>
-                        </BadgeGroup>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="course-preview-content">
-                    <p className="course-preview-description">
-                      {course.description}
-                    </p>
-
-                    <div className="course-preview-highlights">
-                      <h4>Program Highlights</h4>
-                      <ul>
-                        {course.highlights &&
-                          course.highlights.length > 0 &&
-                          course.highlights
-                            .slice(0, 3)
-                            .map((highlight, idx) => (
-                              <li key={idx}>{highlight}</li>
-                            ))}
-                        {(!course.highlights ||
-                          course.highlights.length === 0) && (
-                            <li>
-                              Comprehensive curriculum designed for academic
-                              excellence
-                            </li>
-                          )}
-                        {course.highlights && course.highlights.length > 3 && (
-                          <li>...and {course.highlights.length - 3} more</li>
-                        )}
-                      </ul>
-                    </div>
-
-                    <div className="course-preview-actions">
-                      <Link
-                        href={`/courses/${course.slug}`}
-                        className=" btn btn--primary"
-                      >
-                        View Full Details
-                      </Link>
-                      <Link href="/apply" className=" btn btn--outline">
-                        Apply Now
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="course-directory-loading">
-              <p>Loading course information...</p>
-              <p>
-                If this persists, please visit our{" "}
-                <Link href="/apply">
-                  <a>application page</a>
-                </Link>{" "}
-                to learn more.
-              </p>
-            </div>
-          )}
-
-          <div className="text--center mt--lg">
-            <p className="course-directory-note">
-              Each program includes comprehensive curriculum, expert
-              instruction, hands-on projects, and career preparation.
-            </p>
-            <Link href="/courses" className="btn btn--primary btn--lg">
-              View All Courses
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    
       <CampSchedule />
       <FooterCTA
         link="/courses"

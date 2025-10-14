@@ -99,55 +99,36 @@ const LifeActivities = ({
         </div>
       </section>
 
-      {/* Sports & Electives Section */}
+      {/* Sports & Electives Section - Simplified */}
       <section className="section">
         <div className="container">
-          <SectionHeader
-            title="Sports & Electives"
-            description="Choose what excites you. Train at your level."
-            align="center"
-            showDivider
-          />
+          <div className="text--center mb--lg">
+            <h2>Sports & Electives</h2>
+            <p>Choose what excites you. Train at your level.</p>
+          </div>
 
           <div className="grid grid--3">
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">⚽</div>
-                <h3>Sports</h3>
-                <div className="category-details">
-                  <p><strong>Basketball</strong> (our core), soccer, volleyball, badminton, table tennis, hiking, golf, Zumba, yoga, rowing, gym.</p>
-                </div>
-              </div>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">⚽</div>
+              <h3>Sports</h3>
+              <p className="trip-description-simple"><strong>Basketball</strong> (our core), soccer, volleyball, badminton, table tennis, hiking, golf, Zumba, yoga, rowing, gym.</p>
             </div>
 
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">🎨</div>
-                <h3>Electives</h3>
-                <div className="category-details">
-                  <p>Fitness & dance, arts & crafts, digital design, creative workshops.</p>
-                </div>
-              </div>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎨</div>
+              <h3>Electives</h3>
+              <p className="trip-description-simple">Fitness & dance, arts & crafts, digital design, creative workshops.</p>
             </div>
 
-            <div className="category-card">
-              <div className="category-card__content">
-                <div className="category-card__icon">📝</div>
-                <h3>Upon Request</h3>
-                <div className="category-details">
-                  <p>SAT/ACT prep, music/vocal tutoring, 3D printing.</p>
-                </div>
-              </div>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">📝</div>
+              <h3>Upon Request</h3>
+              <p className="trip-description-simple">SAT/ACT prep, music/vocal tutoring, 3D printing.</p>
             </div>
           </div>
 
-          <div className="content-note">
-            <p>
-              <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety.
-            </p>
-            <p className="note">
-              <em>Some options (e.g., golf) may carry a small fee.</em>
-            </p>
+          <div className="info-note-box">
+            <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety. Some options (e.g., golf) may carry a small fee.
           </div>
         </div>
       </section>

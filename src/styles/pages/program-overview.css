@@ -42,6 +42,20 @@
   margin-bottom: var(--space-3);
 }
 
+#activity-highlights {
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  position: relative;
+  top: -23px;
+  background: var(--color-bg-primary);
+  margin-top: 0 !important;
+  margin-bottom: 7px !important;
+}
+
+#activity-highlights h2 {
+  padding-top: 11px !important;
+}
+
 .cultural-trip-card-simple h3 {
   font-size: 1.5rem;
   font-weight: 800;

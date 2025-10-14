@@ -66,8 +66,48 @@ const LifeActivities = ({
         </div>
       </section>
 
-      {/* Popular Activities Preview */}
+      {/* All Activities Overview - Condensed */}
       <section className="section bg-light">
+        <div className="container">
+          <div className="text--center mb--lg">
+            <h2>Daily Activities & Recreation</h2>
+            <p>A full schedule of sports, fitness, arts, and evening events</p>
+          </div>
+
+          <div className="grid grid--2">
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🏀</div>
+              <h3>Competitive Sports</h3>
+              <p className="trip-description-simple">Basketball (our flagship), soccer, volleyball, badminton, table tennis with professional coaching and tournament play.</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">💪</div>
+              <h3>Fitness & Wellness</h3>
+              <p className="trip-description-simple">Zumba, yoga, gym & strength training, hiking, golf, rowing—build healthy habits with expert guidance.</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎨</div>
+              <h3>Arts & Creative Activities</h3>
+              <p className="trip-description-simple">Arts & crafts, digital design, creative workshops, and hands-on projects that spark imagination.</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎉</div>
+              <h3>Evening & Social Events</h3>
+              <p className="trip-description-simple">Movie nights, game tournaments, themed parties, talent shows, campfires, scavenger hunts, and trivia challenges.</p>
+            </div>
+          </div>
+
+          <div className="info-note-box">
+            <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Pick your favorites at orientation and adjust during week one. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Activities Preview */}
+      <section className="section">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Popular Activities</h2>
@@ -110,46 +150,6 @@ const LifeActivities = ({
             <Link href="/activities" className="btn btn--secondary btn--lg">
               View All Activities
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* All Activities Overview - Condensed */}
-      <section className="section">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Daily Activities & Recreation</h2>
-            <p>A full schedule of sports, fitness, arts, and evening events</p>
-          </div>
-
-          <div className="grid grid--2">
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🏀</div>
-              <h3>Competitive Sports</h3>
-              <p className="trip-description-simple">Basketball (our flagship), soccer, volleyball, badminton, table tennis with professional coaching and tournament play.</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">💪</div>
-              <h3>Fitness & Wellness</h3>
-              <p className="trip-description-simple">Zumba, yoga, gym & strength training, hiking, golf, rowing—build healthy habits with expert guidance.</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🎨</div>
-              <h3>Arts & Creative Activities</h3>
-              <p className="trip-description-simple">Arts & crafts, digital design, creative workshops, and hands-on projects that spark imagination.</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🎉</div>
-              <h3>Evening & Social Events</h3>
-              <p className="trip-description-simple">Movie nights, game tournaments, themed parties, talent shows, campfires, scavenger hunts, and trivia challenges.</p>
-            </div>
-          </div>
-
-          <div className="info-note-box">
-            <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Pick your favorites at orientation and adjust during week one. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
           </div>
         </div>
       </section>

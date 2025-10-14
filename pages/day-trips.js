@@ -31,6 +31,50 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
+      {/* Signature Trips Section */}
+      <section className="section">
+        <div className="container">
+          <div className="text--center mb--lg">
+            <h2>Signature Trips</h2>
+            <p>World-class destinations weekly</p>
+          </div>
+
+          <div className="grid grid--2">
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🏛️</div>
+              <h3>Boston</h3>
+              <p className="trip-location-simple">📍 Harvard & MIT</p>
+              <p className="trip-description-simple">Full-day university immersion and city exploration</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎓</div>
+              <h3>Yale & Brown</h3>
+              <p className="trip-location-simple">📍 New Haven & Providence</p>
+              <p className="trip-description-simple">Campus visits with admissions sessions</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🏀</div>
+              <h3>Springfield</h3>
+              <p className="trip-location-simple">📍 Springfield, MA</p>
+              <p className="trip-description-simple">Basketball Hall of Fame and regional museums</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">✨</div>
+              <h3>Local Attractions</h3>
+              <p className="trip-location-simple">📍 New England Region</p>
+              <p className="trip-description-simple">Varies by session - theme parks, museums, historic sites</p>
+            </div>
+          </div>
+
+          <div className="info-note-box">
+            <strong>Note:</strong> All trips are fully supervised. Transportation, tickets, and meals organized. Final schedule sent before arrival. Trips subject to weather and availability.
+          </div>
+        </div>
+      </section>
+
       {/* Day Trips Carousel */}
       <section className="section bg-light">
         <div className="container">
@@ -48,9 +92,8 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
-
       {/* Cultural & Recreation Trips - Simplified */}
-      <section id="all-trips" className="section bg-light">
+      <section id="all-trips" className="section">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Cultural & Recreation Trips</h2>
@@ -107,60 +150,6 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Signature Trips Section */}
-      <section className="section">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Signature Trips</h2>
-            <p>World-class destinations weekly</p>
-          </div>
-
-          <div className="activity-block activity-block--trips">
-            <div className="activity-block__icon-badge">🎓</div>
-            <h3 className="activity-block__title">Signature Trips</h3>
-            <div className="trips-list">
-              <div className="trip-item">
-                <span className="trip-icon">🏛️</span>
-                <div className="trip-content">
-                  <strong>Boston</strong>
-                  <p>Harvard & MIT tours + city exploration</p>
-                </div>
-              </div>
-              <div className="trip-item">
-                <span className="trip-icon">🎓</span>
-                <div className="trip-content">
-                  <strong>Yale & Brown</strong>
-                  <p>Campus visits + admissions sessions</p>
-                </div>
-              </div>
-              <div className="trip-item">
-                <span className="trip-icon">🏀</span>
-                <div className="trip-content">
-                  <strong>Springfield</strong>
-                  <p>Basketball Hall of Fame, museums</p>
-                </div>
-              </div>
-              <div className="trip-item">
-                <span className="trip-icon">✨</span>
-                <div className="trip-content">
-                  <strong>Local Attractions</strong>
-                  <p>Varies by session</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Safety Footer Banner */}
-          <div className="safety-banner">
-            <div className="safety-banner__icon">🛡️</div>
-            <div className="safety-banner__content">
-              <strong>Safety First:</strong> All trips are fully supervised. Transportation, tickets, and meals organized. Final schedule sent before arrival.
-              <span className="safety-banner__note">Trips subject to weather and availability.</span>
             </div>
           </div>
         </div>

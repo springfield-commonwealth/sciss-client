@@ -474,6 +474,256 @@
   box-shadow: var(--shadow-medium);
 }
 
+/* ========================================
+   SIGNATURE TRIPS SECTION - PREMIUM DESIGN
+   ======================================== */
+
+.signature-trips-section {
+  background: #f8fafc;
+  padding: var(--space-12) 0;
+}
+
+.signature-trips-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.signature-trips-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: var(--color-white);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.signature-trips-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #1e293b;
+  margin-bottom: var(--space-3);
+  line-height: 1.1;
+}
+
+.signature-trips-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.signature-trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.signature-trip-card {
+  background: var(--color-white);
+  padding: var(--space-7);
+  border-radius: var(--radius-xl);
+  border: 2px solid #e2e8f0;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.signature-trip-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.signature-trip-card:hover::before {
+  transform: scaleX(1);
+}
+
+.signature-trip-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.featured-trip-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+}
+
+.featured-trip-card::before {
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+}
+
+.signature-trip-icon-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+  box-shadow:
+    0 10px 20px rgba(59, 130, 246, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.featured-trip-icon {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  box-shadow:
+    0 10px 20px rgba(245, 158, 11, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signature-trip-card:hover .signature-trip-icon-circle {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.signature-trip-emoji {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.signature-trip-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: var(--space-2);
+}
+
+.signature-trip-description {
+  color: #64748b;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+
+.trip-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: var(--color-white);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.featured-trip-card .trip-badge {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+/* Safety Banner */
+.signature-safety-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.signature-safety-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.signature-safety-content {
+  color: #f1f5f9;
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.signature-safety-content strong {
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.signature-safety-note {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .signature-trips-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .signature-trips-section {
+    padding: var(--space-8) 0;
+  }
+
+  .signature-trips-badge {
+    font-size: var(--text-xs);
+    padding: 6px 16px;
+  }
+
+  .signature-trips-title {
+    font-size: 2rem;
+  }
+
+  .signature-trips-subtitle {
+    font-size: 1rem;
+  }
+
+  .signature-trips-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .signature-trip-card {
+    padding: var(--space-5);
+  }
+
+  .signature-trip-icon-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .signature-trip-emoji {
+    font-size: 2rem;
+  }
+
+  .signature-safety-banner {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .signature-safety-icon {
+    font-size: 1.5rem;
+  }
+}
+
 /* Simplified Cultural Trip Cards */
 .cultural-trip-card-simple {
   background: var(--color-white);
@@ -514,6 +764,24 @@
   color: #475569;
   font-size: var(--text-base);
   line-height: 1.6;
+}
+
+/* Info Note Box */
+.info-note-box {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-8);
+  color: #1e40af;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-note-box strong {
+  font-weight: 800;
+  color: #1e293b;
 }
 
 .trip-header h3 {

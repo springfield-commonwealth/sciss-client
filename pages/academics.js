@@ -244,97 +244,49 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Core Courses Section - Enhanced Modern Design */}
-      <section className="section academic-tracks-section">
+      {/* Core Courses Section - Simplified */}
+      <section className="section bg-light">
         <div className="container">
-          <div className="tracks-header">
-            <h2 className="tracks-title">Core Academic Program Tracks</h2>
-            <p className="tracks-subtitle">Choose one or stack across sessions</p>
+          <div className="text--center mb--lg">
+            <h2>Core Academic Program Tracks</h2>
+            <p>Choose one or stack across sessions</p>
           </div>
 
-          <div className="academic-tracks-grid">
-            <Link href="/courses/path-to-wall-street" className="track-card featured-track">
-              <div className="track-number-badge">01</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">💼</span>
-              </div>
-              <h3 className="track-title">Path to Wall Street (Investment)</h3>
-              <span className="track-category">Investment Track</span>
-              <p className="track-description">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">💰 Stock Pitch</span>
-                <span className="highlight-tag">📊 Portfolio Building</span>
-              </div>
+          <div className="grid grid--2">
+            <Link href="/courses/path-to-wall-street" className="simple-track-card">
+              <div className="track-icon-large">💼</div>
+              <h3>Path to Wall Street (Investment)</h3>
+              <p className="track-description-simple">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
             </Link>
 
-            <Link href="/courses/youth-innovation-entrepreneurship" className="track-card">
-              <div className="track-number-badge">02</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">💡</span>
-              </div>
-              <h3 className="track-title">Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
-              <span className="track-category">Startup Track</span>
-              <p className="track-description">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">🚀 MVP Development</span>
-                <span className="highlight-tag">🎯 Pitch to Mentors</span>
-              </div>
+            <Link href="/courses/youth-innovation-entrepreneurship" className="simple-track-card">
+              <div className="track-icon-large">💡</div>
+              <h3>Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
+              <p className="track-description-simple">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
             </Link>
 
-            <Link href="/courses/artificial-intelligence" className="track-card">
-              <div className="track-number-badge">03</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">🤖</span>
-              </div>
-              <h3 className="track-title">AI & Robotics</h3>
-              <span className="track-category">Technology Track</span>
-              <p className="track-description">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">🐍 Python Coding</span>
-                <span className="highlight-tag">🏆 Robotics Challenge</span>
-              </div>
+            <Link href="/courses/artificial-intelligence" className="simple-track-card">
+              <div className="track-icon-large">🤖</div>
+              <h3>AI & Robotics</h3>
+              <p className="track-description-simple">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
             </Link>
 
-            <Link href="/courses/public-speaking-debate" className="track-card">
-              <div className="track-number-badge">04</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">🎤</span>
-              </div>
-              <h3 className="track-title">Leadership & Public Speaking/Debate</h3>
-              <span className="track-category">Communication Track</span>
-              <p className="track-description">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">🗣️ Daily Practice</span>
-                <span className="highlight-tag">🎯 Final Presentation</span>
-              </div>
+            <Link href="/courses/public-speaking-debate" className="simple-track-card">
+              <div className="track-icon-large">🎤</div>
+              <h3>Leadership & Public Speaking/Debate</h3>
+              <p className="track-description-simple">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
             </Link>
 
-            <Link href="/courses/music-performing-arts" className="track-card">
-              <div className="track-number-badge">05</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">🎭</span>
-              </div>
-              <h3 className="track-title">Music & Stage Performing Arts</h3>
-              <span className="track-category">Performing Arts Track</span>
-              <p className="track-description">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">🎵 Ensembles</span>
-                <span className="highlight-tag">🎬 Live Showcase</span>
-              </div>
+            <Link href="/courses/music-performing-arts" className="simple-track-card">
+              <div className="track-icon-large">🎭</div>
+              <h3>Music & Stage Performing Arts</h3>
+              <p className="track-description-simple">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
             </Link>
 
-            <Link href="/courses/sports-intensive" className="track-card">
-              <div className="track-number-badge">06</div>
-              <div className="track-icon-wrapper">
-                <span className="track-emoji">🏀</span>
-              </div>
-              <h3 className="track-title">Sports (e.g., Basketball, Soccer)</h3>
-              <span className="track-category">Athletics Track</span>
-              <p className="track-description">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
-              <div className="track-highlights">
-                <span className="highlight-tag">⚽ Daily Drills</span>
-                <span className="highlight-tag">🏆 Tournament</span>
-              </div>
+            <Link href="/courses/sports-intensive" className="simple-track-card">
+              <div className="track-icon-large">🏀</div>
+              <h3>Sports (e.g., Basketball, Soccer)</h3>
+              <p className="track-description-simple">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
             </Link>
           </div>
         </div>

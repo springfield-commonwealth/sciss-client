@@ -217,10 +217,10 @@ const DayTripsTravelInfo = {
   ],
   safety: [
     "Experienced trip supervisors",
-    "Medical staff accompaniment",
     "Emergency contact protocols",
     "Safety briefings before departure",
     "Group management systems",
+    "Safety and travel insurance included",
   ],
   preparation: [
     "Pre-trip orientation sessions",
@@ -236,5 +236,6 @@ export {
   DayTripsCulturalTrips,
   DayTripsTravelInfo,
   DayTripsTripSchedule,
-  DayTripsUniversityTrips,
+  DayTripsUniversityTrips
 };
+

@@ -32,7 +32,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       </section>
 
       {/* Signature Trips Section */}
-      <section className="section">
+      <section className="section topBorder custom-spacing">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Signature Trips</h2>
@@ -76,7 +76,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       </section>
 
       {/* Day Trips Carousel */}
-      <section className="section bg-light">
+      <section className="section bg-light custom-spacing">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Trip Highlights</h2>
@@ -117,7 +117,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       </section>
 
       {/* Travel Information */}
-      <section className="section bg-light">
+      <section className="section bg-light custom-spacing">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Travel Information</h2>

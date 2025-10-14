@@ -12,6 +12,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             showBreadcrumb={true}
             breadcrumbs={breadcrumbs}
         >
+            <div className="padding-top-100"></div>
             {/* Page Header Section */}
             <section className="section page-header-section">
                 <div className="container">
@@ -137,7 +138,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             <section className="section bg-light" id="our-team">
                 <div className="container">
                     <SectionHeader
-                        title="Team"
+                        title="What Our Team Specializes In"
                         description="Your child learns from people who do the work every day"
                         showDivider
                     />
@@ -197,48 +198,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
-            {/* Programs */}
-            <section className="section" id="programs">
-                <div className="container">
-                    <SectionHeader
-                        title="Learn More About Programs (G4–G12 • Residential)"
-                        description="Choose one track per session (students may stack across sessions)"
-                        showDivider
-                    />
-                    <div className="programs-grid">
-                        <div className="program-card">
-                            <div className="program-icon">📈</div>
-                            <h3>Path to Wall Street (Investment)</h3>
-                            <p>Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone.</p>
-                        </div>
-                        <div className="program-card">
-                            <div className="program-icon">🚀</div>
-                            <h3>Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
-                            <p>Go idea → prototype → pitch using design thinking, market research, and AI tools. Teams build an MVP and pitch to mentors in a friendly challenge aligned with global competitions.</p>
-                        </div>
-                        <div className="program-card">
-                            <div className="program-icon">🤖</div>
-                            <h3>AI & Robotics</h3>
-                            <p>For Juniors: visual coding and hardware kits to wire sensors and automate tasks. For Seniors: Python-based projects, intro ML concepts, and an end-of-session robotics/automation challenge.</p>
-                        </div>
-                        <div className="program-card">
-                            <div className="program-icon">🎤</div>
-                            <h3>Leadership & Public Speaking/Debate</h3>
-                            <p>Communication drills, debate, and stage presence; conflict resolution and teamwork; a polished final talk.</p>
-                        </div>
-                        <div className="program-card">
-                            <div className="program-icon">🎭</div>
-                            <h3>Music & Stage Performing Arts</h3>
-                            <p>Vocal/instrumental ensembles, movement & stagecraft, lighting/sound basics, and a live showcase.</p>
-                        </div>
-                        <div className="program-card">
-                            <div className="program-icon">⚽</div>
-                            <h3>Sports (e.g., Basketball, Soccer)</h3>
-                            <p>Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship; daily drills, scrimmages, and a fun tournament.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
 
             {/* Also Included */}
             <section className="section bg-light" id="also-included">
@@ -293,121 +253,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
-            {/* Activities & Trips */}
-            <section className="section" id="activities-trips">
-                <div className="container">
-                    <SectionHeader
-                        title="Activities & Trips"
-                        description="Community every night, horizons every week."
-                        showDivider
-                    />
-
-                    <div className="activities-content">
-                        <p className="activities-intro mb-6">
-                            Evenings feature relaxed campus events—movie nights, competitive game nights, themed parties, cultural nights, campfires under the stars, and our always-popular student-run talent show—plus team-building challenges like scavenger hunts, trivia, and friendly tournaments.
-                        </p>
-
-                        <div className="trips-grid">
-                            <div className="trip-section">
-                                <h3>🎓 Signature Trips</h3>
-                                <div className="trip-items">
-                                    <div className="trip-item">
-                                        <h4>Boston (Full Day)</h4>
-                                        <p>Harvard & MIT campus tours plus city exploration.</p>
-                                    </div>
-                                    <div className="trip-item">
-                                        <h4>Yale & Brown University</h4>
-                                        <p>Official tour-guide campus visits with admissions info sessions.</p>
-                                    </div>
-                                    <div className="trip-item">
-                                        <h4>Springfield Highlights</h4>
-                                        <p>The Naismith Basketball Hall of Fame and regional museums/historic sites.</p>
-                                    </div>
-                                    <div className="trip-item">
-                                        <h4>Other destinations by session</h4>
-                                        <p>Local attractions (e.g., museums, theme parks) subject to schedule.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="logistics-section">
-                                <h3>🛡️ Logistics & Safety</h3>
-                                <p>All trips and on-campus activities are fully supervised by SCISS staff. Transportation, tickets, and meals on official excursions are organized by the program so students can focus on learning and fun. The exact itinerary varies by session and weather; families receive the final schedule before arrival.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 2026 Sessions */}
-            <section className="section bg-light" id="2026-sessions">
-                <div className="container">
-                    <SectionHeader
-                        title="2026 Sessions"
-                        description="Location: 1 Ames Hill Dr, Springfield, MA 01105, USA (residential campus)"
-                        showDivider
-                    />
-
-                    <div className="sessions-content">
-                        <div className="sessions-grid">
-                            <div className="session-info">
-                                <h3>Four Sessions:</h3>
-                                <div className="session-list">
-                                    <div className="session-item">
-                                        <strong>Session 1:</strong> June 14 – June 26 (2 weeks)
-                                    </div>
-                                    <div className="session-item">
-                                        <strong>Session 2:</strong> June 28 – July 10 (2 weeks)
-                                    </div>
-                                    <div className="session-item">
-                                        <strong>Session 3:</strong> July 12 – July 24 (2 weeks)
-                                    </div>
-                                    <div className="session-item">
-                                        <strong>Session 4:</strong> July 26 – August 7 (2 weeks)
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="program-rhythm">
-                                <h3>Program rhythm:</h3>
-                                <ul>
-                                    <li><strong>Weekdays:</strong> academic classes in the morning; project studio/electives in the afternoon; community events in the evening</li>
-                                    <li><strong>Midweek/weekend:</strong> field trips and special events</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="signature-excursions">
-                            <h3>Signature excursions:</h3>
-                            <div className="excursion-list">
-                                <div className="excursion-item">
-                                    <strong>Boston (Harvard & MIT)</strong> — full-day university immersion and city exploration
-                                </div>
-                                <div className="excursion-item">
-                                    <strong>Yale & Brown University</strong> — official tour guide visit with admission info session
-                                </div>
-                                <div className="excursion-item">
-                                    <strong>Basketball Hall of Fame</strong>, plus museums, historical sites, and regional attractions
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="activities-sports">
-                            <h3>Activities & sports (examples):</h3>
-                            <p>Basketball • Soccer • Golf • Zumba • Yoga • Rock climbing • Archery • Swimming • Ultimate Frisbee • Rowing • Badminton • Table Tennis • Volleyball • Hiking • Fitness & Dance • Arts & Crafts — and more.</p>
-                        </div>
-
-                        <div className="investment-highlights">
-                            <h3>Investment track highlights:</h3>
-                            <p>Multi-level curriculum (Intro → Valuation), trading simulator with a virtual investment challenge, and guest speakers from top firms.</p>
-                        </div>
-
-                        <div className="program-note">
-                            <p><em>Note: Program details evolve each year; 2026 will follow the same high-care, high-impact model with updated speakers, trips, and schedules.</em></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
 
             <FooterCTA linkTitle="Academic Programs" link="/program-overview" />
         </Layout>

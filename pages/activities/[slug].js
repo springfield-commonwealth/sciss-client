@@ -162,41 +162,47 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
           </div>
         </section>
 
-        <section className="activity-schedule">
-          <div className="activity-content">
-            <h2>Schedule & Times</h2>
-            <div className="schedule-details">
-              <div className="schedule-item">
-                <h4>Frequency</h4>
-                <p>{schedule.frequency}</p>
+        <section className="activity-schedule section">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Schedule & Times</h2>
+              <p>When and where this activity takes place</p>
+            </div>
+
+            <div className="grid grid--2">
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">📅</div>
+                <h3>Frequency & Location</h3>
+                <p className="trip-description-simple"><strong>Frequency:</strong> {schedule.frequency}</p>
+                <p className="trip-description-simple"><strong>Location:</strong> {schedule.location}</p>
               </div>
-              <div className="schedule-item">
-                <h4>Time Slots</h4>
-                <div className="time-slots">
+
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">⏰</div>
+                <h3>Time Slots</h3>
+                <div className="simple-activity-list">
                   {schedule.timeSlots.map((slot, index) => (
-                    <span key={index} className="time-slot">
-                      {slot}
-                    </span>
+                    <span key={index} className="simple-activity-tag">{slot}</span>
                   ))}
                 </div>
-              </div>
-              <div className="schedule-item">
-                <h4>Location</h4>
-                <p>{schedule.location}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Activity Features */}
-        <section className="activity-features">
-          <div className="activity-content">
-            <h2>Program Features</h2>
-            <div className="features-grid">
+        <section className="activity-features section bg-light">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Program Features</h2>
+              <p>What you'll experience in this activity</p>
+            </div>
+
+            <div className="grid grid--2">
               {features.map((feature, index) => (
-                <div key={index} className="feature-item">
-                  <div className="feature-icon">✓</div>
-                  <p>{feature}</p>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">✓</div>
+                  <p className="trip-description-simple">{feature}</p>
                 </div>
               ))}
             </div>
@@ -204,14 +210,18 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
         </section>
 
         {/* Learning Outcomes */}
-        <section className="activity-outcomes">
-          <div className="activity-content">
-            <h2>Learning Outcomes</h2>
-            <div className="outcomes-list">
+        <section className="activity-outcomes section">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Learning Outcomes</h2>
+              <p>Skills and experiences you'll gain</p>
+            </div>
+
+            <div className="grid grid--2">
               {outcomes.map((outcome, index) => (
-                <div key={index} className="outcome-item">
-                  <div className="outcome-number">{index + 1}</div>
-                  <p>{outcome}</p>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">🎯</div>
+                  <p className="trip-description-simple">{outcome}</p>
                 </div>
               ))}
             </div>
@@ -219,13 +229,18 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
         </section>
 
         {/* Equipment & Requirements */}
-        <section className="activity-equipment">
-          <div className="activity-content">
-            <h2>Equipment & Requirements</h2>
-            <div className="equipment-grid">
-              <div className="equipment-section">
-                <h4>What's Provided</h4>
-                <ul className="equipment-list provided">
+        <section className="activity-equipment section bg-light">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Equipment & Requirements</h2>
+              <p>What's provided and what to bring</p>
+            </div>
+
+            <div className="grid grid--2">
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">✅</div>
+                <h3>What's Provided</h3>
+                <div className="simple-activity-list">
                   {equipment
                     .filter(
                       (item) =>
@@ -234,13 +249,15 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
                         item.includes("included")
                     )
                     .map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <span key={index} className="simple-activity-tag">{item}</span>
                     ))}
-                </ul>
+                </div>
               </div>
-              <div className="equipment-section">
-                <h4>What to Bring</h4>
-                <ul className="equipment-list required">
+
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎒</div>
+                <h3>What to Bring</h3>
+                <div className="simple-activity-list">
                   {equipment
                     .filter(
                       (item) =>
@@ -251,23 +268,27 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
                         item.includes("clothing")
                     )
                     .map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <span key={index} className="simple-activity-tag">{item}</span>
                     ))}
-                </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Instructors */}
-        <section className="activity-instructors">
-          <div className="activity-content">
-            <h2>Expert Instructors</h2>
-            <div className="instructors-list">
+        <section className="activity-instructors section">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Expert Instructors</h2>
+              <p>Learn from experienced professionals</p>
+            </div>
+
+            <div className="grid grid--2">
               {instructors.map((instructor, index) => (
-                <div key={index} className="instructor-item">
-                  <div className="instructor-icon">👨‍🏫</div>
-                  <p>{instructor}</p>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">👨‍🏫</div>
+                  <p className="trip-description-simple">{instructor}</p>
                 </div>
               ))}
             </div>

@@ -3,6 +3,147 @@
    ========================================================================== */
 
 /* ==========================================================================
+   INDIVIDUAL ACTIVITY PAGE - SIMPLIFIED CONTENT SECTIONS
+   ========================================================================== */
+
+/* Activity Content Sections - Simplified Design */
+.activity-schedule.section,
+.activity-features.section,
+.activity-outcomes.section,
+.activity-equipment.section,
+.activity-instructors.section {
+  background: var(--color-white);
+}
+
+.activity-features.section.bg-light,
+.activity-equipment.section.bg-light {
+  background: #f8fafc;
+}
+
+/* Simplified Card Styles for Activity Content */
+.activity-schedule .cultural-trip-card-simple,
+.activity-features .cultural-trip-card-simple,
+.activity-outcomes .cultural-trip-card-simple,
+.activity-equipment .cultural-trip-card-simple,
+.activity-instructors .cultural-trip-card-simple {
+  background: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.activity-schedule .cultural-trip-card-simple:hover,
+.activity-features .cultural-trip-card-simple:hover,
+.activity-outcomes .cultural-trip-card-simple:hover,
+.activity-equipment .cultural-trip-card-simple:hover,
+.activity-instructors .cultural-trip-card-simple:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.activity-schedule .trip-icon-large,
+.activity-features .trip-icon-large,
+.activity-outcomes .trip-icon-large,
+.activity-equipment .trip-icon-large,
+.activity-instructors .trip-icon-large {
+  font-size: 3rem;
+  margin-bottom: var(--space-3);
+}
+
+.activity-schedule .cultural-trip-card-simple h3,
+.activity-features .cultural-trip-card-simple h3,
+.activity-outcomes .cultural-trip-card-simple h3,
+.activity-equipment .cultural-trip-card-simple h3,
+.activity-instructors .cultural-trip-card-simple h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: var(--space-2);
+}
+
+.activity-schedule .trip-description-simple,
+.activity-features .trip-description-simple,
+.activity-outcomes .trip-description-simple,
+.activity-equipment .trip-description-simple,
+.activity-instructors .trip-description-simple {
+  color: #475569;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.activity-schedule .simple-activity-list,
+.activity-features .simple-activity-list,
+.activity-outcomes .simple-activity-list,
+.activity-equipment .simple-activity-list,
+.activity-instructors .simple-activity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.activity-schedule .simple-activity-tag,
+.activity-features .simple-activity-tag,
+.activity-outcomes .simple-activity-tag,
+.activity-equipment .simple-activity-tag,
+.activity-instructors .simple-activity-tag {
+  background: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  color: #1e293b;
+  font-size: var(--text-sm);
+  display: inline-block;
+}
+
+.activity-schedule .simple-activity-tag:hover,
+.activity-features .simple-activity-tag:hover,
+.activity-outcomes .simple-activity-tag:hover,
+.activity-equipment .simple-activity-tag:hover,
+.activity-instructors .simple-activity-tag:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Design for Activity Content */
+@media (max-width: 768px) {
+
+  .activity-schedule .grid--2,
+  .activity-features .grid--2,
+  .activity-outcomes .grid--2,
+  .activity-equipment .grid--2,
+  .activity-instructors .grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-schedule .trip-icon-large,
+  .activity-features .trip-icon-large,
+  .activity-outcomes .trip-icon-large,
+  .activity-equipment .trip-icon-large,
+  .activity-instructors .trip-icon-large {
+    font-size: 2.5rem;
+  }
+
+  .activity-schedule .cultural-trip-card-simple h3,
+  .activity-features .cultural-trip-card-simple h3,
+  .activity-outcomes .cultural-trip-card-simple h3,
+  .activity-equipment .cultural-trip-card-simple h3,
+  .activity-instructors .cultural-trip-card-simple h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ==========================================================================
    LIFE ACTIVITIES OVERVIEW PAGE
    ========================================================================== */
 
@@ -1017,11 +1158,11 @@
     gap: 2rem;
     text-align: center;
   }
-  
+
   .activity-title {
     font-size: 2.5rem;
   }
-  
+
   .equipment-grid {
     grid-template-columns: 1fr;
   }
@@ -1032,41 +1173,41 @@
     padding: 2rem 0 4rem;
     margin-top: var(--nav-height-mobile);
   }
-  
+
   .activity-hero-content {
     padding: 0 1rem;
   }
-  
+
   .activity-title {
     font-size: 2rem;
   }
-  
+
   .activity-description {
     font-size: 1rem;
   }
-  
+
   .activity-quick-info {
     grid-template-columns: 1fr;
   }
-  
+
   .activity-actions {
     flex-direction: column;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .related-activities-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .explore-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-actions {
     flex-direction: column;
     align-items: center;
   }
-} 
+}

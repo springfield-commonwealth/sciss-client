@@ -1,6 +1,5 @@
 import Layout from "@/components/layouts/Layout";
 import Highlights from "@/components/sections/Highlights";
-import { SectionHeader } from "@/components/ui";
 import FooterCTA from "@/components/ui/FooterCTA";
 import { HomeHighlights } from "@/constants/homeContent";
 import {
@@ -129,76 +128,48 @@ const LifeActivities = ({
         </div>
       </section>
 
-      {/* Sports Programs */}
-      <section id="sports" className="section">
+      {/* Sports Programs - Simplified */}
+      <section id="sports" className="section bg-light">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Sports Programs</h2>
-            <p>
-              Professional coaching and state-of-the-art facilities for athletic
-              development
-            </p>
+            <p>Professional coaching and state-of-the-art facilities for athletic development</p>
           </div>
 
-          <div className="programs-grid">
+          <div className="grid grid--3">
             {LifeActivitiesSportsPrograms.map((sport, index) => (
-              <div key={index} className="sport-card card">
-                <div className="sport-header">
-                  <h3>{sport.title}</h3>
-                  <span className="level-badge">{sport.level}</span>
-                </div>
-
-                <p className="sport-description">{sport.description}</p>
-
-                <div className="sport-features">
-                  <h4>Program Features:</h4>
-                  <ul>
-                    {sport.features.map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="sport-schedule">
-                  <strong>Schedule:</strong> {sport.schedule}
-                </div>
+              <div key={index} className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🏆</div>
+                <h3>{sport.title}</h3>
+                <p className="trip-description-simple">{sport.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Fitness Programs */}
-      <section className="section bg-light">
+      {/* Fitness Programs - Simplified */}
+      <section className="section">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Fitness & Wellness</h2>
-            <p>
-              Stay active and healthy with our comprehensive fitness programs
-            </p>
+            <p>Stay active and healthy with our comprehensive fitness programs</p>
           </div>
 
           <div className="grid grid--3">
             {LifeActivitiesFitnessPrograms.map((program, index) => (
-              <div key={index} className="fitness-card card">
+              <div key={index} className="cultural-trip-card-simple">
+                <div className="trip-icon-large">💪</div>
                 <h3>{program.title}</h3>
-                <p>{program.description}</p>
-                <div className="fitness-highlights">
-                  <h4>Program Highlights</h4>
-                  <ul>
-                    {program.highlights.map((highlight, idx) => (
-                      <li key={idx}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="trip-description-simple">{program.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Recreation Activities */}
-      <section className="section">
+      {/* Recreation Activities - Simplified */}
+      <section className="section bg-light">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Recreation & Leisure</h2>
@@ -207,14 +178,12 @@ const LifeActivities = ({
 
           <div className="grid grid--2">
             {LifeActivitiesRecreationalActivities.map((activity, index) => (
-              <div key={index} className="recreation-card card">
+              <div key={index} className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎮</div>
                 <h3>{activity.category}</h3>
-                <div className="activity-grid">
+                <div className="simple-activity-list">
                   {activity.activities.map((item, idx) => (
-                    <div key={idx} className="activity-item">
-                      <div className="activity-icon">🎯</div>
-                      <div>{item}</div>
-                    </div>
+                    <span key={idx} className="simple-activity-tag">{item}</span>
                   ))}
                 </div>
               </div>
@@ -223,37 +192,31 @@ const LifeActivities = ({
         </div>
       </section>
 
-      {/* Evening Activities Section */}
-      <section className="section bg-light">
+      {/* Evening Activities Section - Simplified */}
+      <section className="section">
         <div className="container">
-          <SectionHeader
-            title="Evening Activities"
-            description="Campus fun nightly - making every evening memorable"
-            align="center"
-            showDivider
-          />
+          <div className="text--center mb--lg">
+            <h2>Evening Activities</h2>
+            <p>Campus fun nightly - making every evening memorable</p>
+          </div>
 
-          <div className="activity-block activity-block--evening">
-            <div className="activity-block__icon-badge">🎉</div>
-            <h3 className="activity-block__title">Evening Activities</h3>
-            <div className="activity-tags">
-              <span className="activity-tag">Movie nights</span>
-              <span className="activity-tag">Game tournaments</span>
-              <span className="activity-tag">Themed parties</span>
-              <span className="activity-tag">Cultural events</span>
-              <span className="activity-tag">Campfires</span>
-              <span className="activity-tag">Talent shows</span>
-              <span className="activity-tag">Scavenger hunts</span>
-              <span className="activity-tag">Trivia challenges</span>
+          <div className="cultural-trip-card-simple">
+            <div className="trip-icon-large">🎉</div>
+            <h3>Evening Activities</h3>
+            <div className="simple-activity-list">
+              <span className="simple-activity-tag">Movie nights</span>
+              <span className="simple-activity-tag">Game tournaments</span>
+              <span className="simple-activity-tag">Themed parties</span>
+              <span className="simple-activity-tag">Cultural events</span>
+              <span className="simple-activity-tag">Campfires</span>
+              <span className="simple-activity-tag">Talent shows</span>
+              <span className="simple-activity-tag">Scavenger hunts</span>
+              <span className="simple-activity-tag">Trivia challenges</span>
             </div>
           </div>
 
-          {/* Safety Footer Banner */}
-          <div className="safety-banner">
-            <div className="safety-banner__icon">🛡️</div>
-            <div className="safety-banner__content">
-              <strong>Safety First:</strong> All activities are fully supervised with clear conduct norms.
-            </div>
+          <div className="info-note-box">
+            <strong>Safety First:</strong> All activities are fully supervised with clear conduct norms.
           </div>
         </div>
       </section>

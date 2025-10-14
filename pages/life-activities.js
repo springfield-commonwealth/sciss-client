@@ -67,7 +67,7 @@ const LifeActivities = ({
       </section>
 
       {/* All Activities Overview - Condensed */}
-      <section className="section bg-light">
+      <section className="section bg-light custom-spacing">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Daily Activities & Recreation</h2>

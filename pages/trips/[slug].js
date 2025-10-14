@@ -160,14 +160,18 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         </section>
 
         {/* Trip Highlights */}
-        <section className="trip-highlights">
-          <div className="trip-content">
-            <h2>Trip Highlights</h2>
-            <div className="highlights-grid">
+        <section className="section topBorder">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Trip Highlights</h2>
+              <p>Discover what makes this experience special</p>
+            </div>
+            <div className="grid grid--2">
               {highlights.map((highlight, index) => (
-                <div key={index} className="highlight-item">
-                  <div className="highlight-icon">🎯</div>
-                  <p>{highlight}</p>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">🎯</div>
+                  <h3>Highlight {index + 1}</h3>
+                  <p className="trip-description-simple">{highlight}</p>
                 </div>
               ))}
             </div>
@@ -175,19 +179,19 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         </section>
 
         {/* Detailed Itinerary */}
-        <section className="trip-itinerary">
-          <div className="trip-content">
-            <h2>Detailed Itinerary</h2>
-            <div className="itinerary-timeline">
+        <section className="section bg-light custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Detailed Itinerary</h2>
+              <p>Your day-by-day adventure schedule</p>
+            </div>
+            <div className="grid grid--2">
               {itinerary.map((item, index) => (
-                <div key={index} className="itinerary-item">
-                  <div className="itinerary-time">
-                    <span className="time-badge">{item.time}</span>
-                  </div>
-                  <div className="itinerary-details">
-                    <h4>{item.activity}</h4>
-                    <p>{item.description}</p>
-                  </div>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">⏰</div>
+                  <h3>{item.time}</h3>
+                  <p className="trip-location-simple">📍 {item.activity}</p>
+                  <p className="trip-description-simple">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -195,13 +199,16 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         </section>
 
         {/* What's Included */}
-        <section className="trip-inclusions">
-          <div className="trip-content">
-            <h2>What's Included</h2>
-            <div className="inclusions-list">
+        <section className="section custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>What's Included</h2>
+              <p>Everything you need for an amazing trip</p>
+            </div>
+            <div className="grid grid--3">
               {inclusions.map((inclusion, index) => (
-                <div key={index} className="inclusion-item">
-                  <div className="inclusion-icon">✓</div>
+                <div key={index} className="info-card">
+                  <h3>✓ Included</h3>
                   <p>{inclusion}</p>
                 </div>
               ))}
@@ -210,14 +217,18 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         </section>
 
         {/* Educational Value */}
-        <section className="trip-educational-value">
-          <div className="trip-content">
-            <h2>Educational Benefits</h2>
-            <div className="educational-value-list">
+        <section className="section bg-light custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Educational Benefits</h2>
+              <p>Learning opportunities that enhance your experience</p>
+            </div>
+            <div className="grid grid--2">
               {educationalValue.map((value, index) => (
-                <div key={index} className="educational-value-item">
-                  <div className="value-number">{index + 1}</div>
-                  <p>{value}</p>
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">🎓</div>
+                  <h3>Learning Goal {index + 1}</h3>
+                  <p className="trip-description-simple">{value}</p>
                 </div>
               ))}
             </div>
@@ -225,34 +236,29 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         </section>
 
         {/* Preparation Tips */}
-        <section className="trip-preparation">
-          <div className="trip-content">
-            <h2>Preparation Tips</h2>
-            <div className="preparation-grid">
-              <div className="preparation-section">
-                <h4>Before You Go</h4>
-                <ul className="preparation-list">
+        <section className="section custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
+              <h2>Preparation & Trip Details</h2>
+              <p>Everything you need to know before you go</p>
+            </div>
+            <div className="grid grid--2">
+              <div className="info-card">
+                <h3>📋 Preparation Tips</h3>
+                <ul>
                   {preparationTips.map((tip, index) => (
                     <li key={index}>{tip}</li>
                   ))}
                 </ul>
               </div>
-              <div className="preparation-section">
-                <h4>Trip Details</h4>
-                <div className="trip-details">
-                  <div className="detail-item">
-                    <strong>Age Group:</strong> {ageGroup}
-                  </div>
-                  <div className="detail-item">
-                    <strong>Difficulty:</strong> {difficulty}
-                  </div>
-                  <div className="detail-item">
-                    <strong>Group Size:</strong> {groupSize}
-                  </div>
-                  <div className="detail-item">
-                    <strong>Transportation:</strong> {transportMode}
-                  </div>
-                </div>
+              <div className="info-card">
+                <h3>ℹ️ Trip Information</h3>
+                <ul>
+                  <li><strong>Age Group:</strong> {ageGroup}</li>
+                  <li><strong>Difficulty:</strong> {difficulty}</li>
+                  <li><strong>Group Size:</strong> {groupSize}</li>
+                  <li><strong>Transportation:</strong> {transportMode}</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -300,8 +306,8 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
         )}
 
         {/* Call to Action */}
-        <section className="trip-cta">
-          <div className="trip-content">
+        <section className="cta-section">
+          <div className="container text--center">
             <h2>Ready to Explore {location}?</h2>
             <p>
               Join us for this unforgettable {category.toLowerCase()}{" "}
@@ -309,7 +315,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               educational insights!
             </p>
             <div className="cta-actions">
-              <Link href="/apply" className="btn btn--primary btn--lg">
+              <Link href="/apply" className="btn btn--primary">
                 Reserve Your Spot
               </Link>
               <Link href="/day-trips" className="btn btn--secondary">

@@ -7,7 +7,7 @@
 
 /* Universal Slug Header Style */
 .course-page-hero {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  background: #000000;
   color: white;
   padding: 4rem 0 6rem;
   position: relative;
@@ -315,4 +315,4 @@
     padding: 0.75rem;
     font-size: 0.9rem;
   }
-} 
+}

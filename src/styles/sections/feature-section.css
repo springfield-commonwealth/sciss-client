@@ -2,7 +2,7 @@
 
 .feature-section {
   padding: var(--space-20) 0;
-  background: var(--color-bg-primary);
+  background: var(--color-bg-secondary);
   position: relative;
 }
 

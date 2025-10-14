@@ -147,58 +147,95 @@ const CoursePage = ({ course, breadcrumbs }) => {
           </div>
         </section>
 
-        {/* Course Details */}
-        <section className="course-page-details">
-          <div className="course-page-content">
-            {/* Prerequisites */}
-            <div className="course-page-section">
+        {/* Prerequisites */}
+        <section className="section topBorder">
+          <div className="container">
+            <div className="text--center mb--lg">
               <h2>Prerequisites</h2>
-              <p>{prerequisites}</p>
+              <p>What you need to know before joining</p>
             </div>
+            <div className="cultural-trip-card-simple" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+              <div className="trip-icon-large">📋</div>
+              <h3>Requirements</h3>
+              <p className="trip-description-simple">{prerequisites}</p>
+            </div>
+          </div>
+        </section>
 
-            {/* Highlights */}
-            <div className="course-page-section">
+        {/* Program Highlights */}
+        <section className="section bg-light custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
               <h2>Program Highlights</h2>
-              <ul className="highlights-list">
-                {highlights.map((highlight, index) => (
-                  <li key={index}>{highlight}</li>
-                ))}
-              </ul>
+              <p>Key features and benefits of this course</p>
             </div>
+            <div className="grid grid--2">
+              {highlights.map((highlight, index) => (
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">⭐</div>
+                  <h3>Highlight {index + 1}</h3>
+                  <p className="trip-description-simple">{highlight}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            {/* Curriculum */}
-            <div className="course-page-section">
+        {/* Curriculum */}
+        <section className="section custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
               <h2>Curriculum</h2>
-              <ul className="curriculum-list">
-                {curriculum.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+              <p>What you'll learn in this program</p>
             </div>
+            <div className="grid grid--2">
+              {curriculum.map((item, index) => (
+                <div key={index} className="cultural-trip-card-simple">
+                  <div className="trip-icon-large">📚</div>
+                  <h3>Module {index + 1}</h3>
+                  <p className="trip-description-simple">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            {/* Learning Outcomes */}
-            <div className="course-page-section">
+        {/* Learning Outcomes */}
+        <section className="section bg-light custom-spacing">
+          <div className="container">
+            <div className="text--center mb--lg">
               <h2>Learning Outcomes</h2>
-              <ul className="outcomes-list">
-                {outcomes.map((outcome, index) => (
-                  <li key={index}>{outcome}</li>
-                ))}
-              </ul>
+              <p>Skills and knowledge you'll gain</p>
             </div>
+            <div className="grid grid--3">
+              {outcomes.map((outcome, index) => (
+                <div key={index} className="info-card">
+                  <h3>🎯 Outcome</h3>
+                  <p>{outcome}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            {/* Call to Action */}
-            <div className="course-page-cta">
-              <h2>Ready to Join This Program?</h2>
-              <p>
-                Secure your spot in this exclusive program and start your
-                journey toward academic excellence.
-              </p>
+        {/* Call to Action */}
+        <section className="cta-section">
+          <div className="container text--center">
+            <h2>Ready to Join This Program?</h2>
+            <p>
+              Secure your spot in this exclusive program and start your
+              journey toward academic excellence.
+            </p>
+            <div className="cta-actions">
               <button
-                className="btn btn--header btn--lg"
+                className="btn btn--primary"
                 onClick={() => router.push("/apply")}
               >
                 Apply Now
               </button>
+              <Link href="/courses" className="btn btn--secondary">
+                View All Courses
+              </Link>
             </div>
           </div>
         </section>

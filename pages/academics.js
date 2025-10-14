@@ -68,7 +68,7 @@ const Academics = ({
       </section>
 
       {/* Quick Facts Section - Enhanced Modern Design */}
-      <section className="section quick-facts-section">
+      <section className="section quick-facts-section bg-white topBorder">
         <div className="container">
           <div className="quick-facts-wrapper">
             <SectionHeader
@@ -160,7 +160,7 @@ const Academics = ({
       </section>
 
       {/* Overview Section - Simple & Bold */}
-      <section className="section academics-overview">
+      <section className="section academics-overview bg-light custom-spacing">
         <div className="container">
           <SectionHeader
             title="Overview"
@@ -194,7 +194,7 @@ const Academics = ({
       </section>
 
       {/* Key Features - Bold & Visual */}
-      <section className="section academics-features">
+      <section className="section academics-features bg-white custom-spacing">
         <div className="container">
           <SectionHeader
             title="What Makes SCISS Different"
@@ -245,7 +245,7 @@ const Academics = ({
       </section>
 
       {/* Core Courses Section - Simplified */}
-      <section className="section bg-light">
+      <section className="section bg-light custom-spacing">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Core Academic Program Tracks</h2>
@@ -293,7 +293,7 @@ const Academics = ({
       </section>
 
       {/* Academic Support */}
-      <section className="section bg-light">
+      <section className="section bg-white custom-spacing">
         <div className="container">
           <SectionHeader
             title="Comprehensive Academic Support"

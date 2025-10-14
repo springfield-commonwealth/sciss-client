@@ -103,11 +103,11 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               knowsAbout: expertise,
               ...(education &&
                 education.length > 0 && {
-                  alumniOf: education.map((edu) => ({
-                    "@type": "EducationalOrganization",
-                    name: edu.institution,
-                  })),
-                }),
+                alumniOf: education.map((edu) => ({
+                  "@type": "EducationalOrganization",
+                  name: edu.institution,
+                })),
+              }),
               ...(contactEmail && { email: contactEmail }),
             }),
           }}
@@ -149,24 +149,36 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Professional Biography */}
         {bio && (
-          <section className="staff-bio">
-            <div className="staff-content">
-              <h2>Professional Background</h2>
-              <p className="bio-text">{bio}</p>
+          <section className="section topBorder">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Professional Background</h2>
+                <p>Learn about {firstName}'s journey and expertise</p>
+              </div>
+              <div className="cultural-trip-card-simple" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+                <div className="trip-icon-large">👨‍🏫</div>
+                <h3>About {firstName}</h3>
+                <p className="trip-description-simple">{bio}</p>
+              </div>
             </div>
           </section>
         )}
 
         {/* Expertise */}
         {expertise && expertise.length > 0 && (
-          <section className="staff-expertise">
-            <div className="staff-content">
-              <h2>Areas of Expertise</h2>
-              <div className="expertise-list">
+          <section className="section bg-light custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Areas of Expertise</h2>
+                <p>Specialized knowledge and skills</p>
+              </div>
+              <div className="grid grid--3">
                 {expertise.map((skill, index) => (
-                  <span key={index} className="expertise-tag">
-                    {skill}
-                  </span>
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">🎯</div>
+                    <h3>{skill}</h3>
+                    <p className="trip-description-simple">Expert knowledge and experience in this specialized area</p>
+                  </div>
                 ))}
               </div>
             </div>
@@ -175,16 +187,19 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Education */}
         {education && education.length > 0 && (
-          <section className="staff-education">
-            <div className="staff-content">
-              <h2>Education</h2>
-              <div className="education-list">
+          <section className="section custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Education</h2>
+                <p>Academic credentials and qualifications</p>
+              </div>
+              <div className="grid grid--2">
                 {education.map((edu, index) => (
-                  <div key={index} className="education-item">
-                    <h4>{edu.degree}</h4>
-                    <p className="institution">{edu.institution}</p>
-                    <p className="year">{edu.year}</p>
-                    {edu.field && <p className="field">{edu.field}</p>}
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">🎓</div>
+                    <h3>{edu.degree}</h3>
+                    <p className="trip-location-simple">📍 {edu.institution}</p>
+                    <p className="trip-description-simple">{edu.year} {edu.field && `• ${edu.field}`}</p>
                   </div>
                 ))}
               </div>
@@ -194,18 +209,20 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Professional Experience */}
         {experience && experience.length > 0 && (
-          <section className="staff-experience">
-            <div className="staff-content">
-              <h2>Professional Experience</h2>
-              <div className="experience-list">
+          <section className="section bg-light custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Professional Experience</h2>
+                <p>Career highlights and professional journey</p>
+              </div>
+              <div className="grid grid--2">
                 {experience.map((exp, index) => (
-                  <div key={index} className="experience-item">
-                    <h4>{exp.position}</h4>
-                    <p className="company">{exp.company}</p>
-                    <p className="duration">
-                      {exp.startDate} - {exp.endDate || "Present"}
-                    </p>
-                    <p className="description">{exp.description}</p>
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">💼</div>
+                    <h3>{exp.position}</h3>
+                    <p className="trip-location-simple">📍 {exp.company}</p>
+                    <p className="trip-description-simple">{exp.startDate} - {exp.endDate || "Present"}</p>
+                    {exp.description && <p className="trip-description-simple" style={{ marginTop: '1rem' }}>{exp.description}</p>}
                   </div>
                 ))}
               </div>
@@ -215,31 +232,42 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Achievements */}
         {achievements && achievements.length > 0 && (
-          <section className="staff-achievements">
-            <div className="staff-content">
-              <h2>Key Achievements</h2>
-              <ul className="achievements-list">
+          <section className="section custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Key Achievements</h2>
+                <p>Notable accomplishments and recognition</p>
+              </div>
+              <div className="grid grid--3">
                 {achievements.map((achievement, index) => (
-                  <li key={index}>{achievement}</li>
+                  <div key={index} className="info-card">
+                    <h3>🏆 Achievement</h3>
+                    <p>{achievement}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </section>
         )}
 
         {/* Courses Taught */}
         {courses && courses.length > 0 && (
-          <section className="staff-courses">
-            <div className="staff-content">
-              <h2>Courses at SCISS</h2>
-              <div className="courses-list">
+          <section className="section bg-light custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>Courses at SCISS</h2>
+                <p>Explore courses taught by {firstName}</p>
+              </div>
+              <div className="grid grid--2">
                 {courses.map((courseSlug, index) => (
                   <Link
                     key={index}
                     href={`/courses/${courseSlug}`}
-                    className="course-link"
+                    className="cultural-trip-card-simple"
                   >
-                    View {courseSlug.replace(/-/g, " ")} Course
+                    <div className="trip-icon-large">📚</div>
+                    <h3>{courseSlug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}</h3>
+                    <p className="trip-description-simple">Learn from {firstName}'s expertise in this course</p>
                   </Link>
                 ))}
               </div>
@@ -280,15 +308,15 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
         )}
 
         {/* Call to Action */}
-        <section className="staff-cta">
-          <div className="staff-content">
+        <section className="cta-section">
+          <div className="container text--center">
             <h2>Learn from {firstName}</h2>
             <p>
               Gain insights and expertise from {firstName}'s extensive
               experience by joining our programs at SCISS.
             </p>
             <div className="cta-actions">
-              <Link href="/apply" className="btn btn--primary btn--lg">
+              <Link href="/apply" className="btn btn--primary">
                 Apply Now
               </Link>
               <Link href="/staff" className="btn btn--secondary">

@@ -4,7 +4,7 @@
 }
 
 .directory-header {
-    margin-top: var(--nav-height);
+  margin-top: var(--nav-height);
   padding: var(--space-16) 0;
   text-align: center;
   position: relative;
@@ -19,39 +19,44 @@
 }
 
 .trips-directory-header {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  background: #000000;
   color: white;
 }
 
 .staff-directory-header {
-  background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-700) 100%);
+  background: #000000;
   color: white;
 }
 
+.staff-directory-header .card--feature {
+  background: #ffffff !important;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.staff-directory-header .card--feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.staff-directory-header .card--feature:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
 .courses-directory-header {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  background: #000000;
   color: white;
 }
 
 .activities-directory-header {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  background: #000000;
   color: white;
 }
 
-.directory-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
 
-.directory-header 
-
-.directory-header .section__subtitle {
+.directory-header .directory-header .section__subtitle {
   color: var(--color-primary-200);
 }
 
@@ -184,7 +189,7 @@
     gap: var(--space-6);
     padding: 0 var(--space-4);
   }
-  
+
   .filter-controls {
     grid-template-columns: 1fr;
     gap: var(--space-4);
@@ -206,7 +211,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 0; }
+  margin: 0;
+}
 
 .directory-card .card__image img {
   width: 100%;
@@ -221,15 +227,18 @@
 
 .directory-card--trips .card__image {
   height: var(--card-image-height-lg, 180px);
-  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+}
 
 .directory-card--courses .card__image {
   height: var(--card-image-height-md, 160px);
-  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+}
 
 .directory-card--activities .card__image {
   height: var(--card-image-height-xl, 200px);
-  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0; }
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+}
 
 .directory-card--staff .card__image {
   border-radius: var(--radius-full);
@@ -394,9 +403,7 @@
   flex-wrap: wrap;
 }
 
-.directory-cta 
-
-.directory-cta .section__subtitle {
+.directory-cta .directory-cta .section__subtitle {
   color: var(--color-warning-200);
 }
 
@@ -447,31 +454,31 @@
   .directory-header {
     padding: 2rem 0;
   }
-  
+
   .directory-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .directory-filters {
     padding: 1.5rem 0;
   }
-  
+
   .directory-grid {
     padding: 2rem 0;
   }
-  
+
   .directory-categories {
     padding: 2rem 0;
   }
-  
+
   .directory-cta {
     padding: 3rem 0;
   }
-  
+
   .cta-actions {
     flex-direction: column;
   }
-  
+
   .categories-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -483,13 +490,13 @@
   .directory-header {
     padding: 1.5rem 0;
   }
-  
+
   .directory-header h1 {
     font-size: 2rem;
   }
-  
+
   .directory-items-grid {
     gap: 1rem;
   }
-  
-    }
+
+}

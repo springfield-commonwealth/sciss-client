@@ -1,12 +1,15 @@
 /* Page Header Styles - Enhanced styling for sections without hero images */
 
 .page-header-section {
-    padding: calc(var(--space-10) + 144px) 0 var(--space-8);
+    padding: calc(var(--space-10) + 154px) 0 var(--space-8);
     background: linear-gradient(135deg, #f59e0b 0%, #f59e0b 100%);
     border-bottom: 1px solid var(--color-border-light);
     position: relative;
     overflow: hidden;
     margin-top: 0;
+    background: #000;
+    padding-bottom: 38px !important;
+    color: #ffffffcc;
 }
 
 .page-header-section::before {

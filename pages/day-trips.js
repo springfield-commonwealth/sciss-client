@@ -24,13 +24,9 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       <section className="section page-header-section">
         <div className="container">
           <div className="page-header-content">
-            <h1 className="page-title">Unforgettable Day Trips</h1>
             <p className="page-subtitle">Explore & Discover</p>
+            <h1 className="page-title">Unforgettable Day Trips</h1>
             <p className="page-description">Journey beyond the classroom with exciting trips to world-renowned universities, cultural landmarks, and fun destinations throughout New England.</p>
-            <div className="page-header-cta">
-              <Link href="/trips" className="btn btn--primary">Explore All Trips</Link>
-              <Link href="/apply" className="btn btn--secondary">Apply Now</Link>
-            </div>
           </div>
         </div>
       </section>

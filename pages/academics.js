@@ -60,13 +60,9 @@ const Academics = ({
       <section className="section page-header-section">
         <div className="container">
           <div className="page-header-content">
-            <h1 className="page-title">Academic Excellence</h1>
             <p className="page-subtitle">Six Transformative Programs</p>
+            <h1 className="page-title">Academic Excellence</h1>
             <p className="page-description">Choose from our carefully designed academic programs that combine theoretical knowledge with practical, real-world applications.</p>
-            <div className="page-header-cta">
-              <Link href="#programs" className="btn btn--primary">View All Programs</Link>
-              <Link href="/apply" className="btn btn--secondary">Apply Now</Link>
-            </div>
           </div>
         </div>
       </section>

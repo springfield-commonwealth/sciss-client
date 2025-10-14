@@ -6,7 +6,7 @@
 }
 
 .section {
-  padding: var(--space-4) 0 !important;
+  padding: var(--space-8) 0 !important;
 }
 
 .section.bg-light {

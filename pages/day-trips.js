@@ -49,7 +49,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       </section>
 
 
-      {/* Cultural & Recreation Trips */}
+      {/* Cultural & Recreation Trips - Simplified */}
       <section id="all-trips" className="section bg-light">
         <div className="container">
           <div className="text--center mb--lg">
@@ -62,29 +62,11 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
 
           <div className="grid grid--2">
             {DayTripsCulturalTrips.map((trip, index) => (
-              <div key={index} className="cultural-trip-card">
-                <div className="trip-header">
-                  <h3>{trip.destination}</h3>
-                  <div className="trip-meta">
-                    <span className="trip-type">{trip.type}</span>
-                    <span className="trip-duration">{trip.duration}</span>
-                  </div>
-                  <p className="trip-location">📍 {trip.location}</p>
-                </div>
-
-                <p className="trip-description">{trip.description}</p>
-
-                <div className="trip-activities">
-                  <h4>Activities Include:</h4>
-                  <div className="activities-grid">
-                    {trip.activities.map((activity, idx) => (
-                      <div key={idx} className="activity-item">
-                        <span className="activity-icon">🎯</span>
-                        <span>{activity}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div key={index} className="cultural-trip-card-simple">
+                <div className="trip-icon-large">{trip.icon || '🎯'}</div>
+                <h3>{trip.destination}</h3>
+                <p className="trip-location-simple">📍 {trip.location}</p>
+                <p className="trip-description-simple">{trip.description}</p>
               </div>
             ))}
           </div>

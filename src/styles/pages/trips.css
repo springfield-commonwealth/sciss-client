@@ -474,6 +474,48 @@
   box-shadow: var(--shadow-medium);
 }
 
+/* Simplified Cultural Trip Cards */
+.cultural-trip-card-simple {
+  background: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cultural-trip-card-simple:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.trip-icon-large {
+  font-size: 3rem;
+  margin-bottom: var(--space-3);
+}
+
+.cultural-trip-card-simple h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: var(--space-2);
+}
+
+.trip-location-simple {
+  color: #64748b;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.trip-description-simple {
+  color: #475569;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
 .trip-header h3 {
   color: var(--primary-blue);
   margin-bottom: 1rem;

@@ -34,7 +34,6 @@ const navLinks = [
     href: "/academics", // Overview page
     children: [
       { href: "/academics", label: "Overview" },
-      { href: "/academics#schedule", label: "Schedule" },
       { href: "/courses", label: "Browse All Courses" },
       { href: "/staff", label: "Our Instructors" },
     ],

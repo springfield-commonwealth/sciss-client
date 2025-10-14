@@ -1,12 +1,5 @@
 import Layout from "@/components/layouts/Layout";
-import Highlights from "@/components/sections/Highlights";
 import FooterCTA from "@/components/ui/FooterCTA";
-import { HomeHighlights } from "@/constants/homeContent";
-import {
-  LifeActivitiesFitnessPrograms,
-  LifeActivitiesRecreationalActivities,
-  LifeActivitiesSportsPrograms,
-} from "@/constants/lifeActivitiesContent";
 import {
   getActivityCategories,
   getPopularActivities,
@@ -38,13 +31,6 @@ const LifeActivities = ({
           </div>
         </div>
       </section>
-
-      {/* Key Highlights */}
-      <Highlights
-        highlights={HomeHighlights}
-        title="Experience Highlights"
-        desc="Discover what makes SCISS summer experience truly special"
-      />
 
       {/* Sports & Electives Section - Simplified */}
       <section className="section">
@@ -128,95 +114,48 @@ const LifeActivities = ({
         </div>
       </section>
 
-      {/* Sports Programs - Simplified */}
-      <section id="sports" className="section bg-light">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Sports Programs</h2>
-            <p>Professional coaching and state-of-the-art facilities for athletic development</p>
-          </div>
-
-          <div className="grid grid--3">
-            {LifeActivitiesSportsPrograms.map((sport, index) => (
-              <div key={index} className="cultural-trip-card-simple">
-                <div className="trip-icon-large">🏆</div>
-                <h3>{sport.title}</h3>
-                <p className="trip-description-simple">{sport.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Fitness Programs - Simplified */}
+      {/* All Activities Overview - Condensed */}
       <section className="section">
         <div className="container">
           <div className="text--center mb--lg">
-            <h2>Fitness & Wellness</h2>
-            <p>Stay active and healthy with our comprehensive fitness programs</p>
-          </div>
-
-          <div className="grid grid--3">
-            {LifeActivitiesFitnessPrograms.map((program, index) => (
-              <div key={index} className="cultural-trip-card-simple">
-                <div className="trip-icon-large">💪</div>
-                <h3>{program.title}</h3>
-                <p className="trip-description-simple">{program.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recreation Activities - Simplified */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Recreation & Leisure</h2>
-            <p>Fun and engaging activities for relaxation and entertainment</p>
+            <h2>Daily Activities & Recreation</h2>
+            <p>A full schedule of sports, fitness, arts, and evening events</p>
           </div>
 
           <div className="grid grid--2">
-            {LifeActivitiesRecreationalActivities.map((activity, index) => (
-              <div key={index} className="cultural-trip-card-simple">
-                <div className="trip-icon-large">🎮</div>
-                <h3>{activity.category}</h3>
-                <div className="simple-activity-list">
-                  {activity.activities.map((item, idx) => (
-                    <span key={idx} className="simple-activity-tag">{item}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🏀</div>
+              <h3>Competitive Sports</h3>
+              <p className="trip-description-simple">Basketball (our flagship), soccer, volleyball, badminton, table tennis with professional coaching and tournament play.</p>
+            </div>
 
-      {/* Evening Activities Section - Simplified */}
-      <section className="section">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Evening Activities</h2>
-            <p>Campus fun nightly - making every evening memorable</p>
-          </div>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">💪</div>
+              <h3>Fitness & Wellness</h3>
+              <p className="trip-description-simple">Zumba, yoga, gym & strength training, hiking, golf, rowing—build healthy habits with expert guidance.</p>
+            </div>
 
-          <div className="cultural-trip-card-simple">
-            <div className="trip-icon-large">🎉</div>
-            <h3>Evening Activities</h3>
-            <div className="simple-activity-list">
-              <span className="simple-activity-tag">Movie nights</span>
-              <span className="simple-activity-tag">Game tournaments</span>
-              <span className="simple-activity-tag">Themed parties</span>
-              <span className="simple-activity-tag">Cultural events</span>
-              <span className="simple-activity-tag">Campfires</span>
-              <span className="simple-activity-tag">Talent shows</span>
-              <span className="simple-activity-tag">Scavenger hunts</span>
-              <span className="simple-activity-tag">Trivia challenges</span>
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎨</div>
+              <h3>Arts & Creative Activities</h3>
+              <p className="trip-description-simple">Arts & crafts, digital design, creative workshops, and hands-on projects that spark imagination.</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎉</div>
+              <h3>Evening & Social Events</h3>
+              <p className="trip-description-simple">Movie nights, game tournaments, themed parties, talent shows, campfires, scavenger hunts, and trivia challenges.</p>
             </div>
           </div>
 
           <div className="info-note-box">
-            <strong>Safety First:</strong> All activities are fully supervised with clear conduct norms.
+            <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Pick your favorites at orientation and adjust during week one. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
+          </div>
+
+          <div className="text--center mt--md">
+            <Link href="/activities" className="btn btn--secondary btn--lg">
+              Browse All Activities
+            </Link>
           </div>
         </div>
       </section>

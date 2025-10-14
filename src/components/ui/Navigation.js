@@ -22,12 +22,15 @@ const navLinks = [
       { href: "/about-us#values", label: "Our Values" },
       { href: "/staff", label: "Meet Our Staff" },
       { href: "/photo-galleries", label: "Photo Galleries" },
-      { href: "/about-us#typical-week", label: "Typical Week" },
     ],
   },
   {
     label: "Program",
     href: "/program-overview",
+    children: [
+      { href: "/program-overview", label: "Program Overview" },
+      { href: "/typical-week", label: "Typical Week" },
+    ],
   },
   {
     label: "Academics",

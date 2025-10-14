@@ -29,92 +29,11 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* Section Navigation */}
-      <section className="section section-nav">
-        <div className="container">
-          <div className="section-nav-content">
-            <h3>Jump to Section:</h3>
-            <div className="section-nav-links">
-              <button
-                className="section-nav-link"
-                onClick={() => document.getElementById('schedule-section')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Daily and Weekly Schedule
-              </button>
-              <button
-                className="section-nav-link"
-                onClick={() => document.getElementById('activity-highlights')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Activity Highlights
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 1. DAILY AND WEEKLY SCHEDULE - Simplified */}
-      <section className="section" id="schedule-section">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Daily and Weekly Schedule</h2>
-            <p>Each weekday morning, students participate in academic classes of their choice. Here's your week at a glance:</p>
-          </div>
-
-          <div className="grid grid--2">
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🎉</div>
-              <h3>Sunday</h3>
-              <p className="trip-description-simple">Arrivals & Welcome - Check-in, campus tour, safety briefing, welcome night</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">📚</div>
-              <h3>Monday</h3>
-              <p className="trip-description-simple">Core academics + project studio + electives + community events</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">💻</div>
-              <h3>Tuesday</h3>
-              <p className="trip-description-simple">Core academics + project studio + electives + dorm meetings</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🎓</div>
-              <h3>Wednesday</h3>
-              <p className="trip-description-simple">Learning Beyond Campus - University visits (Harvard & MIT, Yale & Brown)</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🛠️</div>
-              <h3>Thursday</h3>
-              <p className="trip-description-simple">Build, Refine, Rehearse - Capstone work + mentor office hours</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🎊</div>
-              <h3>Friday</h3>
-              <p className="trip-description-simple">Showcase & Celebrate - Stock pitches, demos, performances, tournaments</p>
-            </div>
-
-            <div className="cultural-trip-card-simple">
-              <div className="trip-icon-large">🚌</div>
-              <h3>Saturday</h3>
-              <p className="trip-description-simple">Big Excursion & Community Day - Full-day trips + evening social</p>
-            </div>
-          </div>
-
-          <div className="info-note-box">
-            <strong>Note:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms. Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.
-          </div>
-        </div>
-      </section>
-
-      {/* 2. ACTIVITY HIGHLIGHTS - Simplified */}
+      {/* Program Highlights - Simplified */}
       <section className="section bg-light" id="activity-highlights">
         <div className="container">
           <div className="text--center mb--lg">
-            <h2>Activity Highlights</h2>
+            <h2>Our Programs Highlights</h2>
             <p>Experience the best in sports, fitness, and recreational activities</p>
           </div>
 
@@ -126,7 +45,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
 
           <div className={`tab-content ${activeTab === 'courses' ? 'active' : ''}`}>
             <div className="text--center mb--md">
-              <h3>Six Transformative Program Tracks</h3>
+              <h3>Six Transformative Course Tracks</h3>
               <p>Choose one track per session (students may stack across sessions)</p>
             </div>
             <div className="grid grid--2">
@@ -224,8 +143,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
           </div>
         </div>
       </section>
-
-      <FooterCTA linkTitle="Apply Now" link="/apply" />
+      <FooterCTA linkTitle="Typical Weekly Schedule" link="/typical-week" />
     </Layout>
   );
 };

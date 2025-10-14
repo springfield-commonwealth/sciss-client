@@ -36,7 +36,7 @@ const TypicalWeek = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Weekly Schedule Section */}
-            <section className="section">
+            <section className="section topBorder">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>Your Week at a Glance</h2>
@@ -88,7 +88,7 @@ const TypicalWeek = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Daily Schedule Section */}
-            <section className="section bg-light">
+            <section className="section bg-light paddingAdjustments">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>⏰ Daily Rhythm (Mon–Fri)</h2>

@@ -99,6 +99,15 @@
   gap: var(--space-6);
 }
 
+.paddingAdjustments {
+  margin-top: 0 !important;
+  margin-bottom: 11px !important;
+}
+
+.paddingAdjustments h2 {
+  padding-top: 11px !important;
+}
+
 .highlights-section {
   border-top-right-radius: 24px !important;
   border-top-left-radius: 24px !important;

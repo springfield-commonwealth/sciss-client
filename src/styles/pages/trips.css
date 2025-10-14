@@ -99,6 +99,13 @@
   gap: var(--space-6);
 }
 
+.highlights-section {
+  border-top-right-radius: 24px !important;
+  border-top-left-radius: 24px !important;
+  position: relative;
+  top: -23px;
+}
+
 .highlights-section,
 .inclusions-section {
   background: var(--color-gray-50);

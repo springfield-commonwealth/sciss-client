@@ -1328,7 +1328,7 @@
 
 /* Footer Info Bar */
 .quick-facts-footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #000;
   padding: var(--space-5) var(--space-6);
   border-radius: var(--radius-lg);
   text-align: center;

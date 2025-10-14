@@ -31,60 +31,6 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* Featured University Trips */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>University Visits</h2>
-            <p>
-              Experience prestigious institutions and explore your academic
-              future
-            </p>
-          </div>
-
-          <div className="trips-preview-grid">
-            {universityTrips.slice(0, 3).map((trip) => (
-              <div key={trip.id} className="trip-preview-card">
-                <div className="trip-preview-image">
-                  {trip.image && <img src={trip.image} alt={trip.title} />}
-                  <div className="trip-badges">
-                    <span className="category-badge">{trip.category}</span>
-                    <span className="duration-badge">{trip.duration}</span>
-                  </div>
-                </div>
-
-                <div className="trip-preview-content">
-                  <h3>{trip.title}</h3>
-                  <div className="trip-location">📍 {trip.location}</div>
-                  <p>{trip.description.substring(0, 120)}...</p>
-
-                  <div className="trip-highlights-preview">
-                    {trip.highlights.slice(0, 2).map((highlight, index) => (
-                      <span key={index} className="highlight-tag">
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={`/trips/${trip.slug}`}
-                    className="btn btn--primary btn--sm"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text--center mt--md">
-            <Link href="/trips" className="btn btn--secondary btn--lg">
-              View All Trips
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Day Trips Carousel */}
       <section className="section bg-light">
         <div className="container">
@@ -94,6 +40,11 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
           </div>
 
           <Carousel items={DayTripsCarouselItems} />
+        </div>
+        <div className="text--center mt--md">
+          <Link href="/trips" className="btn btn--secondary btn--lg">
+            View All Trips
+          </Link>
         </div>
       </section>
 

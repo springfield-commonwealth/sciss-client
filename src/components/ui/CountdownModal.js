@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const CountdownModal = ({ isOpen, onClose, targetDate }) => {
@@ -180,15 +181,15 @@ const CountdownModal = ({ isOpen, onClose, targetDate }) => {
 
           {/* CTA Buttons */}
           <div className="countdown-modal__actions">
-            <a href="/apply" className="btn btn--primary btn--large">
+            <Link href="/apply" className="btn btn--primary btn--large">
               Apply Now
-            </a>
-            <a
+            </Link>
+            <Link
               href="/program-overview"
               className="btn btn--secondary btn--large"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           {/* Footer note */}

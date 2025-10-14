@@ -12,6 +12,7 @@ import {
   ParentInfoTravelTips,
 } from "@/constants/parentInformationContent";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 
 const ParentInformation = ({ breadcrumbs = [] }) => {
   // Prepare parent features data for FeatureGrid component

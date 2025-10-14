@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 
 const galleryImages = [
   {
@@ -92,12 +93,12 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
           <h3>Ready to Create Your Own Memories?</h3>
           <p>Join SCISS Summer 2026 and be part of our next success story</p>
           <div className="photo-gallery-cta-buttons">
-            <a href="/apply" className="btn btn--primary btn--large">
+            <Link href="/apply" className="btn btn--primary btn--large">
               Apply Now
-            </a>
-            <a href="/program-overview" className="btn btn--secondary btn--large">
+            </Link>
+            <Link href="/program-overview" className="btn btn--secondary btn--large">
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

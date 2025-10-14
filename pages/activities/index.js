@@ -73,6 +73,7 @@ const ActivitiesDirectory = ({
         renderCardContent={renderActivityContent}
         renderBadges={renderActivityBadges}
         getItemCategories={getActivityCategories}
+        showCategories={false}
         ctaConfig={{
           footerCTA: {
             title: "Academic Programs",

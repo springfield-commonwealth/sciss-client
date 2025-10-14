@@ -33,7 +33,7 @@ const LifeActivities = ({
       </section>
 
       {/* Sports & Electives Section - Simplified */}
-      <section className="section">
+      <section className="section topBorder">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Sports & Electives</h2>
@@ -116,7 +116,8 @@ const LifeActivities = ({
 
           <div className="grid grid--3">
             {popularActivities.map((activity) => (
-              <div
+              <Link
+                href={`/activities/${activity.slug}`}
                 key={activity.id}
                 className="activity-preview-card card"
               >
@@ -142,7 +143,7 @@ const LifeActivities = ({
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

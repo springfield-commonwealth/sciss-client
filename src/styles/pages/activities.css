@@ -14,6 +14,14 @@
   margin-bottom: var(--space-8);
 }
 
+.topBorder {
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  position: relative;
+  top: -23px;
+  background: var(--color-bg-primary);
+}
+
 .activity-preview-card {
   overflow: hidden;
 }

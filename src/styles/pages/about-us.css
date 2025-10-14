@@ -1,5 +1,11 @@
 /* About Us Page Specific Styles */
 
+/* Custom Spacing for Mission & Vision Section */
+.custom-spacing {
+  margin-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+
 /* Why SCISS Section */
 .highlight-card {
   text-align: center;

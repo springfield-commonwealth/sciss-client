@@ -18,10 +18,7 @@ const navLinks = [
     children: [
       { href: "/about-us", label: "Overview" },
       { href: "/about-us/why-sciss", label: "Why SCISS" },
-      { href: "/about-us#mission", label: "Mission & Vision" },
-      { href: "/about-us#values", label: "Our Values" },
       { href: "/staff", label: "Meet Our Staff" },
-      { href: "/photo-galleries", label: "Photo Galleries" },
     ],
   },
   {
@@ -38,7 +35,6 @@ const navLinks = [
     children: [
       { href: "/academics", label: "Overview" },
       { href: "/courses", label: "Browse All Courses" },
-      { href: "/staff", label: "Our Instructors" },
     ],
   },
   {
@@ -49,6 +45,7 @@ const navLinks = [
       { href: "/day-trips", label: "Day Trips" },
       { href: "/activities", label: "Browse All Activities" },
       { href: "/trips", label: "Browse All Trips" },
+      { href: "/photo-galleries", label: "Photo Gallery" },
     ],
   },
 ];

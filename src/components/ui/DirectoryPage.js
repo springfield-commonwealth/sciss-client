@@ -176,6 +176,7 @@ const DirectoryPage = ({
           type={type}
           totalItems={items.length}
           filteredItems={filteredItems.length}
+          className="topBorder"
         />
 
         {/* Items Grid */}

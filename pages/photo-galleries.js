@@ -1,5 +1,4 @@
 import Layout from "@/components/layouts/Layout";
-import { SectionHeader } from "@/components/ui";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 const galleryImages = [
@@ -48,15 +47,20 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Main Gallery Grid */}
-      <section className="section photo-galleries-section">
+      <div className="padding-top-100"></div>
+      {/* Page Header Section */}
+      <section className="section page-header-section">
         <div className="container">
-          <SectionHeader
-            title="Summer 2025 Highlights"
-            description="See the fun and growth from 2025 - your child's 2026 experience awaits!"
-            align="center"
-            showDivider={true}
-          />
+          <div className="page-header-content">
+            <p className="page-subtitle">See SCISS in Action</p>
+            <h1 className="page-title">Student Life Gallery</h1>
+            <p className="page-description">Explore photos from SCISS summer sessions. See students learning, creating, and making unforgettable memories - your child's 2026 experience awaits!</p>
+          </div>
+        </div>
+      </section>
+      {/* Main Gallery Grid */}
+      <section className="section photo-galleries-section topBorder">
+        <div className="container">
 
           <div className="photo-gallery-grid">
             {galleryImages.map((image, index) => (

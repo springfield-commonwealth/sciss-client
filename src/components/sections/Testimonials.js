@@ -1,13 +1,13 @@
 import { SectionHeader } from "../ui";
 
-const Testimonials = ({ testimonials, title, desc }) => {
+const Testimonials = ({ testimonials, title, desc, className = "" }) => {
   // Handle missing testimonials prop
   if (!testimonials || !Array.isArray(testimonials)) {
     return null;
   }
 
   return (
-    <section className="section testimonials-section">
+    <section className={`section testimonials-section ${className}`}>
       <div className="container">
         <SectionHeader
           title={title}

@@ -8,11 +8,12 @@ const FeatureSection = ({
   imageWidth,
   imagePosition = "left", // "left" or "right"
   showDivider = true, // Show/hide blue divider bar under heading
+  className = "", // Additional CSS class
 }) => {
   // Handle new API with features array
   if (features && Array.isArray(features)) {
     return (
-      <section className="feature-section">
+      <section className={`feature-section ${className}`}>
         <div className="container">
           <div className="grid grid--2">
             {features.map((feature, index) => (
@@ -26,7 +27,7 @@ const FeatureSection = ({
 
   // Handle old API with heading, paragraphs, image
   return (
-    <section className="feature-section">
+    <section className={`feature-section ${className}`}>
       <div className="container">
         {heading && (
           <div className={`feature-section__header ${!showDivider ? 'feature-section__header--no-divider' : ''}`}>

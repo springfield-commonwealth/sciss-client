@@ -96,6 +96,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
         renderCardContent={renderStaffContent}
         renderBadges={renderStaffBadges}
         getItemCategories={getStaffDepartments}
+        showCategories={false}
         ctaConfig={{
           footerCTA: {
             title: "Academic Programs",

@@ -66,6 +66,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         image={HomeFeature}
         imagePosition="left"
         showDivider={true}
+        className="topBorder bg-white"
       />
 
       <FeatureSection
@@ -73,6 +74,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         image={HomeFeaturePresidents}
         paragraphs={HomePresidentLetter}
         imagePosition="right"
+        className="bg-light"
       />
 
       {/* Testimonials Section */}
@@ -80,6 +82,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         title="Student voices"
         desc="Don't just head from us. Hear from our amazing SCISS alumni"
         testimonials={HomeTestimonials}
+        className="bg-white"
       />
       <FooterCTA linkTitle="Life & Activities" link="/activities" />
     </Layout>

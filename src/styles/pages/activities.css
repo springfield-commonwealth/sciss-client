@@ -161,11 +161,11 @@
 }
 
 .topBorder {
-  border-top-right-radius: 24px;
-  border-top-left-radius: 24px;
-  position: relative;
-  top: -23px;
-  background: var(--color-bg-primary);
+  border-top-right-radius: 24px !important;
+  border-top-left-radius: 24px !important;
+  position: relative !important;
+  top: -23px !important;
+  background: var(--color-bg-primary) !important;
 }
 
 .activity-preview-card {

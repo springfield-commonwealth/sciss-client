@@ -66,6 +66,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
         renderCardContent={renderTripContent}
         renderBadges={renderTripBadges}
         getItemCategories={getTripCategories}
+        showCategories={false}
         ctaConfig={{
           footerCTA: {
             title: "Life Activities",

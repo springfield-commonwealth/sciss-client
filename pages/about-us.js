@@ -54,48 +54,52 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         secondaryCtaLink="/program-overview"
       />
 
-      {/* Quick Facts */}
-      <section className="section bg-light">
+      {/* About SCISS Section - Where Big Ideas Meet Practical Doing */}
+      <section className="section about-sciss-section topBorder">
         <div className="container">
-          <SectionHeader
-            title="Quick Facts"
-            description="Our mission, team, campus, and what makes SCISS different"
-            align="center"
-            showDivider={true}
-          />
+          <div className="about-sciss-header">
+            <SectionHeader
+              title="What is SCISS?"
+              description="Where big ideas meet practical doing"
+              align="center"
+              showDivider={true}
+            />
+          </div>
 
-          <div className="quick-facts-grid">
-            <div className="fact-card">
-              <div className="fact-icon">🎓</div>
-              <h3>Grades 4–12</h3>
-              <p>Junior (G4–G7) and Senior (G8–G12) groups</p>
-            </div>
-            <div className="fact-card">
-              <div className="fact-icon">📅</div>
-              <h3>June–August 2026</h3>
-              <p>Residential sessions with flexible scheduling</p>
-            </div>
-            <div className="fact-card">
-              <div className="fact-icon">🎯</div>
-              <h3>6 Tracks</h3>
-              <p>Investment • Entrepreneurship • AI/Robotics • Leadership • Music/Stage • Sports</p>
-            </div>
-            <div className="fact-card">
-              <div className="fact-icon">🏆</div>
-              <h3>Real Outcomes</h3>
-              <p>Capstone presentations, portfolios, certificates</p>
-            </div>
-            <div className="fact-card">
-              <div className="fact-icon">🏠</div>
-              <h3>Campus Boarding</h3>
-              <p>Full supervision with residential care</p>
+          <div className="about-sciss-content">
+            <div className="about-sciss-main">
+              <div className="about-sciss-card about-sciss-card--primary">
+                <div className="about-sciss-card__icon">🎓</div>
+                <h3>Academic Excellence</h3>
+                <p>At SCISS, we blend big ideas with practical doing. Across June–August 2026, students live and learn on our residential campus, rotating through expert-led sessions, team workshops, and guided projects.</p>
+                <div className="about-sciss-highlight">
+                  <span className="about-sciss-highlight__label">Age Groups:</span>
+                  <span className="about-sciss-highlight__value">Junior (G4–G7) • Senior (G8–G12)</span>
+                </div>
+              </div>
+
+              <div className="about-sciss-card about-sciss-card--secondary">
+                <div className="about-sciss-card__icon">🌟</div>
+                <h3>Proven Outcomes</h3>
+                <p>Parents love SCISS because the outcomes are clear: stronger study habits, standout portfolio pieces, and a supportive global network that lasts long after summer ends.</p>
+                <div className="about-sciss-stats">
+                  <div className="about-sciss-stat">
+                    <span className="about-sciss-stat__number">14+</span>
+                    <span className="about-sciss-stat__label">Years of Excellence</span>
+                  </div>
+                  <div className="about-sciss-stat">
+                    <span className="about-sciss-stat__number">6</span>
+                    <span className="about-sciss-stat__label">Specialized Tracks</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="section" id="mission">
+      <section className="section bg-light custom-spacing" id="mission">
         <div className="container">
           <div className="grid grid--2">
             <div className="mission-section">
@@ -155,52 +159,8 @@ const AboutUs = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* About SCISS Section - Where Big Ideas Meet Practical Doing */}
-      <section className="section about-sciss-section">
-        <div className="container">
-          <div className="about-sciss-header">
-            <SectionHeader
-              title="About SCISS"
-              description="Where big ideas meet practical doing"
-              align="center"
-              showDivider={true}
-            />
-          </div>
-
-          <div className="about-sciss-content">
-            <div className="about-sciss-main">
-              <div className="about-sciss-card about-sciss-card--primary">
-                <div className="about-sciss-card__icon">🎓</div>
-                <h3>Academic Excellence</h3>
-                <p>At SCISS, we blend big ideas with practical doing. Across June–August 2026, students live and learn on our residential campus, rotating through expert-led sessions, team workshops, and guided projects.</p>
-                <div className="about-sciss-highlight">
-                  <span className="about-sciss-highlight__label">Age Groups:</span>
-                  <span className="about-sciss-highlight__value">Junior (G4–G7) • Senior (G8–G12)</span>
-                </div>
-              </div>
-
-              <div className="about-sciss-card about-sciss-card--secondary">
-                <div className="about-sciss-card__icon">🌟</div>
-                <h3>Proven Outcomes</h3>
-                <p>Parents love SCISS because the outcomes are clear: stronger study habits, standout portfolio pieces, and a supportive global network that lasts long after summer ends.</p>
-                <div className="about-sciss-stats">
-                  <div className="about-sciss-stat">
-                    <span className="about-sciss-stat__number">14+</span>
-                    <span className="about-sciss-stat__label">Years of Excellence</span>
-                  </div>
-                  <div className="about-sciss-stat">
-                    <span className="about-sciss-stat__number">6</span>
-                    <span className="about-sciss-stat__label">Specialized Tracks</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
-      <section className="section bg-light" id="values">
+      <section className="section bg-white" id="values">
         <div className="container">
           <SectionHeader
             title="Our Core Values"

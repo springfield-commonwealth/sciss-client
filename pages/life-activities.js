@@ -151,12 +151,6 @@ const LifeActivities = ({
           <div className="info-note-box">
             <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Pick your favorites at orientation and adjust during week one. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
           </div>
-
-          <div className="text--center mt--md">
-            <Link href="/activities" className="btn btn--secondary btn--lg">
-              Browse All Activities
-            </Link>
-          </div>
         </div>
       </section>
 

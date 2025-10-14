@@ -1,5 +1,79 @@
 /* Program Overview Page Styles - Clean Modern Design */
 
+/* Simple Activity Tags */
+.simple-activity-tag {
+  background: var(--color-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  color: #1e293b;
+  font-size: var(--text-base);
+}
+
+.simple-activity-tag:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Import shared styles from trips.css for consistency */
+.cultural-trip-card-simple {
+  background: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cultural-trip-card-simple:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.trip-icon-large {
+  font-size: 3rem;
+  margin-bottom: var(--space-3);
+}
+
+.cultural-trip-card-simple h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: var(--space-2);
+}
+
+.trip-description-simple {
+  color: #475569;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.info-note-box {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-8);
+  color: #1e40af;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-note-box strong {
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* Program Overview Page Styles - Clean Modern Design */
+
 /* Override global spacing for program overview page only */
 .page-header-section {
   padding: calc(var(--space-6) + 60px) 0 var(--space-4) !important;

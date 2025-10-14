@@ -52,146 +52,173 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
         </div>
       </section>
 
-      {/* 1. DAILY AND WEEKLY SCHEDULE - Grid Layout */}
-      <section className="section">
+      {/* 1. DAILY AND WEEKLY SCHEDULE - Simplified */}
+      <section className="section" id="schedule-section">
         <div className="container">
-          <div className="program-overview-container">
-            <div className="simple-section schedule-section" id="schedule-section">
-              <h2>Daily and Weekly Schedule</h2>
-              <p>Each weekday morning, students participate in academic classes of their choice. Here's your week at a glance:</p>
+          <div className="text--center mb--lg">
+            <h2>Daily and Weekly Schedule</h2>
+            <p>Each weekday morning, students participate in academic classes of their choice. Here's your week at a glance:</p>
+          </div>
 
-              <div className="schedule-grid">
-                <div className="day-card">
-                  <h3>Sunday</h3>
-                  <p>Arrivals & Welcome - Check-in, campus tour, safety briefing, welcome night</p>
-                </div>
-                <div className="day-card">
-                  <h3>Monday</h3>
-                  <p>Core academics + project studio + electives + community events</p>
-                </div>
-                <div className="day-card">
-                  <h3>Tuesday</h3>
-                  <p>Core academics + project studio + electives + dorm meetings</p>
-                </div>
-                <div className="day-card">
-                  <h3>Wednesday</h3>
-                  <p>Learning Beyond Campus - University visits (Harvard & MIT, Yale & Brown)</p>
-                </div>
-                <div className="day-card">
-                  <h3>Thursday</h3>
-                  <p>Build, Refine, Rehearse - Capstone work + mentor office hours</p>
-                </div>
-                <div className="day-card">
-                  <h3>Friday</h3>
-                  <p>Showcase & Celebrate - Stock pitches, demos, performances, tournaments</p>
-                </div>
-                <div className="day-card">
-                  <h3>Saturday</h3>
-                  <p>Big Excursion & Community Day - Full-day trips + evening social</p>
-                </div>
-              </div>
-
-              <div className="note-box">
-                <strong>Note:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms. Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.
-              </div>
+          <div className="grid grid--2">
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎉</div>
+              <h3>Sunday</h3>
+              <p className="trip-description-simple">Arrivals & Welcome - Check-in, campus tour, safety briefing, welcome night</p>
             </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">📚</div>
+              <h3>Monday</h3>
+              <p className="trip-description-simple">Core academics + project studio + electives + community events</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">💻</div>
+              <h3>Tuesday</h3>
+              <p className="trip-description-simple">Core academics + project studio + electives + dorm meetings</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎓</div>
+              <h3>Wednesday</h3>
+              <p className="trip-description-simple">Learning Beyond Campus - University visits (Harvard & MIT, Yale & Brown)</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🛠️</div>
+              <h3>Thursday</h3>
+              <p className="trip-description-simple">Build, Refine, Rehearse - Capstone work + mentor office hours</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🎊</div>
+              <h3>Friday</h3>
+              <p className="trip-description-simple">Showcase & Celebrate - Stock pitches, demos, performances, tournaments</p>
+            </div>
+
+            <div className="cultural-trip-card-simple">
+              <div className="trip-icon-large">🚌</div>
+              <h3>Saturday</h3>
+              <p className="trip-description-simple">Big Excursion & Community Day - Full-day trips + evening social</p>
+            </div>
+          </div>
+
+          <div className="info-note-box">
+            <strong>Note:</strong> Offerings rotate by session; students can adjust electives before Day three. All activities are fully supervised with a safety-first approach and clear conduct norms. Field trips and activities are subject to weather conditions and availability. Schedule may vary based on field trip days and special events. Weekend activities include cultural excursions and recreational events.
           </div>
         </div>
       </section>
 
-      {/* 2. ACTIVITY HIGHLIGHTS - Tabbed Interface */}
+      {/* 2. ACTIVITY HIGHLIGHTS - Simplified */}
       <section className="section bg-light" id="activity-highlights">
         <div className="container">
-          <div className="program-overview-container">
-            <div className="simple-section">
-              <h2>Activity Highlights</h2>
-              <p>Experience the best in sports, fitness, and recreational activities</p>
+          <div className="text--center mb--lg">
+            <h2>Activity Highlights</h2>
+            <p>Experience the best in sports, fitness, and recreational activities</p>
+          </div>
 
-              <div className="tabs">
-                <button className={`tab-btn ${activeTab === 'courses' ? 'active' : ''}`} onClick={() => showTab('courses')}>Courses</button>
-                <button className={`tab-btn ${activeTab === 'activities' ? 'active' : ''}`} onClick={() => showTab('activities')}>Activities</button>
-                <button className={`tab-btn ${activeTab === 'trips' ? 'active' : ''}`} onClick={() => showTab('trips')}>Trips</button>
+          <div className="tabs">
+            <button className={`tab-btn ${activeTab === 'courses' ? 'active' : ''}`} onClick={() => showTab('courses')}>Courses</button>
+            <button className={`tab-btn ${activeTab === 'activities' ? 'active' : ''}`} onClick={() => showTab('activities')}>Activities</button>
+            <button className={`tab-btn ${activeTab === 'trips' ? 'active' : ''}`} onClick={() => showTab('trips')}>Trips</button>
+          </div>
+
+          <div className={`tab-content ${activeTab === 'courses' ? 'active' : ''}`}>
+            <div className="text--center mb--md">
+              <h3>Six Transformative Program Tracks</h3>
+              <p>Choose one track per session (students may stack across sessions)</p>
+            </div>
+            <div className="grid grid--2">
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">💼</div>
+                <h3>Path to Wall Street (Investment)</h3>
+                <p className="trip-description-simple">Financial fluency • $1M virtual competition</p>
               </div>
-
-              <div className={`tab-content ${activeTab === 'courses' ? 'active' : ''}`}>
-                <h3>Six Transformative Program Tracks</h3>
-                <p>Choose one track per session (students may stack across sessions):</p>
-                <div className="course-list">
-                  <div className="course-card">
-                    <h4>Path to Wall Street (Investment)</h4>
-                    <div className="course-badge">Financial fluency • $1M virtual competition</div>
-                  </div>
-                  <div className="course-card">
-                    <h4>Youth Innovation & Entrepreneurship</h4>
-                    <div className="course-badge">Idea to pitch • MVP development</div>
-                  </div>
-                  <div className="course-card">
-                    <h4>AI & Robotics</h4>
-                    <div className="course-badge">Python programming • Machine learning</div>
-                  </div>
-                  <div className="course-card">
-                    <h4>Leadership & Public Speaking/Debate</h4>
-                    <div className="course-badge">Communication • Stage presence</div>
-                  </div>
-                  <div className="course-card">
-                    <h4>Music & Stage Performing Arts</h4>
-                    <div className="course-badge">Vocal/instrumental • Live showcase</div>
-                  </div>
-                  <div className="course-card">
-                    <h4>Sports (Basketball, Soccer)</h4>
-                    <div className="course-badge">Skill development • Tournament play</div>
-                  </div>
-                </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">💡</div>
+                <h3>Youth Innovation & Entrepreneurship</h3>
+                <p className="trip-description-simple">Idea to pitch • MVP development</p>
               </div>
-
-              <div className={`tab-content ${activeTab === 'activities' ? 'active' : ''}`}>
-                <h3>Sports & Electives</h3>
-                <p>Every afternoon, students select sports and electives that match their interests. Juniors (G4–G7) and Seniors (G8–G12) train separately:</p>
-                <div className="course-list">
-                  <div className="course-card"><h4>🏀 Basketball (our core)</h4></div>
-                  <div className="course-card"><h4>⚽ Soccer</h4></div>
-                  <div className="course-card"><h4>🏐 Volleyball</h4></div>
-                  <div className="course-card"><h4>🏓 Badminton</h4></div>
-                  <div className="course-card"><h4>🏓 Table Tennis</h4></div>
-                  <div className="course-card"><h4>🥾 Hiking</h4></div>
-                  <div className="course-card"><h4>⛳ Golf</h4></div>
-                  <div className="course-card"><h4>💃 Zumba</h4></div>
-                  <div className="course-card"><h4>🧘 Yoga</h4></div>
-                  <div className="course-card"><h4>⛵ Rowing</h4></div>
-                  <div className="course-card"><h4>💪 Gym & Fitness</h4></div>
-                  <div className="course-card"><h4>🎨 Arts & Crafts</h4></div>
-                </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🤖</div>
+                <h3>AI & Robotics</h3>
+                <p className="trip-description-simple">Python programming • Machine learning</p>
               </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎤</div>
+                <h3>Leadership & Public Speaking/Debate</h3>
+                <p className="trip-description-simple">Communication • Stage presence</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎭</div>
+                <h3>Music & Stage Performing Arts</h3>
+                <p className="trip-description-simple">Vocal/instrumental • Live showcase</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🏀</div>
+                <h3>Sports (Basketball, Soccer)</h3>
+                <p className="trip-description-simple">Skill development • Tournament play</p>
+              </div>
+            </div>
+          </div>
 
-              <div className={`tab-content ${activeTab === 'trips' ? 'active' : ''}`}>
-                <h3>Signature Excursions</h3>
-                <p>Midweek and weekend trips that tie learning to the real world:</p>
-                <div className="trip-grid">
-                  <div className="trip-item">
-                    <div className="trip-icon">🎓</div>
-                    <div>Boston (Harvard & MIT) - Full-day university immersion</div>
-                  </div>
-                  <div className="trip-item">
-                    <div className="trip-icon">🎓</div>
-                    <div>Yale & Brown University - Official tours + admissions info</div>
-                  </div>
-                  <div className="trip-item">
-                    <div className="trip-icon">🏀</div>
-                    <div>Basketball Hall of Fame - Springfield highlights</div>
-                  </div>
-                  <div className="trip-item">
-                    <div className="trip-icon">🏛️</div>
-                    <div>Regional Museums & Historic Sites</div>
-                  </div>
-                  <div className="trip-item">
-                    <div className="trip-icon">🎨</div>
-                    <div>Cultural Attractions & Landmarks</div>
-                  </div>
-                  <div className="trip-item">
-                    <div className="trip-icon">🎪</div>
-                    <div>Theme Parks & Entertainment (by session)</div>
-                  </div>
-                </div>
+          <div className={`tab-content ${activeTab === 'activities' ? 'active' : ''}`}>
+            <div className="text--center mb--md">
+              <h3>Sports & Electives</h3>
+              <p>Every afternoon, students select sports and electives that match their interests. Juniors (G4–G7) and Seniors (G8–G12) train separately</p>
+            </div>
+            <div className="grid grid--3">
+              <div className="simple-activity-tag">🏀 Basketball (our core)</div>
+              <div className="simple-activity-tag">⚽ Soccer</div>
+              <div className="simple-activity-tag">🏐 Volleyball</div>
+              <div className="simple-activity-tag">🏓 Badminton</div>
+              <div className="simple-activity-tag">🏓 Table Tennis</div>
+              <div className="simple-activity-tag">🥾 Hiking</div>
+              <div className="simple-activity-tag">⛳ Golf</div>
+              <div className="simple-activity-tag">💃 Zumba</div>
+              <div className="simple-activity-tag">🧘 Yoga</div>
+              <div className="simple-activity-tag">⛵ Rowing</div>
+              <div className="simple-activity-tag">💪 Gym & Fitness</div>
+              <div className="simple-activity-tag">🎨 Arts & Crafts</div>
+            </div>
+          </div>
+
+          <div className={`tab-content ${activeTab === 'trips' ? 'active' : ''}`}>
+            <div className="text--center mb--md">
+              <h3>Signature Excursions</h3>
+              <p>Midweek and weekend trips that tie learning to the real world</p>
+            </div>
+            <div className="grid grid--2">
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎓</div>
+                <h3>Boston (Harvard & MIT)</h3>
+                <p className="trip-description-simple">Full-day university immersion</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎓</div>
+                <h3>Yale & Brown University</h3>
+                <p className="trip-description-simple">Official tours + admissions info</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🏀</div>
+                <h3>Basketball Hall of Fame</h3>
+                <p className="trip-description-simple">Springfield highlights</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🏛️</div>
+                <h3>Regional Museums</h3>
+                <p className="trip-description-simple">Historic Sites</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎨</div>
+                <h3>Cultural Attractions</h3>
+                <p className="trip-description-simple">Landmarks</p>
+              </div>
+              <div className="cultural-trip-card-simple">
+                <div className="trip-icon-large">🎪</div>
+                <h3>Theme Parks</h3>
+                <p className="trip-description-simple">Entertainment (by session)</p>
               </div>
             </div>
           </div>

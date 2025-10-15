@@ -8,7 +8,7 @@ const CampSchedule = () => {
   const week = session[selectedWeek];
 
   return (
-    <section className="camp-schedule-section container">
+    <section id="schedule" className="camp-schedule-section container">
       <h2 className="text-center">Session Schedules</h2>
       {/* Session Tabs (future-proof) */}
       <div className="session-tabs" style={{ marginBottom: 16 }}>

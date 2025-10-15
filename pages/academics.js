@@ -53,6 +53,7 @@ const Academics = ({
       FooterCTALink="/life-activities"
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
+      className="academics-page"
     >
       <div className="padding-top-100"></div>
 

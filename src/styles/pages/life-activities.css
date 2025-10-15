@@ -1,5 +1,22 @@
 /* Life Activities Page Styles */
 
+/* Override justify alignment for life activities page */
+.life-activities-page p,
+.life-activities-page .section__description,
+.life-activities-page .trip-description-simple,
+.life-activities-page .feature-section__paragraph {
+  text-align: left !important;
+}
+
+/* Popular Activities section - override justify alignment */
+.popular-activities-section p,
+.popular-activities-section .section__description,
+.popular-activities-section .trip-description-simple,
+.popular-activities-section .activity-preview-content p,
+.popular-activities-section .activity-description {
+  text-align: left !important;
+}
+
 /* Shared Simple Styles - Matching Day-Trips Design */
 .cultural-trip-card-simple {
   background: var(--color-white);
@@ -33,6 +50,7 @@
   color: #475569;
   font-size: var(--text-base);
   line-height: 1.6;
+  text-align: justify;
 }
 
 .simple-activity-list {

@@ -1,3 +1,38 @@
+/* Testimonials description - center aligned override */
+.testimonials-section .section__description {
+  text-align: center !important;
+}
+
+/* Core values and what makes SCISS different sections - center aligned override */
+.feature-section .section__description {
+  text-align: center !important;
+}
+
+/* Daily Rhythm section description - center aligned override */
+.typical-week-page .section p,
+.typical-week-page .text--center p {
+  text-align: center !important;
+}
+
+/* Academics and Experience page descriptions - center aligned override */
+.academics-page .section__description,
+.academics-page .page-description,
+.academics-page .text--center p,
+.life-activities-page .section__description,
+.life-activities-page .page-description,
+.life-activities-page .text--center p {
+  text-align: center !important;
+}
+
+/* Global override for all section descriptions and specific paragraphs */
+.section__description,
+p.section__description,
+.section p:not(.feature-section__paragraph),
+.text--center p,
+.section p {
+  text-align: center !important;
+}
+
 .lead {
   font-size: 1.1rem;
   color: var(--color-text-primary);

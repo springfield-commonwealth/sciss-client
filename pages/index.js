@@ -70,7 +70,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
       />
 
       <FeatureSection
-        heading="Letter From the President"
+        heading="Letter From the Principal"
         image={HomeFeaturePresidents}
         paragraphs={HomePresidentLetter}
         imagePosition="right"

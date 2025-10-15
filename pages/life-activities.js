@@ -18,6 +18,7 @@ const LifeActivities = ({
       description="Discover exciting activities, sports, and recreational programs at SCISS Summer School."
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
+      className="life-activities-page"
     >
       <div className="padding-top-100"></div>
 
@@ -107,7 +108,7 @@ const LifeActivities = ({
       </section>
 
       {/* Popular Activities Preview */}
-      <section className="section">
+      <section className="section popular-activities-section">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Popular Activities</h2>

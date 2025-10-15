@@ -25,7 +25,7 @@ const navLinks = [
     label: "Program",
     href: "/program-overview",
     children: [
-      { href: "/program-overview", label: "Program Overview" },
+      { href: "/program-overview", label: "Overview" },
       { href: "/typical-week", label: "Typical Week" },
     ],
   },
@@ -34,6 +34,7 @@ const navLinks = [
     href: "/academics", // Overview page
     children: [
       { href: "/academics", label: "Overview" },
+      { href: "/academics#schedule", label: "Schedule" },
       { href: "/courses", label: "Browse All Courses" },
     ],
   },

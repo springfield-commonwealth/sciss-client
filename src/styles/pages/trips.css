@@ -773,6 +773,7 @@
   color: #475569;
   font-size: var(--text-base);
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* Info Note Box */

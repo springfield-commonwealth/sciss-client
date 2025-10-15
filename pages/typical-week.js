@@ -10,6 +10,7 @@ const TypicalWeek = ({ breadcrumbs = [] }) => {
             description="Explore a typical week at SCISS with structured academics, hands-on projects, cultural trips, and community activities designed for student success."
             showBreadcrumb={true}
             breadcrumbs={breadcrumbs}
+            className="typical-week-page"
         >
             <Head>
                 <meta property="og:title" content="A Typical Week at SCISS - Program Schedule" />

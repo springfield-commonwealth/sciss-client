@@ -22,15 +22,20 @@ const DayTripsCarouselItems = [
     image: "/images/carousel/hall-of-fame.jpg",
   },
   {
-    title: "Museum Visits",
+    title: "Boston Museum of Science",
     description:
       "Educational visits to world-class museums and cultural centers",
-    image: "/images/carousel/museum.jpg",
+    image: "/images/carousel/bostonMuse.png",
+  },
+  {
+    title: "Boston Freedom Trail",
+    description: "Walk through American history and Revolutionary heritage",
+    image: "/images/carousel/boston.png",
   },
   {
     title: "Six Flags Adventure",
     description: "Thrilling amusement park experience with friends",
-    image: "/images/carousel/six-flags.webp",
+    image: "/images/carousel/sixFlags.png",
   },
 ];
 
@@ -108,6 +113,7 @@ const DayTripsCulturalTrips = [
     destination: "Basketball Hall of Fame",
     location: "Springfield, Massachusetts",
     type: "Sports & Culture",
+    icon: "🏀",
     description:
       "Immerse yourself in basketball history at the world's premier basketball museum, located right in Springfield where the sport was invented.",
     activities: [
@@ -124,6 +130,7 @@ const DayTripsCulturalTrips = [
     destination: "Museum of Science",
     location: "Boston, Massachusetts",
     type: "Science & Technology",
+    icon: "🔬",
     description:
       "Explore hands-on science exhibits, planetarium shows, and interactive demonstrations that bring science to life.",
     activities: [
@@ -140,6 +147,7 @@ const DayTripsCulturalTrips = [
     destination: "Freedom Trail",
     location: "Boston, Massachusetts",
     type: "History & Culture",
+    icon: "🏛️",
     description:
       "Walk through American history on Boston's famous Freedom Trail, visiting 16 historically significant sites.",
     activities: [
@@ -156,6 +164,7 @@ const DayTripsCulturalTrips = [
     destination: "Six Flags New England",
     location: "Agawam, Massachusetts",
     type: "Recreation & Fun",
+    icon: "🎢",
     description:
       "Experience thrilling roller coasters and exciting rides at one of New England's premier amusement parks.",
     activities: [

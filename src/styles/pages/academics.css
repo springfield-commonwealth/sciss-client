@@ -2300,7 +2300,7 @@
 @media (max-width: 1024px) {
   .academics-main-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-12);
+    gap: 0;
   }
 
   .quick-facts-column {
@@ -2385,7 +2385,7 @@
     background: var(--color-bg-secondary);
     /* Light background */
     padding: var(--space-8);
-    margin-bottom: var(--space-6);
+    margin-bottom: 0;
     border-radius: var(--radius-lg);
     position: relative;
   }
@@ -2407,7 +2407,7 @@
     background: var(--color-bg-primary);
     /* White background */
     padding: var(--space-8);
-    margin-top: var(--space-6);
+    margin-top: 0;
     border-radius: var(--radius-lg);
     position: relative;
   }

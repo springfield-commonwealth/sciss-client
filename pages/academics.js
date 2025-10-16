@@ -49,7 +49,7 @@ const Academics = ({
     <Layout
       title="Academic Programs - SCISS"
       description="Explore cutting-edge academic programs at SCISS including Path to Wall Street, AI, Entrepreneurship, and more."
-      FooterCTALinkTitle="Life & Activities"
+      FooterCTALinkTitle="Activities"
       FooterCTALink="/life-activities"
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}

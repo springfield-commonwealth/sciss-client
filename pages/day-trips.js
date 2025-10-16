@@ -32,7 +32,7 @@ const DayTrips = ({ popularTrips, universityTrips, breadcrumbs = [] }) => {
       </section>
 
       {/* Signature Trips Section */}
-      <section className="section topBorder custom-spacing">
+      <section className="section topBorder">
         <div className="container">
           <div className="text--center mb--lg">
             <h2>Signature Trips</h2>

@@ -70,7 +70,7 @@ const Footer = () => {
             <Link href="/academics">Academic Programs</Link>
           </p>
           <p>
-            <Link href="/life-activities">Life & Activities</Link>
+            <Link href="/life-activities">Activities</Link>
           </p>
           <p>
             <Link href="/day-trips">Trips</Link>

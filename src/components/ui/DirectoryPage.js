@@ -67,12 +67,12 @@ const DirectoryPage = ({
   const statsData = useMemo(() => {
     const defaultStats = [
       {
-        number: type === "trips" ? "5+" : items.length,
+        number: type === "trips" ? "5+" : type === "activities" ? `${items.length}+` : items.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Available`,
         icon: getTypeIcon(type),
       },
       {
-        number: type === "trips" ? "4+" : categories.length,
+        number: type === "trips" ? "4+" : type === "activities" ? `${categories.length}+` : categories.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Categories`,
         icon: "📚",
       },
@@ -105,7 +105,7 @@ const DirectoryPage = ({
 
     if (stats.totalActivities) {
       defaultStats.push({
-        number: stats.averageParticipants,
+        number: "10+",
         label: "Avg. Group Size",
         icon: "👥",
       });

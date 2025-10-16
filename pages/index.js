@@ -84,7 +84,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
         testimonials={HomeTestimonials}
         className="bg-white"
       />
-      <FooterCTA linkTitle="Life & Activities" link="/activities" />
+      <FooterCTA linkTitle="Activities" link="/activities" />
     </Layout>
   );
 };

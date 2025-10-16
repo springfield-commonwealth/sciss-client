@@ -14,7 +14,7 @@ const LifeActivities = ({
 }) => {
   return (
     <Layout
-      title="Life & Activities - SCISS"
+      title="Activities - SCISS"
       description="Discover exciting activities, sports, and recreational programs at SCISS Summer School."
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
@@ -27,7 +27,7 @@ const LifeActivities = ({
         <div className="container">
           <div className="page-header-content">
             <p className="page-subtitle">Beyond the Classroom</p>
-            <h1 className="page-title">Life & Activities</h1>
+            <h1 className="page-title">Activities</h1>
             <p className="page-description">Discover a world of sports, fitness, arts, and recreational activities designed to enrich your summer experience and build lasting friendships.</p>
           </div>
         </div>
@@ -169,7 +169,7 @@ export async function getStaticProps() {
   // Generate breadcrumbs for life activities page
   const breadcrumbs = generateBreadcrumbs([
     { label: "Home", href: "/" },
-    { label: "Life & Activities", href: "/life-activities", active: true },
+    { label: "Activities", href: "/life-activities", active: true },
   ]);
 
   return {

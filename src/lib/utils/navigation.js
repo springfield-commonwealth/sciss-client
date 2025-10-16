@@ -45,17 +45,17 @@ export function createContentNavigation(
   const previous =
     currentIndex > 0
       ? {
-          title: allContent[currentIndex - 1].title,
-          href: `${baseUrl}${allContent[currentIndex - 1].slug}`,
-        }
+        title: allContent[currentIndex - 1].title,
+        href: `${baseUrl}${allContent[currentIndex - 1].slug}`,
+      }
       : null;
 
   const next =
     currentIndex < allContent.length - 1
       ? {
-          title: allContent[currentIndex + 1].title,
-          href: `${baseUrl}${allContent[currentIndex + 1].slug}`,
-        }
+        title: allContent[currentIndex + 1].title,
+        href: `${baseUrl}${allContent[currentIndex + 1].slug}`,
+      }
       : null;
 
   // Find related content
@@ -169,7 +169,7 @@ function getContentType(content) {
 function getBreadcrumbLabel(contentType) {
   const labels = {
     course: "Academics",
-    activity: "Life Activities",
+    activity: "Activities",
     trip: "Day Trips",
     staff: "Faculty & Staff",
   };

@@ -69,7 +69,7 @@ const TripsDirectory = ({ trips, categories, stats, breadcrumbs = [] }) => {
         showCategories={false}
         ctaConfig={{
           footerCTA: {
-            title: "Life Activities",
+            title: "Activities",
             link: "/activities",
           },
         }}

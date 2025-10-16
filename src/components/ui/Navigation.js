@@ -42,7 +42,7 @@ const navLinks = [
     label: "Experience",
     href: "/life-activities", // Overview page
     children: [
-      { href: "/life-activities", label: "Life & Activities" },
+      { href: "/life-activities", label: "Activities" },
       { href: "/day-trips", label: "Day Trips" },
       { href: "/activities", label: "Browse All Activities" },
       { href: "/trips", label: "Browse All Trips" },

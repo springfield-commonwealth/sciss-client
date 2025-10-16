@@ -386,7 +386,7 @@ export async function getStaticProps({ params }) {
   // Generate breadcrumbs
   const breadcrumbs = generateBreadcrumbs([
     { label: "Home", href: "/" },
-    { label: "Life & Activities", href: "/life-activities" },
+    { label: "Activities", href: "/life-activities" },
     { label: "Activities", href: "/activities" },
     {
       label: activity.title,

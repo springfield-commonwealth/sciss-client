@@ -57,15 +57,15 @@ const ActivitiesDirectory = ({
 
   return (
     <Layout
-      title="Life Activities - SCISS"
-      description="Explore our diverse range of life activities designed to enhance your SCISS experience and develop essential life skills."
+      title="Activities - SCISS"
+      description="Explore our diverse range of activities designed to enhance your SCISS experience and develop essential life skills."
       breadcrumbs={breadcrumbs}
       showBreadcrumb={true}
     >
       <DirectoryPage
         type="activities"
-        title="Life Activities Directory"
-        description="Explore our diverse range of life activities designed to enhance your SCISS experience and develop essential life skills."
+        title="Activities Directory"
+        description="Explore our diverse range of activities designed to enhance your SCISS experience and develop essential life skills."
         items={activities}
         categories={categories}
         stats={stats}
@@ -81,14 +81,14 @@ const ActivitiesDirectory = ({
           },
         }}
         seoConfig={{
-          title: "Life Activities Directory | SCISS",
+          title: "Activities Directory | SCISS",
           description:
-            "Explore our diverse range of life activities designed to enhance your SCISS experience and develop essential life skills.",
+            "Explore our diverse range of activities designed to enhance your SCISS experience and develop essential life skills.",
           keywords:
-            "SCISS activities, life activities, student activities, skill development, recreational activities",
-          ogTitle: "Life Activities Directory | SCISS",
+            "SCISS activities, student activities, skill development, recreational activities",
+          ogTitle: "Activities Directory | SCISS",
           ogDescription:
-            "Explore our diverse range of life activities designed to enhance your SCISS experience and develop essential life skills.",
+            "Explore our diverse range of activities designed to enhance your SCISS experience and develop essential life skills.",
           canonicalUrl: "https://sciss.org/activities",
         }}
       />
@@ -106,7 +106,7 @@ export async function getStaticProps() {
   // Generate breadcrumbs
   const breadcrumbs = generateBreadcrumbs([
     { label: "Home", href: "/" },
-    { label: "Life Activities", href: "/activities", active: true },
+    { label: "Activities", href: "/activities", active: true },
   ]);
 
   return {

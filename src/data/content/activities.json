@@ -346,7 +346,7 @@
       "slug": "group-fitness",
       "title": "Group Fitness Classes",
       "description": "Energizing classes with HIIT, yoga, Zumba, and strength training.",
-      "image": "/images/carousel/fitness.png",
+      "image": "/images/carousel/fitnessGroup.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
@@ -367,7 +367,7 @@
           "team workouts",
           "youth fitness"
         ],
-        "ogImage": "/images/carousel/fitness.png"
+        "ogImage": "/images/carousel/fitnessGroup.png"
       },
       "category": "Fitness",
       "level": "All Levels",
@@ -746,7 +746,7 @@
       "slug": "wellness-programs",
       "title": "Wellness & Mental Health",
       "description": "Support student wellbeing through mindfulness, stress management, nutrition education, and comprehensive wellness programs designed for holistic health.",
-      "image": "/images/carousel/wellness.png",
+      "image": "/images/carousel/mentalHealth.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-12-19T00:00:00Z",
       "published": true,
@@ -767,7 +767,7 @@
           "student wellbeing",
           "mindfulness training"
         ],
-        "ogImage": "/images/carousel/wellness.png"
+        "ogImage": "/images/carousel/mentalHealth.png"
       },
       "category": "Wellness",
       "level": "All Levels",

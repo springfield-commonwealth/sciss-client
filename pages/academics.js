@@ -68,98 +68,6 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Quick Facts Section - Enhanced Modern Design */}
-      <section className="section quick-facts-section bg-white topBorder">
-        <div className="container">
-          <div className="quick-facts-wrapper">
-            <SectionHeader
-              title="Quick Facts"
-              description="Everything you need to know about SCISS academics at a glance"
-              showDivider
-              align="center"
-            />
-
-            <div className="quick-facts-container">
-              <div className="quick-fact-item" data-category="academics">
-                <div className="fact-icon-circle">
-                  <span className="fact-emoji">🎓</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">Grades</span>
-                  <span className="fact-value">4–12</span>
-                  <span className="fact-meta">Junior & Senior cohorts</span>
-                </div>
-              </div>
-
-              <div className="quick-fact-item" data-category="format">
-                <div className="fact-icon-circle">
-                  <span className="fact-emoji">🏠</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">Format</span>
-                  <span className="fact-value">Residential</span>
-                  <span className="fact-meta">Full boarding experience</span>
-                </div>
-              </div>
-
-              <div className="quick-fact-item" data-category="outcome">
-                <div className="fact-icon-circle">
-                  <span className="fact-emoji">🏆</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">What You'll Earn</span>
-                  <span className="fact-value">Real Portfolio</span>
-                  <span className="fact-meta">Artifact + capstone + certificate</span>
-                </div>
-              </div>
-
-              <div className="quick-fact-item featured-fact" data-category="signature">
-                <div className="featured-badge">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  Signature Feature
-                </div>
-                <div className="fact-icon-circle featured-icon">
-                  <span className="fact-emoji">💰</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">Stock Trading Challenge</span>
-                  <span className="fact-value">$1M Virtual Investment</span>
-                  <span className="fact-meta">Competition in the Investment track</span>
-                </div>
-              </div>
-
-              <div className="quick-fact-item" data-category="bonus">
-                <div className="fact-icon-circle">
-                  <span className="fact-emoji">🎖️</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">Bonus Opportunity</span>
-                  <span className="fact-value">Competition Prep</span>
-                  <span className="fact-meta">Elite business competitions</span>
-                </div>
-              </div>
-
-              <div className="quick-fact-item" data-category="rewards">
-                <div className="fact-icon-circle">
-                  <span className="fact-emoji">💎</span>
-                </div>
-                <div className="fact-details">
-                  <span className="fact-label">Rewards</span>
-                  <span className="fact-value">Diamond Challenge</span>
-                  <span className="fact-meta">Students receive from competition</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="quick-facts-footer">
-              <p>📍 <strong>Location:</strong> Springfield, MA | ⏰ <strong>Duration:</strong> 2-week sessions | 🌍 <strong>Students from:</strong> 15+ countries</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Overview Section - Simple & Bold */}
       <section className="section academics-overview bg-light custom-spacing">
         <div className="container">
@@ -193,6 +101,150 @@ const Academics = ({
           </div>
         </div>
       </section>
+
+      {/* Core Programs & Quick Facts Side by Side */}
+      <section className="section academics-main-content bg-white custom-spacing">
+        <div className="container">
+          <div className="academics-main-grid">
+            {/* Core Academic Program Tracks - Left Side */}
+            <div className="core-programs-column">
+              <div className="text--center mb--lg">
+                <h2>Core Academic Program Tracks</h2>
+                <p>Choose one or stack across sessions</p>
+              </div>
+
+              <div className="grid grid--1">
+                <Link href="/courses/path-to-wall-street" className="simple-track-card">
+                  <div className="track-icon-large">💼</div>
+                  <h3>Path to Wall Street (Investment)</h3>
+                  <p className="track-description-simple">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
+                </Link>
+
+                <Link href="/courses/youth-innovation-entrepreneurship" className="simple-track-card">
+                  <div className="track-icon-large">💡</div>
+                  <h3>Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
+                  <p className="track-description-simple">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
+                </Link>
+
+                <Link href="/courses/artificial-intelligence" className="simple-track-card">
+                  <div className="track-icon-large">🤖</div>
+                  <h3>AI & Robotics</h3>
+                  <p className="track-description-simple">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
+                </Link>
+
+                <Link href="/courses/public-speaking-debate" className="simple-track-card">
+                  <div className="track-icon-large">🎤</div>
+                  <h3>Leadership & Public Speaking/Debate</h3>
+                  <p className="track-description-simple">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
+                </Link>
+
+                <Link href="/courses/music-performing-arts" className="simple-track-card">
+                  <div className="track-icon-large">🎭</div>
+                  <h3>Music & Stage Performing Arts</h3>
+                  <p className="track-description-simple">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
+                </Link>
+
+                <Link href="/courses/sports-intensive" className="simple-track-card">
+                  <div className="track-icon-large">🏀</div>
+                  <h3>Sports (e.g., Basketball, Soccer)</h3>
+                  <p className="track-description-simple">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
+                </Link>
+              </div>
+            </div>
+
+            {/* Quick Facts - Right Side */}
+            <div className="quick-facts-column">
+              <div className="quick-facts-wrapper">
+                <SectionHeader
+                  title="Quick Facts"
+                  description="Everything you need to know about SCISS academics at a glance"
+                  showDivider
+                  align="center"
+                />
+
+                <div className="quick-facts-container">
+                  <div className="quick-fact-item" data-category="academics">
+                    <div className="fact-icon-circle">
+                      <span className="fact-emoji">🎓</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">Grades</span>
+                      <span className="fact-value">4–12</span>
+                      <span className="fact-meta">Junior & Senior cohorts</span>
+                    </div>
+                  </div>
+
+                  <div className="quick-fact-item" data-category="format">
+                    <div className="fact-icon-circle">
+                      <span className="fact-emoji">🏠</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">Format</span>
+                      <span className="fact-value">Residential</span>
+                      <span className="fact-meta">Full boarding experience</span>
+                    </div>
+                  </div>
+
+                  <div className="quick-fact-item" data-category="outcome">
+                    <div className="fact-icon-circle">
+                      <span className="fact-emoji">🏆</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">What You'll Earn</span>
+                      <span className="fact-value">Real Portfolio</span>
+                      <span className="fact-meta">Artifact + capstone + certificate</span>
+                    </div>
+                  </div>
+
+                  <div className="quick-fact-item featured-fact" data-category="signature">
+                    <div className="featured-badge">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      Signature Feature
+                    </div>
+                    <div className="fact-icon-circle featured-icon">
+                      <span className="fact-emoji">💰</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">Stock Trading Challenge</span>
+                      <span className="fact-value">$1M Virtual Investment</span>
+                      <span className="fact-meta">Competition in the Investment track</span>
+                    </div>
+                  </div>
+
+                  <div className="quick-fact-item" data-category="bonus">
+                    <div className="fact-icon-circle">
+                      <span className="fact-emoji">🎖️</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">Bonus Opportunity</span>
+                      <span className="fact-value">Competition Prep</span>
+                      <span className="fact-meta">Elite business competitions</span>
+                    </div>
+                  </div>
+
+                  <div className="quick-fact-item" data-category="rewards">
+                    <div className="fact-icon-circle">
+                      <span className="fact-emoji">💎</span>
+                    </div>
+                    <div className="fact-details">
+                      <span className="fact-label">Rewards</span>
+                      <span className="fact-value">Diamond Challenge</span>
+                      <span className="fact-meta">Students receive from competition</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="quick-facts-footer">
+                  <p>📍 <strong>Location:</strong> Springfield, MA | ⏰ <strong>Duration:</strong> 2-week sessions | 🌍 <strong>Students from:</strong> 15+ countries</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Key Features - Bold & Visual */}
       <section className="section academics-features bg-white custom-spacing">
@@ -245,53 +297,6 @@ const Academics = ({
         </div>
       </section>
 
-      {/* Core Courses Section - Simplified */}
-      <section className="section bg-light custom-spacing">
-        <div className="container">
-          <div className="text--center mb--lg">
-            <h2>Core Academic Program Tracks</h2>
-            <p>Choose one or stack across sessions</p>
-          </div>
-
-          <div className="grid grid--2">
-            <Link href="/courses/path-to-wall-street" className="simple-track-card">
-              <div className="track-icon-large">💼</div>
-              <h3>Path to Wall Street (Investment)</h3>
-              <p className="track-description-simple">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
-            </Link>
-
-            <Link href="/courses/youth-innovation-entrepreneurship" className="simple-track-card">
-              <div className="track-icon-large">💡</div>
-              <h3>Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
-              <p className="track-description-simple">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
-            </Link>
-
-            <Link href="/courses/artificial-intelligence" className="simple-track-card">
-              <div className="track-icon-large">🤖</div>
-              <h3>AI & Robotics</h3>
-              <p className="track-description-simple">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
-            </Link>
-
-            <Link href="/courses/public-speaking-debate" className="simple-track-card">
-              <div className="track-icon-large">🎤</div>
-              <h3>Leadership & Public Speaking/Debate</h3>
-              <p className="track-description-simple">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
-            </Link>
-
-            <Link href="/courses/music-performing-arts" className="simple-track-card">
-              <div className="track-icon-large">🎭</div>
-              <h3>Music & Stage Performing Arts</h3>
-              <p className="track-description-simple">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
-            </Link>
-
-            <Link href="/courses/sports-intensive" className="simple-track-card">
-              <div className="track-icon-large">🏀</div>
-              <h3>Sports (e.g., Basketball, Soccer)</h3>
-              <p className="track-description-simple">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Academic Support */}
       <section className="section bg-white custom-spacing">

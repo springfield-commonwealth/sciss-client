@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "totalTrips": 7,
+    "totalTrips": 8,
     "lastUpdated": "2024-12-19T00:00:00Z",
     "version": "1.0.0",
     "categories": [
@@ -799,6 +799,119 @@
       "ageGroup": "All Ages",
       "difficulty": "Variable",
       "groupSize": "35-40 students"
+    },
+    {
+      "id": "brown-university-tour",
+      "slug": "brown-university-tour",
+      "title": "Brown University Campus Experience",
+      "description": "Discover Brown University's innovative academic environment and vibrant campus culture with guided tours, admissions insights, and interactive sessions.",
+      "image": "/images/carousel/brown.png",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "brown-university",
+        "ivy-league",
+        "liberal-arts",
+        "admissions",
+        "academic"
+      ],
+      "seo": {
+        "metaTitle": "Brown University Tour | SCISS Educational Trips",
+        "metaDescription": "Visit Brown University with SCISS. Experience campus tours, admissions sessions, and insights into this innovative Ivy League institution.",
+        "keywords": [
+          "Brown University tour",
+          "college visit",
+          "SCISS trips",
+          "university admissions",
+          "ivy league"
+        ],
+        "ogImage": "/images/carousel/brown.png"
+      },
+      "category": "University Visits",
+      "duration": "Full Day",
+      "location": "Providence, Rhode Island",
+      "transportMode": "Luxury Coach",
+      "highlights": [
+        "Campus tour led by current students",
+        "Visit to Main Green and historic buildings",
+        "Admissions information session",
+        "John Hay Library and special collections tour",
+        "Q&A with Brown faculty and students",
+        "Providence city exploration"
+      ],
+      "inclusions": [
+        "Transportation via luxury coach",
+        "Professional campus tour guide",
+        "Admissions presentation",
+        "Campus map and materials",
+        "Light refreshments",
+        "Photo opportunities"
+      ],
+      "itinerary": [
+        {
+          "time": "8:00 AM",
+          "activity": "SCISS Departure",
+          "description": "Journey to Providence, Rhode Island"
+        },
+        {
+          "time": "10:00 AM",
+          "activity": "Campus Welcome",
+          "description": "Arrival and introduction to Brown University"
+        },
+        {
+          "time": "10:30 AM",
+          "activity": "Student-Led Campus Tour",
+          "description": "Explore Main Green, libraries, and academic buildings"
+        },
+        {
+          "time": "12:00 PM",
+          "activity": "Lunch on Campus",
+          "description": "Dining in Brown's student center"
+        },
+        {
+          "time": "1:00 PM",
+          "activity": "Admissions Session",
+          "description": "Learn about Brown's unique academic programs"
+        },
+        {
+          "time": "2:00 PM",
+          "activity": "Library Tour",
+          "description": "Visit John Hay Library and special collections"
+        },
+        {
+          "time": "3:00 PM",
+          "activity": "Faculty Q&A",
+          "description": "Meet with professors and current students"
+        },
+        {
+          "time": "4:00 PM",
+          "activity": "Providence Exploration",
+          "description": "Discover the vibrant city around campus"
+        },
+        {
+          "time": "5:00 PM",
+          "activity": "Return to SCISS",
+          "description": "Journey home with new insights"
+        }
+      ],
+      "educationalValue": [
+        "Liberal arts education philosophy",
+        "Research opportunities and programs",
+        "Campus culture and student life",
+        "Admissions process and requirements",
+        "Academic excellence and innovation"
+      ],
+      "preparationTips": [
+        "Prepare questions about academic programs",
+        "Bring notebook for admissions notes",
+        "Wear comfortable walking shoes",
+        "Research Brown's unique curriculum",
+        "Bring camera for campus photos"
+      ],
+      "ageGroup": "Grades 8-12",
+      "difficulty": "Easy",
+      "groupSize": "25-30 students"
     }
   ]
 }

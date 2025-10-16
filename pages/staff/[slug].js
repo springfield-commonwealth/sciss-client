@@ -149,7 +149,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Professional Biography */}
         {bio && (
-          <section className="section topBorder">
+          <section className="section bg-white topBorder">
             <div className="container">
               <div className="text--center mb--lg">
                 <h2>Professional Background</h2>
@@ -173,13 +173,16 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
                 <p>Specialized knowledge and skills</p>
               </div>
               <div className="grid grid--3">
-                {expertise.map((skill, index) => (
-                  <div key={index} className="cultural-trip-card-simple">
-                    <div className="trip-icon-large">🎯</div>
-                    <h3>{skill}</h3>
-                    <p className="trip-description-simple">Expert knowledge and experience in this specialized area</p>
-                  </div>
-                ))}
+                {expertise.map((skill, index) => {
+                  const expertiseIcons = ['🎯', '⚡', '🚀', '💡', '🔬', '📊', '🎨', '🌐', '🏆'];
+                  return (
+                    <div key={index} className="cultural-trip-card-simple">
+                      <div className="trip-icon-large">{expertiseIcons[index % expertiseIcons.length]}</div>
+                      <h3>{skill}</h3>
+                      <p className="trip-description-simple">Expert knowledge and experience in this specialized area</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -187,21 +190,24 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Education */}
         {education && education.length > 0 && (
-          <section className="section custom-spacing">
+          <section className="section bg-white custom-spacing">
             <div className="container">
               <div className="text--center mb--lg">
                 <h2>Education</h2>
                 <p>Academic credentials and qualifications</p>
               </div>
               <div className="grid grid--2">
-                {education.map((edu, index) => (
-                  <div key={index} className="cultural-trip-card-simple">
-                    <div className="trip-icon-large">🎓</div>
-                    <h3>{edu.degree}</h3>
-                    <p className="trip-location-simple">📍 {edu.institution}</p>
-                    <p className="trip-description-simple">{edu.year} {edu.field && `• ${edu.field}`}</p>
-                  </div>
-                ))}
+                {education.map((edu, index) => {
+                  const educationIcons = ['🎓', '📚', '🏛️', '🎖️', '📜', '🌟'];
+                  return (
+                    <div key={index} className="cultural-trip-card-simple">
+                      <div className="trip-icon-large">{educationIcons[index % educationIcons.length]}</div>
+                      <h3>{edu.degree}</h3>
+                      <p className="trip-location-simple">📍 {edu.institution}</p>
+                      <p className="trip-description-simple">{edu.year} {edu.field && `• ${edu.field}`}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -209,22 +215,25 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Professional Experience */}
         {experience && experience.length > 0 && (
-          <section className="section bg-light custom-spacing">
+          <section className="section bg-white custom-spacing">
             <div className="container">
               <div className="text--center mb--lg">
                 <h2>Professional Experience</h2>
                 <p>Career highlights and professional journey</p>
               </div>
               <div className="grid grid--2">
-                {experience.map((exp, index) => (
-                  <div key={index} className="cultural-trip-card-simple">
-                    <div className="trip-icon-large">💼</div>
-                    <h3>{exp.position}</h3>
-                    <p className="trip-location-simple">📍 {exp.company}</p>
-                    <p className="trip-description-simple">{exp.startDate} - {exp.endDate || "Present"}</p>
-                    {exp.description && <p className="trip-description-simple" style={{ marginTop: '1rem' }}>{exp.description}</p>}
-                  </div>
-                ))}
+                {experience.map((exp, index) => {
+                  const experienceIcons = ['💼', '🏢', '⚙️', '🎯', '📈', '🌟', '🔧', '🚀'];
+                  return (
+                    <div key={index} className="cultural-trip-card-simple">
+                      <div className="trip-icon-large">{experienceIcons[index % experienceIcons.length]}</div>
+                      <h3>{exp.position}</h3>
+                      <p className="trip-location-simple">📍 {exp.company}</p>
+                      <p className="trip-description-simple">{exp.startDate} - {exp.endDate || "Present"}</p>
+                      {exp.description && <p className="trip-description-simple" style={{ marginTop: '1rem' }}>{exp.description}</p>}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -232,19 +241,23 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Achievements */}
         {achievements && achievements.length > 0 && (
-          <section className="section custom-spacing">
+          <section className="section bg-light custom-spacing">
             <div className="container">
               <div className="text--center mb--lg">
                 <h2>Key Achievements</h2>
                 <p>Notable accomplishments and recognition</p>
               </div>
               <div className="grid grid--3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="info-card">
-                    <h3>🏆 Achievement</h3>
-                    <p>{achievement}</p>
-                  </div>
-                ))}
+                {achievements.map((achievement, index) => {
+                  const achievementIcons = ['🏆', '🥇', '⭐', '🎖️', '🌟', '💎', '🔥', '🎯', '🚀'];
+                  const achievementTypes = ['Achievement', 'Recognition', 'Award', 'Accomplishment', 'Honor', 'Success', 'Milestone', 'Victory', 'Triumph'];
+                  return (
+                    <div key={index} className="info-card">
+                      <h3>{achievementIcons[index % achievementIcons.length]} {achievementTypes[index % achievementTypes.length]}</h3>
+                      <p>{achievement}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -252,24 +265,27 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Courses Taught */}
         {courses && courses.length > 0 && (
-          <section className="section bg-light custom-spacing">
+          <section className="section bg-white custom-spacing">
             <div className="container">
               <div className="text--center mb--lg">
                 <h2>Courses at SCISS</h2>
                 <p>Explore courses taught by {firstName}</p>
               </div>
               <div className="grid grid--2">
-                {courses.map((courseSlug, index) => (
-                  <Link
-                    key={index}
-                    href={`/courses/${courseSlug}`}
-                    className="cultural-trip-card-simple"
-                  >
-                    <div className="trip-icon-large">📚</div>
-                    <h3>{courseSlug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}</h3>
-                    <p className="trip-description-simple">Learn from {firstName}'s expertise in this course</p>
-                  </Link>
-                ))}
+                {courses.map((courseSlug, index) => {
+                  const courseIcons = ['📚', '🎓', '💻', '🎯', '📊', '🔬', '🎨', '🏆', '⚡', '🚀'];
+                  return (
+                    <Link
+                      key={index}
+                      href={`/courses/${courseSlug}`}
+                      className="cultural-trip-card-simple"
+                    >
+                      <div className="trip-icon-large">{courseIcons[index % courseIcons.length]}</div>
+                      <h3>{courseSlug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}</h3>
+                      <p className="trip-description-simple">Learn from {firstName}'s expertise in this course</p>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -277,7 +293,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
 
         {/* Related Staff */}
         {relatedStaff && relatedStaff.length > 0 && (
-          <section className="related-staff">
+          <section className="related-staff bg-white">
             <div className="staff-content">
               <h2>Related Faculty</h2>
               <div className="related-staff-grid">

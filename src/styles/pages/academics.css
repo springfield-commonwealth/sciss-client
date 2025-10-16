@@ -2184,6 +2184,45 @@
    ACADEMICS MAIN CONTENT LAYOUT
    ======================================== */
 
+/* Responsive background for main content section */
+.academics-main-responsive {
+  background: var(--color-bg-secondary);
+  /* Light gray by default (desktop side-by-side) */
+}
+
+@media (max-width: 1024px) {
+  .academics-main-responsive {
+    background: transparent;
+    /* Transparent when stacked (mobile) */
+  }
+}
+
+/* Responsive background for What Makes SCISS Different section */
+.academics-features-responsive {
+  background: var(--color-bg-primary);
+  /* White by default (desktop) */
+}
+
+@media (max-width: 1024px) {
+  .academics-features-responsive {
+    background: var(--color-bg-secondary);
+    /* Light when stacked (mobile) */
+  }
+}
+
+/* Responsive background for Academic Support section */
+.academics-support-responsive {
+  background: var(--color-bg-secondary);
+  /* Light by default (desktop) */
+}
+
+@media (max-width: 1024px) {
+  .academics-support-responsive {
+    background: var(--color-bg-primary);
+    /* White when stacked (mobile) */
+  }
+}
+
 .academics-main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2332,5 +2371,56 @@
   .academics-main-grid .quick-facts-container .featured-icon .fact-emoji,
   .quick-facts-column .quick-facts-container .featured-icon .fact-emoji {
     font-size: 1.7rem;
+  }
+
+  /* Create full-width alternating backgrounds when stacked (mobile) */
+  .academics-main-content {
+    background: transparent !important;
+    padding: 0;
+    position: relative;
+  }
+
+  /* Core Programs gets full-width light background */
+  .core-programs-column {
+    background: var(--color-bg-secondary);
+    /* Light background */
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+
+  .core-programs-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: var(--color-bg-secondary);
+    z-index: -1;
+  }
+
+  /* Quick Facts gets full-width white background */
+  .quick-facts-column {
+    background: var(--color-bg-primary);
+    /* White background */
+    padding: var(--space-8);
+    margin-top: var(--space-6);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+
+  .quick-facts-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: var(--color-bg-primary);
+    z-index: -1;
   }
 }

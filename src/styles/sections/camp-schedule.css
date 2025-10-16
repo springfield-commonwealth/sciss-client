@@ -1,6 +1,23 @@
 .camp-schedule-section {
   padding: var(--space-8) 0;
   background: var(--color-bg-secondary);
+  /* Default gray background */
+}
+
+/* White background when Quick Facts is side-by-side with Core Academics (desktop) */
+@media (min-width: 1025px) {
+  .camp-schedule-section {
+    background: var(--color-bg-primary);
+    /* White background */
+  }
+}
+
+/* Light background when Quick Facts is stacked below Core Academics (mobile) */
+@media (max-width: 1024px) {
+  .camp-schedule-section {
+    background: var(--color-bg-secondary);
+    /* Light gray background */
+  }
 }
 
 .session-tabs button,

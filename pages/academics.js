@@ -69,7 +69,7 @@ const Academics = ({
       </section>
 
       {/* Overview Section - Simple & Bold */}
-      <section className="section academics-overview bg-light custom-spacing">
+      <section className="section academics-overview bg-white topBorder">
         <div className="container">
           <SectionHeader
             title="Overview"
@@ -103,7 +103,7 @@ const Academics = ({
       </section>
 
       {/* Core Programs & Quick Facts Side by Side */}
-      <section className="section academics-main-content bg-white custom-spacing">
+      <section className="section academics-main-content academics-main-responsive custom-spacing">
         <div className="container">
           <div className="academics-main-grid">
             {/* Core Academic Program Tracks - Left Side */}
@@ -249,7 +249,7 @@ const Academics = ({
 
 
       {/* Key Features - Bold & Visual */}
-      <section className="section academics-features bg-white custom-spacing">
+      <section className="section academics-features academics-features-responsive custom-spacing">
         <div className="container">
           <SectionHeader
             title="What Makes SCISS Different"
@@ -301,7 +301,7 @@ const Academics = ({
 
 
       {/* Academic Support */}
-      <section className="section bg-white custom-spacing">
+      <section className="section academics-support-responsive custom-spacing">
         <div className="container">
           <SectionHeader
             title="Comprehensive Academic Support"
@@ -328,7 +328,7 @@ const Academics = ({
         ctaTitle="Master Tomorrow's Skills Today"
         ctaDescription="Discover the academic tracks that will shape your future"
       />
-    </Layout>
+    </Layout >
   );
 };
 

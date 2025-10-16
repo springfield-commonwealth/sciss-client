@@ -108,10 +108,12 @@ const Academics = ({
           <div className="academics-main-grid">
             {/* Core Academic Program Tracks - Left Side */}
             <div className="core-programs-column">
-              <div className="text--center mb--lg">
-                <h2>Core Academic Program Tracks</h2>
-                <p>Choose one or stack across sessions</p>
-              </div>
+              <SectionHeader
+                title="Core Academic Program Tracks"
+                description="Choose one or stack across sessions"
+                showDivider
+                align="center"
+              />
 
               <div className="grid grid--1">
                 <Link href="/courses/path-to-wall-street" className="simple-track-card">

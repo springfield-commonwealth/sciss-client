@@ -199,12 +199,15 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
             </div>
 
             <div className="grid grid--2">
-              {features.map((feature, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">✓</div>
-                  <p className="trip-description-simple">{feature}</p>
-                </div>
-              ))}
+              {features.map((feature, index) => {
+                const featureIcons = ['✓', '⭐', '🎯', '🔥', '💡', '🚀', '🌟', '⚡', '🏆', '💎'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{featureIcons[index % featureIcons.length]}</div>
+                    <p className="trip-description-simple">{feature}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -218,12 +221,15 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
             </div>
 
             <div className="grid grid--2">
-              {outcomes.map((outcome, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎯</div>
-                  <p className="trip-description-simple">{outcome}</p>
-                </div>
-              ))}
+              {outcomes.map((outcome, index) => {
+                const outcomeIcons = ['🎯', '✅', '🏆', '💡', '🚀', '⭐', '🔥', '🌟', '⚡', '💪'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{outcomeIcons[index % outcomeIcons.length]}</div>
+                    <p className="trip-description-simple">{outcome}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -241,16 +247,20 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
                 <div className="trip-icon-large">✅</div>
                 <h3>What's Provided</h3>
                 <div className="simple-activity-list">
-                  {equipment
-                    .filter(
+                  {(() => {
+                    const providedItems = equipment.filter(
                       (item) =>
                         item.includes("provided") ||
                         item.includes("available") ||
                         item.includes("included")
-                    )
-                    .map((item, index) => (
+                    );
+                    if (providedItems.length === 0) {
+                      return <span className="simple-activity-tag">You need nothing - everything provided!</span>;
+                    }
+                    return providedItems.map((item, index) => (
                       <span key={index} className="simple-activity-tag">{item}</span>
-                    ))}
+                    ));
+                  })()}
                 </div>
               </div>
 
@@ -258,18 +268,22 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
                 <div className="trip-icon-large">🎒</div>
                 <h3>What to Bring</h3>
                 <div className="simple-activity-list">
-                  {equipment
-                    .filter(
+                  {(() => {
+                    const requiredItems = equipment.filter(
                       (item) =>
                         item.includes("required") ||
                         item.includes("recommended") ||
                         item.includes("essential") ||
                         item.includes("shoes") ||
                         item.includes("clothing")
-                    )
-                    .map((item, index) => (
+                    );
+                    if (requiredItems.length === 0) {
+                      return <span className="simple-activity-tag">Just bring yourself - nothing else needed!</span>;
+                    }
+                    return requiredItems.map((item, index) => (
                       <span key={index} className="simple-activity-tag">{item}</span>
-                    ))}
+                    ));
+                  })()}
                 </div>
               </div>
             </div>
@@ -285,12 +299,15 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
             </div>
 
             <div className="grid grid--2">
-              {instructors.map((instructor, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">👨‍🏫</div>
-                  <p className="trip-description-simple">{instructor}</p>
-                </div>
-              ))}
+              {instructors.map((instructor, index) => {
+                const instructorIcons = ['👨‍🏫', '👩‍🏫', '🎓', '🏆', '⭐', '💡', '🚀', '🌟', '⚡', '🔥'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{instructorIcons[index % instructorIcons.length]}</div>
+                    <p className="trip-description-simple">{instructor}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

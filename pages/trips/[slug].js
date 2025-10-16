@@ -167,13 +167,17 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <p>Discover what makes this experience special</p>
             </div>
             <div className="grid grid--2">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎯</div>
-                  <h3>Highlight {index + 1}</h3>
-                  <p className="trip-description-simple">{highlight}</p>
-                </div>
-              ))}
+              {highlights.map((highlight, index) => {
+                const highlightIcons = ['⭐', '🚀', '💡', '🎯', '🔥', '🌟', '⚡', '🏆'];
+                const highlightTypes = ['Key Feature', 'Main Attraction', 'Special Experience', 'Unique Opportunity', 'Standout Activity', 'Must-See Element', 'Exclusive Access', 'Premium Benefit'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{highlightIcons[index % highlightIcons.length]}</div>
+                    <h3>{highlightTypes[index % highlightTypes.length]}</h3>
+                    <p className="trip-description-simple">{highlight}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -186,14 +190,17 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <p>Your day-by-day adventure schedule</p>
             </div>
             <div className="grid grid--2">
-              {itinerary.map((item, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">⏰</div>
-                  <h3>{item.time}</h3>
-                  <p className="trip-location-simple">📍 {item.activity}</p>
-                  <p className="trip-description-simple">{item.description}</p>
-                </div>
-              ))}
+              {itinerary.map((item, index) => {
+                const itineraryIcons = ['⏰', '🚌', '🏛️', '🍽️', '🎯', '📸', '🎪', '🎨', '🏆', '🌟'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{itineraryIcons[index % itineraryIcons.length]}</div>
+                    <h3>{item.time}</h3>
+                    <p className="trip-location-simple">📍 {item.activity}</p>
+                    <p className="trip-description-simple">{item.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -206,12 +213,15 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <p>Everything you need for an amazing trip</p>
             </div>
             <div className="grid grid--3">
-              {inclusions.map((inclusion, index) => (
-                <div key={index} className="info-card">
-                  <h3>✓ Included</h3>
-                  <p>{inclusion}</p>
-                </div>
-              ))}
+              {inclusions.map((inclusion, index) => {
+                const inclusionTypes = ['✓ Included', '🎫 Provided', '🛡️ Covered', '📦 Part of Package', '🎉 All Inclusive', '⭐ Trip Feature', '💰 No Extra Cost', '🎁 Complimentary'];
+                return (
+                  <div key={index} className="info-card">
+                    <h3>{inclusionTypes[index % inclusionTypes.length]}</h3>
+                    <p>{inclusion}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -224,13 +234,17 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               <p>Learning opportunities that enhance your experience</p>
             </div>
             <div className="grid grid--2">
-              {educationalValue.map((value, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎓</div>
-                  <h3>Learning Goal {index + 1}</h3>
-                  <p className="trip-description-simple">{value}</p>
-                </div>
-              ))}
+              {educationalValue.map((value, index) => {
+                const educationalIcons = ['🎓', '📚', '🔬', '🌍', '💡', '🎯', '🚀', '⭐'];
+                const educationalTypes = ['Learning Goal', 'Educational Focus', 'Knowledge Area', 'Skill Development', 'Academic Insight', 'Learning Objective', 'Educational Benefit', 'Study Focus'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{educationalIcons[index % educationalIcons.length]}</div>
+                    <h3>{educationalTypes[index % educationalTypes.length]}</h3>
+                    <p className="trip-description-simple">{value}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

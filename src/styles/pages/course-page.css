@@ -5,6 +5,15 @@
   background: var(--background-primary);
 }
 
+/* Override info-card h3 styling for course pages to match other sections */
+.course-page-page .info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  /* Black color to match cultural-trip-card-simple h3 */
+  margin-bottom: var(--space-2);
+}
+
 /* Universal Slug Header Style */
 .course-page-hero {
   background: #000000;

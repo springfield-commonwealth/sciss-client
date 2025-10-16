@@ -170,13 +170,17 @@ const CoursePage = ({ course, breadcrumbs }) => {
               <p>Key features and benefits of this course</p>
             </div>
             <div className="grid grid--2">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">⭐</div>
-                  <h3>Highlight {index + 1}</h3>
-                  <p className="trip-description-simple">{highlight}</p>
-                </div>
-              ))}
+              {highlights.map((highlight, index) => {
+                const highlightIcons = ['⭐', '🚀', '💡', '🎯', '🔥', '🌟', '⚡', '🏆'];
+                const highlightTypes = ['Key Feature', 'Core Benefit', 'Unique Advantage', 'Special Focus', 'Main Strength', 'Primary Goal', 'Essential Element', 'Standout Point'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{highlightIcons[index % highlightIcons.length]}</div>
+                    <h3>{highlightTypes[index % highlightTypes.length]}</h3>
+                    <p className="trip-description-simple">{highlight}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -189,13 +193,17 @@ const CoursePage = ({ course, breadcrumbs }) => {
               <p>What you'll learn in this program</p>
             </div>
             <div className="grid grid--2">
-              {curriculum.map((item, index) => (
-                <div key={index} className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">📚</div>
-                  <h3>Module {index + 1}</h3>
-                  <p className="trip-description-simple">{item}</p>
-                </div>
-              ))}
+              {curriculum.map((item, index) => {
+                const curriculumIcons = ['📚', '🎓', '💻', '🔬', '🎯', '📊', '🎨', '🏆', '⚡', '🚀'];
+                const curriculumTypes = ['Foundation', 'Core Concepts', 'Advanced Topics', 'Practical Skills', 'Real Projects', 'Case Studies', 'Hands-on Labs', 'Final Project', 'Assessment', 'Integration'];
+                return (
+                  <div key={index} className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">{curriculumIcons[index % curriculumIcons.length]}</div>
+                    <h3>{curriculumTypes[index % curriculumTypes.length]}</h3>
+                    <p className="trip-description-simple">{item}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -208,12 +216,16 @@ const CoursePage = ({ course, breadcrumbs }) => {
               <p>Skills and knowledge you'll gain</p>
             </div>
             <div className="grid grid--3">
-              {outcomes.map((outcome, index) => (
-                <div key={index} className="info-card">
-                  <h3>🎯 Outcome</h3>
-                  <p>{outcome}</p>
-                </div>
-              ))}
+              {outcomes.map((outcome, index) => {
+                const outcomeIcons = ['🎯', '✅', '🏆', '💡', '🚀', '⭐', '🔥', '🌟', '⚡'];
+                const outcomeTypes = ['Core Skill', 'Key Competency', 'Learning Goal', 'Practical Ability', 'Knowledge Area', 'Professional Skill', 'Achievement', 'Capability', 'Expertise'];
+                return (
+                  <div key={index} className="info-card">
+                    <h3>{outcomeIcons[index % outcomeIcons.length]} {outcomeTypes[index % outcomeTypes.length]}</h3>
+                    <p>{outcome}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -936,8 +936,11 @@
 }
 
 .info-card h3 {
-  color: var(--primary-blue);
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  /* Black color to match cultural-trip-card-simple h3 */
+  margin-bottom: var(--space-2);
   text-align: center;
 }
 
@@ -970,7 +973,7 @@
    ========================================================================== */
 
 .trip-page {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+  /* background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%); */
   min-height: 100vh;
 }
 

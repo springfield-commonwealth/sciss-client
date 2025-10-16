@@ -67,12 +67,12 @@ const DirectoryPage = ({
   const statsData = useMemo(() => {
     const defaultStats = [
       {
-        number: items.length,
+        number: type === "trips" ? "5+" : items.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Available`,
         icon: getTypeIcon(type),
       },
       {
-        number: categories.length,
+        number: type === "trips" ? "4+" : categories.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Categories`,
         icon: "📚",
       },

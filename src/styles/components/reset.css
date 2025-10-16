@@ -12,6 +12,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
 
 @media (max-width: 768px) {
@@ -42,7 +49,7 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {

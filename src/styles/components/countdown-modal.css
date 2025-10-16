@@ -41,7 +41,7 @@
 }
 
 .countdown-modal::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--color-bg-primary);
   border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
 }
 

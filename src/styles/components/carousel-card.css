@@ -56,3 +56,9 @@
   margin: 0;
   line-height: var(--leading-normal);
 }
+
+/* Left align carousel overlay paragraphs on day-trips page only */
+.day-trips-page .carousel-overlay p,
+.day-trips-page .section .carousel-overlay p {
+  text-align: left !important;
+}

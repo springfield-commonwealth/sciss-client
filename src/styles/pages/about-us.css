@@ -1231,3 +1231,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Disable pointer events for mission and vision cards */
+.mission-vision-responsive .card--feature.card--hoverable,
+.mission-vision-responsive .card--feature.card--hoverable.card--clickable {
+  pointer-events: none !important;
+}
+
+/* Left align paragraphs in about-sciss cards on about-us page only */
+.about-us-page .about-sciss-card p {
+  text-align: left !important;
+}

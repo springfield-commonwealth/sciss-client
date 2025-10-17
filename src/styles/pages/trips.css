@@ -1109,9 +1109,7 @@
   transition: transform 0.3s ease;
 }
 
-.trip-image:hover {
-  transform: rotate(0deg) scale(1.05);
-}
+/* Removed hover effect - trip hero image is not clickable */
 
 /* Content Sections */
 .trip-content {
@@ -1760,4 +1758,9 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* Disable pointer events for stats grids */
+.grid--3 .card--feature.card--hoverable.card--clickable {
+  pointer-events: none !important;
 }

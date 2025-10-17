@@ -133,9 +133,7 @@
   transition: transform 0.3s ease;
 }
 
-.course-page-hero-image img:hover {
-  transform: rotate(0deg) scale(1.05);
-}
+/* Removed hover effect - course page hero image is not clickable */
 
 /* Course Details Section */
 .course-page-details {

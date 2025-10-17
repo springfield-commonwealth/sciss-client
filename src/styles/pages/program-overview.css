@@ -464,3 +464,13 @@
     font-size: 1rem;
   }
 }
+
+/* Override global center alignment for specific program overview text */
+.text--center.mb--md p {
+  text-align: left !important;
+}
+
+/* Center align headers in program overview cultural trip cards */
+.program-overview .cultural-trip-card-simple h3 {
+  text-align: center !important;
+}

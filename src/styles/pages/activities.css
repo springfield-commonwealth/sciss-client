@@ -1212,3 +1212,8 @@
     align-items: center;
   }
 }
+
+/* Disable pointer events for stats grids */
+.grid--3 .card--feature.card--hoverable.card--clickable {
+  pointer-events: none !important;
+}

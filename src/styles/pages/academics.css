@@ -417,10 +417,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.academics-intro-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
+/* Removed hover effect - academics intro cards are not clickable */
 
 .intro-icon {
   font-size: 3.5rem;
@@ -556,10 +553,7 @@
   transition: all 0.3s ease;
 }
 
-.academics-feature-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
+/* Removed hover effect - academics feature items are not clickable */
 
 .feature-badge {
   font-size: 3rem;
@@ -1164,18 +1158,9 @@
   transition: transform 0.4s ease;
 }
 
-.quick-fact-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(59, 130, 246, 0.1);
-}
+/* Removed hover effect - quick fact items are not clickable */
 
-.quick-fact-item:hover::before {
-  transform: scaleX(1);
-}
+/* Removed hover effect - quick fact items are not clickable */
 
 /* Featured Fact Card */
 .featured-fact {
@@ -1188,12 +1173,7 @@
   background: linear-gradient(90deg, #f59e0b, #ea580c);
 }
 
-.featured-fact:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow:
-    0 25px 50px -12px rgba(245, 158, 11, 0.25),
-    0 0 0 1px rgba(245, 158, 11, 0.2);
-}
+/* Removed hover effect - featured fact is not clickable */
 
 .featured-badge {
   position: absolute;
@@ -1259,14 +1239,7 @@
   transition: opacity 0.4s ease;
 }
 
-.quick-fact-item:hover .fact-icon-circle {
-  transform: rotate(360deg) scale(1.1);
-}
-
-.quick-fact-item:hover .fact-icon-circle::after {
-  opacity: 0.3;
-  animation: rotate 3s linear infinite;
-}
+/* Removed hover effects - quick fact items are not clickable */
 
 @keyframes rotate {
   from {
@@ -2216,6 +2189,19 @@
   /* Light by default (desktop) */
 }
 
+/* Disable pointer events for academic support cards */
+.academics-support-responsive .card,
+.academics-support-responsive .card--feature,
+.academics-support-responsive .card--hoverable,
+.academics-support-responsive .card--clickable {
+  pointer-events: none !important;
+}
+
+/* Disable pointer events for stats grids */
+.grid--3 .card--feature.card--hoverable.card--clickable {
+  pointer-events: none !important;
+}
+
 @media (max-width: 1024px) {
   .academics-support-responsive {
     background: var(--color-bg-primary);
@@ -2286,6 +2272,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
+  pointer-events: none;
 }
 
 /* Responsive adjustments for academics main grid */

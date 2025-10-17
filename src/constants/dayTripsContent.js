@@ -4,38 +4,45 @@ const DayTripsCarouselItems = [
     description:
       "Explore the prestigious campus and learn about admissions and academic programs",
     image: "/images/slider/home/harvard-trip.JPG",
+    link: "/trips/harvard-university-tour",
   },
   {
     title: "MIT Campus Tour",
     description:
       "Discover cutting-edge research facilities and innovation labs",
     image: "/images/highlights/mit-visit.png",
+    link: "/trips/mit-innovation-tour",
   },
   {
     title: "Yale University",
     description: "Tour the historic campus and attend guest lectures",
     image: "/images/carousel/yale.png",
+    link: "/trips/yale-university-experience",
   },
   {
     title: "Basketball Hall of Fame",
     description: "Experience the history and legacy of basketball",
     image: "/images/carousel/hall-of-fame.jpg",
+    link: "/trips/basketball-hall-of-fame",
   },
   {
     title: "Boston Museum of Science",
     description:
       "Educational visits to world-class museums and cultural centers",
     image: "/images/carousel/bostonMuse.png",
+    link: "/trips/boston-museum-science",
   },
   {
     title: "Boston Freedom Trail",
     description: "Walk through American history and Revolutionary heritage",
     image: "/images/carousel/boston.png",
+    link: "/trips/boston-freedom-trail",
   },
   {
     title: "Six Flags Adventure",
     description: "Thrilling amusement park experience with friends",
     image: "/images/carousel/sixFlags.png",
+    link: "/trips/six-flags-adventure",
   },
 ];
 

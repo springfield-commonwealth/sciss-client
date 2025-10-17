@@ -42,144 +42,146 @@ const AboutUs = ({ breadcrumbs = [] }) => {
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
     >
-      {/* Hero Section */}
-      <HeroSection
-        title="About SCISS"
-        subtitle="Our Story & Mission"
-        description="Discover the vision, values, and passionate educators who make SCISS a transformative experience for students from around the world."
-        backgroundImage={AboutUsHero}
-        ctaText="Meet Our Team"
-        ctaLink="/staff"
-        secondaryCtaText="Our Programs"
-        secondaryCtaLink="/program-overview"
-      />
+      <div className="about-us-page">
+        {/* Hero Section */}
+        <HeroSection
+          title="About SCISS"
+          subtitle="Our Story & Mission"
+          description="Discover the vision, values, and passionate educators who make SCISS a transformative experience for students from around the world."
+          backgroundImage={AboutUsHero}
+          ctaText="Meet Our Team"
+          ctaLink="/staff"
+          secondaryCtaText="Our Programs"
+          secondaryCtaLink="/program-overview"
+        />
 
-      {/* About SCISS Section - Where Big Ideas Meet Practical Doing */}
-      <section className="section about-sciss-section topBorder">
-        <div className="container">
-          <div className="about-sciss-header">
-            <SectionHeader
-              title="What is SCISS?"
-              description="Where big ideas meet practical doing"
-              align="center"
-              showDivider={true}
-            />
-          </div>
+        {/* About SCISS Section - Where Big Ideas Meet Practical Doing */}
+        <section className="section about-sciss-section topBorder">
+          <div className="container">
+            <div className="about-sciss-header">
+              <SectionHeader
+                title="What is SCISS?"
+                description="Where big ideas meet practical doing"
+                align="center"
+                showDivider={true}
+              />
+            </div>
 
-          <div className="about-sciss-content">
-            <div className="about-sciss-main">
-              <div className="about-sciss-card about-sciss-card--primary">
-                <div className="about-sciss-card__icon">🎓</div>
-                <h3>Academic Excellence</h3>
-                <p>At SCISS, we blend big ideas with practical doing. Across June–August 2026, students live and learn on our residential campus, rotating through expert-led sessions, team workshops, and guided projects.</p>
-                <div className="about-sciss-highlight">
-                  <span className="about-sciss-highlight__label">Age Groups:</span>
-                  <span className="about-sciss-highlight__value">Junior (G4–G7) • Senior (G8–G12)</span>
-                </div>
-              </div>
-
-              <div className="about-sciss-card about-sciss-card--secondary">
-                <div className="about-sciss-card__icon">🌟</div>
-                <h3>Proven Outcomes</h3>
-                <p>Parents love SCISS because the outcomes are clear: stronger study habits, standout portfolio pieces, and a supportive global network that lasts long after summer ends.</p>
-                <div className="about-sciss-stats">
-                  <div className="about-sciss-stat">
-                    <span className="about-sciss-stat__number">14+</span>
-                    <span className="about-sciss-stat__label">Years of Excellence</span>
+            <div className="about-sciss-content">
+              <div className="about-sciss-main">
+                <div className="about-sciss-card about-sciss-card--primary">
+                  <div className="about-sciss-card__icon">🎓</div>
+                  <h3>Academic Excellence</h3>
+                  <p>At SCISS, we blend big ideas with practical doing. Across June–August 2026, students live and learn on our residential campus, rotating through expert-led sessions, team workshops, and guided projects.</p>
+                  <div className="about-sciss-highlight">
+                    <span className="about-sciss-highlight__label">Age Groups:</span>
+                    <span className="about-sciss-highlight__value">Junior (G4–G7) • Senior (G8–G12)</span>
                   </div>
-                  <div className="about-sciss-stat">
-                    <span className="about-sciss-stat__number">6</span>
-                    <span className="about-sciss-stat__label">Specialized Tracks</span>
+                </div>
+
+                <div className="about-sciss-card about-sciss-card--secondary">
+                  <div className="about-sciss-card__icon">🌟</div>
+                  <h3>Proven Outcomes</h3>
+                  <p>Parents love SCISS because the outcomes are clear: stronger study habits, standout portfolio pieces, and a supportive global network that lasts long after summer ends.</p>
+                  <div className="about-sciss-stats">
+                    <div className="about-sciss-stat">
+                      <span className="about-sciss-stat__number">14+</span>
+                      <span className="about-sciss-stat__label">Years of Excellence</span>
+                    </div>
+                    <div className="about-sciss-stat">
+                      <span className="about-sciss-stat__number">6</span>
+                      <span className="about-sciss-stat__label">Specialized Tracks</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Mission & Vision */}
-      <section className="section bg-light custom-spacing" id="mission">
-        <div className="container">
-          <div className="grid grid--2 mission-vision-responsive">
-            <div className="mission-section">
-              <SectionHeader
-                title="Our Mission"
-                description="Our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured through transformative experiences that prepare students for future success."
-                align="left"
-                showDivider
-              />
+        {/* Mission & Vision */}
+        <section className="section bg-light custom-spacing" id="mission">
+          <div className="container">
+            <div className="grid grid--2 mission-vision-responsive">
+              <div className="mission-section">
+                <SectionHeader
+                  title="Our Mission"
+                  description="Our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured through transformative experiences that prepare students for future success."
+                  align="left"
+                  showDivider
+                />
 
-              <div className="mission-highlights">
-                <FeatureGrid
-                  features={[
-                    {
-                      icon: "🎓",
-                      title: "Academic Excellence",
-                      description:
-                        "Providing world-class education with cutting-edge curriculum and expert instruction",
-                    },
-                    {
-                      icon: "🌟",
-                      title: "Personal Development",
-                      description:
-                        "Nurturing individual growth, confidence, and leadership skills in every student",
-                    },
-                    {
-                      icon: "🌍",
-                      title: "Global Community",
-                      description:
-                        "Building bridges between cultures and creating lasting international friendships",
-                    },
-                  ]}
-                  columns={1}
+                <div className="mission-highlights">
+                  <FeatureGrid
+                    features={[
+                      {
+                        icon: "🎓",
+                        title: "Academic Excellence",
+                        description:
+                          "Providing world-class education with cutting-edge curriculum and expert instruction",
+                      },
+                      {
+                        icon: "🌟",
+                        title: "Personal Development",
+                        description:
+                          "Nurturing individual growth, confidence, and leadership skills in every student",
+                      },
+                      {
+                        icon: "🌍",
+                        title: "Global Community",
+                        description:
+                          "Building bridges between cultures and creating lasting international friendships",
+                      },
+                    ]}
+                    columns={1}
+                    hoverable
+                  />
+                </div>
+              </div>
+
+              <div className="vision-section">
+                <SectionHeader
+                  title="Our Vision"
+                  description="To be the world's leading international summer school, known for academic innovation, cultural exchange, and transformative student experiences that shape future global leaders and change-makers."
+                  align="left"
+                  showDivider
+                />
+
+                <StatsGrid
+                  stats={statsData}
+                  columns={2}
                   hoverable
+                  onStatClick={(stat, index) => {
+                    console.log("Clicked stat:", stat, index);
+                  }}
                 />
               </div>
             </div>
-
-            <div className="vision-section">
-              <SectionHeader
-                title="Our Vision"
-                description="To be the world's leading international summer school, known for academic innovation, cultural exchange, and transformative student experiences that shape future global leaders and change-makers."
-                align="left"
-                showDivider
-              />
-
-              <StatsGrid
-                stats={statsData}
-                columns={2}
-                hoverable
-                onStatClick={(stat, index) => {
-                  console.log("Clicked stat:", stat, index);
-                }}
-              />
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Values */}
-      <section className="section bg-white" id="values">
-        <div className="container">
-          <SectionHeader
-            title="Our Core Values"
-            description="The principles that guide everything we do at SCISS"
-            showDivider
-          />
+        {/* Values */}
+        <section className="section bg-white" id="values">
+          <div className="container">
+            <SectionHeader
+              title="Our Core Values"
+              description="The principles that guide everything we do at SCISS"
+              showDivider
+            />
 
-          <FeatureGrid
-            features={valuesData}
-            columns={3}
-            hoverable
-            onFeatureClick={(feature, index) => {
-              console.log("Clicked value:", feature, index);
-            }}
-          />
-        </div>
-      </section>
+            <FeatureGrid
+              features={valuesData}
+              columns={3}
+              hoverable
+              onFeatureClick={(feature, index) => {
+                console.log("Clicked value:", feature, index);
+              }}
+            />
+          </div>
+        </section>
 
-      <FooterCTA linkTitle="Academic Programs" link="/academics" />
+        <FooterCTA linkTitle="Academic Programs" link="/academics" />
+      </div>
     </Layout>
   );
 };

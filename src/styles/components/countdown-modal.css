@@ -238,12 +238,6 @@
   gap: 1rem;
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  transition: all var(--transition-normal);
-}
-
-.countdown-modal__detail:hover {
-  background: rgba(59, 130, 246, 0.05);
-  transform: translateX(4px);
 }
 
 .countdown-modal__detail-icon {
@@ -415,6 +409,11 @@
 
   .countdown-modal__actions .btn {
     width: 100%;
+    transition: transform var(--transition-normal);
+  }
+
+  .countdown-modal__actions .btn:hover {
+    transform: translateY(-2px);
   }
 
   .countdown-modal__details {

@@ -109,6 +109,25 @@
   width: 100%;
 }
 
+/* When used in side-by-side layout, override the centering */
+.feature-section__layout--circular .feature-section__circular-image {
+  margin: 0;
+  width: auto;
+}
+
+/* Mobile responsive: center image above text */
+@media (max-width: 768px) {
+  .feature-section__layout--circular .feature-section__circular-image {
+    float: none;
+    display: block;
+    margin: 0 auto var(--space-6) auto;
+  }
+
+  .feature-section__layout--circular .feature-section__text {
+    text-align: center;
+  }
+}
+
 .feature-section__img--circular {
   width: 180px !important;
   height: 180px !important;
@@ -133,12 +152,24 @@
 
 .feature-section__layout--circular {
   display: block;
+  max-width: 780px;
+  /* Match the perfect VW width */
+  margin: 0 auto;
+  /* Center the container */
 }
 
 .feature-section__layout--circular .feature-section__text {
-  text-align: center;
+  text-align: justify;
   max-width: 650px;
   margin: 0 auto;
+  /* Center the text block */
+}
+
+.feature-section__layout--circular .feature-section__circular-image {
+  float: right;
+  margin: 0 0 var(--space-6) var(--space-6);
+  /* Back to original margin */
+  shape-outside: circle(50%);
 }
 
 /* Removed hover effect - feature section images are not clickable */
@@ -150,6 +181,11 @@
   padding: 0;
 }
 
+/* For circular layout, change text container to block for proper wrapping */
+.feature-section__layout--circular .feature-section__text {
+  display: block;
+}
+
 .feature-section__paragraph {
   font-size: var(--text-lg);
   line-height: 1.7;
@@ -158,6 +194,15 @@
   text-align: justify;
   font-family: var(--font-sans);
   font-weight: var(--font-normal);
+}
+
+/* Add spacing between paragraphs in circular layout */
+.feature-section__layout--circular .feature-section__paragraph {
+  margin-bottom: var(--space-6);
+}
+
+.feature-section__layout--circular .feature-section__paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .feature-section__paragraph:first-child {

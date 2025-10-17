@@ -75,6 +75,8 @@ const HomePage = ({ breadcrumbs = [] }) => {
         paragraphs={HomePresidentLetter}
         imagePosition="right"
         className="bg-light"
+        circularImage={true}
+        showDivider={true}
       />
 
       {/* Testimonials Section */}

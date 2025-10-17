@@ -9,6 +9,7 @@ const FeatureSection = ({
   imagePosition = "left", // "left" or "right"
   showDivider = true, // Show/hide blue divider bar under heading
   className = "", // Additional CSS class
+  circularImage = false, // Show image as circular above content
 }) => {
   // Handle new API with features array
   if (features && Array.isArray(features)) {
@@ -30,14 +31,40 @@ const FeatureSection = ({
     <section className={`feature-section ${className}`}>
       <div className="container">
         {heading && (
-          <div className={`feature-section__header ${!showDivider ? 'feature-section__header--no-divider' : ''}`}>
+          <div className={`feature-section__header ${!showDivider ? 'feature-section__header--no-divider' : ''} ${circularImage ? 'feature-section__header--reduced-margin' : ''}`}>
             <h2 className="feature-section__title">{heading}</h2>
           </div>
         )}
 
+        {circularImage && image && (
+          <div className="feature-section__circular-image">
+            <figure className="feature-section__figure">
+              <picture className="feature-section__picture feature-section__picture--circular">
+                {image.sources &&
+                  image.sources.map((source, idx) => (
+                    <source
+                      key={idx}
+                      srcSet={source.srcSet}
+                      media={source.media}
+                    />
+                  ))}
+                <img
+                  loading="lazy"
+                  src={image.src}
+                  alt={image.alt}
+                  className="feature-section__img feature-section__img--circular"
+                  style={{
+                    width: imageWidth || "150px",
+                  }}
+                />
+              </picture>
+            </figure>
+          </div>
+        )}
+
         <div className="feature-section__content">
-          <div className={`feature-section__layout ${imagePosition === "right" ? "feature-section__layout--reverse" : ""}`}>
-            {image && (
+          <div className={`feature-section__layout ${imagePosition === "right" ? "feature-section__layout--reverse" : ""} ${circularImage ? "feature-section__layout--circular" : ""}`}>
+            {!circularImage && image && (
               <div className="feature-section__media">
                 <figure className="feature-section__figure">
                   <picture className="feature-section__picture">

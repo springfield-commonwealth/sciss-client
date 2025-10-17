@@ -320,10 +320,7 @@
   text-align: center;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-}
+/* Removed hover effect - testimonial cards are not clickable */
 
 .quote-icon {
   font-size: 2rem;
@@ -477,4 +474,4 @@
   .peace-card {
     padding: 1.25rem;
   }
-} 
+}

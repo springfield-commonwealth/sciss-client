@@ -83,7 +83,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
       {/* Testimonials Section */}
       <Testimonials
         title="Student voices"
-        desc="Don't just head from us. Hear from our amazing SCISS alumni"
+        desc="Don't just hear from us. Hear from our amazing SCISS alumni"
         testimonials={HomeTestimonials}
         className="bg-white"
       />

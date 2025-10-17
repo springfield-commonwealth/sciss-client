@@ -3,6 +3,7 @@ import FeatureCard from "../ui/FeatureCard";
 const FeatureSection = ({
   features,
   heading,
+  subtitle, // New subtitle prop
   paragraphs,
   image,
   imageWidth,
@@ -33,6 +34,7 @@ const FeatureSection = ({
         {heading && (
           <div className={`feature-section__header ${!showDivider ? 'feature-section__header--no-divider' : ''} ${circularImage ? 'feature-section__header--reduced-margin' : ''}`}>
             <h2 className="feature-section__title">{heading}</h2>
+            {subtitle && <p className="feature-section__subtitle">{subtitle}</p>}
           </div>
         )}
 

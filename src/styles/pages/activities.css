@@ -39,15 +39,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.activity-schedule .cultural-trip-card-simple:hover,
-.activity-features .cultural-trip-card-simple:hover,
-.activity-outcomes .cultural-trip-card-simple:hover,
-.activity-equipment .cultural-trip-card-simple:hover,
-.activity-instructors .cultural-trip-card-simple:hover {
-  transform: translateY(-4px);
-  border-color: #3b82f6;
-  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
-}
+/* Removed hover effects - cultural trip cards are not clickable */
 
 .activity-schedule .trip-icon-large,
 .activity-features .trip-icon-large,
@@ -110,15 +102,7 @@
   display: inline-block;
 }
 
-.activity-schedule .simple-activity-tag:hover,
-.activity-features .simple-activity-tag:hover,
-.activity-outcomes .simple-activity-tag:hover,
-.activity-equipment .simple-activity-tag:hover,
-.activity-instructors .simple-activity-tag:hover {
-  transform: translateY(-2px);
-  border-color: #3b82f6;
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
-}
+/* Removed hover effects - simple activity tags are not clickable */
 
 /* Responsive Design for Activity Content */
 @media (max-width: 768px) {

@@ -744,11 +744,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.cultural-trip-card-simple:hover {
-  transform: translateY(-4px);
-  border-color: #3b82f6;
-  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
-}
+/* Removed hover effect - cultural trip cards are not clickable */
 
 .trip-icon-large {
   font-size: 3rem;
@@ -930,10 +926,7 @@
   transition: transform 0.3s ease;
 }
 
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-}
+/* Removed hover effect - info cards are not clickable */
 
 .info-card h3 {
   font-size: 1.5rem;

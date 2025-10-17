@@ -35,10 +35,7 @@
   transition: all var(--transition-normal);
 }
 
-.staff-directory-header .card--feature:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
+/* Removed hover effect - staff directory feature cards are not clickable */
 
 .staff-directory-header .card--feature:focus-visible {
   outline: 2px solid var(--color-primary-500);

@@ -14,11 +14,7 @@
   font-size: var(--text-base);
 }
 
-.simple-activity-tag:hover {
-  transform: translateY(-2px);
-  border-color: #3b82f6;
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
-}
+/* Removed hover effect - simple activity tags are not clickable */
 
 /* Import shared styles from trips.css for consistency */
 .cultural-trip-card-simple {
@@ -31,11 +27,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.cultural-trip-card-simple:hover {
-  transform: translateY(-4px);
-  border-color: #3b82f6;
-  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
-}
+/* Removed hover effect - cultural trip cards are not clickable */
 
 .trip-icon-large {
   font-size: 3rem;

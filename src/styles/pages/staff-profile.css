@@ -64,10 +64,7 @@
   backdrop-filter: blur(10px);
 }
 
-.staff-portrait:hover {
-  transform: scale(1.05);
-  border-color: rgba(255, 255, 255, 0.5);
-}
+/* Removed hover effect - staff portrait is not clickable */
 
 /* Fallback for missing staff images */
 .staff-portrait:not([src]),

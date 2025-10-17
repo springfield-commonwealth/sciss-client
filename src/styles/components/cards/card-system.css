@@ -507,10 +507,7 @@
   border: 1px solid var(--color-border-light);
 }
 
-.card--feature:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
+/* Removed general feature card hover effect - only clickable feature cards should have hover effects */
 
 /* Feature card variants */
 .card--primary {
@@ -568,10 +565,7 @@
   transition: all var(--transition-normal);
 }
 
-.card--feature:hover .card__icon {
-  background: var(--color-primary-200);
-  transform: scale(1.05);
-}
+/* Removed hover effects from clickable feature cards - no hover effects needed */
 
 /* Feature card variants */
 .card--feature.card--primary .card__icon {
@@ -579,27 +573,21 @@
   background: var(--color-primary-100);
 }
 
-.card--feature.card--primary:hover .card__icon {
-  background: var(--color-primary-200);
-}
+/* Removed hover effect - feature cards are not clickable */
 
 .card--feature.card--secondary .card__icon {
   color: var(--color-info-500);
   background: var(--color-info-100);
 }
 
-.card--feature.card--secondary:hover .card__icon {
-  background: var(--color-info-200);
-}
+/* Removed hover effect - feature cards are not clickable */
 
 .card--feature.card--accent .card__icon {
   color: var(--color-accent-500);
   background: var(--color-accent-100);
 }
 
-.card--feature.card--accent:hover .card__icon {
-  background: var(--color-accent-200);
-}
+/* Removed hover effect - feature cards are not clickable */
 
 /* Responsive feature cards */
 @media (max-width: 768px) {
@@ -675,10 +663,7 @@
   transition: all var(--transition-normal);
 }
 
-.card--hoverable:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
+/* Removed hoverable hover effect - only clickable cards should have hover effects */
 
 .card--clickable {
   cursor: pointer;

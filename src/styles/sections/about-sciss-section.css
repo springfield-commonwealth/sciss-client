@@ -97,10 +97,7 @@
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 }
 
-.about-sciss-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-}
+/* Removed hover effect - about-sciss cards are not clickable */
 
 .about-sciss-card--primary::before {
     background: linear-gradient(90deg, var(--color-primary), #4f46e5);

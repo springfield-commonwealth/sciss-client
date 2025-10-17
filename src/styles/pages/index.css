@@ -24,6 +24,47 @@
   text-align: center !important;
 }
 
+/* Mission section headers - center aligned override */
+#mission .section-header--left .section__title,
+#mission .section-header--left .section__description {
+  text-align: center !important;
+}
+
+/* Mission section stats grid - one column when side by side */
+.vision-section .grid--2 {
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* Mission & Vision responsive backgrounds */
+.mission-vision-responsive {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .mission-vision-responsive {
+    gap: 0;
+  }
+
+  .mission-vision-responsive .mission-section {
+    background: var(--color-bg-light);
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .mission-vision-responsive .vision-section {
+    background: white;
+    padding: var(--space-8) var(--space-6);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+  }
+
+  /* Values section - light background on mobile for proper alternating pattern */
+  #values.section.bg-white {
+    background: var(--color-bg-light) !important;
+  }
+}
+
 /* Global override for all section descriptions and specific paragraphs */
 .section__description,
 p.section__description,

@@ -101,11 +101,11 @@ const AboutUs = ({ breadcrumbs = [] }) => {
       {/* Mission & Vision */}
       <section className="section bg-light custom-spacing" id="mission">
         <div className="container">
-          <div className="grid grid--2">
+          <div className="grid grid--2 mission-vision-responsive">
             <div className="mission-section">
               <SectionHeader
                 title="Our Mission"
-                description="At Springfield Commonwealth International Summer School, our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. We believe in providing students with transformative experiences that prepare them for future academic and professional success while building global perspectives and lifelong connections."
+                description="Our mission is to foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured through transformative experiences that prepare students for future success."
                 align="left"
                 showDivider
               />

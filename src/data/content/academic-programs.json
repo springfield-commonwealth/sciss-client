@@ -205,7 +205,7 @@
       "slug": "public-speaking-debate",
       "title": "Leadership & Public Speaking/Debate",
       "description": "Confidence grows through daily public speaking and debate, targeted English writing support, and workshops on responsibility, communication, innovation, and teamwork.",
-      "image": "/images/carousel/public-speaking.png",
+      "image": "/images/carousel/leadership.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2025-10-04T00:00:00Z",
       "published": true,
@@ -226,7 +226,7 @@
           "communication skills",
           "teen confidence building"
         ],
-        "ogImage": "/images/carousel/public-speaking.png"
+        "ogImage": "/images/carousel/leadership.png"
       },
       "level": "All Levels",
       "duration": "2 weeks",

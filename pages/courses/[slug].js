@@ -173,9 +173,16 @@ const CoursePage = ({ course, breadcrumbs }) => {
               {highlights.map((highlight, index) => {
                 const highlightIcons = ['⭐', '🚀', '💡', '🎯', '🔥', '🌟', '⚡', '🏆'];
                 const highlightTypes = ['Key Feature', 'Core Benefit', 'Unique Advantage', 'Special Focus', 'Main Strength', 'Primary Goal', 'Essential Element', 'Standout Point'];
+
+                // Special icon for music overseas performance
+                let icon = highlightIcons[index % highlightIcons.length];
+                if (highlight.includes('Music overseas performance or competition')) {
+                  icon = '🌍';
+                }
+
                 return (
                   <div key={index} className="cultural-trip-card-simple">
-                    <div className="trip-icon-large">{highlightIcons[index % highlightIcons.length]}</div>
+                    <div className="trip-icon-large">{icon}</div>
                     <h3>{highlightTypes[index % highlightTypes.length]}</h3>
                     <p className="trip-description-simple">{highlight}</p>
                   </div>

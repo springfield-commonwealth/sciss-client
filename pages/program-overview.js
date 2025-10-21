@@ -92,7 +92,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                 <div className="simple-activity-tag">🏀 Basketball (our core)</div>
                 <div className="simple-activity-tag">⚽ Soccer</div>
                 <div className="simple-activity-tag">🏐 Volleyball</div>
-                <div className="simple-activity-tag">🏓 Badminton</div>
+                <div className="simple-activity-tag">🏸 Badminton</div>
                 <div className="simple-activity-tag">🏓 Table Tennis</div>
                 <div className="simple-activity-tag">🥾 Hiking</div>
                 <div className="simple-activity-tag">⛳ Golf</div>

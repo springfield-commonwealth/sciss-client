@@ -1304,7 +1304,7 @@
       "slug": "jill-tang-music-teacher",
       "title": "Jill Tang - Music Teacher",
       "description": "Experienced music educator specializing in vocal and instrumental instruction, ensemble direction, and performance preparation.",
-      "image": "/images/instructors/jill-tang.jpg",
+      "image": "/images/instructors/jill.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-12-19T00:00:00Z",
       "published": true,
@@ -1325,7 +1325,7 @@
           "instrumental music",
           "performing arts"
         ],
-        "ogImage": "/images/instructors/jill-tang.jpg"
+        "ogImage": "/images/instructors/jill.png"
       },
       "firstName": "Jill",
       "lastName": "Tang",
@@ -1352,7 +1352,7 @@
         "Prepared students for regional and national competitions",
         "Developed innovative music education programs"
       ],
-      "profileImage": "/images/instructors/jill-tang.jpg",
+      "profileImage": "/images/instructors/jill.png",
       "isActive": true,
       "joinDate": "2025"
     }

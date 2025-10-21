@@ -62,7 +62,7 @@ const LifeActivities = ({
           </div>
 
           <div className="info-note-box">
-            <strong>How It Works:</strong> Pick your sport/elective at orientation. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety. Some options (e.g., golf) may carry a small fee.
+            <strong>How It Works:</strong> Pick your sport/elective at registration. Adjust in week one. Juniors (G4–G7) and Seniors (G8–G12) train separately for age-appropriate coaching and safety. Some options (e.g., golf) may carry a small fee.
           </div>
         </div>
       </section>
@@ -102,7 +102,7 @@ const LifeActivities = ({
           </div>
 
           <div className="info-note-box">
-            <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Pick your favorites at orientation and adjust during week one. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
+            <strong>Supervision & Flexibility:</strong> All activities are fully supervised with clear conduct norms. Juniors (G4–G7) and Seniors (G8–G12) participate in age-appropriate groups.
           </div>
         </div>
       </section>

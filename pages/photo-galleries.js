@@ -1,4 +1,6 @@
 import Layout from "@/components/layouts/Layout";
+import FeatureVideo from "@/components/ui/FeatureVideo";
+import { WelcomeVideo } from "@/constants/videos";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Link from "next/link";
 
@@ -87,6 +89,16 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
           </div>
         </div>
       </section>
+
+      {/* Welcome Video Section */}
+      <FeatureVideo
+        VideoObject={WelcomeVideo}
+        autoPlay={false}
+        muted={true}
+        loop={true}
+        playsInline={true}
+        playBackSpeed={0.7}
+      />
 
       <div className="photo-gallery-cta">
         <div className="container">

@@ -457,8 +457,8 @@
     {
       "id": "boston-museum-science",
       "slug": "boston-museum-science",
-      "title": "Boston Museum of Science Adventure",
-      "description": "Explore hands-on science exhibits, planetarium shows, and interactive demonstrations that bring science to life in Boston's premier science museum.",
+      "title": "Springfield Museum of Science Adventure",
+      "description": "Explore hands-on science exhibits, planetarium shows, and interactive demonstrations that bring science to life in Springfield's premier science museum.",
       "image": "/images/carousel/bostonMuse.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-12-19T00:00:00Z",
@@ -471,10 +471,10 @@
         "education"
       ],
       "seo": {
-        "metaTitle": "Boston Museum of Science | SCISS Educational Trips",
-        "metaDescription": "Discover science at Boston's Museum of Science. Interactive exhibits, planetarium shows, and hands-on demonstrations for all ages.",
+        "metaTitle": "Springfield Museum of Science | SCISS Educational Trips",
+        "metaDescription": "Discover science at Springfield's Museum of Science. Interactive exhibits, planetarium shows, and hands-on demonstrations for all ages.",
         "keywords": [
-          "Boston Museum of Science",
+          "Springfield Museum of Science",
           "science education",
           "SCISS trips",
           "interactive science",
@@ -484,7 +484,7 @@
       },
       "category": "Educational Tours",
       "duration": "Full Day",
-      "location": "Boston, Massachusetts",
+      "location": "Springfield, Massachusetts",
       "transportMode": "Charter Bus",
       "highlights": [
         "Interactive science exhibits",

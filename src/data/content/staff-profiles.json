@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "totalStaff": 24,
+    "totalStaff": 26,
     "lastUpdated": "2024-12-19T00:00:00Z",
     "version": "1.0.0",
     "departments": [
@@ -1241,6 +1241,120 @@
       "profileImage": "/images/instructors/stephanie-sun.jpg",
       "isActive": true,
       "joinDate": "2024"
+    },
+    {
+      "id": "tony-bergeron-basketball-coach",
+      "slug": "tony-bergeron-basketball-coach",
+      "title": "Tony Bergeron - Basketball Coach",
+      "description": "Professional basketball coach with extensive experience in player development, team strategy, and competitive training programs.",
+      "image": "/images/instructors/tony-bergeron.jpg",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "basketball",
+        "coaching",
+        "sports",
+        "player-development",
+        "team-strategy"
+      ],
+      "seo": {
+        "metaTitle": "Tony Bergeron - Basketball Coach | SCISS Sports Program",
+        "metaDescription": "Learn from Tony Bergeron, professional basketball coach specializing in player development, team strategy, and competitive training at SCISS.",
+        "keywords": [
+          "basketball coach",
+          "SCISS sports",
+          "player development",
+          "basketball training",
+          "youth basketball"
+        ],
+        "ogImage": "/images/instructors/tony-bergeron.jpg"
+      },
+      "firstName": "Tony",
+      "lastName": "Bergeron",
+      "position": "Basketball Coach",
+      "department": "Sports & Athletics",
+      "bio": "Tony Bergeron brings years of professional basketball coaching experience to SCISS, specializing in player development, team strategy, and competitive training. His approach combines fundamental skill building with advanced tactical knowledge to help students reach their full potential on the court.",
+      "expertise": [
+        "Basketball Fundamentals",
+        "Player Development",
+        "Team Strategy",
+        "Competitive Training",
+        "Sports Psychology"
+      ],
+      "experience": [
+        {
+          "position": "Head Basketball Coach",
+          "company": "SCISS",
+          "startDate": "2025",
+          "description": "Leading basketball program development and student training"
+        }
+      ],
+      "achievements": [
+        "Developed multiple championship-winning teams",
+        "Mentored players to collegiate and professional levels",
+        "Recognized for innovative training methodologies"
+      ],
+      "profileImage": "/images/instructors/tony-bergeron.jpg",
+      "isActive": true,
+      "joinDate": "2025"
+    },
+    {
+      "id": "jill-tang-music-teacher",
+      "slug": "jill-tang-music-teacher",
+      "title": "Jill Tang - Music Teacher",
+      "description": "Experienced music educator specializing in vocal and instrumental instruction, ensemble direction, and performance preparation.",
+      "image": "/images/instructors/jill-tang.jpg",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z",
+      "published": true,
+      "tags": [
+        "music",
+        "education",
+        "vocal",
+        "instrumental",
+        "performance"
+      ],
+      "seo": {
+        "metaTitle": "Jill Tang - Music Teacher | SCISS Performing Arts",
+        "metaDescription": "Learn from Jill Tang, experienced music educator specializing in vocal and instrumental instruction, ensemble direction, and performance preparation.",
+        "keywords": [
+          "music teacher",
+          "SCISS music",
+          "vocal instruction",
+          "instrumental music",
+          "performing arts"
+        ],
+        "ogImage": "/images/instructors/jill-tang.jpg"
+      },
+      "firstName": "Jill",
+      "lastName": "Tang",
+      "position": "Music Teacher",
+      "department": "Performing Arts",
+      "bio": "Jill Tang is a dedicated music educator with extensive experience in both vocal and instrumental instruction. She specializes in ensemble direction, performance preparation, and helping students develop their musical talents through comprehensive training and creative expression.",
+      "expertise": [
+        "Vocal Instruction",
+        "Instrumental Music",
+        "Ensemble Direction",
+        "Performance Preparation",
+        "Music Theory"
+      ],
+      "experience": [
+        {
+          "position": "Music Teacher",
+          "company": "SCISS",
+          "startDate": "2025",
+          "description": "Leading music education and performing arts programs"
+        }
+      ],
+      "achievements": [
+        "Led multiple award-winning student ensembles",
+        "Prepared students for regional and national competitions",
+        "Developed innovative music education programs"
+      ],
+      "profileImage": "/images/instructors/jill-tang.jpg",
+      "isActive": true,
+      "joinDate": "2025"
     }
   ]
 }

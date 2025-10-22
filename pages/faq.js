@@ -1,5 +1,5 @@
 import Layout from "@/components/layouts/Layout";
-import { SectionHeader } from "@/components/ui";
+import { FooterCTA, SectionHeader } from "@/components/ui";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import { useState } from "react";
 
@@ -363,7 +363,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
 
     const sampleSchedules = [
         {
-            title: "Investment Camp",
+            title: "Investment Track",
             schedule: [
                 "Mon: Opening Ceremony, Money Talk Introduction",
                 "Tue: Financial Markets Basics, Stock Trading Simulation",
@@ -375,7 +375,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             ]
         },
         {
-            title: "Entrepreneurship Camp",
+            title: "Entrepreneurship Track",
             schedule: [
                 "Mon: Entrepreneurial Mindset & Fundraising Logic",
                 "Tue: Design Thinking",
@@ -387,7 +387,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             ]
         },
         {
-            title: "Leadership · Art · Theatre Camp",
+            title: "Leadership · Art · Theatre Track",
             schedule: [
                 "Mon: Keynote Speech, Art Creation",
                 "Tue: Leadership (Courage & Responsibility), Writing",
@@ -399,7 +399,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             ]
         },
         {
-            title: "AI + Robotics Camp",
+            title: "AI + Robotics Track",
             schedule: [
                 "Mon: AI Fundamentals, Python Programming",
                 "Tue: Supervised & Unsupervised Learning",
@@ -411,7 +411,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             ]
         },
         {
-            title: "Sports Camp (Basketball Focus)",
+            title: "Sports Track (Basketball Focus)",
             schedule: [
                 "Mon: Fitness Test, Basketball Fundamentals",
                 "Tue: Dribbling & Shooting",
@@ -450,7 +450,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
                 <div className="container">
                     <div className="faq-grid">
                         {faqSections.map((section) => (
-                            <div key={section.id} className="faq-section">
+                            <div key={section.id} className={`faq-section ${openSections[section.id] ? 'open' : ''}`}>
                                 <button
                                     className="faq-section-header"
                                     onClick={() => toggleSection(section.id)}
@@ -530,9 +530,9 @@ const FAQ = ({ breadcrumbs = [] }) => {
                     </div>
 
                     <div className="schedule-cta">
-                        <p className="schedule-cta-text">Want to see the complete detailed schedule?</p>
+                        <p className="schedule-cta-text">Want to see the complete detailed sample schedule for the Investment Track?</p>
                         <a href="/academics#schedule" className="btn btn--primary btn--lg schedule-cta-button">
-                            View Full Schedule
+                            View Full Sample Investment Track Schedule
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" className="btn-icon">
                                 <path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.44 8.5H2.75a.75.75 0 0 1 0-1.5h8.69L8.22 4.03a.75.75 0 0 1 0-1.06z" />
                             </svg>
@@ -570,6 +570,13 @@ const FAQ = ({ breadcrumbs = [] }) => {
                     </div>
                 </div>
             </section>
+
+            <FooterCTA
+                link="/courses"
+                linkTitle="Programs"
+                ctaTitle="Ready to Join SCISS 2026?"
+                ctaDescription="Discover our academic programs and find the perfect track for you"
+            />
         </Layout>
     );
 };

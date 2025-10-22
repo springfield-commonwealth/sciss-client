@@ -11,6 +11,9 @@ const DirectoryCard = ({
   renderCardContent,
   renderBadges,
   className = "",
+  disableLinks = false,
+  disableHover = false,
+  disableClick = false,
 }) => {
   // Get card configuration based on type
   const cardConfig = getCardConfig(type);
@@ -233,21 +236,8 @@ const DirectoryCard = ({
     return null;
   };
 
-  return (
-    <Link
-      href={getItemUrl(data)}
-      className={`card ${
-        type === "staff"
-          ? "card--staff"
-          : type === "trips"
-          ? "card--trips"
-          : type === "courses"
-          ? "card--courses"
-          : type === "activities"
-          ? "card--activities"
-          : ""
-      } directory-card directory-card--${type} ${className}`}
-    >
+  const cardContent = (
+    <>
       {/* Card Image Section */}
       <div className="card__image">
         {getItemImage(data) && (
@@ -270,8 +260,36 @@ const DirectoryCard = ({
         {/* Custom or default badge renderer */}
         {/* {renderBadges ? renderBadges(data) : defaultBadgeRenderer(data)} */}
 
-        <span className="view-details-text">{cardConfig.viewDetailsText}</span>
+        {!disableLinks && (
+          <span className="view-details-text">{cardConfig.viewDetailsText}</span>
+        )}
       </div>
+    </>
+  );
+
+  const cardClassName = `card ${type === "staff"
+      ? "card--staff"
+      : type === "trips"
+        ? "card--trips"
+        : type === "courses"
+          ? "card--courses"
+          : type === "activities"
+            ? "card--activities"
+            : ""
+    } directory-card directory-card--${type} ${className} ${disableLinks ? "directory-card--disabled" : ""
+    }`;
+
+  if (disableLinks) {
+    return (
+      <div className={cardClassName}>
+        {cardContent}
+      </div>
+    );
+  }
+
+  return (
+    <Link href={getItemUrl(data)} className={cardClassName}>
+      {cardContent}
     </Link>
   );
 };

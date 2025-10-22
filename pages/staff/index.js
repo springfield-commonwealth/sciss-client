@@ -9,69 +9,23 @@ import { generateBreadcrumbs } from "@/lib/utils/navigation";
 
 // Staff Directory Page Component - Using Universal Directory System
 const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
-  // Custom content renderer for staff
+  // Custom content renderer for staff - simplified version
   const renderStaffContent = (member) => {
     return (
-      <>
-        <div className="card__expertise">
-          {member.expertise && member.expertise.length > 0 ? (
-            <>
-              {member.expertise.slice(0, 3).map((skill, index) => (
-                <span key={index} className="expertise-badge">
-                  {skill}
-                </span>
-              ))}
-              {member.expertise.length > 3 && (
-                <span className="expertise-more">
-                  +{member.expertise.length - 3} more
-                </span>
-              )}
-            </>
-          ) : (
-            <span className="expertise-badge">Expert</span>
+      <div className="staff-simple-card">
+        <div className="staff-simple-info">
+          <p className="staff-simple-title">{member.position}</p>
+          {member.department && (
+            <p className="staff-simple-department">{member.department}</p>
           )}
         </div>
-        <div className="card__bio">
-          {member.bio
-            ? member.bio.length > 120
-              ? `${member.bio.substring(0, 120)}...`
-              : member.bio
-            : "Experienced professional with expertise in their field."}
-        </div>
-        {member.courses && member.courses.length > 0 && (
-          <div className="card__courses">
-            <p className="teaches-label">
-              Teaches: {member.courses.length} course
-              {member.courses.length !== 1 ? "s" : ""}
-            </p>
-          </div>
-        )}
-      </>
+      </div>
     );
   };
 
-  // Custom badge renderer for staff
+  // No badges for simplified view
   const renderStaffBadges = (member) => {
-    return (
-      <>
-        {member.expertise && member.expertise.length > 0 ? (
-          <>
-            {member.expertise.slice(0, 3).map((skill, index) => (
-              <span key={index} className="expertise-badge">
-                {skill}
-              </span>
-            ))}
-            {member.expertise.length > 3 && (
-              <span className="expertise-more">
-                +{member.expertise.length - 3} more
-              </span>
-            )}
-          </>
-        ) : (
-          <span className="expertise-badge">Expert</span>
-        )}
-      </>
-    );
+    return null;
   };
 
   // Function to get staff departments for grouping
@@ -86,7 +40,7 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
     >
       <DirectoryPage
         type="staff"
-        title="Faculty & Staff Directory"
+        title="Meet Our Team"
         description="Meet our exceptional team of educators, industry experts, and professionals who bring real-world expertise to the SCISS learning experience."
         items={staff}
         gridColumns={3}
@@ -97,6 +51,9 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
         renderBadges={renderStaffBadges}
         getItemCategories={getStaffDepartments}
         showCategories={false}
+        disableLinks={true}
+        disableHover={true}
+        disableClick={true}
         ctaConfig={{
           footerCTA: {
             title: "Academic Programs",

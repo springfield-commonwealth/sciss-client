@@ -497,3 +497,80 @@
   }
 
 }
+
+/* Simplified Staff Cards */
+.staff-simple-card {
+  text-align: center;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff-simple-info {
+  margin-top: var(--space-3);
+  text-align: center;
+  width: 100%;
+}
+
+.staff-simple-name {
+  font-size: 1.125rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.staff-simple-title {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-1) 0;
+  font-weight: var(--font-medium);
+  text-align: center;
+}
+
+.staff-simple-department {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+  font-weight: var(--font-normal);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Disable all hover effects and links for staff cards */
+.directory-card--disabled {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+.directory-card--disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.directory-card--disabled a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.directory-card--disabled a:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Ensure staff card content is centered */
+.directory-card--staff .card__content {
+  text-align: center;
+}
+
+.directory-card--staff .card__title {
+  text-align: center;
+}
+
+.directory-card--staff .card__footer {
+  text-align: center;
+}

@@ -26,6 +26,9 @@ const DirectoryPage = ({
   ctaConfig = {}, // CTA configuration
   seoConfig = {}, // SEO configuration
   showCategories = true, // New prop to control categories section visibility
+  disableLinks = false, // Disable all links and interactions
+  disableHover = false, // Disable hover effects
+  disableClick = false, // Disable click functionality
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -192,6 +195,9 @@ const DirectoryPage = ({
                     className={`${type}-card`}
                     renderCardContent={renderCardContent}
                     renderBadges={renderBadges}
+                    disableLinks={disableLinks}
+                    disableHover={disableHover}
+                    disableClick={disableClick}
                   />
                 ))}
               </div>

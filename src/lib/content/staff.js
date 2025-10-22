@@ -8,7 +8,46 @@ import staffData from "@/data/content/staff-profiles.json";
  * @returns {Array} Array of staff objects
  */
 export function getAllStaff() {
-  return staffData.staff.filter((staff) => staff.published);
+  const staff = staffData.staff.filter((staff) => staff.published);
+
+  // Sort staff to prioritize non-Asian faces at the top
+  return staff.sort((a, b) => {
+    // Define Asian names/identifiers that should appear later
+    const asianNames = [
+      'beth-moriarty', 'erik', 'raymond-mathis', 'frank', 'jonathan',
+      'angelene-huang', 'satya-s-tripathi', 'sophia-shi', 'tony-zhou',
+      'jianwei-zhang', 'lawrence-pan', 'alex-song', 'mary-cao', 'sunny-zhang',
+      'stephanie-sun', 'tony-bergeron', 'jill-tang'
+    ];
+
+    // Non-Asian faces (should appear first)
+    const nonAsianNames = [
+      'leena-palav', 'deano-pape', 'robyn-lee-miller'
+    ];
+
+    // Si Qin should appear after non-Asian faces
+    const aIsSiQin = a.slug?.includes('si-qin') || a.id?.includes('si-qin');
+    const bIsSiQin = b.slug?.includes('si-qin') || b.id?.includes('si-qin');
+
+    const aIsNonAsian = nonAsianNames.some(name => a.slug?.includes(name) || a.id?.includes(name));
+    const bIsNonAsian = nonAsianNames.some(name => b.slug?.includes(name) || b.id?.includes(name));
+
+    const aIsAsian = asianNames.some(name => a.slug?.includes(name) || a.id?.includes(name));
+    const bIsAsian = asianNames.some(name => b.slug?.includes(name) || b.id?.includes(name));
+
+    // Priority order: Non-Asian faces first, then Si Qin, then other Asian faces (including Angelene)
+    if (aIsNonAsian && !bIsNonAsian) return -1; // a is non-Asian, b is not
+    if (!aIsNonAsian && bIsNonAsian) return 1;  // b is non-Asian, a is not
+
+    if (aIsSiQin && !bIsSiQin && !bIsNonAsian) return 1; // Si Qin after non-Asian
+    if (!aIsSiQin && bIsSiQin && !bIsNonAsian) return -1; // Si Qin after non-Asian
+
+    if (aIsAsian && !bIsAsian && !bIsNonAsian && !bIsSiQin) return 1; // Other Asian faces last (including Angelene)
+    if (!aIsAsian && bIsAsian && !aIsNonAsian && !aIsSiQin) return -1;
+
+    // If both are same type, maintain original order
+    return 0;
+  });
 }
 
 /**

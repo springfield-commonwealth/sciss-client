@@ -147,15 +147,6 @@
     overflow: hidden;
 }
 
-.schedule-showcase-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent-500));
-}
 
 .schedule-showcase-card:hover {
     border-color: var(--color-primary-300);
@@ -194,7 +185,7 @@
     position: absolute;
     left: 20px;
     top: 20px;
-    height: calc(100% - 40px);
+    bottom: 20px;
     width: 2px;
     background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-300));
     z-index: 1;

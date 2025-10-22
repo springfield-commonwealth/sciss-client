@@ -193,10 +193,11 @@
     content: '';
     position: absolute;
     left: 20px;
-    top: 0;
-    bottom: 0;
+    top: 20px;
+    height: calc(100% - 40px);
     width: 2px;
     background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-300));
+    z-index: 1;
 }
 
 .schedule-timeline-item {
@@ -216,7 +217,7 @@
     margin-right: var(--space-4);
     flex-shrink: 0;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     box-shadow: var(--shadow-small);
 }
 

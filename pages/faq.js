@@ -450,10 +450,13 @@ const FAQ = ({ breadcrumbs = [] }) => {
                 <div className="container">
                     <div className="faq-grid">
                         {faqSections.map((section) => (
-                            <div key={section.id} className={`faq-section ${openSections[section.id] ? 'open' : ''}`}>
+                            <div
+                                key={section.id}
+                                className={`faq-section ${openSections[section.id] ? 'open' : ''}`}
+                                onClick={() => toggleSection(section.id)}
+                            >
                                 <button
                                     className="faq-section-header"
-                                    onClick={() => toggleSection(section.id)}
                                     aria-expanded={openSections[section.id]}
                                 >
                                     <div className="faq-section-icon">{section.icon}</div>

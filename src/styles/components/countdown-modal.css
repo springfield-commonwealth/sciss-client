@@ -170,10 +170,6 @@
   min-width: 80px;
 }
 
-.countdown-modal__time-block:nth-child(3) {
-  position: relative;
-  top: 5px;
-}
 
 .countdown-modal__time-value {
   font-size: 3rem;
@@ -456,6 +452,65 @@
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+}
+
+/* Extra small screens - prevent counter overflow */
+@media (max-width: 394px) {
+  .countdown-modal {
+    width: 98%;
+    margin: 0 1%;
+  }
+
+  .countdown-modal__content {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .countdown-modal__timer {
+    gap: 0.125rem;
+    padding: 1rem 0.25rem;
+  }
+
+  .countdown-modal__time-block {
+    min-width: 50px;
+  }
+
+  .countdown-modal__time-value {
+    font-size: 1.25rem;
+  }
+
+  .countdown-modal__time-separator {
+    font-size: 1rem;
+    margin: 0 0.0625rem;
+    top: -2px;
+  }
+
+  .countdown-modal__time-label {
+    font-size: 0.5rem;
+  }
+
+  .countdown-modal__title {
+    font-size: 1.25rem;
+  }
+
+  .countdown-modal__subtitle {
+    font-size: 0.875rem;
+  }
+}
+
+/* iOS phone spacing adjustments */
+@media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .countdown-modal__content {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .countdown-modal__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .countdown-modal__timer {
+    margin: 2.5rem 0;
   }
 }
 

@@ -39,7 +39,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "eligibility",
-            title: "Eligibility and Language Requirements",
+            title: "Eligibility & Language",
             icon: "🎓",
             content: {
                 grades: {
@@ -63,7 +63,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "programs",
-            title: "Courses and Program Highlights",
+            title: "Program Highlights",
             icon: "🚀",
             content: {
                 investment: {
@@ -119,7 +119,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "projects",
-            title: "Practical Projects and Competitions",
+            title: "Projects & Competitions",
             icon: "🏆",
             content: {
                 competitions: {
@@ -145,7 +145,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "excursions",
-            title: "University Visits and Excursions",
+            title: "University Visits",
             icon: "🎓",
             content: {
                 visits: {
@@ -228,7 +228,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "faculty",
-            title: "Faculty and Instruction",
+            title: "Faculty & Instruction",
             icon: "👨‍🏫",
             content: {
                 instructors: {
@@ -324,7 +324,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "communication",
-            title: "Parent Communication & Feedback",
+            title: "Parent Communication",
             icon: "📱",
             content: {
                 updates: {
@@ -339,7 +339,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
         },
         {
             id: "alumni",
-            title: "Growth & Alumni Network",
+            title: "Alumni Network",
             icon: "🌟",
             content: {
                 network: {

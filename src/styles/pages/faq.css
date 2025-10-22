@@ -89,7 +89,7 @@
 }
 
 .faq-section-content {
-    padding: 0 var(--space-6) var(--space-6);
+    padding: var(--space-4) var(--space-6) var(--space-6);
     border-top: 1px solid var(--color-border-light);
     animation: slideDown 0.3s ease-out;
     position: relative;

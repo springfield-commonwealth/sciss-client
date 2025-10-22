@@ -5,8 +5,8 @@ const LogoYellow = "/logos/sciss-logo-yellow.png";
 const LogoWhiteLong = "/logos/sciss-logo-white-long.png";
 
 const HomeFeaturePresidents = {
-  src: "/images/featured/presidents.png",
-  alt: "Beth and Angelene",
+  src: "/images/faculties/beth.JPG",
+  alt: "Beth Moriarty - Camp Director",
 };
 
 const HomeFeature = {
@@ -93,10 +93,8 @@ const HomeSliderImages = [
 ];
 
 export {
-  AboutUsHero,
-  AcademicsHero,
-  ADayAtScissHero,
-  DayTripsHero,
+  ADayAtScissHero, AboutUsHero,
+  AcademicsHero, DayTripsHero,
   HomeFeature,
   HomeFeaturePresidents,
   HomeHero,
@@ -109,5 +107,6 @@ export {
   LogoYellow,
   ProgramOverviewHero,
   TuitionHero,
-  TuitionsAndFeesHero,
+  TuitionsAndFeesHero
 };
+

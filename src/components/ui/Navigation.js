@@ -19,6 +19,7 @@ const navLinks = [
       { href: "/about-us", label: "Overview" },
       { href: "/about-us/why-sciss", label: "Why SCISS" },
       { href: "/staff", label: "Meet Our Staff" },
+      { href: "/faq", label: "FAQ" },
     ],
   },
   {

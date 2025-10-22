@@ -1,0 +1,473 @@
+/* FAQ Page Styles */
+.faq-page {
+    background: var(--color-bg-primary);
+}
+
+/* FAQ Sections */
+.faq-sections {
+    padding: var(--space-8) 0;
+}
+
+.faq-grid {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-section {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-medium);
+}
+
+.faq-section:hover {
+    border-color: var(--color-primary-300);
+    box-shadow: var(--shadow-small);
+}
+
+.faq-section-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: var(--space-6);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast);
+}
+
+.faq-section-header:hover {
+    background: var(--color-bg-secondary);
+}
+
+.faq-section-icon {
+    font-size: 1.5rem;
+    margin-right: var(--space-4);
+    flex-shrink: 0;
+}
+
+.faq-section-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.faq-chevron {
+    margin-left: var(--space-4);
+    color: var(--color-text-secondary);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.faq-chevron.open {
+    transform: rotate(180deg);
+}
+
+.faq-section-content {
+    padding: 0 var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-border-light);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-subsection {
+    margin-bottom: var(--space-6);
+}
+
+.faq-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.faq-subsection-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary-600);
+    margin: 0 0 var(--space-3) 0;
+}
+
+.faq-subsection-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-subsection-item {
+    padding: var(--space-2) 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.faq-subsection-item::before {
+    content: "•";
+    color: var(--color-primary-500);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: var(--space-2);
+}
+
+/* Sample Schedules - Completely Redesigned */
+.sample-schedules {
+    padding: var(--space-8) 0;
+}
+
+.schedule-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.schedule-showcase-card {
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-showcase-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent-500));
+}
+
+.schedule-showcase-card:hover {
+    border-color: var(--color-primary-300);
+    box-shadow: var(--shadow-large);
+    transform: translateY(-4px);
+}
+
+.schedule-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-bg-secondary);
+}
+
+.schedule-card-icon {
+    font-size: 2rem;
+    margin-right: var(--space-4);
+    flex-shrink: 0;
+}
+
+.schedule-card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.schedule-timeline {
+    position: relative;
+}
+
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-300));
+}
+
+.schedule-timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-day {
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary-500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--space-4);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-small);
+}
+
+.day-name {
+    color: white;
+    font-weight: var(--font-bold);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--color-bg-secondary);
+    padding: var(--space-6);
+    border-left: 4px solid var(--color-primary-500);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+/* Alternating background colors for timeline content */
+.schedule-timeline-item:nth-child(odd) .timeline-content {
+    background: var(--color-bg-primary);
+}
+
+.schedule-timeline-item:nth-child(even) .timeline-content {
+    background: var(--color-bg-secondary);
+}
+
+.day-activities {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-size: var(--text-sm);
+    display: block;
+}
+
+/* Special styling for weekend days */
+.schedule-timeline-item:nth-child(6) .timeline-day,
+.schedule-timeline-item:nth-child(7) .timeline-day {
+    background: var(--color-accent-500);
+}
+
+.schedule-timeline-item:nth-child(6) .day-activities,
+.schedule-timeline-item:nth-child(7) .day-activities {
+    color: var(--color-accent-600);
+    font-weight: var(--font-medium);
+}
+
+/* CTA Section */
+.schedule-cta {
+    text-align: center;
+    margin-top: var(--space-10);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-primary-50), var(--color-accent-50));
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-primary-200);
+}
+
+.schedule-cta-text {
+    font-size: var(--text-lg);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4) 0;
+    font-weight: var(--font-medium);
+}
+
+.schedule-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    transition: all var(--transition-medium);
+}
+
+.schedule-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+}
+
+.btn-icon {
+    transition: transform var(--transition-fast);
+}
+
+.schedule-cta-button:hover .btn-icon {
+    transform: translateX(2px);
+}
+
+/* Summary Section */
+.faq-summary {
+    padding: var(--space-8) 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.summary-card {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-medium);
+}
+
+.summary-card:hover {
+    background: var(--color-bg-primary);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
+.summary-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.summary-card h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-3) 0;
+}
+
+.summary-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-section-header {
+        padding: var(--space-4);
+    }
+
+    .faq-section-content {
+        padding: 0 var(--space-4) var(--space-4);
+    }
+
+    .faq-section-title {
+        font-size: var(--text-base);
+    }
+
+    .schedule-showcase {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .schedule-showcase-card {
+        padding: var(--space-4);
+    }
+
+    .schedule-card-header {
+        margin-bottom: var(--space-4);
+    }
+
+    .schedule-card-icon {
+        font-size: 1.5rem;
+        margin-right: var(--space-3);
+    }
+
+    .schedule-card-title {
+        font-size: var(--text-lg);
+    }
+
+    .timeline-day {
+        width: 32px;
+        height: 32px;
+        margin-right: var(--space-3);
+    }
+
+    .day-name {
+        font-size: 10px;
+    }
+
+    .schedule-cta {
+        margin-top: var(--space-8);
+        padding: var(--space-6);
+    }
+
+    .schedule-cta-text {
+        font-size: var(--text-base);
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .summary-card {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section-icon {
+        font-size: 1.25rem;
+        margin-right: var(--space-3);
+    }
+
+    .faq-chevron {
+        margin-left: var(--space-3);
+    }
+
+    .faq-subsection-item {
+        padding-left: var(--space-4);
+        font-size: var(--text-sm);
+    }
+
+    .schedule-showcase {
+        gap: var(--space-4);
+    }
+
+    .schedule-showcase-card {
+        padding: var(--space-3);
+    }
+
+    .schedule-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .schedule-card-icon {
+        font-size: 1.25rem;
+        margin-right: 0;
+    }
+
+    .schedule-card-title {
+        font-size: var(--text-base);
+    }
+
+    .timeline-day {
+        width: 28px;
+        height: 28px;
+    }
+
+    .day-name {
+        font-size: 9px;
+    }
+
+    .day-activities {
+        font-size: var(--text-xs);
+    }
+
+    .schedule-cta {
+        padding: var(--space-4);
+    }
+
+    .schedule-cta-text {
+        font-size: var(--text-sm);
+    }
+}

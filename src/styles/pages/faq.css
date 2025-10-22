@@ -199,8 +199,8 @@
     content: '';
     position: absolute;
     left: 20px;
-    top: 20px;
-    bottom: 20px;
+    top: 60px;
+    bottom: 60px;
     width: 2px;
     background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-300));
     z-index: 1;
@@ -225,6 +225,8 @@
     position: relative;
     z-index: 3;
     box-shadow: var(--shadow-small);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .day-name {
@@ -242,6 +244,16 @@
     border-left: 4px solid var(--color-primary-500);
     box-shadow: var(--shadow-sm);
     transition: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 60px;
+}
+
+.timeline-content:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    background: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-primary-500);
 }
 
 /* Alternating background colors for timeline content */
@@ -249,8 +261,18 @@
     background: var(--color-bg-primary);
 }
 
+.schedule-timeline-item:nth-child(odd) .timeline-content:hover {
+    background: var(--color-bg-primary);
+    border-left: 4px solid var(--color-primary-500);
+}
+
 .schedule-timeline-item:nth-child(even) .timeline-content {
     background: var(--color-bg-secondary);
+}
+
+.schedule-timeline-item:nth-child(even) .timeline-content:hover {
+    background: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-primary-500);
 }
 
 .day-activities {
@@ -258,6 +280,12 @@
     line-height: 1.6;
     font-size: var(--text-sm);
     display: block;
+    transition: none;
+}
+
+.day-activities:hover {
+    transform: none;
+    color: var(--color-text-secondary);
 }
 
 /* Special styling for weekend days */

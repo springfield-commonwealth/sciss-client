@@ -489,7 +489,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Sample Weekly Schedules */}
-            <section className="section sample-schedules bg-light">
+            <section className="section sample-schedules bg-light custom-spacing">
                 <div className="container">
                     <SectionHeader
                         title="Sample Weekly Schedule (Week 1)"
@@ -545,7 +545,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Summary Section */}
-            <section className="section faq-summary bg-white">
+            <section className="section faq-summary bg-white custom-spacing">
                 <div className="container">
                     <SectionHeader
                         title="Program Summary"

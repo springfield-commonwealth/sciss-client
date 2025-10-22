@@ -18,7 +18,7 @@ const navLinks = [
     children: [
       { href: "/about-us", label: "Overview" },
       { href: "/about-us/why-sciss", label: "Why SCISS" },
-      { href: "/staff", label: "Meet Our Staff" },
+      { href: "/staff", label: "Meet Our Team" },
       { href: "/faq", label: "FAQ" },
     ],
   },

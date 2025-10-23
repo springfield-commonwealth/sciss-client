@@ -1,6 +1,6 @@
 import { SectionHeader, StatsGrid } from "@/components/ui";
 import Head from "next/head";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import DirectoryCard from "./DirectoryCard";
 import DirectoryCategories from "./DirectoryCategories";
 import DirectoryFilters from "./DirectoryFilters";
@@ -29,9 +29,15 @@ const DirectoryPage = ({
   disableLinks = false, // Disable all links and interactions
   disableHover = false, // Disable hover effects
   disableClick = false, // Disable click functionality
+  externalSelectedCategory = "", // External category selection for badge clicks
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(externalSelectedCategory);
+
+  // Sync external category selection with internal state
+  useEffect(() => {
+    setSelectedCategory(externalSelectedCategory);
+  }, [externalSelectedCategory]);
 
   // Filter items based on search and category
   const filteredItems = useMemo(() => {

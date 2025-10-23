@@ -12,32 +12,32 @@ const galleryImages = [
   },
   {
     src: "/images/slider/home/flute performance 2.JPG",
-    alt: "Student performing flute on stage",
+    alt: "Talent Show Performance",
     category: "Performing Arts",
   },
   {
     src: "/images/slider/home/fencing.JPG",
-    alt: "Student fencing during summer camp activity",
+    alt: "Fencing Tournament",
     category: "Sports & Activities",
   },
   {
     src: "/images/slider/home/archery.JPG",
-    alt: "Student practicing archery outdoors",
+    alt: "Archery Competition",
     category: "Sports & Activities",
   },
   {
     src: "/images/slider/home/rowing.jpg",
-    alt: "Students rowing on the river",
+    alt: "Water Sports",
     category: "Sports & Activities",
   },
   {
     src: "/images/slider/home/investment-presentation.JPG",
-    alt: "Student giving investment presentation",
+    alt: "Investment Pitch Deck",
     category: "Academics",
   },
   {
     src: "/images/slider/home/harvard-trip.JPG",
-    alt: "Group photo during Harvard trip",
+    alt: "Harvard University Visit",
     category: "Field Trips",
   },
 ];

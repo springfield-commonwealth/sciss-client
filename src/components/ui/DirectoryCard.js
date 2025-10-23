@@ -245,10 +245,24 @@ const DirectoryCard = ({
         )}
       </div>
 
-      {/* Department badge for staff */}
-      {type === "staff" && data.department && (
-        <div className="staff-department-badge">{data.department}</div>
-      )}
+        {/* Department badge for staff */}
+        {type === "staff" && data.department && (
+          <div 
+            className="staff-department-badge"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              // Trigger filtering by department
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('filterByDepartment', { 
+                  detail: { department: data.department } 
+                }));
+              }
+            }}
+          >
+            {data.department}
+          </div>
+        )}
 
       {/* Card Content Section */}
       <div className="card__content">

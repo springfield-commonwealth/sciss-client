@@ -513,9 +513,12 @@
 
 .staff-department-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  display: inline-block;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: var(--color-white);
   padding: 6px 14px;
@@ -527,6 +530,40 @@
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
   animation: pulse 2s ease-in-out infinite;
   z-index: 10;
+  white-space: nowrap;
+  max-width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.staff-department-badge:hover {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+  transform: translateY(-4px);
+  animation: none;
+}
+
+/* Responsive font sizes to prevent wrapping */
+@media (max-width: 480px) {
+  .staff-department-badge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .staff-department-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  .staff-department-badge {
+    font-size: var(--text-xs);
+    padding: 6px 14px;
+  }
 }
 
 @keyframes pulse {

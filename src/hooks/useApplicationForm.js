@@ -36,10 +36,11 @@ export const useApplicationForm = () => {
       parentName: { first: "", last: "" },
       parentEmail: "",
       parentPhone: "",
+      parentWhatsapp: "",
       currentSchoolName: "",
       yearApplyingFor: "",
       financialAidInterest: undefined,
-      transcript: null,
+      transcript: [],
     }),
     []
   );
@@ -106,26 +107,54 @@ export const useApplicationForm = () => {
   // Handle file upload with validation
   const onFileChange = useCallback(
     (e) => {
-      const file =
-        e.target.files && e.target.files[0] ? e.target.files[0] : null;
+      const files = e.target.files ? Array.from(e.target.files) : [];
 
-      if (file) {
-        // Validate file before setting
-        const validation = validateTranscriptFile(file);
-        if (!validation.valid) {
+      if (files.length > 0) {
+        // Validate each file before setting
+        const currentFiles = formValues.transcript || [];
+        const newFiles = [];
+
+        for (const file of files) {
+          const validation = validateTranscriptFile(file);
+          if (!validation.valid) {
+            setError("transcript", {
+              type: "manual",
+              message: validation.message,
+            });
+            return;
+          }
+          newFiles.push(file);
+        }
+
+        // Check if adding these files would exceed the limit
+        if (currentFiles.length + newFiles.length > 3) {
           setError("transcript", {
             type: "manual",
-            message: validation.message,
+            message: "You can upload a maximum of 3 files",
           });
           return;
         }
+
         clearErrors("transcript");
+        setValue("transcript", [...currentFiles, ...newFiles]);
+      } else {
+        setValue("transcript", []);
       }
 
-      setValue("transcript", file);
       trigger("transcript"); // Always trigger validation after file change
     },
-    [setValue, setError, clearErrors, trigger]
+    [setValue, setError, clearErrors, trigger, formValues.transcript]
+  );
+
+  // Handle removing a specific file
+  const onRemoveFile = useCallback(
+    (fileIndex) => {
+      const currentFiles = formValues.transcript || [];
+      const updatedFiles = currentFiles.filter((_, index) => index !== fileIndex);
+      setValue("transcript", updatedFiles);
+      trigger("transcript");
+    },
+    [setValue, trigger, formValues.transcript]
   );
   // Validate email address against database
   const validateStudentEmail = useCallback(
@@ -173,10 +202,12 @@ export const useApplicationForm = () => {
       setSubmitError(null);
       try {
         // Final file validation
-        if (data.transcript) {
-          const fileValidation = validateTranscriptFile(data.transcript);
-          if (!fileValidation.valid) {
-            throw new Error(fileValidation.message);
+        if (data.transcript && data.transcript.length > 0) {
+          for (const file of data.transcript) {
+            const fileValidation = validateTranscriptFile(file);
+            if (!fileValidation.valid) {
+              throw new Error(fileValidation.message);
+            }
           }
         }
         // Submit to PHP backend
@@ -255,6 +286,7 @@ export const useApplicationForm = () => {
     // Form handlers
     onChange,
     onFileChange,
+    onRemoveFile,
     onSubmit: handleSubmit(onSubmit),
     onEmailBlur,
     resetForm,

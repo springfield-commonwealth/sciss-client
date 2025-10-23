@@ -50,14 +50,21 @@ export const submitApplication = async (formData) => {
       },
       parentEmail: formData.parentEmail,
       parentPhone: formData.parentPhone,
+      parentWhatsapp: formData.parentWhatsapp,
     };
 
     // Add form data as JSON
     submitData.append("data", JSON.stringify(applicationData));
 
-    // Add transcript file if present
-    if (formData.transcript && formData.transcript instanceof File) {
-      submitData.append("transcript", formData.transcript);
+    // Add transcript files if present
+    if (formData.transcript && Array.isArray(formData.transcript) && formData.transcript.length > 0) {
+      formData.transcript.forEach((file, index) => {
+        if (file instanceof File) {
+          submitData.append(`transcript_${index}`, file);
+        }
+      });
+      // Also append the count for the backend
+      submitData.append("transcript_count", formData.transcript.length);
     }
 
     // Make API request

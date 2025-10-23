@@ -100,6 +100,26 @@
   color: #dc2626 !important;
 }
 
+/* Field note styling */
+.application-form .field-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: var(--space-1) 0 var(--space-2) 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Spacing for additional upload fields */
+.application-form .file-upload-container+.file-upload-container {
+  margin-top: var(--space-6);
+}
+
+/* Specific spacing for Upload Documents label */
+.application-form label[for="additionalDocuments"] {
+  margin-top: var(--space-6);
+  display: block;
+}
+
 .application-form input[type="text"],
 .application-form input[type="email"],
 .application-form input[type="tel"],
@@ -316,6 +336,7 @@
   align-items: center;
   gap: 0.3rem;
   width: 100%;
+  position: relative;
 }
 
 .file-upload-area {
@@ -435,6 +456,109 @@
   transition: background 0.2s;
   pointer-events: auto;
   z-index: 3;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.remove-file:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Multiple files upload styles */
+.files-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.files-list .file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.files-list .file-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.files-list .file-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.files-list .file-name {
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.files-list .file-size {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.files-list .remove-file {
+  position: static;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-error-500);
+  color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.files-list .remove-file:hover {
+  background: var(--color-error-600);
+  transform: scale(1.1);
+}
+
+.add-more-files {
+  margin-top: var(--space-2);
+  text-align: center;
+}
+
+.add-files-button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg-primary);
+  border: 2px dashed var(--color-border-medium);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.add-files-button:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-500);
 }
 
 .file-upload-container:has(.has-file) .remove-file {

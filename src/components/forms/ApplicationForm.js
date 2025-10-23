@@ -17,6 +17,7 @@ const ApplicationForm = () => {
     submitError,
     onChange,
     onFileChange,
+    onRemoveFile,
     onSubmit,
     resetForm,
     getFieldError,
@@ -189,6 +190,7 @@ const ApplicationForm = () => {
     }
   };
 
+
   // Get email validation class
   const getEmailValidationClass = (field) => {
     if (isEmailValidating(field)) return "email-validation-loading";
@@ -300,7 +302,7 @@ const ApplicationForm = () => {
         <div className="form-row">
           <label className="form-label" htmlFor="studentFirstName">
             <span className="label-text">
-              Student First Name <span className="asterisk">*</span>
+              Students First Name <span className="asterisk">*</span>
             </span>
             {getFieldError("studentName.first") && (
               <span className="error">Student First Name is required</span>
@@ -319,7 +321,7 @@ const ApplicationForm = () => {
             />
           </label>
           <label className="form-label" htmlFor="studentPreferredName">
-            <span className="label-text">Student Preferred Name</span>
+            <span className="label-text">Students Preferred Name</span>
             {getFieldError("studentName.preferredName") && (
               <span className="error">
                 {getFieldError("studentName.preferredName")}
@@ -341,7 +343,7 @@ const ApplicationForm = () => {
           </label>
           <label className="form-label" htmlFor="studentLastName">
             <span className="label-text">
-              Student Last Name <span className="asterisk">*</span>
+              Students Last Name <span className="asterisk">*</span>
             </span>
             {getFieldError("studentName.last") && (
               <span className="error">Student Last Name is required</span>
@@ -361,7 +363,7 @@ const ApplicationForm = () => {
         </div>
         <label className="form-label" htmlFor="studentEmail">
           <span className="label-text">
-            Student Email <span className="asterisk">*</span>
+            Students Email <span className="asterisk">*</span>
           </span>
           {getFieldError("studentEmail") ? (
             <span className="error">{getFieldError("studentEmail")}</span>
@@ -717,7 +719,7 @@ const ApplicationForm = () => {
         <div className="form-row">
           <label className="form-label" htmlFor="parentFirstName">
             <span className="label-text">
-              Parent First Name <span className="asterisk">*</span>
+              Parents First Name <span className="asterisk">*</span>
             </span>
             {getFieldError("parentName.first") && (
               <span className="error">Parent First Name is required</span>
@@ -736,7 +738,7 @@ const ApplicationForm = () => {
           </label>
           <label className="form-label" htmlFor="parentLastName">
             <span className="label-text">
-              Parent Last Name <span className="asterisk">*</span>
+              Parents Last Name <span className="asterisk">*</span>
             </span>
             {getFieldError("parentName.last") && (
               <span className="error">Parent Last Name is required</span>
@@ -756,7 +758,7 @@ const ApplicationForm = () => {
         </div>
         <label className="form-label" htmlFor="parentEmail">
           <span className="label-text">
-            Parent Email <span className="asterisk">*</span>
+            Parents Email <span className="asterisk">*</span>
           </span>
           {getFieldError("parentEmail") && (
             <span className="error">{getFieldError("parentEmail")}</span>
@@ -775,7 +777,7 @@ const ApplicationForm = () => {
         </label>
         <label className="form-label" htmlFor="parentPhone">
           <span className="label-text">
-            Phone <span className="asterisk">*</span>
+            Parents Phone <span className="asterisk">*</span>
           </span>
           {getFieldError("parentPhone") && (
             <span className="error">{getFieldError("parentPhone")}</span>
@@ -795,12 +797,31 @@ const ApplicationForm = () => {
               }`}
           />
         </label>
+        <label className="form-label" htmlFor="parentWhatsapp">
+          <span className="label-text">Parents WhatsApp/WeChat (Optional)</span>
+          <p className="field-note">
+            <strong>Highly recommended:</strong> We use this to communicate with parents.
+          </p>
+          {getFieldError("parentWhatsapp") && (
+            <span className="error">{getFieldError("parentWhatsapp")}</span>
+          )}
+          <input
+            id="parentWhatsapp"
+            type="text"
+            name="parentWhatsapp"
+            value={formValues.parentWhatsapp || ""}
+            onChange={onChange}
+            onBlur={handleBlur}
+            className={`form-input ${errorPulse["parentWhatsapp"] ? "input-error-pulse" : ""
+              }`}
+          />
+        </label>
       </fieldset>
 
       {/* Financial Aid Interest (moved above transcript upload) */}
       <label className="form-label">
         <span className="label-text">
-          Are you interested in scholarship? <span className="asterisk">*</span>
+          Are you interested in a scholarship? <span className="asterisk">*</span>
         </span>
         {getFieldError("financialAidInterest") && (
           <span className="error">{getFieldError("financialAidInterest")}</span>
@@ -851,14 +872,16 @@ const ApplicationForm = () => {
 
       {/* Transcript Upload (required if financial aid interest is Yes) */}
       <fieldset>
-        <legend>Scholarship Application (Optional)</legend>
+        <legend>Upload Transcript and Supporting Documents (Optional)</legend>
         <label className="form-label" htmlFor="transcript">
           <span className="label-text">
-            Upload Transcript
             {formValues.financialAidInterest === "Yes" && (
               <span className="asterisk">*</span>
             )}
           </span>
+          <p className="field-note">
+            You can upload up to 3 files (transcript, certificates, awards, etc.)
+          </p>
           {getFieldError("transcript") && (
             <span className="error">{getFieldError("transcript")}</span>
           )}
@@ -871,12 +894,13 @@ const ApplicationForm = () => {
             onDragOver={handleDrag}
             onDrop={handleDrop}
           >
-            {!formValues.transcript ? (
+            {(!formValues.transcript || formValues.transcript.length === 0) ? (
               <>
                 <input
                   id="transcript"
                   type="file"
                   name="transcript"
+                  multiple
                   ref={(input) => {
                     // Register with react-hook-form if available
                     if (input) {
@@ -900,37 +924,55 @@ const ApplicationForm = () => {
                     <strong>Click to upload</strong> or drag and drop
                   </p>
                   <p className="upload-hint">
-                    PDF, JPG, PNG, or Word document (max 5MB)
+                    PDF, JPG, PNG, or Word document (max 5MB each)
                   </p>
                 </div>
               </>
             ) : (
-              <div className="file-info">
-                <div className="file-icon">
-                  {getFileIcon(formValues.transcript.name)}
-                </div>
-                <div className="file-details">
-                  <p className="file-name">{formValues.transcript.name}</p>
-                  <p className="file-size">
-                    {formatFileSize(formValues.transcript.size)}
-                  </p>
-                </div>
+              <div className="files-list">
+                {formValues.transcript.map((file, index) => (
+                  <div key={index} className="file-info">
+                    <div className="file-icon">
+                      {getFileIcon(file.name)}
+                    </div>
+                    <div className="file-details">
+                      <p className="file-name">{file.name}</p>
+                      <p className="file-size">
+                        {formatFileSize(file.size)}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      className="remove-file"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        onRemoveFile(index);
+                      }}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+                {formValues.transcript.length < 3 && (
+                  <div className="add-more-files">
+                    <input
+                      type="file"
+                      multiple
+                      onChange={handleFileChange}
+                      accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                      className="file-input"
+                      style={{ display: 'none' }}
+                      id="additional-files"
+                    />
+                    <label htmlFor="additional-files" className="add-files-button">
+                      + Add more files
+                    </label>
+                  </div>
+                )}
               </div>
             )}
           </div>
-          {formValues.transcript && (
-            <button
-              type="button"
-              className="remove-file"
-              onClick={(e) => {
-                e.preventDefault();
-                const event = { target: { files: [] } };
-                onFileChange(event);
-              }}
-            >
-              ✕
-            </button>
-          )}
         </div>
       </fieldset>
 

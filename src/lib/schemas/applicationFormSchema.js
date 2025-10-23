@@ -114,44 +114,48 @@ export const applicationFormSchema = z
     currentSchoolName: z.string().min(1, "Current school name is required"),
     yearApplyingFor: z.string().min(1, "Year applying for is required"),
     transcript: z
-      .any()
+      .array(z.any())
+      .max(3, "You can upload a maximum of 3 files")
       .refine(
-        (file) => {
-          if (!file || !(file instanceof File)) return true; // Only check type/size if file is present
-          const allowedTypes = [
-            "application/pdf",
-            "image/jpeg",
-            "image/jpg",
-            "image/png",
-            "application/msword",
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          ];
-          return allowedTypes.includes(file.type);
+        (files) => {
+          if (!files || files.length === 0) return true; // Optional field
+          return files.every((file) => {
+            if (!(file instanceof File)) return false;
+            const allowedTypes = [
+              "application/pdf",
+              "image/jpeg",
+              "image/jpg",
+              "image/png",
+              "application/msword",
+              "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            ];
+            return allowedTypes.includes(file.type);
+          });
         },
         {
-          message: "File must be PDF, JPG, PNG, or Word document (DOC/DOCX)",
+          message: "All files must be PDF, JPG, PNG, or Word document (DOC/DOCX)",
         }
       )
       .refine(
-        (file) => {
-          if (!file || !(file instanceof File)) return true;
+        (files) => {
+          if (!files || files.length === 0) return true;
           const maxSize = 5 * 1024 * 1024; // 5MB
-          return file.size <= maxSize;
+          return files.every((file) => file instanceof File && file.size <= maxSize);
         },
         {
-          message: "File size must be less than 5MB",
+          message: "Each file must be less than 5MB",
         }
       ),
   })
   .superRefine((data, ctx) => {
     if (
       data.financialAidInterest === "Yes" &&
-      !(data.transcript instanceof File)
+      (!data.transcript || data.transcript.length === 0)
     ) {
       ctx.addIssue({
         path: ["transcript"],
         code: z.ZodIssueCode.custom,
-        message: "Transcript is required for financial aid applicants",
+        message: "At least one file is required for financial aid applicants",
       });
     }
   });

@@ -16,8 +16,8 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
   useEffect(() => {
     const handleFilterByDepartment = (event) => {
       const { department } = event.detail;
-      if (selectedDepartment === department) {
-        // If clicking the same department, clear filter
+      if (department === '' || selectedDepartment === department) {
+        // Clear filter if empty string or same department clicked
         setSelectedDepartment("");
       } else {
         // Filter by department

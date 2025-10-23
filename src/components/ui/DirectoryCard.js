@@ -245,24 +245,49 @@ const DirectoryCard = ({
         )}
       </div>
 
-        {/* Department badge for staff */}
-        {type === "staff" && data.department && (
-          <div 
-            className="staff-department-badge"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              // Trigger filtering by department
+      {/* Department badge for staff */}
+      {type === "staff" && data.department && (
+        <div
+          className="staff-department-badge"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Check if showing "Show All" text
+            if (e.target.dataset.showingAll === 'true') {
+              // Clear filter
               if (typeof window !== 'undefined') {
-                window.dispatchEvent(new CustomEvent('filterByDepartment', { 
-                  detail: { department: data.department } 
+                window.dispatchEvent(new CustomEvent('filterByDepartment', {
+                  detail: { department: '' }
                 }));
               }
-            }}
-          >
-            {data.department}
-          </div>
-        )}
+            } else {
+              // Trigger filtering by department
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('filterByDepartment', {
+                  detail: { department: data.department }
+                }));
+              }
+            }
+          }}
+          onMouseEnter={(e) => {
+            // Check if there's an active filter
+            if (typeof window !== 'undefined') {
+              const hasActiveFilter = document.querySelector('[data-active-filter]');
+              if (hasActiveFilter) {
+                e.target.textContent = 'See all staff';
+                e.target.dataset.showingAll = 'true';
+              }
+            }
+          }}
+          onMouseLeave={(e) => {
+            // Restore original text
+            e.target.textContent = data.department;
+            e.target.dataset.showingAll = 'false';
+          }}
+        >
+          {data.department}
+        </div>
+      )}
 
       {/* Card Content Section */}
       <div className="card__content">

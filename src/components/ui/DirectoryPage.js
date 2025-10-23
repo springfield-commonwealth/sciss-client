@@ -151,7 +151,7 @@ const DirectoryPage = ({
         )}
       </Head>
 
-      <main className={`${type}-directory directory-page`}>
+      <main className={`${type}-directory directory-page`} data-active-filter={selectedCategory || undefined}>
         {/* Header Section */}
         <section className={`${type}-directory-header directory-header`}>
           <div className="container">

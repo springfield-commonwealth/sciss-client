@@ -544,6 +544,18 @@
   animation: none;
 }
 
+/* Override pointer-events for department badges */
+.directory-card--disabled .staff-department-badge {
+  pointer-events: auto !important;
+}
+
+/* Ensure the card itself doesn't move when hovering over the badge */
+.directory-card--disabled:hover {
+  transform: none !important;
+  box-shadow: var(--shadow-card) !important;
+  background: none !important;
+}
+
 /* Responsive font sizes to prevent wrapping */
 @media (max-width: 480px) {
   .staff-department-badge {

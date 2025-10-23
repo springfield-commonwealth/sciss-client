@@ -245,6 +245,11 @@ const DirectoryCard = ({
         )}
       </div>
 
+      {/* Department badge for staff */}
+      {type === "staff" && data.department && (
+        <div className="staff-department-badge">{data.department}</div>
+      )}
+
       {/* Card Content Section */}
       <div className="card__content">
         <h3 className="card__title">{getItemTitle(data)}</h3>
@@ -268,14 +273,14 @@ const DirectoryCard = ({
   );
 
   const cardClassName = `card ${type === "staff"
-      ? "card--staff"
-      : type === "trips"
-        ? "card--trips"
-        : type === "courses"
-          ? "card--courses"
-          : type === "activities"
-            ? "card--activities"
-            : ""
+    ? "card--staff"
+    : type === "trips"
+      ? "card--trips"
+      : type === "courses"
+        ? "card--courses"
+        : type === "activities"
+          ? "card--activities"
+          : ""
     } directory-card directory-card--${type} ${className} ${disableLinks ? "directory-card--disabled" : ""
     }`;
 

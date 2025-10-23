@@ -15,9 +15,6 @@ const StaffDirectory = ({ staff, departments, stats, breadcrumbs = [] }) => {
       <div className="staff-simple-card">
         <div className="staff-simple-info">
           <p className="staff-simple-title">{member.position}</p>
-          {member.department && (
-            <p className="staff-simple-department">{member.department}</p>
-          )}
         </div>
       </div>
     );

@@ -44,20 +44,18 @@ export const applicationFormSchema = z
         invalid_type_error: "Please select your t-shirt size",
       }
     ),
-    course: z.enum(
-      [
-        "Path to Wall Street & Impact Investment",
-        "Youth Innovation & Entrepreneurship",
-        "Artificial Intelligence",
-        "Public Speaking & Debate",
-        "Language Programs",
-        "Visual Arts",
-      ],
-      {
-        required_error: "Please select your program and course",
-        invalid_type_error: "Please select your program and course",
-      }
-    ),
+    course: z
+      .array(
+        z.enum([
+          "Path to Wall Street & Impact Investment",
+          "Youth Innovation & Entrepreneurship",
+          "Artificial Intelligence",
+          "Public Speaking & Debate",
+          "Language Programs",
+          "Visual Arts",
+        ])
+      )
+      .min(1, "Please select at least one track"),
     sports: z
       .array(
         z.enum([

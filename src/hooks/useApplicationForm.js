@@ -23,7 +23,7 @@ export const useApplicationForm = () => {
       gender: undefined,
       risingGrade: undefined,
       tshirtSize: undefined,
-      course: undefined,
+      course: [],
       sports: [],
       address: {
         address1: "",
@@ -76,6 +76,17 @@ export const useApplicationForm = () => {
           setValue(
             "sports",
             currentSports.filter((sport) => sport !== value)
+          );
+        }
+      } else if (name === "course") {
+        // Handle course checkboxes
+        const currentCourses = formValues.course || [];
+        if (checked) {
+          setValue("course", [...currentCourses, value]);
+        } else {
+          setValue(
+            "course",
+            currentCourses.filter((course) => course !== value)
           );
         }
       } else {

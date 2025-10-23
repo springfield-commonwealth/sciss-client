@@ -81,11 +81,23 @@
   letter-spacing: var(--tracking-tight);
 }
 
-.application-form .label-text .asterisk {
-  color: var(--color-error-500);
+.application-form .label-text .asterisk,
+.application-form legend .asterisk {
+  color: var(--color-error-500) !important;
   margin-left: 0.18em;
   font-size: 1em;
   font-weight: 700;
+}
+
+/* More specific rule for legend asterisks */
+.application-form fieldset legend .asterisk {
+  color: #dc2626 !important;
+}
+
+/* Even more specific - target asterisk in any legend */
+.application-form legend:has(.asterisk) .asterisk,
+.application-form legend .asterisk {
+  color: #dc2626 !important;
 }
 
 .application-form input[type="text"],

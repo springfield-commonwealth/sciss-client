@@ -12,6 +12,8 @@ const SUCCESS_GLOW_DURATION = 600;
 const ApplicationForm = () => {
   const {
     formValues,
+    errors,
+    isValid,
     isSubmitting,
     submitSuccess,
     submitError,
@@ -135,6 +137,8 @@ const ApplicationForm = () => {
     console.log('Form submitted!', e);
     e.preventDefault();
     console.log('Form values:', formValues);
+    console.log('Form errors:', errors);
+    console.log('Form isValid:', isValid);
     Object.keys(formValues).forEach((field) => {
       if (getFieldError(field)) {
         triggerErrorPulse(field);

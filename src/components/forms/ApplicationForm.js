@@ -140,8 +140,8 @@ const ApplicationForm = () => {
         triggerErrorPulse(field);
       }
     });
-    console.log('Calling onSubmit with:', formValues);
-    onSubmit(formValues);
+    console.log('Calling onSubmit (which is already wrapped with handleSubmit)');
+    onSubmit(e);
   };
 
   // Memoize available states for selected country

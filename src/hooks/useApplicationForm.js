@@ -198,6 +198,7 @@ export const useApplicationForm = () => {
   // Handle form submission
   const onSubmit = useCallback(
     async (data) => {
+      console.log('onSubmit called with data:', data);
       setIsSubmitting(true);
       setSubmitError(null);
       try {
@@ -210,8 +211,10 @@ export const useApplicationForm = () => {
             }
           }
         }
+        console.log('About to call submitApplication');
         // Submit to PHP backend
         const result = await submitApplication(data);
+        console.log('submitApplication result:', result);
 
         // Show success state
         setSubmitSuccess(true);
@@ -229,6 +232,7 @@ export const useApplicationForm = () => {
           });
         }
       } catch (error) {
+        console.error('onSubmit error:', error);
         // Log error for analytics/debugging
         if (window.gtag) {
           window.gtag("event", "application_submit", {

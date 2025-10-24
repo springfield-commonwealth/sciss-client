@@ -511,10 +511,11 @@ const ApplicationForm = () => {
               }`}
           >
             <option value="">Select</option>
-            {/* You can replace these with formOptions.yearApplyingForOptions if available */}
-            <option value="2024">2024</option>
-            <option value="2026">2026</option>
-            <option value="2026">2026</option>
+            {formOptions.yearApplyingForOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </label>
         <label className="form-label">

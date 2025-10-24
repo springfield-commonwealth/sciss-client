@@ -984,6 +984,12 @@ const ApplicationForm = () => {
         type="submit"
         disabled={isSubmitting}
         className={`submit-btn ${isSubmitting ? "submit-btn-loading" : ""}`}
+        onClick={(e) => {
+          console.log('Button clicked!', e);
+          e.preventDefault();
+          console.log('About to call handleFormSubmit');
+          handleFormSubmit(e);
+        }}
       >
         {isSubmitting ? "Submitting..." : "Submit Application"}
       </button>

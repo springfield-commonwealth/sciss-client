@@ -137,6 +137,8 @@ const ApplicationForm = () => {
     console.log('Form submitted!', e);
     e.preventDefault();
     console.log('Form values:', formValues);
+    console.log('Course values:', formValues.course);
+    console.log('Sports values:', formValues.sports);
     console.log('Form errors:', errors);
     console.log('Form isValid:', isValid);
     Object.keys(formValues).forEach((field) => {

@@ -132,12 +132,15 @@ const ApplicationForm = () => {
 
   // On submit, pulse all fields with errors
   const handleFormSubmit = (e) => {
+    console.log('Form submitted!', e);
     e.preventDefault();
+    console.log('Form values:', formValues);
     Object.keys(formValues).forEach((field) => {
       if (getFieldError(field)) {
         triggerErrorPulse(field);
       }
     });
+    console.log('Calling onSubmit with:', formValues);
     onSubmit(formValues);
   };
 

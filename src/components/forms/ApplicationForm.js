@@ -131,14 +131,14 @@ const ApplicationForm = () => {
   };
 
   // On submit, pulse all fields with errors
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     Object.keys(formValues).forEach((field) => {
       if (getFieldError(field)) {
         triggerErrorPulse(field);
       }
     });
-    onSubmit(e);
+    onSubmit(formValues);
   };
 
   // Memoize available states for selected country
@@ -269,7 +269,7 @@ const ApplicationForm = () => {
   }
 
   return (
-    <form className="application-form" onSubmit={handleSubmit} noValidate>
+    <form className="application-form" onSubmit={handleFormSubmit} noValidate>
       {/* Form Progress Bar */}
       <div className="form-progress-bar">
         <div

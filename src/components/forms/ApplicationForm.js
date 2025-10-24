@@ -263,15 +263,31 @@ const ApplicationForm = () => {
             Thank you for your application. We'll contact you soon with further
             details.
           </p>
-          <button
-            onClick={() => {
-              resetForm();
-              router.push("/");
-            }}
-            className="btn btn--primary"
-          >
-            Go to Home Page
-          </button>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <button
+              onClick={() => {
+                resetForm();
+                router.push("/");
+              }}
+              className="btn btn--primary"
+            >
+              Go to Home Page
+            </button>
+            <button
+              onClick={() => {
+                resetForm();
+                window.location.reload();
+              }}
+              className="btn btn--secondary"
+              style={{
+                backgroundColor: "var(--secondary-color)",
+                color: "white",
+                border: "none"
+              }}
+            >
+              Submit Another Application
+            </button>
+          </div>
         </div>
       </div>
     );

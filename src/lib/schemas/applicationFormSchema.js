@@ -24,7 +24,7 @@ export const applicationFormSchema = z
       required_error: "Please select your gender",
       invalid_type_error: "Please select your gender",
     }),
-    risingGrade: z.enum(["G7", "G8", "G9", "G10", "G11", "G12"], {
+    risingGrade: z.enum(["G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"], {
       required_error: "Please select your rising grade",
       invalid_type_error: "Please select your rising grade",
     }),

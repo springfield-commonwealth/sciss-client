@@ -47,12 +47,12 @@ export const applicationFormSchema = z
     course: z
       .array(
         z.enum([
-          "Path to Wall Street & Impact Investment",
-          "Youth Innovation & Entrepreneurship",
-          "Artificial Intelligence",
-          "Public Speaking & Debate",
-          "Language Programs",
-          "Visual Arts",
+          "Path to Wall Street (Investment)",
+          "Youth Innovation & Entrepreneurship (Teen Start-ups)",
+          "AI & Robotics",
+          "Leadership & Public Speaking/Debate",
+          "Music & Stage Performing Arts",
+          "Sports (e.g., Basketball, Soccer)",
         ])
       )
       .min(1, "Please select at least one track"),
@@ -60,12 +60,16 @@ export const applicationFormSchema = z
       .array(
         z.enum([
           "Basketball",
-          "Fitness Training",
-          "Rowing Crew",
-          "Fencing",
-          "Golf",
           "Soccer",
+          "Volleyball",
+          "Badminton",
+          "Table Tennis",
           "Hiking",
+          "Golf",
+          "Zumba",
+          "Yoga",
+          "Rowing",
+          "Gym",
         ])
       )
       .min(1, "Please select at least one sport"),

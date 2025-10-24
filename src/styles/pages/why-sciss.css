@@ -1,5 +1,263 @@
 /* Why SCISS Page Styles */
 
+/* Why SCISS Grid Layout - Similar to Viswise Academy */
+.why-sciss-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.why-sciss-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    min-height: 200px;
+    position: relative;
+}
+
+.why-sciss-image {
+    background: var(--color-bg-primary);
+}
+
+.why-sciss-text {
+    background: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.why-sciss-text p {
+    margin: 0;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: var(--leading-relaxed);
+    max-width: 300px;
+}
+
+.why-sciss-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-normal);
+}
+
+.why-sciss-img:hover {
+    transform: scale(1.05);
+}
+
+/* Grid Layout - Desktop */
+.why-sciss-grid .why-sciss-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.why-sciss-grid .why-sciss-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.why-sciss-grid .why-sciss-item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.why-sciss-grid .why-sciss-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.why-sciss-grid .why-sciss-item:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.why-sciss-grid .why-sciss-item:nth-child(6) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* Responsive Design for Why SCISS Grid */
+@media (max-width: 768px) {
+    .why-sciss-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 0;
+    }
+
+    .why-sciss-grid .why-sciss-item:nth-child(1),
+    .why-sciss-grid .why-sciss-item:nth-child(2),
+    .why-sciss-grid .why-sciss-item:nth-child(3),
+    .why-sciss-grid .why-sciss-item:nth-child(4),
+    .why-sciss-grid .why-sciss-item:nth-child(5),
+    .why-sciss-grid .why-sciss-item:nth-child(6) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .why-sciss-item {
+        min-height: 150px;
+        padding: var(--space-4);
+    }
+
+    .why-sciss-text p {
+        font-size: var(--text-base);
+        max-width: none;
+    }
+}
+
+/* Why SCISS Alternating L-Shape Layout */
+.why-sciss-alternating-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: var(--space-8) auto 0 auto;
+}
+
+.why-sciss-alternating-section .why-sciss-row {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.why-sciss-alternating-section .why-sciss-row:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.why-sciss-alternating-section .why-sciss-content {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+}
+
+.why-sciss-alternating-section .why-sciss-image {
+    flex: 1;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-sciss-alternating-section .why-sciss-text {
+    flex: 1;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.why-sciss-alternating-section .why-sciss-text h3 {
+    color: var(--color-text-primary);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-tight);
+}
+
+.why-sciss-alternating-section .why-sciss-text p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+.why-sciss-alternating-section .why-sciss-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.why-sciss-alternating-section .why-sciss-img:hover {
+    transform: scale(1.05);
+}
+
+/* Alternating Layout - Image Left, Text Right */
+.why-sciss-alternating-section .why-sciss-row--image-left .why-sciss-content {
+    flex-direction: row;
+}
+
+.why-sciss-alternating-section .why-sciss-row--image-left .why-sciss-text {
+    background: var(--color-bg-secondary);
+}
+
+/* Alternating Layout - Text Left, Image Right */
+.why-sciss-alternating-section .why-sciss-row--image-right .why-sciss-content {
+    flex-direction: row-reverse;
+}
+
+.why-sciss-alternating-section .why-sciss-row--image-right .why-sciss-text {
+    background: var(--color-bg-secondary);
+}
+
+/* Responsive Design for Alternating Layout */
+@media (max-width: 768px) {
+    .why-sciss-alternating-section {
+        gap: var(--space-6);
+    }
+
+    .why-sciss-alternating-section .why-sciss-content {
+        flex-direction: column !important;
+        min-height: auto;
+    }
+
+    .why-sciss-alternating-section .why-sciss-image {
+        height: 250px;
+        flex: none;
+    }
+
+    .why-sciss-alternating-section .why-sciss-text {
+        padding: var(--space-6);
+        flex: none;
+    }
+
+    .why-sciss-alternating-section .why-sciss-text h3 {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-3);
+    }
+
+    .why-sciss-alternating-section .why-sciss-text p {
+        font-size: var(--text-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .why-sciss-alternating {
+        gap: var(--space-4);
+    }
+
+    .why-sciss-row {
+        border-radius: var(--radius-md);
+    }
+
+    .why-sciss-image {
+        height: 200px;
+    }
+
+    .why-sciss-text {
+        padding: var(--space-4);
+    }
+
+    .why-sciss-text h3 {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-2);
+    }
+
+    .why-sciss-text p {
+        font-size: var(--text-xs);
+    }
+}
+
 /* Why SCISS Highlights */
 .why-sciss-highlights {
     display: flex;

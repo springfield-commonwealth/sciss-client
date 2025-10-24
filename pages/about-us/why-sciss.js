@@ -129,6 +129,98 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
+            {/* Why SCISS - Visual Grid Layout */}
+            <section className="section custom-spacing">
+                <div className="container">
+                    <div className="text--center mb--lg">
+                        <h2>Why SCISS?</h2>
+                        <p>Outstanding programs and proven results in summer education</p>
+                    </div>
+
+                    <div className="why-sciss-grid">
+                        <div className="why-sciss-item why-sciss-image">
+                            <img
+                                src="/images/carousel/whysciss1.png"
+                                alt="SCISS Dormitory Experience"
+                                className="why-sciss-img"
+                            />
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-text">
+                            <p>Outstanding and experienced instructors who have multiple years successful Wall Street careers.</p>
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-text">
+                            <p>Our student teams won 1% ranking and 5% ranking in multiple top global high school investment and business competitions.</p>
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-image">
+                            <img
+                                src="/images/carousel/whysciss2.png"
+                                alt="SCISS Students at Waterfront"
+                                className="why-sciss-img"
+                            />
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-image">
+                            <img
+                                src="/images/carousel/whysciss3.png"
+                                alt="SCISS Times Square Experience"
+                                className="why-sciss-img"
+                            />
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-text">
+                            <p>Innovative Curriculum design with Project-Based learning approach which can help students find their interest and passion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Exposure Gained and Skills Learned */}
+            <section className="section bg-light custom-spacing">
+                <div className="container">
+                    <div className="text--center mb--lg">
+                        <h2>What Students Gain from SCISS</h2>
+                        <p>Comprehensive exposure and skills development for future success</p>
+                    </div>
+
+                    <div className="grid grid--2">
+                        <div className="cultural-trip-card-simple">
+                            <div className="trip-icon-large">🌟</div>
+                            <h3>EXPOSURE GAINED</h3>
+                            <ul className="trip-description-simple" style={{ textAlign: 'left', paddingLeft: '1rem' }}>
+                                <li>Awareness of new industries and innovative ideas</li>
+                                <li>Personal values and ambitions</li>
+                                <li>Exposure of occupation and salary</li>
+                                <li>Grace under pressure -- Goal-setting</li>
+                                <li>The art of improvisation</li>
+                                <li>Understand opportunity Costs</li>
+                                <li>New network of friends, mentors and future business partners</li>
+                            </ul>
+                        </div>
+
+                        <div className="cultural-trip-card-simple">
+                            <div className="trip-icon-large">🎓</div>
+                            <h3>SKILLS LEARNED</h3>
+                            <ul className="trip-description-simple" style={{ textAlign: 'left', paddingLeft: '1rem' }}>
+                                <li>Effective Networking</li>
+                                <li>Negotiation</li>
+                                <li>Leadership Strategies</li>
+                                <li>How to Make Credit Work for You</li>
+                                <li>Personal Budgeting and Cash Flow</li>
+                                <li>Design Thinking</li>
+                                <li>Pitching and Public Speaking</li>
+                                <li>Creating Financial Statements</li>
+                                <li>Business Funding Options</li>
+                                <li>Business Plan Generation</li>
+                                <li>Branding, Marketing, Advertising</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Call to Action */}
             <section className="cta-section">
                 <div className="container text--center">

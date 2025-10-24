@@ -3,11 +3,16 @@
  * Replaces mockSubmit.js with real backend integration
  */
 // Use environment variable for API base URL with fallback
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+// In development, use localhost or disable API calls
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'development' ? null : 'https://sciss.org/api');
 
-const ENDPOINTS = {
+const ENDPOINTS = API_BASE_URL ? {
   SUBMIT_APPLICATION: `${API_BASE_URL}/submit-application.php`,
   VALIDATE_EMAIL: `${API_BASE_URL}/validate-email.php`,
+} : {
+  SUBMIT_APPLICATION: null,
+  VALIDATE_EMAIL: null,
 };
 
 /**
@@ -16,6 +21,24 @@ const ENDPOINTS = {
 export const submitApplication = async (formData) => {
   try {
     console.log('submitApplication called with:', formData);
+    console.log('API_BASE_URL:', API_BASE_URL);
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+    console.log('ENDPOINTS.SUBMIT_APPLICATION:', ENDPOINTS.SUBMIT_APPLICATION);
+
+    // Check if API_BASE_URL is valid or if we're in development mode
+    if (!API_BASE_URL || API_BASE_URL === 'undefined' || !ENDPOINTS.SUBMIT_APPLICATION) {
+      if (process.env.NODE_ENV === 'development') {
+        // In development, simulate a successful submission
+        console.log('Development mode: Simulating successful form submission');
+        return {
+          success: true,
+          message: 'Application submitted successfully (development mode)',
+          applicationId: 'dev-' + Date.now()
+        };
+      } else {
+        throw new Error('API_BASE_URL is not configured. Please set NEXT_PUBLIC_API_URL environment variable.');
+      }
+    }
     // Prepare FormData for file upload support
     const submitData = new FormData();
 
@@ -43,7 +66,6 @@ export const submitApplication = async (formData) => {
         country: formData.address.country,
       },
       currentSchoolName: formData.currentSchoolName,
-      yearApplyingFor: formData.yearApplyingFor,
       financialAidInterest: formData.financialAidInterest,
       parentName: {
         first: formData.parentName.first,
@@ -126,6 +148,18 @@ export const submitApplication = async (formData) => {
  */
 export const validateEmail = async (email) => {
   console.log("api url: ", API_BASE_URL);
+
+  // Check if API_BASE_URL is valid
+  if (!API_BASE_URL || API_BASE_URL === 'undefined') {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Development mode: Skipping email validation');
+      return { isValid: true, message: 'Email validation skipped (development mode)' };
+    } else {
+      console.warn('API_BASE_URL is not set, skipping email validation');
+      return { isValid: true, message: 'Email validation skipped' };
+    }
+  }
+
   try {
     const response = await fetch(ENDPOINTS.VALIDATE_EMAIL, {
       method: "POST",

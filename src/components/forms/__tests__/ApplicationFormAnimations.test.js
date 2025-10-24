@@ -13,7 +13,6 @@ jest.mock("@/hooks/useApplicationForm", () => ({
       gender: "",
       risingGrade: "",
       currentSchoolName: "",
-      yearApplyingFor: "",
       tshirtSize: "",
       address: {
         country: "",
@@ -61,7 +60,6 @@ describe("ApplicationForm Animations (Story 1.2)", () => {
         gender: "",
         risingGrade: "",
         currentSchoolName: "",
-        yearApplyingFor: "",
         tshirtSize: "",
         address: {
           country: "",

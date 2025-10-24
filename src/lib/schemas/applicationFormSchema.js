@@ -116,7 +116,6 @@ export const applicationFormSchema = z
       invalid_type_error: "Please indicate financial aid interest",
     }),
     currentSchoolName: z.string().min(1, "Current school name is required"),
-    yearApplyingFor: z.string().min(1, "Year applying for is required"),
     transcript: z
       .array(z.any())
       .max(3, "You can upload a maximum of 3 files")

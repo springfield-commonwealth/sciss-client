@@ -38,7 +38,6 @@ export const useApplicationForm = () => {
       parentPhone: "",
       parentWhatsapp: "",
       currentSchoolName: "",
-      yearApplyingFor: "",
       financialAidInterest: undefined,
       transcript: [],
     }),

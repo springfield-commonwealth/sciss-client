@@ -37,7 +37,6 @@ const validBase = {
   parentEmail: "jane.doe@example.com",
   parentPhone: "+8613812345678",
   currentSchoolName: "Test School",
-  yearApplyingFor: "2024",
   financialAidInterest: "No",
   transcript: undefined,
 };
@@ -78,7 +77,6 @@ describe("applicationApi", () => {
         parentEmail: "jane.doe@example.com",
         parentPhone: "+8613812345678",
         currentSchoolName: "Test School",
-        yearApplyingFor: "2024",
         financialAidInterest: "No",
         transcript: undefined,
       };
@@ -228,11 +226,10 @@ describe("applicationFormSchema", () => {
     );
   });
 
-  it("requires currentSchoolName, yearApplyingFor, and financialAidInterest", () => {
+  it("requires currentSchoolName and financialAidInterest", () => {
     const base = {
       ...validBase,
       currentSchoolName: "",
-      yearApplyingFor: "",
       financialAidInterest: "",
     };
     const result = applicationFormSchema.safeParse(base);
@@ -241,7 +238,6 @@ describe("applicationFormSchema", () => {
     expect(errorPaths).toEqual(
       expect.arrayContaining([
         "currentSchoolName",
-        "yearApplyingFor",
         "financialAidInterest",
       ])
     );

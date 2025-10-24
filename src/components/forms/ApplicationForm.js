@@ -516,30 +516,6 @@ const ApplicationForm = () => {
               }`}
           />
         </label>
-        {/* Year Applying For */}
-        <label className="form-label">
-          <span className="label-text">
-            Year Applying For <span className="asterisk">*</span>
-          </span>
-          {getFieldError("yearApplyingFor") && (
-            <span className="error">{getFieldError("yearApplyingFor")}</span>
-          )}
-          <select
-            name="yearApplyingFor"
-            value={formValues.yearApplyingFor || ""}
-            onChange={onChange}
-            onBlur={handleBlur}
-            className={`form-input ${errorPulse["yearApplyingFor"] ? "input-error-pulse" : ""
-              }`}
-          >
-            <option value="">Select</option>
-            {formOptions.yearApplyingForOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </label>
         <label className="form-label">
           <span className="label-text">
             T-Shirt Size <span className="asterisk">*</span>

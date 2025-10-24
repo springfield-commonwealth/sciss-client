@@ -15,6 +15,7 @@ const ENDPOINTS = {
  */
 export const submitApplication = async (formData) => {
   try {
+    console.log('submitApplication called with:', formData);
     // Prepare FormData for file upload support
     const submitData = new FormData();
 
@@ -68,11 +69,13 @@ export const submitApplication = async (formData) => {
     }
 
     // Make API request
+    console.log('Making API call to:', ENDPOINTS.SUBMIT_APPLICATION);
     const response = await fetch(ENDPOINTS.SUBMIT_APPLICATION, {
       method: "POST",
       body: submitData,
       // Don't set Content-Type header - let browser set it for FormData
     });
+    console.log('API response status:', response.status);
 
     const result = await response.json();
 

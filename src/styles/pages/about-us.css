@@ -1,5 +1,40 @@
 /* About Us Page Specific Styles */
 
+/* Remove padding from section description in about-us */
+.section__description {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove padding from feature section subtitle in about-us */
+.feature-section__subtitle {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Left align specific feature section paragraph */
+.feature-section__paragraph {
+  text-align: left !important;
+}
+
+/* Letter to President paragraph alignments */
+.letter-paragraph-left {
+  text-align: left !important;
+}
+
+.letter-paragraph-justify {
+  text-align: justify !important;
+}
+
+/* Target specific paragraphs in Letter to President section */
+.feature-section__layout--reverse .feature-section__text .feature-section__paragraph:first-child {
+  text-align: left !important;
+}
+
+.feature-section__layout--reverse .feature-section__text .feature-section__paragraph:not(:first-child) {
+  text-align: justify !important;
+}
+
 /* Custom Spacing for Mission & Vision Section */
 .custom-spacing {
   margin-top: 11px !important;

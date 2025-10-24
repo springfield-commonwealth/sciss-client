@@ -13,12 +13,6 @@ const CampSchedule = () => {
       <p className="text-center" style={{ marginBottom: '16px', color: '#666', fontSize: '16px' }}>
         For the Investment Track
       </p>
-      <div style={{
-        width: '60px',
-        height: '3px',
-        backgroundColor: '#007bff',
-        margin: '0 auto 24px auto'
-      }}></div>
       {/* Session Tabs (future-proof) */}
       <div className="session-tabs" style={{ marginBottom: 16 }}>
         <button

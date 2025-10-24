@@ -54,7 +54,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Our Value */}
-            <section className="section bg-light custom-spacing">
+            <section className="section bg-light custom-spacing our-core-values">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>Our Core Values</h2>
@@ -90,7 +90,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* What Our Team Specializes In */}
-            <section className="section custom-spacing">
+            <section className="section custom-spacing what-child-gains">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>What Our Team Specializes In</h2>
@@ -130,7 +130,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
             </section>
 
             {/* Why SCISS - Visual Grid Layout */}
-            <section className="section custom-spacing">
+            <section className="section custom-spacing why-sciss-header">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>Why SCISS?</h2>
@@ -147,11 +147,7 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                         </div>
 
                         <div className="why-sciss-item why-sciss-text">
-                            <p>Outstanding and experienced instructors who have multiple years successful Wall Street careers.</p>
-                        </div>
-
-                        <div className="why-sciss-item why-sciss-text">
-                            <p>Our student teams won 1% ranking and 5% ranking in multiple top global high school investment and business competitions.</p>
+                            <p>Outstanding and experienced instructors with successful Wall Street careers.</p>
                         </div>
 
                         <div className="why-sciss-item why-sciss-image">
@@ -160,6 +156,10 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                                 alt="SCISS Students at Waterfront"
                                 className="why-sciss-img"
                             />
+                        </div>
+
+                        <div className="why-sciss-item why-sciss-text">
+                            <p>Our student teams achieved top rankings in global high school investment and business competitions.</p>
                         </div>
 
                         <div className="why-sciss-item why-sciss-image">
@@ -171,14 +171,14 @@ const WhyScissPage = ({ breadcrumbs = [] }) => {
                         </div>
 
                         <div className="why-sciss-item why-sciss-text">
-                            <p>Innovative Curriculum design with Project-Based learning approach which can help students find their interest and passion.</p>
+                            <p>Innovative curriculum with project-based learning to help students discover their interests and passions.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Exposure Gained and Skills Learned */}
-            <section className="section bg-light custom-spacing">
+            <section className="section bg-light custom-spacing after-why-sciss what-students-gain">
                 <div className="container">
                     <div className="text--center mb--lg">
                         <h2>What Students Gain from SCISS</h2>

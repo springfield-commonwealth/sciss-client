@@ -278,12 +278,7 @@ const ApplicationForm = () => {
                 resetForm();
                 window.location.reload();
               }}
-              className="btn btn--secondary"
-              style={{
-                backgroundColor: "var(--secondary-color)",
-                color: "white",
-                border: "none"
-              }}
+              className="btn btn--secondary confirmation-secondary-btn"
             >
               Submit Another Application
             </button>

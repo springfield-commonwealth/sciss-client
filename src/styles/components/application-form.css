@@ -1098,17 +1098,18 @@
   border-color: var(--color-error-500);
 }
 
-/* Confirmation page secondary button - match modal Learn More button styles */
+/* Confirmation page secondary button - blue border with orange hover */
 .confirmation-secondary-btn {
-  background: var(--color-accent-500) !important;
-  border: 2px solid var(--color-accent-600) !important;
-  color: white !important;
+  background: transparent !important;
+  border: 2px solid var(--color-primary-500) !important;
+  color: var(--color-primary-500) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .confirmation-secondary-btn:hover {
-  background: var(--color-accent-600) !important;
-  border-color: var(--color-accent-700) !important;
+  background: var(--color-accent-400) !important;
+  border-color: var(--color-accent-400) !important;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }

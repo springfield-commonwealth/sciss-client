@@ -65,6 +65,43 @@
         "Wall Street professional mentors (10+ years)",
         "Stock pitch capstone presentation"
       ],
+      "whatWeProvide": {
+        "title": "What We Will Provide",
+        "items": [
+          {
+            "category": "Investment Knowledge",
+            "description": "Viswise Academy flagship Youth Investment Courses from intro to advanced level"
+          },
+          {
+            "category": "Design Thinking",
+            "description": "Design Thinking courses taught by the Head of Indian Institutes of Technology Design Think Department Professor"
+          },
+          {
+            "category": "Sustainable and Impact Investment courses",
+            "description": "Sustainable and Impact Investment courses taught by former Head of UN's multiple Divisions"
+          },
+          {
+            "category": "Path to Wall Street career",
+            "description": "Path to Wall Street career, mingle with multiple Junior investment bankers, explore finance investment career"
+          },
+          {
+            "category": "Soft Skills",
+            "description": "Public speaking and debate drill to develop critical thinking and speech delivery skills"
+          },
+          {
+            "category": "Million Dollars Stock Investment Competitions",
+            "description": "Three-weeks of million dollars stock investment competitions (Awards will be provided for top 5)"
+          },
+          {
+            "category": "NYC Visit",
+            "description": "Provide a day trip to NYC to check most iconic city landmark"
+          },
+          {
+            "category": "Daily Activities",
+            "description": "Daily sports practice and entertainment programs including talents shows, Costume parties and other interesting activities."
+          }
+        ]
+      },
       "category": "core",
       "instructors": [
         "angelene-huang",
@@ -129,6 +166,24 @@
         "Startup founder & VC mentorship",
         "Aligned with global competitions"
       ],
+      "whatWeProvide": {
+        "title": "What We Will Provide",
+        "description": "Future leaders need practical skills, entrepreneurial spirit, and financial knowledge to succeed in an unpredictable but opportunity-rich future.",
+        "items": [
+          {
+            "category": "FINANCIAL LITERACY",
+            "description": "Students build a solid foundation in personal finance and remain stable in an uncertain world."
+          },
+          {
+            "category": "ENTREPRENEURSHIP",
+            "description": "Students create viable business models and develop design thinking and project management skills while being exposed to new industries."
+          },
+          {
+            "category": "LEADERSHIP",
+            "description": "Students can understand and practice of discipline, moral norms and effective leadership strategies."
+          }
+        ]
+      },
       "category": "core",
       "instructors": [
         "ceo-expert-1",

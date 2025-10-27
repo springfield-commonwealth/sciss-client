@@ -545,8 +545,27 @@ const FAQ = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
+            {/* Sample Accelerator Roadmap */}
+            <section className="section roadmap-section bg-white custom-spacing">
+                <div className="container">
+                    <SectionHeader
+                        title="Sample Accelerator Roadmap"
+                        description="Track your progress through our structured program with a comprehensive timeline of activities, milestones, and achievements"
+                        showDivider
+                        align="center"
+                    />
+                    <div className="roadmap-image-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 'var(--space-8) 0' }}>
+                        <img
+                            src="/images/carousel/roadmap.png"
+                            alt="Sample Accelerator Roadmap"
+                            style={{ maxWidth: '100%', height: 'auto' }}
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* Summary Section */}
-            <section className="section faq-summary bg-white custom-spacing">
+            <section className="section faq-summary bg-light custom-spacing">
                 <div className="container">
                     <SectionHeader
                         title="Program Summary"

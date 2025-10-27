@@ -46,6 +46,7 @@ const CoursePage = ({ course, breadcrumbs }) => {
     capacity,
     ageRange,
     seo,
+    whatWeProvide,
   } = course;
 
   return (
@@ -191,6 +192,32 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
           </div>
         </section>
+
+        {/* What We Will Provide - Only show if data exists */}
+        {whatWeProvide && whatWeProvide.items && (
+          <section className="section custom-spacing">
+            <div className="container">
+              <div className="text--center mb--lg">
+                <h2>{whatWeProvide.title}</h2>
+                {whatWeProvide.description && (
+                  <p>{whatWeProvide.description}</p>
+                )}
+              </div>
+              <div className="grid grid--2">
+                {whatWeProvide.items.map((item, index) => {
+                  const provideIcons = ['📚', '🎓', '💼', '👥', '💬', '🏆', '🗽', '🎉'];
+                  return (
+                    <div key={index} className="cultural-trip-card-simple">
+                      <div className="trip-icon-large">{provideIcons[index % provideIcons.length]}</div>
+                      <h3>{item.category}</h3>
+                      <p className="trip-description-simple">{item.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Curriculum */}
         <section className="section custom-spacing">

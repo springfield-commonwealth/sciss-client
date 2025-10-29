@@ -11,9 +11,8 @@ const FeatureVideo = ({
 }) => {
   const videoRef = useRef(null);
 
-  // Use autoplay hook only when autoPlay is enabled
-  // Hook is always called but internally checks autoPlay
-  useAutoplayOnView(videoRef, autoPlay ? 0.5 : null);
+  // Only use autoplay hook when autoPlay is explicitly true
+  useAutoplayOnView(videoRef, autoPlay ? 0.5 : false);
 
   return (
     <section className="section">
@@ -28,7 +27,7 @@ const FeatureVideo = ({
           poster={VideoObject.fallback}
           playbackRate={playBackSpeed}
           controls
-          autoPlay={autoPlay}
+          {...(autoPlay && { autoPlay: true })}
         />
       </div>
     </section>

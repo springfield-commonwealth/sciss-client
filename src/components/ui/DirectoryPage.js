@@ -76,12 +76,12 @@ const DirectoryPage = ({
   const statsData = useMemo(() => {
     const defaultStats = [
       {
-        number: type === "trips" ? "5+" : type === "activities" ? `${items.length}+` : items.length,
+        number: type === "trips" ? "5+" : type === "activities" ? `${items.length}+` : type === "staff" ? "21+" : items.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Available`,
         icon: getTypeIcon(type),
       },
       {
-        number: type === "trips" ? "4+" : type === "activities" ? `${categories.length}+` : categories.length,
+        number: type === "trips" ? "4+" : type === "activities" ? `${categories.length}+` : type === "staff" ? "6+" : categories.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Categories`,
         icon: "📚",
       },
@@ -96,9 +96,9 @@ const DirectoryPage = ({
       });
     }
 
-    if (stats.totalStaff) {
+    if (stats.totalStaff || type === "staff") {
       defaultStats.push({
-        number: stats.activeStaff,
+        number: "21+",
         label: "Active This Year",
         icon: "✅",
       });

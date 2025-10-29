@@ -1,5 +1,5 @@
-import { useRef } from "react";
 import useAutoplayOnView from "@/hooks/useAutoplayOnView";
+import { useRef } from "react";
 
 const FeatureVideo = ({
   VideoObject,
@@ -23,6 +23,7 @@ const FeatureVideo = ({
           playsInline={playsInline}
           poster={VideoObject.fallback}
           playbackRate={playBackSpeed}
+          controls
         />
       </div>
     </section>

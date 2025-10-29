@@ -11,8 +11,9 @@ const FeatureVideo = ({
 }) => {
   const videoRef = useRef(null);
 
-  // Always call the hook, but it will only autoplay if video is in view
-  useAutoplayOnView(videoRef, 0.5);
+  // Use autoplay hook only when autoPlay is enabled
+  // Hook is always called but internally checks autoPlay
+  useAutoplayOnView(videoRef, autoPlay ? 0.5 : null);
 
   return (
     <section className="section">

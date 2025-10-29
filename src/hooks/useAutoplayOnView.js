@@ -2,6 +2,9 @@ import { useEffect } from "react";
 
 const useAutoplayOnView = (videoRef, threshold = 0.5) => {
   useEffect(() => {
+    // Don't set up autoplay if threshold is null/false/undefined
+    if (threshold === null || threshold === false) return;
+
     const video = videoRef.current;
     if (!video) return;
 

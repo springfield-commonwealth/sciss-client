@@ -545,11 +545,11 @@ const FAQ = ({ breadcrumbs = [] }) => {
                 </div>
             </section>
 
-            {/* Sample Accelerator Roadmap */}
+            {/* Sample Entrepreneurship Accelerator Roadmap */}
             <section className="section roadmap-section bg-white custom-spacing">
                 <div className="container">
                     <SectionHeader
-                        title="Sample Accelerator Roadmap"
+                        title="Sample Entrepreneurship Accelerator Roadmap"
                         description="Track your progress through our structured program with a comprehensive timeline of activities, milestones, and achievements"
                         showDivider
                         align="center"
@@ -557,7 +557,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
                     <div className="roadmap-image-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 'var(--space-8) 0' }}>
                         <img
                             src="/images/carousel/roadmap.png"
-                            alt="Sample Accelerator Roadmap"
+                            alt="Sample Entrepreneurship Accelerator Roadmap"
                             style={{ maxWidth: '100%', height: 'auto' }}
                         />
                     </div>

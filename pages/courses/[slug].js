@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/Layout";
+import { SectionHeader } from "@/components/ui";
 import { getAllCourses, getCourseBySlug } from "@/lib/content/courses";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import Head from "next/head";
@@ -241,6 +242,27 @@ const CoursePage = ({ course, breadcrumbs }) => {
             </div>
           </div>
         </section>
+
+        {/* Sample Entrepreneurship Accelerator Roadmap - Only for Entrepreneurship course */}
+        {course.slug === 'youth-innovation-entrepreneurship' && (
+          <section className="section roadmap-section bg-white custom-spacing">
+            <div className="container">
+              <SectionHeader
+                title="Sample Entrepreneurship Accelerator Roadmap"
+                description="Track your progress through our structured program with a comprehensive timeline of activities, milestones, and achievements"
+                showDivider
+                align="center"
+              />
+              <div className="roadmap-image-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 'var(--space-8) 0' }}>
+                <img
+                  src="/images/carousel/roadmap.png"
+                  alt="Sample Entrepreneurship Accelerator Roadmap"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Learning Outcomes */}
         <section className="section bg-light custom-spacing">

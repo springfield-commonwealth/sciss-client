@@ -93,7 +93,7 @@ const PhotoGalleries = ({ breadcrumbs = [] }) => {
       {/* Welcome Video Section */}
       <FeatureVideo
         VideoObject={WelcomeVideo}
-        autoPlay={false}
+        autoPlay={true}
         muted={false}
         loop={true}
         playsInline={true}

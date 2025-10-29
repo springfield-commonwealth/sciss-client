@@ -7,8 +7,11 @@ const FeatureVideo = ({
   loop,
   playsInline,
   playBackSpeed,
+  autoPlay = false,
 }) => {
   const videoRef = useRef(null);
+
+  // Always call the hook, but it will only autoplay if video is in view
   useAutoplayOnView(videoRef, 0.5);
 
   return (
@@ -24,6 +27,7 @@ const FeatureVideo = ({
           poster={VideoObject.fallback}
           playbackRate={playBackSpeed}
           controls
+          autoPlay={autoPlay}
         />
       </div>
     </section>

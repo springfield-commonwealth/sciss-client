@@ -982,14 +982,17 @@ const ApplicationForm = () => {
           type="button"
           disabled
           aria-busy="true"
-          className="submit-btn submit-btn-loading visible-loading-btn"
+          className="submit-btn visible-loading-btn"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '0.6rem',
             background: '#1e40af', /* blue */
             color: '#fff',
-            borderColor: '#1e40af'
+            borderColor: '#1e40af',
+            padding: '0.75rem 1.25rem',
+            minWidth: '260px'
           }}
         >
           <span className="loader-icon" role="img" aria-label="loading">⏳</span>

@@ -62,14 +62,14 @@ const galleryImages = [
     category: "Campus Life",
   },
   // Newly added carousel images (HEIC) included in gallery
-  { src: "/images/carousel/newImage.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
-  { src: "/images/carousel/newImage2.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
-  { src: "/images/carousel/newImage3.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
-  { src: "/images/carousel/newImage4.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage.jpeg", alt: "Waterfront Group Photo", category: "Field Trips" },
+  { src: "/images/carousel/newImage2.jpeg", alt: "Crew Training Facility", category: "Sports & Activities" },
+  { src: "/images/carousel/newImage3.jpeg", alt: "Rowing Boathouse Tour", category: "Sports & Activities" },
+  { src: "/images/carousel/newImage4.jpeg", alt: "Community Clean-up", category: "Campus Life" },
 
-  { src: "/images/carousel/newImage5.jpg", alt: "Campus Life Moments", category: "Campus Life" },
-  { src: "/images/carousel/newImage6.jpg", alt: "Campus Life Moments", category: "Campus Life" },
-  { src: "/images/carousel/newImage7.jpg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage5.jpg", alt: "Orientation Mixer", category: "Campus Life" },
+  { src: "/images/carousel/newImage6.jpg", alt: "Evening Study Session", category: "Academics" },
+  { src: "/images/carousel/newImage7.jpg", alt: "Formal Night by the Fountain", category: "Campus Life" },
 ];
 
 const PhotoGalleries = ({ breadcrumbs = [] }) => {

@@ -40,6 +40,27 @@ const galleryImages = [
     alt: "Harvard University Visit",
     category: "Field Trips",
   },
+  // New carousel images
+  {
+    src: "/images/carousel/art.png",
+    alt: "Music & Performing Arts Showcase",
+    category: "Performing Arts",
+  },
+  {
+    src: "/images/carousel/whysciss1.png",
+    alt: "Campus Life Moments",
+    category: "Campus Life",
+  },
+  {
+    src: "/images/carousel/whysciss2.png",
+    alt: "Campus Life Moments",
+    category: "Campus Life",
+  },
+  {
+    src: "/images/carousel/whysciss3.png",
+    alt: "SCISS Highlights",
+    category: "Campus Life",
+  },
 ];
 
 const PhotoGalleries = ({ breadcrumbs = [] }) => {

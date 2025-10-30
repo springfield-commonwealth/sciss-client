@@ -665,6 +665,12 @@ const ApplicationForm = () => {
       {/* Program/Course */}
       <fieldset>
         <legend>Track <span className="asterisk">*</span></legend>
+        <div className="form-note" style={{ marginBottom: '0.75rem', fontSize: '0.875rem', color: '#666', fontStyle: 'italic' }}>
+          <strong>Session Availability:</strong><br />
+          • Path to Wall Street (Investment): Sessions 2 & 3<br />
+          • Youth Innovation & Entrepreneurship: Sessions 1 & 4<br />
+          • Elite Leadership · Art · English · Finance · Sports: All 4 Sessions
+        </div>
         <div className="form-row">
           {formOptions.courseOptions.map((option, idx) => (
             <label key={option.value} className="checkbox-label">

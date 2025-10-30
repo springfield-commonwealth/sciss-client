@@ -76,12 +76,12 @@ const DirectoryPage = ({
   const statsData = useMemo(() => {
     const defaultStats = [
       {
-        number: type === "trips" ? "5+" : type === "activities" ? `${items.length}+` : type === "staff" ? "21+" : items.length,
+        number: type === "trips" ? "5+" : type === "activities" ? `${items.length}+` : type === "staff" ? "21+" : type === "courses" ? "2+" : items.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Available`,
         icon: getTypeIcon(type),
       },
       {
-        number: type === "trips" ? "4+" : type === "activities" ? `${categories.length}+` : type === "staff" ? "6+" : categories.length,
+        number: type === "trips" ? "4+" : type === "activities" ? `${categories.length}+` : type === "staff" ? "6+" : type === "courses" ? "2+" : categories.length,
         label: `${type.charAt(0).toUpperCase() + type.slice(1)} Categories`,
         icon: "📚",
       },
@@ -104,9 +104,9 @@ const DirectoryPage = ({
       });
     }
 
-    if (stats.totalCourses) {
+    if (stats.totalCourses || type === "courses") {
       defaultStats.push({
-        number: stats.coreCoursesCount,
+        number: "2+",
         label: "Core Courses",
         icon: "🎯",
       });

@@ -20,7 +20,7 @@ const ApplicationForm = () => {
     onChange,
     onFileChange,
     onRemoveFile,
-    onSubmit,
+    onFormSubmit,
     resetForm,
     getFieldError,
     onEmailBlur,
@@ -148,44 +148,7 @@ const ApplicationForm = () => {
     }
   };
 
-  // On submit, pulse all fields with errors and scroll to the first one if invalid
-  const handleFormSubmit = (e) => {
-    console.log('Form submitted!', e);
-    e.preventDefault();
-    console.log('Form values:', formValues);
-    console.log('Course values:', formValues.course);
-    console.log('Sports values:', formValues.sports);
-    console.log('Form errors:', errors);
-    console.log('Form isValid:', isValid);
-    Object.keys(formValues).forEach((field) => {
-      if (getFieldError(field)) {
-        triggerErrorPulse(field);
-      }
-    });
-
-    // If form is invalid, scroll to the first errored field
-    if (!isValid) {
-      const firstErrorKey = Object.keys(errors)[0];
-      if (firstErrorKey) {
-        const selector =
-          firstErrorKey.includes('.')
-            ? `[name="${firstErrorKey}"]`
-            : `[name="${firstErrorKey}"]`;
-        const el = document.querySelector(selector);
-        if (el && typeof el.scrollIntoView === 'function') {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          if (typeof el.focus === 'function') {
-            el.focus();
-          }
-        } else {
-          // Fallback: scroll to top
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }
-    }
-    console.log('Calling onSubmit (which is already wrapped with handleSubmit)');
-    onSubmit(e);
-  };
+  // No custom submit — we use the hook's onFormSubmit which handles invalid scroll immediately
 
   // Memoize available states for selected country
   const availableStates = useMemo(() => {
@@ -326,7 +289,7 @@ const ApplicationForm = () => {
   }
 
   return (
-    <form className="application-form" onSubmit={handleFormSubmit} noValidate>
+    <form className="application-form" onSubmit={onFormSubmit} noValidate>
       {/* Form Progress Bar */}
       <div className="form-progress-bar">
         <div
@@ -1014,19 +977,25 @@ const ApplicationForm = () => {
       </fieldset>
 
       {/* Submit */}
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className={`submit-btn ${isSubmitting ? "submit-btn-loading" : ""}`}
-        onClick={(e) => {
-          console.log('Button clicked!', e);
-          e.preventDefault();
-          console.log('About to call handleFormSubmit');
-          handleFormSubmit(e);
-        }}
-      >
-        {isSubmitting ? "Submitting..." : "Submit Application"}
-      </button>
+      {isSubmitting ? (
+        <button
+          type="button"
+          disabled
+          aria-busy="true"
+          className="submit-btn submit-btn-loading"
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+        >
+          <span role="img" aria-label="loading">⏳</span>
+          Sending application...
+        </button>
+      ) : (
+        <button
+          type="submit"
+          className="submit-btn"
+        >
+          Submit Application
+        </button>
+      )}
     </form>
   );
 };

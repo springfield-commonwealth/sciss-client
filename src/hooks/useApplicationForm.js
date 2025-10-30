@@ -59,6 +59,22 @@ export const useApplicationForm = () => {
     defaultValues,
   });
   const formValues = watch();
+  // Scroll to the first field with an error
+  const scrollToFirstError = useCallback((errorsObj) => {
+    const keys = Object.keys(errorsObj || {});
+    if (keys.length === 0) return;
+    const firstKey = keys[0];
+    const name = firstKey;
+    const el = typeof document !== 'undefined' ? document.querySelector(`[name="${name}"]`) : null;
+    if (el && typeof el.scrollIntoView === 'function') {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (typeof el.focus === 'function') {
+        el.focus();
+      }
+    } else if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
   // Handle form field changes
   const onChange = useCallback(
     (e) => {
@@ -249,6 +265,15 @@ export const useApplicationForm = () => {
     },
     [reset, defaultValues]
   );
+
+  // Compose a single submit handler that also handles invalid cases immediately
+  const onFormSubmit = useMemo(() =>
+    handleSubmit(onSubmit, (invalidErrors) => {
+      // ensure immediate scroll/focus on first error
+      setSubmitError((prev) => prev || "Please correct the highlighted fields.");
+      scrollToFirstError(invalidErrors);
+    })
+    , [handleSubmit, onSubmit, scrollToFirstError]);
   // Reset form state
   const resetForm = useCallback(() => {
     reset(defaultValues);
@@ -292,7 +317,8 @@ export const useApplicationForm = () => {
     onChange,
     onFileChange,
     onRemoveFile,
-    onSubmit: handleSubmit(onSubmit),
+    onSubmit, // raw valid submit (not used by component directly)
+    onFormSubmit, // composed handler: valid + immediate onInvalid scroll
     onEmailBlur,
     resetForm,
     // Utilities

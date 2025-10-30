@@ -988,9 +988,9 @@ const ApplicationForm = () => {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '0.6rem',
-            background: '#1e40af', /* blue */
-            color: '#fff',
-            borderColor: '#1e40af',
+            background: '#f59e0b', /* yellow */
+            color: '#111',
+            borderColor: '#f59e0b',
             padding: '0.75rem 1.25rem',
             minWidth: '260px'
           }}

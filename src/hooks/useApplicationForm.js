@@ -241,6 +241,10 @@ export const useApplicationForm = () => {
           });
         }
         setSubmitError(error.message);
+        // Bring the user to the error message area
+        try {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (e) { }
       } finally {
         setIsSubmitting(false);
       }

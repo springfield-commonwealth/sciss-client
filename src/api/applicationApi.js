@@ -90,13 +90,31 @@ export const submitApplication = async (formData) => {
       submitData.append("transcript_count", formData.transcript.length);
     }
 
-    // Make API request
+    // Make API request with timeout and one retry (helps in high-latency regions)
     console.log('Making API call to:', ENDPOINTS.SUBMIT_APPLICATION);
-    const response = await fetch(ENDPOINTS.SUBMIT_APPLICATION, {
-      method: "POST",
-      body: submitData,
-      // Don't set Content-Type header - let browser set it for FormData
-    });
+    const doFetch = async () => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000); // 20s
+      try {
+        const res = await fetch(ENDPOINTS.SUBMIT_APPLICATION, {
+          method: "POST",
+          body: submitData,
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        return res;
+      } catch (err) {
+        clearTimeout(timeout);
+        throw err;
+      }
+    };
+    let response;
+    try {
+      response = await doFetch();
+    } catch (firstErr) {
+      console.warn('First submit attempt failed, retrying once...', firstErr);
+      response = await doFetch();
+    }
     console.log('API response status:', response.status);
 
     const result = await response.json();

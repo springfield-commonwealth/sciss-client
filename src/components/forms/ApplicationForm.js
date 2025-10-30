@@ -132,7 +132,7 @@ const ApplicationForm = () => {
     }
   };
 
-  // On submit, pulse all fields with errors
+  // On submit, pulse all fields with errors and scroll to the first one if invalid
   const handleFormSubmit = (e) => {
     console.log('Form submitted!', e);
     e.preventDefault();
@@ -146,6 +146,25 @@ const ApplicationForm = () => {
         triggerErrorPulse(field);
       }
     });
+
+    // If form is invalid, scroll to the first errored field
+    if (!isValid) {
+      const firstErrorKey = Object.keys(errors)[0];
+      if (firstErrorKey) {
+        const selector =
+          firstErrorKey.includes('.')
+            ? `[name="${firstErrorKey}"]`
+            : `[name="${firstErrorKey}"]`;
+        const el = document.querySelector(selector);
+        if (el && typeof el.scrollIntoView === 'function') {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          try { el.focus(); } catch (err) { }
+        } else {
+          // Fallback: scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }
     console.log('Calling onSubmit (which is already wrapped with handleSubmit)');
     onSubmit(e);
   };

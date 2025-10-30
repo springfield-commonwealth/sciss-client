@@ -49,10 +49,7 @@ export const applicationFormSchema = z
         z.enum([
           "Path to Wall Street (Investment)",
           "Youth Innovation & Entrepreneurship (Teen Start-ups)",
-          "AI & Robotics",
-          "Leadership & Public Speaking/Debate",
-          "Music & Stage Performing Arts",
-          "Sports (e.g., Basketball, Soccer)",
+          "Elite Leadership · Art · English · Finance · Sports",
         ])
       )
       .min(1, "Please select at least one track"),

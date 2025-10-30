@@ -364,62 +364,38 @@ const FAQ = ({ breadcrumbs = [] }) => {
 
     const sampleSchedules = [
         {
-            title: "Investment Track",
+            title: "Wall Street Investment → G8–12",
             schedule: [
-                "Mon: Opening Ceremony, Money Talk Introduction",
-                "Tue: Financial Markets Basics, Stock Trading Simulation",
+                "Mon: Opening Ceremony · Markets Overview",
+                "Tue: Financial Markets Basics · Stock Trading Simulation (with AI screeners)",
                 "Wed: Macroeconomics & Industry Analysis",
-                "Thu: Equity Research Methods",
-                "Fri: Financial Statement Analysis, AI in Finance",
+                "Thu: Equity Research Methods · Earnings Call AI Summaries",
+                "Fri: Financial Statement Analysis · Backtesting with AI assistants",
                 "Sat: Boston Visit (Harvard, MIT)",
                 "Sun: Springfield Explore (Basketball Hall of Fame, Museums)"
             ]
         },
         {
-            title: "Entrepreneurship Track",
+            title: "Youth Entrepreneurship → G6–12",
             schedule: [
-                "Mon: Entrepreneurial Mindset & Fundraising Logic",
-                "Tue: Design Thinking",
-                "Wed: Ideation, Customer Discovery & Branding",
-                "Thu: Market Research & Trend Analysis",
-                "Fri: AI Tools for Business Research",
+                "Mon: Entrepreneurial Mindset · Fundraising Logic",
+                "Tue: Design Thinking · Problem Discovery",
+                "Wed: Ideation · Customer Interviews · Branding with AI",
+                "Thu: Market Research · Trend Analysis using AI tools",
+                "Fri: MVP Build · Pitch Deck Drafting with AI · Rehearsal",
                 "Sat: Boston Visit",
                 "Sun: Springfield Explore"
             ]
         },
         {
-            title: "Leadership · Art · Theatre Track",
+            title: "Elite Leadership · Art · English · Finance · Sports → G4–12",
             schedule: [
-                "Mon: Keynote Speech, Art Creation",
-                "Tue: Leadership (Courage & Responsibility), Writing",
-                "Wed: Communication & Innovation, Math/ESL",
-                "Thu: Commitment & Responsibility, Theatre Rehearsal",
-                "Fri: Team Leadership, Final Rehearsal",
+                "Mon: Keynote & Goal Setting · Art/English Workshops (AI writing feedback)",
+                "Tue: Leadership Labs · Public Speaking · Sports Skills",
+                "Wed: Communication & Innovation · Financial Literacy · AI study helpers",
+                "Thu: Theatre/Arts Rehearsal · Video Review with AI analysis",
+                "Fri: Team Showcase · Reflections · Certificates",
                 "Sat: Boston Visit",
-                "Sun: Springfield Explore"
-            ]
-        },
-        {
-            title: "AI + Robotics Track",
-            schedule: [
-                "Mon: AI Fundamentals, Python Programming",
-                "Tue: Supervised & Unsupervised Learning",
-                "Wed: Deep Learning, Transformers",
-                "Thu: AI Case Studies + Robotics Coding",
-                "Fri: Team Project Showcase",
-                "Sat: Boston Visit",
-                "Sun: Springfield Explore"
-            ]
-        },
-        {
-            title: "Sports Track (Basketball Focus)",
-            schedule: [
-                "Mon: Fitness Test, Basketball Fundamentals",
-                "Tue: Dribbling & Shooting",
-                "Wed: Team Tactics & Coordination",
-                "Thu: Game Scrimmages",
-                "Fri: Conditioning & Skills Showcase",
-                "Sat: Visit College Sports Facilities",
                 "Sun: Springfield Explore"
             ]
         }

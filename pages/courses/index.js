@@ -99,9 +99,31 @@ const CoursesDirectory = ({ courses, categories, stats, breadcrumbs = [] }) => {
 export default CoursesDirectory;
 
 export async function getStaticProps() {
-  const courses = getAllCourses();
+  const allCourses = getAllCourses();
   const categories = getCourseCategories();
   const stats = getCourseStats();
+
+  // Keep only the three core tracks we want to display
+  const allowedSlugs = new Set([
+    "path-to-wall-street",
+    "youth-innovation-entrepreneurship",
+    "elite-leadership-art-english-finance-sports",
+  ]);
+
+  const courses = allCourses
+    .filter((c) => allowedSlugs.has(c.slug))
+    .map((c) => ({
+      ...c,
+      // Append light AI mention to descriptions if not already present
+      description:
+        c.slug === "path-to-wall-street"
+          ? `${c.description} Includes AI screeners, earnings-call summarization, and basic backtesting.`
+          : c.slug === "youth-innovation-entrepreneurship"
+            ? `${c.description} Uses AI for customer discovery, market research, branding assets, and pitch-deck drafting.`
+            : c.description,
+    }));
+
+  // No synthetic card; the combined program now has its own course page/content
 
   // Generate breadcrumbs
   const breadcrumbs = generateBreadcrumbs([

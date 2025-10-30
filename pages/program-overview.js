@@ -46,7 +46,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
 
             <div className={`tab-content ${activeTab === 'courses' ? 'active' : ''}`}>
               <div className="text--center mb--md">
-                <h3>Six Transformative Course Tracks</h3>
+                <h3>Three Core Course Tracks</h3>
                 <p>Choose one track per session (students may stack across sessions)</p>
               </div>
               <div className="grid grid--2">
@@ -61,24 +61,9 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                   <p className="trip-description-simple">Idea to pitch • MVP development</p>
                 </div>
                 <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🤖</div>
-                  <h3>AI & Robotics</h3>
-                  <p className="trip-description-simple">Python programming • Machine learning</p>
-                </div>
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎤</div>
-                  <h3>Leadership & Public Speaking/Debate</h3>
-                  <p className="trip-description-simple">Communication • Stage presence</p>
-                </div>
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎭</div>
-                  <h3>Music & Stage Performing Arts</h3>
-                  <p className="trip-description-simple">Vocal/instrumental • Live showcase</p>
-                </div>
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🏀</div>
-                  <h3>Sports (Basketball, Soccer)</h3>
-                  <p className="trip-description-simple">Skill development • Tournament play</p>
+                  <div className="trip-icon-large">🎯</div>
+                  <h3>Elite Leadership · Art · English · Finance · Sports</h3>
+                  <p className="trip-description-simple">Communication • Creativity • Fitness • Financial literacy</p>
                 </div>
               </div>
             </div>

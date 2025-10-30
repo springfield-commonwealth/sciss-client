@@ -20,6 +20,8 @@ const DirectoryCard = ({
 
   // Get item URL based on type
   const getItemUrl = (item) => {
+    // Allow custom href override when provided
+    if (item.href) return item.href;
     const urls = {
       trips: `/trips/${item.slug}`,
       staff: `/staff/${item.slug}`,

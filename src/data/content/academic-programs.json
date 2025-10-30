@@ -14,7 +14,7 @@
       "id": "path-to-wall-street",
       "slug": "path-to-wall-street",
       "title": "Path to Wall Street (Investment)",
-      "description": "Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone.",
+      "description": "Build financial fluency from market basics to fundamental analysis, portfolio/risk management, and financial modeling & valuation. Practice with a trading simulator and finish with a stock-pitch capstone. We will use AI to screen companies, summarize earnings calls, and draft simple backtests to support decisions.",
       "image": "/images/carousel/investment.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2025-10-04T00:00:00Z",
@@ -114,7 +114,7 @@
       "id": "youth-innovation-entrepreneurship",
       "slug": "youth-innovation-entrepreneurship",
       "title": "Youth Innovation & Entrepreneurship (Teen Start-ups)",
-      "description": "From mindset to model to market, blend business-model design with design thinking. Test ideas through research, use modern AI tools to accelerate prototyping, and refine a story investors can believe in.",
+      "description": "From mindset to model to market, blend business-model design with design thinking. Test ideas through research, use modern AI tools to accelerate prototyping, and refine a story investors can believe in. We will use AI to conduct market research, generate branding assets, and draft pitch content faster.",
       "image": "/images/carousel/entrepreneur.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2025-10-04T00:00:00Z",
@@ -444,6 +444,92 @@
       ],
       "capacity": 30,
       "ageRange": "10-18 years"
+    },
+    {
+      "id": "elite-leadership-art-english-finance-sports",
+      "slug": "elite-leadership-art-english-finance-sports",
+      "title": "Elite Leadership · Art · English · Finance · Sports → G4–12",
+      "description": "A well-rounded pathway combining communication, creativity, academics, and athletics. AI-assisted practice (speech feedback, writing support, video review) helps students iterate faster and showcase measurable growth. We will use AI to give writing feedback, analyze speech delivery, and break down sports videos for improvement.",
+      "image": "/images/highlights/elective.png",
+      "createdAt": "2025-10-30T00:00:00Z",
+      "updatedAt": "2025-10-30T00:00:00Z",
+      "published": true,
+      "tags": [
+        "leadership",
+        "art",
+        "english",
+        "finance",
+        "sports",
+        "ai"
+      ],
+      "seo": {
+        "metaTitle": "Elite Leadership · Art · English · Finance · Sports | SCISS",
+        "metaDescription": "Cross-disciplinary track blending leadership, arts, English writing, financial literacy, and sports. Includes AI feedback for speaking/writing and video analysis for faster improvement.",
+        "keywords": [
+          "leadership program",
+          "art and english",
+          "financial literacy",
+          "sports camp",
+          "ai writing feedback"
+        ],
+        "ogImage": "/images/highlights/elective.png"
+      },
+      "level": "All Levels",
+      "duration": "2 weeks",
+      "session": "All Sessions",
+      "curriculum": [
+        "Leadership labs: responsibility, teamwork, communication",
+        "Public speaking & debate with AI speech feedback",
+        "English writing studio with AI drafting and revision",
+        "Art & theatre workshops: creation, rehearsal, showcase",
+        "Financial literacy: budgeting, credit, investing basics",
+        "Sports training (basketball focus) with video analysis",
+        "Capstone showcase across tracks"
+      ],
+      "outcomes": [
+        "Confident speaking and clear writing",
+        "Creative portfolio artifacts and performance experience",
+        "Stronger study habits using AI tools responsibly",
+        "Foundations in personal finance and decision-making",
+        "Improved athletic fundamentals and teamwork"
+      ],
+      "prerequisites": "None - differentiated for Junior (G4–G7) and Senior (G8–G12) cohorts",
+      "highlights": [
+        "Daily communication practice with AI feedback",
+        "Live performance or gallery-style showcase",
+        "Sports fundamentals + conditioning with video review",
+        "Integrated academic coaching (Math/ESL)",
+        "Supportive, well-rounded development"
+      ],
+      "whatWeProvide": {
+        "title": "What We Will Provide",
+        "items": [
+          {
+            "category": "Leadership",
+            "description": "Daily speaking, debate, and teamwork labs with feedback."
+          },
+          {
+            "category": "Arts & English",
+            "description": "Studios for creation and writing with guided AI drafting support."
+          },
+          {
+            "category": "Finance",
+            "description": "Personal finance modules for smart money habits."
+          },
+          {
+            "category": "Sports",
+            "description": "Basketball skills, conditioning, and optional multi-sport variety."
+          }
+        ]
+      },
+      "category": "core",
+      "instructors": [
+        "communication-expert",
+        "music-director",
+        "basketball-coach"
+      ],
+      "capacity": 40,
+      "ageRange": "9-18 years"
     }
   ]
 }

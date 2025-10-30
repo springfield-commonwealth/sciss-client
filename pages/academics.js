@@ -118,38 +118,20 @@ const Academics = ({
               <div className="grid grid--1">
                 <Link href="/courses/path-to-wall-street" className="simple-track-card">
                   <div className="track-icon-large">💼</div>
-                  <h3>Path to Wall Street (Investment)</h3>
-                  <p className="track-description-simple">Learn how markets work, analyze companies, and build a mock portfolio. Students craft a stock pitch, explore risk/reward, and practice ethical decision-making—finishing with a capstone presentation.</p>
+                  <h3>Wall Street Investment → G8–12</h3>
+                  <p className="track-description-simple">Analyze companies, construct a mock portfolio, and present a stock pitch. Integrated AI tools support research screening, earnings call summarization, and basic backtesting to enhance decision-making.</p>
                 </Link>
 
                 <Link href="/courses/youth-innovation-entrepreneurship" className="simple-track-card">
                   <div className="track-icon-large">💡</div>
-                  <h3>Youth Innovation & Entrepreneurship (Teen Start-ups)</h3>
-                  <p className="track-description-simple">From idea to pitch: design thinking, problem discovery, prototyping, and go-to-market. Teams build an MVP and pitch to a friendly panel of mentors for feedback and awards.</p>
+                  <h3>Youth Entrepreneurship → G6–12</h3>
+                  <p className="track-description-simple">From idea to pitch: design thinking, prototyping, go-to-market, and demo day. Teams leverage AI for customer discovery, market analysis, branding assets, and pitch-deck drafting to accelerate MVP building.</p>
                 </Link>
 
-                <Link href="/courses/artificial-intelligence" className="simple-track-card">
-                  <div className="track-icon-large">🤖</div>
-                  <h3>AI & Robotics</h3>
-                  <p className="track-description-simple">Code smart systems, wire sensors, and train basic models. Younger students start with visual coding and kits; older students dive into Python, automation, and an end-of-session robotics challenge.</p>
-                </Link>
-
-                <Link href="/courses/public-speaking-debate" className="simple-track-card">
-                  <div className="track-icon-large">🎤</div>
-                  <h3>Leadership & Public Speaking/Debate</h3>
-                  <p className="track-description-simple">Communication, debate, and stage presence—plus conflict resolution and teamwork. Students practice persuasive speaking daily and deliver a polished final talk.</p>
-                </Link>
-
-                <Link href="/courses/music-performing-arts" className="simple-track-card">
-                  <div className="track-icon-large">🎭</div>
-                  <h3>Music & Stage Performing Arts</h3>
-                  <p className="track-description-simple">Vocal/instrumental ensembles, movement, and stagecraft. Rehearse with mentors, collaborate across roles (sound, lighting, direction), and close with a live showcase.</p>
-                </Link>
-
-                <Link href="/courses/sports-intensive" className="simple-track-card">
-                  <div className="track-icon-large">🏀</div>
-                  <h3>Sports (e.g., Basketball, Soccer)</h3>
-                  <p className="track-description-simple">Skill development, conditioning, and game IQ wrapped in teamwork and sportsmanship. Daily drills, scrimmages, and a fun tournament to finish strong.</p>
+                <Link href="/program-overview" className="simple-track-card">
+                  <div className="track-icon-large">🎯</div>
+                  <h3>Elite Leadership · Art · English · Finance · Sports → G4–12</h3>
+                  <p className="track-description-simple">A well-rounded pathway combining communication, creativity, academics, and athletics. AI-assisted practice (speech feedback, writing support, video review) helps students iterate faster and showcase measurable growth.</p>
                 </Link>
               </div>
             </div>

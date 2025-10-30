@@ -987,9 +987,9 @@ const ApplicationForm = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.6rem',
-            background: 'var(--primary-color)',
+            background: '#1e40af', /* blue */
             color: '#fff',
-            borderColor: 'var(--primary-color)'
+            borderColor: '#1e40af'
           }}
         >
           <span className="loader-icon" role="img" aria-label="loading">⏳</span>

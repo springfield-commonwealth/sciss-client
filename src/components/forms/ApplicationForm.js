@@ -982,11 +982,19 @@ const ApplicationForm = () => {
           type="button"
           disabled
           aria-busy="true"
-          className="submit-btn submit-btn-loading"
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+          className="submit-btn submit-btn-loading visible-loading-btn"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.6rem',
+            background: 'var(--primary-color)',
+            color: '#fff',
+            borderColor: 'var(--primary-color)'
+          }}
         >
-          <span role="img" aria-label="loading">⏳</span>
-          Sending application...
+          <span className="loader-icon" role="img" aria-label="loading">⏳</span>
+          <span>Sending application</span>
+          <span className="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
         </button>
       ) : (
         <button
@@ -996,6 +1004,17 @@ const ApplicationForm = () => {
           Submit Application
         </button>
       )}
+
+      <style jsx>{`
+        .visible-loading-btn[disabled] { opacity: 1; }
+        .loader-icon { animation: tilt 1.2s ease-in-out infinite; }
+        @keyframes tilt { 0% { transform: rotate(0deg); } 50% { transform: rotate(15deg); } 100% { transform: rotate(0deg); } }
+        .dots { display: inline-block; width: 1.5em; text-align: left; }
+        .dots span { display: inline-block; animation: blink 1.2s infinite; }
+        .dots span:nth-child(2) { animation-delay: .2s; }
+        .dots span:nth-child(3) { animation-delay: .4s; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+      `}</style>
     </form>
   );
 };

@@ -40,6 +40,7 @@ const ApplicationForm = () => {
   const successGlowTimeouts = useRef({});
   const [fileUploadState, setFileUploadState] = useState("idle"); // idle, hover, dragover, success, error
   const [formProgress, setFormProgress] = useState(0);
+  const errorBannerRef = useRef(null);
 
   // Helper to trigger error pulse for a field
   const triggerErrorPulse = (field) => {
@@ -110,6 +111,19 @@ const ApplicationForm = () => {
     const progress = calculateProgress();
     setFormProgress(progress);
   }, [formValues]);
+
+  // When a submit error occurs, ensure the error banner is in view and focused
+  useEffect(() => {
+    if (submitError) {
+      const el = document.getElementById('form-error-banner');
+      if (el && typeof el.scrollIntoView === 'function') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        try { el.focus({ preventScroll: true }); } catch (e) { }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, [submitError]);
 
   // On blur, pulse if error
   const handleBlur = (e) => {
@@ -322,6 +336,8 @@ const ApplicationForm = () => {
 
       {submitError && (
         <div
+          id="form-error-banner"
+          tabIndex={-1}
           style={{
             background: "#fee",
             color: "#c33",
@@ -330,6 +346,7 @@ const ApplicationForm = () => {
             marginBottom: "1rem",
             border: "1px solid #fcc",
           }}
+          aria-live="assertive"
         >
           ❌ {submitError}
         </div>

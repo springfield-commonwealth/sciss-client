@@ -142,7 +142,10 @@ export const submitApplication = async (formData) => {
     // Provide user-friendly error messages
     let errorMessage = "Submission failed. Please try again.";
 
-    if (error.message.includes("network") || error.message.includes("fetch")) {
+    if (error.name === 'AbortError') {
+      errorMessage =
+        "Network timeout. Connection was too slow. Please try again or switch networks.";
+    } else if (error.message.includes("network") || error.message.includes("fetch")) {
       errorMessage =
         "Network error. Please check your connection and try again.";
     } else if (error.message.includes("email")) {

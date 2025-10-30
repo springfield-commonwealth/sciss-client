@@ -62,26 +62,14 @@ const galleryImages = [
     category: "Campus Life",
   },
   // Newly added carousel images (HEIC) included in gallery
-  {
-    src: "/images/carousel/2eb869acd1ed860d5db862d1aba9690f.heic",
-    alt: "Campus Life Moments",
-    category: "Campus Life",
-  },
-  {
-    src: "/images/carousel/IMG_1951.HEIC",
-    alt: "Campus Life Moments",
-    category: "Campus Life",
-  },
-  {
-    src: "/images/carousel/IMG_1995.HEIC",
-    alt: "Campus Life Moments",
-    category: "Campus Life",
-  },
-  {
-    src: "/images/carousel/IMG_2024.HEIC",
-    alt: "Campus Life Moments",
-    category: "Campus Life",
-  },
+  { src: "/images/carousel/newImage.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage2.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage3.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage4.jpeg", alt: "Campus Life Moments", category: "Campus Life" },
+
+  { src: "/images/carousel/newImage5.jpg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage6.jpg", alt: "Campus Life Moments", category: "Campus Life" },
+  { src: "/images/carousel/newImage7.jpg", alt: "Campus Life Moments", category: "Campus Life" },
 ];
 
 const PhotoGalleries = ({ breadcrumbs = [] }) => {

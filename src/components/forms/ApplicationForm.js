@@ -40,7 +40,7 @@ const ApplicationForm = () => {
   const successGlowTimeouts = useRef({});
   const [fileUploadState, setFileUploadState] = useState("idle"); // idle, hover, dragover, success, error
   const [formProgress, setFormProgress] = useState(0);
-  const errorBannerRef = useRef(null);
+  //
 
   // Helper to trigger error pulse for a field
   const triggerErrorPulse = (field) => {
@@ -118,7 +118,9 @@ const ApplicationForm = () => {
       const el = document.getElementById('form-error-banner');
       if (el && typeof el.scrollIntoView === 'function') {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        try { el.focus({ preventScroll: true }); } catch (e) { }
+        if (typeof el.focus === 'function') {
+          el.focus();
+        }
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -172,7 +174,9 @@ const ApplicationForm = () => {
         const el = document.querySelector(selector);
         if (el && typeof el.scrollIntoView === 'function') {
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          try { el.focus(); } catch (err) { }
+          if (typeof el.focus === 'function') {
+            el.focus();
+          }
         } else {
           // Fallback: scroll to top
           window.scrollTo({ top: 0, behavior: 'smooth' });

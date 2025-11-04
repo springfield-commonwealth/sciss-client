@@ -1201,6 +1201,117 @@
   }
 }
 
+@media (max-width: 350px) {
+  .value-item-content {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .value-text h3 {
+    font-size: var(--text-lg);
+  }
+
+  .value-text p {
+    font-size: var(--text-sm);
+  }
+
+  .team-item-content {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .team-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .team-text-section h3 {
+    font-size: var(--text-lg);
+  }
+
+  .team-text-section p {
+    font-size: var(--text-sm);
+  }
+
+  .program-card {
+    padding: var(--space-3);
+  }
+
+  .program-icon {
+    font-size: 2rem;
+  }
+
+  .program-card h3 {
+    font-size: var(--text-base);
+  }
+
+  .program-card p {
+    font-size: var(--text-sm);
+  }
+
+  .included-item {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .included-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.75rem;
+  }
+
+  .included-text h4 {
+    font-size: var(--text-base);
+  }
+
+  .included-text p {
+    font-size: var(--text-xs);
+  }
+
+  .trip-item h4 {
+    font-size: var(--text-sm);
+  }
+
+  .trip-item p {
+    font-size: var(--text-xs);
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.75rem;
+  }
+
+  .timeline-content {
+    padding: var(--space-3);
+  }
+
+  .timeline-content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .timeline-content p {
+    font-size: var(--text-sm);
+  }
+
+  .time-badge {
+    min-width: 100px;
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .activity {
+    font-size: var(--text-sm);
+  }
+}
+
 /* Quick Facts Grid */
 .quick-facts-grid {
   display: grid;

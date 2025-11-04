@@ -41,6 +41,26 @@
   }
 }
 
+@media (max-width: 350px) {
+  .apply-header {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .apply-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .apply-description {
+    font-size: 0.9rem;
+  }
+
+  .apply-logo {
+    max-width: 140px;
+  }
+}
+
 .apply-logo-container {
   display: flex;
   justify-content: center;

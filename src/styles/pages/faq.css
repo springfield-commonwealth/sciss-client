@@ -523,3 +523,101 @@
         font-size: var(--text-sm);
     }
 }
+
+@media (max-width: 350px) {
+    .faq-sections {
+        padding: var(--space-6) 0;
+        padding-top: 50px !important;
+    }
+
+    .faq-grid {
+        padding: 0 0.5rem;
+        gap: var(--space-3);
+    }
+
+    .faq-section-header {
+        padding: var(--space-3);
+        min-height: 60px;
+    }
+
+    .faq-section-icon {
+        font-size: 1rem;
+        margin-right: var(--space-2);
+    }
+
+    .faq-section-title {
+        font-size: var(--text-sm);
+    }
+
+    .faq-chevron {
+        margin-left: var(--space-2);
+        font-size: 0.875rem;
+    }
+
+    .faq-section-content {
+        padding: 0 var(--space-3) var(--space-3);
+    }
+
+    .faq-subsection-title {
+        font-size: var(--text-sm);
+    }
+
+    .faq-subsection-item {
+        padding-left: var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    .schedule-showcase {
+        gap: var(--space-3);
+        padding: 0 0.5rem;
+    }
+
+    .schedule-showcase-card {
+        padding: var(--space-2);
+    }
+
+    .schedule-card-title {
+        font-size: var(--text-sm);
+    }
+
+    .timeline-day {
+        width: 24px;
+        height: 24px;
+    }
+
+    .day-name {
+        font-size: 8px;
+    }
+
+    .day-activities {
+        font-size: 10px;
+    }
+
+    .schedule-cta {
+        padding: var(--space-3);
+    }
+
+    .schedule-cta-text {
+        font-size: var(--text-xs);
+    }
+
+    .summary-grid {
+        padding: 0 0.5rem;
+    }
+
+    .summary-card {
+        padding: var(--space-3);
+    }
+
+    .summary-icon {
+        font-size: 2rem;
+    }
+
+    .summary-card h3 {
+        font-size: var(--text-base);
+    }
+
+    .summary-card p {
+        font-size: var(--text-sm);
+    }
+}

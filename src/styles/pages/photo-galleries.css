@@ -201,3 +201,55 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 350px) {
+  .photo-galleries-section {
+    padding: var(--space-8) 0;
+    padding-top: calc(var(--nav-height-mobile) + var(--space-6));
+  }
+
+  .photo-gallery-grid {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .photo-gallery-image {
+    height: 200px;
+  }
+
+  .photo-gallery-overlay {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .photo-gallery-category {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .photo-gallery-caption {
+    font-size: 0.875rem;
+  }
+
+  .photo-gallery-cta {
+    padding: 2rem 1rem;
+  }
+
+  .photo-gallery-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .photo-gallery-cta p {
+    font-size: 1rem;
+  }
+
+  .photo-gallery-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .photo-gallery-cta-buttons .btn {
+    width: 100%;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+}

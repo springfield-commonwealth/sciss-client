@@ -2,6 +2,7 @@ import Layout from "@/components/layouts/Layout";
 import FooterCTA from "@/components/ui/FooterCTA";
 import formOptions from "@/data/formOptions.json";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
+import Link from "next/link";
 import { useState } from "react";
 
 const ProgramOverview = ({ breadcrumbs = [] }) => {
@@ -60,7 +61,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
               </div>
               <div className="program-tracks-container">
                 <div className="grid grid--2">
-                  <div className="cultural-trip-card-simple">
+                  <Link href="/courses/path-to-wall-street" className="cultural-trip-card-simple track-card-link">
                     <div className="trip-icon-large">💼</div>
                     <h3>Path to Wall Street (Investment)</h3>
                     <p className="trip-description-simple">Financial fluency • $1M virtual competition</p>
@@ -78,8 +79,8 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                           );
                         })}
                     </div>
-                  </div>
-                  <div className="cultural-trip-card-simple">
+                  </Link>
+                  <Link href="/courses/youth-innovation-entrepreneurship" className="cultural-trip-card-simple track-card-link">
                     <div className="trip-icon-large">💡</div>
                     <h3>Youth Innovation & Entrepreneurship</h3>
                     <p className="trip-description-simple">Idea to pitch • MVP development</p>
@@ -97,8 +98,8 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                           );
                         })}
                     </div>
-                  </div>
-                  <div className="cultural-trip-card-simple">
+                  </Link>
+                  <Link href="/courses/elite-leadership-art-english-finance-sports/" className="cultural-trip-card-simple track-card-link">
                     <div className="trip-icon-large">🎯</div>
                     <h3>Elite Leadership · Art · English · Finance · Sports</h3>
                     <p className="trip-description-simple">Communication • Creativity • Fitness • Financial literacy</p>
@@ -116,7 +117,7 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                           );
                         })}
                     </div>
-                  </div>
+                  </Link>
                   <div className="cultural-trip-card-simple sessions-reference-box">
                     <div className="trip-icon-large">📅</div>
                     <h3>Session Dates Reference</h3>

@@ -11,7 +11,7 @@ const inter = Inter({
 
 const Layout = ({
   children,
-  title = "SCISS - Springfield Commonwealth International Summer School",
+  title = "SCISS - SC International Summer School",
   description = "Join SCISS for an unforgettable summer experience with cutting-edge academics, exciting activities, and trips to Harvard, MIT, and Yale.",
   FooterCTALinkTitle = "Academics",
   FooterCTALink = "/academics",

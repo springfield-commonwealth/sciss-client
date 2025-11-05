@@ -105,7 +105,7 @@ const HomeDailyRhythmSection = [
 
 
 const HomePresidentLetter = [
-  "Welcome to Springfield Commonwealth International Summer School! As you prepare to join us for two transformative weeks, we're excited to share an enriching and memorable experience with you.",
+  "Welcome to SC International Summer School! As you prepare to join us for two transformative weeks, we're excited to share an enriching and memorable experience with you.",
   "Our mission is simple: foster a dynamic learning environment where curiosity thrives, friendships flourish, and personal growth is nurtured. Our program blends expert instruction with hands-on activities and meaningful connections with peers from around the world.",
   "You'll engage with passionate instructors who are experts in their fields, participate in real-world projects that bring learning to life, and build lasting friendships with students who share your enthusiasm for discovery.",
   "Beyond academics, we've curated activities designed to complement your learning—from university visits and outdoor adventures to creative workshops and evening showcases. There's something for everyone.",

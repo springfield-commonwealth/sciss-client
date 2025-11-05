@@ -96,7 +96,7 @@ const ActivityPage = ({ activity, breadcrumbs, relatedActivities }) => {
               description: description,
               provider: {
                 "@type": "EducationalOrganization",
-                name: "Springfield Commonwealth International Summer School",
+                name: "SC International Summer School",
                 url: "https://sciss.org",
               },
               courseMode: "in-person",

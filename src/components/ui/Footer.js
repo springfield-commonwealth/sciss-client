@@ -117,7 +117,7 @@ const Footer = () => {
       </div>
       <div className="footerBottom">
         <p>
-          &copy; 2026 Springfield Commonwealth International Summer School (A
+          &copy; 2026 SC International Summer School (A
           Product of Viswise Academy, 501(c)(3) non-profit (EIN: 85-2331341)).
           All rights reserved.
         </p>

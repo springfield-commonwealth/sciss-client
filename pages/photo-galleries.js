@@ -7,7 +7,7 @@ import Link from "next/link";
 const galleryImages = [
   {
     src: "/images/featured/school-building-0.JPG",
-    alt: "Springfield Commonwealth Campus",
+    alt: "SC Campus",
     category: "Campus Life",
   },
   {

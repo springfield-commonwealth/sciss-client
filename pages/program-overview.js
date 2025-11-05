@@ -14,10 +14,11 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
 
   // Helper function to format dates
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const month = date.toLocaleDateString('en-US', { month: 'short' });
-    const day = date.getDate();
-    return `${month} ${day}`;
+    // Parse date string (YYYY-MM-DD) to avoid timezone issues
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed in Date constructor
+    const monthName = date.toLocaleDateString('en-US', { month: 'short' });
+    return `${monthName} ${day}`;
   };
 
   return (

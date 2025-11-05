@@ -94,7 +94,7 @@ const StaffPage = ({ staff, breadcrumbs, relatedStaff }) => {
               jobTitle: position,
               worksFor: {
                 "@type": "EducationalOrganization",
-                name: "Springfield Commonwealth International Summer School",
+                name: "SC International Summer School",
                 url: "https://sciss.org",
               },
               description: bio,

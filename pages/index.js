@@ -38,7 +38,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
   };
   return (
     <Layout
-      title="SCISS - Springfield Commonwealth International Summer School"
+      title="SCISS - SC International Summer School"
       description="Join SCISS for an unforgettable summer experience with cutting-edge academics, exciting activities, and trips to Harvard, MIT, and Yale."
       showBreadcrumb={true}
       breadcrumbs={breadcrumbs}
@@ -61,7 +61,7 @@ const HomePage = ({ breadcrumbs = [] }) => {
 
       {/* Short Intro / Welcome Section */}
       <FeatureSection
-        heading="Welcome to Springfield Commonwealth International Summer School"
+        heading="Welcome to SC International Summer School"
         paragraphs={HomeWelcomeParagraphs}
         image={HomeFeature}
         imagePosition="left"

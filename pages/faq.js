@@ -32,7 +32,7 @@ const FAQ = ({ breadcrumbs = [] }) => {
                 location: {
                     title: "Location",
                     items: [
-                        "Springfield Commonwealth Academy",
+                        "SC Academy",
                         "Address: 1 Ames Hill Dr, Springfield, MA 01105, USA"
                     ]
                 }

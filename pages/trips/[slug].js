@@ -95,7 +95,7 @@ const TripPage = ({ trip, breadcrumbs, relatedTrips }) => {
               description: description,
               organizer: {
                 "@type": "EducationalOrganization",
-                name: "Springfield Commonwealth International Summer School",
+                name: "SC International Summer School",
                 url: "https://sciss.org",
               },
               location: {

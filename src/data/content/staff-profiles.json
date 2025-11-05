@@ -401,8 +401,8 @@
     {
       "id": "angelene-huang",
       "slug": "angelene-huang",
-      "title": "Angelene Huang - President & Chair of Springfield Commonwealth Academy",
-      "description": "President & Chair of Springfield Commonwealth Academy (SCA), cross-sector leader in finance, education, tech & social impact.",
+      "title": "Angelene Huang - President & Chair of SC Academy",
+      "description": "President & Chair of SC Academy (SCA), cross-sector leader in finance, education, tech & social impact.",
       "image": "/images/instructors/angelene.png",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-12-19T00:00:00Z",
@@ -415,11 +415,11 @@
         "social-impact"
       ],
       "seo": {
-        "metaTitle": "Angelene Huang - President & Chair of Springfield Commonwealth Academy | SCISS Guest Speaker",
-        "metaDescription": "Learn from Angelene Huang, President & Chair of Springfield Commonwealth Academy (SCA), cross-sector leader in finance, education, tech & social impact.",
+        "metaTitle": "Angelene Huang - President & Chair of SC Academy | SCISS Guest Speaker",
+        "metaDescription": "Learn from Angelene Huang, President & Chair of SC Academy (SCA), cross-sector leader in finance, education, tech & social impact.",
         "keywords": [
           "SCA president",
-          "Springfield Commonwealth Academy",
+          "SC Academy",
           "education leader",
           "finance expert",
           "social impact"
@@ -430,7 +430,7 @@
       "lastName": "Huang",
       "position": "President & Chair of SCA",
       "department": "Camp Leadership",
-      "bio": "Angelene Huang serves as President and Chair of Springfield Commonwealth Academy (SCA). With nearly a decade in high-frequency trading and global capital markets, she brings cross-sector leadership in finance, education, technology, and social impact. She previously served as President of New York Military Academy (NYMA), where she reversed financial deficits and restored school reputation. Her leadership style combines warmth within rationality, and her mission is to cultivate responsible global citizens.",
+      "bio": "Angelene Huang serves as President and Chair of SC Academy (SCA). With nearly a decade in high-frequency trading and global capital markets, she brings cross-sector leadership in finance, education, technology, and social impact. She previously served as President of New York Military Academy (NYMA), where she reversed financial deficits and restored school reputation. Her leadership style combines warmth within rationality, and her mission is to cultivate responsible global citizens.",
       "expertise": [
         "Educational Leadership",
         "High-Frequency Trading",
@@ -441,7 +441,7 @@
       "experience": [
         {
           "position": "President & Chair",
-          "company": "Springfield Commonwealth Academy (SCA)",
+          "company": "SC Academy (SCA)",
           "startDate": "2020",
           "description": "Leading campus transformation, academic reform, and enrollment revival"
         },

@@ -188,11 +188,11 @@
     },
     {
       "value": "Yes One Way",
-      "label": "Yes One Way (New York $300, Boston $200, Bradley $100)"
+      "label": "Yes One Way"
     },
     {
       "value": "Yes Two Way",
-      "label": "Yes Two Way (New York $600, Boston $400, Bradley $200)"
+      "label": "Yes Two Way"
     }
   ],
   "hearAboutUsOptions": [

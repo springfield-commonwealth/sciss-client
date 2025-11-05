@@ -548,7 +548,7 @@ const ApplicationForm = () => {
             Airport Pickup <span className="asterisk">*</span>
           </span>
           <p className="field-note" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.5rem' }}>
-            Two Way Airport Transfer: New York $600, Boston $400, Bradley $200. One Way: New York $300, Boston $200, Bradley $100
+            Two Way Airport Transfer: New York, Boston, Bradley. One Way: New York, Boston, Bradley.
           </p>
           {getFieldError("airportPickup") && (
             <span className="error">{getFieldError("airportPickup")}</span>
@@ -1152,7 +1152,7 @@ const ApplicationForm = () => {
         <fieldset>
           <legend>$500 Deposit to Secure Spot <span className="asterisk">*</span></legend>
           <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
-            Would you like to pay a $500 deposit to secure your spot? After we receive your application, we will contact you with payment instructions.
+            $500 deposit is required upon registration to secure your spot. After we receive your application, we will contact you with payment instructions.
           </p>
           {getFieldError("depositConfirmation") && (
             <span className="error">{getFieldError("depositConfirmation")}</span>

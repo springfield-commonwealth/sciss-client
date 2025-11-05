@@ -1054,7 +1054,7 @@ const ApplicationForm = () => {
         <fieldset>
           <legend>Photo Permission <span className="asterisk">*</span></legend>
           <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
-            We will be taking group photos during our summer camp activity. These photos may be used for documentation, promotional materials, or shared within our community. Do you allow SCISS to use photos that include your child for promotional purposes? (All photos will be carefully selected)
+            We will be taking group photos and videos during our summer camp activity. These photos and videos may be used for documentation, promotional materials, or shared within our community. Do you allow SCISS to use photos and videos that include your child for promotional purposes? (All photos and videos will be carefully selected)
           </p>
           {getFieldError("photoPermission") && (
             <span className="error">{getFieldError("photoPermission")}</span>

@@ -474,3 +474,69 @@
 .program-overview .cultural-trip-card-simple h3 {
   text-align: center !important;
 }
+
+/* Program Tracks Container - for positioning sessions reference box */
+.program-tracks-container {
+  position: relative;
+}
+
+/* Track Sessions - session info below each track */
+.track-sessions {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #475569;
+  text-align: center;
+}
+
+.track-sessions strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Sessions Reference Box - styled like other track cards */
+.sessions-reference-box {
+  /* Inherits all styles from cultural-trip-card-simple */
+}
+
+.sessions-reference-box h3 {
+  /* Inherits from cultural-trip-card-simple h3 */
+}
+
+.sessions-reference-box .sessions-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0 0;
+  text-align: center;
+}
+
+.sessions-reference-box .sessions-list li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: var(--text-base);
+  color: #475569;
+  line-height: 1.6;
+}
+
+.sessions-reference-box .sessions-list li:last-child {
+  border-bottom: none;
+}
+
+.sessions-reference-box .sessions-list li strong {
+  color: #1e293b;
+  font-weight: 600;
+  margin-right: var(--space-2);
+}
+
+/* Responsive adjustments for sessions reference box */
+@media (max-width: 768px) {
+  .track-sessions {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .sessions-reference-box .sessions-list {
+    text-align: left;
+  }
+}

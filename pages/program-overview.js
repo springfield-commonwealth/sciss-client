@@ -1,5 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import FooterCTA from "@/components/ui/FooterCTA";
+import formOptions from "@/data/formOptions.json";
 import { generateBreadcrumbs } from "@/lib/utils/navigation";
 import { useState } from "react";
 
@@ -8,6 +9,14 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
 
   const showTab = (tabName) => {
     setActiveTab(tabName);
+  };
+
+  // Helper function to format dates
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = date.toLocaleDateString('en-US', { month: 'short' });
+    const day = date.getDate();
+    return `${month} ${day}`;
   };
 
   return (
@@ -49,21 +58,76 @@ const ProgramOverview = ({ breadcrumbs = [] }) => {
                 <h3>Three Core Course Tracks</h3>
                 <p>Choose one track per session (students may stack across sessions)</p>
               </div>
-              <div className="grid grid--2">
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">💼</div>
-                  <h3>Path to Wall Street (Investment)</h3>
-                  <p className="trip-description-simple">Financial fluency • $1M virtual competition</p>
-                </div>
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">💡</div>
-                  <h3>Youth Innovation & Entrepreneurship</h3>
-                  <p className="trip-description-simple">Idea to pitch • MVP development</p>
-                </div>
-                <div className="cultural-trip-card-simple">
-                  <div className="trip-icon-large">🎯</div>
-                  <h3>Elite Leadership · Art · English · Finance · Sports</h3>
-                  <p className="trip-description-simple">Communication • Creativity • Fitness • Financial literacy</p>
+              <div className="program-tracks-container">
+                <div className="grid grid--2">
+                  <div className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">💼</div>
+                    <h3>Path to Wall Street (Investment)</h3>
+                    <p className="trip-description-simple">Financial fluency • $1M virtual competition</p>
+                    <div className="track-sessions">
+                      {formOptions.courseOptions
+                        .find(c => c.value === "Path to Wall Street (Investment)")
+                        ?.availableSessions.map((session, idx, arr) => {
+                          const sessionData = formOptions.sessionOptions.find(s => s.value === session);
+                          return (
+                            <span key={session}>
+                              <strong>{session}</strong>
+                              {sessionData && ` (${formatDate(sessionData.startDate)} - ${formatDate(sessionData.endDate)})`}
+                              {idx < arr.length - 1 ? ", " : ""}
+                            </span>
+                          );
+                        })}
+                    </div>
+                  </div>
+                  <div className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">💡</div>
+                    <h3>Youth Innovation & Entrepreneurship</h3>
+                    <p className="trip-description-simple">Idea to pitch • MVP development</p>
+                    <div className="track-sessions">
+                      {formOptions.courseOptions
+                        .find(c => c.value === "Youth Innovation & Entrepreneurship (Teen Start-ups)")
+                        ?.availableSessions.map((session, idx, arr) => {
+                          const sessionData = formOptions.sessionOptions.find(s => s.value === session);
+                          return (
+                            <span key={session}>
+                              <strong>{session}</strong>
+                              {sessionData && ` (${formatDate(sessionData.startDate)} - ${formatDate(sessionData.endDate)})`}
+                              {idx < arr.length - 1 ? ", " : ""}
+                            </span>
+                          );
+                        })}
+                    </div>
+                  </div>
+                  <div className="cultural-trip-card-simple">
+                    <div className="trip-icon-large">🎯</div>
+                    <h3>Elite Leadership · Art · English · Finance · Sports</h3>
+                    <p className="trip-description-simple">Communication • Creativity • Fitness • Financial literacy</p>
+                    <div className="track-sessions">
+                      {formOptions.courseOptions
+                        .find(c => c.value === "Elite Leadership · Art · English · Finance · Sports")
+                        ?.availableSessions.map((session, idx, arr) => {
+                          const sessionData = formOptions.sessionOptions.find(s => s.value === session);
+                          return (
+                            <span key={session}>
+                              <strong>{session}</strong>
+                              {sessionData && ` (${formatDate(sessionData.startDate)} - ${formatDate(sessionData.endDate)})`}
+                              {idx < arr.length - 1 ? ", " : ""}
+                            </span>
+                          );
+                        })}
+                    </div>
+                  </div>
+                  <div className="cultural-trip-card-simple sessions-reference-box">
+                    <div className="trip-icon-large">📅</div>
+                    <h3>Session Dates Reference</h3>
+                    <ul className="sessions-list">
+                      {formOptions.sessionOptions.map((session) => (
+                        <li key={session.value}>
+                          <strong>{session.value}:</strong> {formatDate(session.startDate)} - {formatDate(session.endDate)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

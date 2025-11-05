@@ -280,6 +280,9 @@ export const useApplicationForm = () => {
         // Show success state
         setSubmitSuccess(true);
 
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         // Reset form after successful submission
         reset(defaultValues);
         setEmailValidation(null);

@@ -787,7 +787,7 @@ const ApplicationForm = () => {
                   className={`form-checkbox ${errorPulse["sessions"] ? "input-error-pulse" : ""
                     }`}
                 />
-                {option.label} (2 weeks) - {sessionPrice}
+                {option.label} (2 weeks){formValues.pricingTier && ` - ${sessionPrice}`}
               </label>
             );
           })}

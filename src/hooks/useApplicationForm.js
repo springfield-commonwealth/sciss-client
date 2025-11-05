@@ -40,6 +40,15 @@ export const useApplicationForm = () => {
       parentWhatsapp: "",
       currentSchoolName: "",
       financialAidInterest: undefined,
+      pricingTier: undefined,
+      airportPickup: undefined,
+      hearAboutUs: [],
+      hearAboutUsOther: "",
+      questionsNotes: "",
+      photoPermission: undefined,
+      allergiesOrMedicalCare: "",
+      depositConfirmation: undefined,
+      receiptEmail: "",
       transcript: [],
     }),
     []
@@ -105,6 +114,28 @@ export const useApplicationForm = () => {
             "sports",
             currentSports.filter((sport) => sport !== value)
           );
+        }
+      } else if (name === "hearAboutUs") {
+        // Handle "How did you hear about us" checkboxes
+        const currentOptions = formValues.hearAboutUs || [];
+        if (checked) {
+          let newOptions = [...currentOptions, value];
+          // If "Referred by an Organization" is selected, also automatically select "Other"
+          if (value === "Referred by an Organization" && !newOptions.includes("Other")) {
+            newOptions.push("Other");
+          }
+          setValue("hearAboutUs", newOptions);
+          // Trigger validation for hearAboutUs and hearAboutUsOther
+          trigger("hearAboutUs");
+          if (newOptions.includes("Other")) {
+            trigger("hearAboutUsOther");
+          }
+        } else {
+          let newOptions = currentOptions.filter((option) => option !== value);
+          // If "Referred by an Organization" is deselected, also deselect "Other" if it was only selected because of that
+          // (We'll keep it simple - if they deselect "Referred by an Organization", we won't auto-deselect "Other" in case they want both)
+          setValue("hearAboutUs", newOptions);
+          trigger("hearAboutUs");
         }
       } else if (name === "sessions") {
         // Handle session checkboxes

@@ -77,6 +77,7 @@ const ApplicationForm = () => {
       "currentSchoolName",
       "yearApplyingFor",
       "tshirtSize",
+      "pricingTier",
       "address.country",
       "address.address1",
       "address.city",
@@ -89,6 +90,11 @@ const ApplicationForm = () => {
       "parentEmail",
       "parentPhone",
       "financialAidInterest",
+      "airportPickup",
+      "hearAboutUs",
+      "photoPermission",
+      "allergiesOrMedicalCare",
+      "depositConfirmation",
     ];
 
     const completedFields = requiredFields.filter((field) => {
@@ -537,6 +543,44 @@ const ApplicationForm = () => {
             ))}
           </select>
         </label>
+        <label className="form-label">
+          <span className="label-text">
+            Airport Pickup <span className="asterisk">*</span>
+          </span>
+          <p className="field-note" style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.5rem' }}>
+            Two Way Airport Transfer: New York $600, Boston $400, Bradley $200. One Way: New York $300, Boston $200, Bradley $100
+          </p>
+          {getFieldError("airportPickup") && (
+            <span className="error">{getFieldError("airportPickup")}</span>
+          )}
+          <div
+            className="radio-group"
+            role="group"
+            aria-labelledby="label_airport_pickup"
+          >
+            {formOptions.airportPickupOptions.map((option) => {
+              const radioId = `airportPickup_${option.value.replace(/\s+/g, '_')}`;
+              return (
+                <span key={option.value} className="form-radio-item">
+                  <input
+                    type="radio"
+                    name="airportPickup"
+                    id={radioId}
+                    value={option.value}
+                    checked={formValues.airportPickup === option.value}
+                    onChange={onChange}
+                    onBlur={handleBlur}
+                    className={`form-radio ${errorPulse["airportPickup"] ? "input-error-pulse" : ""
+                      }`}
+                  />
+                  <label htmlFor={radioId} className="form-radio-label">
+                    {option.label}
+                  </label>
+                </span>
+              );
+            })}
+          </div>
+        </label>
       </fieldset>
 
       {/* Address */}
@@ -662,29 +706,91 @@ const ApplicationForm = () => {
         </label>
       </fieldset>
 
+      {/* Pricing Tier */}
+      <fieldset>
+        <legend>Summer Camp Pricing <span className="asterisk">*</span></legend>
+        <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
+          Early Bird Discount: $4,950 per session (Payment must be made by April 1, 2026). Regular: $5,500 per session. <strong>Group discounts are available. Contact us for special registration pricing.</strong>
+        </p>
+        {getFieldError("pricingTier") && (
+          <span className="error">{getFieldError("pricingTier")}</span>
+        )}
+        <div
+          className="radio-group"
+          role="group"
+          aria-labelledby="label_pricing_tier"
+        >
+          <span className="form-radio-item">
+            <input
+              type="radio"
+              name="pricingTier"
+              id="pricingTierRegular"
+              value="Regular"
+              checked={formValues.pricingTier === "Regular"}
+              onChange={onChange}
+              onBlur={handleBlur}
+              className={`form-radio ${errorPulse["pricingTier"] ? "input-error-pulse" : ""
+                }`}
+            />
+            <label htmlFor="pricingTierRegular" className="form-radio-label">
+              Regular Pricing ($5,500 per session)
+            </label>
+          </span>
+          <span className="form-radio-item">
+            <input
+              type="radio"
+              name="pricingTier"
+              id="pricingTierEarlyBird"
+              value="Early Bird"
+              checked={formValues.pricingTier === "Early Bird"}
+              onChange={onChange}
+              onBlur={handleBlur}
+              className={`form-radio ${errorPulse["pricingTier"] ? "input-error-pulse" : ""
+                }`}
+            />
+            <label htmlFor="pricingTierEarlyBird" className="form-radio-label">
+              Early Bird Discount ($4,950 per session - Payment by April 1, 2026)
+            </label>
+          </span>
+        </div>
+      </fieldset>
+
       {/* Sessions */}
       <fieldset>
         <legend>Sessions <span className="asterisk">*</span></legend>
         <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
           Please select one or more sessions you wish to attend. You'll choose a track for each session in the next step.
+          {formValues.pricingTier && (
+            <span style={{ display: 'block', marginTop: '0.5rem', fontWeight: '600' }}>
+              Price per session: {formValues.pricingTier === "Early Bird" ? "$4,950" : "$5,500"}
+              {formValues.sessions && formValues.sessions.length > 0 && (
+                <span style={{ display: 'block', marginTop: '0.25rem' }}>
+                  Total: ${(formValues.sessions.length * (formValues.pricingTier === "Early Bird" ? 4950 : 5500)).toLocaleString()}
+                </span>
+              )}
+            </span>
+          )}
         </p>
         <div className="form-row">
-          {formOptions.sessionOptions.map((option, idx) => (
-            <label key={option.value} className="checkbox-label">
-              <input
-                type="checkbox"
-                id={`session_${idx}`}
-                name="sessions"
-                value={option.value}
-                checked={(formValues.sessions || []).includes(option.value)}
-                onChange={onChange}
-                onBlur={handleBlur}
-                className={`form-checkbox ${errorPulse["sessions"] ? "input-error-pulse" : ""
-                  }`}
-              />
-              {option.label}
-            </label>
-          ))}
+          {formOptions.sessionOptions.map((option, idx) => {
+            const sessionPrice = formValues.pricingTier === "Early Bird" ? "$4,950" : "$5,500";
+            return (
+              <label key={option.value} className="checkbox-label">
+                <input
+                  type="checkbox"
+                  id={`session_${idx}`}
+                  name="sessions"
+                  value={option.value}
+                  checked={(formValues.sessions || []).includes(option.value)}
+                  onChange={onChange}
+                  onBlur={handleBlur}
+                  className={`form-checkbox ${errorPulse["sessions"] ? "input-error-pulse" : ""
+                    }`}
+                />
+                {option.label} (2 weeks) - {sessionPrice}
+              </label>
+            );
+          })}
         </div>
         {getFieldError("sessions") && (
           <span className="error">{getFieldError("sessions")}</span>
@@ -875,6 +981,244 @@ const ApplicationForm = () => {
               }`}
           />
         </label>
+
+        {/* How did you hear about us? (16) */}
+        <fieldset>
+          <legend>How did you hear about us? <span className="asterisk">*</span></legend>
+          <div className="form-row">
+            {formOptions.hearAboutUsOptions.map((option) => (
+              <label key={option.value} className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="hearAboutUs"
+                  value={option.value}
+                  checked={(formValues.hearAboutUs || []).includes(option.value)}
+                  onChange={onChange}
+                  onBlur={handleBlur}
+                  className={`form-checkbox ${errorPulse["hearAboutUs"] ? "input-error-pulse" : ""
+                    }`}
+                />
+                {option.label}
+              </label>
+            ))}
+          </div>
+          {(formValues.hearAboutUs || []).includes("Other") && (
+            <div style={{ marginTop: '1rem', width: '100%' }}>
+              <label className="form-label">
+                <span className="label-text">Please specify</span>
+                {getFieldError("hearAboutUsOther") && (
+                  <span className="error">{getFieldError("hearAboutUsOther")}</span>
+                )}
+                <input
+                  type="text"
+                  name="hearAboutUsOther"
+                  value={formValues.hearAboutUsOther || ""}
+                  onChange={onChange}
+                  onBlur={handleBlur}
+                  placeholder="Please specify how you heard about us"
+                  className={`form-input ${errorPulse["hearAboutUsOther"] ? "input-error-pulse" : ""
+                    }`}
+                />
+              </label>
+            </div>
+          )}
+          {getFieldError("hearAboutUs") && (
+            <span className="error">{getFieldError("hearAboutUs")}</span>
+          )}
+        </fieldset>
+
+        {/* Questions/Notes (17) */}
+        <fieldset>
+          <legend>Questions or Notes</legend>
+          <label className="form-label">
+            <span className="label-text">
+              If you have any questions, please leave a note
+            </span>
+            {getFieldError("questionsNotes") && (
+              <span className="error">{getFieldError("questionsNotes")}</span>
+            )}
+            <textarea
+              name="questionsNotes"
+              value={formValues.questionsNotes || ""}
+              onChange={onChange}
+              onBlur={handleBlur}
+              rows={4}
+              className={`form-input ${errorPulse["questionsNotes"] ? "input-error-pulse" : ""
+                }`}
+              placeholder="Enter any questions or notes here..."
+            />
+          </label>
+        </fieldset>
+
+        {/* Photo Permission (18) */}
+        <fieldset>
+          <legend>Photo Permission <span className="asterisk">*</span></legend>
+          <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
+            We will be taking group photos during our summer camp activity. These photos may be used for documentation, promotional materials, or shared within our community. Do you allow SCISS to use photos that include your child for promotional purposes? (All photos will be carefully selected)
+          </p>
+          {getFieldError("photoPermission") && (
+            <span className="error">{getFieldError("photoPermission")}</span>
+          )}
+          <div
+            className="radio-group"
+            role="group"
+            aria-labelledby="label_photo_permission"
+          >
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="photoPermission"
+                id="photoPermissionYes"
+                value="Yes"
+                checked={formValues.photoPermission === "Yes"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["photoPermission"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="photoPermissionYes" className="form-radio-label">
+                Yes
+              </label>
+            </span>
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="photoPermission"
+                id="photoPermissionNo"
+                value="No"
+                checked={formValues.photoPermission === "No"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["photoPermission"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="photoPermissionNo" className="form-radio-label">
+                No
+              </label>
+            </span>
+          </div>
+        </fieldset>
+
+        {/* WeChat Information (19) */}
+        <fieldset>
+          <legend>Additional Information</legend>
+          <div className="field-note" style={{ padding: '1rem', backgroundColor: '#f7f8fa', borderRadius: '6px', marginBottom: '1rem' }}>
+            <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
+              <strong>WeChat Contact:</strong> Please add "SC-Academy-Q斯" (WeChat ID: chinchinss) for more information and details about our summer camp.
+            </p>
+          </div>
+        </fieldset>
+
+        {/* Refund Policy (20) */}
+        <fieldset>
+          <legend>Refund Policy</legend>
+          <div className="field-note" style={{ padding: '1rem', backgroundColor: '#f7f8fa', borderRadius: '6px', marginBottom: '1rem' }}>
+            <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.95rem', lineHeight: '1.6' }}>
+              <strong>90% Cash Refund:</strong> Available for cancellations made before June 1st.
+            </p>
+            <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.95rem', lineHeight: '1.6' }}>
+              <strong>50% Cash Refund or 90% Credit for Future Program:</strong> Available up to two weeks before the program starts.
+            </p>
+            <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
+              <strong>No Cash Refunds After Program Start:</strong> Refunds will not be issued once summer begins. However, 90% can be credited or transferred for future programs.
+            </p>
+          </div>
+        </fieldset>
+
+        {/* Allergies/Medical Care (21) */}
+        <fieldset>
+          <legend>Medical Information <span className="asterisk">*</span></legend>
+          <label className="form-label">
+            <span className="label-text">
+              If the student has any allergy and needs any medicine/special care, please indicate details below. If your child has no allergies, please write N/A.
+            </span>
+            {getFieldError("allergiesOrMedicalCare") && (
+              <span className="error">{getFieldError("allergiesOrMedicalCare")}</span>
+            )}
+            <textarea
+              name="allergiesOrMedicalCare"
+              value={formValues.allergiesOrMedicalCare || ""}
+              onChange={onChange}
+              onBlur={handleBlur}
+              rows={4}
+              className={`form-input ${errorPulse["allergiesOrMedicalCare"] ? "input-error-pulse" : ""
+                }`}
+              placeholder="Enter allergy or medical care information here, or write N/A if none..."
+            />
+          </label>
+        </fieldset>
+
+        {/* $500 Deposit Confirmation (22) */}
+        <fieldset>
+          <legend>$500 Deposit to Secure Spot <span className="asterisk">*</span></legend>
+          <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
+            Would you like to pay a $500 deposit to secure your spot? After we receive your application, we will contact you with payment instructions.
+          </p>
+          {getFieldError("depositConfirmation") && (
+            <span className="error">{getFieldError("depositConfirmation")}</span>
+          )}
+          <div
+            className="radio-group"
+            role="group"
+            aria-labelledby="label_deposit_confirmation"
+          >
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="depositConfirmation"
+                id="depositConfirmationYes"
+                value="Yes"
+                checked={formValues.depositConfirmation === "Yes"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["depositConfirmation"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="depositConfirmationYes" className="form-radio-label">
+                Yes
+              </label>
+            </span>
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="depositConfirmation"
+                id="depositConfirmationNo"
+                value="No"
+                checked={formValues.depositConfirmation === "No"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["depositConfirmation"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="depositConfirmationNo" className="form-radio-label">
+                No
+              </label>
+            </span>
+          </div>
+        </fieldset>
+
+        {/* Email to Receive Receipt (23) */}
+        <fieldset>
+          <legend>Email to Receive Receipt</legend>
+          <label className="form-label">
+            {getFieldError("receiptEmail") && (
+              <span className="error">{getFieldError("receiptEmail")}</span>
+            )}
+            <input
+              type="email"
+              name="receiptEmail"
+              value={formValues.receiptEmail || ""}
+              onChange={onChange}
+              onBlur={handleBlur}
+              className={`form-input ${errorPulse["receiptEmail"] ? "input-error-pulse" : ""
+                }`}
+              placeholder="Enter email address for receipt"
+            />
+            <p className="field-note" style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#666' }}>
+              If you cannot pay by Zelle, please contact <a href="mailto:si.qin@springfieldca.org" style={{ color: '#17407e' }}>si.qin@springfieldca.org</a>
+            </p>
+          </label>
+        </fieldset>
       </fieldset>
 
       {/* Financial Aid Interest (moved above transcript upload) */}

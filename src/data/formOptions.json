@@ -180,5 +180,53 @@
       "value": "Gym",
       "label": "Gym"
     }
+  ],
+  "airportPickupOptions": [
+    {
+      "value": "No",
+      "label": "No"
+    },
+    {
+      "value": "Yes One Way",
+      "label": "Yes One Way (New York $300, Boston $200, Bradley $100)"
+    },
+    {
+      "value": "Yes Two Way",
+      "label": "Yes Two Way (New York $600, Boston $400, Bradley $200)"
+    }
+  ],
+  "hearAboutUsOptions": [
+    {
+      "value": "Online Search",
+      "label": "Online Search"
+    },
+    {
+      "value": "Social Media",
+      "label": "Social Media"
+    },
+    {
+      "value": "SCA/Visewise Academy",
+      "label": "SCA/Visewise Academy"
+    },
+    {
+      "value": "Friends or Family",
+      "label": "Friends or Family"
+    },
+    {
+      "value": "Flyer or Brochure",
+      "label": "Flyer or Brochure"
+    },
+    {
+      "value": "Webinar/Event",
+      "label": "Webinar/Event"
+    },
+    {
+      "value": "Referred by an Organization",
+      "label": "Referred by an Organization (please specify in 'other' field)"
+    },
+    {
+      "value": "Other",
+      "label": "Other"
+    }
   ]
 }

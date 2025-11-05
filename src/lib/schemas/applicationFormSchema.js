@@ -119,6 +119,40 @@ export const applicationFormSchema = z
       invalid_type_error: "Please indicate financial aid interest",
     }),
     currentSchoolName: z.string().min(1, "Current school name is required"),
+    pricingTier: z.enum(["Regular", "Early Bird"], {
+      required_error: "Please select pricing tier",
+      invalid_type_error: "Please select pricing tier",
+    }),
+    airportPickup: z.enum(["No", "Yes One Way", "Yes Two Way"], {
+      required_error: "Please select airport pickup option",
+      invalid_type_error: "Please select airport pickup option",
+    }),
+    hearAboutUs: z
+      .array(
+        z.enum([
+          "Online Search",
+          "Social Media",
+          "SCA/Visewise Academy",
+          "Friends or Family",
+          "Flyer or Brochure",
+          "Webinar/Event",
+          "Referred by an Organization",
+          "Other",
+        ])
+      )
+      .min(1, "Please select at least one option"),
+    hearAboutUsOther: z.string().optional(),
+    questionsNotes: z.string().max(1000, "Notes must be at most 1000 characters").optional(),
+    photoPermission: z.enum(["Yes", "No"], {
+      required_error: "Please indicate photo permission",
+      invalid_type_error: "Please indicate photo permission",
+    }),
+    allergiesOrMedicalCare: z.string().min(1, "Medical information is required. Please write N/A if your child has no allergies.").max(500, "Allergy/Medical care notes must be at most 500 characters"),
+    depositConfirmation: z.enum(["Yes", "No"], {
+      required_error: "Please confirm if you would like to pay the $500 deposit to secure your spot",
+      invalid_type_error: "Please confirm if you would like to pay the $500 deposit to secure your spot",
+    }),
+    receiptEmail: z.string().email("Please enter a valid email address").optional().or(z.literal("")),
     transcript: z
       .array(z.any())
       .max(3, "You can upload a maximum of 3 files")
@@ -162,6 +196,15 @@ export const applicationFormSchema = z
         path: ["transcript"],
         code: z.ZodIssueCode.custom,
         message: "At least one file is required for financial aid applicants",
+      });
+    }
+
+    // Validate that if "Other" is selected in hearAboutUs, hearAboutUsOther must be provided
+    if (data.hearAboutUs && data.hearAboutUs.includes("Other") && (!data.hearAboutUsOther || data.hearAboutUsOther.trim() === "")) {
+      ctx.addIssue({
+        path: ["hearAboutUsOther"],
+        code: z.ZodIssueCode.custom,
+        message: "Please specify how you heard about us",
       });
     }
 

@@ -710,7 +710,7 @@ const ApplicationForm = () => {
       <fieldset>
         <legend>Summer Camp Pricing <span className="asterisk">*</span></legend>
         <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
-          Early Bird Discount: $4,950 per session (Payment must be made by April 1, 2026). Regular: $5,500 per session. <strong>Group discounts are available. Contact us for special registration pricing.</strong>
+          Regular: $5,500 per session. <strong>Group discounts are available. Contact us for special registration pricing.</strong>
         </p>
         {getFieldError("pricingTier") && (
           <span className="error">{getFieldError("pricingTier")}</span>
@@ -736,22 +736,6 @@ const ApplicationForm = () => {
               Regular Pricing ($5,500 per session)
             </label>
           </span>
-          <span className="form-radio-item">
-            <input
-              type="radio"
-              name="pricingTier"
-              id="pricingTierEarlyBird"
-              value="Early Bird"
-              checked={formValues.pricingTier === "Early Bird"}
-              onChange={onChange}
-              onBlur={handleBlur}
-              className={`form-radio ${errorPulse["pricingTier"] ? "input-error-pulse" : ""
-                }`}
-            />
-            <label htmlFor="pricingTierEarlyBird" className="form-radio-label">
-              Early Bird Discount ($4,950 per session - Payment by April 1, 2026)
-            </label>
-          </span>
         </div>
       </fieldset>
 
@@ -762,10 +746,10 @@ const ApplicationForm = () => {
           Please select one or more sessions you wish to attend. You'll choose a track for each session in the next step.
           {formValues.pricingTier && (
             <span style={{ display: 'block', marginTop: '0.5rem', fontWeight: '600' }}>
-              Price per session: {formValues.pricingTier === "Early Bird" ? "$4,950" : "$5,500"}
+              Price per session: $5,500
               {formValues.sessions && formValues.sessions.length > 0 && (
                 <span style={{ display: 'block', marginTop: '0.25rem' }}>
-                  Total: ${(formValues.sessions.length * (formValues.pricingTier === "Early Bird" ? 4950 : 5500)).toLocaleString()}
+                  Total: ${(formValues.sessions.length * 5500).toLocaleString()}
                 </span>
               )}
             </span>
@@ -773,7 +757,7 @@ const ApplicationForm = () => {
         </p>
         <div className="form-row">
           {formOptions.sessionOptions.map((option, idx) => {
-            const sessionPrice = formValues.pricingTier === "Early Bird" ? "$4,950" : "$5,500";
+            const sessionPrice = "$5,500";
             return (
               <label key={option.value} className="checkbox-label">
                 <input
@@ -1120,7 +1104,7 @@ const ApplicationForm = () => {
               <strong>50% Cash Refund or 90% Credit for Future Program:</strong> Available up to two weeks before the program starts.
             </p>
             <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
-              <strong>No Cash Refunds After Program Start:</strong> Refunds will not be issued once summer begins. However, 90% can be credited or transferred for future programs.
+              <strong>No Cash Refunds After Program Start:</strong> Refunds will not be issued once summer begins. However, 50% can be credited.
             </p>
           </div>
         </fieldset>

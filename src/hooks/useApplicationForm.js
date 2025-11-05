@@ -119,11 +119,11 @@ export const useApplicationForm = () => {
         // Handle "How did you hear about us" checkboxes
         const currentOptions = formValues.hearAboutUs || [];
         if (checked) {
-          let newOptions = [...currentOptions, value];
+          const baseOptions = [...currentOptions, value];
           // If "Referred by an Organization" is selected, also automatically select "Other"
-          if (value === "Referred by an Organization" && !newOptions.includes("Other")) {
-            newOptions = [...newOptions, "Other"];
-          }
+          const newOptions = value === "Referred by an Organization" && !baseOptions.includes("Other")
+            ? [...baseOptions, "Other"]
+            : baseOptions;
           setValue("hearAboutUs", newOptions);
           // Trigger validation for hearAboutUs and hearAboutUsOther
           trigger("hearAboutUs");

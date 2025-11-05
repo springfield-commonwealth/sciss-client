@@ -122,7 +122,7 @@ export const useApplicationForm = () => {
           let newOptions = [...currentOptions, value];
           // If "Referred by an Organization" is selected, also automatically select "Other"
           if (value === "Referred by an Organization" && !newOptions.includes("Other")) {
-            newOptions.push("Other");
+            newOptions = [...newOptions, "Other"];
           }
           setValue("hearAboutUs", newOptions);
           // Trigger validation for hearAboutUs and hearAboutUsOther
@@ -131,7 +131,7 @@ export const useApplicationForm = () => {
             trigger("hearAboutUsOther");
           }
         } else {
-          let newOptions = currentOptions.filter((option) => option !== value);
+          const newOptions = currentOptions.filter((option) => option !== value);
           // If "Referred by an Organization" is deselected, also deselect "Other" if it was only selected because of that
           // (We'll keep it simple - if they deselect "Referred by an Organization", we won't auto-deselect "Other" in case they want both)
           setValue("hearAboutUs", newOptions);
@@ -262,7 +262,6 @@ export const useApplicationForm = () => {
   // Handle form submission
   const onSubmit = useCallback(
     async (data) => {
-      console.log('onSubmit called with data:', data);
       setIsSubmitting(true);
       setSubmitError(null);
       try {
@@ -275,10 +274,8 @@ export const useApplicationForm = () => {
             }
           }
         }
-        console.log('About to call submitApplication');
         // Submit to PHP backend
         const result = await submitApplication(data);
-        console.log('submitApplication result:', result);
 
         // Show success state
         setSubmitSuccess(true);

@@ -44,15 +44,21 @@ export const applicationFormSchema = z
         invalid_type_error: "Please select your t-shirt size",
       }
     ),
-    course: z
+    sessions: z
       .array(
+        z.enum(["Session 1", "Session 2", "Session 3", "Session 4"])
+      )
+      .min(1, "Please select at least one session"),
+    sessionTracks: z
+      .record(
+        z.enum(["Session 1", "Session 2", "Session 3", "Session 4"]),
         z.enum([
           "Path to Wall Street (Investment)",
           "Youth Innovation & Entrepreneurship (Teen Start-ups)",
           "Elite Leadership · Art · English · Finance · Sports",
         ])
       )
-      .min(1, "Please select at least one track"),
+      .optional(),
     sports: z
       .array(
         z.enum([
@@ -157,6 +163,63 @@ export const applicationFormSchema = z
         code: z.ZodIssueCode.custom,
         message: "At least one file is required for financial aid applicants",
       });
+    }
+
+    // Validate that each selected session has a track
+    if (data.sessions && data.sessions.length > 0) {
+      const sessionTracks = data.sessionTracks || {};
+      for (const session of data.sessions) {
+        if (!sessionTracks[session]) {
+          ctx.addIssue({
+            path: ["sessionTracks", session],
+            code: z.ZodIssueCode.custom,
+            message: `Please select a track for ${session}`,
+          });
+        }
+      }
+
+      // Validate that sessions don't overlap by comparing dates
+      // Hardcode session dates to avoid import issues during SSR
+      const sessionDates = {
+        "Session 1": {
+          start: new Date("2026-06-14"),
+          end: new Date("2026-06-26")
+        },
+        "Session 2": {
+          start: new Date("2026-06-28"),
+          end: new Date("2026-07-10")
+        },
+        "Session 3": {
+          start: new Date("2026-07-12"),
+          end: new Date("2026-07-24")
+        },
+        "Session 4": {
+          start: new Date("2026-07-26"),
+          end: new Date("2026-08-07")
+        }
+      };
+
+      // Check each pair of selected sessions for overlap
+      for (let i = 0; i < data.sessions.length; i++) {
+        for (let j = i + 1; j < data.sessions.length; j++) {
+          const session1 = data.sessions[i];
+          const session2 = data.sessions[j];
+          const dates1 = sessionDates[session1];
+          const dates2 = sessionDates[session2];
+
+          if (dates1 && dates2) {
+            // Check if sessions overlap: start1 <= end2 && start2 <= end1
+            if (dates1.start <= dates2.end && dates2.start <= dates1.end) {
+              ctx.addIssue({
+                path: ["sessions"],
+                code: z.ZodIssueCode.custom,
+                message: `${session1} and ${session2} have overlapping dates. Please select sessions that don't overlap.`,
+              });
+              return; // Stop after first overlap found
+            }
+          }
+        }
+      }
     }
   });
 

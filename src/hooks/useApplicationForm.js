@@ -23,7 +23,8 @@ export const useApplicationForm = () => {
       gender: undefined,
       risingGrade: undefined,
       tshirtSize: undefined,
-      course: [],
+      sessions: [],
+      sessionTracks: {},
       sports: [],
       address: {
         address1: "",
@@ -79,7 +80,18 @@ export const useApplicationForm = () => {
   const onChange = useCallback(
     (e) => {
       const { name, value, checked } = e.target;
-      if (name.includes(".")) {
+      if (name.startsWith("sessionTrack.")) {
+        // Handle track selection for a session (format: sessionTrack.Session 1)
+        // This must come BEFORE the general dot check to avoid incorrect parsing
+        const session = name.replace("sessionTrack.", "");
+        const currentSessionTracks = formValues.sessionTracks || {};
+        setValue("sessionTracks", {
+          ...currentSessionTracks,
+          [session]: value,
+        });
+        // Trigger validation for sessionTracks
+        trigger("sessionTracks");
+      } else if (name.includes(".")) {
         // Handle nested objects like studentName.first
         const [parent, key] = name.split(".");
         setValue(parent, { ...formValues[parent], [key]: value });
@@ -94,17 +106,23 @@ export const useApplicationForm = () => {
             currentSports.filter((sport) => sport !== value)
           );
         }
-      } else if (name === "course") {
-        // Handle course checkboxes
-        const currentCourses = formValues.course || [];
+      } else if (name === "sessions") {
+        // Handle session checkboxes
+        const currentSessions = formValues.sessions || [];
         if (checked) {
-          setValue("course", [...currentCourses, value]);
+          setValue("sessions", [...currentSessions, value]);
         } else {
-          setValue(
-            "course",
-            currentCourses.filter((course) => course !== value)
-          );
+          const updatedSessions = currentSessions.filter((session) => session !== value);
+          setValue("sessions", updatedSessions);
+          // Remove track selection for deselected session
+          const currentSessionTracks = formValues.sessionTracks || {};
+          const updatedSessionTracks = { ...currentSessionTracks };
+          delete updatedSessionTracks[value];
+          setValue("sessionTracks", updatedSessionTracks);
         }
+        // Trigger validation for both sessions and sessionTracks
+        trigger("sessions");
+        trigger("sessionTracks");
       } else {
         setValue(name, value);
       }
@@ -285,8 +303,16 @@ export const useApplicationForm = () => {
   const getFieldError = useCallback(
     (fieldName) => {
       if (fieldName.includes(".")) {
-        const [parent, key] = fieldName.split(".");
-        return errors[parent]?.[key]?.message;
+        const parts = fieldName.split(".");
+        let error = errors;
+        for (const part of parts) {
+          if (error && error[part]) {
+            error = error[part];
+          } else {
+            return undefined;
+          }
+        }
+        return error?.message;
       }
       return errors[fieldName]?.message;
     },

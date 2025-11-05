@@ -82,7 +82,7 @@ const ApplicationForm = () => {
       "address.city",
       "address.state",
       "address.zip",
-      "course",
+      "sessions",
       "sports",
       "parentName.first",
       "parentName.last",
@@ -662,37 +662,90 @@ const ApplicationForm = () => {
         </label>
       </fieldset>
 
-      {/* Program/Course */}
+      {/* Sessions */}
       <fieldset>
-        <legend>Track <span className="asterisk">*</span></legend>
-        <div className="form-note" style={{ marginBottom: '0.75rem', fontSize: '0.875rem', color: '#666', fontStyle: 'italic' }}>
-          <strong>Session Availability:</strong><br />
-          • Path to Wall Street (Investment): Sessions 2 & 3<br />
-          • Youth Innovation & Entrepreneurship: Sessions 1 & 4<br />
-          • Elite Leadership · Art · English · Finance · Sports: All 4 Sessions
-        </div>
+        <legend>Sessions <span className="asterisk">*</span></legend>
+        <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
+          Please select one or more sessions you wish to attend. You'll choose a track for each session in the next step.
+        </p>
         <div className="form-row">
-          {formOptions.courseOptions.map((option, idx) => (
+          {formOptions.sessionOptions.map((option, idx) => (
             <label key={option.value} className="checkbox-label">
               <input
                 type="checkbox"
-                id={`course_${idx}`}
-                name="course"
+                id={`session_${idx}`}
+                name="sessions"
                 value={option.value}
-                checked={formValues.course.includes(option.value)}
+                checked={(formValues.sessions || []).includes(option.value)}
                 onChange={onChange}
                 onBlur={handleBlur}
-                className={`form-checkbox ${errorPulse["course"] ? "input-error-pulse" : ""
+                className={`form-checkbox ${errorPulse["sessions"] ? "input-error-pulse" : ""
                   }`}
               />
               {option.label}
             </label>
           ))}
         </div>
-        {getFieldError("course") && (
-          <span className="error">{getFieldError("course")}</span>
+        {getFieldError("sessions") && (
+          <span className="error">{getFieldError("sessions")}</span>
         )}
       </fieldset>
+
+      {/* Track Selection for Each Session */}
+      {formValues.sessions && Array.isArray(formValues.sessions) && formValues.sessions.length > 0 && (
+        <fieldset>
+          <legend>Track Selection <span className="asterisk">*</span></legend>
+          <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
+            Please select a track for each session you selected above.
+          </p>
+          {formValues.sessions.map((session) => {
+            // Get available tracks for this session
+            const availableTracks = formOptions.courseOptions.filter(track =>
+              track.availableSessions.includes(session)
+            );
+
+            return (
+              <div key={session} style={{ marginBottom: '1.5rem', padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '6px' }}>
+                <label className="form-label" style={{ marginBottom: '0.75rem', fontWeight: '600', fontSize: '1rem' }}>
+                  <span className="label-text">
+                    {formOptions.sessionOptions.find(s => s.value === session)?.label}
+                    <span className="asterisk">*</span>
+                  </span>
+                </label>
+                {getFieldError(`sessionTracks.${session}`) && (
+                  <span className="error" style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    {getFieldError(`sessionTracks.${session}`)}
+                  </span>
+                )}
+                <div className="form-row">
+                  {availableTracks.map((track, trackIndex) => {
+                    const radioId = `sessionTrack_${session}_${trackIndex}`;
+                    const radioName = `sessionTrack.${session}`;
+                    return (
+                      <span key={track.value} className="form-radio-item">
+                        <input
+                          type="radio"
+                          id={radioId}
+                          name={radioName}
+                          value={track.value}
+                          checked={formValues.sessionTracks?.[session] === track.value}
+                          onChange={onChange}
+                          onBlur={handleBlur}
+                          className={`form-radio ${errorPulse[`sessionTracks.${session}`] ? "input-error-pulse" : ""
+                            }`}
+                        />
+                        <label htmlFor={radioId} className="form-radio-label">
+                          {track.label}
+                        </label>
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </fieldset>
+      )}
 
       {/* Sports */}
       <fieldset>

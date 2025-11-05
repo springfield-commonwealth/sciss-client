@@ -81,18 +81,58 @@
       "label": "Male XS"
     }
   ],
+  "sessionOptions": [
+    {
+      "value": "Session 1",
+      "label": "Session 1: June 14 - June 26",
+      "startDate": "2026-06-14",
+      "endDate": "2026-06-26"
+    },
+    {
+      "value": "Session 2",
+      "label": "Session 2: June 28 - July 10",
+      "startDate": "2026-06-28",
+      "endDate": "2026-07-10"
+    },
+    {
+      "value": "Session 3",
+      "label": "Session 3: July 12 - July 24",
+      "startDate": "2026-07-12",
+      "endDate": "2026-07-24"
+    },
+    {
+      "value": "Session 4",
+      "label": "Session 4: July 26 - August 7",
+      "startDate": "2026-07-26",
+      "endDate": "2026-08-07"
+    }
+  ],
   "courseOptions": [
     {
       "value": "Path to Wall Street (Investment)",
-      "label": "Path to Wall Street (Investment)"
+      "label": "Path to Wall Street (Investment)",
+      "availableSessions": [
+        "Session 2",
+        "Session 3"
+      ]
     },
     {
       "value": "Youth Innovation & Entrepreneurship (Teen Start-ups)",
-      "label": "Youth Innovation & Entrepreneurship (Teen Start-ups)"
+      "label": "Youth Innovation & Entrepreneurship (Teen Start-ups)",
+      "availableSessions": [
+        "Session 1",
+        "Session 4"
+      ]
     },
     {
       "value": "Elite Leadership · Art · English · Finance · Sports",
-      "label": "Elite Leadership · Art · English · Finance · Sports"
+      "label": "Elite Leadership · Art · English · Finance · Sports",
+      "availableSessions": [
+        "Session 1",
+        "Session 2",
+        "Session 3",
+        "Session 4"
+      ]
     }
   ],
   "sportsOptions": [

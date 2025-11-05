@@ -55,7 +55,12 @@ export const submitApplication = async (formData) => {
       gender: formData.gender,
       risingGrade: formData.risingGrade,
       tshirtSize: formData.tshirtSize,
-      course: formData.course,
+      // Include both new format (sessions/sessionTracks) and legacy format (course) for compatibility
+      sessions: formData.sessions || [],
+      sessionTracks: formData.sessionTracks || {},
+      course: formData.sessions && formData.sessionTracks
+        ? Object.values(formData.sessionTracks).filter((track, index, self) => self.indexOf(track) === index)
+        : formData.course || [],
       sports: formData.sports,
       address: {
         address1: formData.address.address1,

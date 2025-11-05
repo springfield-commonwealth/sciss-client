@@ -306,10 +306,34 @@
 .application-form input[type="radio"] {
   accent-color: var(--color-primary-500);
   transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 0.4);
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: radio;
+  appearance: radio;
 }
 
 .application-form input[type="radio"]:hover {
   transform: scale(1.15);
+}
+
+.application-form input[type="radio"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.application-form input[type="radio"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.application-form input[type="radio"]:checked {
+  accent-color: var(--color-primary-500);
+}
+
+.application-form input[type="radio"]:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .form-radio-label {
@@ -325,7 +349,7 @@
 }
 
 .form-radio-label:hover {
-  color: var(--color-primary-600);
+  color: inherit;
 }
 
 /* File Upload Styles */
@@ -1002,12 +1026,17 @@
 
 /* Enhanced focus states */
 .form-input:focus-visible,
-.form-radio:focus-visible,
 .form-checkbox:focus-visible {
   outline: 2px solid var(--accent-yellow);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px rgba(230, 196, 59, 0.2);
   animation: focusGlow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Radio buttons - no focus outline */
+.form-radio:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 @keyframes focusGlow {

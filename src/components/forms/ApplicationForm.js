@@ -93,7 +93,6 @@ const ApplicationForm = () => {
       "financialAidInterest",
       "airportPickup",
       "hearAboutUs",
-      "photoPermission",
       "allergiesOrMedicalCare",
       "depositConfirmation",
       "liabilityInitials",
@@ -1136,54 +1135,6 @@ const ApplicationForm = () => {
           </label>
         </fieldset>
 
-        {/* Photo Permission (18) */}
-        <fieldset>
-          <legend>Photo and Video Permission<span className="asterisk">*</span></legend>
-          <p className="field-note" style={{ marginBottom: '1rem', fontSize: '0.875rem', color: '#666' }}>
-            We will be taking group photos and videos during our summer camp activity. These photos and videos may be used for documentation, promotional materials, or shared within our community. Do you allow SCISS to use photos and videos that include your child for promotional purposes? (All photos and videos will be carefully selected)
-          </p>
-          {getFieldError("photoPermission") && (
-            <span className="error">{getFieldError("photoPermission")}</span>
-          )}
-          <div
-            className="radio-group"
-            role="group"
-            aria-labelledby="label_photo_permission"
-          >
-            <span className="form-radio-item">
-              <input
-                type="radio"
-                name="photoPermission"
-                id="photoPermissionYes"
-                value="Yes"
-                checked={formValues.photoPermission === "Yes"}
-                onChange={onChange}
-                onBlur={handleBlur}
-                className={`form-radio ${errorPulse["photoPermission"] ? "input-error-pulse" : ""
-                  }`}
-              />
-              <label htmlFor="photoPermissionYes" className="form-radio-label">
-                Yes
-              </label>
-            </span>
-            <span className="form-radio-item">
-              <input
-                type="radio"
-                name="photoPermission"
-                id="photoPermissionNo"
-                value="No"
-                checked={formValues.photoPermission === "No"}
-                onChange={onChange}
-                onBlur={handleBlur}
-                className={`form-radio ${errorPulse["photoPermission"] ? "input-error-pulse" : ""
-                  }`}
-              />
-              <label htmlFor="photoPermissionNo" className="form-radio-label">
-                No
-              </label>
-            </span>
-          </div>
-        </fieldset>
 
         {/* WeChat Information (19) */}
         <fieldset>
@@ -1200,7 +1151,7 @@ const ApplicationForm = () => {
           <legend>Refund Policy</legend>
           <div className="field-note" style={{ padding: '1rem', backgroundColor: '#f7f8fa', borderRadius: '6px', marginBottom: '1rem' }}>
             <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.95rem', lineHeight: '1.6' }}>
-              <strong>90% Cash Refund:</strong> Available for cancellations made before June 1st.
+              <strong>90% Cash Refund:</strong> Available for cancellations made before May 31st.
             </p>
             <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.95rem', lineHeight: '1.6' }}>
               <strong>50% Cash Refund or 90% Credit for Future Program:</strong> Available up to two weeks before the program starts.

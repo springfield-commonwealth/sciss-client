@@ -79,7 +79,7 @@ export const submitApplication = async (formData) => {
       hearAboutUs: formData.hearAboutUs || [],
       hearAboutUsOther: formData.hearAboutUsOther || "",
       questionsNotes: formData.questionsNotes || "",
-      photoPermission: formData.photoPermission,
+      photoPermission: formData.photoPermission || null,
       allergiesOrMedicalCare: formData.allergiesOrMedicalCare || "",
       depositConfirmation: formData.depositConfirmation,
       liabilityInitials: formData.liabilityInitials || "",

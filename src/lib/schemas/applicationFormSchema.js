@@ -148,10 +148,7 @@ export const applicationFormSchema = z
       .min(1, "Please select at least one option"),
     hearAboutUsOther: z.string().optional(),
     questionsNotes: z.string().max(1000, "Notes must be at most 1000 characters").optional(),
-    photoPermission: z.enum(["Yes", "No"], {
-      required_error: "Please indicate photo permission",
-      invalid_type_error: "Please indicate photo permission",
-    }),
+    photoPermission: z.enum(["Yes", "No"]).optional(),
     allergiesOrMedicalCare: z.string().min(1, "Medical information is required. Please write N/A if your child has no allergies.").max(500, "Allergy/Medical care notes must be at most 500 characters"),
     depositConfirmation: z.enum(["Yes", "No"], {
       required_error: "Please confirm if you would like to pay the $500 deposit to secure your spot",

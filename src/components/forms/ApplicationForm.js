@@ -83,6 +83,7 @@ const ApplicationForm = () => {
       "address.city",
       "address.state",
       "address.zip",
+      "hasValidVisa",
       "sessions",
       "sports",
       "parentName.first",
@@ -95,6 +96,7 @@ const ApplicationForm = () => {
       "photoPermission",
       "allergiesOrMedicalCare",
       "depositConfirmation",
+      "liabilityInitials",
     ];
 
     const completedFields = requiredFields.filter((field) => {
@@ -1279,6 +1281,82 @@ const ApplicationForm = () => {
               </label>
             </span>
           </div>
+        </fieldset>
+
+        {/* Liability and Insurance Clauses */}
+        <fieldset>
+          <legend>Liability and Insurance Clauses <span className="asterisk">*</span></legend>
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: '#f7f8fa',
+            borderRadius: '6px',
+            marginBottom: '1.5rem',
+            border: '1px solid #e0e0e0',
+            fontSize: '0.95rem',
+            lineHeight: '1.7'
+          }}>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Assumption of Risk</h3>
+              <p style={{ margin: 0 }}>
+                I understand that participation in the SCISS Summer School program may involve academic, recreational, and cultural activities that carry certain inherent risks, including but not limited to minor injuries, illness, or property loss. While SCISS will take reasonable steps to ensure safety and supervision, I voluntarily assume all risks associated with participation in the program on behalf of myself/my child.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Insurance Coverage</h3>
+              <p style={{ margin: 0 }}>
+                SCISS provides event insurance for program-related activities and onsite insurance for international students during their stay in the USA. However, all participants — including international students — are required to maintain valid personal travel and medical insurance that provides coverage for the full duration of their study and stay in the USA. Proof of insurance coverage must be submitted before the start of the program.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Release of Liability</h3>
+              <p style={{ margin: 0 }}>
+                In consideration of participation in the Summer School program, I hereby release and hold harmless SCISS, its directors, employees, agents, and volunteers from any and all claims, liabilities, or damages arising from participation in program activities, except in cases of proven negligence or willful misconduct.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Medical Authorization</h3>
+              <p style={{ margin: 0 }}>
+                In the event of illness or injury, I authorize SCISS staff to obtain or arrange medical treatment as deemed necessary for myself/my child. I understand that such costs may be covered, in whole or in part, by the school-provided insurance and/or my personal insurance. I accept responsibility for any expenses not covered by either policy.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Photo and Media Release (Optional)</h3>
+              <p style={{ margin: 0 }}>
+                I consent to the use of my/my child's image or likeness in photographs, videos, or other media materials produced by SCISS for educational or promotional purposes, without compensation.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ marginTop: 0, marginBottom: '0.75rem', color: '#184589', fontSize: '1.1rem' }}>Code of Conduct</h3>
+              <p style={{ margin: 0 }}>
+                I understand that all students must comply with the Summer School's rules and code of conduct. SCISS reserves the right to dismiss any participant whose behavior is deemed unsafe, disruptive, or inappropriate. No tuition refund will be provided in such cases.
+              </p>
+            </div>
+          </div>
+
+          <label className="form-label">
+            <span className="label-text">
+              Please provide your initials to acknowledge that you have read and agree to the above liability and insurance clauses <span className="asterisk">*</span>
+            </span>
+            {getFieldError("liabilityInitials") && (
+              <span className="error">{getFieldError("liabilityInitials")}</span>
+            )}
+            <input
+              type="text"
+              name="liabilityInitials"
+              value={formValues.liabilityInitials || ""}
+              onChange={onChange}
+              onBlur={handleBlur}
+              placeholder="Enter your initials (e.g., JD for John Doe)"
+              className={`form-input ${errorPulse["liabilityInitials"] ? "input-error-pulse" : ""
+                }`}
+              style={{ maxWidth: '300px' }}
+            />
+          </label>
         </fieldset>
 
         {/* Email to Receive Receipt (23) */}

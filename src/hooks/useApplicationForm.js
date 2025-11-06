@@ -50,6 +50,7 @@ export const useApplicationForm = () => {
       photoPermission: undefined,
       allergiesOrMedicalCare: "",
       depositConfirmation: undefined,
+      liabilityInitials: "",
       receiptEmail: "",
       transcript: [],
     }),

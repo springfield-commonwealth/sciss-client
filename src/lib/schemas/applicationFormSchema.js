@@ -157,6 +157,7 @@ export const applicationFormSchema = z
       required_error: "Please confirm if you would like to pay the $500 deposit to secure your spot",
       invalid_type_error: "Please confirm if you would like to pay the $500 deposit to secure your spot",
     }),
+    liabilityInitials: z.string().min(1, "Please provide your initials to acknowledge the liability and insurance clauses").max(50, "Initials must be at most 50 characters"),
     receiptEmail: z.string().email("Please enter a valid email address").optional().or(z.literal("")),
     transcript: z
       .array(z.any())

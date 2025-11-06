@@ -82,6 +82,7 @@ export const submitApplication = async (formData) => {
       photoPermission: formData.photoPermission,
       allergiesOrMedicalCare: formData.allergiesOrMedicalCare || "",
       depositConfirmation: formData.depositConfirmation,
+      liabilityInitials: formData.liabilityInitials || "",
       receiptEmail: formData.receiptEmail || "",
       parentName: {
         first: formData.parentName.first,

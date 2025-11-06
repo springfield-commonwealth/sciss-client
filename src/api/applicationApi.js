@@ -70,6 +70,8 @@ export const submitApplication = async (formData) => {
         zip: formData.address.zip,
         country: formData.address.country,
       },
+      hasValidVisa: formData.hasValidVisa,
+      needsInvitationLetter: formData.needsInvitationLetter,
       currentSchoolName: formData.currentSchoolName,
       financialAidInterest: formData.financialAidInterest,
       pricingTier: formData.pricingTier,

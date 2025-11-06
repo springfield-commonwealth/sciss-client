@@ -102,6 +102,11 @@ export const applicationFormSchema = z
         .min(1, "Country is required")
         .max(56, "Country must be at most 56 characters"),
     }),
+    hasValidVisa: z.enum(["Yes", "No"], {
+      required_error: "Please indicate if you have a valid visa to the US",
+      invalid_type_error: "Please indicate if you have a valid visa to the US",
+    }),
+    needsInvitationLetter: z.enum(["Yes", "No"]).optional(),
     parentName: z.object({
       first: z.string().min(1, "Parent first name is required"),
       last: z.string().min(1, "Parent last name is required"),
@@ -205,6 +210,15 @@ export const applicationFormSchema = z
         path: ["hearAboutUsOther"],
         code: z.ZodIssueCode.custom,
         message: "Please specify how you heard about us",
+      });
+    }
+
+    // Validate that if student doesn't have a valid visa, they must indicate if they need an invitation letter
+    if (data.hasValidVisa === "No" && !data.needsInvitationLetter) {
+      ctx.addIssue({
+        path: ["needsInvitationLetter"],
+        code: z.ZodIssueCode.custom,
+        message: "Please indicate if you need an invitation letter to help apply for a visa",
       });
     }
 

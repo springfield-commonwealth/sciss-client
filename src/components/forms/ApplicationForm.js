@@ -118,6 +118,7 @@ const ApplicationForm = () => {
     setFormProgress(progress);
   }, [formValues]);
 
+
   // When a submit error occurs, ensure the error banner is in view and focused
   useEffect(() => {
     if (submitError) {
@@ -704,6 +705,105 @@ const ApplicationForm = () => {
               }`}
           />
         </label>
+      </fieldset>
+
+      {/* Visa Information for International Students */}
+      <fieldset>
+        <legend>Visa Information (For International Students)</legend>
+        <label className="form-label">
+          <span className="label-text">
+            Do you have a valid visa to the US? <span className="asterisk">*</span>
+          </span>
+          {getFieldError("hasValidVisa") && (
+            <span className="error">{getFieldError("hasValidVisa")}</span>
+          )}
+          <div
+            className="radio-group"
+            role="group"
+            aria-labelledby="label_has_valid_visa"
+          >
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="hasValidVisa"
+                id="hasValidVisaYes"
+                value="Yes"
+                checked={formValues.hasValidVisa === "Yes"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["hasValidVisa"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="hasValidVisaYes" className="form-radio-label">
+                Yes
+              </label>
+            </span>
+            <span className="form-radio-item">
+              <input
+                type="radio"
+                name="hasValidVisa"
+                id="hasValidVisaNo"
+                value="No"
+                checked={formValues.hasValidVisa === "No"}
+                onChange={onChange}
+                onBlur={handleBlur}
+                className={`form-radio ${errorPulse["hasValidVisa"] ? "input-error-pulse" : ""
+                  }`}
+              />
+              <label htmlFor="hasValidVisaNo" className="form-radio-label">
+                No
+              </label>
+            </span>
+          </div>
+        </label>
+        {formValues.hasValidVisa === "No" && (
+          <label className="form-label">
+            <span className="label-text">
+              Do you need an invitation letter from us to help apply for a visa? <span className="asterisk">*</span>
+            </span>
+            {getFieldError("needsInvitationLetter") && (
+              <span className="error">{getFieldError("needsInvitationLetter")}</span>
+            )}
+            <div
+              className="radio-group"
+              role="group"
+              aria-labelledby="label_needs_invitation_letter"
+            >
+              <span className="form-radio-item">
+                <input
+                  type="radio"
+                  name="needsInvitationLetter"
+                  id="needsInvitationLetterYes"
+                  value="Yes"
+                  checked={formValues.needsInvitationLetter === "Yes"}
+                  onChange={onChange}
+                  onBlur={handleBlur}
+                  className={`form-radio ${errorPulse["needsInvitationLetter"] ? "input-error-pulse" : ""
+                    }`}
+                />
+                <label htmlFor="needsInvitationLetterYes" className="form-radio-label">
+                  Yes
+                </label>
+              </span>
+              <span className="form-radio-item">
+                <input
+                  type="radio"
+                  name="needsInvitationLetter"
+                  id="needsInvitationLetterNo"
+                  value="No"
+                  checked={formValues.needsInvitationLetter === "No"}
+                  onChange={onChange}
+                  onBlur={handleBlur}
+                  className={`form-radio ${errorPulse["needsInvitationLetter"] ? "input-error-pulse" : ""
+                    }`}
+                />
+                <label htmlFor="needsInvitationLetterNo" className="form-radio-label">
+                  No
+                </label>
+              </span>
+            </div>
+          </label>
+        )}
       </fieldset>
 
       {/* Pricing Tier */}

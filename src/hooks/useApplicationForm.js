@@ -34,6 +34,8 @@ export const useApplicationForm = () => {
         zip: "",
         country: "",
       },
+      hasValidVisa: undefined,
+      needsInvitationLetter: undefined,
       parentName: { first: "", last: "" },
       parentEmail: "",
       parentPhone: "",
@@ -156,6 +158,11 @@ export const useApplicationForm = () => {
         trigger("sessionTracks");
       } else {
         setValue(name, value);
+      }
+      // Clear needsInvitationLetter when hasValidVisa is set to "Yes"
+      if (name === "hasValidVisa" && value === "Yes") {
+        setValue("needsInvitationLetter", undefined);
+        clearErrors("needsInvitationLetter");
       }
       // Clear any existing errors for this field
       clearErrors(name);

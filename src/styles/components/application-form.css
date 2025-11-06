@@ -1154,3 +1154,12 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
+
+/* Liability section - force left alignment (override global .section p center rule) */
+.section .application-form .liability-section,
+.section .application-form .liability-section h3,
+.section .application-form .liability-section p,
+.section .application-form .liability-section div,
+.application-form .liability-section * {
+  text-align: left !important;
+}

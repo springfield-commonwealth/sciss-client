@@ -659,10 +659,6 @@
     text-align: center;
   }
 
-  .application-form .form-row label {
-    flex: none;
-  }
-
   /* Mobile-friendly radio group styles */
   .application-form .radio-group {
     display: flex;

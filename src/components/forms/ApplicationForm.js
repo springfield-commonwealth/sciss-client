@@ -908,7 +908,7 @@ const ApplicationForm = () => {
                     {getFieldError(`sessionTracks.${session}`)}
                   </span>
                 )}
-                <div className="form-row">
+                <div className="form-row radio-group">
                   {availableTracks.map((track, trackIndex) => {
                     const radioId = `sessionTrack_${session}_${trackIndex}`;
                     const radioName = `sessionTrack.${session}`;

@@ -359,6 +359,8 @@
   cursor: pointer;
   transition: color 0.15s;
   vertical-align: middle;
+  word-break: break-word;
+  line-height: 1.4;
 }
 
 .form-radio-label:hover {
@@ -728,6 +730,10 @@
     min-height: 20px;
   }
 
+  .application-form .form-row label {
+    margin-bottom: 1rem;
+  }
+
   /* Mobile Phone Input Styles */
   .application-form .PhoneInput {
     flex-direction: column;
@@ -744,6 +750,66 @@
 
   .application-form .PhoneInputInput {
     border-radius: 0 0 6px 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .application-form {
+    padding: 0.9rem 0.5rem;
+    gap: 1.25rem;
+  }
+
+  .application-form fieldset {
+    padding: 0.25rem;
+  }
+
+  .application-form legend {
+    font-size: 1.05rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .application-form .label-text {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .application-form .field-note {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+  }
+
+  .application-form input[type="text"],
+  .application-form input[type="email"],
+  .application-form input[type="tel"],
+  .application-form input[type="date"],
+  .application-form select {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .application-form .form-row {
+    gap: 0.5rem;
+  }
+
+  .application-form .form-row label {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .form-radio-item,
+  .checkbox-label {
+    padding: 0.6rem 0.5rem;
+    min-height: 40px;
+  }
+
+  .form-radio-label {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .checkbox-label {
+    font-size: 0.9rem;
   }
 }
 

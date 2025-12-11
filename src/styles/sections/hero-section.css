@@ -1,7 +1,7 @@
 .hero {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  height: 100vh;
+  min-height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,14 +14,11 @@
 @media (max-width: 768px) {
   .hero {
     margin-top: var(--nav-height-mobile);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
-@media (max-width: 480px) {
-  .hero {
-    margin-top: 80px;
-  }
-}
 
 /* ==========================================================================
    HERO OVERLAY - OPTION 2: DARK OVERLAY WITH BLUR

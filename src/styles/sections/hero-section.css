@@ -14,8 +14,8 @@
 @media (max-width: 768px) {
   .hero {
     margin-top: var(--nav-height-mobile);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 

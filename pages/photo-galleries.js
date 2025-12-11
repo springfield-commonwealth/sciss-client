@@ -70,6 +70,21 @@ const galleryImages = [
   { src: "/images/carousel/newImage5.jpg", alt: "Orientation Mixer", category: "Campus Life" },
   { src: "/images/carousel/newImage6.jpg", alt: "Evening Study Session", category: "Academics" },
   { src: "/images/carousel/newImage7.jpg", alt: "Formal Night by the Fountain", category: "Campus Life" },
+  // Screenshot images from carousel
+  { src: "/images/carousel/Screenshot 2025-12-11 133304.png", alt: "Dining Hall Meal", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133323.png", alt: "Campus Dining", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133332.png", alt: "Meal Service", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133343.png", alt: "Dining Experience", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133353.png", alt: "Food Service", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133403.png", alt: "Cafeteria Meals", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133416.png", alt: "Dining Options", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133431.png", alt: "Student Dining", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133451.png", alt: "Campus Food", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133557.png", alt: "SC Dormitory", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133606.png", alt: "SC Dorm Facilities", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133747.png", alt: "SC Campus View", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133754.png", alt: "SC Campus Facilities", category: "Campus Life" },
+  { src: "/images/carousel/Screenshot 2025-12-11 133854.png", alt: "SC Campus Grounds", category: "Campus Life" },
 ];
 
 const PhotoGalleries = ({ breadcrumbs = [] }) => {

@@ -14,8 +14,13 @@
 @media (max-width: 768px) {
   .hero {
     margin-top: var(--nav-height-mobile);
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 }
 
